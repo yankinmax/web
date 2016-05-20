@@ -13,8 +13,9 @@ Feature: Parameter the new database
   Scenario: SETUP company informations
     Given I need a "res.company" with oid: base.main_company
     And having
-       | key        | value      |
-       | name       | Depil'Tech |
+       | key        | value           |
+       | name       | Depil'Tech      |
+       | country_id | by oid: base.fr |
     # Given the company has the "images/logo.png" logo
 
   @lang
@@ -34,12 +35,10 @@ Feature: Parameter the new database
     Given I install the required modules with dependencies:
         | name                    |
         # oca/ocb
-        | document                |
         | account                 |
         | sale                    |
-        | sale_stock              |
-        | stock                   |
-        | purchase                |
+        | crm                     |
+        # | survey                  |
         # OCA/server-tools
-        #| disable_openerp_online  |
+        # | disable_openerp_online  |
         # local-src
