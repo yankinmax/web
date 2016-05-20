@@ -44,5 +44,5 @@ script:
   # run the scenario
   - if [ "$TESTS" == "1" ] ; then docker-compose run odoo docker-entrypoint.sh odoo.py --stop-after-init ; fi
 
-after_success:
-  - if [ "$TESTS" == "1" ] ; then ./.publish.sh ; fi
+# after_success:
+#  - if [ "$TESTS" == "1" ] ; then ./.publish.sh ; fi
