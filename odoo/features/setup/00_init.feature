@@ -14,9 +14,14 @@ Feature: Parameter the new database
     Given I need a "res.company" with oid: base.main_company
     And having
        | key        | value           |
-       | name       | Depil'Tech      |
+       | name       | Depil'Tech Holding |
        | country_id | by oid: base.fr |
     # Given the company has the "images/logo.png" logo
+
+  @no_demo_data
+  Scenario: deactivate demo data
+    Given I update the module list
+    And I do not want all demo data to be loaded on install
 
   @lang
   Scenario: install lang
@@ -26,9 +31,10 @@ Feature: Parameter the new database
     Then the language should be available
    Given I find a "res.lang" with code: fr_FR
     And having:
-      | key         | value    |
-      | grouping    | [3,0]    |
-      | date_format | %d/%m/%Y |
+      | key           | value    |
+      | grouping      | [3,0]    |
+      | date_format   | %d/%m/%Y |
+      | thousands_sep | .        |
 
   @modules
   Scenario: install modules

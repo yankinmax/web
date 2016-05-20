@@ -10,3 +10,6 @@
 [submodule "odoo/src"]
 	path = odoo/src
 	url = git@github.com:OCA/OCB
+[submodule "odoo/external-src/survey"]
+	path = odoo/external-src/survey
+	url = git@github.com:OCA/survey
