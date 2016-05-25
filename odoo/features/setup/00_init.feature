@@ -427,3 +427,22 @@ Feature: Parameter the new database
      | sale_tax_id          | by oid: l10n_mx.tax12                            |
      | purchase_tax_id      | by oid: l10n_mx.tax14                            |
      Then execute the setup
+
+  @acc_cfg_ch
+  Scenario: config accounting for Mexico
+  Given I am configuring the company with ref "scen.agency_succ_CH"
+  And I install the required modules with dependencies
+        | name                    |
+        | l10n_ch                 |
+
+  @acc_cfg_ch2
+  Scenario: config accounting for Switzerland
+  Given I need a "account.config.settings" with oid: scen.acc_cfg_ch
+    And having:
+     | name                         | value                                    |
+     | company_id                   | by oid: scen.agency_succ_CH              |
+     | chart_template_id            | by oid: l10n_ch.l10nch_chart_template    |
+     | template_transfer_account_id | by oid: l10n_ch.transfer_account_id      |
+     | sale_tax_id                  | by oid: l10n_ch.vat_80_incl              |
+     | purchase_tax_id              | by oid: l10n_ch.vat_80_purchase_incl     |
+     Then execute the setup
