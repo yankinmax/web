@@ -429,7 +429,7 @@ Feature: Parameter the new database
      Then execute the setup
 
   @acc_cfg_ch
-  Scenario: config accounting for Mexico
+  Scenario: config accounting for Switzerland
   Given I am configuring the company with ref "scen.agency_succ_CH"
   And I install the required modules with dependencies
         | name                    |
@@ -445,4 +445,23 @@ Feature: Parameter the new database
      | template_transfer_account_id | by oid: l10n_ch.transfer_account_id      |
      | sale_tax_id                  | by oid: l10n_ch.vat_80_incl              |
      | purchase_tax_id              | by oid: l10n_ch.vat_80_purchase_incl     |
+     Then execute the setup
+
+  @acc_cfg_lu
+  Scenario: config accounting for Luxembourg
+  Given I am configuring the company with ref "scen.agency_succ_lu"
+  And I install the required modules with dependencies
+        | name                    |
+        | l10n_lu                 |
+
+  @acc_cfg_lu2
+  Scenario: config accounting for Luxembourg
+  Given I need a "account.config.settings" with oid: scen.acc_cfg_lu
+    And having:
+     | name                         | value                                    |
+     | company_id                   | by oid: scen.agency_succ_lu              |
+     | chart_template_id            | by oid: l10n_lu.lu_2011_chart_1          |
+     | template_transfer_account_id | by oid: l10n_lu.lu_2011_account_517      |
+     | sale_tax_id                  | by oid: l10n_lu.lu_2015_tax_V-ART-43_60b |
+     | purchase_tax_id              | by oid: l10n_lu.lu_2011_tax_AB-EC-0      |
      Then execute the setup
