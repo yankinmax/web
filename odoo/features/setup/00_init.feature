@@ -313,8 +313,12 @@ Feature: Parameter the new database
        | phone       | +33 00 000 00 00                    |
        | fax         | +33 00 000 00 00                    |
        | website     |                                     |
-       | currency_id | by name: EUR                        |
        | partner_id  | by oid: scen.partner_succ_ch        |
+  Given I set the context to "{"active_test": False}"
+    And I find a "res.company" with oid: scen.agency_succ_CH
+    And having:
+       | key         | value                               |
+       | currency_id | by oid: base.CHF                    |
 
   @company
   Scenario: Configure main partner and company
@@ -353,11 +357,73 @@ Feature: Parameter the new database
         | account                 |
         | sale                    |
         | crm                     |
+        # | l10n_fr                 |
+        # | l10n_mx                 |
+        # | l10n_ch                 |
+        # | l10n_lu                 |
         # | survey                  |
+        | web_easy_switch_company |
         # OCA/server-tools
         # | disable_openerp_online  |
         # local-src
-   # Given I find a "res.company" with oid: scen.agency_succ_mx
-   #  And having:
-   #     | key         | value                               |
-   #     | currency_id | by name: MXN                        |
+   Given I set the context to "{"active_test": False}"
+    And I find a "res.company" with oid: scen.agency_succ_mx
+    And having:
+       | key         | value                               |
+       | currency_id | by oid: base.MXN                    |
+
+   Scenario: configure users
+    Given I find a "res.users" with login: admin
+     And having:
+      | key         | value                               |
+      | company_ids | by oid: base.main_company           |
+      | company_ids | add all by oid: scen.agency_succ_mx |
+      | company_ids | add all by oid: scen.agency_succ_CH |
+      | company_ids | add all by oid: scen.agency_succ_be |
+      | company_ids | add all by oid: scen.agency_succ_lu |
+      | company_ids | add all by oid: scen.agency_holding |
+      | company_ids | add all by oid: scen.agency_center1 |
+      | company_ids | add all by oid: scen.agency_center2 |
+      | company_ids | add all by oid: scen.agency_center3 |
+      | company_ids | add all by oid: scen.agency_center4 |
+      | company_ids | add all by oid: scen.agency_center5 |
+    And we assign to user the groups below
+      | group_name                         |
+      | Accounting & Finance / Adviser     |
+      | Purchases / Manager                |
+      | Sales / Manager                    |
+      | Sales / See Own Leads              |
+      | Sales / See all Leads              |
+      | Extra Rights / Technical Features  |
+      | Extra Rights / Multi Currencies    |
+      | Extra Rights / Multi Companies     |
+
+
+  @multicompany_base_finance_accounting_settings
+  Scenario: BASE SETTINGS multi-company multi-currency + do not share partners between companies
+  Given I need a "base.config.settings" with oid: scen.base_settings_main_cpy
+     And having:
+     | name                              | value                        |
+     | group_light_multi_company         | True                         |
+     | module_inter_company_rules        | True                         |
+     | company_share_partner             | False                        |
+   Then execute the setup
+
+  @acc_cfg_mx
+  Scenario: config accounting for Mexico
+  Given I am configuring the company with ref "scen.agency_succ_mx"
+  And I install the required modules with dependencies
+        | name                    |
+        | l10n_mx                 |
+
+  @acc_cfg_mx2
+  Scenario: config accounting for Mexico
+  Given I need a "account.config.settings" with oid: scen.acc_cfg_mx
+    And having:
+     | name                         | value                                    |
+     | company_id                   | by oid: scen.agency_succ_mx              |
+     | chart_template_id            | by oid: l10n_mx.vauxoo_mx_chart_template |
+     | template_transfer_account_id | by oid: l10n_mx.cuenta1129003000         |
+     | sale_tax_id          | by oid: l10n_mx.tax12                            |
+     | purchase_tax_id      | by oid: l10n_mx.tax14                            |
+     Then execute the setup
