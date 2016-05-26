@@ -465,3 +465,22 @@ Feature: Parameter the new database
      | sale_tax_id                  | by oid: l10n_lu.lu_2015_tax_V-ART-43_60b |
      | purchase_tax_id              | by oid: l10n_lu.lu_2011_tax_AB-EC-0      |
      Then execute the setup
+
+  @acc_cfg_be
+  Scenario: config accounting for Belgium
+  Given I am configuring the company with ref "scen.agency_succ_be"
+  And I install the required modules with dependencies
+        | name                    |
+        | l10n_be                 |
+
+  @acc_cfg_be2
+  Scenario: config accounting for Belgium
+  Given I need a "account.config.settings" with oid: scen.acc_cfg_be
+    And having:
+     | name                         | value                                    |
+     | company_id                   | by oid: scen.agency_succ_be              |
+     | chart_template_id            | by oid: l10n_be.l10nbe_chart_template    |
+     | template_transfer_account_id | by oid: l10n_be.trans                    |
+     | sale_tax_id                  | by oid: l10n_be.attn_VAT-OUT-21-S        |
+     | purchase_tax_id              | by oid: l10n_be.attn_VAT-IN-V81-21       |
+     Then execute the setup
