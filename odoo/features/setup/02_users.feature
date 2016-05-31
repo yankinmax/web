@@ -53,7 +53,7 @@ Feature: Parameter the new database
       | scen.partner_agency_center5 |
 
   @company_users
-  Scenario Outline: remove company_id from partners linked to a company
+  Scenario Outline: create and configure users
     Given I need a "res.users" with oid: <user_oid>
     And having:
       | key                    | value                 |
