@@ -239,7 +239,8 @@ Feature: Parameter the new database
        | fax          | +33 00 000 00 00          |
        | website      |                           |
        | company_type | company                   |
-  Given I need a "res.company" with oid: scen.agency_succ_CH
+  Given I set the context to "{"active_test": False}"
+  And I need a "res.company" with oid: scen.agency_succ_CH
     And having:
        | key         | value                               |
        | name        | Agency CH                           |
@@ -252,10 +253,6 @@ Feature: Parameter the new database
        | fax         | +33 00 000 00 00                    |
        | website     |                                     |
        | partner_id  | by oid: scen.partner_succ_ch        |
-  Given I set the context to "{"active_test": False}"
-    And I find a "res.company" with oid: scen.agency_succ_CH
-    And having:
-       | key         | value                               |
        | currency_id | by oid: base.CHF                    |
 
   @company
@@ -273,7 +270,8 @@ Feature: Parameter the new database
        | fax          | +33 00 000 00 00          |
        | website      |                           |
        | company_type | company                   |
-  Given I need a "res.company" with oid: scen.agency_succ_mx
+  Given I set the context to "{"active_test": False}"
+  And I need a "res.company" with oid: scen.agency_succ_mx
     And having:
        | key         | value                               |
        | name        | Agency MX                           |
@@ -286,13 +284,6 @@ Feature: Parameter the new database
        | fax         | +33 00 000 00 00                    |
        | website     |                                     |
        | partner_id  | by oid: scen.partner_succ_mx        |
-
-  @currency_mx
-  Scenario: currency_mx
-   Given I set the context to "{"active_test": False}"
-    And I find a "res.company" with oid: scen.agency_succ_mx
-    And having:
-       | key         | value                               |
        | currency_id | by oid: base.MXN                    |
 
    Scenario: configure users
