@@ -2,7 +2,7 @@
 
 ## Pre-requisite
 
-Be sure to [install Docker and docker-compose](prerequisite.md) before going any further.
+Be sure to [install Docker and docker-compose](prerequisites.md) before going any further.
 
 ## Starting, git submodules
 
@@ -46,7 +46,7 @@ Building the image is a simple command:
 
 ```bash
 # build the docker image locally (--pull pulls the base images before building the local image)
-docker-compose build --pull
+docker-compose build --pull   
 ```
 
 You could also first pull the base images, then run the build:
@@ -74,10 +74,10 @@ Will run the services (postgres, odoo, nginx) in background.
 When it is running in background, you can show the logs of one service or all of them (mixed):
 
 ```bash
-docker-compose odoo      # show logs of odoo
-docker-compose postgres  # show logs of postgres
-docker-compose nginx     # show logs of nginx
-docker-compose logs      # show all logs
+docker-compose logs odoo      # show logs of odoo
+docker-compose logs postgres  # show logs of postgres
+docker-compose logs nginx     # show logs of nginx
+docker-compose logs           # show all logs
 ```
 
 And you can see the details of the running services with:
@@ -111,11 +111,11 @@ interactions such as `pdb`.
 
 **docker exec** (or `docker-compose exec` in the last versions of docker-compose)
 allows to *enter* in a already running container, which can be handy to inspect
-files, check something, ...
+files, check something, ... 
 
 ```bash
 # open the database (the container name is found using 'docker ps')
-docker exec -ti depiltech_db_1 psql -U odoo odoodb
+docker exec -ti depiltech_db_1 psql -U odoo odoodb  
 # run bash in the running odoo container
 docker exec -ti depiltech_odoo_1 bash
 ```
@@ -133,7 +133,7 @@ docker-compose run --rm odoo odoo.py --workers=0 ... additional arguments
 # start Odoo and expose the port 8069 to the host on the same port
 docker-compose run --rm -p 8069:8069 odoo odoo.py
 # open an odoo shell
-docker-compose run --rm odoo odoo.py shell
+docker-compose run --rm odoo odoo.py shell  
 ```
 
 
