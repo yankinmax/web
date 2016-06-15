@@ -19,3 +19,4 @@ Feature: Parameter the new database
         # | disable_openerp_online  |
         # local-src
         | report_page_endnote     |
+        | fields_regex_validation |
