@@ -1,0 +1,114 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* fields_regex_validation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-08 13:57+0000\n"
+"PO-Revision-Date: 2016-06-08 13:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_active
+msgid "Active"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_constraint_name
+msgid "Constraint name"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_error_msg
+msgid "Error msg"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_field_id
+msgid "Field"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_field_name
+msgid "Field Name"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.actions.act_window,name:fields_regex_validation.action_fields_regex_validation_tree
+#: model:ir.ui.menu,name:fields_regex_validation.menu_action_fields_regex_validation_tree
+#: model:ir.ui.view,arch_db:fields_regex_validation.view_fields_regex_validation_tree
+msgid "Fields Regex Validation"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_id
+msgid "ID"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_model_name
+msgid "Model"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_name
+msgid "Name"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_model_id
+msgid "Object"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.ui.view,arch_db:fields_regex_validation.view_fields_regex_validation_form
+msgid "Rule"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_regex
+msgid "Validation Regular Expression"
+msgstr ""
+
+#. module: fields_regex_validation
+#: model:ir.model,name:fields_regex_validation.model_fields_regex_validation
+msgid "fields.regex.validation"
+msgstr ""
+
