@@ -13,3 +13,9 @@
 [submodule "odoo/external-src/survey"]
 	path = odoo/external-src/survey
 	url = git@github.com:OCA/survey
+[submodule "odoo/external-src/l10n-france"]
+	path = odoo/external-src/l10n-france
+	url = git@github.com:OCA/l10n-france.git
+[submodule "odoo/external-src/partner-contact"]
+	path = odoo/external-src/partner-contact
+	url = git@github.com:OCA/partner-contact.git
