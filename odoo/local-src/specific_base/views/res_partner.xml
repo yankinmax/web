@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_partner_center_form" model="ir.ui.view">
+        <field name="name">res.partner.center.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">48</field>
+        <field name="arch" type="xml">
+
+            <!-- hide fields -->
+            <field name="title" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="fax" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="category_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="website" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="function" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="lang" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <xpath expr="//field[@name='opt_out']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <field name="name" position="attributes">
+                <attribute name="attrs">{
+                'readonly': [('is_company', '=', False)],
+                'required': [('is_company', '=', True)],
+                'invisible': [('is_company', '=', False)],
+                }</attribute>
+            </field>
+            <field name="firstname" position="after">
+                <field name="birthday"/>
+            </field>
+            <field name="email" position="after">
+                <field name="opt_out"/>
+                <!-- <field name="canal"/> -->
+            </field>
+            <field name="lastname" position="before">
+                <field name="sponsor_ids" widget="many2many_tags"/>
+                <field name="phototherapist_id"/>
+                <field name="title"/>
+            </field>
+            <xpath expr="//div[@class='oe_title']/div[@class='oe_edit_only']" position="attributes">
+                <attribute name="class"></attribute>
+            </xpath>
+
+            <xpath expr="//notebook/page[@name='internal_notes']" position="before">
+                <page name="more_infos" string="Extra Infos" attrs="{'invisible': [('company_type', '=', 'company')]}">
+                    <group>
+                        <group>
+                            <field name="function"/>
+                            <field name="info_meeting_date"/>
+                            <field name="positive_flash_test"/>
+                            <!-- <field name="socio_professional_category"/> -->
+                            <field name="family_situation"/>
+                            <!-- <field name="why_no_buy"/> -->
+                            <!-- <field name="maximum_budget"/> -->
+                            <field name="beauty_institute_attented"/>
+                        </group>
+                        <group>
+                            <label for="comment1" colspan="4"/>
+                            <field name="comment1" nolabel="1" colspan="4"/>
+                            <label for="comment2" colspan="4"/>
+                            <field name="comment2" nolabel="1" colspan="4"/>
+                            <label for="comment3" colspan="4"/>
+                            <field name="comment3" nolabel="1" colspan="4"/>
+                        </group>
+                    </group>
+                </page>
+                <page name="survey" string="Diagnostic">
+                    <button name="take_me_to_diagnostic_survey" type="object" string="Fill Diagnostic" class="oe_highlight" attrs="{'invisible': [('survey_done', '!=', False)]}"/>
+                    <field name="survey_done" groups="base.group_no_one"/>
+                    <group name="survey_answers" string="Answers" attrs="{'invisible': [('survey_done', '=', False)]}">
+                        <field name="survey_input_lines">
+                            <tree>
+                                <field name="survey_id"/>
+                                <field name="question_id"/>
+                                <field name="value_suggested_row"/>
+                                <field name="value_suggested"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+                <page name="sales_invoices" string="Sales / Invoices">
+                    <group name="sales" string="Sales">
+                        <field name="sale_order_ids" nolabel="1"/>
+                    </group>
+                    <group name="invoices" string="Invoices">
+                        <field name="invoice_ids" nolabel="1"/>
+                    </group>
+                </page>
+                <page name="meetings" string="Meetings">
+                        <field name="meeting_ids" nolabel="1"/>
+                </page>
+            </xpath>
+
+
+        </field>
+    </record>
+
+</odoo>

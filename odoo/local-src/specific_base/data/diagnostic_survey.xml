@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="survey.survey" id="specific_base.diagnostic_survey">
+      <field name="auth_required" eval="0"/>
+      <field name="designed" eval="0"/>
+      <field name="title">Customer Diagnostic</field>
+    </record>
+
+</odoo>
