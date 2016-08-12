@@ -74,6 +74,11 @@
                 <attribute name="options">{'no_create': True}</attribute>
             </xpath>
 
+
+
+            <xpath expr="//field[@name='validity_date']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
         </field>
     </record>
 </odoo>
