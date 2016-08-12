@@ -8,6 +8,9 @@
         <field name="priority">48</field>
         <field name="arch" type="xml">
 
+            <xpath expr="//button[@name='toggle_active']" position="attributes">
+                <attribute name="groups"></attribute>
+            </xpath>
             <!-- hide fields -->
             <field name="title" position="attributes">
                 <attribute name="invisible">1</attribute>
