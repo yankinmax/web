@@ -16,6 +16,8 @@
              'partner_firstname',
              'l10n_fr_siret',
              'crm',
+             'utm',
+             'sale_crm',
              ],
  'website': 'http://www.camptocamp.com',
  'data': ['views/res_company.xml',
@@ -23,6 +25,7 @@
           'views/company_schedule.xml',
           'views/res_partner.xml',
           'views/survey_templates.xml',
+          'views/sale_order.xml',
           ],
  'installable': True,
  }
