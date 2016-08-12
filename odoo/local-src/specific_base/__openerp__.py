@@ -18,6 +18,8 @@
              'crm',
              'utm',
              'sale_crm',
+             'sale_stock',
+             'stock',
              ],
  'website': 'http://www.camptocamp.com',
  'data': ['views/res_company.xml',

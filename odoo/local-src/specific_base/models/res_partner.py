@@ -10,6 +10,10 @@ from datetime import datetime, timedelta
 from openerp import models, fields, api, _
 
 
+DUPLICATE_FIELDS_KEY = ['company_type', 'company_id',
+                        'name', 'email']
+
+
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
@@ -92,3 +96,11 @@ class ResPartner(models.Model):
             'target': 'self',
             'url': url,
         }
+
+    _sql_constraints = [
+        ('customer_unique',
+         'unique(%s)' % ','.join(DUPLICATE_FIELDS_KEY),
+         'It seems that there already a customer existing with same '
+         'name and email adress. Please use the search function to find it.'
+         )
+    ]
