@@ -54,7 +54,8 @@ Feature: Parameter the new database
 
   @company_users
   Scenario Outline: create and configure users
-    Given I need a "res.users" with oid: <user_oid>
+    Given I set the context to "{"tracking_disable": True}"
+    And I need a "res.users" with oid: <user_oid>
     And having:
       | key                    | value                 |
       | company_id             | by oid: <company_oid> |
@@ -140,7 +141,8 @@ Feature: Parameter the new database
 
   @teleop_template_user
   Scenario: configure users
-    Given I need a "res.users" with oid: scen.template_teleop_user
+    Given I set the context to "{"tracking_disable": True}"
+    And I need a "res.users" with oid: scen.template_teleop_user
      And having:
       | key         | value                               |
       | name        | Teleop Template User                |
