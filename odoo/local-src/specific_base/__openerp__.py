@@ -28,6 +28,8 @@
           'views/res_partner.xml',
           'views/survey_templates.xml',
           'views/sale_order.xml',
+          'views/pricelist.xml',
+          'data/pricelist.yml',
           'data/ir_actions_server.xml',
           'data/base_action_rule.xml',
           ],
