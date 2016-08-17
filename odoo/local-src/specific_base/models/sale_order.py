@@ -21,3 +21,10 @@ class SaleOrder(models.Model):
                 datetime.now() + timedelta(days=90))
 
         return super(SaleOrder, self).create(values)
+
+    @api.multi
+    def _prepare_invoice(self):
+        self.ensure_one()
+        res = super(SaleOrder, self)._prepare_invoice()
+        res['phototherapist_id'] = self.phototherapist_id.id
+        return res

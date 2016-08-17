@@ -79,6 +79,9 @@
             <xpath expr="//field[@name='validity_date']" position="attributes">
                 <attribute name="readonly">1</attribute>
             </xpath>
+            <field name="payment_term_id" position="after">
+                <field name="phototherapist_id" options="{'no_create': True}"/>
+            </field>
         </field>
     </record>
 </odoo>
