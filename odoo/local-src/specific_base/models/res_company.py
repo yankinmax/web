@@ -24,6 +24,24 @@ class ResCompany(models.Model):
                 ('quarterly', _('Quarterly')),
                 ]
 
+    @api.model
+    def _get_sms_abo_selection(self):
+        return [(str(i), str(i))for i in range(100, 1600, 100)]
+
+    @api.model
+    def _get_royalties_pub_selection(self):
+        return [('none', _('None')),
+                ('100', '100'),
+                ('200', '200'),
+                ('300', '300'),
+                ]
+
+    @api.model
+    def _get_payments_mode_selection(self):
+        return [('check', _('Check')),
+                ('levy', _('Levy')),
+                ('transfer', _('Transfer')),
+                ]
     #############################################
     # fields for centers (franchised, succ., ...)
     #############################################
@@ -41,21 +59,24 @@ class ResCompany(models.Model):
     description_active = fields.Boolean(default=False)
     come_by_transport = fields.Text(string='How to come by transport')
     come_by_car = fields.Text(string='How to come by car')
-    # sms_abo = fields.Selection(selection='_get_sms_abo_selection')
+    sms_abo = fields.Selection(selection='_get_sms_abo_selection',
+                               default='500')
     info_phoning = fields.Text(string='Phoning infos',
                                help="Used by teleop user to inform a customer")
     date_start_contract = fields.Date()
     date_end_contract = fields.Date()
-    # royalties_pub = fields.Selection(
-    #     selection='_get_royalties_pub_selection')
+    royalties_pub = fields.Selection(
+        selection='_get_royalties_pub_selection',
+        default='100')
     royalties_percentage = fields.Integer(help="Royalties percentage")
     royalties_min = fields.Integer(help="Minimum royalties")
-    # payments_mode = fields.Selection(
-    #     selection='_get_payments_mode_selection')
+    payments_mode = fields.Selection(
+        selection='_get_payments_mode_selection',
+        default='check')
     url_virtual_visit = fields.Char()
     nb_desk = fields.Integer(help="Desks number")
     nb_room = fields.Integer(help="Rooms number")
-    # timezone = fields.Selection(selection="_get_timezone_selection")
+    tz = fields.Selection(related="partner_id.tz")
     date_opening = fields.Date()
     display_teleop = fields.Boolean(default=True)
     center_manager_name = fields.Char()
@@ -68,4 +89,5 @@ class ResCompany(models.Model):
     company_type = fields.Selection(selection='_get_company_type_selection',
                                     string="Type")
     royalties_freq = fields.Selection(
-        selection='_get_royalties_freq_selection')
+        selection='_get_royalties_freq_selection',
+        default='monthly')
