@@ -13,9 +13,9 @@
                         <h1>
                             <field name="name" class="oe_inline"/>
                         </h1>
-                        <label for="company_id" class="oe_edit_only"/>
+                        <label for="country_id" class="oe_edit_only"/>
                         <h3>
-                            <field name="company_id"/>
+                            <field name="country_id"/>
                         </h3>
                     </div>
                     <button type="object" class="oe_link" name="button_show_created_views"
@@ -35,7 +35,7 @@
             <field name="arch" type="xml">
                 <tree string="Report Page EndNote">
                     <field name="name"/>
-                    <field name="company_id"/>
+                    <field name="country_id"/>
                 </tree>
             </field>
         </record>

@@ -11,13 +11,14 @@ class ReportPageEndNote(models.Model):
     _name = 'report.page.endnote'
     _description = 'Manage global page endnotes'
 
+    def _get_default_country(self):
+        return self.env.user.company_id.country_id.id
+
     name = fields.Char(required=True, translate=True)
     active = fields.Boolean(default=True)
-    company_id = fields.Many2one(
-        comodel_name='res.company',
-        default=lambda self: self.env['res.company']._company_default_get(
-            'report.page.endnote')
-    )
+    country_id = fields.Many2one(comodel_name='res.country',
+                                 default=_get_default_country,
+                                 required=True)
     content = fields.Html(required=True, translate=True)
     report_ids = fields.Many2many(
         comodel_name='ir.actions.report.xml',
@@ -52,7 +53,7 @@ class ReportPageEndNote(models.Model):
     @api.model
     def render(self, report_object):
         s_args = [
-            ('company_id', '=', report_object.company_id.id),
+            ('country_id', '=', report_object.company_id.country_id.id),
         ]
         endnote = self.search(s_args, limit=1)
         if self.env.context.get('lang', False):
