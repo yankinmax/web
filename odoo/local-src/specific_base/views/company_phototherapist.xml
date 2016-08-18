@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_company_phototherapist_form" model="ir.ui.view">
+            <field name="name">res.company.phototherapist.form</field>
+            <field name="model">res.company.phototherapist</field>
+            <field name="arch" type="xml">
+                <form string="Phototherapist">
+                  <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" class="oe_inline"/>
+                        </h1>
+                        <label for="company_id" class="oe_edit_only"/>
+                        <h3>
+                            <field name="company_id"/>
+                        </h3>
+                    </div>
+                    <group>
+                        <field name="active"/>
+                        <field name="date_deleted" groups="base.group_no_one"/>
+                    </group>
+                  </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_company_phototherapist_tree" model="ir.ui.view">
+            <field name="name">res.company.phototherapist.tree</field>
+            <field name="model">res.company.phototherapist</field>
+            <field name="arch" type="xml">
+                <tree string="Phototherapist">
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="date_deleted"/>
+                </tree>
+            </field>
+        </record>
+        <record id="company_phototherapist_action_tree" model="ir.actions.act_window">
+            <field name="name">Phototherapist</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.company.phototherapist</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="company_phototherapist_action_tree" id="menu_action_company_phototherapist" parent="base.menu_users"/>
+    </data>
+</openerp>

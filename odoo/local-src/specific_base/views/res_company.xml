@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_company_depiltech_form">
+        <field name="name">res.company.center.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name='depiltech' string="DepilTech">
+                    <group name="juridical_infos" string="Juridical Infos">
+                        <group>
+                            <field name="active"/>
+                            <field name="opening"/>
+                            <field name="date_opening"/>
+                        </group>
+                        <group>
+                            <field name="company_name"/>
+                            <field name="company_type"/>
+                            <field name="form"/>
+                            <field name="capital_stock"/>
+                        </group>
+                    </group>
+                    <group name="franchised">
+                        <group name="info_franchised" string="Franchised Infos">
+                            <field name="franchised_name"/>
+                            <field name="franchised_mobile"/>
+                            <field name="franchised_email"/>
+                            <field name="center_manager_name"/>
+                        </group>
+                        <group name="contract" string="Contract">
+                            <field name="date_start_contract"/>
+                            <field name="date_end_contract"/>
+                            <field name="royalties_pub"/>
+                            <field name="royalties_percentage"/>
+                            <field name="royalties_min"/>
+                            <field name="payments_mode"/>
+                            <field name="royalties_freq"/>
+                        </group>
+                    </group>
+                    <group>
+                    </group>
+                    <group name="text_infos" string="Extra Infos">
+                        <group>
+                            <field name="display_teleop"/>
+                            <field name="nb_desk"/>
+                            <field name="nb_room"/>
+                            <field name="url_virtual_visit" widget="url"/>
+                            <field name="description_active"/>
+                            <field name="description"/>
+                            <field name="info_phoning"/>
+                            <field name="active_campaigns"/>
+                        </group>
+                        <group>
+                            <field name="coach_id"/>
+                            <field name="longitude"/>
+                            <field name="latitude"/>
+                            <field name="sms_abo"/>
+                            <field name="tz"/>
+                            <field name="url_customer_reviews" widget="url"/>
+                            <field name="come_by_transport"/>
+                            <field name="come_by_car"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

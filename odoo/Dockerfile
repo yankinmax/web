@@ -18,4 +18,6 @@ ENV ADDONS_PATH="/opt/odoo/local-src, \
   /opt/odoo/src/addons, \
   /opt/odoo/external-src/server-tools, \
   /opt/odoo/external-src/survey, \
-  /opt/odoo/external-src/web"
+  /opt/odoo/external-src/web, \
+  /opt/odoo/external-src/l10n-france, \
+  /opt/odoo/external-src/partner-contact"

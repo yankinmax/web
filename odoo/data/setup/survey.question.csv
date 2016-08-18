@@ -1,0 +1,63 @@
+id,comment_count_as_answer,comments_message,description,display_mode,constr_error_msg,validation_error_msg,validation_email,constr_mandatory,matrix_subtype,validation_max_date,validation_length_max,validation_max_float_value,validation_min_date,validation_length_min,validation_min_float_value,column_nb,question,sequence,comments_allowed,survey_id/id,page_id/id,type,validation_required,labels_ids_2/value,labels_ids/sequence,labels_ids/value
+specific_base_scen.diagnostic_survey_question_1,False,"If other, precise:",,Radio Buttons,This question requires an answer.,The answer you entered has an invalid format.,False,False,One choice per row,,0,0,,0,0,1,1,10,False,specific_base_scen.diagnostic_survey,specific_base_scen.diagnostic_survey_page_1,Matrix,False,Aisselles,10,Cire institut
+,,,,,,,,,,,,,,,,,,,,,,,,Maillot,,
+,,,,,,,,,,,,,,,,,,,,,,,,Jambes entières,,
+,,,,,,,,,,,,,,,,,,,,,,,,1/2 jambes,,
+,,,,,,,,,,,,,,,,,,,,,,,,Bras,,
+,,,,,,,,,,,,,,,,,,,,,,,,Dos,,
+,,,,,,,,,,,,,,,,,,,,,,,,Épaules,,
+,,,,,,,,,,,,,,,,,,,,,,,,Torse,,
+,,,,,,,,,,,,,,,,,,,,,,,,Ventre,,
+,,,,,,,,,,,,,,,,,,,,,,,,Lèvres,,
+,,,,,,,,,,,,,,,,,,,,,,,,Menton,,
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Cire
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Rasoir
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Tondeuse
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Épilateur électrique
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Crème dépilatoire
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Aucune
+specific_base_scen.diagnostic_survey_question_2,False,"If other, precise:",,Radio Buttons,This question requires an answer.,The answer you entered has an invalid format.,False,True,One choice per row,,0,0,,0,0,1,2,10,False,specific_base_scen.diagnostic_survey,specific_base_scen.diagnostic_survey_page_1,Matrix,False,Aisselles,10,Traitable
+,,,,,,,,,,,,,,,,,,,,,,,,Maillot,,
+,,,,,,,,,,,,,,,,,,,,,,,,Jambes entières,,
+,,,,,,,,,,,,,,,,,,,,,,,,1/2 jambes,,
+,,,,,,,,,,,,,,,,,,,,,,,,Bras,,
+,,,,,,,,,,,,,,,,,,,,,,,,Dos,,
+,,,,,,,,,,,,,,,,,,,,,,,,Épaules,,
+,,,,,,,,,,,,,,,,,,,,,,,,Torse,,
+,,,,,,,,,,,,,,,,,,,,,,,,Ventre,,
+,,,,,,,,,,,,,,,,,,,,,,,,Lèvres,,
+,,,,,,,,,,,,,,,,,,,,,,,,Menton,,
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Non traitable
+specific_base_scen.diagnostic_survey_question_3,False,"If other, precise:",,Radio Buttons,This question requires an answer.,The answer you entered has an invalid format.,False,False,One choice per row,,0,0,,0,0,1,3,10,False,specific_base_scen.diagnostic_survey,specific_base_scen.diagnostic_survey_page_1,Multiple choice: only one answer,False,,10,Tous les jours
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Tous les 2/3 jours
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Entre 3 semaines et 1 mois
+specific_base_scen.diagnostic_survey_question_4,False,"If other, precise:",,Radio Buttons,This question requires an answer.,The answer you entered has an invalid format.,False,False,One choice per row,,0,0,,0,0,4,4,10,False,specific_base_scen.diagnostic_survey,specific_base_scen.diagnostic_survey_page_1,Multiple choice: multiple answers allowed,False,,10,Craquelée / irritée
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Tiraillée
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Sèche
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Très sèche
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Rougeurs
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Poils incarnés
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Kyste
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Démangaisons
+specific_base_scen.diagnostic_survey_question_5,False,"If other, precise:",,Radio Buttons,This question requires an answer.,The answer you entered has an invalid format.,False,False,One choice per row,,0,0,,0,0,4,5,10,False,specific_base_scen.diagnostic_survey,specific_base_scen.diagnostic_survey_page_1,Multiple choice: multiple answers allowed,False,,10,Laser
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Lumière pulsée
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Enzymes
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Électrolyse
+specific_base_scen.diagnostic_survey_question_6,False,"If other, precise:",,Radio Buttons,This question requires an answer.,The answer you entered has an invalid format.,False,False,One choice per row,,0,0,,0,0,4,6,10,False,specific_base_scen.diagnostic_survey,specific_base_scen.diagnostic_survey_page_1,Multiple choice: multiple answers allowed,False,,10,Aisselles
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Jambes entières
+,,,,,,,,,,,,,,,,,,,,,,,,,11,1/2 jambes
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Bras
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Dos
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Épaules
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Torse
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Ventre
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Lèvres
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Menton
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Maillot
+specific_base_scen.diagnostic_survey_question_7,False,"If other, precise:",,Radio Buttons,This question requires an answer.,The answer you entered has an invalid format.,False,False,One choice per row,,0,0,,0,0,6,7,10,False,specific_base_scen.diagnostic_survey,specific_base_scen.diagnostic_survey_page_1,Multiple choice: multiple answers allowed,False,,10,Temps
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Argent
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Problèmes de peau
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Pour un résultat parfait et définitif
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Confort au niveau du toucher
+specific_base_scen.diagnostic_survey_question_8,True,"If other, precise:",,Radio Buttons,This question requires an answer.,The answer you entered has an invalid format.,False,False,One choice per row,,0,0,,0,0,1,8,10,True,specific_base_scen.diagnostic_survey,specific_base_scen.diagnostic_survey_page_1,Multiple choice: only one answer,False,,10,PIlule Leelou
+,,,,,,,,,,,,,,,,,,,,,,,,,11,Stérilet mirena

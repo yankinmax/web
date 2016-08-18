@@ -13,10 +13,17 @@ Feature: Parameter the new database
         | account                 |
         | sale                    |
         | crm                     |
-        # | survey                  |
+        | survey                  |
         | web_easy_switch_company |
         # OCA/server-tools
-        # | disable_openerp_online  |
+        # | disable_openerp_online
+        # OCA/l10n-france
+        | l10n_fr_siret           |
+        # OCA/partner-contact
+        | partner_firstname       |
+        # OCA/survey
+        | partner_survey          |
         # local-src
         | report_page_endnote     |
         | fields_regex_validation |
+        | specific_base           |

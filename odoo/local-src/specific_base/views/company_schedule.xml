@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_company_schedule_form" model="ir.ui.view">
+            <field name="name">res.company.schedule.form</field>
+            <field name="model">res.company.schedule</field>
+            <field name="arch" type="xml">
+                <form string="Company Schedule">
+                  <sheet>
+                    <div class="oe_title">
+                        <label for="company_id" class="oe_edit_only"/>
+                        <h3>
+                            <field name="company_id"/>
+                        </h3>
+                    </div>
+                    <group string="Monday">
+                        <group>
+                            <field name="is_open_am_0"/>
+                            <field name="time_begin_am_0" widget="float_time" attrs="{'invisible': [('is_open_am_0', '=', False)]}"/>
+                            <field name="time_end_am_0" widget="float_time" attrs="{'invisible': [('is_open_am_0', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="is_open_pm_0"/>
+                            <field name="time_begin_pm_0" widget="float_time" attrs="{'invisible': [('is_open_pm_0', '=', False)]}"/>
+                            <field name="time_end_pm_0" widget="float_time" attrs="{'invisible': [('is_open_pm_0', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group string="Tuesday">
+                        <group>
+                            <field name="is_open_am_1"/>
+                            <field name="time_begin_am_1" widget="float_time" attrs="{'invisible': [('is_open_am_1', '=', False)]}"/>
+                            <field name="time_end_am_1" widget="float_time" attrs="{'invisible': [('is_open_am_1', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="is_open_pm_1"/>
+                            <field name="time_begin_pm_1" widget="float_time" attrs="{'invisible': [('is_open_pm_1', '=', False)]}"/>
+                            <field name="time_end_pm_1" widget="float_time" attrs="{'invisible': [('is_open_pm_1', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group string="Wednesday">
+                        <group>
+                            <field name="is_open_am_2"/>
+                            <field name="time_begin_am_2" widget="float_time" attrs="{'invisible': [('is_open_am_2', '=', False)]}"/>
+                            <field name="time_end_am_2" widget="float_time" attrs="{'invisible': [('is_open_am_2', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="is_open_pm_2"/>
+                            <field name="time_begin_pm_2" widget="float_time" attrs="{'invisible': [('is_open_pm_2', '=', False)]}"/>
+                            <field name="time_end_pm_2" widget="float_time" attrs="{'invisible': [('is_open_pm_2', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group string="Thursday">
+                        <group>
+                            <field name="is_open_am_3"/>
+                            <field name="time_begin_am_3" widget="float_time" attrs="{'invisible': [('is_open_am_3', '=', False)]}"/>
+                            <field name="time_end_am_3" widget="float_time" attrs="{'invisible': [('is_open_am_3', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="is_open_pm_3"/>
+                            <field name="time_begin_pm_3" widget="float_time" attrs="{'invisible': [('is_open_pm_3', '=', False)]}"/>
+                            <field name="time_end_pm_3" widget="float_time" attrs="{'invisible': [('is_open_pm_3', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group string="Friday">
+                        <group>
+                            <field name="is_open_am_4"/>
+                            <field name="time_begin_am_4" widget="float_time" attrs="{'invisible': [('is_open_am_4', '=', False)]}"/>
+                            <field name="time_end_am_4" widget="float_time" attrs="{'invisible': [('is_open_am_4', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="is_open_pm_4"/>
+                            <field name="time_begin_pm_4" widget="float_time" attrs="{'invisible': [('is_open_pm_4', '=', False)]}"/>
+                            <field name="time_end_pm_4" widget="float_time" attrs="{'invisible': [('is_open_pm_4', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group string="Saturday">
+                        <group>
+                            <field name="is_open_am_5"/>
+                            <field name="time_begin_am_5" widget="float_time" attrs="{'invisible': [('is_open_am_5', '=', False)]}"/>
+                            <field name="time_end_am_5" widget="float_time" attrs="{'invisible': [('is_open_am_5', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="is_open_pm_5"/>
+                            <field name="time_begin_pm_5" widget="float_time" attrs="{'invisible': [('is_open_pm_5', '=', False)]}"/>
+                            <field name="time_end_pm_5" widget="float_time" attrs="{'invisible': [('is_open_pm_5', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group string="Sunday">
+                        <group>
+                            <field name="is_open_am_6"/>
+                            <field name="time_begin_am_6" widget="float_time" attrs="{'invisible': [('is_open_am_6', '=', False)]}"/>
+                            <field name="time_end_am_6" widget="float_time" attrs="{'invisible': [('is_open_am_6', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="is_open_pm_6"/>
+                            <field name="time_begin_pm_6" widget="float_time" attrs="{'invisible': [('is_open_pm_6', '=', False)]}"/>
+                            <field name="time_end_pm_6" widget="float_time" attrs="{'invisible': [('is_open_pm_6', '=', False)]}"/>
+                        </group>
+                    </group>
+                  </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_company_schedule_tree" model="ir.ui.view">
+            <field name="name">res.company.schedule.tree</field>
+            <field name="model">res.company.schedule</field>
+            <field name="arch" type="xml">
+                <tree string="Company Schedule">
+                    <field name="company_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="company_schedule_action_tree" model="ir.actions.act_window">
+            <field name="name">Company Schedule</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.company.schedule</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="company_schedule_action_tree" id="menu_action_company_schedule" parent="base.menu_users"/>
+    </data>
+</openerp>
