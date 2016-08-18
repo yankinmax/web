@@ -11,7 +11,7 @@ from openerp import models, fields, api, _
 
 
 DUPLICATE_FIELDS_KEY = ['company_type', 'company_id',
-                        'name', 'email']
+                        'phone', 'email']
 
 
 class ResPartner(models.Model):
@@ -101,6 +101,6 @@ class ResPartner(models.Model):
         ('customer_unique',
          'unique(%s)' % ','.join(DUPLICATE_FIELDS_KEY),
          'It seems that there already a customer existing with same '
-         'name and email adress. Please use the search function to find it.'
+         'phone and email adress. Please use the search function to find it.'
          )
     ]
