@@ -79,4 +79,15 @@ Feature: Parameter the new database
         | web_easy_switch_company |
         # OCA/server-tools
         # | disable_openerp_online  |
+        | server_environment       |
+        | mail_environment         |
         # local-src
+        | server_environment_files |
+
+  @mail @outgoing @mailtrap
+  Scenario: Create the outgoing mail server
+    Given I need a "ir.mail_server" with oid: scenario.mailtrapio1
+    And having:
+    | name            | value             |
+    | name            | mailtrapio1       |
+    | sequence        | 1                 |
