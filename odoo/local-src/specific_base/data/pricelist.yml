@@ -6,3 +6,7 @@
   !python {model: ir.rule, id: product.product_pricelist_item_comp_rule} : |
       domain_force = "['|', ('allowed_company_ids','=',False), ('allowed_company_ids','in',[user.company_id.id])]"
       self.domain_force = domain_force
+-
+  !python {model: ir.rule, id: base.res_partner_rule} : |
+      domain_force = "['|',('company_id','child_of',[user.company_id.id]),('company_id','=',False)]"
+      self.domain_force = domain_force

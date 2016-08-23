@@ -42,14 +42,12 @@
                     </group>
                     <group name="text_infos" string="Extra Infos">
                         <group>
+                            <field name="active_campaigns"/>
                             <field name="display_teleop"/>
                             <field name="nb_desk"/>
                             <field name="nb_room"/>
-                            <field name="url_virtual_visit" widget="url"/>
                             <field name="description_active"/>
-                            <field name="description"/>
                             <field name="info_phoning"/>
-                            <field name="active_campaigns"/>
                         </group>
                         <group>
                             <field name="coach_id"/>
@@ -58,6 +56,8 @@
                             <field name="sms_abo"/>
                             <field name="tz"/>
                             <field name="url_customer_reviews" widget="url"/>
+                            <field name="url_virtual_visit" widget="url"/>
+                            <field name="description"/>
                             <field name="come_by_transport"/>
                             <field name="come_by_car"/>
                         </group>

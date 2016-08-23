@@ -3,6 +3,8 @@
 # Copyright 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+import pytz
+
 from openerp import models, fields, api, _
 
 
@@ -19,9 +21,9 @@ class ResCompany(models.Model):
 
     @api.model
     def _get_royalties_freq_selection(self):
-        return [('monthly', _('Monthly')),
-                ('bimonthly', _('Bimonthly')),
-                ('quarterly', _('Quarterly')),
+        return [('1', _('1 month')),
+                ('2', _('2 months')),
+                ('3', _('3 months')),
                 ]
 
     @api.model
@@ -90,4 +92,18 @@ class ResCompany(models.Model):
                                     string="Type")
     royalties_freq = fields.Selection(
         selection='_get_royalties_freq_selection',
-        default='monthly')
+        default='1')
+
+    @api.onchange('opening')
+    def onchange_opening(self):
+        if not self.opening:
+            self.date_opening = fields.Date.today()
+
+    @api.multi
+    def on_change_country(self, country_id):
+        res = super(ResCompany, self).on_change_country(country_id)
+        value = res.get('value', {})
+        if country_id:
+            value['tz'] = pytz.country_timezones[
+                self.env['res.country'].browse(country_id).code][0]
+        return res
