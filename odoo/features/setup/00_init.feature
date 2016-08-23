@@ -66,6 +66,7 @@ Feature: Parameter the new database
        | website     |                                     |
        | currency_id | by name: EUR                        |
        | partner_id  | by oid: scen.partner_agency_holding |
+       | parent_id   | by oid: base.main_company           |
 
   @modules
   Scenario: install modules
