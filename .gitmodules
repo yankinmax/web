@@ -19,3 +19,6 @@
 [submodule "odoo/external-src/partner-contact"]
 	path = odoo/external-src/partner-contact
 	url = git@github.com:OCA/partner-contact.git
+[submodule "odoo/external-src/connector-telephony"]
+	path = odoo/external-src/connector-telephony
+	url = git@github.com:OCA/connector-telephony.git

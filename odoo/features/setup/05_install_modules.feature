@@ -23,6 +23,8 @@ Feature: Parameter the new database
         | partner_firstname       |
         # OCA/survey
         | partner_survey          |
+        # OCA/connector-telephony
+        | base_phone              |
         # local-src
         | report_page_endnote     |
         | fields_regex_validation |
