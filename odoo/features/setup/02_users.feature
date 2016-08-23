@@ -122,6 +122,7 @@ Feature: Parameter the new database
       | Inventory / Manager                |
       | Lead Automation / Manager          |
       | Administration / Settings          |
+      | Extra Rights / Multi Companies     |
     Examples: users
       | user_oid           |
       | scen.user_admin_mx |
