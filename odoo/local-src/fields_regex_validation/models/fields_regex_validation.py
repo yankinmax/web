@@ -5,6 +5,7 @@
 
 import uuid
 from psycopg2 import IntegrityError, ProgrammingError
+import openerp
 from openerp import models, fields, api, _
 from openerp.modules.registry import RegistryManager
 
@@ -105,7 +106,11 @@ Detailled error: %r"""
 
         # signal changes to registry to the others (eventual) workers
         # be aware of this new constraint
-        RegistryManager.signal_registry_change(self.env.cr.dbname)
+        if not openerp.multi_process:
+            self.pool._sql_error.update({constraint_name: values['error_msg']})
+        else:
+            RegistryManager.signal_registry_change(self.env.cr.dbname)
+
         return super(FieldsRegexValidation, self).create(values)
 
     @api.multi
@@ -151,7 +156,14 @@ Detailled error: %r"""
 
         # signal changes to registry to the others (eventual) workers
         # be aware of this new constraint
-        RegistryManager.signal_registry_change(self.env.cr.dbname)
+        if not openerp.multi_process:
+            for rec in self:
+                self.pool._sql_error.update(
+                    {rec.constraint_name: rec.error_msg})
+        else:
+            RegistryManager.signal_registry_change(self.env.cr.dbname)
+
+        # RegistryManager.signal_registry_change(self.env.cr.dbname)
         return True
 
     @api.multi
@@ -164,5 +176,10 @@ Detailled error: %r"""
         super(FieldsRegexValidation, self).unlink()
         # signal changes to registry to the others (eventual) workers
         # be aware of this new constraint
-        RegistryManager.signal_registry_change(self.env.cr.dbname)
+        if not openerp.multi_process:
+            for rec in self:
+                del self.pool._sql_error[rec.constraint_name]
+        else:
+            RegistryManager.signal_registry_change(self.env.cr.dbname)
+        # RegistryManager.signal_registry_change(self.env.cr.dbname)
         return True
