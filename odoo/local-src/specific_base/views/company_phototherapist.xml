@@ -44,6 +44,6 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <menuitem action="company_phototherapist_action_tree" id="menu_action_company_phototherapist" parent="base.menu_users"/>
+        <menuitem action="company_phototherapist_action_tree" id="menu_action_company_phototherapist" parent="specific_base.menu_depiltech_my_center"/>
     </data>
 </openerp>

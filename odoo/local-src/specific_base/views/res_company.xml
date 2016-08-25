@@ -6,6 +6,15 @@
         <field name="model">res.company</field>
         <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
+            <field name="city" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="email" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="country_id" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
             <xpath expr="//notebook" position="inside">
                 <page name='depiltech' string="DepilTech">
                     <group name="juridical_infos" string="Juridical Infos">
@@ -61,6 +70,11 @@
                             <field name="come_by_transport"/>
                             <field name="come_by_car"/>
                         </group>
+                    </group>
+                </page>
+                <page name="other_configuration" string="Other configuration">
+                    <group name="product">
+                        <field name="can_create_product"/>
                     </group>
                 </page>
             </xpath>

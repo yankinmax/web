@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+    <record id="view_partner_title_tree" model="ir.ui.view">
+        <field name="name">res.partner.title.tree</field>
+        <field name="model">res.partner.title</field>
+        <field name="inherit_id" ref="base.view_partner_title_tree"/>
+        <field name="arch" type="xml">
+            <field name="shortcut" position="after">
+                <field name="active"/>
+            </field>
+        </field>
+    </record>
+    <record id="view_partner_title_form" model="ir.ui.view">
+        <field name="name">res.partner.title.form</field>
+        <field name="model">res.partner.title</field>
+        <field name="inherit_id" ref="base.view_partner_title_form"/>
+        <field name="arch" type="xml">
+            <field name="shortcut" position="after">
+                <field name="active"/>
+            </field>
+        </field>
+    </record>
+
+
     <record id="view_partner_center_form" model="ir.ui.view">
         <field name="name">res.partner.center.form</field>
         <field name="model">res.partner</field>
@@ -42,16 +64,38 @@
                 }</attribute>
             </field>
             <field name="firstname" position="after">
-                <field name="birthday"/>
+                <field name="birthday" attrs="{'required': [('is_company', '=', False)]}"/>
             </field>
-            <field name="email" position="after">
+            <field name="email" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="street" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="city" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="zip" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="mobile" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="firstname" position="attributes">
+                <attribute name="attrs">{'required': [('is_company', '=', False)]}</attribute>
+            </field>
+            <field name="lastname" position="attributes">
+                <attribute name="attrs">{'required': [('is_company', '=', False)]}</attribute>
+            </field>
+
+            <field name="phone" position="before">
                 <field name="opt_out"/>
-                <!-- <field name="canal"/> -->
+                <field name="provenance"/>
             </field>
             <field name="lastname" position="before">
                 <field name="sponsor_ids" widget="many2many_tags"/>
-                <field name="phototherapist_id"/>
-                <field name="title"/>
+                <field name="phototherapist_id" attrs="{'required': [('is_company', '=', False)]}"/>
+                <field name="title" attrs="{'required': [('is_company', '=', False)]}"/>
             </field>
             <xpath expr="//div[@class='oe_title']/div[@class='oe_edit_only']" position="attributes">
                 <attribute name="class"></attribute>
@@ -60,17 +104,26 @@
                 <attributes name="groups">base.group_multi_company</attributes>
             </field>
 
+            <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                <groups>base.group_multi_company</groups>
+            </xpath>
+            <xpath expr="//page[@name='accounting']" position="attributes">
+                <groups>base.group_multi_company</groups>
+            </xpath>
             <xpath expr="//notebook/page[@name='internal_notes']" position="before">
                 <page name="more_infos" string="Extra Infos" attrs="{'invisible': [('company_type', '=', 'company')]}">
                     <group>
                         <group>
                             <field name="function"/>
                             <field name="info_meeting_date"/>
-                            <field name="positive_flash_test"/>
-                            <!-- <field name="socio_professional_category"/> -->
+                            <field name="flash_test_done"/>
+                            <field name="flash_test_date" attrs="{'required': [('flash_test_done', '=', 'y')]}"/>
+                            <field name="flash_test_zone" attrs="{'required': [('flash_test_done', '=', 'y')]}"/>
+                            <field name="flash_test_setting" attrs="{'required': [('flash_test_done', '=', 'y')]}"/>
+                            <field name="socio_professional_category"/>
                             <field name="family_situation"/>
-                            <!-- <field name="why_no_buy"/> -->
-                            <!-- <field name="maximum_budget"/> -->
+                            <field name="why_no_buy"/>
+                            <field name="maximum_budget"/>
                             <field name="beauty_institute_attented"/>
                         </group>
                         <group>

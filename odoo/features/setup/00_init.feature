@@ -35,7 +35,7 @@ Feature: Parameter the new database
       | key           | value    |
       | grouping      | [3,0]    |
       | date_format   | %d/%m/%Y |
-      | thousands_sep | .        |
+      | thousands_sep | ,        |
 
   @company
   Scenario: Configure main partner and company

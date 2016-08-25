@@ -51,7 +51,7 @@ class ResCompany(models.Model):
     opening = fields.Boolean(default=True, help="Opening in progress")
     active_campaigns = fields.Boolean(default=False,
                                       help="SEM active")
-    form = fields.Char(help="Juridical form")
+    form = fields.Char(string="Legal form", help="Juridical form")
     company_name = fields.Char(help="Juridical name of the company")
     franchised_mobile = fields.Char()
     franchised_email = fields.Char()
@@ -93,6 +93,9 @@ class ResCompany(models.Model):
     royalties_freq = fields.Selection(
         selection='_get_royalties_freq_selection',
         default='1')
+
+    # product management
+    can_create_product = fields.Boolean(default=False)
 
     @api.onchange('opening')
     def onchange_opening(self):

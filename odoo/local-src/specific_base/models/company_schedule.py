@@ -12,6 +12,7 @@ class ResCompanySchedule(models.Model):
     _rec_name = 'company_id'
 
     company_id = fields.Many2one(comodel_name='res.company')
+    active = fields.Boolean(default=True)
     # monday
     is_open_am_0 = fields.Boolean(string='Is open AM ?', default=True)
     time_begin_am_0 = fields.Float(string="Opening at")  # widget="float_time"
@@ -61,3 +62,11 @@ class ResCompanySchedule(models.Model):
     is_open_pm_6 = fields.Boolean(string='Is open PM ?', default=True)
     time_begin_pm_6 = fields.Float(string="Opening at")  # widget="float_time"
     time_end_pm_6 = fields.Float(string="Closing at")  # widget="float_time"
+
+    _sql_constraints = [
+        ('schedule_unique__by_company',
+         'unique(active, company_id)',
+         'It seems that there already an active company schedule. Please '
+         'deactivate the other if you want to use this one.'
+         )
+    ]

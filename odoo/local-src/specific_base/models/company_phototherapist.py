@@ -3,7 +3,7 @@
 # Copyright 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields
+from openerp import models, fields, api
 
 
 class ResCompanyPhototherapist(models.Model):
@@ -12,5 +12,10 @@ class ResCompanyPhototherapist(models.Model):
 
     company_id = fields.Many2one(comodel_name='res.company')
     active = fields.Boolean(default=True)
-    name = fields.Char()
+    name = fields.Char(required=True)
     date_deleted = fields.Date()
+
+    @api.onchange('active')
+    def onchange_active(self):
+        if not self.active:
+            self.date_deleted = fields.Date.today()

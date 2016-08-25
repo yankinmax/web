@@ -121,7 +121,6 @@ Feature: Parameter the new database
       | Extra Rights / Technical Features  |
       | Inventory / Manager                |
       | Lead Automation / Manager          |
-      | Administration / Settings          |
       | Extra Rights / Multi Companies     |
     Examples: users
       | user_oid           |
@@ -198,4 +197,3 @@ Feature: Parameter the new database
       | Extra Rights / Technical Features  |
       | Inventory / Manager                |
       | Lead Automation / Manager          |
-      | Administration / Settings          |
