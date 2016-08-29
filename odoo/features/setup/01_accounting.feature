@@ -457,6 +457,14 @@ Feature: Parameter the new database
      | company_share_partner             | False                        |
    Then execute the setup
 
+  @sale_pricelist
+  Scenario:
+  Given I need a "sale.config.settings" with oid: scen.sale_settings_main_cpy
+     And having:
+     | name                              | value                        |
+     | sale_pricelist_setting            | formula                      |
+   Then execute the setup
+
 #  @acc_cfg_mx
 #  Scenario: config accounting for Mexico
 #  Given I am configuring the company with ref "scen.agency_succ_mx"
