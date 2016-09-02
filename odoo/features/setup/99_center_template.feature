@@ -97,7 +97,6 @@ Feature: Template for a center to be deployed easily
       | Extra Rights / Technical Features  |
       | Inventory / Manager                |
       | Lead Automation / Manager          |
-      | Administration / Settings          |
     Examples: users
       | user_oid            |
       | scen.user_admin_XXX |

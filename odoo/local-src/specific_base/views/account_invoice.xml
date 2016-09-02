@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_invoice_form" model="ir.ui.view">
+        <field name="name">account.invoice.depiltech.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="priority" eval="48"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="phototherapist_id"/>
+            </xpath>
+
+
+        </field>
+    </record>
+
+</odoo>

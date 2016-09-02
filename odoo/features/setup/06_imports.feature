@@ -15,3 +15,7 @@ Feature: Parameter the new database
   @csv_import
   Scenario: import csv
     Given "survey.question" is imported from CSV "setup/survey.question.csv" using delimiter ","
+
+  @csv_import_warehouse
+  Scenario: import csv
+    Given "stock.warehouse" is imported from CSV "setup/stock.warehouse.csv" using delimiter ","

@@ -6,6 +6,15 @@
         <field name="model">res.company</field>
         <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
+            <field name="city" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="email" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="country_id" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
             <xpath expr="//notebook" position="inside">
                 <page name='depiltech' string="DepilTech">
                     <group name="juridical_infos" string="Juridical Infos">
@@ -42,14 +51,12 @@
                     </group>
                     <group name="text_infos" string="Extra Infos">
                         <group>
+                            <field name="active_campaigns"/>
                             <field name="display_teleop"/>
                             <field name="nb_desk"/>
                             <field name="nb_room"/>
-                            <field name="url_virtual_visit" widget="url"/>
                             <field name="description_active"/>
-                            <field name="description"/>
                             <field name="info_phoning"/>
-                            <field name="active_campaigns"/>
                         </group>
                         <group>
                             <field name="coach_id"/>
@@ -58,9 +65,16 @@
                             <field name="sms_abo"/>
                             <field name="tz"/>
                             <field name="url_customer_reviews" widget="url"/>
+                            <field name="url_virtual_visit" widget="url"/>
+                            <field name="description"/>
                             <field name="come_by_transport"/>
                             <field name="come_by_car"/>
                         </group>
+                    </group>
+                </page>
+                <page name="other_configuration" string="Other configuration">
+                    <group name="product">
+                        <field name="can_create_product"/>
                     </group>
                 </page>
             </xpath>

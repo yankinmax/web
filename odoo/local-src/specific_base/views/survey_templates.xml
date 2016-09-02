@@ -8,9 +8,20 @@
         </xpath>
     </template>
 
+<!--     <template id="inherit_survey_init" inherit_id="survey.survey_init">
+        <xpath expr="//t[@t-call='survey.back']" position="after">
+            <t t-call="specific_base.back_partner" />
+        </xpath>
+    </template> -->
+<!--     <template id="inherit_survey_survey" inherit_id="survey.survey">
+        <xpath expr="//t[@t-call='survey.back']" position="after">
+            <t t-call="specific_base.back_partner" />
+        </xpath>
+    </template> -->
+
 
     <template id="back_partner" name="BackPartner">
-        <div groups="base.group_website_publisher" t-ignore="true" class="pull-right">
+        <div t-ignore="true" class="pull-right">
             <a t-attf-href="/web#view_type=form&amp;model=res.partner&amp;id=#{user_input.partner_id.id}&amp;action=base.action_partner_form" class="btn btn-default">Back to Partner</a>
         </div>
     </template>

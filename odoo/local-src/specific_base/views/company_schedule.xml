@@ -9,9 +9,13 @@
                 <form string="Company Schedule">
                   <sheet>
                     <div class="oe_title">
-                        <label for="company_id" class="oe_edit_only"/>
+                        <label for="company_id"/>
                         <h3>
                             <field name="company_id"/>
+                        </h3>
+                        <label for="active"/>
+                        <h3>
+                            <field name="active"/>
                         </h3>
                     </div>
                     <group string="Monday">
@@ -118,6 +122,6 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <menuitem action="company_schedule_action_tree" id="menu_action_company_schedule" parent="base.menu_users"/>
+        <menuitem action="company_schedule_action_tree" id="menu_action_company_schedule" parent="specific_base.menu_depiltech_my_center"/>
     </data>
 </openerp>
