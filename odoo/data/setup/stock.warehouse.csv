@@ -1,0 +1,17 @@
+id,code,name,company_id/id
+stock.warehouse0,WH,DepilTech Holding,base.main_company
+scen.warehouse_mx,MX,MX,scen.agency_succ_mx
+scen.warehouse_ch,CH,CH,scen.agency_succ_CH
+scen.warehouse_be,BE,BE,scen.agency_succ_be
+scen.warehouse_lu,LU,LU,scen.agency_succ_lu
+scen.warehouse_ah,AH,AH,scen.agency_holding
+scen.warehouse_fr_c1,FR_C1,FR_C1,scen.agency_center1
+scen.warehouse_fr_c2,FR_C2,FR_C2,scen.agency_center2
+scen.warehouse_fr_c3,FR_C3,FR_C3,scen.agency_center3
+scen.warehouse_fr_c4,FR_C4,FR_C4,scen.agency_center4
+scen.warehouse_fr_c5,FR_C5,FR_C5,scen.agency_center5
+scen.warehouse_mx_c1,MX_C1,MX_C1,scen.agency_mx_c1
+scen.warehouse_be_c1,BE_C1,BE_C1,scen.agency_be_c1
+scen.warehouse_fr,FR,FR,scen.agency_succ_fr
+scen.warehouse_ch_c1,CH_C1,CH_C1,scen.agency_ch_c1
+scen.warehouse_lu_c1,LU_C1,LU_C1,scen.agency_lu_c1
