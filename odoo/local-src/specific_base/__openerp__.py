@@ -36,6 +36,7 @@
           'views/account_invoice.xml',
           'views/pricelist.xml',
           'data/ir_rule.xml',
+          'data/ir_property.xml',
           'data/pricelist.yml',
           'data/ir_actions_server.xml',
           'data/base_action_rule.xml',

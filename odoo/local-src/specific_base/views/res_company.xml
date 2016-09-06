@@ -78,6 +78,9 @@
                     </group>
                 </page>
             </xpath>
+            <field name="parent_id" position="attributes">
+                <attribute name="attrs">{'required': [('company_type', 'in', ('branch', 'franchised'))]}</attribute>
+            </field>
 
         </field>
     </record>
