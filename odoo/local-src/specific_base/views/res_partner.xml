@@ -22,6 +22,24 @@
         </field>
     </record>
 
+    <record id="view_partner_center_tree" model="ir.ui.view">
+        <field name="name">res.partner.center.tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="priority">48</field>
+        <field name="arch" type="xml">
+            <field name="phone" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="email" position="replace"/>
+            <field name="phone" position="after">
+                <field name="email"/>
+                <field name="mobile" widget="phone"/>
+                <field name="city"/>
+                <field name="company_id"/>
+            </field>
+        </field>
+    </record>
 
     <record id="view_partner_center_form" model="ir.ui.view">
         <field name="name">res.partner.center.form</field>
@@ -110,10 +128,10 @@
             </field>
 
             <xpath expr="//page[@name='sales_purchases']" position="attributes">
-                <groups>base.group_multi_company</groups>
+                <attribute name="groups">base.group_multi_company</attribute>
             </xpath>
             <xpath expr="//page[@name='accounting']" position="attributes">
-                <groups>base.group_multi_company</groups>
+                <attribute name="groups">base.group_multi_company</attribute>
             </xpath>
             <xpath expr="//notebook/page[@name='internal_notes']" position="before">
                 <page name="more_infos" string="Extra Infos" attrs="{'invisible': [('company_type', '=', 'company')]}">
@@ -127,6 +145,7 @@
                             <field name="flash_test_setting" attrs="{'required': [('flash_done', '=', 'y')]}"/>
                             <field name="socio_professional_category"/>
                             <field name="family_situation"/>
+                            <field name="children_nb"/>
                             <field name="why_no_buy"/>
                             <field name="maximum_budget"/>
                             <field name="beauty_institute_attented"/>

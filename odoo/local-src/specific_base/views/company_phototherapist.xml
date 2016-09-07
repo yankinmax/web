@@ -33,7 +33,7 @@
                 <tree string="Phototherapist">
                     <field name="name"/>
                     <field name="company_id"/>
-                    <field name="date_deleted"/>
+                    <field name="date_deleted" groups="base.group_no_one"/>
                 </tree>
             </field>
         </record>

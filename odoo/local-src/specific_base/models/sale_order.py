@@ -10,9 +10,15 @@ from openerp import models, fields, api
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
+    # @api.model
+    # def get_default_payment_term_id(self):
+    #     return self.env.ref('account.account_payment_term_immediate').id
+
     phototherapist_id = fields.Many2one(
         comodel_name='res.company.phototherapist',
         string='Phototherapist')
+    payment_term_id = fields.Many2one('account.payment.term')
+    # default=get_default_payment_term_id)
 
     @api.model
     def create(self, values):

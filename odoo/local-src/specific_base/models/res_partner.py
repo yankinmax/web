@@ -11,7 +11,7 @@ from openerp import models, fields, api, _
 
 
 DUPLICATE_FIELDS_KEY = ['company_type', 'company_id',
-                        'phone', 'email']
+                        'mobile', 'email']
 
 
 class ResPartnerTitle(models.Model):
@@ -190,6 +190,8 @@ class ResPartner(models.Model):
     flash_test_setting = fields.Char()
     flash_done = fields.Selection(
         selection=[('y', 'Yes'), ('n', 'No')],
+        string='Flash test done',
+        required=True,
         default='n',
         )
     socio_professional_category = fields.Selection(
@@ -263,6 +265,7 @@ class ResPartner(models.Model):
                 'type': 'ir.actions.act_url',
                 'name': "Start Survey",
                 'target': 'self',
+                # 'target': 'new',
                 'url': url,
             }
 

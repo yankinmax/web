@@ -16,3 +16,9 @@
 -
   !python {model: res.partner.title, id: base.res_partner_title_prof} : |
       self.active = False
+-
+  !python {model: res.partner.title, id: base.res_partner_title_miss} : |
+      self.active = False
+-
+  !python {model: res.partner.title, id: base.res_partner_title_sir} : |
+      self.active = False
