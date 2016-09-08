@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Discount program form view -->
+    <record id="sale_discount_program_form" model="ir.ui.view">
+        <field name="name">sale.discount.program.form</field>
+        <field name="model">sale.discount.program</field>
+        <field name="arch" type="xml">
+            <form string="Sale Promotion">
+                <div class="oe_title">
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="name" class="oe_inline"/>
+                    </h1>
+                </div>
+                <field name="condition_ids"/>
+                <field name="action_ids"/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Discount program list action and menu -->
+    <record id="action_discount_program_list" model="ir.actions.act_window">
+        <field name="name">Discount Programs</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.discount.program</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_discount_program" action="action_discount_program_list" parent="base.menu_sales" sequence="100"/>
+</odoo>

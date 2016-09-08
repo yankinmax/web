@@ -1,0 +1,6 @@
+<odoo noupdate="1">
+    <record id="discount_product" model="product.product">
+        <field name="name">Discount</field>
+        <field name="type">service</field>
+    </record>
+</odoo>
