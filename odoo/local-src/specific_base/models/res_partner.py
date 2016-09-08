@@ -214,12 +214,6 @@ class ResPartner(models.Model):
     comment1 = fields.Text(string='Anecdote/Vacations')
     comment2 = fields.Text(string='Cosmetic habits / Brand used')
     comment3 = fields.Text(string='Other')
-    sponsor_ids = fields.Many2many('res.partner',
-                                   'partner_sponsorship',
-                                   'partner_id',
-                                   'sponsor_id',
-                                   string="Sponsors"
-                                   )
 
     @api.multi
     def take_me_to_diagnostic_survey(self):
