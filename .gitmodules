@@ -22,3 +22,18 @@
 [submodule "odoo/external-src/connector-telephony"]
 	path = odoo/external-src/connector-telephony
 	url = git@github.com:OCA/connector-telephony.git
+[submodule "odoo/external-src/account-financial-tools"]
+	path = odoo/external-src/account-financial-tools
+	url = git@github.com:OCA/account-financial-tools.git
+[submodule "odoo/external-src/account-financial-reporting"]
+	path = odoo/external-src/account-financial-reporting
+	url = git@github.com:OCA/account-financial-reporting.git
+[submodule "odoo/external-src/bank-statement-import"]
+	path = odoo/external-src/bank-statement-import
+	url = git@github.com:OCA/bank-statement-import.git
+[submodule "odoo/external-src/bank-payment"]
+	path = odoo/external-src/bank-payment
+	url = git@github.com:OCA/bank-payment.git
+[submodule "odoo/external-src/reporting-engine"]
+	path = odoo/external-src/reporting-engine
+	url = git@github.com:OCA/reporting-engine.git

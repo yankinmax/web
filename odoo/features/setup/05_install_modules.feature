@@ -27,6 +27,15 @@ Feature: Parameter the new database
         | partner_survey           |
         # OCA/connector-telephony
         | base_phone               |
+        # OCA/account-financial-tools
+        | account_fiscal_year      |
+        | account_move_locking     |
+        # OCA/account-financial-reporting
+        | account_financial_report_qweb |
+        # OCA/bank-statement-import
+        | account_bank_statement_import_ofx |
+        # OCA/bank-payment
+        | account_banking_sepa_credit_transfer |
         # local-src
         | report_page_endnote      |
         | fields_regex_validation  |
