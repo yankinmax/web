@@ -3,6 +3,14 @@
 Release History
 ---------------
 
+9.2.0 (2016-09-08)
+++++++++++++++++++
+
+**Features and Improvements**
+
+* accounting module available
+
+
 9.1.0 (2016-09-02)
 ++++++++++++++++++
 
