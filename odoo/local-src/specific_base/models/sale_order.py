@@ -16,6 +16,8 @@ class SaleOrder(models.Model):
 
     phototherapist_id = fields.Many2one(
         comodel_name='res.company.phototherapist',
+        required=True,
+        ondelete='restrict',
         string='Phototherapist')
     payment_term_id = fields.Many2one('account.payment.term')
     # default=get_default_payment_term_id)
