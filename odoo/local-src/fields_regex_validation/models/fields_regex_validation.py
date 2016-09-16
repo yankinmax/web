@@ -68,7 +68,7 @@ class FieldsRegexValidation(models.Model):
         ADD CONSTRAINT %(constraint_name)s
         CHECK (%(field_name)s is null or %(field_name)s ~* '%(regex)s');
         """ % {'table': self.env[model]._table,
-               'constraint_name': constraint_name,
+               'constraint_name': str(constraint_name),
                'field_name': field_name,
                'regex': regex}
         try:
@@ -91,15 +91,11 @@ Detailled error: %r"""
         model_name = self.env['ir.model'].browse(values['model_id']).model
         field_name = self.env['ir.model.fields'].browse(
             values['field_id']).name
-        join_fields = [self.env[model_name]._table,
-                       str(values['model_id']),
-                       field_name, str(values['field_id']),
-                       uuid.uuid4().hex]
-        constraint_name = '_'.join(join_fields)
+        constraint_name = uuid.uuid4().hex
         if not values.get('constraint_name', False):
-            values['constraint_name'] = constraint_name
+            values['constraint_name'] = 'c_'+constraint_name
 
-        self.create_constraint(constraint_name,
+        self.create_constraint('c_'+constraint_name,
                                model_name,
                                field_name,
                                values.get('regex'))
@@ -120,30 +116,13 @@ Detailled error: %r"""
         for rec in self:
             if ('model_id' in values or
                     'field_id' in values or
-                    'regex' in values):
+                    'regex' in values or
+                    'active' in values):
 
                 # first drop constraint
                 rec.drop_constraint()
-
-                model_name = (
-                    'model_id' in values and
-                    self.env['ir.model'].browse(values['model_id']).model or
-                    rec.model_name
-                )
-                field_name = (
-                    'field_id' in values and
-                    self.env['ir.model.fields'].browse(
-                        values['field_id']).name or
-                    rec.field_name
-                )
-                model_id = values.get('model_id') or rec.model_id.id
-                field_id = values.get('field_id') or rec.field_id.id
-                join_fields = [self.env[model_name]._table,
-                               str(model_id),
-                               field_name, str(field_id),
-                               uuid.uuid4().hex]
-                constraint_name = '_'.join(join_fields)
-                values['constraint_name'] = constraint_name
+                constraint_name = uuid.uuid4().hex
+                values['constraint_name'] = 'c_'+constraint_name
 
                 super(FieldsRegexValidation, rec).write(values)
                 # then try to recreate the modified one
