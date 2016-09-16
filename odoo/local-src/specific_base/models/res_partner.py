@@ -220,7 +220,6 @@ class ResPartner(models.Model):
                                    'sponsor_id',
                                    string="Sponsors"
                                    )
-    survey_done = fields.Boolean(default=False)
 
     @api.multi
     def take_me_to_diagnostic_survey(self):
