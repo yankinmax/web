@@ -39,14 +39,22 @@ class DiscountProgramCondition(models.Model):
 
     @api.depends('type_condition')
     def _compute_name(self):
-        # TODO: call method by type_condition that can be inherited.
-
         selection_dict = {
             k: v for k, v in self._fields['type_condition'].selection
         }
         for condition in self:
             if condition.type_condition:
-                condition.name = selection_dict[condition.type_condition]
+                try:
+                    name = getattr(
+                        condition, '_get_%s_name' % condition.type_condition
+                    )()
+                except AttributeError:
+                    name = None
+
+                if name is not None:
+                    condition.name = name
+                else:
+                    condition.name = selection_dict[condition.type_condition]
 
     @api.onchange('type_condition')
     def onchange_type_condition(self):
@@ -87,6 +95,12 @@ class DiscountProgramCondition(models.Model):
                 return False
 
         return True
+
+    @api.multi
+    def _get_product_category_name(self):
+        self.ensure_one()
+        if self.product_category_id:
+            return "Product Category: %s" % self.product_category_id.name
 
     @api.multi
     def check(self, sale):

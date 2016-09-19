@@ -44,13 +44,22 @@ class DiscountProgramAction(models.Model):
 
     @api.depends('type_action')
     def _compute_name(self):
-        # TODO: call method by type_action that can be inherited.
         selection_dict = {
             k: v for k, v in self._fields['type_action'].selection
         }
         for action in self:
             if action.type_action:
-                action.name = selection_dict[action.type_action]
+                try:
+                    name = getattr(
+                        action, '_get_%s_name' % action.type_action
+                    )()
+                except AttributeError:
+                    name = None
+
+                if name is not None:
+                    action.name = name
+                else:
+                    action.name = selection_dict[action.type_action]
 
     @api.onchange('type_action')
     def onchange_type_action(self):
@@ -88,6 +97,12 @@ class DiscountProgramAction(models.Model):
         })
 
     @api.multi
+    def _get_product_add_name(self):
+        self.ensure_one()
+        if self.product_add_id:
+            return "Add product: %s" % self.product_add_id.name
+
+    @api.multi
     def _get_discount_target(self, sale):
         if self.product_discount_selection == 'most_expensive_no_discount':
             sol = None
@@ -111,11 +126,32 @@ class DiscountProgramAction(models.Model):
             })
 
     @api.multi
+    def _get_product_discount_name(self):
+        self.ensure_one()
+
+        selection_dict = {
+            k: v for k, v
+            in self._fields['product_discount_selection'].selection
+        }
+
+        if self.product_discount_selection and self.discount_percent:
+            return "Discount: %s%% on %s" % (
+                self.discount_percent,
+                selection_dict[self.product_discount_selection]
+            )
+
+    @api.multi
     def _apply_change_pricelist(self, sale):
         sale.pricelist_id = self.pricelist_id
         sale.pricelist_program = True
         for line in sale.order_line:
             line.product_uom_change()
+
+    @api.multi
+    def _get_change_pricelist_name(self):
+        self.ensure_one()
+        if self.pricelist_id:
+            return "Change pricelist to %s" % self.pricelist_id.name
 
     @api.multi
     def apply(self, sale):

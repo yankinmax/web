@@ -8,6 +8,7 @@
             <form string="Action">
                 <sheet>
                     <group>
+                        <field name="name" invisible="1"/>
                         <field name="type_action"/>
                     </group>
                     <group name="action_product_add" attrs="{'invisible': [('type_action', '!=', 'product_add')]}">

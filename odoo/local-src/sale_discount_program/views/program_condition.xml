@@ -8,6 +8,7 @@
             <form string="Condition">
                 <sheet>
                     <group>
+                        <field name="name" invisible="1"/>
                         <field name="type_condition"/>
                     </group>
                     <group attrs="{'invisible': [('type_condition', '!=', 'product_category')]}">
