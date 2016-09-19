@@ -5,16 +5,63 @@
         <field name="name">sale.discount.program.form</field>
         <field name="model">sale.discount.program</field>
         <field name="arch" type="xml">
-            <form string="Sale Promotion">
+            <form string="Sale Discount Program">
+                <group>
+                    <field name="program_name"/>
+                    <field name="combinable"/>
+                    <field name="condition_ids"/>
+                    <field name="action_ids"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_discount_program_code_form" model="ir.ui.view">
+        <field name="name">sale.discount.program.code.form</field>
+        <field name="model">sale.discount.program</field>
+        <field name="arch" type="xml">
+            <form string="Sale Discount Code">
                 <div class="oe_title">
-                    <label for="name" class="oe_edit_only"/>
                     <h1>
-                        <field name="name" class="oe_inline"/>
+                        <field name="name" class="oe_read_only oe_inline"/>
                     </h1>
                 </div>
-                <field name="condition_ids"/>
-                <field name="action_ids"/>
+                <group name="promo_code_group" invisible="context.get('program_voucher')">
+                    <field name="promo_code"/>
+                </group>
+
+                <group name="voucher_group" invisible="not context.get('program_voucher')">
+                    <field name="voucher_code" readonly="1"/>
+                    <field name="partner_id" required="context.get('program_voucher')"/>
+                    <field name="voucher_amount" required="context.get('program_voucher')"/>
+                    <field name="used"/>
+                </group>
+
+                <group>
+                    <field name="combinable"/>
+                    <field name="expiration_date"/>
+                    <field name="max_use" invisible="context.get('program_voucher')"/>
+                </group>
+                <group invisible="context.get('program_voucher')">
+                    <field name="action_ids"/>
+                </group>
             </form>
+        </field>
+    </record>
+
+
+    <record id="sale_discount_program_code_tree" model="ir.ui.view">
+        <field name="name">sale.discount.program.code.tree</field>
+        <field name="model">sale.discount.program</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="partner_id" invisible="not context.get('program_voucher')"/>
+                <field name="voucher_amount" invisible="not context.get('program_voucher')"/>
+                <field name="expiration_date"/>
+                <field name="nb_use" invisible="context.get('program_voucher')"/>
+                <field name="max_use" invisible="context.get('program_voucher')"/>
+            </tree>
         </field>
     </record>
 
@@ -25,7 +72,34 @@
         <field name="res_model">sale.discount.program</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
+        <field name="domain">[('automatic', '=', True)]</field>
+    </record>
+
+    <record id="action_promo_codes_list" model="ir.actions.act_window">
+        <field name="name">Promo codes</field>
+        <field name="res_model">sale.discount.program</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('promo_code', '!=', False)]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('sale_discount_program_code_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('sale_discount_program_code_form')})]"/>
+    </record>
+
+    <record id="action_voucher_codes_list" model="ir.actions.act_window">
+        <field name="name">Vouchers</field>
+        <field name="res_model">sale.discount.program</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('voucher_code', '!=', False)]</field>
+        <field name="context">{'program_voucher': True}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('sale_discount_program_code_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('sale_discount_program_code_form')})]"/>
+
     </record>
 
     <menuitem id="menu_discount_program" action="action_discount_program_list" parent="base.menu_sales" sequence="100"/>
+    <menuitem id="menu_discount_promo" action="action_promo_codes_list" parent="base.menu_sales" sequence="110"/>
+    <menuitem id="menu_discount_voucher" action="action_voucher_codes_list" parent="base.menu_sales" sequence="120"/>
 </odoo>

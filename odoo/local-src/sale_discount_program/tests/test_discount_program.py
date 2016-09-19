@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+from datetime import timedelta, date
 
 from openerp.tests.common import TransactionCase
 
@@ -40,7 +41,7 @@ class TestDiscountProgram(TransactionCase):
             'categ_id': self.product_category.id,
         })
 
-    def test_add_product(self):
+    def test_product_add(self):
         product_to_add = self.product_model.create({
             'name': 'Unittest gift product',
             'uom_id': self.ref('product.product_uom_unit'),
@@ -56,7 +57,7 @@ class TestDiscountProgram(TransactionCase):
             ],
             'action_ids': [
                 (0, False, {
-                    'type_action': 'add_product',
+                    'type_action': 'product_add',
                     'product_add_id': product_to_add.id,
                 })
             ]
@@ -97,8 +98,8 @@ class TestDiscountProgram(TransactionCase):
             sale.order_line.mapped('product_id')
         )
 
-    def test_reward_product(self):
-        promotion = self.program_model.create({
+    def test_product_discount(self):
+        program = self.program_model.create({
             'name': 'Unittest reward product program',
             'condition_ids': [
                 (0, False, {
@@ -145,12 +146,14 @@ class TestDiscountProgram(TransactionCase):
         })
 
         sale.apply_discount_programs()
-        self.assertEqual(3, len(sale.order_line))
+        self.assertEqual(2, len(sale.order_line))
         # 400 - 20% + 150
         self.assertEqual(470, sale.amount_total)
+        self.assertEqual(20, sale.order_line[1].discount)
+        self.assertEqual(True, sale.order_line[1].discount_program)
 
         # Add quantity condition => At least 2 products with PU > 300
-        promotion.condition_ids.product_min_qty = 2
+        program.condition_ids.product_min_qty = 2
 
         sale.apply_discount_programs()
         self.assertEqual(2, len(sale.order_line))
@@ -160,14 +163,16 @@ class TestDiscountProgram(TransactionCase):
         sale.order_line[0].price_unit = 500
 
         sale.apply_discount_programs()
-        self.assertEqual(3, len(sale.order_line))
+        self.assertEqual(2, len(sale.order_line))
 
         # Most expensive: 500
         # => 500 - 20% + 400
         self.assertEqual(800, sale.amount_total)
+        sale.order_line[0].discount = 20
+        sale.order_line[1].discount = False
 
         # Add second discount in actions (10 % on second most expensive)
-        promotion.write({
+        program.write({
             'action_ids': [(0, False, {
                 'type_action': 'product_discount',
                 'product_discount_selection': 'most_expensive_no_discount',
@@ -176,7 +181,53 @@ class TestDiscountProgram(TransactionCase):
         })
 
         sale.apply_discount_programs()
-        self.assertEqual(4, len(sale.order_line))
+        self.assertEqual(2, len(sale.order_line))
 
         # 500 - 20% + 400 - 10%
         self.assertEqual(760, sale.amount_total)
+        sale.order_line[0].discount = 20
+        sale.order_line[1].discount = 10
+
+    def test_voucher_code(self):
+
+        program = self.program_model.create({
+            'voucher_code': 'UNITTEST_VOUCHER',
+            'partner_id': self.client.id,
+            'voucher_amount': 150,
+        })
+
+        self.assertEqual(False, program.automatic)
+        self.assertEqual(1, program.max_use)
+        self.assertEqual(0, program.nb_use)
+        self.assertEqual(True, program.code_valid)
+
+        self.assertEqual(1, len(program.action_ids))
+        self.assertEqual('product_add', program.action_ids.type_action)
+        self.assertEqual(-150, program.action_ids.product_add_price)
+
+        program.voucher_amount = 200
+
+        self.assertEqual(1, len(program.action_ids))
+        self.assertEqual('product_add', program.action_ids.type_action)
+        self.assertEqual(-200, program.action_ids.product_add_price)
+
+        program.action_ids.product_add_price = -100
+
+        self.assertEqual(100, program.voucher_amount)
+
+        program.sale_confirmed()
+
+        self.assertEqual(1, program.max_use)
+        self.assertEqual(1, program.nb_use)
+
+        self.assertEqual(False, program.code_valid)
+
+        program.sale_cancelled()
+        self.assertEqual(1, program.max_use)
+        self.assertEqual(0, program.nb_use)
+
+        self.assertEqual(True, program.code_valid)
+
+        program.expiration_date = date.today() - timedelta(days=1)
+
+        self.assertEqual(False, program.code_valid)

@@ -3,7 +3,6 @@
     <data>
         <template id="page_endnote">
             <div class="row" style="page-break-before:always">
-                <t t-debug="pdb"/>
                 <div t-raw="xx.env['report.page.endnote'].render(xx)" style="font-size:12px; text-align:justify;"/>
             </div>
         </template>

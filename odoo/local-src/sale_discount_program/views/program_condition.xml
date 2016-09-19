@@ -14,6 +14,7 @@
                         <field name="product_category_id" attrs="{'required': [('type_condition', '=', 'product_category')]}"/>
                         <field name="product_min_price_unit"/>
                         <field name="product_min_qty"/>
+                        <field name="product_max_qty"/>
                     </group>
                 </sheet>
             </form>
@@ -26,6 +27,7 @@
         <field name="model">sale.discount.program.condition</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="sequence" widget="handle"/>
                 <field name="name"/>
             </tree>
         </field>

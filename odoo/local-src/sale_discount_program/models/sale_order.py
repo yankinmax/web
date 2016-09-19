@@ -2,7 +2,8 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, fields, models
+from openerp import _, api, fields, models
+from openerp.exceptions import UserError
 
 
 class SaleOrder(models.Model):
@@ -10,19 +11,69 @@ class SaleOrder(models.Model):
 
     applied_program_ids = fields.Many2many(
         comodel_name='sale.discount.program',
+        relation='sale_order_applied_program'
     )
+
+    program_code_ids = fields.Many2many(
+        comodel_name='sale.discount.program',
+        domain=[
+            '|', ('promo_code', '!=', False), ('voucher_code', '!=', False)
+        ],
+        string='Discount Codes'
+    )
+
+    pricelist_program = fields.Boolean()
+
+    @api.onchange('pricelist_id')
+    def onchange_pricelist_id(self):
+        self.pricelist_program = False
 
     @api.multi
     def apply_discount_programs(self):
-        # TODO: Each program should reset itself ? (e.g. reset pricelist)
-        # TODO: reset counter
-        for line in self.mapped('order_line'):
-            if line.source_program_id:
-                line.unlink()
+        self.ensure_one()
+        if not self.order_line:
+            raise UserError(
+                _('You need to add order lines before apply discount')
+            )
+        program_model = self.env['sale.discount.program']
+        program_model.reset_sale_programs(self)
 
-        programs = self.env['sale.discount.program'].search([])
+        programs = program_model.sort_programs(
+            self.program_code_ids | program_model.get_automatic_programs()
+        )
+        programs.apply_for_sale(self)
+
+    @api.multi
+    def force_apply(self):
+        if self.env['ir.config_parameter'].get_param('force_discount_apply'):
+            for sale in self.filtered(lambda s: s.state in ('draft', 'sent')):
+                sale.apply_discount_programs()
+
+    @api.multi
+    def action_confirm(self):
+        self.force_apply()
+
         for sale in self:
-            programs.apply_for_sale(sale)
+            sale.program_code_ids.sale_confirmed()
+
+        return super(SaleOrder, self).action_confirm()
+
+    @api.multi
+    def action_cancel(self):
+        for sale in self:
+            sale.program_code_ids.sale_cancelled()
+
+        return super(SaleOrder, self).action_cancel()
+
+    @api.multi
+    def action_quotation_send(self):
+        self.force_apply()
+        super(SaleOrder, self).action_quotation_send()
+
+    @api.multi
+    def print_quotation(self):
+        self.force_apply()
+        super(SaleOrder, self).print_quotation()
 
 
 class SaleOrderLine(models.Model):
@@ -42,3 +93,10 @@ class SaleOrderLine(models.Model):
         comodel_name='sale.order.line',
         inverse_name='source_order_line_id'
     )
+
+    # True if discount field was changed by a sale.discount.program
+    discount_program = fields.Boolean()
+
+    @api.onchange('discount')
+    def onchange_discount(self):
+        self.discount_program = False

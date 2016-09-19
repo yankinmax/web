@@ -10,6 +10,8 @@ from openerp.models import MAGIC_COLUMNS
 class DiscountProgramCondition(models.Model):
     _name = 'sale.discount.program.condition'
 
+    _order = 'program_id, sequence, id'
+
     program_id = fields.Many2one(
         'sale.discount.program', required=True, ondelete='cascade'
     )
@@ -20,12 +22,15 @@ class DiscountProgramCondition(models.Model):
         ('product_category', 'Product Category'),
     ], required=True)
 
+    sequence = fields.Integer(string='Sequence', default=10)
+
     product_category_id = fields.Many2one(
         comodel_name='product.category',
         string='Product Category',
     )
 
     product_min_qty = fields.Integer('Product minimal quantity')
+    product_max_qty = fields.Integer('Product maximal quantity')
 
     product_min_price_unit = fields.Float(
         'Minimal product unit price',
@@ -35,11 +40,13 @@ class DiscountProgramCondition(models.Model):
     @api.depends('type_condition')
     def _compute_name(self):
         # TODO: call method by type_condition that can be inherited.
+
         selection_dict = {
             k: v for k, v in self._fields['type_condition'].selection
         }
         for condition in self:
-            condition.name = selection_dict[condition.type_condition]
+            if condition.type_condition:
+                condition.name = selection_dict[condition.type_condition]
 
     @api.onchange('type_condition')
     def onchange_type_condition(self):
@@ -49,6 +56,8 @@ class DiscountProgramCondition(models.Model):
         for field in self._fields.values():
             if field.name not in ignore_field and not field.compute:
                 self[field.name] = False
+
+        self._compute_name()
 
     @api.multi
     def _check_product_category(self, sale):
@@ -68,9 +77,13 @@ class DiscountProgramCondition(models.Model):
         if not lines:
             return False
 
-        if self.product_min_qty:
+        if self.product_min_qty or self.product_max_qty:
             # TODO: compute with UOM
-            if sum(lines.mapped('product_uom_qty')) < self.product_min_qty:
+            qty = sum(lines.mapped('product_uom_qty'))
+            if self.product_min_qty and qty < self.product_min_qty:
+                return False
+
+            if self.product_max_qty and qty > self.product_max_qty:
                 return False
 
         return True

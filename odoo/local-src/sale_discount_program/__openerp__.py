@@ -13,11 +13,12 @@
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
-        'data/discount_program_data.xml',
+        'data/program_sequence.xml',
         'security/ir.model.access.csv',
         'views/program.xml',
         'views/program_action.xml',
         'views/program_condition.xml',
+        'views/res_config.xml',
         'views/sale.xml',
     ],
     'installable': True,

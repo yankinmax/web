@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sales_config" model="ir.ui.view">
+        <field name="model">sale.config.settings</field>
+        <field name="inherit_id" ref="sale_discount_program.view_sales_config"/>
+        <field name="arch" type="xml">
+            <field name="force_discount_apply" position="after">
+                <field name="voucher_percent"/>
+                <field name="voucher_max_amount"/>
+                <field name="voucher_max_count"/>
+                <field name="voucher_default_validity"/>
+            </field>
+        </field>
+    </record>
+</odoo>

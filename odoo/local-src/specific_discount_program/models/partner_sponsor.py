@@ -34,5 +34,3 @@ class PartnerSponsor(models.Model):
         for sponsor in self:
             sponsor.active = sponsor.partner_id.active \
                 and sponsor.partner_id.already_bought
-
-    # TODO: city

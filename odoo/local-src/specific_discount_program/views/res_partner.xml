@@ -4,7 +4,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <field name="lastname" position="before">
+            <field name="type" position="before">
                 <field name="sponsor_id" options="{'no_create' : True, 'no_open': True}"/>
             </field>
         </field>

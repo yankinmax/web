@@ -5,8 +5,17 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <button name="action_done" position="after">
-                <button name="apply_discount_programs" string="Apply discounts" type="object"/>
+                <button name="apply_discount_programs" states="draft" string="Apply discounts" type="object"/>
             </button>
+
+            <field name="partner_id" position="after">
+                <field name="program_code_ids" widget="many2many_tags"
+                       options="{'no_create' : True, 'no_open': True}"
+                       domain="['|',
+                                '&amp;', ('promo_code', '!=', False), ('code_valid', '=', True),
+                                '&amp;', '&amp;', ('voucher_code', '!=', False), ('code_valid', '=', True), ('partner_id', '=', partner_id)
+                               ]"/>
+            </field>
         </field>
     </record>
 </odoo>

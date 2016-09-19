@@ -5,4 +5,5 @@
 from . import program
 from . import program_action
 from . import program_condition
+from . import res_config
 from . import sale_order
