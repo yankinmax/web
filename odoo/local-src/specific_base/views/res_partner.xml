@@ -72,9 +72,6 @@
             <field name="function" position="attributes">
                 <attribute name="invisible">1</attribute>
             </field>
-            <field name="lang" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </field>
             <xpath expr="//field[@name='opt_out']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
@@ -161,9 +158,8 @@
                     </group>
                 </page>
                 <page name="survey" string="Diagnostic">
-                    <button name="take_me_to_diagnostic_survey" type="object" string="Fill Diagnostic" class="oe_highlight" attrs="{'invisible': [('survey_done', '!=', False)]}"/>
-                    <field name="survey_done" groups="base.group_no_one"/>
-                    <group name="survey_answers" string="Answers" attrs="{'invisible': [('survey_done', '=', False)]}">
+                    <button name="take_me_to_diagnostic_survey" type="object" string="Fill Diagnostic" class="oe_highlight"/>
+                    <group name="survey_answers" string="Answers">
                         <field name="survey_input_lines">
                             <tree>
                                 <field name="survey_id"/>
