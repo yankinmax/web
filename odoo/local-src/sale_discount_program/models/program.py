@@ -28,7 +28,7 @@ class Program(models.Model):
         'Voucher code', default=lambda self: self._default_voucher_code()
     )
 
-    partner_id = fields.Many2one(comodel_name='res.partner')
+    partner_id = fields.Many2one(comodel_name='res.partner', string='Customer')
 
     expiration_date = fields.Date()
     nb_use = fields.Integer()
@@ -119,7 +119,7 @@ class Program(models.Model):
                     "action_ids": [(0, False, {
                         'type_action': 'product_add',
                         'product_add_id': self.env.ref(
-                            'scenario.product_voucher'
+                            'sale_discount_program.product_voucher'
                         ).id,
                         'product_add_price': product_add_price,
                         'allow_negative_total': False,

@@ -30,28 +30,21 @@ class AccountInvoice(models.Model):
                 months=months_validity
             )
 
-        program_sequence = self.env['ir.sequence']
         self.sudo().write({
             'discount_program_ids': [(0, False, {
                 'partner_id': partner_id,
                 'combinable': False,
-                'voucher_code': program_sequence.next_by_code(
-                    'sale.discount.program'
+                'voucher_code': self.env['ir.sequence'].next_by_code(
+                    'discount.program.voucher_code'
                 ),
+                'voucher_amount': self.get_voucher_amount(),
                 'max_use': 1,
                 'expiration_date': expiration_date,
-                'action_ids': [(0, False, {
-                    'type_action': 'product_add',
-                    'product_add_id': self.env.ref(
-                        'scenario.product_voucher'
-                    ).id,
-                    'product_add_price': self.get_voucher_price(),
-                })]
             })]
         })
 
     @api.multi
-    def get_voucher_price(self):
+    def get_voucher_amount(self):
         """ Compute the amount for the voucher based on invoice amount.
         """
         self.ensure_one()
@@ -59,11 +52,11 @@ class AccountInvoice(models.Model):
         percent = float(icp.get_param('voucher_percent', '10'))
         max_amount = int(icp.get_param('voucher_max_amount', '100'))
 
-        price = -1 * min(
+        amount = min(
             self.amount_total * percent / 100,
             max_amount
         )
-        return price
+        return amount
 
     @api.multi
     def confirm_paid(self):

@@ -20,8 +20,14 @@ class TestProgram(TransactionCase):
         for sponsor in self.sponsor_model.search([]):
             sponsor.unlink()
 
-        self.sponsor_pricelist = self.env.ref('scenario.pricelist_sponsorship')
-        if not self.sponsor_pricelist:
+        for program in self.program_model.search([]):
+            program.unlink()
+
+        try:
+            self.sponsor_pricelist = self.env.ref(
+                'scenario.pricelist_sponsorship'
+            )
+        except ValueError:
             self.sponsor_pricelist = self.env['product.pricelist'].create({
                 'name': 'Unittest sponsor pricelist',
             })
@@ -66,7 +72,7 @@ class TestProgram(TransactionCase):
             'partner_id': partner2.id,
             'pricelist_id': self.sponsor_pricelist.id,
             'order_line': [(0, 0, {
-                'product_id': self.p1.id, 'product_uom_qty': 1
+                'product_id': self.p1.id, 'product_uom_qty': 1,
             })]
         })
         sale.action_confirm()
@@ -78,12 +84,38 @@ class TestProgram(TransactionCase):
 
         invoice.confirm_paid()
 
+        self.assertEqual(2, self.program_model.search_count([
+            ('voucher_code', '!=', False)
+        ]))
+
         # One voucher for the client
         self.assertEqual(1, self.program_model.search_count([
             ('partner_id', '=', partner2.id)
         ]))
 
         # One voucher for the sponsor
+        self.assertEqual(1, self.program_model.search_count([
+            ('partner_id', '=', self.partner1.id)
+        ]))
+
+        # Simulate that sponsor used his voucher but the client does not
+        sponsor_voucher = self.program_model.search([
+            ('partner_id', '=', self.partner1.id)
+        ])
+        sponsor_voucher.nb_use = 1
+
+        # Refund the invoice
+        invoice.refund()
+
+        # Unused voucher has been deleted
+        self.assertEqual(1, self.program_model.search_count([
+            ('voucher_code', '!=', False)
+        ]))
+
+        self.assertEqual(0, self.program_model.search_count([
+            ('partner_id', '=', partner2.id)
+        ]))
+
         self.assertEqual(1, self.program_model.search_count([
             ('partner_id', '=', self.partner1.id)
         ]))

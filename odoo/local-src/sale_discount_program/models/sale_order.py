@@ -68,12 +68,12 @@ class SaleOrder(models.Model):
     @api.multi
     def action_quotation_send(self):
         self.force_apply()
-        super(SaleOrder, self).action_quotation_send()
+        return super(SaleOrder, self).action_quotation_send()
 
     @api.multi
     def print_quotation(self):
         self.force_apply()
-        super(SaleOrder, self).print_quotation()
+        return super(SaleOrder, self).print_quotation()
 
 
 class SaleOrderLine(models.Model):

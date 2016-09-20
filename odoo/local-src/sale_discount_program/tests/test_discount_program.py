@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from datetime import timedelta, date
 
-from openerp.tests.common import TransactionCase
+from openerp.tests.common import TransactionCase, post_install, at_install
 
 
 class TestDiscountProgram(TransactionCase):
@@ -41,6 +41,8 @@ class TestDiscountProgram(TransactionCase):
             'categ_id': self.product_category.id,
         })
 
+    @post_install(True)
+    @at_install(False)
     def test_product_add(self):
         product_to_add = self.product_model.create({
             'name': 'Unittest gift product',
@@ -62,6 +64,15 @@ class TestDiscountProgram(TransactionCase):
                 })
             ]
         })
+        self.assertEqual(
+            'Product Category: Unittest product category',
+            program.condition_ids[0].name
+        )
+
+        self.assertEqual(
+            'Add product: Unittest gift product',
+            program.action_ids[0].name
+        )
 
         sale = self.sale_model.create({
             'partner_id': self.client.id,
@@ -98,6 +109,8 @@ class TestDiscountProgram(TransactionCase):
             sale.order_line.mapped('product_id')
         )
 
+    @post_install(True)
+    @at_install(False)
     def test_product_discount(self):
         program = self.program_model.create({
             'name': 'Unittest reward product program',
@@ -117,6 +130,16 @@ class TestDiscountProgram(TransactionCase):
                 })
             ]
         })
+
+        self.assertEqual(
+            'Product Category: Unittest product category',
+            program.condition_ids[0].name
+        )
+
+        self.assertEqual(
+            'Discount: 20.0% on Most expensive without discount',
+            program.action_ids[0].name
+        )
 
         sale = self.sale_model.create({
             'partner_id': self.client.id,
@@ -188,6 +211,8 @@ class TestDiscountProgram(TransactionCase):
         sale.order_line[0].discount = 20
         sale.order_line[1].discount = 10
 
+    @post_install(True)
+    @at_install(False)
     def test_voucher_code(self):
 
         program = self.program_model.create({
@@ -231,3 +256,38 @@ class TestDiscountProgram(TransactionCase):
         program.expiration_date = date.today() - timedelta(days=1)
 
         self.assertEqual(False, program.code_valid)
+
+    @post_install(True)
+    @at_install(False)
+    def test_voucher_negative_total(self):
+
+        program = self.program_model.create({
+            'voucher_code': 'UNITTEST_VOUCHER',
+            'partner_id': self.client.id,
+            'voucher_amount': 150,
+        })
+
+        sale = self.sale_model.create({
+            'partner_id': self.client.id,
+            'program_code_ids': [(6, False, [program.id])],
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'price_unit': 100,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ]
+        })
+
+        self.assertEqual(100, sale.amount_total)
+
+        sale.apply_discount_programs()
+        self.assertEqual(0, sale.amount_total)
+        self.assertEqual(-100, sale.order_line[1].price_unit)
+
+        program.action_ids[0].allow_negative_total = True
+
+        sale.apply_discount_programs()
+        self.assertEqual(-50, sale.amount_total)
+        self.assertEqual(-150, sale.order_line[1].price_unit)

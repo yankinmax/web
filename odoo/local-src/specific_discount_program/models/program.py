@@ -11,6 +11,7 @@ class Program(models.Model):
 
     allowed_company_ids = fields.Many2many(
         comodel_name='res.company',
+        string='Allowed company',
     )
 
     @api.model

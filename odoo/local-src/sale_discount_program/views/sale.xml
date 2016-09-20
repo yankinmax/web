@@ -5,7 +5,7 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <button name="action_done" position="after">
-                <button name="apply_discount_programs" states="draft" string="Apply discounts" type="object"/>
+                <button name="apply_discount_programs" states="draft,sent" string="Apply discounts" type="object"/>
             </button>
 
             <field name="partner_id" position="after">
