@@ -3,6 +3,22 @@
 Release History
 ---------------
 
+9.3.0 (2016-09-20)
+++++++++++++++++++
+
+**Features and Improvements**
+
+* Discount Programs and voucher/promo codes.
+* Sponsorship management.
+
+**Bugfixes**
+
+* Constraint message is not raw sql error anymore
+* Phototherapist required on SO
+* Show 'lang' field in contact form
+* Show answer to survey
+
+
 9.2.0 (2016-09-08)
 ++++++++++++++++++
 
