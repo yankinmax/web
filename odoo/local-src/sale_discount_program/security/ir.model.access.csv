@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_discount_program,access_sale_discount_program,model_sale_discount_program,,1,0,0,0
+access_sale_discount_program_action,access_sale_discount_program_action,model_sale_discount_program_action,,1,0,0,0
+access_sale_discount_program_condition,access_sale_discount_program_condition,model_sale_discount_program_condition,,1,0,0,0

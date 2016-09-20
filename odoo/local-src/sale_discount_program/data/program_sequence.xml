@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="seq_sale_discount_program_voucher" model="ir.sequence">
+        <field name="name">Voucher Sequence</field>
+        <field name="code">discount.program.voucher_code</field>
+        <field name="prefix">VOU/</field>
+        <field name="padding">5</field>
+    </record>
+</odoo>

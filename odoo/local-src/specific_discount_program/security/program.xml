@@ -1,0 +1,9 @@
+<odoo>
+    <record id="program_company_rule" model="ir.rule">
+        <field name="name" >Discount Program Center Rule</field>
+        <field name="model_id" ref="model_sale_discount_program"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|', ('allowed_company_ids','=',False), ('allowed_company_ids','parent_of', user.company_id.id)]</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

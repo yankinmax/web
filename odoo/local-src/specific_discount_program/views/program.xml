@@ -1,0 +1,39 @@
+<odoo>
+
+    <record id="sale_discount_program_form" model="ir.ui.view">
+        <field name="model">sale.discount.program</field>
+        <field name="inherit_id" ref="sale_discount_program.sale_discount_program_form"/>
+        <field name="arch" type="xml">
+            <field name="program_name" position="after">
+                <field name="allowed_company_ids" widget="many2many_tags" invisible="context.get('program_voucher')"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="sale_discount_program_code_form" model="ir.ui.view">
+        <field name="inherit_id" ref="sale_discount_program.sale_discount_program_code_form"/>
+        <field name="model">sale.discount.program</field>
+        <field name="arch" type="xml">
+            <field name="combinable" position="attributes">
+                <attribute name="invisible">not context.get('program_voucher')</attribute>
+            </field>
+
+            <group name="promo_code_group" position="before">
+                <group>
+                    <field name="allowed_company_ids" widget="many2many_tags" invisible="context.get('program_voucher')"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+    <!-- Displays Program menus only for depiltech admin -->
+    <record id="sale_discount_program.menu_discount_program" model="ir.ui.menu">
+       <field name="groups_id" eval="[(4, ref('specific_base.group_admin_depiltech'))]"/>
+    </record>
+    <record id="sale_discount_program.menu_discount_promo" model="ir.ui.menu">
+       <field name="groups_id" eval="[(4, ref('specific_base.group_admin_depiltech'))]"/>
+    </record>
+    <record id="sale_discount_program.menu_discount_voucher" model="ir.ui.menu">
+       <field name="groups_id" eval="[(4, ref('specific_base.group_admin_depiltech'))]"/>
+    </record>
+</odoo>

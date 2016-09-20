@@ -113,7 +113,6 @@
                 <field name="provenance"/>
             </field>
             <field name="lastname" position="before">
-                <field name="sponsor_ids" widget="many2many_tags"/>
                 <field name="phototherapist_id" attrs="{'required': [('is_company', '=', False)]}"/>
                 <field name="title" attrs="{'required': [('is_company', '=', False)]}"/>
             </field>

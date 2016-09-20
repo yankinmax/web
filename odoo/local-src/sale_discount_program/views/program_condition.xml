@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Condition form view -->
+    <record id="sale_discount_program_condition_form" model="ir.ui.view">
+        <field name="name">sale.discount.program.condition.form</field>
+        <field name="model">sale.discount.program.condition</field>
+        <field name="arch" type="xml">
+            <form string="Condition">
+                <sheet>
+                    <group>
+                        <field name="name" invisible="1"/>
+                        <field name="type_condition"/>
+                    </group>
+                    <group attrs="{'invisible': [('type_condition', '!=', 'product_category')]}">
+                        <field name="product_category_id" attrs="{'required': [('type_condition', '=', 'product_category')]}"/>
+                        <field name="product_min_price_unit"/>
+                        <field name="product_min_qty"/>
+                        <field name="product_max_qty"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Condition tree view -->
+    <record id="sale_discount_program_condition_tree" model="ir.ui.view">
+        <field name="name">sale.discount.program.condition.tree</field>
+        <field name="model">sale.discount.program.condition</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Action form view -->
+    <record id="sale_discount_program_action_form" model="ir.ui.view">
+        <field name="name">sale.discount.program.action.form</field>
+        <field name="model">sale.discount.program.action</field>
+        <field name="arch" type="xml">
+            <form string="Action">
+                <sheet>
+                    <group>
+                        <field name="name" invisible="1"/>
+                        <field name="type_action"/>
+                    </group>
+                    <group name="action_product_add" attrs="{'invisible': [('type_action', '!=', 'product_add')]}">
+                        <field name="product_add_id" attrs="{'required': [('type_action', '=', 'product_add')]}"/>
+                        <field name="product_add_price"/>
+                        <field name="allow_negative_total" attrs="{'invisible': [('product_add_price', '>=', 0)]}"/>
+                    </group>
+
+                    <group name="action_product_discount" attrs="{'invisible': [('type_action', '!=', 'product_discount')]}">
+                        <field name="product_discount_selection" attrs="{'required': [('type_action', '=', 'product_discount')]}"/>
+                        <field name="discount_percent" attrs="{'required': [('type_action', '=', 'product_discount')]}"/>
+                    </group>
+
+                    <group name="action_set_pricelist" attrs="{'invisible': [('type_action', '!=', 'change_pricelist')]}">
+                        <field name="pricelist_id" attrs="{'required': [('type_action', '=', 'change_pricelist')]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action tree view -->
+    <record id="sale_discount_program_action_tree" model="ir.ui.view">
+        <field name="name">sale.discount.program.action.tree</field>
+        <field name="model">sale.discount.program.action</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
