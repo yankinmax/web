@@ -26,4 +26,14 @@
         </field>
     </record>
 
+    <!-- Displays Program menus only for depiltech admin -->
+    <record id="sale_discount_program.menu_discount_program" model="ir.ui.menu">
+       <field name="groups_id" eval="[(4, ref('specific_base.group_admin_depiltech'))]"/>
+    </record>
+    <record id="sale_discount_program.menu_discount_promo" model="ir.ui.menu">
+       <field name="groups_id" eval="[(4, ref('specific_base.group_admin_depiltech'))]"/>
+    </record>
+    <record id="sale_discount_program.menu_discount_voucher" model="ir.ui.menu">
+       <field name="groups_id" eval="[(4, ref('specific_base.group_admin_depiltech'))]"/>
+    </record>
 </odoo>

@@ -2,7 +2,7 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, fields, models
+from openerp import _, api, fields, models
 from openerp.addons import decimal_precision as dp
 from openerp.models import MAGIC_COLUMNS
 
@@ -100,7 +100,7 @@ class DiscountProgramCondition(models.Model):
     def _get_product_category_name(self):
         self.ensure_one()
         if self.product_category_id:
-            return "Product Category: %s" % self.product_category_id.name
+            return _("Product Category: %s") % self.product_category_id.name
 
     @api.multi
     def check(self, sale):

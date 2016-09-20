@@ -2,7 +2,7 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, fields, models
+from openerp import _, api, fields, models
 from openerp.addons import decimal_precision as dp
 from openerp.models import MAGIC_COLUMNS
 
@@ -100,7 +100,7 @@ class DiscountProgramAction(models.Model):
     def _get_product_add_name(self):
         self.ensure_one()
         if self.product_add_id:
-            return "Add product: %s" % self.product_add_id.name
+            return _("Add product: %s") % self.product_add_id.name
 
     @api.multi
     def _get_discount_target(self, sale):
@@ -135,7 +135,7 @@ class DiscountProgramAction(models.Model):
         }
 
         if self.product_discount_selection and self.discount_percent:
-            return "Discount: %s%% on %s" % (
+            return _("Discount: %s%% on %s") % (
                 self.discount_percent,
                 selection_dict[self.product_discount_selection]
             )
@@ -151,7 +151,7 @@ class DiscountProgramAction(models.Model):
     def _get_change_pricelist_name(self):
         self.ensure_one()
         if self.pricelist_id:
-            return "Change pricelist to %s" % self.pricelist_id.name
+            return _("Change pricelist to %s") % self.pricelist_id.name
 
     @api.multi
     def apply(self, sale):

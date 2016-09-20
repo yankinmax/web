@@ -7,10 +7,10 @@
         <field name="arch" type="xml">
             <form string="Sale Discount Program">
                 <group>
-                    <field name="program_name"/>
+                    <field name="program_name" required="1"/>
                     <field name="combinable"/>
-                    <field name="condition_ids"/>
-                    <field name="action_ids"/>
+                    <field name="condition_ids" required="1"/>
+                    <field name="action_ids" required="1"/>
                 </group>
             </form>
         </field>
