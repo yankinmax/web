@@ -37,6 +37,36 @@ Feature: Parameter the new database
       | date_format   | %d/%m/%Y |
       | thousands_sep | ,        |
 
+  @modules
+  Scenario: install modules
+    Given I install the required modules with dependencies
+      | name                                 |
+      # oca/ocb
+      | account                              |
+      | sale                                 |
+      | crm                                  |
+      | survey                               |
+      # OCA addons
+      | web_easy_switch_company              |
+      | server_environment                   |
+      | mail_environment                     |
+      | l10n_fr_siret                        |
+      | partner_firstname                    |
+      | web_duplicate_visibility             |
+      | partner_survey                       |
+      | base_phone                           |
+      | account_fiscal_year                  |
+      | account_move_locking                 |
+      | account_financial_report_qweb        |
+      | account_bank_statement_import_ofx    |
+      | account_banking_sepa_credit_transfer |
+      # local-src
+      | server_environment_files             |
+      | report_page_endnote                  |
+      | fields_regex_validation              |
+      | specific_base                        |
+      | specific_discount_program            |
+
   @company
   Scenario: Configure main partner and company
   Given I need a "res.partner" with oid: scen.partner_agency_holding
@@ -54,36 +84,20 @@ Feature: Parameter the new database
        | company_type | company                   |
   Given I need a "res.company" with oid: scen.agency_holding
     And having:
-       | key         | value                               |
-       | name        | Agencies Holding                    |
-       | street      |                                     |
-       | street2     |                                     |
-       | zip         |                                     |
-       | city        |                                     |
-       | country_id  | by code: FR                         |
-       | phone       | +33 00 000 00 00                    |
-       | fax         | +33 00 000 00 00                    |
-       | website     |                                     |
-       | currency_id | by name: EUR                        |
-       | partner_id  | by oid: scen.partner_agency_holding |
-       | parent_id   | by oid: base.main_company           |
-
-  @modules
-  Scenario: install modules
-    Given I install the required modules with dependencies
-        | name                    |
-        # oca/ocb
-        | account                 |
-        | sale                    |
-        | crm                     |
-        # | survey                  |
-        | web_easy_switch_company |
-        # OCA/server-tools
-        # | disable_openerp_online  |
-        | server_environment       |
-        | mail_environment         |
-        # local-src
-        | server_environment_files |
+      | key                | value                               |
+      | name               | Agencies Holding                    |
+      | street             |                                     |
+      | street2            |                                     |
+      | zip                |                                     |
+      | city               |                                     |
+      | country_id         | by code: FR                         |
+      | phone              | +33 00 000 00 00                    |
+      | fax                | +33 00 000 00 00                    |
+      | website            |                                     |
+      | currency_id        | by name: EUR                        |
+      | can_create_product | True                                |
+      | partner_id         | by oid: scen.partner_agency_holding |
+      | parent_id          | by oid: base.main_company           |
 
   @mail @outgoing @mailtrap
   Scenario: Create the outgoing mail server
