@@ -20,6 +20,7 @@ class DiscountProgramCondition(models.Model):
 
     type_condition = fields.Selection([
         ('product_category', 'Product Category'),
+        ('product', 'Product'),
     ], required=True)
 
     sequence = fields.Integer(string='Sequence', default=10)
@@ -27,6 +28,11 @@ class DiscountProgramCondition(models.Model):
     product_category_id = fields.Many2one(
         comodel_name='product.category',
         string='Product Category',
+    )
+
+    product_id = fields.Many2one(
+        comodel_name='product.product',
+        string='Product',
     )
 
     product_min_qty = fields.Integer('Product minimal quantity')
@@ -72,22 +78,45 @@ class DiscountProgramCondition(models.Model):
         """ This condition type check number of products for the specified
         product category in the sale.
         """
-        lines = sale.order_line.filtered(
+        return self._order_lines_conditions(sale.order_line.filtered(
             lambda l: l.product_id.categ_id == self.product_category_id
-        )
-        if not lines:
+        ))
+
+    @api.multi
+    def _get_product_category_name(self):
+        self.ensure_one()
+        if self.product_category_id:
+            return _("Product Category: %s") % self.product_category_id.name
+
+    @api.multi
+    def _check_product(self, sale):
+        """ This condition type check number of specified product.
+        """
+        return self._order_lines_conditions(sale.order_line.filtered(
+            lambda l: l.product_id == self.product_id
+        ))
+
+    @api.multi
+    def _get_product_name(self):
+        self.ensure_one()
+        if self.product_id:
+            return _("Product: %s") % self.product_id.name
+
+    @api.multi
+    def _order_lines_conditions(self, order_lines):
+        if not order_lines:
             return False
 
         if self.product_min_price_unit:
-            lines = lines.filtered(
+            order_lines = order_lines.filtered(
                 lambda l: l.price_unit >= self.product_min_price_unit
             )
-        if not lines:
+        if not order_lines:
             return False
 
         if self.product_min_qty or self.product_max_qty:
             # TODO: compute with UOM
-            qty = sum(lines.mapped('product_uom_qty'))
+            qty = sum(order_lines.mapped('product_uom_qty'))
             if self.product_min_qty and qty < self.product_min_qty:
                 return False
 
@@ -95,12 +124,6 @@ class DiscountProgramCondition(models.Model):
                 return False
 
         return True
-
-    @api.multi
-    def _get_product_category_name(self):
-        self.ensure_one()
-        if self.product_category_id:
-            return _("Product Category: %s") % self.product_category_id.name
 
     @api.multi
     def check(self, sale):

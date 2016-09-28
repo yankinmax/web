@@ -58,8 +58,8 @@ class TestDiscountProgram(TransactionCase):
             'name': 'Unittest gift product program',
             'condition_ids': [
                 (0, False, {
-                    'type_condition': 'product_category',
-                    'product_category_id': self.product_category.id,
+                    'type_condition': 'product',
+                    'product_id': self.p1.id,
                 })
             ],
             'action_ids': [
@@ -70,7 +70,7 @@ class TestDiscountProgram(TransactionCase):
             ]
         })
         self.assertEqual(
-            'Product Category: Unittest product category',
+            'Product: Unittest P1',
             program.condition_ids[0].name
         )
 
@@ -85,12 +85,21 @@ class TestDiscountProgram(TransactionCase):
             'phototherapist_id': self.phototherapist.id,
             'order_line': [
                 (0, False, {
-                    'product_id': self.p1.id,
+                    'product_id': self.p2.id,
                     'product_uom_qty': 1,
                     'product_uom': self.ref('product.product_uom_unit'),
                 })
             ]
         })
+
+        # Not the godd product
+        sale.apply_discount_programs()
+
+        self.assertEqual(1, len(sale.order_line))
+        self.assertEqual(self.p2, sale.order_line.product_id)
+
+        # Change the quotation product to p1
+        sale.order_line.product_id = self.p1
 
         sale.apply_discount_programs()
 
