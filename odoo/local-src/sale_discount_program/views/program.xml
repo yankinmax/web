@@ -41,6 +41,7 @@
                 <group>
                     <field name="combinable"/>
                     <field name="expiration_date"/>
+                    <field name="nb_use" invisible="context.get('program_voucher')"/>
                     <field name="max_use" invisible="context.get('program_voucher')"/>
                 </group>
                 <group invisible="context.get('program_voucher')">

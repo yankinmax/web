@@ -138,7 +138,7 @@ class Program(models.Model):
                     if program.expiration_date < today:
                         code_valid = False
 
-                if program.nb_use >= program.max_use:
+                if program.max_use and program.nb_use >= program.max_use:
                     code_valid = False
 
             program.code_valid = code_valid

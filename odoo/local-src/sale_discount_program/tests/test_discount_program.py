@@ -21,6 +21,11 @@ class TestDiscountProgram(TransactionCase):
         self.program_model = self.env['sale.discount.program']
         self.sale_model = self.env['sale.order']
 
+        self.phototherapist = self.env['res.company.phototherapist'].create({
+            'name': 'Unittest phototherapist',
+            'company_id': self.env.user.company_id.id
+        })
+
         for program in self.program_model.search([]):
             program.unlink()
 
@@ -53,8 +58,8 @@ class TestDiscountProgram(TransactionCase):
             'name': 'Unittest gift product program',
             'condition_ids': [
                 (0, False, {
-                    'type_condition': 'product_category',
-                    'product_category_id': self.product_category.id,
+                    'type_condition': 'product',
+                    'product_id': self.p1.id,
                 })
             ],
             'action_ids': [
@@ -65,7 +70,7 @@ class TestDiscountProgram(TransactionCase):
             ]
         })
         self.assertEqual(
-            'Product Category: Unittest product category',
+            'Product: Unittest P1',
             program.condition_ids[0].name
         )
 
@@ -76,14 +81,25 @@ class TestDiscountProgram(TransactionCase):
 
         sale = self.sale_model.create({
             'partner_id': self.client.id,
+            # TODO: remove if OCA
+            'phototherapist_id': self.phototherapist.id,
             'order_line': [
                 (0, False, {
-                    'product_id': self.p1.id,
+                    'product_id': self.p2.id,
                     'product_uom_qty': 1,
                     'product_uom': self.ref('product.product_uom_unit'),
                 })
             ]
         })
+
+        # Not the godd product
+        sale.apply_discount_programs()
+
+        self.assertEqual(1, len(sale.order_line))
+        self.assertEqual(self.p2, sale.order_line.product_id)
+
+        # Change the quotation product to p1
+        sale.order_line.product_id = self.p1
 
         sale.apply_discount_programs()
 
@@ -142,6 +158,8 @@ class TestDiscountProgram(TransactionCase):
         )
 
         sale = self.sale_model.create({
+            # TODO: remove if OCA
+            'phototherapist_id': self.phototherapist.id,
             'partner_id': self.client.id,
             'order_line': [
                 (0, False, {
@@ -224,6 +242,7 @@ class TestDiscountProgram(TransactionCase):
         self.assertEqual(False, program.automatic)
         self.assertEqual(1, program.max_use)
         self.assertEqual(0, program.nb_use)
+        self.assertEqual(False, program.used)
         self.assertEqual(True, program.code_valid)
 
         self.assertEqual(1, len(program.action_ids))
@@ -244,7 +263,15 @@ class TestDiscountProgram(TransactionCase):
 
         self.assertEqual(1, program.max_use)
         self.assertEqual(1, program.nb_use)
+        self.assertEqual(True, program.used)
 
+        self.assertEqual(False, program.code_valid)
+
+        # If max_use = 0, there is no limit
+        program.max_use = 0
+        self.assertEqual(True, program.code_valid)
+
+        program.max_use = 1
         self.assertEqual(False, program.code_valid)
 
         program.sale_cancelled()
@@ -269,6 +296,8 @@ class TestDiscountProgram(TransactionCase):
 
         sale = self.sale_model.create({
             'partner_id': self.client.id,
+            # TODO: remove if OCA
+            'phototherapist_id': self.phototherapist.id,
             'program_code_ids': [(6, False, [program.id])],
             'order_line': [
                 (0, False, {
