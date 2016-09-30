@@ -1,0 +1,374 @@
+id,categ_id/id,name,list_price
+scenario.product_product_1,scenario.product_category_depil_femme_forfait,Dépilation Aisselles Femme,366.666667
+scenario.product_product_2,scenario.product_category_depil_femme_forfait,Dépilation Lèvre Supérieure  Forfait 6 Séances (zone Hormono-dépendante),208.333333
+scenario.product_product_3,scenario.product_category_depil_femme_forfait,Dépilation Inter - Sourcilier,166.666667
+scenario.product_product_4,scenario.product_category_complement_maillot,Dépilation Maillot échancré Complément (625€),232.5
+scenario.product_product_5,scenario.product_category_complement_maillot,Dépilation Maillot Américain Complément (725€),315.833333
+scenario.product_product_6,scenario.product_category_complement_maillot,Dépilation Maillot Intégral Complément (825€),433.333333
+scenario.product_product_7,scenario.product_category_complement_maillot,Dépilation Maillot Américain Et Sillon Inter-fessier Complément (825€),433.333333
+scenario.product_product_8,scenario.product_category_depil_maillot_femme,Dépilation Maillot Classique Femme,366.666667
+scenario.product_product_9,scenario.product_category_depil_maillot_femme,Dépilation Maillot échancré Femme,520.833333
+scenario.product_product_10,scenario.product_category_depil_maillot_femme,Dépilation Maillot Américain Femme,604.166667
+scenario.product_product_11,scenario.product_category_depil_maillot_femme,Dépilation Maillot Intégral Femme,687.5
+scenario.product_product_12,scenario.product_category_depil_maillot_femme,Dépilation Sillon Inter Fessier Femme,250
+scenario.product_product_13,scenario.product_category_depil_maillot_femme,Dépilation Maillot Echancré Femme + Dépilation Sillon Inter-fessier Femme,600
+scenario.product_product_14,scenario.product_category_depil_maillot_femme,Dépilation Maillot Américain Et Sillon Inter-fessier Femme,687.5
+scenario.product_product_15,scenario.product_category_depil_maillot_femme,Dépilation Lèvres Maillot Femme,225
+scenario.product_product_16,scenario.product_category_depil_jambe_femme,Dépilation Demi-jambes Femme,1016.666667
+scenario.product_product_17,scenario.product_category_depil_jambe_femme,Dépilation Jambes Complètes Femme ,1500
+scenario.product_product_18,scenario.product_category_depil_jambe_femme,Dépilation Fesse Femme,750
+scenario.product_product_19,scenario.product_category_depil_jambe_femme,Dépilation Cuisses Femme,1016.666667
+scenario.product_product_20,scenario.product_category_depil_jambe_femme,Dépilation 3/4 Jambes Femme,1158.333333
+scenario.product_product_21,scenario.product_category_depil_jambe_femme,Dépilation Demi-cuisses (arrière Ou Devant De Cuisses) Femme,600
+scenario.product_product_22,scenario.product_category_depil_jambe_femme,Dépilation Intérieur Cuisses Femme,391.666667
+scenario.product_product_23,scenario.product_category_depil_jambe_femme,Dépilation Rond De Fesses,375
+scenario.product_product_24,scenario.product_category_depil_jambe_femme,Dépilation Pieds Femme,333.333333
+scenario.product_product_25,scenario.product_category_depil_jambe_femme,Dépilation 3/4 Cuisses Femme,766.666667
+scenario.product_product_26,scenario.product_category_depil_visage_femme,Dépilation Lèvre Supérieure  Forfait 6 Séances (zone Hormono-dépendante),208.333333
+scenario.product_product_27,scenario.product_category_depil_visage_femme,Dépilation Menton  Forfait 6 Séances (zone Hormono-dépendante),208.333333
+scenario.product_product_28,scenario.product_category_depil_visage_femme,Dépilation Visage  Forfait 6 Séances (zone Hormono-dépendante),458.333334
+scenario.product_product_29,scenario.product_category_depil_visage_femme,Dépilation Inter - Sourcilier,166.666667
+scenario.product_product_30,scenario.product_category_depil_visage_femme,Dépilation Cou Forfait 6 Séances (zone Hormono-dépendante) Femme,333.333333
+scenario.product_product_31,scenario.product_category_depil_visage_femme,Dépilation Menton Xl Forfait 6 Séances (zone Hormono-dépendante) Femme,291.666667
+scenario.product_product_32,scenario.product_category_depil_homme_forfait,Dépilation Pommettes Homme,300
+scenario.product_product_33,scenario.product_category_depil_homme_forfait,Dépilation Barbe,583.333333
+scenario.product_product_34,scenario.product_category_depil_homme_forfait,Dépilation Demi-jambes Homme,1083.333333
+scenario.product_product_35,scenario.product_category_depil_homme_forfait,Dépilation Jambes Complète Homme,1541.666667
+scenario.product_product_36,scenario.product_category_depil_homme_forfait,Dépilation Torse Et Ventre  Forfait 6 Séances (zone Hormono-dépendante) Homme,1083.333333
+scenario.product_product_37,scenario.product_category_depil_homme_forfait,Dépilation Nuque  Forfait 6 Séances (zone Hormono-dépendante),333.333333
+scenario.product_product_38,scenario.product_category_depil_homme_forfait,Dépilation Demi-bras Homme,558.333333
+scenario.product_product_39,scenario.product_category_depil_homme_forfait,Dépilation Chemin De L'homme (bande Ventre)  Forfait 6 Séances (zone Hormono-dépendante),375
+scenario.product_product_40,scenario.product_category_depil_homme_forfait,Dépilation Cou (barbe),333.333333
+scenario.product_product_41,scenario.product_category_depil_homme_forfait,Dépilation Mains  Forfait 6 Séances (zone Hormono-dépendante),391.666667
+scenario.product_product_42,scenario.product_category_depil_homme_forfait,Dépilation Aisselles Homme,366.666667
+scenario.product_product_43,scenario.product_category_depil_homme_forfait,Dépilation Cuisse Homme,1083.333333
+scenario.product_product_44,scenario.product_category_depil_homme_forfait,Dépilation Inter - Sourcilier,166.666667
+scenario.product_product_45,scenario.product_category_depil_homme_forfait,Dépilation Torse Forfait 6 Séances (zone Hormono-dépendante) Homme,633.333333
+scenario.product_product_46,scenario.product_category_depil_homme_forfait,Dépilation Maillot Echancré Homme,520.833333
+scenario.product_product_47,scenario.product_category_depil_homme_forfait,Dépilation Bras Complet Homme,833.333333
+scenario.product_product_48,scenario.product_category_depil_homme_forfait,Dépilation Dos Forfait 6 Séances (zone Hormono-dépendante) Homme,1166.666667
+scenario.product_product_49,scenario.product_category_depil_homme_forfait,Dépilation Epaules  Forfait 6 Séances (zone Hormono-dépendante) Homme,541.666667
+scenario.product_product_50,scenario.product_category_depil_homme_forfait,Dépilation Fesses Homme,875
+scenario.product_product_51,scenario.product_category_depil_homme_forfait,Dépilation Demi-dos Forfait 6 Séances (zone Hormono-dépendante) Homme,741.666667
+scenario.product_product_52,scenario.product_category_depil_homme_forfait,Dépilation Ventre  Forfait 6 Séances (zone Hormono-dépendante) Homme,633.333333
+scenario.product_product_53,scenario.product_category_depil_homme_forfait,Dépilation Collier (zone Du Torse Hormono-dépendante) Homme,333.333333
+scenario.product_product_54,scenario.product_category_depil_homme_forfait,Dépilation Cuir Chevelu Homme,750
+scenario.product_product_55,scenario.product_category_depil_homme_forfait,Dépilation Ligne Du Cou Homme,333.333333
+scenario.product_product_56,scenario.product_category_depil_homme_forfait,Dépilation Bas Du Dos Forfait 6 Séances (zone Hormono-dépendante),458.333333
+scenario.product_product_57,scenario.product_category_depil_homme_forfait,Dépilation Pieds Homme,391.666667
+scenario.product_product_58,scenario.product_category_depil_homme_forfait,Dépilation Maillot Intégral Homme,687.5
+scenario.product_product_59,scenario.product_category_depil_homme_forfait,Dépilation Maillot Américain Et Sillon Inter-fessier Homme,687.5
+scenario.product_product_60,scenario.product_category_depil_homme_forfait,Dépilation Sillon Inter Fessier Homme,291.666667
+scenario.product_product_61,scenario.product_category_depil_homme_forfait,Dépilation Maillot Classique Homme,366.666667
+scenario.product_product_62,scenario.product_category_depil_homme_forfait,Dépilation Maillot Américain Hommes,604.166667
+scenario.product_product_63,scenario.product_category_depil_homme_forfait,Dépilation Aréoles Hommes (zone Hormono Dépendante) Forfait 6 Séances ,266.666667
+scenario.product_product_64,scenario.product_category_depil_homme_forfait,Dépilation Aisselles Hommes Offerte (440€ Offre été 2016),0
+scenario.product_product_65,scenario.product_category_depil_homme_forfait,Dépilation Maillot Classique Hommes Offert (440€ Offre été 2016),0
+scenario.product_product_66,scenario.product_category_depil_femme_seance,Dépilation Aréoles 1 Séance (zone Hormono-dépendante) Femme,53.333333
+scenario.product_product_67,scenario.product_category_depil_femme_seance,Dépilation Bande Ventre 1 Séance (zone Hormono-dépendante) Femme,58.333333
+scenario.product_product_68,scenario.product_category_depil_femme_seance,Dépilation Cou 1 Séance (zone Hormono-dépendante) Femme,66.666667
+scenario.product_product_69,scenario.product_category_depil_femme_seance,Dépilation Demi-dos 1 Séance (zone Hormono-dépendante) Femme,133.333333
+scenario.product_product_70,scenario.product_category_depil_femme_seance,Dépilation Dos 1 Séance (zone Hormono-dépendante) Femme,220
+scenario.product_product_71,scenario.product_category_depil_femme_seance,Dépilation Epaules 1 Séance (zone Hormono-dépendante) Femme,108.333333
+scenario.product_product_72,scenario.product_category_depil_femme_seance,Dépilation Lèvre Supérieure 1 Séance (zone Hormono-dépendante) Femme,41.666667
+scenario.product_product_73,scenario.product_category_depil_femme_seance,Dépilation Mains 1 Séance (zone Hormono-dépendante) Femme,75
+scenario.product_product_74,scenario.product_category_depil_femme_seance,Dépilation Menton 1 Séance (zone Hormono-dépendante) Femme,41.666667
+scenario.product_product_75,scenario.product_category_depil_femme_seance,Dépilation Nuque 1 Séance (zone Hormono Dépendante) Femme,66.666667
+scenario.product_product_76,scenario.product_category_depil_femme_seance,Dépilation Ventre 1 Séance (zone Hormono-dépendante) Femme,150
+scenario.product_product_77,scenario.product_category_depil_femme_seance,Dépilation 3/4 Jambes Femme 1 Séance,231.666667
+scenario.product_product_78,scenario.product_category_depil_femme_seance,Dépilation Aisselles Femme 1 Séance,73.333333
+scenario.product_product_79,scenario.product_category_depil_femme_seance,Dépilation Bras Complets Femme 1 Séance,150
+scenario.product_product_80,scenario.product_category_depil_femme_seance,Dépilation Cuisses Femme 1 Séance,203.333333
+scenario.product_product_81,scenario.product_category_depil_femme_seance,Dépilation Demi-bras Femme 1 Séance,103.333333
+scenario.product_product_82,scenario.product_category_depil_femme_seance,Dépilation Demi-cuisses Femme 1 Séance,120
+scenario.product_product_83,scenario.product_category_depil_femme_seance,Dépilation Demi Jambes Femme 1 Séance,203.333333
+scenario.product_product_84,scenario.product_category_depil_femme_seance,Dépilation Fesses Femme 1 Séance,150
+scenario.product_product_85,scenario.product_category_depil_femme_seance,Dépilation Inter-sourcilier Femme 1 Séance,33.333333
+scenario.product_product_86,scenario.product_category_depil_femme_seance,Dépilation Intérieur Cuisses Femme 1 Séance,94
+scenario.product_product_87,scenario.product_category_depil_femme_seance,Dépilation Jambes Complètes Femme 1 Séance,300
+scenario.product_product_88,scenario.product_category_depil_femme_seance,Dépilation Maillot Américain Et Sillon Inter-fessier Femme 1 Séance,137.5
+scenario.product_product_89,scenario.product_category_depil_femme_seance,Dépilation Maillot Américain Femme 1 Séance,120.833333
+scenario.product_product_90,scenario.product_category_depil_femme_seance,Dépilation Maillot Classique Femme 1 Séance,73.333333
+scenario.product_product_91,scenario.product_category_depil_femme_seance,Dépilation Maillot Echancré Femme 1 Séance,104.166667
+scenario.product_product_92,scenario.product_category_depil_femme_seance,Dépilation Maillot Echancré + Sillon Inter-fessier Femme 1 Séance,120
+scenario.product_product_93,scenario.product_category_depil_femme_seance,Dépilation Maillot Intégral Femme 1 Séance,137.5
+scenario.product_product_94,scenario.product_category_depil_femme_seance,Dépilation Rond De Fesses Femme 1 Séance,75
+scenario.product_product_95,scenario.product_category_depil_femme_seance,Dépilation Sillon Inter-fessier Femme 1 Séance,50
+scenario.product_product_96,scenario.product_category_depil_femme_seance,Dépilation Menton Xl 1 Séance (zone Hormono-dependante) Femme,58.333333
+scenario.product_product_97,scenario.product_category_depil_femme_seance,Dépilation Pieds 1 Séance Femme,66.666667
+scenario.product_product_98,scenario.product_category_depil_femme_seance,Dépilation Inter-poitrine 1 Séance (zone Hormono-dépendante) Femme,58.333333
+scenario.product_product_99,scenario.product_category_depil_femme_seance,Dépilation Bas Du Dos / Région Lombaire 1 Séance (zone Hormono-dépendante) Femme,58.333333
+scenario.product_product_100,scenario.product_category_depil_femme_seance,Dépilation 3/4 Cuisses Femme 1 Séance,153.333333
+scenario.product_product_101,scenario.product_category_depil_femme_seance,Dépilation Lèvres Maillot Femme 1 Séance,45
+scenario.product_product_102,scenario.product_category_depil_homme_seance,Dépilation Bas Du Dos 1 Séance (zone Hormono-dépendante) Homme,91.666667
+scenario.product_product_103,scenario.product_category_depil_homme_seance,Dépilation Chemin De L'homme (bande De Ventre) 1 Séance (zone Hormono-dépendante) Homme,75
+scenario.product_product_104,scenario.product_category_depil_homme_seance,Dépilation Demi-dos 1 Séance (zone Hormono-dépendante) Homme,148.333333
+scenario.product_product_105,scenario.product_category_depil_homme_seance,Dépilation Dos 1 Séance (zone Hormono-dépendante) Homme,233.333333
+scenario.product_product_106,scenario.product_category_depil_homme_seance,Dépilation Epaules 1 Séance (zone Hormono-dépendante) Homme,108.333333
+scenario.product_product_107,scenario.product_category_depil_homme_seance,Dépilation Mains 1 Séance (zone Hormono-dépendante) Homme,78.333333
+scenario.product_product_108,scenario.product_category_depil_homme_seance,Dépilation Nuque 1 Séance (zone Hormono Dépendante) Homme,66.666667
+scenario.product_product_109,scenario.product_category_depil_homme_seance,Dépilation Torse  Et Ventre 1 Séance (zone Hormono-dépendante) Homme,216.666667
+scenario.product_product_110,scenario.product_category_depil_homme_seance,Dépilation Torse 1 Séance (zone Hormono-dépendante) Homme,126.666667
+scenario.product_product_111,scenario.product_category_depil_homme_seance,Dépilation Ventre 1 Séance (zone Hormono-dépendante) Homme,126.666667
+scenario.product_product_112,scenario.product_category_depil_homme_seance,Dépilation Aisselles Homme 1 Séance,73.333333
+scenario.product_product_113,scenario.product_category_depil_homme_seance,Dépilation Barbe Homme 1 Séance,116.666667
+scenario.product_product_114,scenario.product_category_depil_homme_seance,Dépilation Bras Complets Homme 1 Séance,166.666667
+scenario.product_product_115,scenario.product_category_depil_homme_seance,Dépilation Collier (zone Du Torse Hormono-dépendante) Homme 1 Séance,66.666667
+scenario.product_product_116,scenario.product_category_depil_homme_seance,Dépilation Cou (barbe) Homme 1 Séance,66.666667
+scenario.product_product_117,scenario.product_category_depil_homme_seance,Dépilation Cuir Chevelu Homme 1 Séance,150
+scenario.product_product_118,scenario.product_category_depil_homme_seance,Dépilation Cuisses Homme 1 Séance,216.666667
+scenario.product_product_119,scenario.product_category_depil_homme_seance,Dépilation Demi-bras Homme 1 Séance,111.666667
+scenario.product_product_120,scenario.product_category_depil_homme_seance,Dépilation Demi-jambes Homme 1 Séance,216.666667
+scenario.product_product_121,scenario.product_category_depil_homme_seance,Dépilation Fesses Homme 1 Séance,175
+scenario.product_product_122,scenario.product_category_depil_homme_seance,Dépilation Inter-sourcilier Homme 1 Séance,33.333333
+scenario.product_product_123,scenario.product_category_depil_homme_seance,Dépilation Jambes Complètes Homme 1 Séance,308.333333
+scenario.product_product_124,scenario.product_category_depil_homme_seance,Dépilation Ligne De Cou Homme 1 Séance,66.666667
+scenario.product_product_125,scenario.product_category_depil_homme_seance,Dépilation Maillot Américain Homme 1 Séance,120.833333
+scenario.product_product_126,scenario.product_category_depil_homme_seance,Dépilation Maillot Américain Et Sillon Inter-fessier Homme 1 Séance,137.5
+scenario.product_product_127,scenario.product_category_depil_homme_seance,Dépilation Maillot Classique Homme 1 Séance,73.333333
+scenario.product_product_128,scenario.product_category_depil_homme_seance,Dépilation Maillot Echancré Homme 1 Séance,104.166667
+scenario.product_product_129,scenario.product_category_depil_homme_seance,Dépilation Maillot Intégral Homme 1 Séance,137.5
+scenario.product_product_130,scenario.product_category_depil_homme_seance,Dépilation Pieds Homme 1 Séance,78.333333
+scenario.product_product_131,scenario.product_category_depil_homme_seance,Dépilation Pommettes Homme 1 Séance,60
+scenario.product_product_132,scenario.product_category_depil_homme_seance,Dépilation Sillon Inter-fessier Homme 1 Séance,58.333333
+scenario.product_product_133,scenario.product_category_depil_homme_seance,Dépilation Aréoles Hommes (zone Hormono Dépendante) 1 Séance,53.333333
+scenario.product_product_134,scenario.product_category_derm_light_cou_1,Derm Light Cou Soin Anti-rides 1 Séance,66.666667
+scenario.product_product_135,scenario.product_category_derm_light_cou_1,Derm Light Cou Soins Anti-taches Clarifiant 1 Séance,66.666667
+scenario.product_product_136,scenario.product_category_derm_light_cou_1,Derm Light Cou Soin Détox-oxygénant 1 Séance,66.666667
+scenario.product_product_137,scenario.product_category_derm_light_cou_1,Derm Light Cou Soin Hydra Repulp (18/30 Ans) 1 Séance,66.666667
+scenario.product_product_138,scenario.product_category_derm_light_cou_1,Derm Light Cou Soin Perfect Lift (30-50 Ans) 1 Séance,66.666667
+scenario.product_product_139,scenario.product_category_derm_light_cou_1,Derm Light Cou Soin Richesse (+50 Ans) 1 Séance,66.666667
+scenario.product_product_140,scenario.product_category_derm_light_cou_3,Derm Light Cou Soin Anti-taches 3 Séances,190
+scenario.product_product_141,scenario.product_category_derm_light_cou_3,Derm Light Cou Soin Anti-rides 3 Séances,190
+scenario.product_product_142,scenario.product_category_derm_light_cou_3,Derm Light Cou Soin Détox Oxygénant 3 Séances,190
+scenario.product_product_143,scenario.product_category_derm_light_cou_3,Derm Light Cou Soin Hydra Repulp (18-30 Ans) 3 Séances,190
+scenario.product_product_144,scenario.product_category_derm_light_cou_3,Derm Light Cou Soin Perfect Lift (30-50 Ans) 3 Séances,190
+scenario.product_product_145,scenario.product_category_derm_light_cou_3,Derm Light Cou Soin Richesse (+50ans) 3 Séances,190
+scenario.product_product_146,scenario.product_category_derm_light_cou_5,Derm Light Cou Soin Anti-rides 5 Séances,300
+scenario.product_product_147,scenario.product_category_derm_light_cou_5,Derm Light Cou Soins Anti-taches Clarifiant 5 Séances,300
+scenario.product_product_148,scenario.product_category_derm_light_cou_5,Derm Light Cou Soin Détox Oxygénant 5 Séances,300
+scenario.product_product_149,scenario.product_category_derm_light_cou_5,Derm Light Cou Soin Hydra Repulp (18-30ans) 5 Séances,300
+scenario.product_product_150,scenario.product_category_derm_light_cou_5,Derm Light Cou Soin Perfect Lift (30-50ans) 5 Séances,300
+scenario.product_product_151,scenario.product_category_derm_light_cou_5,Derm Light Cou Soin Richesse (+50ans) 5 Séances,300
+scenario.product_product_152,scenario.product_category_derm_light_mains_1,Derm Light Mains Soin Anti-rides 1 Séance,66.666667
+scenario.product_product_153,scenario.product_category_derm_light_mains_1,Derm Light Mains Soins Anti-taches Clarifiant 1 Séance,66.666667
+scenario.product_product_154,scenario.product_category_derm_light_mains_1,Derm Light Mains Soin Détox-oxygénant 1 Séance,66.666667
+scenario.product_product_155,scenario.product_category_derm_light_mains_1,Derm Light Mains Soin Hydra Repulp (18/30 Ans) 1 Séance,66.666667
+scenario.product_product_156,scenario.product_category_derm_light_mains_1,Derm Light Mains Soin Perfect Lift (30-50 Ans) 1 Séance,66.666667
+scenario.product_product_157,scenario.product_category_derm_light_mains_1,Derm Light Mains Soin Richesse (+50 Ans) 1 Séance,66.666667
+scenario.product_product_158,scenario.product_category_derm_light_mains_3,Derm Light Mains Soin Anti-rides 3 Séances,190
+scenario.product_product_159,scenario.product_category_derm_light_mains_3,Derm Light Mains Soin Anti-taches 3 Séances,190
+scenario.product_product_160,scenario.product_category_derm_light_mains_3,Derm Light Mains Soin Détox Oxygénant 3 Séances,190
+scenario.product_product_161,scenario.product_category_derm_light_mains_3,Derm Light Mains Soin Hydra Repulp (18-30 Ans) 3 Séances,190
+scenario.product_product_162,scenario.product_category_derm_light_mains_3,Derm Light Mains Soin Perfect Lift (30-50 Ans) 3 Séances,190
+scenario.product_product_163,scenario.product_category_derm_light_mains_3,Derm Light Mains Soin Richesse (+50ans) 3 Séances,190
+scenario.product_product_164,scenario.product_category_derm_light_mains_5,Derm Light Mains Soin Anti-rides 5 Séances,300
+scenario.product_product_165,scenario.product_category_derm_light_mains_5,Derm Light Mains Soins Anti-taches Clarifiant 5 Séances,300
+scenario.product_product_166,scenario.product_category_derm_light_mains_5,Derm Light Mains Soin Détox Oxygénant 5 Séances,300
+scenario.product_product_167,scenario.product_category_derm_light_mains_5,Derm Light Mains Soin Hydra Repulp (18-30ans) 5 Séances,300
+scenario.product_product_168,scenario.product_category_derm_light_mains_5,Derm Light Mains Soin Perfect Lift (30-50ans) 5 Séances,300
+scenario.product_product_169,scenario.product_category_derm_light_mains_5,Derm Light Mains Soin Richesse (+50ans) 5 Séances,300
+scenario.product_product_170,scenario.product_category_derm_light_visage_1,Derm Light Visage Soin Anti-rides 1 Séance,116.666667
+scenario.product_product_171,scenario.product_category_derm_light_visage_1,Derm Light Visage Soins Anti-taches Clarifiant 1 Séance,116.666667
+scenario.product_product_172,scenario.product_category_derm_light_visage_1,Derm Light Visage Soin  Détox Oxygénant 1 Séance,116.666667
+scenario.product_product_173,scenario.product_category_derm_light_visage_1,Derm Light Visage Soin Hydra Repulp (18-30ans) 1 Séance,116.666667
+scenario.product_product_174,scenario.product_category_derm_light_visage_1,Derm Light Visage Soin Perfect Lift (30-50ans) 1 Séance,116.666667
+scenario.product_product_175,scenario.product_category_derm_light_visage_1,Derm Light Visage Soin Richesse (+50ans) 1 Séance,116.666667
+scenario.product_product_176,scenario.product_category_derm_light_visage_3,Derm Light Visage Soin Anti-rides 3 Séances,332.5
+scenario.product_product_177,scenario.product_category_derm_light_visage_3,Derm Light Visage Soin Anti-taches Clarifiant 3 Séances,332.5
+scenario.product_product_178,scenario.product_category_derm_light_visage_3,Derm Light Visage Soin Détox Oxygénant 3 Séances,332.5
+scenario.product_product_179,scenario.product_category_derm_light_visage_3,Derm Light Visage Soin Hydra Repulp (18-30ans) 3 Séances,332.5
+scenario.product_product_180,scenario.product_category_derm_light_visage_3,Derm Light Visage Soin Perfect Lift (30-50ans) 3 Séances,332.5
+scenario.product_product_181,scenario.product_category_derm_light_visage_3,Derm Light Visage Soin Richesse (+50ans) 3 Séances,332.5
+scenario.product_product_182,scenario.product_category_derm_light_visage_5,Derm Light Visage Soin Anti-rides 5 Séances,525
+scenario.product_product_183,scenario.product_category_derm_light_visage_5,Derm Light Visage Soins Anti-taches Clarifiant 5 Séances,525
+scenario.product_product_184,scenario.product_category_derm_light_visage_5,Derm Light Visage Soin Détox Oxygénant 5 Séances,525
+scenario.product_product_185,scenario.product_category_derm_light_visage_5,Derm Light Visage Soin Hydra Repulp (18-30ans) 5 Séances,525
+scenario.product_product_186,scenario.product_category_derm_light_visage_5,Derm Light Visage Soin Perfect Lift (30-50ans) 5 Séances,525
+scenario.product_product_187,scenario.product_category_derm_light_visage_5,Derm Light Visage Soin Richesse (+50ans) 5 Séances,525
+scenario.product_product_188,scenario.product_category_derm_light_decollete_1,Derm Light Décolleté Soin Anti-rides 1 Séance,100
+scenario.product_product_189,scenario.product_category_derm_light_decollete_1,Derm Light Décolleté Soins Anti-taches Clarifiant 1 Séance,100
+scenario.product_product_190,scenario.product_category_derm_light_decollete_1,Derm Light Décolleté Soin Détox Oxygénant 1 Séance,100
+scenario.product_product_191,scenario.product_category_derm_light_decollete_1,Derm Light Décolleté Soin Hydra Repulp (18-30ans) 1 Séance,100
+scenario.product_product_192,scenario.product_category_derm_light_decollete_1,Derm Light Décolleté Soin Perfect Lift (30-50ans) 1 Séance,100
+scenario.product_product_193,scenario.product_category_derm_light_decollete_1,Derm Light Décolleté Soin Richesse (+50ans) 1 Séance,100
+scenario.product_product_194,scenario.product_category_derm_light_decollete_3,Derm Light Décolleté Soin Anti-rides 3 Séances,283.333333
+scenario.product_product_195,scenario.product_category_derm_light_decollete_3,Derm Light Décolleté Soins Anti-taches Clarifiant 3 Séances,283.333333
+scenario.product_product_196,scenario.product_category_derm_light_decollete_3,Derm Light Décolleté Soin Détox Oxygénant 3 Séances,283.333333
+scenario.product_product_197,scenario.product_category_derm_light_decollete_3,Derm Light Décolleté Soin Hydra Repulp (18-30ans) 3 Séances,340
+scenario.product_product_198,scenario.product_category_derm_light_decollete_3,Derm Light Décolleté Soin Perfect Lift (30-50ans) 3 Séances,283.333333
+scenario.product_product_199,scenario.product_category_derm_light_decollete_3,Derm Light Décolleté Soin Richesse (+50ans) 3 Séances,283.333333
+scenario.product_product_200,scenario.product_category_derm_light_decollete_5,Derm Light Décolleté Soin Anti-rides 5 Séances,450
+scenario.product_product_201,scenario.product_category_derm_light_decollete_5,Derm Light Décolleté Soins Anti-taches Clarifiant 5 Séances,450
+scenario.product_product_202,scenario.product_category_derm_light_decollete_5,Derm Light Décolleté Soin Détox Oxygénant 5 Séances,450
+scenario.product_product_203,scenario.product_category_derm_light_decollete_5,Derm Light Décolleté Soin Hydra Repulp (18-30ans) 5 Séances,450
+scenario.product_product_204,scenario.product_category_derm_light_decollete_5,Derm Light Décolleté Soin Perfect Lift (30-50ans) 5 Séances,450
+scenario.product_product_205,scenario.product_category_derm_light_decollete_5,Derm Light Décolleté Soin Richesse (+50ans) 5 Séances,450
+scenario.product_product_206,scenario.product_category_carte_cadeaux,Carte Cadeaux,0.833333
+scenario.product_product_207,scenario.product_category_coffrets,Coffret Esthederm,74.166667
+scenario.product_product_208,scenario.product_category_coffrets,Coffret Clayton Shagal,100
+scenario.product_product_209,scenario.product_category_transfert,Transfert Fiche Client,0.833333
+scenario.product_product_210,scenario.product_category_transfert,Transfert Fiche Client (sans Tva),1
+scenario.product_product_211,scenario.product_category_clayton,Masque Concombre Et Avocat,36.666667
+scenario.product_product_212,scenario.product_category_clayton_gel,Gel Elastine (5%),60.833333
+scenario.product_product_213,scenario.product_category_clayton_gel,Gel Collagène (5%),60.833333
+scenario.product_product_214,scenario.product_category_clayton_gel,Gel Collagène Plus (10%),92.5
+scenario.product_product_215,scenario.product_category_clayton_gel,Gel Elastine Plus (10%),92.5
+scenario.product_product_216,scenario.product_category_clayton_gel,Gel Hyprocel ,118.333333
+scenario.product_product_217,scenario.product_category_clayton_gel,Gel Nettoyant Purifiant 200ml,37.916667
+scenario.product_product_218,scenario.product_category_clayton_cremes,Crème Nutri Sublime,109.166667
+scenario.product_product_219,scenario.product_category_clayton_cremes,Crème Corps,25
+scenario.product_product_220,scenario.product_category_clayton_cremes,Crème Mains,20.833333
+scenario.product_product_221,scenario.product_category_clayton_cremes,Crème Acnose Ultra Matifiante,43.333333
+scenario.product_product_222,scenario.product_category_clayton_cremes,Crème Idratance,82.5
+scenario.product_product_223,scenario.product_category_clayton_cremes,Crème Hydra-one,43.333333
+scenario.product_product_224,scenario.product_category_clayton_cremes,Crème Illumine,57.5
+scenario.product_product_225,scenario.product_category_clayton_cremes,Crème Hydra Light,27.5
+scenario.product_product_226,scenario.product_category_clayton_cremes,Crème Gel Zones Ciblées,40.416667
+scenario.product_product_227,scenario.product_category_clayton_serums,Sérum Collagène (40%),130.833333
+scenario.product_product_228,scenario.product_category_clayton_serums,Sérum Elastine (40%),130.833333
+scenario.product_product_229,scenario.product_category_clayton_serums,Concentré D'hyprocel ,177.5
+scenario.product_product_230,scenario.product_category_clayton_peau,Masque Hydratant/ Anti-cernes,33.75
+scenario.product_product_231,scenario.product_category_clayton_peau,Exfoliant Bambou Et Miel,38.333333
+scenario.product_product_232,scenario.product_category_clayton_peau,Lotion Gel Nettoyant 220ml,32.916667
+scenario.product_product_233,scenario.product_category_clayton_peau,Désincrustant Aah,36.666667
+scenario.product_product_234,scenario.product_category_clayton_peau,Masque Concombre Et Avocat,36.666667
+scenario.product_product_235,scenario.product_category_clayton_peau,Lotion Acnose,45.833333
+scenario.product_product_236,scenario.product_category_clayton_peau,Lait Nettoyant,32.916667
+scenario.product_product_237,scenario.product_category_clayton_peau,Désincrustant Au Son,35.416667
+scenario.product_product_238,scenario.product_category_clayton_peau,Masque De Boue Mokaccino 70ml,36.666667
+scenario.product_product_239,scenario.product_category_clayton_peau,Masque Exfoliant Aux Aah,34.583333
+scenario.product_product_240,scenario.product_category_clayton_peau,Clear Skin 25ml,40.416667
+scenario.product_product_241,scenario.product_category_esthederm,Intolerances Solaires Lait Corps / Spray 150 Ml,44.166667
+scenario.product_product_242,scenario.product_category_esthederm,Photo Regul Creme Visage / Tube 50 Ml,54.166667
+scenario.product_product_243,scenario.product_category_esthederm,Repair Après-soleil Creme Visage / Tubes 50 Ml,35.833333
+scenario.product_product_244,scenario.product_category_esthederm,No Sun Ecran Max / Tube 50 Ml,39.166667
+scenario.product_product_245,scenario.product_category_solaire,Intolerances Solaires Lait Corps / Spray 150 Ml,44.166667
+scenario.product_product_246,scenario.product_category_solaire,Photo Regul Creme Visage / Tube 50 Ml,54.166667
+scenario.product_product_247,scenario.product_category_solaire,Repair Après-soleil Creme Visage / Tubes 50 Ml,35.833333
+scenario.product_product_248,scenario.product_category_solaire,Un Soir D'ete Eau De Parfum,37.5
+scenario.product_product_249,scenario.product_category_solaire_bronzant,Adaptasun Lait Corps Peaux Sensibles / Flacon Pompe 200ml,46.666667
+scenario.product_product_250,scenario.product_category_solaire_bronzant,Bronz Impulse Uv Incellium Bronzant / Spray 150 Ml,41.666667
+scenario.product_product_251,scenario.product_category_solaire_bronzant,Adaptasun Crème Visage / Tube 50 Ml,35
+scenario.product_product_252,scenario.product_category_solaire_bronzant,Bronz Repair Crème Visage / Tube 50 Ml,55.833333
+scenario.product_product_253,scenario.product_category_solaire_bronzant,Adaptasun Lait Corps / Flacon 200 Ml,40
+scenario.product_product_254,scenario.product_category_solaire_bronzant,Adaptasun Crème Visage Peau Sensible / Tube 50 Ml,40
+scenario.product_product_255,scenario.product_category_solaire_bronzant,Bronz Repair Lait Corps 125ml,78
+scenario.product_product_256,scenario.product_category_solaire_bronzant,Huile Solaire 150ml,40.833333
+scenario.product_product_257,scenario.product_category_solaire_bronzant,Creme D'activation / Flacon 150 Ml,42.5
+scenario.product_product_258,scenario.product_category_solaire_bronzant,Uv Incellium / Aérosol 100ml,32.5
+scenario.product_product_259,scenario.product_category_solaire_haute_protection,Intolerances Solaires Creme Visage / Tube 50 Ml,40.833333
+scenario.product_product_260,scenario.product_category_solaire_haute_protection,Intolerances Solaires Lait Corps / Spray 150 Ml,44.166667
+scenario.product_product_261,scenario.product_category_solaire_haute_protection,Photo Regul Creme Visage / Tube 50 Ml,54.166667
+scenario.product_product_262,scenario.product_category_solaire_haute_protection,Intolerances Solaires Into Repair - Tube 50 Ml,57.5
+scenario.product_product_263,scenario.product_category_solaire_ecran,Photo Reverse Crème Visage / Tube 50 Ml,56.666667
+scenario.product_product_264,scenario.product_category_solaire_ecran,No Sun / Tube 50ml,40.833333
+scenario.product_product_265,scenario.product_category_solaire_ecran,No Sun Ecran Max / Tube 50 Ml,39.166667
+scenario.product_product_266,scenario.product_category_solaire_ecran,No Sun Ecran Max / Tube 50 Ml,40.833333
+scenario.product_product_267,scenario.product_category_solaire_apres_soleil,Prolongateur De Bronzage Lait Corps / Flacon Pompe 200 Ml,38.333333
+scenario.product_product_268,scenario.product_category_solaire_apres_soleil,Repair Après-soleil Creme Visage / Tubes 50 Ml,35.833333
+scenario.product_product_269,scenario.product_category_solaire_apres_soleil,Apres Soleil Sos - Flacon Pompe 200ml,37.5
+scenario.product_product_270,scenario.product_category_solaire_reflets,Color Repair / Tube 50ml,39.166667
+scenario.product_product_271,scenario.product_category_solaire_reflets,Poudre De Soin Teintee / 13g,40
+scenario.product_product_272,scenario.product_category_solaire_reflets,Creme Auto Bronzante Visage Hale Leger / Tube 50ml,28.333333
+scenario.product_product_273,scenario.product_category_solaire_reflets,Lait Auto Bronzant Corps Hale Leger / Flacon Pompe 150ml,35
+scenario.product_product_274,scenario.product_category_solaire_reflets,Creme Auto Bronzante Visage Hale Intense / Tube 50ml,28.333333
+scenario.product_product_275,scenario.product_category_solaire_reflets,Gelee Auto Bronzante Corps Hale Intense / Flacon Pompe 150ml,35
+scenario.product_product_276,scenario.product_category_solaire_reflets,Sun Sublimation Flacon 150ml,45
+scenario.product_product_277,scenario.product_category_soins_corps,Exfoliant Doux Pour La Douche / Tube 200ml,22.5
+scenario.product_product_278,scenario.product_category_soins_corps,Creme Multicible Minceur / Pot 200 Ml,49.166667
+scenario.product_product_279,scenario.product_category_soins_corps,Un Soir D'ete Eau De Parfum,37.5
+scenario.product_product_280,scenario.product_category_soins_corps_morpho,Morpho Control / Tube 100ml,40.833333
+scenario.product_product_281,scenario.product_category_soins_corps_morpho,Creme Multicible Minceur / Pot 200 Ml,49.166667
+scenario.product_product_282,scenario.product_category_soins_corps_morpho_svelt,Serum Anti Eau / Flacon Pompe 100ml,35
+scenario.product_product_283,scenario.product_category_soins_corps_morpho_svelt,Serum Anti Gras / Flacon Pompe 100ml,35
+scenario.product_product_284,scenario.product_category_soins_corps_morpho_svelt,Creme Multicible Minceur / Pot 200 Ml,49.166667
+scenario.product_product_285,scenario.product_category_soins_corps_morpho_sculpt,Lait Hydratant Anti Relachement Sculpt System / Flacon Pompe 200 Ml,25
+scenario.product_product_286,scenario.product_category_soins_corps_morpho_sculpt,Baume De Soin Haute Nutrition / Pot 200ml,49.166667
+scenario.product_product_287,scenario.product_category_soins_corps_morpho_sculpt,Creme De Soin Galbante Buste / Pot 200ml,53.333333
+scenario.product_product_288,scenario.product_category_soins_corps_morpho_sculpt,Creme Beaute Des Mains / Tube 50ml,21.666667
+scenario.product_product_289,scenario.product_category_soins_corps_morpho_sculpt,Offre Du Mois - Lait Hydratant Sculpt System - 310 Ml,25
+scenario.product_product_290,scenario.product_category_soins_corps_glauscine,Formule Concentree Serum Drainant / Flacon 200ml,58.333333
+scenario.product_product_291,scenario.product_category_soins_corps_glauscine,Formule Concentree Creme Lipolytique / Tube 200ml,58.333333
+scenario.product_product_292,scenario.product_category_soins_visage_time,Creme Time Technology / Pot 50 Ml,50
+scenario.product_product_293,scenario.product_category_soins_visage_time,Radiance Pot 50ml,50
+scenario.product_product_294,scenario.product_category_soins_visage_concentre,Concentre Cellulaire Serum / Flacon 15 Ml,52.083333
+scenario.product_product_295,scenario.product_category_soins_visage_concentre,Concentre Cellulaire Serum / Flacon De 30ml,65.833333
+scenario.product_product_296,scenario.product_category_soins_visage_concentre,Coffret Mon Rituel Aqua Cellulaire,15.833333
+scenario.product_product_297,scenario.product_category_soins_visage_protecteur,City Cream Extreme De Jour / Tube 30ml,32.5
+scenario.product_product_298,scenario.product_category_soins_visage_protecteur,Active De Jour Soin Essentiel Teinte / Tube 30ml,24.166667
+scenario.product_product_299,scenario.product_category_soins_visage_protecteur,Coffret Mon Rituel Aqua Cellulaire,15.833333
+scenario.product_product_300,scenario.product_category_soins_visage_lift,Soin Lissant Contour Des Yeux Lift & Repair / Flacon Airless 15ml,53.333333
+scenario.product_product_301,scenario.product_category_soins_visage_lift,Masque Lift & Repair  Instant Repulp / Tube 50ml ,41.25
+scenario.product_product_302,scenario.product_category_soins_visage_lift,Baume Lift & Repair Absolu Repulp / Pot 50ml,71.666667
+scenario.product_product_303,scenario.product_category_soins_visage_lift,Serum Lift And Repair Absolu Tenseur / Flacon Airless 30 Ml,78.333333
+scenario.product_product_304,scenario.product_category_soins_visage_lift,Creme Lift And Repair Absolue Lissante / Pot 50 Ml,71.666667
+scenario.product_product_305,scenario.product_category_soins_visage_lift,Patchs Lift & Repair Contour Des Yeux / Coffret 10 Sachets De 2 Patchs,56.666667
+scenario.product_product_306,scenario.product_category_soins_visage_lift,Patchs Lift Contour Des Yeux Lift & Repair (le Sachet De 2 Patchs),5.833333
+scenario.product_product_307,scenario.product_category_soins_visage_cyclo,Concentre De Jeunesse 21 Jours Cyclo Systeme / Flacon 50ml + Fourreau,125
+scenario.product_product_308,scenario.product_category_soins_visage_cyclo,Creme De Jeunesse Cou Et Decollete Cyclo System / Pot 50 Ml,70.833333
+scenario.product_product_309,scenario.product_category_soins_visage_cyclo,Creme De Jeunesse Contour Des Yeux Cyclo System / Pot 15 Ml,57.5
+scenario.product_product_310,scenario.product_category_soins_visage_cyclo,Creme De Jeunesse Visage Cyclo System / Pot De 50ml,91.666667
+scenario.product_product_311,scenario.product_category_soins_visage_cyclo,Creme De Jeunesse Contour Des Levres Cyclo System / Tube Gloss 15ml,39.166667
+scenario.product_product_312,scenario.product_category_soins_visage_eau,Gel D'eau Cellulaire / Tube 50 Ml,22.5
+scenario.product_product_313,scenario.product_category_soins_visage_eau,Creme D'eau Cellulaire / Pot 50 Ml,28.333334
+scenario.product_product_314,scenario.product_category_soins_visage_eau,Eau Cellulaire / Aérosol 100ml,16.666667
+scenario.product_product_315,scenario.product_category_soins_visage_eau,Eau Cellulaire / Aérosol 200ml,25
+scenario.product_product_316,scenario.product_category_soins_visage_eau,Gel D'eau Cellulaire / Pot 50ml,28.333333
+scenario.product_product_317,scenario.product_category_soins_visage_eau,E.v.e Serum Source / Flacon Airless 30ml,68.333333
+scenario.product_product_318,scenario.product_category_soins_visage_eau,Coffret Mon Rituel Aqua Cellulaire,15.833333
+scenario.product_product_319,scenario.product_category_soins_visage_white,Serum Eclaircissant White System / Flacon 30 Ml,65.833333
+scenario.product_product_320,scenario.product_category_soins_visage_white,Mousse Nettoyante Clarifiante White System / Flacon 150ml,28.333333
+scenario.product_product_321,scenario.product_category_soins_visage_white,Rollon Concentre Anti-taches Ciblé / 9 Ml,40.833333
+scenario.product_product_322,scenario.product_category_soins_visage_white,Soin Eclaircissant Contour Des Yeux White System / Tube 15ml,49.166667
+scenario.product_product_323,scenario.product_category_soins_visage_white,Lotion Lactee Eclaircissante White System / Flacon 150ml,28.333333
+scenario.product_product_324,scenario.product_category_soins_visage_white,Soin Eclaircissant Reparateur Jour White System / Flocon 50ml,61.666667
+scenario.product_product_325,scenario.product_category_soins_visage_white,Soin Eclaircissant Reparateur Nuit White System / Pot 50ml,77.5
+scenario.product_product_326,scenario.product_category_soins_visage_white,City Cream Extreme De Jour / Tube 30ml,32.5
+scenario.product_product_327,scenario.product_category_soins_visage_preparer_peau,Creme Douce Desincrustante / Tube 75 Ml,24.833333
+scenario.product_product_328,scenario.product_category_soins_visage_preparer_peau,Masque Gomme Clarifiant / Tube 75 Ml,28.333333
+scenario.product_product_329,scenario.product_category_soins_visage_preparer_peau,Gel Nettoyant Purete / Tube 150 Ml,21.666667
+scenario.product_product_330,scenario.product_category_soins_visage_preparer_peau,Lait Demaquillant Hydra-ressourcant / Flacon 200ml,16.666667
+scenario.product_product_331,scenario.product_category_soins_visage_preparer_peau,Demaquillant Haute Tolerance Yeux & Levres / Flacon 125ml,23.333333
+scenario.product_product_332,scenario.product_category_soins_visage_preparer_peau,Lotion Fraiche Hydra-ressourcante / Flacon 200ml,16.666667
+scenario.product_product_333,scenario.product_category_soins_visage_preparer_peau,Eau Micellaire Osmopure / Flacon 200ml,23.333333
+scenario.product_product_334,scenario.product_category_soins_visage_preparer_peau,Offre Creme Douce + Masque Gomme Osmoclean,40.833333
+scenario.product_product_335,scenario.product_category_soins_visage_preparer_peau,Mousse Nettoyante Purete / Flacon150ml,25.833333
+scenario.product_product_336,scenario.product_category_soins_visage_preparer_peau,Lotion Desensibilisante / Flacon 200ml,20
+scenario.product_product_337,scenario.product_category_soins_visage_preparer_peau,Lait Demaquillant Desensibilisant / Flacon 200ml,20
+scenario.product_product_338,scenario.product_category_soins_visage_pure_system,Concentre Pore Refiner Pure System / Tube 50 Ml,40.833333
+scenario.product_product_339,scenario.product_category_soins_visage_pure_system,Soin Absolue Purete Pure System / Tube 50ml,29.166667
+scenario.product_product_340,scenario.product_category_soins_visage_hydra_system,Soin Aqua Diffuseur Hydra System / Pot  50 Ml,41.666667
+scenario.product_product_341,scenario.product_category_soins_visage_hydra_system,Soin Aqua Diffuseur Contour Yeux Hydra System / Tube 15ml,30
+scenario.product_product_342,scenario.product_category_soins_visage_hydra_system,Fluide Aqua Diffuseur Hydra System / Tube 50ml,41.666667
+scenario.product_product_343,scenario.product_category_soins_visage_sensy_system,Creme Desensibilisante Sensi System / Flacon 50 Ml,50.833333
+scenario.product_product_344,scenario.product_category_soins_visage_sensy_system,Creme Desensibilisante Uv Sensi System / Tube 50 Ml,58.333333
+scenario.product_product_345,scenario.product_category_soins_visage_sensy_system,Creme Repos Biomimetique Sensi System / Pot 50ml,53.333333
+scenario.product_product_346,scenario.product_category_soins_visage_sensy_system,Creme Desensibilisante Contour Des Yeux Sensi System / Tube 15ml,33.333333
+scenario.product_product_347,scenario.product_category_soins_visage_activ_repair,Soin Contour Des Yeux Active Repair / Tube 15 Ml,36.666667
+scenario.product_product_348,scenario.product_category_soins_visage_activ_repair,Creme Correctrice Rides Active Repair / Pot 50 Ml,53.75
+scenario.product_product_349,scenario.product_category_soins_visage_activ_repair,Creme Riche Correctrice Rides Active Repair / Pot 50 Ml,53.75
+scenario.product_product_350,scenario.product_category_soins_visage_energiser,Eau Cellulaire / Aérosol 100ml,16.666667
+scenario.product_product_351,scenario.product_category_soins_visage_energiser,Eau Cellulaire / Aérosol 200ml,25
+scenario.product_product_352,scenario.product_category_soins_visage_booster,Concentre Cellulaire Serum / Flacon 15 Ml,52.083333
+scenario.product_product_353,scenario.product_category_soins_visage_booster,Concentre Cellulaire Serum / Flacon De 30ml,65.833333
+scenario.product_product_354,scenario.product_category_soins_visage_booster,Serum Restructurant Derm Repair / Flacon 30 Ml,65.833333
+scenario.product_product_355,scenario.product_category_soins_visage_hyaluronic,Formule Concentree Masque / Tube 75ml,33.333333
+scenario.product_product_356,scenario.product_category_soins_visage_hyaluronic,Formule Concentree Serum / Flacon Pompe 30ml,54.166667
+scenario.product_product_357,scenario.product_category_soins_visage_hyaluronic,Formule Concentree Creme / Pot 50ml,50
+scenario.product_product_358,scenario.product_category_soins_visage_propolis,Formule Concentree Serum / Flacon Pipette 30ml,40.833333
+scenario.product_product_359,scenario.product_category_soins_visage_propolis,Formule Concentree Creme / Pot 50ml,36.666667
+scenario.product_product_360,scenario.product_category_soins_visage_propolis,Formule Concentree Lotion / Flacon 150 Ml,24.166667
+scenario.product_product_361,scenario.product_category_soins_visage_vitamine_e2,Formule Concentree Serum / Flacon Pompe 30ml,65.833333
+scenario.product_product_362,scenario.product_category_soins_visage_vitamine_e2,Formule Concentree Creme / Pot 50ml,61.666667
+scenario.product_product_363,scenario.product_category_soins_visage_spiruline,Formule Concentree Serum / Flacon Pipette 30ml,70
+scenario.product_product_364,scenario.product_category_soins_visage_spiruline,Formule Concentree Creme / Pot 50ml,65.833333
+scenario.product_product_365,scenario.product_category_soins_visage_padina,Formule Concentree Creme / Pot 50ml,65.833333
+scenario.product_product_366,scenario.product_category_soins_visage_vitamine_c,Formule Concentree Serum Poudre / Flacon 4g,40.833333
+scenario.product_product_367,scenario.product_category_soins_visage_vitamine_c,Formule Concentree Creme / Pot 50ml,63.333333
+scenario.product_product_368,scenario.product_category_soins_visage_vitamine_a,Formule Concentree Serum / Flacon 15ml,45.833333
+scenario.product_product_369,scenario.product_category_soins_visage_vitamine_a,Formule Concentree Creme/ Pot 50ml,65.833333
+scenario.product_product_370,scenario.product_category_soins_visage_derm,Serum Restructurant Derm Repair / Flacon 30 Ml,65.833333
+scenario.product_product_371,scenario.product_category_soins_visage_nutri,Creme Vitale Nutri System Gelee Royale / Pot 50 Ml,55
+scenario.product_product_372,scenario.product_category_soins_visage_nutri,Creme Legere Dermo Dietetique Nutri System / Pot 50ml,51.666667
+scenario.product_product_373,scenario.product_category_soins_visage_nutri,Masque Creme Bain Nutritif Nutri System / Tube 75ml,33.333333
