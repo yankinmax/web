@@ -1,0 +1,2 @@
+external-db:
+  hostname: depiltech-rds.cpkv3upjebhr.eu-west-1.rds.amazonaws.com

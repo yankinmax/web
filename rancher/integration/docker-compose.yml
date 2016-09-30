@@ -1,9 +1,12 @@
+external-db:
+  image: rancher/external-service
+
 odoo:
-  image: camptocamp/depiltech_odoo:latest
+  image: camptocamp/depiltech_odoo:9.3.1
   links:
-    - db:db
+      - external-db:db
   volumes:
-    - depiltech-latest-dataodoo:/data/odoo
+    - depiltech-integration-dataodoo:/data/odoo
   environment:
     - DB_USER=${DB_USER}
     - DB_PASSWORD=${DB_PASSWORD}
@@ -23,23 +26,11 @@ odoo:
     - LIMIT_TIME_CPU=${LIMIT_TIME_CPU}
     - LIMIT_TIME_REAL=${LIMIT_TIME_REAL}
     - MARABUNTA_ALLOW_SERIE=True
-    - MARABUNTA_MODE=demo
-
-db:
-  image: camptocamp/postgresql:pg9.5-latest
-  environment:
-    - POSTGRES_USER=${DB_USER}
-    - POSTGRES_PASSWORD=${DB_PASSWORD}
-    - PG_SYSTEM_SHARED_BUFFERS=256MB
-    - PG_SYSTEM_MAINTENANCE_WORK_MEM=256MB
-    - PG_SYSTEM_WAL_BUFFERS=8MB
-    - PG_SYSTEM_EFFECTIVE_CACHE_SIZE=1024MB
-  volumes:
-    - depiltech-latest-datadb:/var/lib/postgresql
+    - MARABUNTA_MODE=full
 
 nginx:
   image: camptocamp/odoo-nginx:9.0
   ports:
-    - 8080:80
+    - 80:80
   links:
     - odoo:odoo
