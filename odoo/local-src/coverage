@@ -1,0 +1,4 @@
+pip install coverage
+cd /opt/odoo/local-src
+coverage run --source . /opt/odoo/bin/odoo.py -u sale_discount_program,specific_discount_program --test-enable --stop-after-init --xmlrpc-port 8888 
+coverage xml

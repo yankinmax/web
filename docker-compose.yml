@@ -15,7 +15,7 @@ services:
       - LIMIT_TIME_CPU=5000
       - LIMIT_TIME_REAL=5000
       - RUNNING_ENV=dev
-      - DEMO=none
+      - DEMO=False
 
   db:
     image: camptocamp/postgresql:pg9.5-latest
