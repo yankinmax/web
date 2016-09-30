@@ -3,6 +3,14 @@
 Release History
 ---------------
 
+Unreleased
+++++++++++
+
+**Build**
+
+* Rancher migration
+
+
 9.3.0 (2016-09-20)
 ++++++++++++++++++
 
@@ -37,7 +45,7 @@ Release History
 * new fields on ``res.partner`` object to manage customer specific fields (B2C)
 * ``base_phone`` module installed to manage phone number validation and format
 * ``fields_regex_validation`` module installed to manage validation of other
-fields like email by PostgreSQL regular expression.
+  fields like email by PostgreSQL regular expression.
 * intercompany rules configuration
 * warehouses creation for base companies (16)
 * 1 ``admin`` user and 1 ``normal`` user per company/center

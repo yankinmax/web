@@ -37,3 +37,6 @@
 [submodule "odoo/external-src/reporting-engine"]
 	path = odoo/external-src/reporting-engine
 	url = git@github.com:OCA/reporting-engine.git
+[submodule "odoo/oerpscenario"]
+	path = odoo/oerpscenario
+	url = https://github.com/camptocamp/oerpscenario.git

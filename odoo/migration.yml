@@ -1,0 +1,6 @@
+migration:
+  versions:
+    - version: 9.1.0
+      operations:
+        post:
+          - oerpscenario -t setup
