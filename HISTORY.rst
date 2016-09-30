@@ -6,6 +6,24 @@ Release History
 Unreleased
 ++++++++++
 
+**Features and Improvements**
+
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+9.3.1 (2016-09-30)
+++++++++++++++++++
+
+**Features and Improvements**
+* Display pricelist for all users
+* Product and product category imports
+* Discount program acl
+* Add product condition in discount program
+
 **Build**
 
 * Rancher migration
@@ -55,6 +73,18 @@ Unreleased
 
 .. 0.0.1 (unreleased)
 .. ++++++++++++++++++
+
+**Features and Improvements**
+
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+9.3.1 (2016-09-30)
+++++++++++++++++++
 
 .. **Features and Improvements**
 
