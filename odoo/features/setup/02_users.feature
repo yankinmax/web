@@ -123,6 +123,9 @@ Feature: Parameter the new database
       | Lead Automation / Manager          |
       | Administration / Settings          |
       | Extra Rights / Multi Companies     |
+      | Technical Settings / Sales Pricelists       |
+      | Technical Settings / Manage Pricelist Items |
+
     Examples: users
       | user_oid           |
       | scen.user_admin_mx |
@@ -145,13 +148,15 @@ Feature: Parameter the new database
   Scenario Outline: Add correct groups to administrators
     Given I find a "res.users" with oid: <user_oid>
     And we assign to user the groups below
-      | group_name                         |
-      | Accounting & Finance / Accountant  |
-      | Purchases / User                   |
-      | Sales / See all Leads              |
-      | Extra Rights / Technical Features  |
-      | Inventory / User                   |
-      | Lead Automation / User             |
+      | group_name                                  |
+      | Accounting & Finance / Accountant           |
+      | Purchases / User                            |
+      | Sales / See all Leads                       |
+      | Extra Rights / Technical Features           |
+      | Inventory / User                            |
+      | Lead Automation / User                      |
+      | Technical Settings / Sales Pricelists       |
+      | Technical Settings / Manage Pricelist Items |
     Examples: users
       | user_oid       |
       | scen.user_mx   |
