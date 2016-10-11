@@ -39,7 +39,5 @@ db:
 
 nginx:
   image: camptocamp/odoo-nginx:9.0
-  ports:
-    - 8080:80
   links:
     - odoo:odoo
