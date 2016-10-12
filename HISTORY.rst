@@ -15,6 +15,17 @@ Unreleased
 **Documentation**
 
 
+9.3.2 (2016-10-12)
+++++++++++++++++++
+
+**Bugfixes**
+* RRR fix: Case when we have two discount apply on the same line
+
+**Build**
+* Migrate integration database on postgres rds server
+* Deployment configuration fixes
+
+
 9.3.1 (2016-09-30)
 ++++++++++++++++++
 
@@ -73,6 +84,18 @@ Unreleased
 
 .. 0.0.1 (unreleased)
 .. ++++++++++++++++++
+
+**Features and Improvements**
+
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+9.3.2 (2016-10-12)
+++++++++++++++++++
 
 **Features and Improvements**
 

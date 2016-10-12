@@ -4,3 +4,4 @@ migration:
       operations:
         post:
           - oerpscenario -t setup
+    - version: 9.3.2
