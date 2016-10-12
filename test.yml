@@ -5,7 +5,7 @@
 version: '2'
 services:
   odoo:
-    image: camptocamp/{{cookiecutter.project_name}}:latest
+    image: camptocamp/depiltech_odoo:latest
     environment:
       - MARABUNTA_MODE=demo  # could be 'migration' to run the migration
       - MARABUNTA_ALLOW_SERIE=True  # should not be set in production
