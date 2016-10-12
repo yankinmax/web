@@ -9,12 +9,13 @@ Feature: Parameter the new database
   Scenario: Active discount on sale order line
     Given I set "Discount" to "Allow discounts on sales order lines" in "Sales" settings menu
 
-  @&
+  @discount_pricelist
   Scenario: Create discount pricelist
     Given I need a "product.pricelist" with oid: scenario.pricelist_sponsorship
       And having:
-         | key          | value                     |
-         | name         | Parrainage                |
+         | key             | value                     |
+         | name            | Parrainage                |
+         | discount_policy | without_discount          |
 
     Given I need a "product.pricelist.item" with oid: scenario.pricelist_sponsorship_item1
       And having:
@@ -26,8 +27,9 @@ Feature: Parameter the new database
 
     Given I need a "product.pricelist" with oid: scenario.pricelist_code_promo
       And having:
-         | key          | value                     |
-         | name         | Code promo                |
+         | key             | value                     |
+         | name            | Code promo                |
+         | discount_policy | without_discount          |
 
     Given I need a "product.pricelist.item" with oid: scenario.pricelist_code_promo_item1
       And having:

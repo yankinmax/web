@@ -9,7 +9,8 @@
     'license': 'AGPL-3',
     'category': 'Others',
     'depends': [
-        'sale_stock'
+        'sale_stock',
+        'product_visible_discount',
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
