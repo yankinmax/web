@@ -166,8 +166,7 @@ class Program(models.Model):
 
         else:
             if not self.condition_ids:
-                # TODO: no condition
-                raise NotImplementedError()
+                return True
 
         # TODO: and / or
         return any(condition.check(sale) for condition in self.condition_ids)
@@ -282,4 +281,4 @@ class Program(models.Model):
         """ Method to sort a program recordset *programs* before try to apply
         them. Main goal of this method is to be easily override,
         """
-        return programs.sorted(lambda p: p.combinable)
+        return programs.sorted(lambda p: (p.combinable, p.id))

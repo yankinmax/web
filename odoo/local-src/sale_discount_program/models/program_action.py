@@ -120,8 +120,12 @@ class DiscountProgramAction(models.Model):
     def _apply_product_discount(self, sale):
         sol = self._get_discount_target(sale)
         if sol and sol.price_unit:
+            discount = self.discount_percent
+            if sol.discount:
+                discount += sol.discount
+
             sol.write({
-                'discount': self.discount_percent,
+                'discount': discount,
                 'discount_program': True,
             })
 

@@ -99,4 +99,21 @@ class SaleOrderLine(models.Model):
 
     @api.onchange('discount')
     def onchange_discount(self):
+        """ If discount is manually changed we don't reset it anymore.
+        """
         self.discount_program = False
+
+    @api.onchange('product_uom', 'product_uom_qty')
+    def product_uom_change(self):
+        """ Let product_visible_discount computes pricelist discount, after we
+        add a possible existing program discount on this line.
+        """
+        if self.discount_program:
+            program_discount = self.discount
+            self.discount = 0
+
+        res = super(SaleOrderLine, self).product_uom_change()
+
+        if self.discount_program:
+            self.discount += program_discount
+        return res
