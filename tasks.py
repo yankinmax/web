@@ -28,7 +28,7 @@ def build_path(path, from_file=None):
     return os.path.join(os.path.dirname(os.path.realpath(from_file)), path)
 
 
-PROJECT_ID = '1622'
+PROJECT_ID = '1836'
 VERSION_FILE = build_path('odoo/VERSION')
 VERSION_RANCHER_FILES = (
     build_path('rancher/integration/docker-compose.yml'),
