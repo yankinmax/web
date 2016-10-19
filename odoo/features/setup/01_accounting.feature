@@ -463,6 +463,8 @@ Feature: Parameter the new database
      And having:
      | name                              | value                        |
      | sale_pricelist_setting            | formula                      |
+     | group_sale_pricelist              | True                         |
+     | group_pricelist_item              | True                         |
    Then execute the setup
 
 #  @acc_cfg_mx
