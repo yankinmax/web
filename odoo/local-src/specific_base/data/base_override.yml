@@ -11,6 +11,9 @@
       domain_force = "['|',('company_id','child_of',[user.company_id.id]),('company_id','=',False)]"
       self.domain_force = domain_force
 -
+  !python {model: ir.rule, id: base.res_company_rule} : |
+      self.perm_read = False
+-
   !python {model: res.partner.title, id: base.res_partner_title_doctor} : |
       self.active = False
 -

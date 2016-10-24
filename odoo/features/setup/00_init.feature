@@ -18,6 +18,14 @@ Feature: Parameter the new database
        | country_id | by oid: base.fr    |
     # Given the company has the "images/logo.png" logo
 
+  @report_configuration
+  Scenario: setup of program discount config
+    Given I need a "ir.config_parameter" with key: report.url
+    And having:
+      | key   | value                 |
+      | key   | report.url            |
+      | value | http://localhost:8069 |
+
   @no_demo_data
   Scenario: deactivate demo data
     Given I update the module list
