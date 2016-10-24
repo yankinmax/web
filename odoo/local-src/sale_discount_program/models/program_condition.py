@@ -78,8 +78,11 @@ class DiscountProgramCondition(models.Model):
         """ This condition type check number of products for the specified
         product category in the sale.
         """
+        allowed_categories = self.env['product.category'].search([
+            ('id', 'child_of', self.product_category_id.id)
+        ])
         return self._order_lines_conditions(sale.order_line.filtered(
-            lambda l: l.product_id.categ_id == self.product_category_id
+            lambda l: l.product_id.categ_id in allowed_categories
         ))
 
     @api.multi
