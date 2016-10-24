@@ -22,8 +22,8 @@ Feature: Parameter the new database
 
   @csv_import_product_category
   Scenario: import csv
-    Given "product.category" is imported from CSV "setup/product.category.csv" using delimiter ","
+    Given "product.category" is imported from CSV "setup/product.category.csv" using delimiter ";"
 
   @csv_import_product
   Scenario: import csv
-    Given "product.product" is imported from CSV "setup/product.csv" using delimiter ","
+    Given "product.product" is imported from CSV "setup/product.csv" using delimiter ";"
