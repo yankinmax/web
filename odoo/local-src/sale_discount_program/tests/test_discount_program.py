@@ -38,6 +38,12 @@ class TestDiscountProgram(TransactionCase):
         self.product_category = self.product_category_model.create({
             'name': 'Unittest product category',
         })
+
+        self.sub_category = self.product_category_model.create({
+            'name': 'Unittest product sub category',
+            'parent_id': self.product_category.id,
+        })
+
         self.p1 = self.product_model.create({
             'name': 'Unittest P1',
             'categ_id': self.product_category.id,
@@ -106,7 +112,7 @@ class TestDiscountProgram(TransactionCase):
             ]
         })
 
-        # Not the godd product
+        # Not the good product
         sale.apply_discount_programs()
 
         self.assertEqual(1, len(sale.order_line))
@@ -138,6 +144,39 @@ class TestDiscountProgram(TransactionCase):
             self.p1 | product_to_add,
             sale.order_line.mapped('product_id')
         )
+
+    @post_install(True)
+    @at_install(False)
+    def test_condition_sub_category(self):
+        program = self.program_model.create({
+            'name': 'Unittest gift product program',
+            'condition_ids': [
+                (0, False, {
+                    'type_condition': 'product_category',
+                    'product_category_id': self.product_category.id,
+                })
+            ],
+        })
+
+        sale = self.sale_model.create({
+            'partner_id': self.client.id,
+            'phototherapist_id': self.phototherapist.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ]
+        })
+        self.assertTrue(program.is_applicable(sale))
+
+        # Test with a sub category
+        self.p1.categ_id = self.sub_category.id
+        self.assertTrue(program.is_applicable(sale))
+
+        self.sub_category.parent_id = False
+        self.assertFalse(program.is_applicable(sale))
 
     @post_install(True)
     @at_install(False)
