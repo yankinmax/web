@@ -15,6 +15,20 @@ Unreleased
 **Documentation**
 
 
+9.3.3 (2016-10-24)
+++++++++++++++++++
+
+**Features and Improvements**
+* Product category condition: Manage sub category.
+* Update products csv files.
+
+**Bugfixes**
+* Condition was not save when type was product category.
+* Fix discout program ACL
+* Configure report.url settings
+* Fix pricelist configuration visibility.
+
+
 9.3.2 (2016-10-12)
 ++++++++++++++++++
 
@@ -84,6 +98,18 @@ Unreleased
 
 .. 0.0.1 (unreleased)
 .. ++++++++++++++++++
+
+**Features and Improvements**
+
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+9.3.3 (2016-10-24)
+++++++++++++++++++
 
 **Features and Improvements**
 
