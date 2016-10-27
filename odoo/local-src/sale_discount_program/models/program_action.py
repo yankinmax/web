@@ -28,7 +28,11 @@ class DiscountProgramAction(models.Model):
     sequence = fields.Integer(string='Sequence', default=10)
 
     product_add_id = fields.Many2one('product.product')
-    product_add_price = fields.Float(digits=dp.get_precision('Product Price'))
+    product_add_force_price = fields.Boolean('Specify product price')
+    product_add_price = fields.Float(
+        string='Product Price',
+        digits=dp.get_precision('Product Price')
+    )
     allow_negative_total = fields.Boolean(default=True)
 
     product_discount_selection = fields.Selection([
@@ -44,22 +48,18 @@ class DiscountProgramAction(models.Model):
 
     @api.depends('type_action')
     def _compute_name(self):
-        selection_dict = {
-            k: v for k, v in self._fields['type_action'].selection
-        }
+        selection_dict = dict(self._fields['type_action'].selection)
         for action in self:
             if action.type_action:
+                final_name = selection_dict.get(action.type_action)
                 try:
-                    name = getattr(
+                    final_name = getattr(
                         action, '_get_%s_name' % action.type_action
                     )()
                 except AttributeError:
-                    name = None
+                    pass
 
-                if name is not None:
-                    action.name = name
-                else:
-                    action.name = selection_dict[action.type_action]
+                action.name = final_name
 
     @api.onchange('type_action')
     def onchange_type_action(self):
@@ -82,7 +82,7 @@ class DiscountProgramAction(models.Model):
             'sequence': max((sale.order_line.mapped('sequence') or [0])) + 1,
         }
 
-        if self.product_add_price:
+        if self.product_add_force_price:
             price_unit = self.product_add_price
             if price_unit < 0 and not self.allow_negative_total:
                 if sale.amount_total + price_unit < 0:

@@ -13,7 +13,8 @@
                     </group>
                     <group name="action_product_add" attrs="{'invisible': [('type_action', '!=', 'product_add')]}">
                         <field name="product_add_id" attrs="{'required': [('type_action', '=', 'product_add')]}"/>
-                        <field name="product_add_price"/>
+                        <field name="product_add_force_price"/>
+                        <field name="product_add_price" attrs="{'invisible': [('product_add_force_price', '=', False)]}"/>
                         <field name="allow_negative_total" attrs="{'invisible': [('product_add_price', '>=', 0)]}"/>
                     </group>
 
