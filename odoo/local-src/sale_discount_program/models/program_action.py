@@ -28,7 +28,11 @@ class DiscountProgramAction(models.Model):
     sequence = fields.Integer(string='Sequence', default=10)
 
     product_add_id = fields.Many2one('product.product')
-    product_add_price = fields.Float(digits=dp.get_precision('Product Price'))
+    product_add_force_price = fields.Boolean('Specify product price')
+    product_add_price = fields.Float(
+        string='Product Price',
+        digits=dp.get_precision('Product Price')
+    )
     allow_negative_total = fields.Boolean(default=True)
 
     product_discount_selection = fields.Selection([
@@ -82,7 +86,7 @@ class DiscountProgramAction(models.Model):
             'sequence': max((sale.order_line.mapped('sequence') or [0])) + 1,
         }
 
-        if self.product_add_price:
+        if self.product_add_force_price:
             price_unit = self.product_add_price
             if price_unit < 0 and not self.allow_negative_total:
                 if sale.amount_total + price_unit < 0:

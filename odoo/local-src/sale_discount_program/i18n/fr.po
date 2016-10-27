@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-20 12:38+0000\n"
-"PO-Revision-Date: 2016-09-20 12:38+0000\n"
+"POT-Creation-Date: 2016-10-27 08:02+0000\n"
+"PO-Revision-Date: 2016-10-27 08:02+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgid "%s can not be combined with %s .Please remove it and apply discounts agai
 msgstr "%s ne peut-être cumulé avec %s. Merci de le supprimer et appliquer à nouveau les promotions."
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program.py:160
+#: code:addons/sale_discount_program/models/program.py:161
 #: code:addons/sale_discount_program/models/program.py:239
 #, python-format
 msgid "%s is not valid anymore."
@@ -41,13 +41,13 @@ msgstr "Actions"
 #. module: sale_discount_program
 #: selection:sale.discount.program.action,type_action:0
 msgid "Add Product"
-msgstr "Ajout d'un produit"
+msgstr "Ajout d'un article"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program_action.py:103
+#: code:addons/sale_discount_program/models/program_action.py:107
 #, python-format
 msgid "Add product: %s"
-msgstr "Ajout d'un produit: %s"
+msgstr "Ajout d'un article : %s"
 
 #. module: sale_discount_program
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_action_allow_negative_total
@@ -81,7 +81,7 @@ msgid "Bon d'achat"
 msgstr "Bon d'achat"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program_action.py:154
+#: code:addons/sale_discount_program/models/program_action.py:162
 #, python-format
 msgid "Change pricelist to %s"
 msgstr "Changement de liste de prix pour %s"
@@ -163,7 +163,7 @@ msgid "Discount program"
 msgstr "Programme de promotion"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program_action.py:138
+#: code:addons/sale_discount_program/models/program_action.py:146
 #, python-format
 msgid "Discount: %s%% on %s"
 msgstr "Remise: %s%% sur %s"
@@ -246,26 +246,32 @@ msgid "Pricelist program"
 msgstr "Pricelist program"
 
 #. module: sale_discount_program
+#: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_condition_product_id
+#: selection:sale.discount.program.condition,type_condition:0
+msgid "Product"
+msgstr "Article"
+
+#. module: sale_discount_program
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_condition_product_category_id
 #: selection:sale.discount.program.condition,type_condition:0
 msgid "Product Category"
 msgstr "Catégorie d'articles"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program_condition.py:103
+#: code:addons/sale_discount_program/models/program_condition.py:92
 #, python-format
 msgid "Product Category: %s"
 msgstr "Catégorie d'article: %s"
 
 #. module: sale_discount_program
+#: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_action_product_add_price
+msgid "Product Price"
+msgstr "Prix de l'article"
+
+#. module: sale_discount_program
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_action_product_add_id
 msgid "Product add id"
 msgstr "Product add id"
-
-#. module: sale_discount_program
-#: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_action_product_add_price
-msgid "Product add price"
-msgstr "Product add price"
 
 #. module: sale_discount_program
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_action_product_discount_selection
@@ -281,6 +287,12 @@ msgstr "Quantité maximum d'articles"
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_condition_product_min_qty
 msgid "Product minimal quantity"
 msgstr "Quantité minimum d'article"
+
+#. module: sale_discount_program
+#: code:addons/sale_discount_program/models/program_condition.py:106
+#, python-format
+msgid "Product: %s"
+msgstr "Article : %s"
 
 #. module: sale_discount_program
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_action_program_id
@@ -331,7 +343,7 @@ msgstr "Bon de commande"
 #. module: sale_discount_program
 #: model:ir.model,name:sale_discount_program.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Ligne de commande de vente"
+msgstr "Ligne de bons de commande"
 
 #. module: sale_discount_program
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_action_sequence
@@ -348,6 +360,11 @@ msgstr "Source order line id"
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_order_line_source_program_id
 msgid "Source program id"
 msgstr "Source program id"
+
+#. module: sale_discount_program
+#: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_action_product_add_force_price
+msgid "Specify product price"
+msgstr "Spécifier le prix de l'article"
 
 #. module: sale_discount_program
 #: selection:sale.discount.program.condition,type_condition:0
@@ -404,16 +421,6 @@ msgstr "Le code de bon d'achat doit être unique."
 #: model:ir.ui.menu,name:sale_discount_program.menu_discount_voucher
 msgid "Vouchers"
 msgstr "Bons d'achat"
-
-#. module: sale_discount_program
-#: model:ir.model.fields,field_description:sale_discount_program.field_sale_order_website_message_ids
-msgid "Website Messages"
-msgstr "Messages du site web"
-
-#. module: sale_discount_program
-#: model:ir.model.fields,help:sale_discount_program.field_sale_order_website_message_ids
-msgid "Website communication history"
-msgstr "Historique de communication du site web"
 
 #. module: sale_discount_program
 #: code:addons/sale_discount_program/models/sale_order.py:36

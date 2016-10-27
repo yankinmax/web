@@ -121,6 +121,7 @@ class Program(models.Model):
                         'product_add_id': self.env.ref(
                             'sale_discount_program.product_voucher'
                         ).id,
+                        'product_add_force_price': True,
                         'product_add_price': product_add_price,
                         'allow_negative_total': False,
                     })]

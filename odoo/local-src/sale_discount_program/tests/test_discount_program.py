@@ -70,8 +70,10 @@ class TestDiscountProgram(TransactionCase):
     @post_install(True)
     @at_install(False)
     def test_product_add(self):
+
         product_to_add = self.product_model.create({
             'name': 'Unittest gift product',
+            'list_price': 100,
             'uom_id': self.ref('product.product_uom_unit'),
         })
 
@@ -144,6 +146,19 @@ class TestDiscountProgram(TransactionCase):
             self.p1 | product_to_add,
             sale.order_line.mapped('product_id')
         )
+
+        self.assertEqual(100, sale.order_line[1].price_unit)
+
+        # Test to specify price
+        program.action_ids.product_add_force_price = True
+        sale.apply_discount_programs()
+        self.assertEqual(2, len(sale.order_line))
+        self.assertEqual(0, sale.order_line[1].price_unit)
+
+        program.action_ids.product_add_price = 90
+        sale.apply_discount_programs()
+        self.assertEqual(2, len(sale.order_line))
+        self.assertEqual(90, sale.order_line[1].price_unit)
 
     @post_install(True)
     @at_install(False)
