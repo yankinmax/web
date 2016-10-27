@@ -15,6 +15,13 @@ Unreleased
 **Documentation**
 
 
+9.3.4 (2016-10-27)
+++++++++++++++++++
+
+**Features and Improvements**
+* Enhance product add action in program.
+
+
 9.3.3 (2016-10-24)
 ++++++++++++++++++
 
@@ -94,53 +101,3 @@ Unreleased
 * 1 ``admin`` user and 1 ``normal`` user per company/center
 * customer diagnostic survey
 
-.. Template:
-
-.. 0.0.1 (unreleased)
-.. ++++++++++++++++++
-
-**Features and Improvements**
-
-**Bugfixes**
-
-**Build**
-
-**Documentation**
-
-
-9.3.3 (2016-10-24)
-++++++++++++++++++
-
-**Features and Improvements**
-
-**Bugfixes**
-
-**Build**
-
-**Documentation**
-
-
-9.3.2 (2016-10-12)
-++++++++++++++++++
-
-**Features and Improvements**
-
-**Bugfixes**
-
-**Build**
-
-**Documentation**
-
-
-9.3.1 (2016-09-30)
-++++++++++++++++++
-
-.. **Features and Improvements**
-
-.. **Bugfixes**
-
-.. **Build**
-
-.. **Documentation**
-
-.. Template:

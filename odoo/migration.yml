@@ -4,5 +4,7 @@ migration:
       operations:
         post:
           - oerpscenario -t setup
-    - version: 9.3.2
-    - version: 9.3.3
+    - version: 9.3.4
+      addons:
+        upgrade:
+          - sale_discount_program
