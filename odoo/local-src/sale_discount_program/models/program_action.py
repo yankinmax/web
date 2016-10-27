@@ -51,15 +51,17 @@ class DiscountProgramAction(models.Model):
         selection_dict = dict(self._fields['type_action'].selection)
         for action in self:
             if action.type_action:
-                final_name = selection_dict.get(action.type_action)
                 try:
-                    final_name = getattr(
+                    name = getattr(
                         action, '_get_%s_name' % action.type_action
                     )()
                 except AttributeError:
-                    pass
+                    name = None
 
-                action.name = final_name
+                if name is not None:
+                    action.name = name
+                else:
+                    action.name = selection_dict[action.type_action]
 
     @api.onchange('type_action')
     def onchange_type_action(self):
