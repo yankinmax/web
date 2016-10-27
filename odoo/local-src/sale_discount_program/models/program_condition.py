@@ -45,22 +45,18 @@ class DiscountProgramCondition(models.Model):
 
     @api.depends('type_condition')
     def _compute_name(self):
-        selection_dict = {
-            k: v for k, v in self._fields['type_condition'].selection
-        }
+        selection_dict = dict(self._fields['type_condition'].selection)
         for condition in self:
             if condition.type_condition:
+                final_name = selection_dict.get(condition.type_condition)
                 try:
-                    name = getattr(
+                    final_name = getattr(
                         condition, '_get_%s_name' % condition.type_condition
                     )()
                 except AttributeError:
-                    name = None
+                    pass
 
-                if name is not None:
-                    condition.name = name
-                else:
-                    condition.name = selection_dict[condition.type_condition]
+                condition.name = final_name
 
     @api.onchange('type_condition')
     def onchange_type_condition(self):

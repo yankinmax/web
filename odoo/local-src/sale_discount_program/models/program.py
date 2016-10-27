@@ -91,7 +91,7 @@ class Program(models.Model):
             else:
                 program.name = program.program_name
 
-    @api.depends('program_name', 'promo_code', 'voucher_code')
+    @api.depends('promo_code', 'voucher_code')
     def _compute_automatic(self):
         for program in self:
             program.automatic = not bool(

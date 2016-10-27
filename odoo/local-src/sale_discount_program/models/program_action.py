@@ -48,22 +48,18 @@ class DiscountProgramAction(models.Model):
 
     @api.depends('type_action')
     def _compute_name(self):
-        selection_dict = {
-            k: v for k, v in self._fields['type_action'].selection
-        }
+        selection_dict = dict(self._fields['type_action'].selection)
         for action in self:
             if action.type_action:
+                final_name = selection_dict.get(action.type_action)
                 try:
-                    name = getattr(
+                    final_name = getattr(
                         action, '_get_%s_name' % action.type_action
                     )()
                 except AttributeError:
-                    name = None
+                    pass
 
-                if name is not None:
-                    action.name = name
-                else:
-                    action.name = selection_dict[action.type_action]
+                action.name = final_name
 
     @api.onchange('type_action')
     def onchange_type_action(self):
