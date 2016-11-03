@@ -27,3 +27,6 @@ Feature: Parameter the new database
   @csv_import_product
   Scenario: import csv
     Given "product.product" is imported from CSV "setup/product.csv" using delimiter ";"
+
+  # tax are managed in anthem songs
+
