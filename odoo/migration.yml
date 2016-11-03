@@ -4,6 +4,7 @@ migration:
       operations:
         post:
           - oerpscenario -t setup
+          - anthem songs.install.accounting::main
     - version: 9.3.4
       addons:
         upgrade:
