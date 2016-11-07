@@ -457,3 +457,62 @@ class TestDiscountProgram(TransactionCase):
         self.assertEqual(30, sale.order_line.discount)
         self.assertEqual(100, sale.order_line.price_unit)
         self.assertEqual(70, sale.amount_total)
+
+    @post_install(True)
+    @at_install(False)
+    def test_product_add_and_pricelist(self):
+        self.program_model.create({
+            'name': 'Unittest reward product program',
+            'condition_ids': [
+                (0, False, {
+                    'type_condition': 'product_category',
+                    'product_category_id': self.product_category.id,
+                })
+            ],
+            'action_ids': [
+                (0, False, {
+                    'type_action': 'product_add',
+                    'product_add_id': self.p2.id,
+                    'product_add_force_price': True,
+                    'product_add_price': 0
+                }),
+                (0, False, {
+                    'type_action': 'change_pricelist',
+                    'pricelist_id': self.promo_pricelist.id,
+                })
+            ]
+        })
+
+        self.p1.write({
+            'list_price': 150,
+            'taxes_id': [(5,)],
+        })
+
+        self.p2.write({
+            'list_price': 100,
+            'taxes_id': [(5,)],
+        })
+
+        sale = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': self.client.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'price_unit': 150,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ]
+        })
+
+        sale.apply_discount_programs()
+        self.assertEqual(2, len(sale.order_line))
+        self.assertEqual(self.p1, sale.order_line[0].product_id)
+        self.assertEqual(150, sale.order_line[0].price_unit)
+        # 10% with pricelist
+        self.assertEqual(10, sale.order_line[0].discount)
+        self.assertEqual(135, sale.order_line[0].price_subtotal)
+
+        self.assertEqual(self.p2, sale.order_line[1].product_id)
+        self.assertEqual(0, sale.order_line[1].price_unit)

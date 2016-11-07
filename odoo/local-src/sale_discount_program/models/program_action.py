@@ -90,7 +90,10 @@ class DiscountProgramAction(models.Model):
                 if sale.amount_total + price_unit < 0:
                     price_unit = -1 * sale.amount_total
 
-            line_vals['price_unit'] = price_unit
+            line_vals.update({
+                'price_unit': price_unit,
+                'price_program': True,
+            })
 
         sale.write({
             'order_line': [(
@@ -150,7 +153,9 @@ class DiscountProgramAction(models.Model):
     def _apply_change_pricelist(self, sale):
         sale.pricelist_id = self.pricelist_id
         sale.pricelist_program = True
-        for line in sale.order_line:
+        for line in sale.order_line.filtered(
+            lambda l: not l.price_program
+        ):
             line.product_uom_change()
 
     @api.multi

@@ -94,6 +94,9 @@ class SaleOrderLine(models.Model):
         inverse_name='source_order_line_id'
     )
 
+    # True if price_unit field was changed by a sale.discount.program
+    price_program = fields.Boolean()
+
     # True if discount field was changed by a sale.discount.program
     discount_program = fields.Boolean()
 
