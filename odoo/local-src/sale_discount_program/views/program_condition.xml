@@ -20,6 +20,8 @@
                         <field name="product_min_price_unit"/>
                         <field name="product_min_qty"/>
                         <field name="product_max_qty"/>
+                        <field name="product_qty_type"
+                               attrs="{'invisible': [('product_min_qty', '=', '0'), ('product_max_qty', '=', 0)], 'required': ['|', ('product_min_qty', '!=', '0'), ('product_max_qty', '!=', 0)]}"/>
                     </group>
                 </sheet>
             </form>
