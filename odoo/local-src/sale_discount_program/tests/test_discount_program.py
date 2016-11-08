@@ -195,6 +195,52 @@ class TestDiscountProgram(TransactionCase):
 
     @post_install(True)
     @at_install(False)
+    def test_condition_product_distinct_qty(self):
+        program = self.program_model.create({
+            'name': 'Unittest gift product program',
+            'condition_ids': [
+                (0, False, {
+                    'type_condition': 'product_category',
+                    'product_category_id': self.product_category.id,
+                    'product_min_qty': 2,
+                })
+            ],
+        })
+
+        sale = self.sale_model.create({
+            'partner_id': self.client.id,
+            'phototherapist_id': self.phototherapist.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'product_uom_qty': 2,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ]
+        })
+        self.assertTrue(program.is_applicable(sale))
+
+        program.condition_ids.product_qty_type = 'distinct'
+        self.assertFalse(program.is_applicable(sale))
+
+        sale.write({
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p2.id,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ]
+        })
+
+        self.assertTrue(program.is_applicable(sale))
+
+        # Two lines with same product should not work
+        sale.order_line.write({'product_id': self.p1.id})
+        self.assertFalse(program.is_applicable(sale))
+
+    @post_install(True)
+    @at_install(False)
     def test_product_discount(self):
         program = self.program_model.create({
             'name': 'Unittest reward product program',

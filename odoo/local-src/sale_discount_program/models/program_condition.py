@@ -37,6 +37,10 @@ class DiscountProgramCondition(models.Model):
 
     product_min_qty = fields.Integer('Product minimal quantity')
     product_max_qty = fields.Integer('Product maximal quantity')
+    product_qty_type = fields.Selection([
+        ('quantity', 'Quantity is the sum of matching products quantities'),
+        ('distinct', 'Quantity is the number of distinct matching products'),
+    ])
 
     product_min_price_unit = fields.Float(
         'Minimal product unit price',
@@ -117,7 +121,11 @@ class DiscountProgramCondition(models.Model):
 
         if self.product_min_qty or self.product_max_qty:
             # TODO: compute with UOM
-            qty = sum(order_lines.mapped('product_uom_qty'))
+            if self.product_qty_type == 'distinct':
+                qty = len(order_lines.mapped('product_id'))
+            else:
+                qty = sum(order_lines.mapped('product_uom_qty'))
+
             if self.product_min_qty and qty < self.product_min_qty:
                 return False
 
