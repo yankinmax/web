@@ -15,6 +15,17 @@ Unreleased
 **Documentation**
 
 
+9.4.0 (2016-11-08)
+++++++++++++++++++
+
+**Features and Improvements**
+* Program condition: allow to choose quantity computation type.
+* Add taxes.
+
+**Bugfixes**
+* Fixed product price didn't work when another program defined a pricelist.
+
+
 9.3.4 (2016-10-27)
 ++++++++++++++++++
 
