@@ -40,7 +40,7 @@ def product_taxes(ctx):
         ('type_tax_use', '=', 'sale'),
     ])
     ctx.env.ref(
-        'senario.'
+        'scenario.'
         'product_transfertdossier_fiche_client_sans_tva_product_template'
     ).write({
         'taxes_id': [(6, False, sale_taxes_0.mapped('id'))],

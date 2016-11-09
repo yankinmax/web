@@ -28,5 +28,9 @@ Feature: Parameter the new database
   Scenario: import csv
     Given "product.product" is imported from CSV "setup/product.csv" using delimiter ";"
 
+  @csv_import_programs
+  Scenario: import csv
+    Given "sale.discount.program" is imported from CSV "setup/sale.discount.program.csv" using delimiter ","
+
   # tax are managed in anthem songs
 
