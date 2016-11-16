@@ -16,6 +16,7 @@ Feature: Parameter the new database
          | key             | value                     |
          | name            | Parrainage                |
          | discount_policy | without_discount          |
+         | item_ids        | False                     |
 
     Given I need a "product.pricelist.item" with oid: scenario.pricelist_sponsorship_item1
       And having:
@@ -30,6 +31,7 @@ Feature: Parameter the new database
          | key             | value                     |
          | name            | Code promo                |
          | discount_policy | without_discount          |
+         | item_ids        | False                     |
 
     Given I need a "product.pricelist.item" with oid: scenario.pricelist_code_promo_item1
       And having:
