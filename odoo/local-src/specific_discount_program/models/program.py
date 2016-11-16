@@ -14,6 +14,15 @@ class Program(models.Model):
         string='Allowed company',
     )
 
+    # For vouchers created by sale.order
+    source_sale_id = fields.Many2one(comodel_name='sale.order')
+
+    _sql_constraints = [
+        ('voucher_source_sale_id',
+         'check(source_sale_id is null or voucher_code is not null)',
+         _("source_sale_id can be filled only for voucher"))
+    ]
+
     @api.model
     def create(self, vals):
         """ Set promo code not combinable
