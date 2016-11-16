@@ -6,18 +6,6 @@ import anthem
 
 
 @anthem.log
-def configure_taxes(ctx):
-    """ Set sale tax TTC
-    """
-    ctx.env['account.tax'].search([
-        ('description', '=', '20.0'),
-        ('type_tax_use', '=', 'sale'),
-    ]).write({
-        'price_include': True
-    })
-
-
-@anthem.log
 def product_taxes(ctx):
     sale_taxes = ctx.env['account.tax'].search([
         ('description', '=', '20.0'),
@@ -50,6 +38,5 @@ def product_taxes(ctx):
 
 @anthem.log
 def main(ctx):
-    configure_taxes(ctx)
     product_taxes(ctx)
 
