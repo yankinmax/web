@@ -14,6 +14,12 @@ class Program(models.Model):
         string='Allowed company',
     )
 
+    partner_company_id = fields.Many2one(
+        comodel_name='res.company',
+        related='partner_id.company_id',
+        store=True
+    )
+
     # For vouchers created by sale.order
     source_sale_id = fields.Many2one(comodel_name='sale.order')
 
@@ -22,6 +28,22 @@ class Program(models.Model):
          'check(source_sale_id is null or voucher_code is not null)',
          _("source_sale_id can be filled only for voucher"))
     ]
+
+    @api.depends(
+        'program_name', 'voucher_code', 'promo_code', 'voucher_amount',
+        'partner_id'
+    )
+    def _compute_name(self):
+        for program in self:
+            if program.voucher_code:
+                program.name = "%s: %s (%s)" % (
+                    program.partner_id.name,
+                    program.voucher_code,
+                    program.voucher_amount
+                )
+
+            else:
+                super(Program, program)._compute_name()
 
     @api.model
     def create(self, vals):
