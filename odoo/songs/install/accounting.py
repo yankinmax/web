@@ -35,6 +35,13 @@ def product_taxes(ctx):
         'supplier_taxes_id': [(5,)],
     })
 
+    ctx.env.ref(
+        'sale_discount_program.product_voucher_product_template'
+    ).write({
+        'taxes_id': [(5,)],
+        'supplier_taxes_id': [(5,)],
+    })
+
 
 @anthem.log
 def main(ctx):
