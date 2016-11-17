@@ -15,6 +15,19 @@ Unreleased
 **Documentation**
 
 
+9.5.0 (2016-11-17)
+++++++++++++++++++
+
+**Features and Improvements**
+* #181: Voucher are linked to sale.order and generated at sale.order confirmation.
+* #184: User can select voucher for all center's customer (instead of only quotation customer)
+* Disable product popup in sale order lines.
+* Create discount program in scenario
+
+**Bugfixes**
+* #182: Remove select vouchers when user change the quotation customer.
+
+
 9.4.0 (2016-11-08)
 ++++++++++++++++++
 
