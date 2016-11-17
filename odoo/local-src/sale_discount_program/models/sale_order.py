@@ -24,6 +24,21 @@ class SaleOrder(models.Model):
 
     pricelist_program = fields.Boolean()
 
+    @api.onchange('partner_id')
+    def onchange_partner_id_remove_vouchers(self):
+        """ Remove selected vouchers in sale.order when changing customer.
+        """
+        voucher_ids = self.program_code_ids.filtered(
+            lambda p: p.voucher_code
+        )
+        if voucher_ids:
+            self.order_line = self.order_line.filtered(
+                lambda l: l.source_program_id not in voucher_ids
+            )
+            self.program_code_ids = self.program_code_ids.filtered(
+                lambda p: not p.voucher_code
+            )
+
     @api.onchange('pricelist_id')
     def onchange_pricelist_id(self):
         self.pricelist_program = False
