@@ -4,6 +4,7 @@
 from openerp.exceptions import UserError
 from openerp.tests.common import TransactionCase, post_install, at_install
 
+
 class TestProgram(TransactionCase):
 
     def setUp(self):

@@ -31,7 +31,7 @@ class SaleOrder(models.Model):
                 sale.is_sponsored = False
             else:
                 sale.is_sponsored = sale.partner_id.sponsor_id.active \
-                                    and sale.pricelist_id == sponsor_pricelist
+                    and sale.pricelist_id == sponsor_pricelist
 
     @api.multi
     def create_partner_voucher(self, partner_id):
