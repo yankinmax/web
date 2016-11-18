@@ -6,7 +6,7 @@ from lxml import etree
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-from openerp import api, fields, models
+from openerp import api, fields, models, SUPERUSER_ID
 
 
 class SaleOrder(models.Model):
@@ -133,3 +133,30 @@ class SaleOrder(models.Model):
                 program.sudo().unlink()
 
         return result
+
+
+class SaleOrderLine(models.Model):
+    _inherit = 'sale.order.line'
+
+    can_edit_price_unit = fields.Boolean(
+        compute='_compute_can_edit_price_unit'
+    )
+    price_unit_readonly = fields.Float(
+        'Unit Price',
+        related='price_unit',
+        readonly=True,
+    )
+
+    @api.depends()
+    def _compute_can_edit_price_unit(self):
+        """ price_unit is editable only for admin and Depiltech Admin.
+        """
+        admin = self.env.user.id == SUPERUSER_ID or self.env.user.has_group(
+            'specific_base.group_admin_depiltech'
+        )
+        for line in self:
+            line.can_edit_price_unit = admin
+
+    @api.onchange('price_unit_readonly')
+    def onchange_price_unit_readonly(self):
+        self.price_unit = self.price_unit_readonly
