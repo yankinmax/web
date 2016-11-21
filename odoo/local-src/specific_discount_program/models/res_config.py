@@ -2,6 +2,8 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from openerp.addons import decimal_precision as dp
+
 from openerp import api, fields, models
 
 
@@ -9,19 +11,24 @@ class SaleConfig(models.TransientModel):
     _inherit = 'sale.config.settings'
 
     voucher_percent = fields.Integer(
-        string="Pourcentage pour calcul du montant d'un bon d'achat",
+        string="Percent used to compute voucher amount",
     )
 
     voucher_max_amount = fields.Integer(
-        string="Montant max. d'un bon d'achat",
+        string="Maximum amount for a voucher",
     )
 
     voucher_max_count = fields.Integer(
-        string="Nombre de bons d'achats autorisé par commande.",
+        string="Number of vouchers allowed by sale order",
     )
 
     voucher_default_validity = fields.Integer(
-        string="Validité (en mois) par défaut des bons d'achats",
+        string="Default validity (by months) for a voucher",
+    )
+
+    discount_manually_percent_max = fields.Float(
+        string="Maximum percent of discount for a sale order",
+        digits=dp.get_precision('Discount'),
     )
 
     @api.model
@@ -76,4 +83,19 @@ class SaleConfig(models.TransientModel):
     def set_voucher_default_validity(self):
         self.env['ir.config_parameter'].set_param(
             'voucher_default_validity', str(self.voucher_default_validity)
+        )
+
+    @api.model
+    def get_default_discount_manually_percent_max(self, fields):
+        icp = self.env['ir.config_parameter']
+        return {
+            'discount_manually_percent_max':
+                float(icp.get_param('discount_manually_percent_max', 10.))
+        }
+
+    @api.multi
+    def set_discount_manually_percent_max(self):
+        self.env['ir.config_parameter'].set_param(
+            'discount_manually_percent_max',
+            str(self.discount_manually_percent_max)
         )

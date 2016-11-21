@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from openerp.exceptions import UserError
+
+from openerp.exceptions import UserError, ValidationError
 from openerp.tests.common import TransactionCase, post_install, at_install
 
 
@@ -16,6 +17,8 @@ class TestProgram(TransactionCase):
         self.program_model = self.env['sale.discount.program']
         self.sale_model = self.env['sale.order']
         self.sponsor_model = self.env['partner.sponsor']
+        self.settings_model = self.env['sale.config.settings']
+        self.pricelist_model = self.env['product.pricelist']
 
         for sponsor in self.sponsor_model.search([]):
             sponsor.unlink()
@@ -37,6 +40,16 @@ class TestProgram(TransactionCase):
                 'name': 'pricelist_sponsorship',
                 'res_id': self.sponsor_pricelist.id,
             })
+
+        self.promo_pricelist = self.pricelist_model.create({
+            'name': 'Unittest code promo',
+            'discount_policy': 'without_discount',
+            'item_ids': [(0, False, {
+                'applied_on': '3_global',
+                'compute_price': 'percentage',
+                'percent_price': 10,
+            })]
+        })
 
         self.phototherapist = self.env['res.company.phototherapist'].create({
             'name': 'Unittest phototherapist',
@@ -267,3 +280,174 @@ class TestProgram(TransactionCase):
         sale.apply_discount_programs()
 
         self.assertEqual(3, len(sale.applied_program_ids))
+
+    @post_install(True)
+    @at_install(False)
+    def test_discount_manually_percent_max(self):
+        sale = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': self.partner1.id,
+        })
+
+        with self.assertRaises(ValidationError):
+            # Default discount manually percent maximum is 10.0
+            sale.discount_manually_percent = 15.23
+
+        # Fix discount manually percent maximum to 15.23
+        settings = self.settings_model.create({
+            'discount_manually_percent_max': 15.23
+        })
+        settings.execute()
+        sale.discount_manually_percent = 15.23
+
+        with self.assertRaises(ValidationError):
+            # Default discount manually percent maximum is now 15.23
+            sale.discount_manually_percent = 20.
+
+    @post_install(True)
+    @at_install(False)
+    def test_discount_manually_percent(self):
+        # Create a program with gift product
+        product_to_add = self.product_model.create({
+            'name': 'Unittest gift product',
+            'list_price': 100,
+            'uom_id': self.ref('product.product_uom_unit'),
+        })
+        self.program_model.create({
+            'name': 'Unittest gift product program',
+            'condition_ids': [
+                (0, False, {
+                    'type_condition': 'product',
+                    'product_id': self.p1.id,
+                })
+            ],
+            'action_ids': [
+                (0, False, {
+                    'type_action': 'product_add',
+                    'product_add_id': product_to_add.id,
+                })
+            ]
+        })
+
+        # Create sale order
+        sale = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': self.partner1.id,
+            'order_line': [(0, 0, {
+                'product_id': self.p1.id, 'product_uom_qty': 1,
+                'price_unit': 500,
+            })]
+        })
+        sale.apply_discount_programs()
+        # Without manually discount, discount for lines is 0
+        self.assertEqual(sale.order_line[0].discount, 0.)
+        self.assertEqual(sale.order_line[1].discount, 0.)
+
+        sale.discount_manually_percent = 10.
+        sale.apply_discount_programs()
+        # With manually discount, discount for "normal" lines is 10.0
+        self.assertEqual(sale.order_line[0].discount, 10.)
+        # With manually discount, discount for "program" lines is 0.0
+        self.assertEqual(sale.order_line[1].discount, 0.)
+
+        # Check that discount is reset correctly
+        sale.discount_manually_percent = 5.
+        sale.apply_discount_programs()
+        # With manually discount, discount for "normal" lines is 5.0
+        self.assertEqual(sale.order_line[0].discount, 5.)
+        # With manually discount, discount for "program" lines is 0.0
+        self.assertEqual(sale.order_line[1].discount, 0.)
+
+    @post_install(True)
+    @at_install(False)
+    def test_discount_manually_percent_with_another_discount(self):
+        # Create a program with discount on product
+        self.program_model.create({
+            'name': 'Unittest reward product program',
+            'condition_ids': [
+                (0, False, {
+                    'type_condition': 'product',
+                    'product_id': self.p1.id,
+                })
+            ],
+            'action_ids': [
+                (0, False, {
+                    'type_action': 'product_discount',
+                    'product_discount_selection': 'most_expensive_no_discount',
+                    'discount_percent': 20,
+                })
+            ]
+        })
+
+        # Create sale order
+        sale = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': self.partner1.id,
+            'order_line': [(0, 0, {
+                'product_id': self.p1.id, 'product_uom_qty': 1,
+                'price_unit': 500,
+            })]
+        })
+        sale.apply_discount_programs()
+        # Without manually discount, discount for lines is 20.0 (by program)
+        self.assertEqual(sale.order_line[0].discount, 20.)
+        self.assertEqual(sale.order_line[0].price_unit, 500)
+        self.assertEqual(sale.order_line[0].price_subtotal, 400)
+
+        sale.discount_manually_percent = 10.
+        sale.apply_discount_programs()
+        # With manually discount, discount for lines is 30.0
+        # (by program and manually discount)
+        self.assertEqual(sale.order_line[0].discount, 30.)
+        self.assertEqual(sale.order_line[0].price_unit, 500)
+        self.assertEqual(sale.order_line[0].price_subtotal, 350)
+
+    @post_install(True)
+    @at_install(False)
+    def test_discount_manually_percent_with_pricelist_discount(self):
+        # Create product with list_price (used on pricelist)
+        p1 = self.product_model.create({
+            'name': 'Unittest P1',
+            'list_price': 500,
+        })
+
+        # Create a program with pricelist promo
+        self.program_model.create({
+            'name': 'Unittest reward product program',
+            'condition_ids': [
+                (0, False, {
+                    'type_condition': 'product',
+                    'product_id': p1.id,
+                })
+            ],
+            'action_ids': [
+                (0, False, {
+                    'type_action': 'change_pricelist',
+                    'pricelist_id': self.promo_pricelist.id,
+                })
+            ]
+        })
+
+        # Create sale order
+        sale = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': self.partner1.id,
+            'order_line': [(0, 0, {
+                'product_id': p1.id, 'product_uom_qty': 1,
+                'price_unit': 40,  # price_unit will be overridden by pricelist
+            })]
+        })
+        sale.apply_discount_programs()
+        # Without manually discount, discount for lines is 0.0,
+        # but price_unit is compute with 20.0 % discount (by pricelist)
+        self.assertEqual(sale.order_line[0].discount, 0.)
+        self.assertEqual(sale.order_line[0].price_unit, 450)
+        self.assertEqual(sale.order_line[0].price_subtotal, 450)
+
+        sale.discount_manually_percent = 5.
+        sale.apply_discount_programs()
+        # With manually discount, discount for lines is 5.0,
+        # And with price_unit is compute with 20.0 % discount (by pricelist)
+        self.assertEqual(sale.order_line[0].discount, 5.)
+        self.assertEqual(sale.order_line[0].price_unit, 450)
+        self.assertEqual(sale.order_line[0].price_subtotal, 427.5)

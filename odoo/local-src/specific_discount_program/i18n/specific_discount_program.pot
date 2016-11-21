@@ -18,179 +18,179 @@ msgstr ""
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_active
 msgid "Active"
-msgstr "Actif"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_allowed_company_ids
 msgid "Allowed company"
-msgstr "Société autorisées"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_res_partner_already_bought
 msgid "Already bought"
-msgstr "Déjà acheté"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_line_can_edit_price_unit
 msgid "Can edit price unit"
-msgstr "Prix unitaire éditable"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_partner_company_id
 msgid "Company"
-msgstr "Société"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_create_uid
 msgid "Created by"
-msgstr "Créé par"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_create_date
 msgid "Created on"
-msgstr "Créé le"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_voucher_default_validity
 msgid "Default validity (by months) for a voucher"
-msgstr "Validité (en mois) par défaut des bons d'achats"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_display_name
 msgid "Display Name"
-msgstr "Afficher le nom"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_generated_voucher_ids
 msgid "Generated voucher ids"
-msgstr "Bons d'achat générés"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_id
 msgid "ID"
-msgstr "Identifiant"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_is_sponsored
 msgid "Is sponsored"
-msgstr "Parrainé"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor___last_update
 msgid "Last Modified on"
-msgstr "Dernière modification le"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_write_uid
 msgid "Last Updated by"
-msgstr "Dernière mise à jour par"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_write_date
 msgid "Last Updated on"
-msgstr "Dernière mise à jour le"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_discount_manually_percent
 msgid "Manually Discount (%)"
-msgstr "Remise manuelle (%)"
+msgstr ""
 
 #. module: specific_discount_program
 #: code:addons/specific_discount_program/models/sale_order.py:158
 #, python-format
 msgid "Max manually discount allowed is %s %% for a sale order."
-msgstr "Le pourcentage maximum de remise manuelle est de %s %% pour une commande."
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_voucher_max_amount
 msgid "Maximum amount for a voucher"
-msgstr "Montant max. d'un bon d'achat"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_discount_manually_percent_max
 msgid "Maximum percent of discount for a sale order"
-msgstr "Pourcentage maximum de remise pour une commande"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_name
 msgid "Name"
-msgstr "Nom"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_voucher_max_count
 msgid "Number of vouchers allowed by sale order"
-msgstr "Nombre de bons d'achats autorisé par commande"
+msgstr ""
 
 #. module: specific_discount_program
 #: code:addons/specific_discount_program/models/program.py:70
 #, python-format
 msgid "Number of vouchers is limited to %s"
-msgstr "Le nombre de bon d'achat est limité à %s"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_res_partner
 msgid "Partner"
-msgstr "Partenaire"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_partner_id
 msgid "Partner id"
-msgstr "Partner id"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_voucher_percent
 msgid "Percent used to compute voucher amount"
-msgstr "Pourcentage pour calcul du montant d'un bon d'achat"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_sale_order
 msgid "Sales Order"
-msgstr "Bon de commande"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Ligne de bons de commande"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_source_sale_id
 msgid "Source sale id"
-msgstr "Commande d'origine"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_res_partner_sponsor_id
 msgid "Sponsor"
-msgstr "Sponsor"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_line_price_unit_readonly
 msgid "Unit Price"
-msgstr "Prix unitaire"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_partner_sponsor
 msgid "partner.sponsor"
-msgstr "partner.sponsor"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_sale_config_settings
 msgid "sale.config.settings"
-msgstr "sale.config.settings"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_sale_discount_program
 msgid "sale.discount.program"
-msgstr "sale.discount.program"
+msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_sale_discount_program_condition
 msgid "sale.discount.program.condition"
-msgstr "sale.discount.program.condition"
+msgstr ""
 
 #. module: specific_discount_program
 #: code:addons/specific_discount_program/models/program.py:29
 #: sql_constraint:sale.discount.program:0
 #, python-format
 msgid "source_sale_id can be filled only for voucher"
-msgstr "source_sale_id can be filled only for voucher"
+msgstr ""
 

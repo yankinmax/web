@@ -6,7 +6,10 @@ from lxml import etree
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-from openerp import api, fields, models, SUPERUSER_ID
+from openerp.addons import decimal_precision as dp
+from openerp.tools import float_compare
+
+from openerp import api, fields, models, SUPERUSER_ID, exceptions, _
 
 
 class SaleOrder(models.Model):
@@ -19,6 +22,12 @@ class SaleOrder(models.Model):
     generated_voucher_ids = fields.One2many(
         comodel_name='sale.discount.program',
         inverse_name='source_sale_id'
+    )
+
+    discount_manually_percent = fields.Float(
+        string='Manually Discount (%)',
+        digits=dp.get_precision('Discount'),
+        default=0.0
     )
 
     @api.depends(
@@ -133,6 +142,36 @@ class SaleOrder(models.Model):
                 program.sudo().unlink()
 
         return result
+
+    @api.one
+    @api.constrains('discount_manually_percent')
+    def _check_discount_manually_percent(self):
+        settings_model = self.env['sale.config.settings']
+        percent = settings_model.get_default_discount_manually_percent_max(
+            None
+        )['discount_manually_percent_max']
+        if float_compare(
+                self.discount_manually_percent,
+                percent,
+                self.env['decimal.precision'].precision_get('Discount')
+        ) == 1:
+            message = _(
+                'Max manually discount allowed is %s %% for a sale order.'
+            ) % percent
+            raise exceptions.ValidationError(message)
+
+    @api.onchange('discount_manually_percent')
+    def _onchange_discount_manually_percent(self):
+        self._check_discount_manually_percent()
+
+    @api.multi
+    def apply_discount_programs(self):
+        self.ensure_one()
+        super(SaleOrder, self).apply_discount_programs()
+        if self.discount_manually_percent:
+            for line in self.order_line:
+                if not line.source_program_id:
+                    line.discount += self.discount_manually_percent
 
 
 class SaleOrderLine(models.Model):
