@@ -44,6 +44,13 @@ class Program(models.Model):
 
     code_valid = fields.Boolean(compute='_compute_code_valid', store=True)
 
+    conditions_and = fields.Boolean(
+        string="All conditions must match",
+        help="If checked, all conditions should match for apply this program. "
+             "Otherwise one matching condition is enough "
+             "for apply this program."
+    )
+
     condition_ids = fields.One2many(
         comodel_name='sale.discount.program.condition',
         inverse_name='program_id',
@@ -169,8 +176,15 @@ class Program(models.Model):
             if not self.condition_ids:
                 return True
 
-        # TODO: and / or
-        return any(condition.check(sale) for condition in self.condition_ids)
+        if self.conditions_and:
+            match = all(
+                condition.check(sale) for condition in self.condition_ids
+            )
+        else:
+            match = any(
+                condition.check(sale) for condition in self.condition_ids
+            )
+        return match
 
     @api.multi
     def check_voucher_limits(self, sale):
