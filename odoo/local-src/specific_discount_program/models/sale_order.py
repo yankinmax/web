@@ -186,6 +186,10 @@ class SaleOrderLine(models.Model):
         readonly=True,
     )
 
+    can_edit_qty = fields.Boolean(
+        compute='_compute_can_edit_qty'
+    )
+
     @api.depends()
     def _compute_can_edit_price_unit(self):
         """ price_unit is editable only for admin and Depiltech Admin.
@@ -195,6 +199,13 @@ class SaleOrderLine(models.Model):
         )
         for line in self:
             line.can_edit_price_unit = admin
+
+    @api.depends('product_id', 'product_id.no_quantity')
+    def _compute_can_edit_qty(self):
+        """ Quantity is not editable if product has the no_quantity flag.
+        """
+        for line in self:
+            line.can_edit_qty = not line.product_id.no_quantity
 
     @api.onchange('price_unit_readonly')
     def onchange_price_unit_readonly(self):

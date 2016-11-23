@@ -1,0 +1,29 @@
+<odoo>
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <!-- Quantity should not  be editable if product has the no_quantity flag. -->
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="before">
+                <field name="can_edit_qty" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="attributes">
+                <attribute name="attrs">{'readonly': [('can_edit_qty', '=', False)]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_invoice_line_form" model="ir.ui.view">
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_form"/>
+        <field name="arch" type="xml">
+            <field name="quantity" position="before">
+                <field name="can_edit_qty" invisible="1"/>
+            </field>
+            <field name="quantity" position="attributes">
+                <attribute name="attrs">{'readonly': [('can_edit_qty', '=', False)]}</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>
