@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-23 10:26+0000\n"
-"PO-Revision-Date: 2016-11-23 10:26+0000\n"
+"POT-Creation-Date: 2016-11-23 15:18+0000\n"
+"PO-Revision-Date: 2016-11-23 15:18+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -34,6 +34,12 @@ msgstr "Déjà acheté"
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_line_can_edit_price_unit
 msgid "Can edit price unit"
 msgstr "Prix unitaire éditable"
+
+#. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_account_invoice_line_can_edit_qty
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_line_can_edit_qty
+msgid "Can edit qty"
+msgstr "Quantité éditable"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_partner_company_id
@@ -69,6 +75,11 @@ msgstr "Bons d'achat générés"
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_id
 msgid "ID"
 msgstr "Identifiant"
+
+#. module: specific_discount_program
+#: model:ir.model,name:specific_discount_program.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Ligne de facuration"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_is_sponsored
@@ -117,6 +128,11 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_product_template_no_quantity
+msgid "No quantity"
+msgstr "Quantité non modifiable"
+
+#. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_voucher_max_count
 msgid "Number of vouchers allowed by sale order"
 msgstr "Nombre de bons d'achats autorisé par commande"
@@ -141,6 +157,11 @@ msgstr "Partner id"
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_voucher_percent
 msgid "Percent used to compute voucher amount"
 msgstr "Pourcentage pour calcul du montant d'un bon d'achat"
+
+#. module: specific_discount_program
+#: model:ir.model,name:specific_discount_program.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_sale_order

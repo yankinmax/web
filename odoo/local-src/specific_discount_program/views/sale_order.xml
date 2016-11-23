@@ -18,6 +18,7 @@
                 <attribute name="readonly">1</attribute>
             </xpath>
 
+            <!-- Set Price unit invisible and display another price unit field which is read only for non admin -->
             <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="before">
                 <field name="can_edit_price_unit" invisible="1"/>
                 <field name="price_unit_readonly" attrs="{'readonly': [('can_edit_price_unit', '=', False)]}"/>
@@ -33,6 +34,24 @@
             <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="attributes">
                 <attribute name="invisible">True</attribute>
             </xpath>
+
+            <!-- Quantity should not  be editable if product has the no_quantity flag. -->
+            <xpath expr="//field[@name='order_line']/form//field[@name='product_uom_qty']" position="before">
+                <field name="can_edit_qty" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree//field[@name='product_uom_qty']" position="before">
+                <field name="can_edit_qty" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/form//field[@name='product_uom_qty']" position="attributes">
+                <attribute name="attrs">{'readonly': [('can_edit_qty', '=', False)]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree//field[@name='product_uom_qty']" position="attributes">
+                <attribute name="attrs">{'readonly': [('can_edit_qty', '=', False)]}</attribute>
+            </xpath>
+
         </field>
     </record>
 

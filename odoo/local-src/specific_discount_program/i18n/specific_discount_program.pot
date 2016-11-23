@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-23 10:26+0000\n"
-"PO-Revision-Date: 2016-11-23 10:26+0000\n"
+"POT-Creation-Date: 2016-11-23 15:20+0000\n"
+"PO-Revision-Date: 2016-11-23 15:20+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -33,6 +33,12 @@ msgstr ""
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_line_can_edit_price_unit
 msgid "Can edit price unit"
+msgstr ""
+
+#. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_account_invoice_line_can_edit_qty
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_line_can_edit_qty
+msgid "Can edit qty"
 msgstr ""
 
 #. module: specific_discount_program
@@ -68,6 +74,11 @@ msgstr ""
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_id
 msgid "ID"
+msgstr ""
+
+#. module: specific_discount_program
+#: model:ir.model,name:specific_discount_program.model_account_invoice_line
+msgid "Invoice Line"
 msgstr ""
 
 #. module: specific_discount_program
@@ -117,6 +128,11 @@ msgid "Name"
 msgstr ""
 
 #. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_product_template_no_quantity
+msgid "No quantity"
+msgstr ""
+
+#. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_voucher_max_count
 msgid "Number of vouchers allowed by sale order"
 msgstr ""
@@ -140,6 +156,11 @@ msgstr ""
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_voucher_percent
 msgid "Percent used to compute voucher amount"
+msgstr ""
+
+#. module: specific_discount_program
+#: model:ir.model,name:specific_discount_program.model_product_template
+msgid "Product Template"
 msgstr ""
 
 #. module: specific_discount_program

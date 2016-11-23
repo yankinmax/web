@@ -7,6 +7,8 @@ Unreleased
 ++++++++++
 
 **Features and Improvements**
+* #173: Manual discount.
+* #161: Quantity is not editable if product has the 'no quantity' flag.
 
 **Bugfixes**
 

@@ -16,7 +16,9 @@
     'data': [
         'security/ir.model.access.csv',
         'security/program.xml',
+        'views/account_invoice.xml',
         'views/program.xml',
+        'views/product_template.xml',
         'views/res_config.xml',
         'views/res_partner.xml',
         'views/sale_order.xml',
