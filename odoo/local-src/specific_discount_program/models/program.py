@@ -82,3 +82,15 @@ class Program(models.Model):
         ]
 
         return self.search(domain)
+
+    @api.model
+    def reset_sale_programs(self, sale):
+        """ Always remove discount because discount is readonly for Depiltech
+        """
+        sale.ensure_one()
+        for line in sale.order_line:
+            if not line.source_program_id:
+                line.write({
+                    'discount': False
+                })
+        super(Program, self).reset_sale_programs(sale)

@@ -9,6 +9,7 @@
                 <field name="voucher_max_amount"/>
                 <field name="voucher_max_count"/>
                 <field name="voucher_default_validity"/>
+                <field name="discount_manually_percent_max"/>
             </field>
         </field>
     </record>
