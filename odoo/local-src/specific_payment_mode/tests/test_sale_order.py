@@ -42,11 +42,13 @@ class TestSaleOrder(TransactionCase):
     @at_install(False)
     def test_payment_rules_constraints(self):
         # Check provision check
-        self.sale.provision = 50
+        self.sale.write({'provision': 50, 'monthly_payment': 100.})
         with self.assertRaises(ValidationError):
-            self.sale.write({'provision': 0, 'monthly_payment': 100.})
+            self.sale.provision = 0
         with self.assertRaises(ValidationError):
             self.sale.provision = 1010
+
+        # Reset values
         self.sale.write({'provision': False, 'monthly_payment': False})
 
         # Check month_number check
@@ -70,9 +72,9 @@ class TestSaleOrder(TransactionCase):
     @at_install(False)
     def test_payment_rules_amount_total(self):
         self.sale.write({
-            'monthly_payment': 300.,
-            'month_number': 5,
             'provision': 1000,
+            'month_number': 5,
+            'monthly_payment': 300.,
         })
 
         self.assertEqual(self.sale.provision, 1000)
@@ -89,10 +91,10 @@ class TestSaleOrder(TransactionCase):
     @post_install(True)
     @at_install(False)
     def test_payment_rules_provision(self):
-        # Check modification with only month_number
+        # Check provision modification with only month_number
         self.sale.write({
-            'month_number': 5,
             'provision': 1000,
+            'month_number': 5,
         })
         self.sale._onchange_provision()
 
@@ -100,7 +102,7 @@ class TestSaleOrder(TransactionCase):
         self.assertEqual(self.sale.month_number, 5)
         self.assertEqual(self.sale.monthly_payment, 300.)
 
-        # Check modification with month_number and monthly_payment
+        # Check provision modification with month_number and monthly_payment
         self.sale.provision = 800
         self.sale._onchange_provision()
 
@@ -108,7 +110,7 @@ class TestSaleOrder(TransactionCase):
         self.assertEqual(self.sale.month_number, False)
         self.assertEqual(self.sale.monthly_payment, False)
 
-        # Check modification with only monthly_payment
+        # Check provision modification with only monthly_payment
         self.sale.write({
             'monthly_payment': 400.,
             'provision': 450,
@@ -119,8 +121,10 @@ class TestSaleOrder(TransactionCase):
         self.assertEqual(self.sale.month_number, 5)
         self.assertEqual(self.sale.monthly_payment, 410.)
 
-        # Check modification with False value
-        self.sale.with_context(no_check_payment_rules=True).provision = False
+        # Check provision modification with False value
+        self.sale.no_check_payment_rules = True
+        self.sale.provision = False
+        self.sale.no_check_payment_rules = False
         self.sale._onchange_provision()
 
         self.assertEqual(self.sale.provision, False)
@@ -130,7 +134,7 @@ class TestSaleOrder(TransactionCase):
     @post_install(True)
     @at_install(False)
     def test_payment_rules_month_number(self):
-        # Check modification with only provision
+        # Check month_number modification with only provision
         self.sale.write({
             'provision': 500,
             'month_number': 10,
@@ -141,7 +145,7 @@ class TestSaleOrder(TransactionCase):
         self.assertEqual(self.sale.month_number, 10)
         self.assertEqual(self.sale.monthly_payment, 200.)
 
-        # Check modification with False value
+        # Check month_number modification with False value
         self.sale.month_number = False
         self.sale._onchange_month_number()
 
@@ -149,11 +153,11 @@ class TestSaleOrder(TransactionCase):
         self.assertEqual(self.sale.month_number, False)
         self.assertEqual(self.sale.monthly_payment, False)
 
-        # Check modification with only monthly_payment
-        self.sale.with_context(no_check_payment_rules=True).write({
-            'monthly_payment': 200.,
-            'month_number': 8,
-        })
+        # Check month_number modification with only monthly_payment
+        self.sale.no_check_payment_rules = True
+        self.sale.monthly_payment = 200.
+        self.sale.month_number = 8
+        self.sale.no_check_payment_rules = False
         self.sale._onchange_month_number()
 
         self.assertEqual(self.sale.provision, 900)
@@ -163,7 +167,7 @@ class TestSaleOrder(TransactionCase):
     @post_install(True)
     @at_install(False)
     def test_payment_rules_monthly_payment(self):
-        # Check modification with only provision
+        # Check monthly_payment modification with only provision
         self.sale.write({
             'provision': 1000,
             'monthly_payment': 100.5,
@@ -174,15 +178,19 @@ class TestSaleOrder(TransactionCase):
         self.assertEqual(self.sale.month_number, 14)
         self.assertEqual(self.sale.monthly_payment, 107.14)
 
-        # Check modification with False value
+        # Check monthly_payment modification with False value
         self.sale.monthly_payment = False
         self.sale._onchange_monthly_payment()
 
-        # Check modification with only month_number
-        self.sale.with_context(no_check_payment_rules=True).write({
-            'month_number': 20,
-            'monthly_payment': 100.,
-        })
+        self.assertEqual(self.sale.provision, False)
+        self.assertEqual(self.sale.month_number, False)
+        self.assertEqual(self.sale.monthly_payment, False)
+
+        # Check monthly_payment modification with only month_number
+        self.sale.no_check_payment_rules = True
+        self.sale.month_number = 20
+        self.sale.monthly_payment = 100.
+        self.sale.no_check_payment_rules = False
         self.sale._onchange_monthly_payment()
 
         self.assertEqual(self.sale.provision, 500)

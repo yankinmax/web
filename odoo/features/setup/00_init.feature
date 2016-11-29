@@ -74,6 +74,7 @@ Feature: Parameter the new database
       | fields_regex_validation              |
       | specific_base                        |
       | specific_discount_program            |
+      | specific_payment_mode                |
 
   @company
   Scenario: Configure main partner and company

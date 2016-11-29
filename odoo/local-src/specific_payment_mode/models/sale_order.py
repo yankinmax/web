@@ -22,6 +22,11 @@ class SaleOrder(models.Model):
     monthly_payment = fields.Float(
         digits=dp.get_precision('Account')
     )
+    # This field is only used to deactivate check payment rules,
+    # in some cases on write method
+    no_check_payment_rules = fields.Boolean(
+        store=False
+    )
 
     @api.model
     def _check_provision(self, provision, month_number, monthly_payment):
@@ -56,22 +61,28 @@ class SaleOrder(models.Model):
     @api.model
     def create(self, values):
         self._check_payment_rules(
-            values.get('provision', False),
-            values.get('month_number', False),
-            values.get('monthly_payment', False),
+            values.get('provision'),
+            values.get('month_number'),
+            values.get('monthly_payment'),
         )
         return super(SaleOrder, self).create(values)
 
     @api.multi
     def write(self, values):
-        super(SaleOrder, self).write(values)
-        context = self.env.context or {}
-        if not context.get('no_check_payment_rules'):
+        result = super(SaleOrder, self).write(values)
+        if (
+            'provision' in values
+            or 'month_number' in values
+            or 'monthly_payment' in values
+        ):
             for order in self:
-                self._check_payment_rules(
-                    order.provision, order.month_number, order.monthly_payment
-                )
-        return True
+                if not order.no_check_payment_rules:
+                    self._check_payment_rules(
+                        order.provision,
+                        order.month_number,
+                        order.monthly_payment
+                    )
+        return result
 
     def _compute_provision(self):
         return self.amount_total - (self.month_number * self.monthly_payment)
@@ -86,11 +97,12 @@ class SaleOrder(models.Model):
     def _onchange_provision(self):
         if (
             not self.provision
-            or self.month_number and self.monthly_payment
+            or (self.month_number and self.monthly_payment)
         ):
-            self.with_context(no_check_payment_rules=True).update({
-                'month_number': False, 'monthly_payment': False
-            })
+            self.no_check_payment_rules = True
+            self.month_number = False
+            self.monthly_payment = False
+            self.no_check_payment_rules = False
         elif self.month_number and not self.monthly_payment:
             self.monthly_payment = self._compute_monthly_payment()
         elif not self.month_number and self.monthly_payment:
@@ -104,11 +116,12 @@ class SaleOrder(models.Model):
     def _onchange_month_number(self):
         if (
             not self.month_number
-            or self.provision and self.monthly_payment
+            or (self.provision and self.monthly_payment)
         ):
-            self.with_context(no_check_payment_rules=True).update({
-                'provision': False, 'monthly_payment': False
-            })
+            self.no_check_payment_rules = True
+            self.provision = False
+            self.monthly_payment = False
+            self.no_check_payment_rules = False
         elif self.provision and not self.monthly_payment:
             self.monthly_payment = self._compute_monthly_payment()
         elif not self.provision and self.monthly_payment:
@@ -121,11 +134,12 @@ class SaleOrder(models.Model):
     def _onchange_monthly_payment(self):
         if (
             not self.monthly_payment
-            or self.provision and self.month_number
+            or (self.provision and self.month_number)
         ):
-            self.with_context(no_check_payment_rules=True).update({
-                'provision': False, 'month_number': False
-            })
+            self.no_check_payment_rules = True
+            self.provision = False
+            self.month_number = False
+            self.no_check_payment_rules = False
         elif self.provision and not self.month_number:
             self.month_number = self._compute_month_number()
             self.monthly_payment = self._compute_monthly_payment()
@@ -137,15 +151,22 @@ class SaleOrder(models.Model):
 
     @api.onchange('amount_total')
     def _onchange_amount_total(self):
-        self.write({
-            'provision': False,
-            'month_number': False,
-            'monthly_payment': False,
-        })
+        self.no_check_payment_rules = True
+        self.provision = False
+        self.month_number = False
+        self.monthly_payment = False
+        self.no_check_payment_rules = False
 
     @api.multi
     def onchange(self, values, field_name, field_onchange):
         new_field_onchange = field_onchange or {}
+        # If onchange is triggered by one of these fields,
+        # we don't want to trigger onchange for others
+        #
+        # Example:
+        # If onchange is triggered by provision field,
+        # we don't want to trigger onchange
+        # on month_number and monthly_payment fields
         for field in ['provision', 'month_number', 'monthly_payment']:
             if field_name != field and field in new_field_onchange.keys():
                 del new_field_onchange[field]
