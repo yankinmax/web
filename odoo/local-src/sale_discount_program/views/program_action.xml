@@ -20,6 +20,8 @@
 
                     <group name="action_product_discount" attrs="{'invisible': [('type_action', '!=', 'product_discount')]}">
                         <field name="product_discount_selection" attrs="{'required': [('type_action', '=', 'product_discount')]}"/>
+                        <field name="discount_product_id"
+                               attrs="{'invisible':[('product_discount_selection', '!=', 'fixed_product')], 'required': [('product_discount_selection', '=', 'fixed_product')]}"/>
                         <field name="discount_percent" attrs="{'required': [('type_action', '=', 'product_discount')]}"/>
                     </group>
 

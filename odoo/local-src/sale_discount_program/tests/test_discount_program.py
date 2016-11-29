@@ -562,3 +562,110 @@ class TestDiscountProgram(TransactionCase):
 
         self.assertEqual(self.p2, sale.order_line[1].product_id)
         self.assertEqual(0, sale.order_line[1].price_unit)
+
+    @post_install(True)
+    @at_install(False)
+    def test_and_conditions(self):
+        program = self.program_model.create({
+            'name': 'Unittest conditions_and program',
+            'condition_ids': [
+                (0, False, {
+                    'type_condition': 'product',
+                    'product_id': self.p1.id,
+                }),
+                (0, False, {
+                    'type_condition': 'product',
+                    'product_id': self.p2.id,
+                })
+            ],
+        })
+
+        sale = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': self.client.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                })
+            ]
+        })
+
+        # Default is OR for conditions
+        self.assertTrue(program.is_applicable(sale))
+
+        # Switching to and
+        program.conditions_and = True
+        self.assertFalse(program.is_applicable(sale))
+
+        # Add the second needed product
+        sale.write({
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p2.id,
+                })
+            ]
+        })
+
+        self.assertTrue(program.is_applicable(sale))
+
+    @post_install(True)
+    @at_install(False)
+    def test_discount_selection_product(self):
+
+        program = self.program_model.create({
+            'name': 'Unittest discount on specifc product',
+            'conditions_and': True,
+            'condition_ids': [
+                (0, False, {
+                    'type_condition': 'product',
+                    'product_id': self.p1.id,
+                }),
+                (0, False, {
+                    'type_condition': 'product',
+                    'product_id': self.p2.id,
+                })
+            ],
+            'action_ids': [
+                (0, False, {
+                    'type_action': 'product_discount',
+                    'product_discount_selection': 'fixed_product',
+                    'discount_product_id': self.p2.id,
+                    'discount_percent': 15.3,
+                }),
+            ],
+        })
+
+        self.assertEqual(
+            'Discount: 15.3% on Unittest P2',
+            program.action_ids[0].name
+        )
+
+        sale = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': self.client.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p2.id,
+                })
+            ]
+        })
+
+        # Both conditions not matched
+        sale.apply_discount_programs()
+        self.assertEqual(0, sale.order_line[0].discount)
+
+        # Add needed product
+        sale.write({
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                })
+            ]
+        })
+
+        sale.apply_discount_programs()
+        self.assertEqual(15.3, sale.order_line[0].discount)
+        self.assertEqual(self.p2, sale.order_line[0].product_id)
+
+        self.assertEqual(0, sale.order_line[1].discount)
+        self.assertEqual(self.p1, sale.order_line[1].product_id)

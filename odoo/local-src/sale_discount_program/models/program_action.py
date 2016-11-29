@@ -36,8 +36,11 @@ class DiscountProgramAction(models.Model):
     allow_negative_total = fields.Boolean(default=True)
 
     product_discount_selection = fields.Selection([
-        ('most_expensive_no_discount', 'Most expensive without discount')
+        ('most_expensive_no_discount', 'Most expensive without discount'),
+        ('fixed_product', 'On a specified product'),
     ])
+
+    discount_product_id = fields.Many2one('product.product')
 
     discount_percent = fields.Float(
         'Discount',
@@ -109,30 +112,37 @@ class DiscountProgramAction(models.Model):
 
     @api.multi
     def _get_discount_target(self, sale):
+        lines = sale.order_line.filtered(
+            lambda l: not l.discount_program and l.price_unit
+        )
         if self.product_discount_selection == 'most_expensive_no_discount':
             sol = None
-            for line in sale.order_line.filtered(
-                lambda l: not l.discount_program
-            ):
+            for line in lines:
                 if not sol or line.price_unit > sol.price_unit:
                     sol = line
 
             return sol
+
+        elif self.product_discount_selection == 'fixed_product':
+            return lines.filtered(
+                lambda l: l.product_id == self.discount_product_id
+            )
         else:
             raise NotImplementedError()
 
     @api.multi
     def _apply_product_discount(self, sale):
-        sol = self._get_discount_target(sale)
-        if sol and sol.price_unit:
-            discount = self.discount_percent
-            if sol.discount:
-                discount += sol.discount
+        lines = self._get_discount_target(sale)
+        if lines:
+            for line in lines:
+                discount = self.discount_percent
+                if line.discount:
+                    discount += line.discount
 
-            sol.write({
-                'discount': discount,
-                'discount_program': True,
-            })
+                line.write({
+                    'discount': discount,
+                    'discount_program': True,
+                })
 
     @api.multi
     def _get_product_discount_name(self):
@@ -144,9 +154,15 @@ class DiscountProgramAction(models.Model):
         }
 
         if self.product_discount_selection and self.discount_percent:
+            if self.product_discount_selection == 'fixed_product':
+                target = self.discount_product_id.name
+
+            else:
+                target = selection_dict[self.product_discount_selection]
+
             return _("Discount: %s%% on %s") % (
                 self.discount_percent,
-                selection_dict[self.product_discount_selection]
+                target
             )
 
     @api.multi

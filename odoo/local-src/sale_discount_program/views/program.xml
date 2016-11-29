@@ -9,6 +9,7 @@
                 <group>
                     <field name="program_name" required="1"/>
                     <field name="combinable"/>
+                    <field name="conditions_and"/>
                     <field name="condition_ids" required="1"/>
                     <field name="action_ids" required="1"/>
                 </group>
