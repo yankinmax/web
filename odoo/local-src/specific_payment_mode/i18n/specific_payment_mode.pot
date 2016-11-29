@@ -1,0 +1,122 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* specific_payment_mode
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-29 13:20+0000\n"
+"PO-Revision-Date: 2016-11-29 13:20+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: specific_payment_mode
+#: model:ir.ui.view,arch_db:specific_payment_mode.view_order_specific_form
+msgid "(update)"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.actions.act_window,name:specific_payment_mode.action_depiltech_payment_mode
+#: model:ir.ui.menu,name:specific_payment_mode.menu_depiltech_payment_mode
+#: model:ir.ui.view,arch_db:specific_payment_mode.depiltech_payment_mode_tree_view
+msgid "Depiltech payment modes"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_id
+msgid "ID"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_month_number
+msgid "Month number"
+msgstr ""
+
+#. module: specific_payment_mode
+#: code:addons/specific_payment_mode/models/sale_order.py:38
+#, python-format
+msgid "Month number must be an integer between 0 and 20"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_monthly_payment
+msgid "Monthly payment"
+msgstr ""
+
+#. module: specific_payment_mode
+#: code:addons/specific_payment_mode/models/sale_order.py:46
+#, python-format
+msgid "Monthly payment must be a positive float"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_name
+msgid "Name"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_depiltech_payment_mode
+msgid "Payment mode"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_provision
+msgid "Provision"
+msgstr ""
+
+#. module: specific_payment_mode
+#: code:addons/specific_payment_mode/models/sale_order.py:30
+#, python-format
+msgid "Provision must be an integer between 10 and 1000"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model,name:specific_payment_mode.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.ui.view,arch_db:specific_payment_mode.view_order_specific_form
+msgid "Setup default terms and conditions in your company settings."
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model,name:specific_payment_mode.model_depiltech_payment_mode
+msgid "depiltech.payment.mode"
+msgstr ""
+

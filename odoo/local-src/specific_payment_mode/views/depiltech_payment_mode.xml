@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="depiltech_payment_mode_form">
+        <field name="name">depiltech.payment.mode.form</field>
+        <field name="model">depiltech.payment.mode</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="depiltech_payment_mode_tree_view">
+        <field name="name">depiltech.payment.mode.tree</field>
+        <field name="model">depiltech.payment.mode</field>
+        <field name="arch" type="xml">
+            <tree string="Depiltech payment modes">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <act_window id="action_depiltech_payment_mode"
+                name="Depiltech payment modes"
+                res_model="depiltech.payment.mode"
+                view_type="form"
+                view_mode="tree,form" />
+
+    <menuitem id="menu_depiltech_payment_mode"
+              action="action_depiltech_payment_mode"
+              parent="base.menu_sale_config"
+              groups="base.group_sale_manager"
+              sequence="100"/>
+
+</odoo>

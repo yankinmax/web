@@ -7,6 +7,7 @@ Unreleased
 ++++++++++
 
 **Features and Improvements**
+* #129: Add specific payment mode module
 * #173: Manual discount.
 * #161: Quantity is not editable if product has the 'no quantity' flag.
 

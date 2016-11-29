@@ -9,3 +9,4 @@ migration:
       addons:
         upgrade:
           - sale_discount_program
+          - specific_payment_mode
