@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record model="depiltech.payment.mode" id="especes">
+        <field name="name">Espèces</field>
+    </record>
+    <record model="depiltech.payment.mode" id="cb">
+        <field name="name">CB</field>
+    </record>
+    <record model="depiltech.payment.mode" id="sepa">
+        <field name="name">Prélèvement SEPA</field>
+    </record>
+    <record model="depiltech.payment.mode" id="virement">
+        <field name="name">Virement</field>
+    </record>
+    <record model="depiltech.payment.mode" id="cheque">
+        <field name="name">Chèque</field>
+    </record>
+    <record model="depiltech.payment.mode" id="carrefour">
+        <field name="name">Carte Carrefour</field>
+    </record>
+    <record model="depiltech.payment.mode" id="cadhoc">
+        <field name="name">Cadhoc</field>
+    </record>
+    <record model="depiltech.payment.mode" id="kadeo">
+        <field name="name">Kadéo</field>
+    </record>
+
+</odoo>

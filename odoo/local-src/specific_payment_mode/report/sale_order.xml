@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <template id="report_saleorder_specific" inherit_id="sale.report_saleorder_document">
+
+            <p t-field="doc.note" position="replace"/>
+            <p t-if="doc.payment_term_id.note" position="replace"/>
+            <p t-if="not doc.payment_term_id and doc.partner_id.property_payment_term_id" position="replace"/>
+            <p id="fiscal_position_remark" position="replace"/>
+
+            <xpath expr="//div[@name='total']" position="after">
+                <div class="row" name="payment_rules">
+                    <div class="col-xs-8 pull-left">
+                        <p t-field="doc.note" />
+                        <p t-if="doc.payment_term_id.note">
+                            <span t-field="doc.payment_term_id.note"/>
+                        </p>
+                        <p t-if="not doc.payment_term_id and doc.partner_id.property_payment_term_id">
+                            <span t-field="doc.partner_id.property_payment_term_id.note"/>
+                        </p>
+                        <p id="fiscal_position_remark" t-if="doc.fiscal_position_id and doc.fiscal_position_id.note">
+                            <strong>Fiscal Position Remark:</strong>
+                            <span t-field="doc.fiscal_position_id.note"/>
+                        </p>
+                    </div>
+                    <div class="col-xs-4 pull-right">
+                        <table class="table table-condensed">
+                            <tr>
+                                <th colspan="2"><center>Calculation of monthly payments</center></th>
+                            </tr>
+                            <tr>
+                                <th>Provision</th>
+                                <td class="text-right">
+                                    <span t-field="doc.provision"
+                                          t-field-options='{"widget": "monetary", "display_currency": "doc.pricelist_id.currency_id"}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Month number</th>
+                                <td class="text-right">
+                                    <span t-field="doc.month_number"/>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid black">
+                                <th>Monthly payment</th>
+                                <td class="text-right">
+                                    <span t-field="doc.monthly_payment"
+                                          t-field-options='{"widget": "monetary", "display_currency": "doc.pricelist_id.currency_id"}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Type</th>
+                                <td class="text-right">
+                                    <span t-field="doc.depiltech_payment_mode"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+    </data>
+</openerp>
