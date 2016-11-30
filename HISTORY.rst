@@ -9,6 +9,7 @@ Unreleased
 **Features and Improvements**
 
 **Bugfixes**
+* Missing translations on program.
 
 **Build**
 
