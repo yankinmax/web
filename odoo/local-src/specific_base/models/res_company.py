@@ -84,8 +84,7 @@ class ResCompany(models.Model):
     center_manager_name = fields.Char()
     franchised_name = fields.Char()
     capital_stock = fields.Integer()
-    coach_id = fields.Many2one(comodel_name='res.users')
-    # coach_id :: add domain on a specific group
+    coach_id = fields.Many2one(string='Coach', comodel_name='res.partner')
     url_customer_reviews = fields.Char()
     # rcs, siret(siren+nic) --> install l10n_fr_siret modules
     company_type = fields.Selection(selection='_get_company_type_selection',

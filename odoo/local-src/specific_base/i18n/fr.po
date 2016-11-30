@@ -1,0 +1,1057 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* specific_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-30 14:59+0000\n"
+"PO-Revision-Date: 2016-11-30 14:59+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_children_nb
+msgid "# Children"
+msgstr "# Children"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:126
+#, python-format
+msgid "Other Health Professions and Social Work"
+msgstr "Autres professions de la santé et du travail social"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_company.py:24
+#, python-format
+msgid "1 month"
+msgstr "1 mois"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_company.py:25
+#, python-format
+msgid "2 months"
+msgstr "2 mois"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_company.py:26
+#, python-format
+msgid "3 months"
+msgstr "3 mois"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_active
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_active
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_active
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_title_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_active_campaigns
+msgid "Active campaigns"
+msgstr "Campagnes actives"
+
+#. module: specific_base
+#: model:res.groups,name:specific_base.group_admin_depiltech
+msgid "Admin DT"
+msgstr "Admin DT"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:137
+#, python-format
+msgid "Aestheticians and other beauty professionals"
+msgstr "Esthéticiens et autres professions de la beauté"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_product_pricelist_allowed_company_ids
+#: model:ir.model.fields,field_description:specific_base.field_product_pricelist_item_allowed_company_ids
+msgid "Allowed company ids"
+msgstr "Sociétés autorisées"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_comment1
+msgid "Anecdote/Vacations"
+msgstr "Anecdote/Vacations"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_partner_center_form
+msgid "Answers"
+msgstr "Réponses"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:115
+#, python-format
+msgid "Artisan"
+msgstr "Artisan"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.back_partner
+msgid "Back to Partner"
+msgstr "Retour au contact"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_beauty_institute_attented
+msgid "Beauty institute attented"
+msgstr "Beauty institute attented"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_birthday
+msgid "Birthday"
+msgstr "Date de naissance"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_company.py:17
+#, python-format
+msgid "Branch"
+msgstr "Branch"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_can_create_product
+msgid "Can create product"
+msgstr "Can create product"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_capital_stock
+msgid "Capital stock"
+msgstr "Capital stock"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_center_manager_name
+msgid "Center manager name"
+msgstr "Center manager name"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_company.py:43
+#, python-format
+msgid "Check"
+msgstr "Check"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:56
+#, python-format
+msgid "Cinema, television"
+msgstr "Cinéma, télévision"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:127
+#, python-format
+msgid "Clergy, other religious professions"
+msgstr "Clergé, Autres professions religieuses"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_company.py:19
+#, python-format
+msgid "Closed"
+msgstr "Fermé"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_am_0
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_am_1
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_am_2
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_am_3
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_am_4
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_am_5
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_am_6
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_pm_0
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_pm_1
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_pm_2
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_pm_3
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_pm_4
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_pm_5
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_end_pm_6
+msgid "Closing at"
+msgstr "Ferme à"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_coach_id
+msgid "Coach"
+msgstr "Animateur"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: specific_base
+#: model:ir.actions.act_window,name:specific_base.company_schedule_action_tree
+#: model:ir.ui.menu,name:specific_base.menu_action_company_schedule
+#: model:ir.ui.view,arch_db:specific_base.view_company_schedule_form
+#: model:ir.ui.view,arch_db:specific_base.view_company_schedule_tree
+msgid "Company Schedule"
+msgstr "Company Schedule"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_company_id
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_company_id
+msgid "Company id"
+msgstr "Société"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_company_name
+msgid "Company name"
+msgstr "Nom de la société"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:165
+#, python-format
+msgid "Conjoint disagreement"
+msgstr "Désaccord du conjoint"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:141
+#, python-format
+msgid "Conscripts"
+msgstr "Militaires du contingent"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+msgid "Contract"
+msgstr "Contrat"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_comment2
+msgid "Cosmetic habits / Brand used"
+msgstr "Cosmetic habits / Brand used"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:148
+#, python-format
+msgid "Couple"
+msgstr "Couple"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_create_uid
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_create_date
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_date_deleted
+msgid "Date deleted"
+msgstr "Date deleted"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_date_end_contract
+msgid "Date end contract"
+msgstr "Date de fin de contrat"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_date_opening
+msgid "Date opening"
+msgstr "Date ouverture"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_date_start_contract
+msgid "Date start contract"
+msgstr "Date de début de contrat"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+msgid "DepilTech"
+msgstr "DepilTech"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_description
+msgid "Description"
+msgstr "Description"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_description_active
+msgid "Description active"
+msgstr "Description active"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_company_nb_desk
+msgid "Desks number"
+msgstr "Desks number"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_partner_center_form
+msgid "Diagnostic"
+msgstr "Diagnostic"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_display_name
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_display_name
+msgid "Display Name"
+msgstr "Afficher le nom"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_display_teleop
+msgid "Display teleop"
+msgstr "Display teleop"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:149
+#, python-format
+msgid "Divorced"
+msgstr "Divorcé"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:124
+#, python-format
+msgid "Doctors, Specialized Doctors"
+msgstr "Doctors, Specialized Doctors"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:58
+#, python-format
+msgid "Emailing communication"
+msgstr "Communication Emailing"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:133
+#, python-format
+msgid "Employees and agents of the Public Service"
+msgstr "Employés et agents de la fonction publique"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:135
+#, python-format
+msgid "Employees of private enterprise"
+msgstr "Employés d’entreprise privée"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_calendar_event
+msgid "Event"
+msgstr "Évènement"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:63
+#, python-format
+msgid "Event (stand in salon, open doors, fair, ...)"
+msgstr "Evénement (stand sur salon, porte ouverte, foire...)"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:123
+#, python-format
+msgid "Executive private companies"
+msgstr "Cadres d’entreprise privée"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:119
+#, python-format
+msgid "Executive public service"
+msgstr "Cadres de la fonction publique"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+#: model:ir.ui.view,arch_db:specific_base.view_partner_center_form
+msgid "Extra Infos"
+msgstr "Extra Infos"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_family_situation
+msgid "Family situation"
+msgstr "Situation familiale"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:114
+#, python-format
+msgid "Farmer"
+msgstr "Agriculteur"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_partner_center_form
+msgid "Fill Diagnostic"
+msgstr "Fill Diagnostic"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_flash_test_date
+msgid "Flash test date"
+msgstr "Flash test date"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_flash_done
+msgid "Flash test done"
+msgstr "Flash test done"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_flash_test_setting
+msgid "Flash test setting"
+msgstr "Flash test setting"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_flash_test_zone
+msgid "Flash test zone"
+msgstr "Flash test zone"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:131
+#, python-format
+msgid "Foremen, supervisors"
+msgstr "Contremaîtres, agents de maîtrise"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_company.py:18
+#, python-format
+msgid "Franchised"
+msgstr "Franchisé"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+msgid "Franchised Infos"
+msgstr "Informations franchisé"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_franchised_email
+msgid "Franchised email"
+msgstr "Email"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_franchised_mobile
+msgid "Franchised mobile"
+msgstr "Mobile"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_franchised_name
+msgid "Franchised name"
+msgstr "Nom"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_schedule_form
+msgid "Friday"
+msgstr "Vendredi"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_calendar_event_has_come
+msgid "Has come"
+msgstr "Has come"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:117
+#, python-format
+msgid "Head of a company more than 10 employees"
+msgstr "Chefs d’entreprise de 10 salariés ou plus"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_provenance
+msgid "How do you know us ?"
+msgstr "Comment nous connaissez vous ?"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_come_by_car
+msgid "How to come by car"
+msgstr "Se rendre chez nous en voiture"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_come_by_transport
+msgid "How to come by transport"
+msgstr "Se rendre chez nous en transport"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_id
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_id
+msgid "ID"
+msgstr "Identifiant"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_info_meeting_date
+msgid "Info meeting date"
+msgstr "Info meeting date"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:122
+#, python-format
+msgid "Information professions, arts and entertainment"
+msgstr "Professions de l’information, des arts et des spectacles"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:52
+#, python-format
+msgid "Internet (website, blog post, search engine,social networks, forum, banner"
+msgstr "Internet (site Dépil Tech, article, moteur de recherche, réseaux sociaux, forum de discussion, bannière publicitaire...)"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:163
+#, python-format
+msgid "Intractable"
+msgstr "Intraitable"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_partner_center_form
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_am_0
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_am_1
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_am_2
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_am_3
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_am_4
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_am_5
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_am_6
+msgid "Is open AM ?"
+msgstr "Ouvert le matin ?"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_pm_0
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_pm_1
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_pm_2
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_pm_3
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_pm_4
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_pm_5
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_pm_6
+msgid "Is open PM ?"
+msgstr "Ouvert l'après midi ?"
+
+#. module: specific_base
+#: sql_constraint:res.partner:0
+msgid "It seems that there already a customer existing with same phone and email adress. Please use the search function to find it."
+msgstr "Il semble qu'un contact avec ce numéro de téléphone et cet email existe déjà. Merci d'utiliser la recherche pour le trouver."
+
+#. module: specific_base
+#: sql_constraint:res.company.schedule:0
+msgid "It seems that there already an active company schedule. Please deactivate the other if you want to use this one."
+msgstr "It seems that there already an active company schedule. Please deactivate the other if you want to use this one."
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+msgid "Juridical Infos"
+msgstr "Informations juridiques"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_company_form
+msgid "Juridical form"
+msgstr "Forme juridique"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_company_company_name
+msgid "Juridical name of the company"
+msgstr "Nom juridique de la société"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist___last_update
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_write_uid
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_write_date
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_latitude
+msgid "Latitude"
+msgstr "Latitude"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_form
+msgid "Legal form"
+msgstr "Legal form"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_company.py:44
+#, python-format
+msgid "Levy"
+msgstr "Levy"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:118
+#, python-format
+msgid "Liberal professions"
+msgstr "Professions libérales"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_longitude
+msgid "Longitude"
+msgstr "Longitude"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_maximum_budget
+msgid "Maximum budget"
+msgstr "Budget maximum"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_partner_center_form
+msgid "Meetings"
+msgstr "Rendez-vous"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_company_royalties_min
+msgid "Minimum royalties"
+msgstr "Minimum royalties"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_schedule_form
+msgid "Monday"
+msgstr "Lundi"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:175
+#, python-format
+msgid "More than 1500"
+msgstr "Plus que 1500"
+
+#. module: specific_base
+#: model:ir.ui.menu,name:specific_base.menu_depiltech_my_center
+msgid "My Center"
+msgstr "My Center"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_nb_desk
+msgid "Nb desk"
+msgstr "Nb desk"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_nb_room
+msgid "Nb room"
+msgstr "Nombre de cabines"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:54
+#, python-format
+msgid "Newspapers (post or advertisement"
+msgstr "Presse écrite (publicité ou article)"
+
+#. module: specific_base
+#: selection:res.partner,beauty_institute_attented:0
+#: selection:res.partner,flash_done:0
+msgid "No"
+msgstr "Non"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:164
+#, python-format
+msgid "No budget"
+msgstr "Pas de budget"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_company.py:35
+#, python-format
+msgid "None"
+msgstr "None"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_company.py:16
+#, python-format
+msgid "Not real"
+msgstr "Not real"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:166
+#, python-format
+msgid "Not the good time"
+msgstr "Ce n'est pas le bon moment"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_opening
+msgid "Opening"
+msgstr "Ouverture"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_am_0
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_am_1
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_am_2
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_am_3
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_am_4
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_am_5
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_am_6
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_pm_0
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_pm_1
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_pm_2
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_pm_3
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_pm_4
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_pm_5
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_time_begin_pm_6
+msgid "Opening at"
+msgstr "Ouvre à"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_company_opening
+msgid "Opening in progress"
+msgstr "En cours d'ouverture"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:167
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_comment3
+#, python-format
+msgid "Other"
+msgstr "Autre"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:70
+#, python-format
+msgid "Other (precise)"
+msgstr "Other (precise)"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+msgid "Other configuration"
+msgstr "Other configuration"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:129
+#, python-format
+msgid "Other private business professions"
+msgstr "Autres professions d'entreprise privée"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:128
+#, python-format
+msgid "Other professions Public Service"
+msgstr "Autres professions de la fonction publique"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:69
+#, python-format
+msgid "Passing by the center / Showcase"
+msgstr "En passant devant le centre / Vitrine"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_payments_mode
+msgid "Payments mode"
+msgstr "Mode de paiements"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:136
+#, python-format
+msgid "Personal services workers"
+msgstr "Personnels des services directs aux particuliers"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_info_phoning
+msgid "Phoning infos"
+msgstr "Phoning infos"
+
+#. module: specific_base
+#: model:ir.actions.act_window,name:specific_base.company_phototherapist_action_tree
+#: model:ir.model.fields,field_description:specific_base.field_account_invoice_phototherapist_id
+#: model:ir.model.fields,field_description:specific_base.field_calendar_event_phototherapist_id
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_phototherapist_id
+#: model:ir.model.fields,field_description:specific_base.field_sale_order_phototherapist_id
+#: model:ir.ui.menu,name:specific_base.menu_action_company_phototherapist
+#: model:ir.ui.view,arch_db:specific_base.view_company_phototherapist_form
+#: model:ir.ui.view,arch_db:specific_base.view_company_phototherapist_tree
+msgid "Phototherapist"
+msgstr "Phototherapist"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:134
+#, python-format
+msgid "Police and military"
+msgstr "Policiers et militaires"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:55
+#, python-format
+msgid "Poster advertising, Signboard"
+msgstr "Poster advertising, Signboard"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_product_pricelist
+msgid "Pricelist"
+msgstr "Liste de prix"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_product_pricelist_item
+msgid "Pricelist item"
+msgstr "Élément de la liste de prix"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:60
+#, python-format
+msgid "Prospectus communication (flyers, mail in letterbox"
+msgstr "Communication Prospectus (Flyers, publipostage en boite aux lettres...)"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_provenance_other
+msgid "Provenance other"
+msgstr "Provenance other"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:57
+#, python-format
+msgid "Radio"
+msgstr "Radio"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:139
+#, python-format
+msgid "Retirees"
+msgstr "Retraités"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_company_nb_room
+msgid "Rooms number"
+msgstr "Rooms number"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_royalties_freq
+msgid "Royalties freq"
+msgstr "Royalties freq"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_royalties_min
+msgid "Royalties min"
+msgstr "Royalties min"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_royalties_percentage
+#: model:ir.model.fields,help:specific_base.field_res_company_royalties_percentage
+msgid "Royalties percentage"
+msgstr "Royalties percentage"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_royalties_pub
+msgid "Royalties pub"
+msgstr "Royalties pub"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_company_active_campaigns
+msgid "SEM active"
+msgstr "SEM active"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:62
+#, python-format
+msgid "SMS"
+msgstr "SMS"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_partner_center_form
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_partner_center_form
+msgid "Sales / Invoices"
+msgstr "Sales / Invoices"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_schedule_form
+msgid "Saturday"
+msgstr "Samedi"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:125
+#, python-format
+msgid "School teachers, teachers and assimilated"
+msgstr "Professeurs des écoles, instituteurs et assimilés"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:147
+#, python-format
+msgid "Single"
+msgstr "Célibataire"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_sms_abo
+msgid "Sms abo"
+msgstr "Sms abo"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_socio_professional_category
+msgid "Socio-Professional Category"
+msgstr "Socio-Professional Category"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:65
+#, python-format
+msgid "Sponsorship / Fitness Center"
+msgstr "Partenariat / Salle de sport"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:68
+#, python-format
+msgid "Sponsorship / Friend"
+msgstr "Parrainage / Amis"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:67
+#, python-format
+msgid "Sponsorship / Other (precise)"
+msgstr "Partenariat / Autre (préciser)"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:66
+#, python-format
+msgid "Sponsorship / School"
+msgstr "Partenariat / Ecole, étudiants"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:64
+#, python-format
+msgid "Sponsorship / Works Council"
+msgstr "Partenariat / CE"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:116
+#, python-format
+msgid "Storekeeper and equivalent"
+msgstr "Commerçant et assimilés"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:142
+#, python-format
+msgid "Student, pupils"
+msgstr "Étudiants, élèves"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_schedule_form
+msgid "Sunday"
+msgstr "Dimanche"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:120
+#, python-format
+msgid "Teachers, Researchers"
+msgstr "Teachers, Researchers"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:130
+#, python-format
+msgid "Technicians"
+msgstr "Technicians"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:61
+#, python-format
+msgid "Telemarketing (phone contact)"
+msgstr "Téléprospection (contact téléphonique)"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_company_tz
+msgid "The partner's timezone, used to output proper date and time values inside printed reports. It is important to set a value for this field. You should use the same timezone that is otherwise used to pick and render date and time values: your computer's timezone."
+msgstr "Le fuseau horaire du partenaire, utilisé pour les valeurs de sortie de date et d'heure correcte à l'intérieur de rapports imprimés. Il est important de définir une valeur pour ce champ. Vous devez utiliser le même fuseau horaire qui est par ailleurs utilisé pour sélectionner et afficher les  valeurs de date et d'heure : le fuseau horaire de votre ordinateur."
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_schedule_form
+msgid "Thursday"
+msgstr "Jeudi"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_tz
+msgid "Timezone"
+msgstr "Fuseau horaire"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_company.py:45
+#, python-format
+msgid "Transfer"
+msgstr "Transfer"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_schedule_form
+msgid "Tuesday"
+msgstr "Mardi"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_company_type
+msgid "Type"
+msgstr "Type"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:140
+#, python-format
+msgid "Unemployed"
+msgstr "Chômeurs"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_url_customer_reviews
+msgid "Url customer reviews"
+msgstr "Url customer reviews"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_url_virtual_visit
+msgid "Url virtual visit"
+msgstr "Url virtual visit"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_company_info_phoning
+msgid "Used by teleop user to inform a customer"
+msgstr "Used by teleop user to inform a customer"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_company_schedule_form
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_why_no_buy
+msgid "Why no buy"
+msgstr "Why no buy"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:150
+#, python-format
+msgid "Widower"
+msgstr "Veuf(ve)"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:138
+#, python-format
+msgid "Workers"
+msgstr "Ouvriers"
+
+#. module: specific_base
+#: selection:res.partner,beauty_institute_attented:0
+#: selection:res.partner,flash_done:0
+msgid "Yes"
+msgstr "Oui"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_partner_center_form
+msgid "base.group_multi_company"
+msgstr "base.group_multi_company"
+
+#. module: specific_base
+#: model:ir.actions.server,name:specific_base.cancel_so
+msgid "cancel so"
+msgstr "cancel so"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_res_company_phototherapist
+msgid "res.company.phototherapist"
+msgstr "res.company.phototherapist"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_res_company_schedule
+msgid "res.company.schedule"
+msgstr "res.company.schedule"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_res_partner_title
+msgid "res.partner.title"
+msgstr "res.partner.title"
+

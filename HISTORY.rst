@@ -9,6 +9,7 @@ Unreleased
 **Features and Improvements**
 
 **Bugfixes**
+* #188: coach_id related to res.partner instead of res.users.
 
 **Build**
 
