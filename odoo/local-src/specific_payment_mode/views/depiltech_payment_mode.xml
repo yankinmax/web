@@ -33,7 +33,7 @@
     <menuitem id="menu_depiltech_payment_mode"
               action="action_depiltech_payment_mode"
               parent="base.menu_sale_config"
-              groups="base.group_sale_manager"
+              groups="specific_base.group_admin_depiltech"
               sequence="100"/>
 
 </odoo>

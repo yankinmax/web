@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_depiltech_payment_mode_manager,access_depiltech_payment_mode_manager,model_depiltech_payment_mode,base.group_sale_manager,1,1,1,1
+access_depiltech_payment_mode_manager,access_depiltech_payment_mode_manager,model_depiltech_payment_mode,specific_base.group_admin_depiltech,1,1,1,1
 access_depiltech_payment_mode_all,access_depiltech_payment_mode_all,model_depiltech_payment_mode,base.group_user,1,0,0,0
