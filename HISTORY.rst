@@ -9,7 +9,9 @@ Unreleased
 **Features and Improvements**
 
 **Bugfixes**
+
 * Missing translations on program.
+* Fix 'required' domain for quantity type in program condition.
 
 **Build**
 
