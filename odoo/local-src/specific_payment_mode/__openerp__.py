@@ -16,6 +16,7 @@
     'data': [
         'data/depiltech_payment_mode.xml',
         'security/ir.model.access.csv',
+        'report/sale_order.xml',
         'views/depiltech_payment_mode.xml',
         'views/sale_order.xml'
     ],
