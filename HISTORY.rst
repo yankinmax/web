@@ -7,16 +7,22 @@ Unreleased
 ++++++++++
 
 **Features and Improvements**
-* #129: Add specific payment mode module
-* #173: Manual discount.
-* #161: Quantity is not editable if product has the 'no quantity' flag.
-* #174: Discount on specific product + and / or conditions for program
 
 **Bugfixes**
 
 **Build**
 
 **Documentation**
+
+
+9.6.0 (2016-11-30)
+++++++++++++++++++
+
+**Features and Improvements**
+* #129: Add specific payment mode module
+* #173: Manual discount.
+* #161: Quantity is not editable if product has the 'no quantity' flag.
+* #174: Discount on specific product + and / or conditions for program
 
 
 9.5.0 (2016-11-17)

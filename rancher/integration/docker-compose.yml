@@ -2,7 +2,7 @@ external-db:
   image: rancher/external-service
 
 odoo:
-  image: camptocamp/depiltech_odoo:9.5.0
+  image: camptocamp/depiltech_odoo:9.6.0
   links:
       - external-db:db
   volumes:

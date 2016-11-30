@@ -5,7 +5,3 @@ migration:
         post:
           - oerpscenario -t setup
           - anthem songs.install.accounting::main
-    - version: 9.3.4
-      addons:
-        upgrade:
-          - sale_discount_program
