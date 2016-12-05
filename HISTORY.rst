@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* Fix account tax xmlid
+
 **Build**
 
 **Documentation**

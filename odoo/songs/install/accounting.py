@@ -44,6 +44,42 @@ def product_taxes(ctx):
 
 
 @anthem.log
+def create_tax_xmlid(ctx):
+    ir_model_data = ctx.env['ir.model.data']
+    taxes = ctx.env['account.tax'].search([])
+    for tax in taxes:
+        model_data = ir_model_data.search_count([
+            ('model', '=', 'account.tax'),
+            ('res_id', '=', tax.id)
+        ])
+        if not model_data:
+            if tax.company_id:
+                company_model_data = ir_model_data.search([
+                    ('model', '=', 'res.company'),
+                    ('res_id', '=', tax.company_id.id)
+                ])
+                company_xmlid_name = company_model_data.name
+            else:
+                company_xmlid_name = 'no_company'
+
+            tax_name = tax.name.replace(' ', '_').replace('(', '_')
+            tax_name = tax_name.replace(')', '_').replace('.', '_')
+            tax_name = tax_name.replace('-', '_').replace(',', '_')
+
+            ir_model_data.create({
+                'name':
+                    'account_tax_%s_%s_%s' % (
+                        tax.type_tax_use,
+                        company_xmlid_name,
+                        tax_name,
+                    ),
+                'module': 'scenario',
+                'model': 'account.tax',
+                'res_id': tax.id
+            })
+
+
+@anthem.log
 def main(ctx):
     product_taxes(ctx)
-
+    create_tax_xmlid(ctx)
