@@ -249,18 +249,21 @@ class TestProgram(TransactionCase):
             'voucher_code': 'UNITTEST_V1',
             'voucher_amount': 100,
             'partner_id': self.partner1.id,
+            'note_message_for_action': 'Unittest message',
         })
 
         v2 = self.program_model.create({
             'voucher_code': 'UNITTEST_V2',
             'voucher_amount': 100,
             'partner_id': self.partner1.id,
+            'note_message_for_action': 'Unittest message',
         })
 
         v3 = self.program_model.create({
             'voucher_code': 'UNITTEST_V3',
             'voucher_amount': 100,
             'partner_id': self.partner1.id,
+            'note_message_for_action': 'Unittest message',
         })
 
         sale = self.sale_model.create({
@@ -325,6 +328,7 @@ class TestProgram(TransactionCase):
                 (0, False, {
                     'type_action': 'product_add',
                     'product_add_id': product_to_add.id,
+                    'note_message': 'Unittest message',
                 })
             ]
         })
@@ -375,6 +379,7 @@ class TestProgram(TransactionCase):
                     'type_action': 'product_discount',
                     'product_discount_selection': 'most_expensive_no_discount',
                     'discount_percent': 20,
+                    'note_message': 'Unittest message',
                 })
             ]
         })
@@ -424,6 +429,7 @@ class TestProgram(TransactionCase):
                 (0, False, {
                     'type_action': 'change_pricelist',
                     'pricelist_id': self.promo_pricelist.id,
+                    'note_message': 'Unittest message',
                 })
             ]
         })

@@ -6,6 +6,7 @@ from . import account_invoice
 from . import partner_sponsor
 from . import product_template
 from . import program
+from . import program_action
 from . import program_condition
 from . import res_config
 from . import res_partner

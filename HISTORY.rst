@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* Card 183: Add discount description on sale order
+
 **Bugfixes**
 
 **Build**

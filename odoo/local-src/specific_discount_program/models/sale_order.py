@@ -99,6 +99,8 @@ class SaleOrder(models.Model):
                 'voucher_amount': self.get_voucher_amount(),
                 'max_use': 1,
                 'expiration_date': expiration_date,
+                'note_message_for_action':
+                    "Vous avez bénéficié d'un bon d'achat"
             })]
         })
 
@@ -167,11 +169,21 @@ class SaleOrder(models.Model):
     @api.multi
     def apply_discount_programs(self):
         self.ensure_one()
+        self.note = ''
         super(SaleOrder, self).apply_discount_programs()
         if self.discount_manually_percent:
             for line in self.order_line:
                 if not line.source_program_id:
                     line.discount += self.discount_manually_percent
+
+            model = self.env['sale.config.settings']
+            message = model.get_default_discount_manually_percent_note_message(
+                None
+            )['discount_manually_percent_note_message']
+            if message:
+                if self.note and self.note != '':
+                    self.note += '\n'
+                self.note += message
 
 
 class SaleOrderLine(models.Model):

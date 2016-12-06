@@ -89,6 +89,7 @@ class TestDiscountProgram(TransactionCase):
                 (0, False, {
                     'type_action': 'product_add',
                     'product_add_id': product_to_add.id,
+                    'note_message': 'Unittest message',
                 })
             ]
         })
@@ -257,6 +258,7 @@ class TestDiscountProgram(TransactionCase):
                     'type_action': 'product_discount',
                     'product_discount_selection': 'most_expensive_no_discount',
                     'discount_percent': 20,
+                    'note_message': 'Unittest message',
                 })
             ]
         })
@@ -331,6 +333,7 @@ class TestDiscountProgram(TransactionCase):
                 'type_action': 'product_discount',
                 'product_discount_selection': 'most_expensive_no_discount',
                 'discount_percent': 10,
+                'note_message': 'Unittest message',
             })]
         })
 
@@ -350,6 +353,7 @@ class TestDiscountProgram(TransactionCase):
             'voucher_code': 'UNITTEST_VOUCHER',
             'partner_id': self.client.id,
             'voucher_amount': 150,
+            'note_message_for_action': 'Unittest message',
         })
 
         self.assertEqual(False, program.automatic)
@@ -405,6 +409,7 @@ class TestDiscountProgram(TransactionCase):
             'voucher_code': 'UNITTEST_VOUCHER',
             'partner_id': self.client.id,
             'voucher_amount': 150,
+            'note_message_for_action': 'Unittest message',
         })
 
         sale = self.sale_model.create({
@@ -441,6 +446,7 @@ class TestDiscountProgram(TransactionCase):
             'action_ids': [(0, False, {
                 'type_action': 'change_pricelist',
                 'pricelist_id': self.promo_pricelist.id,
+                'note_message': 'Unittest message',
             })]
         })
         code.combinable = True
@@ -477,6 +483,7 @@ class TestDiscountProgram(TransactionCase):
                 'type_action': 'product_discount',
                 'product_discount_selection': 'most_expensive_no_discount',
                 'discount_percent': 20,
+                'note_message': 'Unittest message',
             })]
         })
 
@@ -495,6 +502,7 @@ class TestDiscountProgram(TransactionCase):
             'action_ids': [(0, False, {
                 'type_action': 'change_pricelist',
                 'pricelist_id': self.promo_pricelist.id,
+                'note_message': 'Unittest message',
             })]
         })
 
@@ -520,11 +528,13 @@ class TestDiscountProgram(TransactionCase):
                     'type_action': 'product_add',
                     'product_add_id': self.p2.id,
                     'product_add_force_price': True,
-                    'product_add_price': 0
+                    'product_add_price': 0,
+                    'note_message': 'Unittest message',
                 }),
                 (0, False, {
                     'type_action': 'change_pricelist',
                     'pricelist_id': self.promo_pricelist.id,
+                    'note_message': 'Unittest message',
                 })
             ]
         })
@@ -631,6 +641,7 @@ class TestDiscountProgram(TransactionCase):
                     'product_discount_selection': 'fixed_product',
                     'discount_product_id': self.p2.id,
                     'discount_percent': 15.3,
+                    'note_message': 'Unittest message',
                 }),
             ],
         })
