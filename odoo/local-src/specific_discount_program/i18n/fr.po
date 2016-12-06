@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-23 15:18+0000\n"
-"PO-Revision-Date: 2016-11-23 15:18+0000\n"
+"POT-Creation-Date: 2016-12-06 10:51+0000\n"
+"PO-Revision-Date: 2016-12-06 10:51+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -60,6 +60,16 @@ msgstr "Créé le"
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_voucher_default_validity
 msgid "Default validity (by months) for a voucher"
 msgstr "Validité (en mois) par défaut des bons d'achats"
+
+#. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_discount_manually_percent_note_message
+msgid "Description of percent of discount"
+msgstr "Description de la remise manuelle"
+
+#. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_action_note_message
+msgid "Discount description"
+msgstr "Description de la remise"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_display_name
@@ -138,7 +148,7 @@ msgid "Number of vouchers allowed by sale order"
 msgstr "Nombre de bons d'achats autorisé par commande"
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/program.py:70
+#: code:addons/specific_discount_program/models/program.py:74
 #, python-format
 msgid "Number of vouchers is limited to %s"
 msgstr "Le nombre de bon d'achat est limité à %s"
@@ -189,6 +199,11 @@ msgid "Unit Price"
 msgstr "Prix unitaire"
 
 #. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_note_message_for_action
+msgid "Voucher description"
+msgstr "Description du bon d'achat"
+
+#. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_partner_sponsor
 msgid "partner.sponsor"
 msgstr "partner.sponsor"
@@ -204,12 +219,17 @@ msgid "sale.discount.program"
 msgstr "sale.discount.program"
 
 #. module: specific_discount_program
+#: model:ir.model,name:specific_discount_program.model_sale_discount_program_action
+msgid "sale.discount.program.action"
+msgstr "sale.discount.program.action"
+
+#. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_sale_discount_program_condition
 msgid "sale.discount.program.condition"
 msgstr "sale.discount.program.condition"
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/program.py:29
+#: code:addons/specific_discount_program/models/program.py:33
 #: sql_constraint:sale.discount.program:0
 #, python-format
 msgid "source_sale_id can be filled only for voucher"

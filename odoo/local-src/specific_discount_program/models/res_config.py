@@ -31,6 +31,10 @@ class SaleConfig(models.TransientModel):
         digits=dp.get_precision('Discount'),
     )
 
+    discount_manually_percent_note_message = fields.Char(
+        string="Description of percent of discount",
+    )
+
     @api.model
     def get_default_voucher_percent(self, fields):
         icp = self.env['ir.config_parameter']
@@ -98,4 +102,19 @@ class SaleConfig(models.TransientModel):
         self.env['ir.config_parameter'].set_param(
             'discount_manually_percent_max',
             str(self.discount_manually_percent_max)
+        )
+
+    @api.model
+    def get_default_discount_manually_percent_note_message(self, fields):
+        icp = self.env['ir.config_parameter']
+        return {
+            'discount_manually_percent_note_message':
+                icp.get_param('discount_manually_percent_note_message')
+        }
+
+    @api.multi
+    def set_discount_manually_percent_note_message(self):
+        self.env['ir.config_parameter'].set_param(
+            'discount_manually_percent_note_message',
+            str(self.discount_manually_percent_note_message)
         )

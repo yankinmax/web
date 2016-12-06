@@ -18,6 +18,7 @@
         'security/program.xml',
         'views/account_invoice.xml',
         'views/program.xml',
+        'views/program_action.xml',
         'views/product_template.xml',
         'views/res_config.xml',
         'views/res_partner.xml',

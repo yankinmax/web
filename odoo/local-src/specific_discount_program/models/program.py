@@ -23,6 +23,10 @@ class Program(models.Model):
     # For vouchers created by sale.order
     source_sale_id = fields.Many2one(comodel_name='sale.order')
 
+    note_message_for_action = fields.Char(
+        string='Voucher description',
+    )
+
     _sql_constraints = [
         ('voucher_source_sale_id',
          'check(source_sale_id is null or voucher_code is not null)',
@@ -94,3 +98,11 @@ class Program(models.Model):
                     'discount': False
                 })
         super(Program, self).reset_sale_programs(sale)
+
+    def _get_action_values_for_voucher_amount(self, product_add_price):
+        values = super(Program, self)._get_action_values_for_voucher_amount(
+            product_add_price
+        )
+        if self.note_message_for_action:
+            values['note_message'] = self.note_message_for_action
+        return values
