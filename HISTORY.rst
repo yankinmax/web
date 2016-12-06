@@ -9,6 +9,7 @@ Unreleased
 **Features and Improvements**
 
 **Bugfixes**
+* #188: coach_id related to res.partner instead of res.users.
 
 * Missing translations on program.
 * Fix 'required' domain for quantity type in program condition.
