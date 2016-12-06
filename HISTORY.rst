@@ -14,6 +14,8 @@ Unreleased
 * Missing translations on program.
 * Fix 'required' domain for quantity type in program condition.
 
+* Fix account tax xmlid
+
 **Build**
 
 **Documentation**
