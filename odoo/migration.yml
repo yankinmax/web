@@ -5,3 +5,4 @@ migration:
         post:
           - oerpscenario -t setup
           - anthem songs.install.accounting::main
+          - anthem songs.install.data::main

@@ -11,13 +11,11 @@ Unreleased
 * Card 183: Add discount description on sale order
 
 **Bugfixes**
-* #188: coach_id related to res.partner instead of res.users.
 
+* #188: coach_id related to res.partner instead of res.users.
 * Missing translations on program.
 * Fix 'required' domain for quantity type in program condition.
-
 * Fix account tax xmlid
-
 * Card 137: Fix group allow to change sale order line price unit
 
 **Build**
