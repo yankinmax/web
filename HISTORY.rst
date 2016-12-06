@@ -16,6 +16,8 @@ Unreleased
 
 * Fix account tax xmlid
 
+* Card 137: Fix group allow to change sale order line price unit
+
 **Build**
 
 **Documentation**

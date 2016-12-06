@@ -179,7 +179,7 @@ class SaleOrderLine(models.Model):
 
     can_edit_price_unit = fields.Boolean(
         compute='_compute_can_edit_price_unit',
-        default=lambda self: self.is_admin(),
+        default=lambda self: self.is_siege(),
     )
     price_unit_readonly = fields.Float(
         'Unit Price',
@@ -192,16 +192,16 @@ class SaleOrderLine(models.Model):
     )
 
     @api.model
-    def is_admin(self):
+    def is_siege(self):
         return self.env.user.id == SUPERUSER_ID or self.env.user.has_group(
-            'specific_base.group_admin_depiltech'
+            'specific_base.group_siege_depiltech'
         )
 
     @api.depends()
     def _compute_can_edit_price_unit(self):
         """ price_unit is editable only for admin and Depiltech Admin.
         """
-        admin = self.is_admin()
+        admin = self.is_siege()
         for line in self:
             line.can_edit_price_unit = admin
 
