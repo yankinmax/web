@@ -8,6 +8,18 @@ Unreleased
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+9.7.0 (2016-12-07)
+++++++++++++++++++
+
+**Features and Improvements**
+
 * Card 183: Add discount description on sale order
 
 **Bugfixes**
@@ -17,10 +29,6 @@ Unreleased
 * Fix 'required' domain for quantity type in program condition.
 * Fix account tax xmlid
 * Card 137: Fix group allow to change sale order line price unit
-
-**Build**
-
-**Documentation**
 
 
 9.6.0 (2016-11-30)
