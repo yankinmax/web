@@ -109,12 +109,12 @@ class SaleConfig(models.TransientModel):
         icp = self.env['ir.config_parameter']
         return {
             'discount_manually_percent_note_message':
-                icp.get_param('discount_manually_percent_note_message')
+                icp.get_param('discount_manually_percent_note_message', '')
         }
 
     @api.multi
     def set_discount_manually_percent_note_message(self):
         self.env['ir.config_parameter'].set_param(
             'discount_manually_percent_note_message',
-            str(self.discount_manually_percent_note_message)
+            self.discount_manually_percent_note_message
         )
