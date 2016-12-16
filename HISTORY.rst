@@ -8,6 +8,12 @@ Unreleased
 
 **Features and Improvements**
 
+* Clean demo data (and reorganize initial setup)
+* Refresh initial data (CSV imports)
+* Setup chart of account for all centers (not main companies)
+* Delete taxes on products (default taxes will be defined on accounts)
+* Create a default warehouse for each company
+
 **Bugfixes**
 
 **Build**

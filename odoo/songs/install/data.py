@@ -125,34 +125,20 @@ def import_centers_pts(ctx, req):
 
 
 @anthem.log
-def import_product_all(ctx, req):
-    """ Importing product all """
-    content = resource_stream(
-        req, 'data/install/09.product - all.csv'
-    )
-    load_csv_stream(ctx, 'product.product', content, delimiter=',')
-
-
-@anthem.log
-def import_product_new(ctx, req):
-    """ Importing product new """
-    content = resource_stream(
-        req, 'data/install/10.product - new.csv'
-    )
-    load_csv_stream(ctx, 'product.product', content, delimiter=',')
-
-
-@anthem.log
-def main(ctx):
+def main_first_data(ctx):
     """ Loading data """
     req = Requirement.parse('depiltech-odoo')
     import_groups(ctx, req)
     import_partners(ctx, req)
     import_users(ctx, req)
     import_centers(ctx, req)
+
+
+@anthem.log
+def main_others_data(ctx):
+    """ Loading data """
+    req = Requirement.parse('depiltech-odoo')
     import_users_dependances(ctx, req)
     import_centers_dependances(ctx, req)
     import_centers_horaires(ctx, req)
     import_centers_pts(ctx, req)
-    import_product_all(ctx, req)
-    import_product_new(ctx, req)

@@ -5,7 +5,7 @@
 "scenario.company_agencyCH";"scenario.company_agencyCH";"scenario.userAPIApiCH"
 "scenario.company_agencyRE";"scenario.company_agencyRE";"scenario.userAPIApiRE"
 "scenario.company_agencyMX";"scenario.company_agencyMX";"scenario.userAPIApiMX"
-"scenario.company_depiltechHolding";"scenario.company_depiltechHolding";"scenario.user_dtHolding"
+"base.main_company";"base.main_company";"scenario.user_dtHolding"
 "scenario.company_agencyHolding";"scenario.company_agencyHolding";"scenario.user_agencyHolding"
 "scenario.company_depiltechSAS";"scenario.company_depiltechSAS";"scenario.user_depiltechSAS"
 "scenario.company_depiltechSiege";"scenario.company_depiltechSiege";"scenario.user_siege"

@@ -1,0 +1,379 @@
+id,code,name,user_type_id/id,reconcile,company_id/id
+sc.coa10_16100000,16100000,PRET,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480000,16480000,PRET  13 000 €,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480001,16480001,PRET  20 000 €,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480002,16480002,PRET  95 000 €,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480003,16480003,PRET  48 000 €,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480004,16480004,PRET  57 000 €,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480005,16480005,PRET 46 000 €,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480006,16480006,PRET 49 000€,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480007,16480007,PRET 62 000 € 0895320548220,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480008,16480008,PRET 150 000 € CA 43624731485,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480009,16480009,PRET 08953 20548221- 38 000€,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480010,16480010,PRET 10151 20281702-130 000€,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480011,16480011,PRET 10151 20281703- 118 000€,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480012,16480012,PRET HSBC 55 0000 963043153701,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480013,16480013,BPI FRANCE 380 000€,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480014,16480014,PRET  108 000€   862 205482 38,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480015,16480015,PRET C.EPARGN 220 000€-4750481,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16480016,16480016,PRET C.EPA 130 000€   04746697,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_16880000,16880000,INTERETS COURUS,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_20120000,20120000,FRAIS DE PROSPECTION,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_20122020,20122020,FRAIS DE PUBLICITE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_20300020,20300020,FRAIS DE RECHERCHE § DEVELOPPE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_20500020,20500020,CONCESSIONS BREVETS LICENCES,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_20500021,20500021,CONCESS. BREVET LIC.INTRACOM,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_20700000,20700000,FONDS COMMERCIAL,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_20800010,20800010,AUTRES IMMO INCORP FRANCE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_21810000,21810000,AAI SIEGE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_21810020,21810020,AAI  DEROULEDE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_21810040,21810040,AAI CALIFORNIE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_21830000,21830000,MAT.BUR.§ INFO SIEGE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_21840000,21840000,MOBILIER SIEGE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_26760000,26760000,FONDS DE GARANTIE BIBBY FACTOR,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_27100000,27100000,TITRES IMMOBILISES-PROPRI,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_27500000,27500000,DEPOTS CAUTIONNEM.VERSES,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_28012000,28012000,AMORT.FRAIS DE PROSPECTION,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_28012202,28012202,AMORT FRAIS DE PUBLICITE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_28050002,28050002,AMORT CONCESSION BREVETS,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_28154002,28154002,AMORT.INST.TECH.MAT§OUT.SIEGE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_28181000,28181000,AMORT. AAI SIEGE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_28181002,28181002,AMORT. AAI DEROULEDE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_28181004,28181004,AMORT. AAI CALIFORNIE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_28183000,28183000,AMORT.MAT.BUR.§ INFO SIEGE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_28184000,28184000,AMORT.MOBILIER SIEGE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_37000020,37000020,STOCKS M/SES SIEGE,account.data_account_type_current_assets,0,scenario.company_agencyfr_center11
+sc.coa10_40100010,40100010,FRS CREDIT,account.data_account_type_payable,1,scenario.company_agencyfr_center11
+sc.coa10_40810000,40810000,FRS FACT NON PARV,account.data_account_type_payable,1,scenario.company_agencyfr_center11
+sc.coa10_40910000,40910000,FOURN.AV.ACPT VERSES/COMM,account.data_account_type_payable,1,scenario.company_agencyfr_center11
+sc.coa10_41600000,41600000,CLIENTS DOUTEUX,account.data_account_type_receivable,1,scenario.company_agencyfr_center11
+sc.coa10_42820000,42820000,DETTES PROV POUR CONGES PAYES,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_42830000,42830000,PRIMES FIN D ANNEE,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_43100000,43100000,URSSAF SIEGE,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_43710000,43710000,RETRAITE,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_43720000,43720000,CIPREV PREV.NON- CADRE,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_43730000,43730000,REUNICA PREV,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_43750000,43750000,GAN FRAIS SANTE,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_43820000,43820000,CHARGES SOCIALES/CONGES PAYES,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_43860000,43860000,ORGANISMES SOCIAUX,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_44520000,44520000,TVA DUE INTRACOMMUNAUT.,account.data_account_type_current_liabilities,1,scenario.company_agencyfr_center11
+sc.coa10_44550000,44550000,TVA A PAYER,account.data_account_type_current_liabilities,1,scenario.company_agencyfr_center11
+sc.coa10_44560000,44560000,TVA RECUPERABLE,account.data_account_type_current_liabilities,1,scenario.company_agencyfr_center11
+sc.coa10_44567000,44567000,CREDIT DE TVA A REPORTE,account.data_account_type_current_liabilities,1,scenario.company_agencyfr_center11
+sc.coa10_44580000,44580000,TVA A REGUL.,account.data_account_type_current_liabilities,1,scenario.company_agencyfr_center11
+sc.coa10_44586000,44586000,TVA RECUP SUR FNP,account.data_account_type_current_liabilities,1,scenario.company_agencyfr_center11
+sc.coa10_44587000,44587000,TVA/FACTURES A ETABLIR,account.data_account_type_current_liabilities,1,scenario.company_agencyfr_center11
+sc.coa10_44700000,44700000,AUTRE IMPOTS ET TAXES A PAYER,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_44860000,44860000,ETAT CHARGES A PAYER,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_45501000,45501000,C/C MAUVENU J. BAPTISTE,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_45502000,45502000,C/C MAUVENU PAUL,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_45504000,45504000,C/C DEPIL TECH STORE,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_46700000,46700000,DEBITEURS OU CREDITEURS DIVERS,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_46700009,46700009,DEBITEURS & CREDITEURS F.C.,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_46870003,46870003,GAYTECH,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_47100000,47100000,COMPTE D ATTENTE,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_48600000,48600000,CHARGES CONST D'AVANCE,account.data_account_type_current_liabilities,0,scenario.company_agencyfr_center11
+sc.coa10_51240000,51240000,CM 20548208 NICE RUE FRANCE,account.data_account_type_liquidity,0,scenario.company_agencyfr_center11
+sc.coa10_58000000,58000000,VIREMENTS INTERNES,account.data_account_type_liquidity,1,scenario.company_agencyfr_center11
+sc.coa10_58080000,58080000,VRT INTERNES HSBC,account.data_account_type_liquidity,1,scenario.company_agencyfr_center11
+sc.coa10_58085000,58085000,VRT INTERNE CREDIT AGRICOLE,account.data_account_type_liquidity,1,scenario.company_agencyfr_center11
+sc.coa10_58090000,58090000,VRT INTERNE DEPIL TECH STORE,account.data_account_type_liquidity,1,scenario.company_agencyfr_center11
+sc.coa10_60220000,60220000,ACHATS FOURN.CONSOMMABLES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60220001,60220001,ACHAT CONSOMMABLES D.T. STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60220005,60220005,ACHATS CONSOMMABLE MARSEILLE 6,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60220055,60220055,ACHATS CONSOMMABLE MARSEILLE 6,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60320200,60320200,VARIATION DES STOCKS SIEGE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400020,60400020,ACHATS D'ETUDES ET DE PS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400041,60400041,PRESTATIONS DEPIL TECH TOULOUS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400042,60400042,PRESTATIONS EVRY 2,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400043,60400043,PRESTATIONS SERVICE DT STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400044,60400044,PRESTATIONS ST DENIS REUNION,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400045,60400045,PRESTATIONS DT ROUEN,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400047,60400047,PRESTATIONS DT STRASBOURG,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400050,60400050,PRESTATIONS NANTES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400060,60400060,PRESTATIONS BORDEAUX,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400070,60400070,PRESTATIONS POITIERS-,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400080,60400080,PRESTATIONS SABLE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400090,60400090,PRESTATIONS BASTIA,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400100,60400100,PRESTATIONS RENNES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60400110,60400110,PRESTATIONS VANNES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60610000,60610000,EDF GDF,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60610001,60610001,EDF DEPIL TECH STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60610020,60610020,EDF  CALIFORNIE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60610025,60610025,GDF CALIFORNIE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60610030,60610030,DIESEL,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60614000,60614000,CARBURANT,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60615000,60615000,CHATEAU D'EAU,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60630000,60630000,FOURN. ENTRETIENET PT MATERIEL,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60630002,60630002,PETIT MATERIEL DEPILTECH STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60630003,60630003,PETIT MATERIEL EXPORT,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60630020,60630020,PETIT MATERIEL           SIEGE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60630021,60630021,ACHT PETIT MAT SIEGE INTRACOM,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60631000,60631000,TRAVAUX,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60640000,60640000,FOURN. ADMINISTR. SIEGE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60680011,60680011,AUTRE MAT ET FOURN CALIFORNIE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60680015,60680015,AUTRE MAT ET FOURN DT STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60680017,60680017,AUTRES MAT. ET FOURN MARSEILL6,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60700020,60700020,ACHATS MSES CALIFORNIE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60710020,60710020,ACHATS REVENTE FRANCHISES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_60910000,60910000,Rabais.Remise.Ristourne.Obtenu,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61100000,61100000,SOUS TRAITANCE GENERALE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61100006,61100006,SOUS TRAITANCE EXO,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61200000,61200000,CM CIC BAIL MINI COOPER VP,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61300040,61300040,LOCATIONS GARAGE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61310000,61310000,LOCATIONS MOBILIERES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61350000,61350000,LOCATIONS MOBILIERES SIEGE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61350001,61350001,LOCATø MOBILIERE D.T. STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61351000,61351000,LOCATION MOBILIERES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61352000,61352000,LOCATIONS VEHICULES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61352020,61352020,LOCATIONS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61400000,61400000,CHARGES LOCATIVES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61520000,61520000,ENTRETIEN SUR BIENS IMMOBILIER,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61550000,61550000,ENTRETIEN & REPARATIONS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61550020,61550020,ENTRET ET REP. CALIFORNIE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61560000,61560000,MAINTENANCE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61600000,61600000,PRIMES D'ASSURANCE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61600001,61600001,EUROP ASSITANCE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61600023,61600023,ASSURANCE     DEPIL TECH STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61600035,61600035,ASSURANCE MARSEILLE 6,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61600040,61600040,ASSURANCE TELEPHONE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61610000,61610000,ASSU. PRET PROF.,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61620000,61620000,ASSUR.CREDIT BAIL,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61620001,61620001,PERTES FINANCIERES CREDIPAR,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61800000,61800000,FRAIS DIVERS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61800001,61800001,FRAIS DIVERS DEPIL TECH STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61800034,61800034,FORMATION SIEGE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61810000,61810000,DOCUMENTATION GENERALE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61810001,61810001,DOCUMENTATION GLE D.T. STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61850000,61850000,FRAIS STAGE SEMINAIRES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61850001,61850001,FRAIS EXPOSITION,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61850002,61850002,FRAIS CONFERENCE SEMINAIRE COL,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61850003,61850003,FRAIS CONCOURS        DT STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_61860000,61860000,FRAIS DE FORMATION,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62110000,62110000,PRESONNEL INTERIMAIRE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62120000,62120000,PERSONNEL EDUCATIF -CIF,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62210030,62210030,COMM. GROUPON,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62250000,62250000,COMMISSIONS AFF. BIBBY FACTOR,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62260000,62260000,HONORAIRES AVOCATS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62260001,62260001,HONORAIRES NOTAIRES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62260002,62260002,HONORAIRES HUISSIER,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62260030,62260030,EXPERTS COMPTABLES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62261000,62261000,HONORAIRES DIVERS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62261001,62261001,HONORAIRE DIVERS      DT STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62270000,62270000,FRAIS D'ACTES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62280002,62280002,REMUNERATION STAGE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62300000,62300000,PUBLICITE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62300001,62300001,PUBLICITE INTRACOM,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62300002,62300002,PUBLICITE EXO,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62300025,62300025,PUBLICITE   DT STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62310000,62310000,ANNONCES & INSERTIONS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62310010,62310010,RELATION PUBLIQUE  INTRACOM,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62310011,62310011,RELATIONS PUBLIQUES EXPORT,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62310020,62310020,REL. PUBLIQUES CALIFORNIE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62320000,62320000,FOTOLIA PUBLICITE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62320001,62320001,ECHANTILLONS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62330000,62330000,FOIRES & EXPOSITIONS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62330001,62330001,FOIRES ET EXPOSITION INTRACOM,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62340000,62340000,CADEAUX CLIENTS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62360000,62360000,CATALOGUES ET IMPRIMES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62370000,62370000,PUBLICITE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62370001,62370001,GOOGLE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62370002,62370002,FACEBOOK,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62370003,62370003,LINKEDIN,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62370004,62370004,TWITTER,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62370005,62370005,YAHOU,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62370006,62370006,MICROSOFT-BING ADS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62370007,62370007,LIGATUS-PAYPAL,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62370008,62370008,SMARTFOCUS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62370009,62370009,GANDI,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62380000,62380000,POURBOIRES & DONS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62410000,62410000,PORT SUR ACHATS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62410002,62410002,PORTS SUR ACHATS MARSEILLE 6,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62410007,62410007,PORT S/ACHATS DEPIL TECH STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62410020,62410020,TRANSPORT,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62500000,62500000,RBT TRANSPORT PUBLIC,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62600000,62600000,POSTES & TELECOM SIEGE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62600001,62600001,POSTE ET TELECOM   MARSEILLE 6,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62700000,62700000,Com CB,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62700011,62700011,FRAIS BANCAIRES    D. T. STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62780000,62780000,AUTRES FRAIS ET COMMISSIONS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62780001,62780001,AUTRES FRAIS &COMM INTRACOMM,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62800000,62800000,CHARGES DIVERSES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62800001,62800001,CHARGES DIVERSES D.T. STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62810000,62810000,COTISATIONS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_62900000,62900000,RABAIS REMISE RISTOURNE OBTENU,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_63120000,63120000,TAXE APPRENTISSAGE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_63330000,63330000,FORMATION PROF CONTINUE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_63511000,63511000,COTISATION FONCIERE ENTREPRISE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_63514000,63514000,TAXE VEHICULE SOCIETE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_63710000,63710000,CONT. SOC SOLIDARITE SOC- C3S,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_63780000,63780000,TAXES DIVERSES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64100000,64100000,REMUNERATIONS SIEGE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64110000,64110000,PRIMES BILAN,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64120000,64120000,CONGES PAYES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64130000,64130000,REMUNERATIONS DUES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64140000,64140000,INDEMNITES RUPTURE CONVENTIONN,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64501000,64501000,CHARGES SOCIALES- CONGES PAYES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64502000,64502000,CHGES SOCIALES S/PRIMES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64510000,64510000,COTIS. URSSAF/ASSEDIC,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64530000,64530000,COTIS RETRAITE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64540000,64540000,PREVOYANCE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64550000,64550000,GAN FRAIS SANTE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64710000,64710000,TICKET RESTAURANT,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64750000,64750000,MEDECINE DU TRAVAIL,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_64900000,64900000,C.I.C.E.,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_65100000,65100000,REDEVANCES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_65110000,65110000,REDEVANCE BREVETS LICENCES MAR,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_65400000,65400000,PERTES SUR CREANCES IRREC,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_65800000,65800000,CH DIVERSES GEST COURANT,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_66100000,66100000,AGIOS BANCAIRES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_66100020,66100020,INTERETS BPI FRANCE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_66110000,66110000,INTERETS DES EMPRUNTS,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_66160000,66160000,AGIOS BANCAIRE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_66181000,66181000,INTERETS DETTES COMMERCIALES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_66600000,66600000,PERTES DE CHANGE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_67120000,67120000,AMENDES ET PENALITES     siège,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_67120003,67120003,AMENDES ET PENALITES  DT STORE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_67130000,67130000,DOM ET INTERETS EXCEPT,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_67200000,67200000,CHARGES EXPLOIT./EXER.ANT,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_67880000,67880000,CHARGES EXEPTION ARTICLE 700,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_68112000,68112000,DOT.AMORT.IMMO.CORPORELL.,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_68150000,68150000,DOT PROV PR RISQUES ET CHARGES,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_69500000,69500000,IMPOT SOCIETE,account.data_account_type_expenses,0,scenario.company_agencyfr_center11
+sc.coa10_70600011,70600011,PREST. RUE DE FRANCE  20%,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600020,70600020,PRESTATIONS SIEGE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600025,70600025,PRESTATIONS SERVICE MARSEILLE6,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600041,70600041,PREST.DIVERSES  20%,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600052,70600052,PREST.MEDIA PLANS  20%,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600053,70600053,PREST. MEDIA PLAN EXO TVA  UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600054,70600054,PREST.MEDIA PLAN EXO TVA EXPOR,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600055,70600055,PREST. MEDIA PLAN EXO TVA DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600056,70600056,PREST MEDIA PLAN TVA 8.50% DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600060,70600060,PREST.EXO TVA  DANS UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600061,70600061,PRESTATION CONTRAT EGERIE 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600062,70600062,PRESTATIONS CONTRAT EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600063,70600063,PREST CONTRAT EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600065,70600065,PREST CONTRAT TVA 8.50 % DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600070,70600070,PREST.EXO TVA  EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600071,70600071,PREST MARKETING 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600072,70600072,PREST MARKETING EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600073,70600073,PREST MARKETING EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600075,70600075,PREST MARKETING TVA 8.50% DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600081,70600081,CONVENTION TVA 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600090,70600090,Pres. serv. 20 % chq à encais.,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600091,70600091,COTISATION CNIL TVA 20%,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600092,70600092,COTISAT° CNIL EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600101,70600101,SMS A 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600102,70600102,SMS EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600103,70600103,SMS  EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600104,70600104,SMS  EXO TVA DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600105,70600105,SMS  TVA 8.50 % DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600221,70600221,REDEVANCES FRANCHISES  FRANCE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600222,70600222,REDEVANCE FRANCH EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600223,70600223,REDEVANCE FRANCH EXO TVA EXPOR,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600225,70600225,REDEVANCE FRANCH TVA 8.50% DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600321,70600321,REDEVANCE PUBLICITE 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600322,70600322,REDEVANCE PUBLICITE EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600323,70600323,REDEVANCE PUB. EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600325,70600325,REDEVANCE PUB. TVA 8.50 % DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600401,70600401,PREST PART. CONVENTION FRANCE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600501,70600501,PREST COSTISATION CNIL FRANCE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70610000,70610000,PREST. DROITS D ENTREE 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70610001,70610001,PREST DROIT ENTREE EXO TVA  UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70610002,70610002,PREST DROIT ENTREE EXO TVA EXP,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70610011,70610011,MAITRISE D'OEUVRE TVA 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70610012,70610012,MAITRISE D'OEUVRE EXO TVA   UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70613000,70613000,PREST.SERV. 8.5% DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70630000,70630000,PREST. GROUPON,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700020,70700020,VENTES M/SES 20%,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700021,70700021,VENTES MARKETING 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700022,70700022,VENTES MARKETING EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700023,70700023,VENTES MARKETING EXO TVA EXPOR,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700024,70700024,VENTES MARKETING EXO TVA DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700060,70700060,VTES M/SES EXO TVA DANS UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700061,70700061,VENTES MOBILIER 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700063,70700063,VENTES MOBILIER EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700064,70700064,VENTES MOBILIER EXO TVA DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700070,70700070,VTES M/SES EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700071,70700071,VENTES MACHINE 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700081,70700081,VTES TETES FLASH 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70713000,70713000,VTES M/SES  EXO TVA  DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70800000,70800000,PRODUITS DES ACTIVITES ANNEXES,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70820021,70820021,COMMISSIONS  20%,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70820022,70820022,RETRO-COMMISSION EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70820023,70820023,RETRO-COMMISSION EXO TVA EXPOR,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70820025,70820025,RETRO COMMISSION TVA 8.5% DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70820030,70820030,COMMISSIONS EXO,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70850000,70850000,PORTS ET FRAIS ACCESS FACTURES,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_75800000,75800000,PROD DIV GEST COURANTE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_76310000,76310000,PENALITES DE RETARD,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_76500000,76500000,ESCOMPTE OBTENU,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_76800000,76800000,AUTRES PDTS FINANCIERS,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_77200000,77200000,PROD.EXPLOIT./EXERC.ANTER,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_78150000,78150000,REP SUR PROV POUR RISQUES & CH,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_79100000,79100000,TRANSFERT DE CHARGES,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_79110000,79110000,TRANSFERT DE CHARGES TVA 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600060,70600060,PREST.EXO TVA  DANS UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600061,70600061,PRESTATION CONTRAT EGERIE 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600062,70600062,PRESTATIONS CONTRAT EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600063,70600063,PREST CONTRAT EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600065,70600065,PREST CONTRAT TVA 8.50 % DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600070,70600070,PREST.EXO TVA  EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600071,70600071,PREST MARKETING 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600072,70600072,PREST MARKETING EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600073,70600073,PREST MARKETING EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600075,70600075,PREST MARKETING TVA 8.50% DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600081,70600081,CONVENTION TVA 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600090,70600090,Pres. serv. 20 % chq à encais.,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600091,70600091,COTISATION CNIL TVA 20%,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600092,70600092,COTISAT° CNIL EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600101,70600101,SMS A 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600102,70600102,SMS EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600103,70600103,SMS  EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600104,70600104,SMS  EXO TVA DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600105,70600105,SMS  TVA 8.50 % DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600221,70600221,REDEVANCES FRANCHISES  FRANCE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600222,70600222,REDEVANCE FRANCH EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600223,70600223,REDEVANCE FRANCH EXO TVA EXPOR,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600225,70600225,REDEVANCE FRANCH TVA 8.50% DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600321,70600321,REDEVANCE PUBLICITE 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600322,70600322,REDEVANCE PUBLICITE EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600323,70600323,REDEVANCE PUB. EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600325,70600325,REDEVANCE PUB. TVA 8.50 % DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600401,70600401,PREST PART. CONVENTION FRANCE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70600501,70600501,PREST COSTISATION CNIL FRANCE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70610000,70610000,PREST. DROITS D ENTREE 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70610001,70610001,PREST DROIT ENTREE EXO TVA  UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70610002,70610002,PREST DROIT ENTREE EXO TVA EXP,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70610011,70610011,MAITRISE D'OEUVRE TVA 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70610012,70610012,MAITRISE D'OEUVRE EXO TVA   UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70613000,70613000,PREST.SERV. 8.5% DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70630000,70630000,PREST. GROUPON,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700020,70700020,VENTES M/SES 20%,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700021,70700021,VENTES MARKETING 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700022,70700022,VENTES MARKETING EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700023,70700023,VENTES MARKETING EXO TVA EXPOR,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700024,70700024,VENTES MARKETING EXO TVA DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700060,70700060,VTES M/SES EXO TVA DANS UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700061,70700061,VENTES MOBILIER 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700063,70700063,VENTES MOBILIER EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700064,70700064,VENTES MOBILIER EXO TVA DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700070,70700070,VTES M/SES EXO TVA EXPORT,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700071,70700071,VENTES MACHINE 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70700081,70700081,VTES TETES FLASH 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70713000,70713000,VTES M/SES  EXO TVA  DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70800000,70800000,PRODUITS DES ACTIVITES ANNEXES,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70820021,70820021,COMMISSIONS  20%,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70820022,70820022,RETRO-COMMISSION EXO TVA UE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70820023,70820023,RETRO-COMMISSION EXO TVA EXPOR,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70820025,70820025,RETRO COMMISSION TVA 8.5% DOM,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70820030,70820030,COMMISSIONS EXO,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_70850000,70850000,PORTS ET FRAIS ACCESS FACTURES,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_75800000,75800000,PROD DIV GEST COURANTE,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_76310000,76310000,PENALITES DE RETARD,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_76500000,76500000,ESCOMPTE OBTENU,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_76800000,76800000,AUTRES PDTS FINANCIERS,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_77200000,77200000,PROD.EXPLOIT./EXERC.ANTER,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_78150000,78150000,REP SUR PROV POUR RISQUES & CH,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_79100000,79100000,TRANSFERT DE CHARGES,account.data_account_type_revenue,0,scenario.company_agencyfr_center11
+sc.coa10_79110000,79110000,TRANSFERT DE CHARGES TVA 20 %,account.data_account_type_revenue,0,scenario.company_agencyfr_center11

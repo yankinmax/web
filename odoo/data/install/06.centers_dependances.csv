@@ -1,5 +1,5 @@
 "coach_id/id";"id";"intercompany_user_id/id"
-"";"scenario.company_depiltechHolding";"scenario.user_dtHolding"
+"";"base.main_company";"scenario.user_dtHolding"
 "";"scenario.company_agencyHolding";"scenario.user_agencyHolding"
 "";"scenario.company_depiltechSAS";"scenario.user_depiltechSAS"
 "";"scenario.company_depiltechSiege";"scenario.user_siege"

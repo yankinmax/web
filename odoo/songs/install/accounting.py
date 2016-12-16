@@ -2,84 +2,122 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from pkg_resources import Requirement
+from pkg_resources import resource_stream
+
 import anthem
+from anthem.lyrics.loaders import load_csv_stream
 
 
 @anthem.log
-def product_taxes(ctx):
-    sale_taxes = ctx.env['account.tax'].search([
-        ('description', '=', '20.0'),
-        ('type_tax_use', '=', 'sale'),
-    ])
-
-    purchase_taxes = ctx.env['account.tax'].search([
-        ('description', '=', 'ACH-20.0'),
-        ('type_tax_use', '=', 'purchase'),
-    ])
-
-    ctx.env['product.template'].search([]).write({
-        'taxes_id': [(6, False, sale_taxes.mapped('id'))],
-        'supplier_taxes_id': [(6, False, purchase_taxes.mapped('id'))],
-    })
-
-    # Produits sans TVA
-    sale_taxes_0 = ctx.env['account.tax'].search([
-        ('description', '=', 'EXPORT-0'),
-        ('type_tax_use', '=', 'sale'),
-    ])
-    ctx.env.ref(
-        'scenario.'
-        'product_transfertdossier_fiche_client_sans_tva_product_template'
-    ).write({
-        'taxes_id': [(6, False, sale_taxes_0.mapped('id'))],
-        'supplier_taxes_id': [(5,)],
-    })
-
-    ctx.env.ref(
-        'sale_discount_program.product_voucher_product_template'
-    ).write({
-        'taxes_id': [(5,)],
-        'supplier_taxes_id': [(5,)],
-    })
+def define_auto_generate_invoices_for_companies(ctx):
+    companies = ctx.env['res.company'].search([])
+    companies.write({'auto_generate_invoices': True})
 
 
 @anthem.log
-def create_tax_xmlid(ctx):
-    ir_model_data = ctx.env['ir.model.data']
-    taxes = ctx.env['account.tax'].search([])
-    for tax in taxes:
-        model_data = ir_model_data.search_count([
-            ('model', '=', 'account.tax'),
-            ('res_id', '=', tax.id)
+def configure_chart_of_account(ctx):
+    """Configure COA for companies"""
+
+    coa_dict = {
+        'scenario.company_depiltechSAS': {
+            'chart_template_id': 'l10n_fr.l10n_fr_pcg_chart_template',
+            'template_transfer_account_id': 'l10n_fr.pcg_58',
+            'sale_tax_id': 'l10n_fr.tva_normale',
+            'purchase_tax_id': 'l10n_fr.tva_acq_normale',
+        },
+    }
+    for company_xml_id, values in coa_dict.iteritems():
+        main_company = ctx.env.ref(company_xml_id)
+        coa = ctx.env.ref(values['chart_template_id'])
+        template_transfer_account = ctx.env.ref(
+            values['template_transfer_account_id']
+        )
+        sale_tax = ctx.env.ref(values['sale_tax_id'])
+        purchase_tax = ctx.env.ref(values['purchase_tax_id'])
+        companies = ctx.env['res.company'].search([
+            ('parent_id', '=', main_company.id),
         ])
-        if not model_data:
-            if tax.company_id:
-                company_model_data = ir_model_data.search([
-                    ('model', '=', 'res.company'),
-                    ('res_id', '=', tax.company_id.id)
-                ])
-                company_xmlid_name = company_model_data.name
-            else:
-                company_xmlid_name = 'no_company'
-
-            tax_name = tax.name.replace(' ', '_').replace('(', '_')
-            tax_name = tax_name.replace(')', '_').replace('.', '_')
-            tax_name = tax_name.replace('-', '_').replace(',', '_')
-
-            ir_model_data.create({
-                'name':
-                    'account_tax_%s_%s_%s' % (
-                        tax.type_tax_use,
-                        company_xmlid_name,
-                        tax_name,
-                    ),
-                'module': 'scenario',
-                'model': 'account.tax',
-                'res_id': tax.id
+        for company in companies:
+            wizard = ctx.env['wizard.multi.charts.accounts'].create({
+                'company_id': company.id,
+                'chart_template_id': coa.id,
+                'transfer_account_id': template_transfer_account.id,
+                'code_digits': 8,
+                'sale_tax_id': sale_tax.id,
+                'purchase_tax_id': purchase_tax.id,
+                'sale_tax_rate': 15,
+                'purchase_tax_rate': 15,
+                'complete_tax_set': coa.complete_tax_set,
+                'currency_id': ctx.env.ref('base.EUR').id,
+                'bank_account_code_prefix': coa.bank_account_code_prefix,
+                'cash_account_code_prefix': coa.cash_account_code_prefix,
             })
+            wizard.execute()
+
+
+@anthem.log
+def remove_useless_accounts(ctx):
+    accounts = ctx.env['account.account'].search([
+        (
+            'code',
+            'not in',
+            [
+                '40110000',
+                '41110000',
+                '44520100',
+                '44520200',
+                '44520300',
+                '44562000',
+                '44566000',
+                '44566200',
+                '44571100',
+                '44571200',
+                '44571300',
+                '60710000',
+                '70710000',
+            ]
+        ),
+        (
+            'company_id',
+            'not in',
+            [
+                # Antibes
+                ctx.env.ref('scenario.company_agencyfr_center45').id,
+                # Cannes
+                ctx.env.ref('scenario.company_agencyfr_center26').id,
+                # Marseille
+                ctx.env.ref('scenario.company_agencyfr_center55').id,
+            ]
+        )
+    ])
+    accounts.unlink()
+
+
+@anthem.log
+def import_account_account(ctx):
+    """ Import account account
+    """
+    req = Requirement.parse('depiltech-odoo')
+    content = resource_stream(req, 'data/install/CoA/CoA_Boulogne_50.csv')
+    load_csv_stream(ctx, 'account.account', content, delimiter=',')
+    content = resource_stream(req, 'data/install/CoA/CoA_Nice_RdF_10.csv')
+    load_csv_stream(ctx, 'account.account', content, delimiter=',')
+    content = resource_stream(req, 'data/install/CoA/CoA_Nice_Tra_15.csv')
+    load_csv_stream(ctx, 'account.account', content, delimiter=',')
+    content = resource_stream(req, 'data/install/CoA/CoA_Paris3_20.csv')
+    load_csv_stream(ctx, 'account.account', content, delimiter=',')
+    content = resource_stream(req, 'data/install/CoA/CoA_Paris16_25.csv')
+    load_csv_stream(ctx, 'account.account', content, delimiter=',')
+    content = resource_stream(req, 'data/install/CoA/CoA_Siege_00.csv')
+    load_csv_stream(ctx, 'account.account', content, delimiter=',')
+    content = resource_stream(req, 'data/install/CoA/CoA_Toulon_40.csv')
+    load_csv_stream(ctx, 'account.account', content, delimiter=',')
 
 
 @anthem.log
 def main(ctx):
-    product_taxes(ctx)
-    create_tax_xmlid(ctx)
+    define_auto_generate_invoices_for_companies(ctx)
+    configure_chart_of_account(ctx)
+    remove_useless_accounts(ctx)
+    import_account_account(ctx)
