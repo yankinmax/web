@@ -6,7 +6,7 @@ odoo:
   links:
       - external-db:db
   volumes:
-    - depiltech-integration-dataodoo:/data/odoo
+    - depiltech-prod-dataodoo:/data/odoo
   environment:
     - DB_USER=${DB_USER}
     - DB_PASSWORD=${DB_PASSWORD}
@@ -38,7 +38,7 @@ letsencrypt:
     API_VERSION: Production
     AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
     AWS_SECRET_KEY: ${AWS_SECRET_KEY}
-    CERT_NAME: depiltech-odoo-integration
+    CERT_NAME: depiltech-odoo-prod
     CLOUDFLARE_EMAIL: ''
     CLOUDFLARE_KEY: ''
     DNSIMPLE_EMAIL: ''
