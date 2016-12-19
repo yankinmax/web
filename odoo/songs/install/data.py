@@ -125,6 +125,15 @@ def import_centers_pts(ctx, req):
 
 
 @anthem.log
+def import_partners_dependances(ctx, req):
+    """ Importing partner dependances """
+    content = resource_stream(
+        req, 'data/install/09.partners_dependances.csv'
+    )
+    load_csv_stream(ctx, 'res.partner', content, delimiter=';')
+
+
+@anthem.log
 def main_first_data(ctx):
     """ Loading data """
     req = Requirement.parse('depiltech-odoo')
@@ -142,3 +151,4 @@ def main_others_data(ctx):
     import_centers_dependances(ctx, req)
     import_centers_horaires(ctx, req)
     import_centers_pts(ctx, req)
+    import_partners_dependances(ctx, req)

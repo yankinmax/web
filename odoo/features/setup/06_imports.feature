@@ -22,8 +22,8 @@ Feature: Parameter the new database
 
   @csv_import_product
   Scenario: import csv
-    Given "product.product" is imported from CSV "install/09.product - all.csv" using delimiter ","
-    And "product.product" is imported from CSV "install/10.product - new.csv" using delimiter ","
+    Given "product.product" is imported from CSV "install/10.product - all.csv" using delimiter ","
+    And "product.product" is imported from CSV "install/11.product - new.csv" using delimiter ","
 
   @csv_import_programs
   Scenario: import csv

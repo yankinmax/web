@@ -1,362 +1,348 @@
-"city";"country_id/id";"firstname";"id";"lang";"lastname";"name";"street";"street2";"zip"
-"Nice";"base.fr";"Depil Tech";"scenario.userAPIApiFR_res_partner";"fr_FR";"APIFR";"Depil Tech APIFR";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.userAPIApiBE_res_partner";"fr_FR";"APIBE";"Depil Tech APIBE";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.userAPIApiLU_res_partner";"fr_FR";"APILU";"Depil Tech APILU";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.userAPIApiCH_res_partner";"fr_FR";"APICH";"Depil Tech APICH";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.userAPIApiRE_res_partner";"fr_FR";"APIRE";"Depil Tech APIRE";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.userAPIApiMX_res_partner";"fr_FR";"APIMX";"Depil Tech APIMX";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.user_dtHolding_res_partner";"fr_FR";"Holding";"Depil Tech Holding";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"base.main_company_res_partner";"fr_FR";"Holding";"Depil Tech Holding";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.user_agencyHolding_res_partner";"fr_FR";"Agency Holding";"Depil Tech Agency Holding";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.company_agencyHolding_res_partner";"fr_FR";"Agency Holding";"Depil Tech Agency Holding";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.user_depiltechSAS_res_partner";"fr_FR";"SAS";"Depil Tech SAS";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.company_depiltechSAS_res_partner";"fr_FR";"SAS";"Depil Tech SAS";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.user_siege_res_partner";"fr_FR";"Siege";"Depil Tech Siege";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.company_depiltechSiege_res_partner";"fr_FR";"Siege";"Depil Tech Siege";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.user_agencyFR_res_partner";"fr_FR";"Agency FR";"Depil Tech Agency FR";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.company_agencyFR_res_partner";"fr_FR";"Agency FR";"Depil Tech Agency FR";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.user_agencyBE_res_partner";"fr_FR";"Agency BE";"Depil Tech Agency BE";"";"";"06200"
-"Nice";"base.be";"Depil Tech";"scenario.company_agencyBE_res_partner";"fr_FR";"Agency BE";"Depil Tech Agency BE";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.user_agencyLU_res_partner";"fr_FR";"Agency LU";"Depil Tech Agency LU";"";"";"06200"
-"Nice";"base.lu";"Depil Tech";"scenario.company_agencyLU_res_partner";"fr_FR";"Agency LU";"Depil Tech Agency LU";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.user_agencyCH_res_partner";"fr_FR";"Agency CH";"Depil Tech Agency CH";"";"";"06200"
-"Nice";"base.ch";"Depil Tech";"scenario.company_agencyCH_res_partner";"fr_FR";"Agency CH";"Depil Tech Agency CH";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.user_agencyMX_res_partner";"fr_FR";"Agency MX";"Depil Tech Agency MX";"";"";"06200"
-"Nice";"base.mx";"Depil Tech";"scenario.company_agencyMX_res_partner";"fr_FR";"Agency MX";"Depil Tech Agency MX";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.user_agencyRE_res_partner";"fr_FR";"Agency RE";"Depil Tech Agency RE";"";"";"06200"
-"Nice";"base.re";"Depil Tech";"scenario.company_agencyRE_res_partner";"fr_FR";"Agency RE";"Depil Tech Agency RE";"";"";"06200"
-"Nice";"base.fr";"Depil Tech";"scenario.user_agencyES_res_partner";"fr_FR";"Agency ES";"Depil Tech Agency ES";"";"";"06200"
-"Nice";"base.es";"Depil Tech";"scenario.company_agencyES_res_partner";"fr_FR";"Agency ES";"Depil Tech Agency ES";"";"";"06200"
-"NICE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center8_res_partner";"fr_FR";"Centre NICE GARE THIERS";"Depil Tech Centre NICE GARE THIERS";"1 Rue Trachel";"";""
-"NICE";"base.fr";"Depil Tech";"scenario.user_center_nice-trachel_res_partner";"fr_FR";"Centre NICE GARE THIERS";"Depil Tech Centre NICE GARE THIERS";"1 Rue Trachel";"";""
-"LA GARDE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center10_res_partner";"fr_FR";"Centre LA GARDE";"Depil Tech Centre LA GARDE";"73 avenue Sadi Carnot";"";""
-"NICE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center11_res_partner";"fr_FR";"Centre NICE RUE DE FRANCE";"Depil Tech Centre NICE RUE DE FRANCE";"47 rue de France";"";""
-"NICE";"base.fr";"Depil Tech";"scenario.user_center_nice-ruedefrance_res_partner";"fr_FR";"Centre NICE RUE DE FRANCE";"Depil Tech Centre NICE RUE DE FRANCE";"47 rue de France";"";""
-"TOULON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center12_res_partner";"fr_FR";"Centre TOULON";"Depil Tech Centre TOULON";"2 rue Pierre Letuaire";"";""
-"BLOIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center13_res_partner";"fr_FR";"Centre BLOIS";"Depil Tech Centre BLOIS";"2 rue du Maréchal de Lattre de Tassigny";"";""
-"BLOIS";"base.fr";"Depil Tech";"scenario.user_center_blois_res_partner";"fr_FR";"Centre BLOIS";"Depil Tech Centre BLOIS";"2 rue du Maréchal de Lattre de Tassigny";"";""
-"NANTES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center14_res_partner";"fr_FR";"Centre NANTES";"Depil Tech Centre NANTES";"9 allée Duquesne";"";""
-"NANTES";"base.fr";"Depil Tech";"scenario.user_center_nantes_res_partner";"fr_FR";"Centre NANTES";"Depil Tech Centre NANTES";"9 allée Duquesne";"";""
-"WASQUEHAL";"base.fr";"Depil Tech";"scenario.company_agencyfr_center15_res_partner";"fr_FR";"Centre WASQUEHAL C.C CARREFOUR";"Depil Tech Centre WASQUEHAL C.C CARREFOUR";"33/37 rue du Molinel";"";""
-"WASQUEHAL";"base.fr";"Depil Tech";"scenario.user_center_wasquehal_res_partner";"fr_FR";"Centre WASQUEHAL C.C CARREFOUR";"Depil Tech Centre WASQUEHAL C.C CARREFOUR";"33/37 rue du Molinel";"";""
-"BORDEAUX";"base.fr";"Depil Tech";"scenario.company_agencyfr_center16_res_partner";"fr_FR";"Centre BORDEAUX";"Depil Tech Centre BORDEAUX";"182 rue Fondaudège";"";""
-"LA ROCHELLE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center24_res_partner";"fr_FR";"Centre LA ROCHELLE";"Depil Tech Centre LA ROCHELLE";"";"";""
-"CANNES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center26_res_partner";"fr_FR";"Centre CANNES";"Depil Tech Centre CANNES";"21 rue du Maréchal JOFFRE";"";""
-"CANNES";"base.fr";"Depil Tech";"scenario.user_center_cannes_res_partner";"fr_FR";"Centre CANNES";"Depil Tech Centre CANNES";"21 rue du Maréchal JOFFRE";"";""
-"MENTON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center29_res_partner";"fr_FR";"Centre MENTON";"Depil Tech Centre MENTON";"8 rue Prato";"";""
-"MENTON";"base.fr";"Depil Tech";"scenario.user_center_menton_res_partner";"fr_FR";"Centre MENTON";"Depil Tech Centre MENTON";"8 rue Prato";"";""
-"BOULOGNE BILLANCOURT";"base.fr";"Depil Tech";"scenario.company_agencyfr_center40_res_partner";"fr_FR";"Centre BOULOGNE BILLANCOURT SUD";"Depil Tech Centre BOULOGNE BILLANCOURT SUD";"264 bis Boulevard Jean Jaurès";"";""
-"BOULOGNE BILLANCOURT";"base.fr";"Depil Tech";"scenario.user_center_boulogne_res_partner";"fr_FR";"Centre BOULOGNE BILLANCOURT SUD";"Depil Tech Centre BOULOGNE BILLANCOURT SUD";"264 bis Boulevard Jean Jaurès";"";""
-"LILLE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center42_res_partner";"fr_FR";"Centre LILLE GARE FLANDRES";"Depil Tech Centre LILLE GARE FLANDRES";"28 rue du Molinel";"";""
-"LILLE";"base.fr";"Depil Tech";"scenario.user_center_lille2_res_partner";"fr_FR";"Centre LILLE GARE FLANDRES";"Depil Tech Centre LILLE GARE FLANDRES";"28 rue du Molinel";"";""
-"FONTAINEBLEAU";"base.fr";"Depil Tech";"scenario.company_agencyfr_center43_res_partner";"fr_FR";"Centre FONTAINEBLEAU";"Depil Tech Centre FONTAINEBLEAU";"20 rue de Ferrare";"";""
-"FONTAINEBLEAU";"base.fr";"Depil Tech";"scenario.user_center_fontainebleau_res_partner";"fr_FR";"Centre FONTAINEBLEAU";"Depil Tech Centre FONTAINEBLEAU";"20 rue de Ferrare";"";""
-"ANTIBES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center45_res_partner";"fr_FR";"Centre ANTIBES";"Depil Tech Centre ANTIBES";"11 boulevard Dugommier";"";""
-"ANTIBES";"base.fr";"Depil Tech";"scenario.user_center_antibes_res_partner";"fr_FR";"Centre ANTIBES";"Depil Tech Centre ANTIBES";"11 boulevard Dugommier";"";""
-"GRENOBLE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center47_res_partner";"fr_FR";"Centre GRENOBLE";"Depil Tech Centre GRENOBLE";"10 bis rue Berthe de Boissieux";"";""
-"GRENOBLE";"base.fr";"Depil Tech";"scenario.user_center_grenoble_res_partner";"fr_FR";"Centre GRENOBLE";"Depil Tech Centre GRENOBLE";"10 bis rue Berthe de Boissieux";"";""
-"LYON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center48_res_partner";"fr_FR";"Centre LYON 2 BELLECOUR";"Depil Tech Centre LYON 2 BELLECOUR";"20 rue des Remparts d'Ainay";"";""
-"LYON";"base.fr";"Depil Tech";"scenario.user_center_lyon2_res_partner";"fr_FR";"Centre LYON 2 BELLECOUR";"Depil Tech Centre LYON 2 BELLECOUR";"20 rue des Remparts d'Ainay";"";""
-"AMIENS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center49_res_partner";"fr_FR";"Centre AMIENS";"Depil Tech Centre AMIENS";"10 Rue Dumeril";"";""
-"AMIENS";"base.fr";"Depil Tech";"scenario.user_center_amiens_res_partner";"fr_FR";"Centre AMIENS";"Depil Tech Centre AMIENS";"10 Rue Dumeril";"";""
-"LILLE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center50_res_partner";"fr_FR";"Centre LILLE RUE DES ARTS VIEUX LILLE";"Depil Tech Centre LILLE RUE DES ARTS VIEUX LILLE";"51 Rue des Arts";"";""
-"LILLE";"base.fr";"Depil Tech";"scenario.user_center_lillearts_res_partner";"fr_FR";"Centre LILLE RUE DES ARTS VIEUX LILLE";"Depil Tech Centre LILLE RUE DES ARTS VIEUX LILLE";"51 Rue des Arts";"";""
-"PAU";"base.fr";"Depil Tech";"scenario.company_agencyfr_center51_res_partner";"fr_FR";"Centre PAU";"Depil Tech Centre PAU";"4 rue Bordenave d'Abère";"";""
-"PAU";"base.fr";"Depil Tech";"scenario.user_center_pau64_res_partner";"fr_FR";"Centre PAU";"Depil Tech Centre PAU";"4 rue Bordenave d'Abère";"";""
-"BRIVE LA GAILLARDE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center52_res_partner";"fr_FR";"Centre BRIVE LA GAILLARDE";"Depil Tech Centre BRIVE LA GAILLARDE";"7 rue Gambetta";"";""
-"ANNECY";"base.fr";"Depil Tech";"scenario.company_agencyfr_center53_res_partner";"fr_FR";"Centre ANNECY";"Depil Tech Centre ANNECY";"6 bis rue du Lac";"";""
-"ANNECY";"base.fr";"Depil Tech";"scenario.user_center_annecy_res_partner";"fr_FR";"Centre ANNECY";"Depil Tech Centre ANNECY";"6 bis rue du Lac";"";""
-"BOURG EN BRESSE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center54_res_partner";"fr_FR";"Centre BOURG EN BRESSE";"Depil Tech Centre BOURG EN BRESSE";"5 Rue Gustave Doré";"";""
-"BOURG EN BRESSE";"base.fr";"Depil Tech";"scenario.user_center_bourg_res_partner";"fr_FR";"Centre BOURG EN BRESSE";"Depil Tech Centre BOURG EN BRESSE";"5 Rue Gustave Doré";"";""
-"MARSEILLE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center55_res_partner";"fr_FR";"Centre MARSEILLE 6 PL DE LA PRÉFECTURE";"Depil Tech Centre MARSEILLE 6 PL DE LA PRÉFECTURE";"2 rue Armeny";"";""
-"MARSEILLE";"base.fr";"Depil Tech";"scenario.user_center_marseille6_res_partner";"fr_FR";"Centre MARSEILLE 6 PL DE LA PRÉFECTURE";"Depil Tech Centre MARSEILLE 6 PL DE LA PRÉFECTURE";"2 rue Armeny";"";""
-"MACON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center56_res_partner";"fr_FR";"Centre MÂCON";"Depil Tech Centre MÂCON";"29 rue du pont";"";""
-"MACON";"base.fr";"Depil Tech";"scenario.user_center_macon_res_partner";"fr_FR";"Centre MÂCON";"Depil Tech Centre MÂCON";"29 rue du pont";"";""
-"VINCENNES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center58_res_partner";"fr_FR";"Centre VINCENNES";"Depil Tech Centre VINCENNES";"105 rue de Fontenay";"";""
-"VINCENNES";"base.fr";"Depil Tech";"scenario.user_center_vincennes_res_partner";"fr_FR";"Centre VINCENNES";"Depil Tech Centre VINCENNES";"105 rue de Fontenay";"";""
-"BÉZIERS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center59_res_partner";"fr_FR";"Centre BÉZIERS";"Depil Tech Centre BÉZIERS";"3 place Pierre Semard";"";""
-"BÉZIERS";"base.fr";"Depil Tech";"scenario.user_center_beziers_res_partner";"fr_FR";"Centre BÉZIERS";"Depil Tech Centre BÉZIERS";"3 place Pierre Semard";"";""
-"MELUN";"base.fr";"Depil Tech";"scenario.company_agencyfr_center62_res_partner";"fr_FR";"Centre MELUN";"Depil Tech Centre MELUN";"12 bis rue Saint Liesne";"";""
-"MELUN";"base.fr";"Depil Tech";"scenario.user_center_melun_res_partner";"fr_FR";"Centre MELUN";"Depil Tech Centre MELUN";"12 bis rue Saint Liesne";"";""
-"ORLÉANS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center65_res_partner";"fr_FR";"Centre ORLÉANS";"Depil Tech Centre ORLÉANS";"42 rue Sainte Catherine";"";""
-"ORLÉANS";"base.fr";"Depil Tech";"scenario.user_center_orleans_res_partner";"fr_FR";"Centre ORLÉANS";"Depil Tech Centre ORLÉANS";"42 rue Sainte Catherine";"";""
-"LA VARENNE SAINT HILAIRE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center66_res_partner";"fr_FR";"Centre LA VARENNE SAINT HILAIRE";"Depil Tech Centre LA VARENNE SAINT HILAIRE";"4 rue Saint Hilaire";"";""
-"LA VARENNE SAINT HILAIRE";"base.fr";"Depil Tech";"scenario.user_center_varenne_res_partner";"fr_FR";"Centre LA VARENNE SAINT HILAIRE";"Depil Tech Centre LA VARENNE SAINT HILAIRE";"4 rue Saint Hilaire";"";""
-"NICE";"base.mx";"Depil Tech";"scenario.company_agencymx_center67_res_partner";"es_MX";"Centre FORMATION MX";"Depil Tech Centre FORMATION MX";"196 Avenue de la Californie California Park Chateau de Leliwa";"";""
-"NICE";"base.mx";"Depil Tech";"scenario.user_center_formation_mx_res_partner";"es_MX";"Centre FORMATION MX";"Depil Tech Centre FORMATION MX";"196 Avenue de la Californie California Park Chateau de Leliwa";"";""
-"GENÈVE";"base.ch";"Depil Tech";"scenario.company_agencych_center69_res_partner";"fr_FR";"Centre GENÈVE";"Depil Tech Centre GENÈVE";"Rue de Lausanne 31";"";""
-"GENÈVE";"base.ch";"Depil Tech";"scenario.user_center_geneve_res_partner";"fr_FR";"Centre GENÈVE";"Depil Tech Centre GENÈVE";"Rue de Lausanne 31";"";""
-"LYON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center70_res_partner";"fr_FR";"Centre LYON 3 PRÉFECTURE";"Depil Tech Centre LYON 3 PRÉFECTURE";"80 Avenue Maréchal de Saxe";"";""
-"LYON";"base.fr";"Depil Tech";"scenario.user_center_lyon3_res_partner";"fr_FR";"Centre LYON 3 PRÉFECTURE";"Depil Tech Centre LYON 3 PRÉFECTURE";"80 Avenue Maréchal de Saxe";"";""
-"NICE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center71_res_partner";"fr_FR";"Centre FORMATION";"Depil Tech Centre FORMATION";"196 Avenue de la Californie California Park Chateau de Leliwa";"";""
-"NICE";"base.fr";"Depil Tech";"scenario.user_center_formation_res_partner";"fr_FR";"Centre FORMATION";"Depil Tech Centre FORMATION";"196 Avenue de la Californie California Park Chateau de Leliwa";"";""
-"LUXEMBOURG";"base.lu";"Depil Tech";"scenario.company_agencylu_center72_res_partner";"fr_FR";"Centre LUXEMBOURG";"Depil Tech Centre LUXEMBOURG";"56 Grande rue";"";""
-"LUXEMBOURG";"base.lu";"Depil Tech";"scenario.user_center_luxembourg_res_partner";"fr_FR";"Centre LUXEMBOURG";"Depil Tech Centre LUXEMBOURG";"56 Grande rue";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center74_res_partner";"fr_FR";"Centre PARIS 9 SAINT LAZARE";"Depil Tech Centre PARIS 9 SAINT LAZARE";"14 rue Saint Lazare";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.user_center_paris9_res_partner";"fr_FR";"Centre PARIS 9 SAINT LAZARE";"Depil Tech Centre PARIS 9 SAINT LAZARE";"14 rue Saint Lazare";"";""
-"BESANÇON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center75_res_partner";"fr_FR";"Centre BESANÇON";"Depil Tech Centre BESANÇON";"25 rue Bersot";"";""
-"BESANÇON";"base.fr";"Depil Tech";"scenario.user_center_besancon_res_partner";"fr_FR";"Centre BESANÇON";"Depil Tech Centre BESANÇON";"25 rue Bersot";"";""
-"AIX EN PROVENCE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center76_res_partner";"fr_FR";"Centre AIX EN PROVENCE";"Depil Tech Centre AIX EN PROVENCE";"5 Rue Papassaudi";"";""
-"AIX EN PROVENCE";"base.fr";"Depil Tech";"scenario.user_center_aixenprovence_res_partner";"fr_FR";"Centre AIX EN PROVENCE";"Depil Tech Centre AIX EN PROVENCE";"5 Rue Papassaudi";"";""
-"CLERMONT-FERRAND";"base.fr";"Depil Tech";"scenario.company_agencyfr_center77_res_partner";"fr_FR";"Centre CLERMONT FERRAND";"Depil Tech Centre CLERMONT FERRAND";"9 rue Eugène Gilbert";"";""
-"CLERMONT-FERRAND";"base.fr";"Depil Tech";"scenario.user_center_clermont_res_partner";"fr_FR";"Centre CLERMONT FERRAND";"Depil Tech Centre CLERMONT FERRAND";"9 rue Eugène Gilbert";"";""
-"LE MANS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center78_res_partner";"fr_FR";"Centre LE MANS";"Depil Tech Centre LE MANS";"3 Route d'Allonnes";"";""
-"LE MANS";"base.fr";"Depil Tech";"scenario.user_center_lemans_res_partner";"fr_FR";"Centre LE MANS";"Depil Tech Centre LE MANS";"3 Route d'Allonnes";"";""
-"CHATEAUROUX";"base.fr";"Depil Tech";"scenario.company_agencyfr_center79_res_partner";"fr_FR";"Centre CHATEAUROUX";"Depil Tech Centre CHATEAUROUX";"12 Rue Victor Hugo";"";""
-"CHATEAUROUX";"base.fr";"Depil Tech";"scenario.user_center_chateauroux_res_partner";"fr_FR";"Centre CHATEAUROUX";"Depil Tech Centre CHATEAUROUX";"12 Rue Victor Hugo";"";""
-"ANGERS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center81_res_partner";"fr_FR";"Centre ANGERS";"Depil Tech Centre ANGERS";"50 Rue plantagenet";"";""
-"BAYONNE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center83_res_partner";"fr_FR";"Centre BAYONNE";"Depil Tech Centre BAYONNE";"23 rue Port Neuf";"";""
-"BAYONNE";"base.fr";"Depil Tech";"scenario.user_center_bayonne_res_partner";"fr_FR";"Centre BAYONNE";"Depil Tech Centre BAYONNE";"23 rue Port Neuf";"";""
-"BREST";"base.fr";"Depil Tech";"scenario.company_agencyfr_center84_res_partner";"fr_FR";"Centre BREST";"Depil Tech Centre BREST";"35, rue Emile Zola";"";""
-"BREST";"base.fr";"Depil Tech";"scenario.user_center_brest_res_partner";"fr_FR";"Centre BREST";"Depil Tech Centre BREST";"35, rue Emile Zola";"";""
-"CAGNES SUR MER";"base.fr";"Depil Tech";"scenario.company_agencyfr_center85_res_partner";"fr_FR";"Centre CAGNES SUR MER";"Depil Tech Centre CAGNES SUR MER";"20 Boulevard Maréchal Juin";"";""
-"CAGNES SUR MER";"base.fr";"Depil Tech";"scenario.user_center_cagnes_res_partner";"fr_FR";"Centre CAGNES SUR MER";"Depil Tech Centre CAGNES SUR MER";"20 Boulevard Maréchal Juin";"";""
-"COLMAR";"base.fr";"Depil Tech";"scenario.company_agencyfr_center87_res_partner";"fr_FR";"Centre COLMAR";"Depil Tech Centre COLMAR";"21 rue Vauban";"";""
-"COLMAR";"base.fr";"Depil Tech";"scenario.user_center_colmar_res_partner";"fr_FR";"Centre COLMAR";"Depil Tech Centre COLMAR";"21 rue Vauban";"";""
-"COMPIEGNE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center88_res_partner";"fr_FR";"Centre COMPIEGNE";"Depil Tech Centre COMPIEGNE";"16 rue de l'étoile";"";""
-"COMPIEGNE";"base.fr";"Depil Tech";"scenario.user_center_compiegne_res_partner";"fr_FR";"Centre COMPIEGNE";"Depil Tech Centre COMPIEGNE";"16 rue de l'étoile";"";""
-"EVRY";"base.fr";"Depil Tech";"scenario.company_agencyfr_center89_res_partner";"fr_FR";"Centre EVRY 2";"Depil Tech Centre EVRY 2";"Centre Régional Commercial EVRY 2";"";""
-"EVRY";"base.fr";"Depil Tech";"scenario.user_center_evry_res_partner";"fr_FR";"Centre EVRY 2";"Depil Tech Centre EVRY 2";"Centre Régional Commercial EVRY 2";"";""
-"LIMOGES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center92_res_partner";"fr_FR";"Centre LIMOGES";"Depil Tech Centre LIMOGES";"";"";""
-"MARSEILLE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center93_res_partner";"fr_FR";"Centre MARSEILLE 2";"Depil Tech Centre MARSEILLE 2";"111 rue de la république";"";""
-"MARSEILLE";"base.fr";"Depil Tech";"scenario.user_center_marseille2_res_partner";"fr_FR";"Centre MARSEILLE 2";"Depil Tech Centre MARSEILLE 2";"111 rue de la république";"";""
-"METZ";"base.fr";"Depil Tech";"scenario.company_agencyfr_center94_res_partner";"fr_FR";"Centre METZ";"Depil Tech Centre METZ";"17 Avenue Leclerc De Hautecloque";"";""
-"METZ";"base.fr";"Depil Tech";"scenario.user_center_metz_res_partner";"fr_FR";"Centre METZ";"Depil Tech Centre METZ";"17 Avenue Leclerc De Hautecloque";"";""
-"MONTLUÇON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center95_res_partner";"fr_FR";"Centre MONTLUÇON";"Depil Tech Centre MONTLUÇON";"9 rue du faubourg St Pierre";"";""
-"MONTLUÇON";"base.fr";"Depil Tech";"scenario.user_center_montlucon_res_partner";"fr_FR";"Centre MONTLUÇON";"Depil Tech Centre MONTLUÇON";"9 rue du faubourg St Pierre";"";""
-"NIMES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center97_res_partner";"fr_FR";"Centre NIMES";"Depil Tech Centre NIMES";"3 rue Fresque";"";""
-"NIMES";"base.fr";"Depil Tech";"scenario.user_center_nimes_res_partner";"fr_FR";"Centre NIMES";"Depil Tech Centre NIMES";"3 rue Fresque";"";""
-"REIMS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center98_res_partner";"fr_FR";"Centre REIMS";"Depil Tech Centre REIMS";"";"";""
-"RENNES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center99_res_partner";"fr_FR";"Centre RENNES";"Depil Tech Centre RENNES";"32 boulevard de la liberté";"";""
-"RENNES";"base.fr";"Depil Tech";"scenario.user_center_rennes_res_partner";"fr_FR";"Centre RENNES";"Depil Tech Centre RENNES";"32 boulevard de la liberté";"";""
-"SAINT DENIS DE LA REUNION";"base.re";"Depil Tech";"scenario.company_agencyre_center100_res_partner";"fr_FR";"Centre SAINT DENIS DE LA REUNION";"Depil Tech Centre SAINT DENIS DE LA REUNION";"101 rue Général de Gaulle";"";""
-"SAINT DENIS DE LA REUNION";"base.re";"Depil Tech";"scenario.user_center_saintdenis_res_partner";"fr_FR";"Centre SAINT DENIS DE LA REUNION";"Depil Tech Centre SAINT DENIS DE LA REUNION";"101 rue Général de Gaulle";"";""
-"ROUEN";"base.fr";"Depil Tech";"scenario.company_agencyfr_center101_res_partner";"fr_FR";"Centre ROUEN";"Depil Tech Centre ROUEN";"23 rue Grand Pont";"";""
-"ROUEN";"base.fr";"Depil Tech";"scenario.user_center_rouen_res_partner";"fr_FR";"Centre ROUEN";"Depil Tech Centre ROUEN";"23 rue Grand Pont";"";""
-"SABLE-SUR-SARTHE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center102_res_partner";"fr_FR";"Centre SABLE SUR SARTHE";"Depil Tech Centre SABLE SUR SARTHE";"Route du Mans";"";""
-"SABLE-SUR-SARTHE";"base.fr";"Depil Tech";"scenario.user_center_sable_res_partner";"fr_FR";"Centre SABLE SUR SARTHE";"Depil Tech Centre SABLE SUR SARTHE";"Route du Mans";"";""
-"THIONVILLE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center104_res_partner";"fr_FR";"Centre THIONVILLE";"Depil Tech Centre THIONVILLE";"36 rue de Paris";"";""
-"THIONVILLE";"base.fr";"Depil Tech";"scenario.user_center_thionville_res_partner";"fr_FR";"Centre THIONVILLE";"Depil Tech Centre THIONVILLE";"36 rue de Paris";"";""
-"RODEZ";"base.fr";"Depil Tech";"scenario.company_agencyfr_center105_res_partner";"fr_FR";"Centre RODEZ";"Depil Tech Centre RODEZ";"3 avenue Bourran - Res. Acropolis";"";""
-"RODEZ";"base.fr";"Depil Tech";"scenario.user_center_rodez_res_partner";"fr_FR";"Centre RODEZ";"Depil Tech Centre RODEZ";"3 avenue Bourran - Res. Acropolis";"";""
-"STRASBOURG";"base.fr";"Depil Tech";"scenario.company_agencyfr_center106_res_partner";"fr_FR";"Centre STRASBOURG";"Depil Tech Centre STRASBOURG";"20 Rue du Jeu des Enfants";"";""
-"STRASBOURG";"base.fr";"Depil Tech";"scenario.user_center_strasbourg_res_partner";"fr_FR";"Centre STRASBOURG";"Depil Tech Centre STRASBOURG";"20 Rue du Jeu des Enfants";"";""
-"TOULOUSE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center107_res_partner";"fr_FR";"Centre TOULOUSE";"Depil Tech Centre TOULOUSE";"17 rue de Metz";"";""
-"TOULOUSE";"base.fr";"Depil Tech";"scenario.user_center_toulouse_res_partner";"fr_FR";"Centre TOULOUSE";"Depil Tech Centre TOULOUSE";"17 rue de Metz";"";""
-"TOURS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center108_res_partner";"fr_FR";"Centre TOURS";"Depil Tech Centre TOURS";"10 rue de Néricault";"";""
-"VICHY";"base.fr";"Depil Tech";"scenario.company_agencyfr_center109_res_partner";"fr_FR";"Centre VICHY";"Depil Tech Centre VICHY";"24 rue de Paris";"";""
-"VICHY";"base.fr";"Depil Tech";"scenario.user_center_vichy_res_partner";"fr_FR";"Centre VICHY";"Depil Tech Centre VICHY";"24 rue de Paris";"";""
-"MULHOUSE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center110_res_partner";"fr_FR";"Centre MULHOUSE";"Depil Tech Centre MULHOUSE";"25 rue Henriette";"";""
-"MULHOUSE";"base.fr";"Depil Tech";"scenario.user_center_mulhouse_res_partner";"fr_FR";"Centre MULHOUSE";"Depil Tech Centre MULHOUSE";"25 rue Henriette";"";""
-"BEAUVAIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center111_res_partner";"fr_FR";"Centre BEAUVAIS";"Depil Tech Centre BEAUVAIS";"2, rue du Jeu de Tamis";"";""
-"BEAUVAIS";"base.fr";"Depil Tech";"scenario.user_center_beauvais_res_partner";"fr_FR";"Centre BEAUVAIS";"Depil Tech Centre BEAUVAIS";"2, rue du Jeu de Tamis";"";""
-"VANNES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center112_res_partner";"fr_FR";"Centre VANNES";"Depil Tech Centre VANNES";"11 rue Emile Burgault";"";""
-"VANNES";"base.fr";"Depil Tech";"scenario.user_center_vannes_res_partner";"fr_FR";"Centre VANNES";"Depil Tech Centre VANNES";"11 rue Emile Burgault";"";""
-"CHAMBERY";"base.fr";"Depil Tech";"scenario.company_agencyfr_center114_res_partner";"fr_FR";"Centre CHAMBERY";"Depil Tech Centre CHAMBERY";"11 rue DOPPET";"";""
-"CHAMBERY";"base.fr";"Depil Tech";"scenario.user_center_chambery_res_partner";"fr_FR";"Centre CHAMBERY";"Depil Tech Centre CHAMBERY";"11 rue DOPPET";"";""
-"SAINT GERMAIN EN LAYE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center115_res_partner";"fr_FR";"Centre SAINT-GERMAIN-EN-LAYE";"Depil Tech Centre SAINT-GERMAIN-EN-LAYE";"";"";""
-"CAEN";"base.fr";"Depil Tech";"scenario.company_agencyfr_center116_res_partner";"fr_FR";"Centre CAEN";"Depil Tech Centre CAEN";"166 rue Saint Jean";"";""
-"CAEN";"base.fr";"Depil Tech";"scenario.user_center_caen_res_partner";"fr_FR";"Centre CAEN";"Depil Tech Centre CAEN";"166 rue Saint Jean";"";""
-"POITIERS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center117_res_partner";"fr_FR";"Centre POITIERS";"Depil Tech Centre POITIERS";"216 avenue du 8 Mai 1945";"";""
-"POITIERS";"base.fr";"Depil Tech";"scenario.user_center_poitiers_res_partner";"fr_FR";"Centre POITIERS";"Depil Tech Centre POITIERS";"216 avenue du 8 Mai 1945";"";""
-"QUIMPER";"base.fr";"Depil Tech";"scenario.company_agencyfr_center118_res_partner";"fr_FR";"Centre QUIMPER";"Depil Tech Centre QUIMPER";"";"";""
-"DIJON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center119_res_partner";"fr_FR";"Centre DIJON";"Depil Tech Centre DIJON";"3 rue Parmentier";"";""
-"DIJON";"base.fr";"Depil Tech";"scenario.user_center_dijon_res_partner";"fr_FR";"Centre DIJON";"Depil Tech Centre DIJON";"3 rue Parmentier";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center120_res_partner";"fr_FR";"Centre PARIS 15 BEAUGRENELLE";"Depil Tech Centre PARIS 15 BEAUGRENELLE";"16 Rue Beaugrenelle";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.user_center_paris15_res_partner";"fr_FR";"Centre PARIS 15 BEAUGRENELLE";"Depil Tech Centre PARIS 15 BEAUGRENELLE";"16 Rue Beaugrenelle";"";""
-"SAINT LAURENT DU VAR - CAP 3000";"base.fr";"Depil Tech";"scenario.company_agencyfr_center122_res_partner";"fr_FR";"Centre SAINT LAURENT DU VAR";"Depil Tech Centre SAINT LAURENT DU VAR";"Secteur Cap 3000";"";""
-"SAINT LAURENT DU VAR - CAP 3000";"base.fr";"Depil Tech";"scenario.user_center_saintlaurent_res_partner";"fr_FR";"Centre SAINT LAURENT DU VAR";"Depil Tech Centre SAINT LAURENT DU VAR";"Secteur Cap 3000";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center123_res_partner";"fr_FR";"Centre PARIS 14 DENFERT ROCHEREAU";"Depil Tech Centre PARIS 14 DENFERT ROCHEREAU";"161 avenue du Maine";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.user_center_paris14_res_partner";"fr_FR";"Centre PARIS 14 DENFERT ROCHEREAU";"Depil Tech Centre PARIS 14 DENFERT ROCHEREAU";"161 avenue du Maine";"";""
-"VERTOU";"base.fr";"Depil Tech";"scenario.company_agencyfr_center124_res_partner";"fr_FR";"Centre NANTES-VERTOU";"Depil Tech Centre NANTES-VERTOU";"522 route de Clisson";"";""
-"VERTOU";"base.fr";"Depil Tech";"scenario.user_center_nantes-vertou_res_partner";"fr_FR";"Centre NANTES-VERTOU";"Depil Tech Centre NANTES-VERTOU";"522 route de Clisson";"";""
-"NANTES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center125_res_partner";"fr_FR";"Centre NANTES NORD";"Depil Tech Centre NANTES NORD";"";"";""
-"ROANNE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center127_res_partner";"fr_FR";"Centre ROANNE";"Depil Tech Centre ROANNE";"18 rue Maréchal Foch";"";""
-"ROANNE";"base.fr";"Depil Tech";"scenario.user_center_roanne_res_partner";"fr_FR";"Centre ROANNE";"Depil Tech Centre ROANNE";"18 rue Maréchal Foch";"";""
-"LEVALLOIS PERRET";"base.fr";"Depil Tech";"scenario.company_agencyfr_center128_res_partner";"fr_FR";"Centre LEVALLOIS PERRET";"Depil Tech Centre LEVALLOIS PERRET";"73 rue du Président Wilson";"";""
-"LEVALLOIS PERRET";"base.fr";"Depil Tech";"scenario.user_center_levallois_res_partner";"fr_FR";"Centre LEVALLOIS PERRET";"Depil Tech Centre LEVALLOIS PERRET";"73 rue du Président Wilson";"";""
-"NANCY";"base.fr";"Depil Tech";"scenario.company_agencyfr_center129_res_partner";"fr_FR";"Centre NANCY";"Depil Tech Centre NANCY";"27 avenue du XX Corps";"";""
-"NANCY";"base.fr";"Depil Tech";"scenario.user_center_nancy_res_partner";"fr_FR";"Centre NANCY";"Depil Tech Centre NANCY";"27 avenue du XX Corps";"";""
-"MONTPELLIER";"base.fr";"Depil Tech";"scenario.company_agencyfr_center130_res_partner";"fr_FR";"Centre MONTPELLIER";"Depil Tech Centre MONTPELLIER";"15 Boulevard du Jeu de Paume";"";""
-"MONTPELLIER";"base.fr";"Depil Tech";"scenario.user_center_montpellier_res_partner";"fr_FR";"Centre MONTPELLIER";"Depil Tech Centre MONTPELLIER";"15 Boulevard du Jeu de Paume";"";""
-"NIORT";"base.fr";"Depil Tech";"scenario.company_agencyfr_center131_res_partner";"fr_FR";"Centre NIORT";"Depil Tech Centre NIORT";"";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center133_res_partner";"fr_FR";"Centre PARIS 8 HAUSSMANN - GRANDS MAGASINS";"Depil Tech Centre PARIS 8 HAUSSMANN - GRANDS MAGASINS";"98 bis Boulevard Haussmann";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.user_center_paris8_res_partner";"fr_FR";"Centre PARIS 8 HAUSSMANN - GRANDS MAGASINS";"Depil Tech Centre PARIS 8 HAUSSMANN - GRANDS MAGASINS";"98 bis Boulevard Haussmann";"";""
-"BASTIA";"base.fr";"Depil Tech";"scenario.company_agencyfr_center134_res_partner";"fr_FR";"Centre BASTIA";"Depil Tech Centre BASTIA";"2 rue gabriel PERI";"";""
-"BASTIA";"base.fr";"Depil Tech";"scenario.user_center_bastia_res_partner";"fr_FR";"Centre BASTIA";"Depil Tech Centre BASTIA";"2 rue gabriel PERI";"";""
-"BORDEAUX";"base.fr";"Depil Tech";"scenario.company_agencyfr_center135_res_partner";"fr_FR";"Centre BORDEAUX PEY BERLAND";"Depil Tech Centre BORDEAUX PEY BERLAND";"91 Rue du Loup";"";""
-"BORDEAUX";"base.fr";"Depil Tech";"scenario.user_center_bordeaux2_res_partner";"fr_FR";"Centre BORDEAUX PEY BERLAND";"Depil Tech Centre BORDEAUX PEY BERLAND";"91 Rue du Loup";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center136_res_partner";"fr_FR";"Centre PARIS 17";"Depil Tech Centre PARIS 17";"";"";""
-"LES ANGLES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center137_res_partner";"fr_FR";"Centre AVIGNON LES ANGLES";"Depil Tech Centre AVIGNON LES ANGLES";"Centre Commercial Grand Angle";"";""
-"LES ANGLES";"base.fr";"Depil Tech";"scenario.user_center_avignon-lesangles_res_partner";"fr_FR";"Centre AVIGNON LES ANGLES";"Depil Tech Centre AVIGNON LES ANGLES";"Centre Commercial Grand Angle";"";""
-"HYÈRES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center138_res_partner";"fr_FR";"Centre HYÈRES";"Depil Tech Centre HYÈRES";"1 bis rue soldat bellon";"";""
-"HYÈRES";"base.fr";"Depil Tech";"scenario.user_center_hyeres_res_partner";"fr_FR";"Centre HYÈRES";"Depil Tech Centre HYÈRES";"1 bis rue soldat bellon";"";""
-"BIARRITZ";"base.fr";"Depil Tech";"scenario.company_agencyfr_center140_res_partner";"fr_FR";"Centre BIARRITZ";"Depil Tech Centre BIARRITZ";"";"";""
-"ALÈS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center141_res_partner";"fr_FR";"Centre ALÈS";"Depil Tech Centre ALÈS";"6 Rue Albert 1er";"";""
-"BOURGES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center143_res_partner";"fr_FR";"Centre BOURGES";"Depil Tech Centre BOURGES";"Centre Commercial Avaricum";"";""
-"BOURGES";"base.fr";"Depil Tech";"scenario.user_center_bourges_res_partner";"fr_FR";"Centre BOURGES";"Depil Tech Centre BOURGES";"Centre Commercial Avaricum";"";""
-"CASTRES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center144_res_partner";"fr_FR";"Centre CASTRES";"Depil Tech Centre CASTRES";"";"";""
-"PERPIGNAN";"base.fr";"Depil Tech";"scenario.company_agencyfr_center145_res_partner";"fr_FR";"Centre PERPIGNAN";"Depil Tech Centre PERPIGNAN";"235 avenue d'Espagne";"";""
-"PERPIGNAN";"base.fr";"Depil Tech";"scenario.user_center_perpignan_res_partner";"fr_FR";"Centre PERPIGNAN";"Depil Tech Centre PERPIGNAN";"235 avenue d'Espagne";"";""
-"LYON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center146_res_partner";"fr_FR";"Centre LYON 4 CROIX-ROUSSE";"Depil Tech Centre LYON 4 CROIX-ROUSSE";"20 rue du Mail";"";""
-"LYON";"base.fr";"Depil Tech";"scenario.user_center_lyon4_res_partner";"fr_FR";"Centre LYON 4 CROIX-ROUSSE";"Depil Tech Centre LYON 4 CROIX-ROUSSE";"20 rue du Mail";"";""
-"NEUILLY SUR SEINE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center147_res_partner";"fr_FR";"Centre NEUILLY SUR SEINE";"Depil Tech Centre NEUILLY SUR SEINE";"150 avenue Achille Péretti";"";""
-"NEUILLY SUR SEINE";"base.fr";"Depil Tech";"scenario.user_center_neuilly_res_partner";"fr_FR";"Centre NEUILLY SUR SEINE";"Depil Tech Centre NEUILLY SUR SEINE";"150 avenue Achille Péretti";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center148_res_partner";"fr_FR";"Centre PARIS 11";"Depil Tech Centre PARIS 11";"";"";""
-"ALBI";"base.fr";"Depil Tech";"scenario.company_agencyfr_center149_res_partner";"fr_FR";"Centre ALBI";"Depil Tech Centre ALBI";"";"";""
-"VERSAILLES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center150_res_partner";"fr_FR";"Centre VERSAILLES";"Depil Tech Centre VERSAILLES";"31 rue Carnot";"";""
-"SÈTE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center152_res_partner";"fr_FR";"Centre SÈTE";"Depil Tech Centre SÈTE";"30 Grande Rue Mario Roustan";"";""
-"SÈTE";"base.fr";"Depil Tech";"scenario.user_center_sete_res_partner";"fr_FR";"Centre SÈTE";"Depil Tech Centre SÈTE";"30 Grande Rue Mario Roustan";"";""
-"ARLES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center153_res_partner";"fr_FR";"Centre ARLES";"Depil Tech Centre ARLES";"11 rue des Suisses";"";""
-"ARLES";"base.fr";"Depil Tech";"scenario.user_center_arles_res_partner";"fr_FR";"Centre ARLES";"Depil Tech Centre ARLES";"11 rue des Suisses";"";""
-"NARBONNE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center154_res_partner";"fr_FR";"Centre NARBONNE";"Depil Tech Centre NARBONNE";"";"";""
-"DRAGUIGNAN";"base.fr";"Depil Tech";"scenario.company_agencyfr_center155_res_partner";"fr_FR";"Centre DRAGUIGNAN";"Depil Tech Centre DRAGUIGNAN";"38 Boulevard Jean Jaurès";"";""
-"MURET";"base.fr";"Depil Tech";"scenario.company_agencyfr_center156_res_partner";"fr_FR";"Centre MURET";"Depil Tech Centre MURET";"4 avenue des pyrénées";"";""
-"MURET";"base.fr";"Depil Tech";"scenario.user_center_muret_res_partner";"fr_FR";"Centre MURET";"Depil Tech Centre MURET";"4 avenue des pyrénées";"";""
-"AUCH";"base.fr";"Depil Tech";"scenario.company_agencyfr_center157_res_partner";"fr_FR";"Centre AUCH";"Depil Tech Centre AUCH";"C.C. d'Endoumingue";"";""
-"AUCH";"base.fr";"Depil Tech";"scenario.user_center_auch_res_partner";"fr_FR";"Centre AUCH";"Depil Tech Centre AUCH";"C.C. d'Endoumingue";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center158_res_partner";"fr_FR";"Centre PARIS 3 REPUBLIQUE";"Depil Tech Centre PARIS 3 REPUBLIQUE";"60 rue de Turbigo";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.user_center_paris3_res_partner";"fr_FR";"Centre PARIS 3 REPUBLIQUE";"Depil Tech Centre PARIS 3 REPUBLIQUE";"60 rue de Turbigo";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center159_res_partner";"fr_FR";"Centre PARIS 16 LA POMPE";"Depil Tech Centre PARIS 16 LA POMPE";"45 rue de la pompe";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.user_center_paris16_res_partner";"fr_FR";"Centre PARIS 16 LA POMPE";"Depil Tech Centre PARIS 16 LA POMPE";"45 rue de la pompe";"";""
-"SAINT PIERRE DE LA RÉUNION";"base.re";"Depil Tech";"scenario.company_agencyre_center160_res_partner";"fr_FR";"Centre SAINT PIERRE DE LA REUNION";"Depil Tech Centre SAINT PIERRE DE LA REUNION";"124 rue Marius et Ary Leblond";"";""
-"SAINT PIERRE DE LA RÉUNION";"base.re";"Depil Tech";"scenario.user_center_saintpierre_res_partner";"fr_FR";"Centre SAINT PIERRE DE LA REUNION";"Depil Tech Centre SAINT PIERRE DE LA REUNION";"124 rue Marius et Ary Leblond";"";""
-"MEXICO";"base.mx";"Depil Tech";"scenario.company_agencymx_center161_res_partner";"es_MX";"Centre MEXICO CITY";"Depil Tech Centre MEXICO CITY";"Homero 408, Polanco";"";""
-"MEXICO";"base.mx";"Depil Tech";"scenario.user_center_mexico_res_partner";"es_MX";"Centre MEXICO CITY";"Depil Tech Centre MEXICO CITY";"Homero 408, Polanco";"";""
-"BOULOGNE BILLANCOURT";"base.fr";"Depil Tech";"scenario.company_agencyfr_center162_res_partner";"fr_FR";"Centre BOULOGNE BILLANCOURT NORD";"Depil Tech Centre BOULOGNE BILLANCOURT NORD";"33 boulevard Jean Jaurès";"";""
-"BOULOGNE BILLANCOURT";"base.fr";"Depil Tech";"scenario.user_center_boulogne-nord_res_partner";"fr_FR";"Centre BOULOGNE BILLANCOURT NORD";"Depil Tech Centre BOULOGNE BILLANCOURT NORD";"33 boulevard Jean Jaurès";"";""
-"SANARY-SUR-MER";"base.fr";"Depil Tech";"scenario.company_agencyfr_center163_res_partner";"fr_FR";"Centre SANARY SUR MER";"Depil Tech Centre SANARY SUR MER";"40 Place des poilus";"";""
-"SANARY-SUR-MER";"base.fr";"Depil Tech";"scenario.user_center_sanary_res_partner";"fr_FR";"Centre SANARY SUR MER";"Depil Tech Centre SANARY SUR MER";"40 Place des poilus";"";""
-"SAINT NAZAIRE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center164_res_partner";"fr_FR";"Centre SAINT NAZAIRE";"Depil Tech Centre SAINT NAZAIRE";"";"";""
-"OLIVET";"base.fr";"Depil Tech";"scenario.company_agencyfr_center165_res_partner";"fr_FR";"Centre OLIVET";"Depil Tech Centre OLIVET";"67, place Louis Sallé";"";""
-"OLIVET";"base.fr";"Depil Tech";"scenario.user_center_olivet_res_partner";"fr_FR";"Centre OLIVET";"Depil Tech Centre OLIVET";"67, place Louis Sallé";"";""
-"LYON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center166_res_partner";"fr_FR";"Centre LYON 6 BROTTEAUX";"Depil Tech Centre LYON 6 BROTTEAUX";"2 avenue du Général Brosset";"";""
-"LYON";"base.fr";"Depil Tech";"scenario.user_center_lyon6_res_partner";"fr_FR";"Centre LYON 6 BROTTEAUX";"Depil Tech Centre LYON 6 BROTTEAUX";"2 avenue du Général Brosset";"";""
-"BRUXELLES";"base.be";"Depil Tech";"scenario.company_agencybe_center167_res_partner";"fr_FR";"Centre BRUXELLES";"Depil Tech Centre BRUXELLES";"149 rue Antoine Dansaert";"";""
-"BRUXELLES";"base.be";"Depil Tech";"scenario.user_center_bruxelles_res_partner";"fr_FR";"Centre BRUXELLES";"Depil Tech Centre BRUXELLES";"149 rue Antoine Dansaert";"";""
-"SAINT QUENTIN";"base.fr";"Depil Tech";"scenario.company_agencyfr_center168_res_partner";"fr_FR";"Centre SAINT QUENTIN";"Depil Tech Centre SAINT QUENTIN";"12 Rue St André";"";""
-"SAINT QUENTIN";"base.fr";"Depil Tech";"scenario.user_center_saintquentin_res_partner";"fr_FR";"Centre SAINT QUENTIN";"Depil Tech Centre SAINT QUENTIN";"12 Rue St André";"";""
-"COLOMBES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center171_res_partner";"fr_FR";"Centre COLOMBES";"Depil Tech Centre COLOMBES";"";"";""
-"TASSIN LA DEMI LUNE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center172_res_partner";"fr_FR";"Centre TASSIN LA DEMI LUNE";"Depil Tech Centre TASSIN LA DEMI LUNE";"60 avenue Victor hugo";"";""
-"TASSIN LA DEMI LUNE";"base.fr";"Depil Tech";"scenario.user_center_tassin_res_partner";"fr_FR";"Centre TASSIN LA DEMI LUNE";"Depil Tech Centre TASSIN LA DEMI LUNE";"60 avenue Victor hugo";"";""
-"ISSY LES MOULINEAUX";"base.fr";"Depil Tech";"scenario.company_agencyfr_center173_res_partner";"fr_FR";"Centre ISSY LES MOULINEAUX";"Depil Tech Centre ISSY LES MOULINEAUX";"42 rue Danton";"";""
-"ISSY LES MOULINEAUX";"base.fr";"Depil Tech";"scenario.user_center_issy_res_partner";"fr_FR";"Centre ISSY LES MOULINEAUX";"Depil Tech Centre ISSY LES MOULINEAUX";"42 rue Danton";"";""
-"CARCASSONNE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center174_res_partner";"fr_FR";"Centre CARCASSONNE";"Depil Tech Centre CARCASSONNE";"";"";""
-"CERGY";"base.fr";"Depil Tech";"scenario.company_agencyfr_center176_res_partner";"fr_FR";"Centre CERGY 3 FONTAINES";"Depil Tech Centre CERGY 3 FONTAINES";"Centre commercial Cergy 3 Fontaines";"";""
-"CERGY";"base.fr";"Depil Tech";"scenario.user_center_cergy_res_partner";"fr_FR";"Centre CERGY 3 FONTAINES";"Depil Tech Centre CERGY 3 FONTAINES";"Centre commercial Cergy 3 Fontaines";"";""
-"ANNEMASSE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center180_res_partner";"fr_FR";"Centre ANNEMASSE";"Depil Tech Centre ANNEMASSE";"1 Allée Simone SIGNORET";"";""
-"ANNEMASSE";"base.fr";"Depil Tech";"scenario.user_center_annemasse_res_partner";"fr_FR";"Centre ANNEMASSE";"Depil Tech Centre ANNEMASSE";"1 Allée Simone SIGNORET";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center181_res_partner";"fr_FR";"Centre CNIT";"Depil Tech Centre CNIT";"2 Tunnel de Nanterre-La Défense";"";""
-"STRASBOURG";"base.fr";"Depil Tech";"scenario.company_agencyfr_center186_res_partner";"fr_FR";"Centre STRASBOURG OBERHAUSBERGEN";"Depil Tech Centre STRASBOURG OBERHAUSBERGEN";"95 Avenue Racine";"";""
-"STRASBOURG";"base.fr";"Depil Tech";"scenario.user_center_strasbourg-ouest_res_partner";"fr_FR";"Centre STRASBOURG OBERHAUSBERGEN";"Depil Tech Centre STRASBOURG OBERHAUSBERGEN";"95 Avenue Racine";"";""
-"OULLINS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center188_res_partner";"fr_FR";"Centre OULLINS";"Depil Tech Centre OULLINS";"188 Grande Rue";"";""
-"OULLINS";"base.fr";"Depil Tech";"scenario.user_center_oullins_res_partner";"fr_FR";"Centre OULLINS";"Depil Tech Centre OULLINS";"188 Grande Rue";"";""
-"MONTELIMAR";"base.fr";"Depil Tech";"scenario.company_agencyfr_center189_res_partner";"fr_FR";"Centre MONTÉLIMAR";"Depil Tech Centre MONTÉLIMAR";"200 route de Marseille";"";""
-"MONTELIMAR";"base.fr";"Depil Tech";"scenario.user_center_montelimar_res_partner";"fr_FR";"Centre MONTÉLIMAR";"Depil Tech Centre MONTÉLIMAR";"200 route de Marseille";"";""
-"VILLEFRANCHE-SUR-SAÔNE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center194_res_partner";"fr_FR";"Centre VILLEFRANCHE SUR SAÔNE";"Depil Tech Centre VILLEFRANCHE SUR SAÔNE";"";"";""
-"CHAUCONIN-NEUFMONTIERS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center195_res_partner";"fr_FR";"Centre MEAUX";"Depil Tech Centre MEAUX";"CC Les saisons de Meaux";"";""
-"CHAUCONIN-NEUFMONTIERS";"base.fr";"Depil Tech";"scenario.user_center_meaux_res_partner";"fr_FR";"Centre MEAUX";"Depil Tech Centre MEAUX";"CC Les saisons de Meaux";"";""
-"AUBERVILLIERS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center196_res_partner";"fr_FR";"Centre AUBERVILLIERS";"Depil Tech Centre AUBERVILLIERS";"Centre Commercial Le Millénaire";"";""
-"SOISSONS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center197_res_partner";"fr_FR";"Centre SOISSONS";"Depil Tech Centre SOISSONS";"";"";""
-"LES ULIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center199_res_partner";"fr_FR";"Centre LES ULIS";"Depil Tech Centre LES ULIS";"";"";""
-"AGEN";"base.fr";"Depil Tech";"scenario.company_agencyfr_center203_res_partner";"fr_FR";"Centre AGEN";"Depil Tech Centre AGEN";"";"";""
-"DIFFERDANGE";"base.lu";"Depil Tech";"scenario.company_agencylu_center204_res_partner";"fr_FR";"Centre DIFFERDANGE";"Depil Tech Centre DIFFERDANGE";"1-2 place Marie-Paule Molitor-Peffer";"";""
-"DIFFERDANGE";"base.lu";"Depil Tech";"scenario.user_center_differdange_res_partner";"fr_FR";"Centre DIFFERDANGE";"Depil Tech Centre DIFFERDANGE";"1-2 place Marie-Paule Molitor-Peffer";"";""
-"LA COROGNA";"base.es";"Depil Tech";"scenario.company_agencyes_center205_res_partner";"es_MX";"Centre LA COROGNE";"Depil Tech Centre LA COROGNE";"";"";""
-"FREJUS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center206_res_partner";"fr_FR";"Centre FRÉJUS";"Depil Tech Centre FRÉJUS";"354 Rue Victor RAYBAUD";"";""
-"FREJUS";"base.fr";"Depil Tech";"scenario.user_center_frejus_res_partner";"fr_FR";"Centre FRÉJUS";"Depil Tech Centre FRÉJUS";"354 Rue Victor RAYBAUD";"";""
-"COURBEVOIE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center207_res_partner";"fr_FR";"Centre COURBEVOIE";"Depil Tech Centre COURBEVOIE";"25 bis Bd Georges Clémenceau";"";""
-"COURBEVOIE";"base.fr";"Depil Tech";"scenario.user_center_courbevoie_res_partner";"fr_FR";"Centre COURBEVOIE";"Depil Tech Centre COURBEVOIE";"25 bis Bd Georges Clémenceau";"";""
-"SAINT ETIENNE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center208_res_partner";"fr_FR";"Centre SAINT ETIENNE";"Depil Tech Centre SAINT ETIENNE";"4 rue Michelet";"";""
-"SAINT ETIENNE";"base.fr";"Depil Tech";"scenario.user_center_saintetienne_res_partner";"fr_FR";"Centre SAINT ETIENNE";"Depil Tech Centre SAINT ETIENNE";"4 rue Michelet";"";""
-"DOUAI";"base.fr";"Depil Tech";"scenario.company_agencyfr_center212_res_partner";"fr_FR";"Centre DOUAI";"Depil Tech Centre DOUAI";"";"";""
-"CHATENAY-MALABRY";"base.fr";"Depil Tech";"scenario.company_agencyfr_center214_res_partner";"fr_FR";"Centre CHATENAY-MALABRY";"Depil Tech Centre CHATENAY-MALABRY";"103/105 avenue de la Division Leclerc";"";""
-"CHATENAY-MALABRY";"base.fr";"Depil Tech";"scenario.user_center_chatenay-malabry_res_partner";"fr_FR";"Centre CHATENAY-MALABRY";"Depil Tech Centre CHATENAY-MALABRY";"103/105 avenue de la Division Leclerc";"";""
-"MONTAUBAN";"base.fr";"Depil Tech";"scenario.company_agencyfr_center215_res_partner";"fr_FR";"Centre MONTAUBAN";"Depil Tech Centre MONTAUBAN";"";"";""
-"FENOUILLET";"base.fr";"Depil Tech";"scenario.company_agencyfr_center216_res_partner";"fr_FR";"Centre FENOUILLET";"Depil Tech Centre FENOUILLET";"";"";""
-"TOURNEFEUILLE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center217_res_partner";"fr_FR";"Centre TOURNEFEUILLE";"Depil Tech Centre TOURNEFEUILLE";"50 rue Gaston Doumergue";"";""
-"TOURNEFEUILLE";"base.fr";"Depil Tech";"scenario.user_center_tournefeuille_res_partner";"fr_FR";"Centre TOURNEFEUILLE";"Depil Tech Centre TOURNEFEUILLE";"50 rue Gaston Doumergue";"";""
-"MONTGERON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center218_res_partner";"fr_FR";"Centre MONTGERON";"Depil Tech Centre MONTGERON";"40 avenue de la République";"";""
-"MONTGERON";"base.fr";"Depil Tech";"scenario.user_center_montgeron_res_partner";"fr_FR";"Centre MONTGERON";"Depil Tech Centre MONTGERON";"40 avenue de la République";"";""
-"SURESNES";"base.fr";"Depil Tech";"scenario.company_agencyfr_center219_res_partner";"fr_FR";"Centre SURESNES";"Depil Tech Centre SURESNES";"26 bis avenue Jean Jaurès";"";""
-"SURESNES";"base.fr";"Depil Tech";"scenario.user_center_suresnes_res_partner";"fr_FR";"Centre SURESNES";"Depil Tech Centre SURESNES";"26 bis avenue Jean Jaurès";"";""
-"ROSNY-SOUS-BOIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center220_res_partner";"fr_FR";"Centre ROSNY 2";"Depil Tech Centre ROSNY 2";"";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center221_res_partner";"fr_FR";"Centre ITALIE 2";"Depil Tech Centre ITALIE 2";"30 Avenue d'Italie";"";""
-"NOISY-LE-GRAND";"base.fr";"Depil Tech";"scenario.company_agencyfr_center222_res_partner";"fr_FR";"Centre LES ARCADES";"Depil Tech Centre LES ARCADES";"";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center223_res_partner";"fr_FR";"Centre VILL UP";"Depil Tech Centre VILL UP";"30 Avenue Corentin Cariou";"";""
-"PARIS";"base.fr";"Depil Tech";"scenario.user_center_villup_res_partner";"fr_FR";"Centre VILL UP";"Depil Tech Centre VILL UP";"30 Avenue Corentin Cariou";"";""
-"VILLENEUVE LA GARENNE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center224_res_partner";"fr_FR";"Centre VILLENEUVE LA GARENNE";"Depil Tech Centre VILLENEUVE LA GARENNE";"4 Boulevard Gallieni";"";""
-"CESSON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center226_res_partner";"fr_FR";"Centre BELFORT";"Depil Tech Centre BELFORT";"";"";""
-"POITIERS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center227_res_partner";"fr_FR";"Centre POITIERS CENTRE VILLE";"Depil Tech Centre POITIERS CENTRE VILLE";"7 rue du marché Notre Dame";"";""
-"ROUBAIX";"base.fr";"Depil Tech";"scenario.company_agencyfr_center228_res_partner";"fr_FR";"Centre ROUBAIX CENTRE VILLE";"Depil Tech Centre ROUBAIX CENTRE VILLE";"20 Ter Grand'Rue";"";""
-"ROUBAIX";"base.fr";"Depil Tech";"scenario.user_center_roubaix_res_partner";"fr_FR";"Centre ROUBAIX CENTRE VILLE";"Depil Tech Centre ROUBAIX CENTRE VILLE";"20 Ter Grand'Rue";"";""
-"BRUXELLES";"base.be";"Depil Tech";"scenario.company_agencybe_center229_res_partner";"fr_FR";"Centre BRUXELLES 2";"Depil Tech Centre BRUXELLES 2";"4 rue Pépinière";"";""
-"LOMME";"base.fr";"Depil Tech";"scenario.company_agencyfr_center230_res_partner";"fr_FR";"Centre LOMME C.C CARREFOUR";"Depil Tech Centre LOMME C.C CARREFOUR";"130 rue du Grand But";"";""
-"LOMME";"base.fr";"Depil Tech";"scenario.user_center_lomme_res_partner";"fr_FR";"Centre LOMME C.C CARREFOUR";"Depil Tech Centre LOMME C.C CARREFOUR";"130 rue du Grand But";"";""
-"GAP";"base.fr";"Depil Tech";"scenario.company_agencyfr_center231_res_partner";"fr_FR";"Centre GAP";"Depil Tech Centre GAP";"";"";""
-"PESSAC";"base.fr";"Depil Tech";"scenario.company_agencyfr_center233_res_partner";"fr_FR";"Centre PESSAC";"Depil Tech Centre PESSAC";"";"";""
-"MONT DE MARSAN";"base.fr";"Depil Tech";"scenario.company_agencyfr_center234_res_partner";"fr_FR";"Centre MONT DE MARSAN";"Depil Tech Centre MONT DE MARSAN";"";"";""
-"MAISONS ALFORT";"base.fr";"Depil Tech";"scenario.company_agencyfr_center236_res_partner";"fr_FR";"Centre MAISONS ALFORT";"Depil Tech Centre MAISONS ALFORT";"";"";""
-"MÉRIGNAC";"base.fr";"Depil Tech";"scenario.company_agencyfr_center237_res_partner";"fr_FR";"Centre MÉRIGNAC";"Depil Tech Centre MÉRIGNAC";"";"";""
-"SAINT LOUIS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center238_res_partner";"fr_FR";"Centre SAINT LOUIS";"Depil Tech Centre SAINT LOUIS";"18 Rue de Mulhouse";"";""
-"SAINT LOUIS";"base.fr";"Depil Tech";"scenario.user_center_saintlouis_res_partner";"fr_FR";"Centre SAINT LOUIS";"Depil Tech Centre SAINT LOUIS";"18 Rue de Mulhouse";"";""
-"TOULON";"base.fr";"Depil Tech";"scenario.company_agencyfr_center239_res_partner";"fr_FR";"Centre TOULON MAYOL";"Depil Tech Centre TOULON MAYOL";"CC Toulon Mayol";"";""
-"TOULON";"base.fr";"Depil Tech";"scenario.user_center_toulonmayol_res_partner";"fr_FR";"Centre TOULON MAYOL";"Depil Tech Centre TOULON MAYOL";"CC Toulon Mayol";"";""
-"GUADALARAJA";"base.mx";"Depil Tech";"scenario.company_agencymx_center240_res_partner";"es_MX";"Centre LOMAS DE CHAPULTEPEC";"Depil Tech Centre LOMAS DE CHAPULTEPEC";"";"";""
-"SARAGOSSE";"base.es";"Depil Tech";"scenario.company_agencyes_center241_res_partner";"es_MX";"Centre SARAGOSSE";"Depil Tech Centre SARAGOSSE";"";"";""
-"INTERLOMAS";"base.mx";"Depil Tech";"scenario.company_agencymx_center243_res_partner";"es_MX";"Centre INTERLOMAS";"Depil Tech Centre INTERLOMAS";"";"";""
-"VIENNE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center244_res_partner";"fr_FR";"Centre VIENNE";"Depil Tech Centre VIENNE";"";"";""
-"LIEGE";"base.be";"Depil Tech";"scenario.company_agencybe_center245_res_partner";"fr_FR";"Centre LIEGE";"Depil Tech Centre LIEGE";"";"";""
-"ILLKIRCH-GRAFFENSTADEN";"base.fr";"Depil Tech";"scenario.company_agencyfr_center246_res_partner";"fr_FR";"Centre ILLKIRCH-GRAFFENSTADEN";"Depil Tech Centre ILLKIRCH-GRAFFENSTADEN";"";"";""
-"CAHORS";"base.fr";"Depil Tech";"scenario.company_agencyfr_center247_res_partner";"fr_FR";"Centre CAHORS";"Depil Tech Centre CAHORS";"";"";""
-"LE HAVRE";"base.fr";"Depil Tech";"scenario.company_agencyfr_center248_res_partner";"fr_FR";"Centre LE HAVRE";"Depil Tech Centre LE HAVRE";"";"";""
-"Nice";"base.fr";"Paul & jean-baptiste";"scenario.user_dt_pauljean-baptiste-mauvenu_res_partner";"fr_FR";"Mauvenu";"Paul & Jean-baptiste Mauvenu";"";"";"06200"
-"Nice";"base.fr";"Marion";"scenario.user_dt_marion-vaast_res_partner";"fr_FR";"Vaast";"Marion Vaast";"";"";"06200"
-"Nice";"base.fr";"Valérie";"scenario.user_dt_valerie-elbaz_res_partner";"fr_FR";"Elbaz";"Valérie Elbaz";"";"";"06200"
-"Nice";"base.fr";"Aurélie";"scenario.user_dt_aurelie-betto_res_partner";"fr_FR";"Betto";"Aurélie Betto";"";"";"06200"
-"Nice";"base.fr";"Nathalie";"scenario.user_dt_nathalie-schlemmer-maire_res_partner";"fr_FR";"Schlemmer-maire";"Nathalie Schlemmer-maire";"";"";"06200"
-"Nice";"base.fr";"Daniel";"scenario.user_dt_daniel-makanda_res_partner";"fr_FR";"Makanda";"Daniel Makanda";"";"";"06200"
-"Nice";"base.fr";"Vincent";"scenario.user_dt_vincent-rouzier_res_partner";"fr_FR";"Rouzier";"Vincent Rouzier";"";"";"06200"
-"Nice";"base.fr";"Margaux";"scenario.user_dt_margaux-carleschi_res_partner";"fr_FR";"Carleschi";"Margaux Carleschi";"";"";"06200"
-"Nice";"base.fr";"Arnaud";"scenario.user_dt_arnaud-brusseau_res_partner";"fr_FR";"Brusseau";"Arnaud Brusseau";"";"";"06200"
-"Nice";"base.fr";"Annie";"scenario.user_dt_annie-housseini_res_partner";"fr_FR";"Housseini";"Annie Housseini";"";"";"06200"
-"Nice";"base.fr";"Emmanuelle";"scenario.user_dt_emmanuelle-lasfargues_res_partner";"fr_FR";"Lasfargues";"Emmanuelle Lasfargues";"";"";"06200"
-"Nice";"base.fr";"Alexandra";"scenario.user_dt_alexandra-viera_res_partner";"fr_FR";"Viera";"Alexandra Viera";"";"";"06200"
-"Nice";"base.fr";"Jérémy";"scenario.user_dt_jeremy-gay_res_partner";"fr_FR";"Gay";"Jérémy Gay";"";"";"06200"
-"Nice";"base.fr";"Joël";"scenario.user_dt_joel-gaujard_res_partner";"fr_FR";"Gaujard";"Joël Gaujard";"";"";"06200"
-"Nice";"base.fr";"Jessica";"scenario.user_dt_jessica-noviant_res_partner";"fr_FR";"Noviant";"Jessica Noviant";"";"";"06200"
-"Nice";"base.fr";"Myriam";"scenario.user_dt_myriam-bougdim_res_partner";"fr_FR";"Bougdim";"Myriam Bougdim";"";"";"06200"
-"Nice";"base.fr";"Cheraz";"scenario.user_dt_cheraz-sermouk_res_partner";"fr_FR";"Sermouk";"Cheraz Sermouk";"";"";"06200"
-"Nice";"base.fr";"Virginie";"scenario.user_dt_virginie-mauri_res_partner";"fr_FR";"Mauri";"Virginie Mauri";"";"";"06200"
-"Nice";"base.fr";"Julie";"scenario.user_dt_julie-lionet-bourgat_res_partner";"fr_FR";"Lionet-bourgat";"Julie Lionet-bourgat";"";"";"06200"
-"Nice";"base.fr";"Vincenzo";"scenario.user_dt_vincenzo-mallia_res_partner";"fr_FR";"Mallia";"Vincenzo Mallia";"";"";"06200"
-"Nice";"base.fr";"Vanessa";"scenario.user_dt_vanessa-schmitt_res_partner";"fr_FR";"Schmitt";"Vanessa Schmitt";"";"";"06200"
-"Nice";"base.fr";"Laura";"scenario.user_dt_laura-tripodi_res_partner";"fr_FR";"Tripodi";"Laura Tripodi";"";"";"06200"
-"Nice";"base.fr";"Eric";"scenario.user_dt_eric-donnay_res_partner";"fr_FR";"Donnay";"Eric Donnay";"";"";"06200"
-"Nice";"base.fr";"Emilie";"scenario.user_dt_emilie-ribes_res_partner";"fr_FR";"Ribes";"Emilie Ribes";"";"";"06200"
-"Nice";"base.fr";"Renaud";"scenario.user_dt_renaud-labaume_res_partner";"fr_FR";"Labaume";"Renaud Labaume";"";"";"06200"
-"Nice";"base.fr";"Emilie";"scenario.user_dt_emilie-peisino_res_partner";"fr_FR";"Peisino";"Emilie Peisino";"";"";"06200"
-"Nice";"base.fr";"Lydie";"scenario.user_dt_lydie-maillard_res_partner";"fr_FR";"Maillard";"Lydie Maillard";"";"";"06200"
-"Nice";"base.fr";"Sylvie";"scenario.user_dt_sylvie-baudet_res_partner";"fr_FR";"Baudet";"Sylvie Baudet";"";"";"06200"
-"Nice";"base.fr";"Christelle";"scenario.user_dt_christelle-pouderon_res_partner";"fr_FR";"Pouderon";"Christelle Pouderon";"";"";"06200"
-"Nice";"base.fr";"Vincent";"scenario.user_dt_vincent-depernon_res_partner";"fr_FR";"Depernon";"Vincent Depernon";"";"";"06200"
-"Nice";"base.fr";"Lucie";"scenario.user_dt_lucie-moinel_res_partner";"fr_FR";"Moinel";"Lucie Moinel";"";"";"06200"
-"Nice";"base.fr";"Hélène";"scenario.user_dt_helene-miller_res_partner";"fr_FR";"Miller";"Hélène Miller";"";"";"06200"
-"Nice";"base.fr";"Nicolas";"scenario.user_dt_nicolas-caugant_res_partner";"fr_FR";"Caugant";"Nicolas Caugant";"";"";"06200"
-"Nice";"base.fr";"Caroline";"scenario.user_dt_caroline-yanculovici_res_partner";"fr_FR";"Yanculovici";"Caroline Yanculovici";"";"";"06200"
-"Nice";"base.fr";"Barbara";"scenario.user_dt_barbara-libolt_res_partner";"fr_FR";"Libolt";"Barbara Libolt";"";"";"06200"
-"Nice";"base.fr";"Dorothée";"scenario.user_dt_dorothee-maillard_res_partner";"fr_FR";"Maillard";"Dorothée Maillard";"";"";"06200"
-"Nice";"base.fr";"Renaud";"scenario.user_dt_renaud-terry_res_partner";"fr_FR";"Terry";"Renaud Terry";"";"";"06200"
-"Nice";"base.fr";"Guillaume";"scenario.user_dt_guillaume-brenot_res_partner";"fr_FR";"Brenot";"Guillaume Brenot";"";"";"06200"
-"Nice";"base.fr";"Sandrine";"scenario.user_dt_sandrine-chaulet_res_partner";"fr_FR";"Chaulet";"Sandrine Chaulet";"";"";"06200"
-"Nice";"base.fr";"Helene";"scenario.user_dt_helene-briand-loublier_res_partner";"fr_FR";"Briand-loublier";"Helene Briand-loublier";"";"";"06200"
-"Nice";"base.fr";"David";"scenario.user_dt_david-besson_res_partner";"fr_FR";"Besson";"David Besson";"";"";"06200"
-"Nice";"base.fr";"Sandrine";"scenario.user_dt_sandrine-salvi_res_partner";"fr_FR";"Salvi";"Sandrine Salvi";"";"";"06200"
-"Nice";"base.fr";"Mathieu";"scenario.user_dt_mathieu-pradies_res_partner";"fr_FR";"Pradies";"Mathieu Pradies";"";"";"06200"
-"Nice";"base.fr";"Julie";"scenario.user_dt_julie-monnier_res_partner";"fr_FR";"Monnier";"Julie Monnier";"";"";"06200"
-"Nice";"base.fr";"Catherine";"scenario.user_dt_catherine-larrouturou_res_partner";"fr_FR";"Larrouturou";"Catherine Larrouturou";"";"";"06200"
-"Nice";"base.fr";"Cyril";"scenario.user_dt_cyril-talien_res_partner";"fr_FR";"Talien";"Cyril Talien";"";"";"06200"
-"Nice";"base.fr";"Anicet";"scenario.user_dt_anicet-gabillard_res_partner";"fr_FR";"Gabillard";"Anicet Gabillard";"";"";"06200"
-"Nice";"base.fr";"Fanny";"scenario.user_dt_fanny-roux_res_partner";"fr_FR";"Roux";"Fanny Roux";"";"";"06200"
-"LYON";"base.fr";"J. MALFROY P15";"scenario.user_manager_dt-sasnoo_res_partner";"fr_FR";"Société NOO";"J. MALFROY P15 - Société NOO";"2 place jules Ferry";"";""
-"TOURNEFEUILLE";"base.fr";"Karine HAMEL";"scenario.user_manager_dt-hamel_res_partner";"fr_FR";"KSH1";"Karine HAMEL - KSH1";"16 rue du Cours d'eau";"";""
+city;country_id/id;id;is_company;customer;lang;lastname;street;street2;tz;zip
+Nice;base.fr;scenario.userAPIApi_res_partner;False;False;fr_FR;API;;;UTC;6200
+Nice;base.fr;base.main_partner;False;False;fr_FR;Depil Tech Holding;;;UTC;6200
+Nice;base.fr;base.main_company_res_partner;True;False;fr_FR;Depil Tech Holding;;;UTC;6200
+Nice;base.fr;scenario.company_agencyHolding_res_partner;True;False;fr_FR;Agency Holding;;;UTC;6200
+Nice;base.fr;scenario.company_depiltechSAS_res_partner;True;False;fr_FR;Depil Tech SAS;;;UTC;6200
+Nice;base.fr;scenario.company_depiltechSiege_res_partner;True;False;fr_FR;Depil Tech Siege;;;UTC;6200
+Nice;base.fr;scenario.company_agencyFR_res_partner;True;False;fr_FR;Agency France;;;UTC;6200
+Nice;base.be;scenario.company_agencyBE_res_partner;True;False;fr_FR;Agency Belgique;;;UTC;6200
+Nice;base.be;scenario.company_agencyBE_res_partner;True;False;fr_FR;Agency Belgique;;;UTC;6200
+Nice;base.lu;scenario.company_agencyLU_res_partner;True;False;fr_FR;Agency Luxembourg;;;UTC;6200
+Nice;base.ch;scenario.company_agencyCH_res_partner;True;False;fr_FR;Agency Suisse;;;UTC;6200
+Nice;base.mx;scenario.company_agencyMX_res_partner;True;False;fr_FR;Agency Mexique;;;UTC;6200
+Nice;base.re;scenario.company_agencyRE_res_partner;True;False;fr_FR;Agency LaReunion;;;UTC;6200
+Nice;base.es;scenario.company_agencyES_res_partner;True;False;fr_FR;Agency Espagne;;;UTC;6200
+NICE;base.fr;scenario.company_agencyfr_center8_res_partner;True;True;fr_FR;NICE TRACHEL;1 RUE TRACHEL;;Europe/Paris;6000
+NICE;base.fr;scenario.user_center_nice-trachel_res_partner;False;False;fr_FR;NICE GARE THIERS;1 Rue Trachel;;Europe/Paris;6000
+LA GARDE;base.fr;scenario.company_agencyfr_center10_res_partner;True;True;fr_FR;LA GARDE;73 Avenue Sadi Carnot;;Europe/Paris;83130
+NICE;base.fr;scenario.company_agencyfr_center11_res_partner;True;True;fr_FR;NICE RUE DE FRANCE;47 RUE DE FRANCE;;Europe/Paris;6000
+NICE;base.fr;scenario.user_center_nice-ruedefrance_res_partner;False;False;fr_FR;NICE RUE DE FRANCE;47 rue de France;;Europe/Paris;6000
+TOULON;base.fr;scenario.company_agencyfr_center12_res_partner;True;True;fr_FR;TOULON;2 rue Pierre Letuaire;;Europe/Paris;83000
+BLOIS;base.fr;scenario.company_agencyfr_center13_res_partner;True;True;fr_FR;BLOIS;2 rue du Maréchal de Lattre de Tassigny.;;Europe/Paris;41000
+BLOIS;base.fr;scenario.user_center_blois_res_partner;False;False;fr_FR;BLOIS;2 rue du Maréchal de Lattre de Tassigny;;Europe/Paris;41000
+NANTES;base.fr;scenario.company_agencyfr_center14_res_partner;True;True;fr_FR;NANTES;9 allée dusquesne;;Europe/Paris;44000
+NANTES;base.fr;scenario.user_center_nantes_res_partner;False;False;fr_FR;NANTES;9 allée Duquesne;;Europe/Paris;44000
+WASQUEHAL;base.fr;scenario.company_agencyfr_center15_res_partner;True;True;fr_FR;WASQUEHAL C.C CARREFOUR;33 rue du Molinel;;Europe/Paris;59290
+WASQUEHAL;base.fr;scenario.user_center_wasquehal_res_partner;False;False;fr_FR;WASQUEHAL C.C CARREFOUR;33/37 rue du Molinel;;Europe/Paris;59290
+BORDEAUX;base.fr;scenario.company_agencyfr_center16_res_partner;True;True;fr_FR;BORDEAUX;182 rue Fondaudège;;Europe/Paris;33000
+LA ROCHELLE;base.fr;scenario.company_agencyfr_center24_res_partner;True;True;fr_FR;LA ROCHELLE;19 rue Albert 1er;;Europe/Paris;17000
+CANNES;base.fr;scenario.company_agencyfr_center26_res_partner;True;True;fr_FR;CANNES;46 Bd Carnot;;Europe/Paris;6400
+CANNES;base.fr;scenario.user_center_cannes_res_partner;False;False;fr_FR;CANNES;21 rue du Maréchal JOFFRE;;Europe/Paris;6400
+MENTON;base.fr;scenario.company_agencyfr_center29_res_partner;True;True;fr_FR;MENTON;8 rue Prato;;Europe/Paris;6500
+MENTON;base.fr;scenario.user_center_menton_res_partner;False;False;fr_FR;MENTON;8 rue Prato;;Europe/Paris;6500
+BOULOGNE BILLANCOURT;base.fr;scenario.company_agencyfr_center40_res_partner;True;True;fr_FR;BOULOGNE BILLANCOURT SUD;264 bis Boulevard Jean Jaures;;Europe/Paris;92100
+BOULOGNE BILLANCOURT;base.fr;scenario.user_center_boulogne_res_partner;False;False;fr_FR;BOULOGNE BILLANCOURT SUD;264 bis Boulevard Jean Jaurès;;Europe/Paris;92100
+;base.fr;scenario.company_agencyfr_center42_res_partner;True;True;;LILLE GARE FLANDRES;;;Europe/Paris;
+LILLE;base.fr;scenario.user_center_lille2_res_partner;False;False;fr_FR;LILLE GARE FLANDRES;28 rue du Molinel;;Europe/Paris;59000
+FONTAINEBLEAU;base.fr;scenario.company_agencyfr_center43_res_partner;True;True;fr_FR;FONTAINEBLEAU;20 rue de Ferrare;;Europe/Paris;77300
+FONTAINEBLEAU;base.fr;scenario.user_center_fontainebleau_res_partner;False;False;fr_FR;FONTAINEBLEAU;20 rue de Ferrare;;Europe/Paris;77300
+ANTIBES;base.fr;scenario.company_agencyfr_center45_res_partner;True;True;fr_FR;ANTIBES;11 boulevard Dugommier;;Europe/Paris;6600
+ANTIBES;base.fr;scenario.user_center_antibes_res_partner;False;False;fr_FR;ANTIBES;11 boulevard Dugommier;;Europe/Paris;6600
+GRENOBLE;base.fr;scenario.company_agencyfr_center47_res_partner;True;True;fr_FR;GRENOBLE;10 bis rue Berthe de Boissieux;;Europe/Paris;38000
+GRENOBLE;base.fr;scenario.user_center_grenoble_res_partner;False;False;fr_FR;GRENOBLE;10 bis rue Berthe de Boissieux;;Europe/Paris;38000
+LYON;base.fr;scenario.company_agencyfr_center48_res_partner;True;True;fr_FR;LYON 2 BELLECOUR;20 rue des Remparts d'Ainay;;Europe/Paris;69002
+LYON;base.fr;scenario.user_center_lyon2_res_partner;False;False;fr_FR;LYON 2 BELLECOUR;20 rue des Remparts d'Ainay;;Europe/Paris;69002
+AMIENS;base.fr;scenario.company_agencyfr_center49_res_partner;True;True;fr_FR;AMIENS;10 Rue Duméril;;Europe/Paris;80000
+AMIENS;base.fr;scenario.user_center_amiens_res_partner;False;False;fr_FR;AMIENS;10 Rue Dumeril;;Europe/Paris;80000
+;base.fr;scenario.company_agencyfr_center50_res_partner;True;True;;LILLE RUE DES ARTS VIEUX LILLE;;;Europe/Paris;
+LILLE;base.fr;scenario.user_center_lillearts_res_partner;False;False;fr_FR;LILLE RUE DES ARTS VIEUX LILLE;51 Rue des Arts;;Europe/Paris;59000
+PAU;base.fr;scenario.company_agencyfr_center51_res_partner;True;True;fr_FR;PAU;4 rue Bordenave d'Abère;;Europe/Paris;64000
+PAU;base.fr;scenario.user_center_pau64_res_partner;False;False;fr_FR;PAU;4 rue Bordenave d'Abère;;Europe/Paris;64000
+BRIVE LA GAILLARDE;base.fr;scenario.company_agencyfr_center52_res_partner;True;True;fr_FR;BRIVE LA GAILLARDE;7 rue Gambetta;;Europe/Paris;19100
+ANNECY;base.fr;scenario.company_agencyfr_center53_res_partner;True;True;fr_FR;ANNECY;6 bis rue du Lac;;Europe/Paris;74000
+ANNECY;base.fr;scenario.user_center_annecy_res_partner;False;False;fr_FR;ANNECY;6 bis rue du Lac;;Europe/Paris;74000
+BOURG EN BRESSE;base.fr;scenario.company_agencyfr_center54_res_partner;True;True;fr_FR;BOURG EN BRESSE;5 Rue Gustave Doré;;Europe/Paris;1000
+BOURG EN BRESSE;base.fr;scenario.user_center_bourg_res_partner;False;False;fr_FR;BOURG EN BRESSE;5 Rue Gustave Doré;;Europe/Paris;1000
+MARSEILLE;base.fr;scenario.company_agencyfr_center55_res_partner;True;True;fr_FR;MARSEILLE 6 PL DE LA PRÉFECTURE;2 rue Armeny;;Europe/Paris;13006
+MARSEILLE;base.fr;scenario.user_center_marseille6_res_partner;False;False;fr_FR;MARSEILLE 6 PL DE LA PRÉFECTURE;2 rue Armeny;;Europe/Paris;13006
+MACON;base.fr;scenario.company_agencyfr_center56_res_partner;True;True;fr_FR;MÂCON;29 rue du pont;;Europe/Paris;71000
+MACON;base.fr;scenario.user_center_macon_res_partner;False;False;fr_FR;MÂCON;29 rue du pont;;Europe/Paris;71000
+VINCENNES;base.fr;scenario.company_agencyfr_center58_res_partner;True;True;fr_FR;VINCENNES;105 rue de Fontenay;;Europe/Paris;94300
+VINCENNES;base.fr;scenario.user_center_vincennes_res_partner;False;False;fr_FR;VINCENNES;105 rue de Fontenay;;Europe/Paris;94300
+BÉZIERS;base.fr;scenario.company_agencyfr_center59_res_partner;True;True;fr_FR;BÉZIERS;3, Place Pierre Sémard;;Europe/Paris;34500
+BÉZIERS;base.fr;scenario.user_center_beziers_res_partner;False;False;fr_FR;BÉZIERS;3 place Pierre Semard;;Europe/Paris;34500
+BRIE COMPTE ROBERT;base.fr;scenario.company_agencyfr_center62_res_partner;True;True;fr_FR;MELUN;1 rue de Mongazon;;Europe/Paris;77170
+MELUN;base.fr;scenario.user_center_melun_res_partner;False;False;fr_FR;MELUN;12 bis rue Saint Liesne;;Europe/Paris;77000
+BLOIS;base.fr;scenario.company_agencyfr_center65_res_partner;True;True;fr_FR;ORLÉANS;2 rue du Maréchal de Lattre de Tassigny.;;Europe/Paris;41000
+ORLÉANS;base.fr;scenario.user_center_orleans_res_partner;False;False;fr_FR;ORLÉANS;42 rue Sainte Catherine;;Europe/Paris;45000
+LA VARENNE ST HILAIRE;base.fr;scenario.company_agencyfr_center66_res_partner;True;True;fr_FR;LA VARENNE SAINT HILAIRE;4 rue St Hilaire;;Europe/Paris;94210
+LA VARENNE SAINT HILAIRE;base.fr;scenario.user_center_varenne_res_partner;False;False;fr_FR;LA VARENNE SAINT HILAIRE;4 rue Saint Hilaire;;Europe/Paris;94210
+ANTIBES;base.mx;scenario.company_agencymx_center67_res_partner;True;True;fr_FR;FORMATION MX;1 Rue trachel;;America/Mexico_City;63000
+NICE;base.mx;scenario.user_center_formation_mx_res_partner;False;False;es_MX;FORMATION MX;196 Avenue de la Californie California Park Chateau de Leliwa;;America/Mexico_City;6000
+GENÈVE;base.ch;scenario.company_agencych_center69_res_partner;True;True;fr_FR;GENÈVE;Rue de Lausanne 31;;Europe/Zurich;1201
+GENÈVE;base.ch;scenario.user_center_geneve_res_partner;False;False;fr_FR;GENÈVE;Rue de Lausanne 31;;Europe/Zurich;1201
+LYON;base.fr;scenario.company_agencyfr_center70_res_partner;True;True;fr_FR;LYON 3 PRÉFECTURE;80 Avenue du Maréchal de Saxe;;Europe/Paris;69003
+LYON;base.fr;scenario.user_center_lyon3_res_partner;False;False;fr_FR;LYON 3 PRÉFECTURE;80 Avenue Maréchal de Saxe;;Europe/Paris;69003
+;base.fr;scenario.company_agencyfr_center71_res_partner;True;True;;FORMATION;;;Europe/Paris;
+NICE;base.fr;scenario.user_center_formation_res_partner;False;False;fr_FR;FORMATION;196 Avenue de la Californie California Park Chateau de Leliwa;;Europe/Paris;6200
+LUXEMBOURG;base.lu;scenario.company_agencylu_center72_res_partner;True;True;fr_FR;LUXEMBOURG;56 GRAND RUE;;Europe/Luxembourg;1660
+LUXEMBOURG;base.lu;scenario.user_center_luxembourg_res_partner;False;False;fr_FR;LUXEMBOURG;56 Grande rue;;Europe/Luxembourg;L-1660
+PARIS;base.fr;scenario.company_agencyfr_center74_res_partner;True;True;fr_FR;PARIS 9 SAINT LAZARE;14 RUE ST LAZARE;;Europe/Paris;75009
+PARIS;base.fr;scenario.user_center_paris9_res_partner;False;False;fr_FR;PARIS 9 SAINT LAZARE;14 rue Saint Lazare;;Europe/Paris;75009
+BESANCON;base.fr;scenario.company_agencyfr_center75_res_partner;True;True;fr_FR;BESANÇON;25 rue Bersot;;Europe/Paris;25000
+BESANÇON;base.fr;scenario.user_center_besancon_res_partner;False;False;fr_FR;BESANÇON;25 rue Bersot;;Europe/Paris;25000
+AIX EN PROVENCE;base.fr;scenario.company_agencyfr_center76_res_partner;True;True;fr_FR;AIX EN PROVENCE;5 Rue Papassaudi;;Europe/Paris;13100
+AIX EN PROVENCE;base.fr;scenario.user_center_aixenprovence_res_partner;False;False;fr_FR;AIX EN PROVENCE;5 Rue Papassaudi;;Europe/Paris;13100
+CLERMONT FERRAND;base.fr;scenario.company_agencyfr_center77_res_partner;True;True;fr_FR;CLERMONT FERRAND;9 rue Eugène Gilbert;;Europe/Paris;63000
+CLERMONT-FERRAND;base.fr;scenario.user_center_clermont_res_partner;False;False;fr_FR;CLERMONT FERRAND;9 rue Eugène Gilbert;;Europe/Paris;63000
+YERRES;base.fr;scenario.company_agencyfr_center78_res_partner;True;True;fr_FR;LE MANS;17 RUE DES BICHES;;Europe/Paris;91330
+LE MANS;base.fr;scenario.user_center_lemans_res_partner;False;False;fr_FR;LE MANS;3 Route d'Allonnes;;Europe/Paris;72100
+CHATEAUROUX;base.fr;scenario.company_agencyfr_center79_res_partner;True;True;fr_FR;CHATEAUROUX;12 SQUARE SAINT JOHN PERSE;;Europe/Paris;36000
+CHATEAUROUX;base.fr;scenario.user_center_chateauroux_res_partner;False;False;fr_FR;CHATEAUROUX;12 Rue Victor Hugo;;Europe/Paris;36000
+ANGERS;base.fr;scenario.company_agencyfr_center81_res_partner;True;True;fr_FR;ANGERS;48 rue Plantagenet;;Europe/Paris;49100
+BAYONNE;base.fr;scenario.company_agencyfr_center83_res_partner;True;True;fr_FR;BAYONNE;11 Rue du grand Limpou;;Europe/Paris;64100
+BAYONNE;base.fr;scenario.user_center_bayonne_res_partner;False;False;fr_FR;BAYONNE;23 rue Port Neuf;;Europe/Paris;64100
+LANDUNVEZ;base.fr;scenario.company_agencyfr_center84_res_partner;True;True;fr_FR;BREST;4 TY PRY;;Europe/Paris;29840
+BREST;base.fr;scenario.user_center_brest_res_partner;False;False;fr_FR;BREST;35, rue Emile Zola;;Europe/Paris;29200
+CAGNES SUR MER;base.fr;scenario.company_agencyfr_center85_res_partner;True;True;fr_FR;CAGNES SUR MER;20 BD Maréchal JUIN;;Europe/Paris;6800
+CAGNES SUR MER;base.fr;scenario.user_center_cagnes_res_partner;False;False;fr_FR;CAGNES SUR MER;20 Boulevard Maréchal Juin;;Europe/Paris;6800
+MULHOUSE;base.fr;scenario.company_agencyfr_center87_res_partner;True;True;fr_FR;COLMAR;36 Rue Paul Cézanne;;Europe/Paris;68200
+COLMAR;base.fr;scenario.user_center_colmar_res_partner;False;False;fr_FR;COLMAR;21 rue Vauban;;Europe/Paris;68000
+AGNETZ;base.fr;scenario.company_agencyfr_center88_res_partner;True;True;fr_FR;COMPIEGNE;303 Rue de Fay;;Europe/Paris;60600
+TIGERY;base.fr;scenario.company_agencyfr_center89_res_partner;True;True;fr_FR;EVRY 2;15 rue Henri Poincaré;;Europe/Paris;91250
+EVRY;base.fr;scenario.user_center_evry_res_partner;False;False;fr_FR;EVRY 2;Centre Régional Commercial EVRY 2;;Europe/Paris;91000
+COUZEIX;base.fr;scenario.company_agencyfr_center92_res_partner;True;True;fr_FR;LIMOGES;45 RUE DE GORCEIX;;Europe/Paris;87270
+MARSEILLE;base.fr;scenario.company_agencyfr_center93_res_partner;True;True;fr_FR;MARSEILLE 2;111 rue de la République;;Europe/Paris;13002
+MARSEILLE;base.fr;scenario.user_center_marseille2_res_partner;False;False;fr_FR;MARSEILLE 2;111 rue de la république;;Europe/Paris;13002
+METZ;base.fr;scenario.company_agencyfr_center94_res_partner;True;True;fr_FR;METZ;17 avenue de Leclerc de Hauteclocque;;Europe/Paris;57000
+METZ;base.fr;scenario.user_center_metz_res_partner;False;False;fr_FR;METZ;17 Avenue Leclerc De Hautecloque;;Europe/Paris;57000
+MONTLUÇON;base.fr;scenario.company_agencyfr_center95_res_partner;True;True;fr_FR;MONTLUÇON;9 rue du faubourg St Pierre;;Europe/Paris;3100
+MONTLUÇON;base.fr;scenario.user_center_montlucon_res_partner;False;False;fr_FR;MONTLUÇON;9 rue du faubourg St Pierre;;Europe/Paris;3100
+NIMES;base.fr;scenario.company_agencyfr_center97_res_partner;True;True;fr_FR;NIMES;3 rue Fresque;;Europe/Paris;30000
+NIMES;base.fr;scenario.user_center_nimes_res_partner;False;False;fr_FR;NIMES;3 rue Fresque;;Europe/Paris;30000
+JOUY-AUX-ARCHES;base.fr;scenario.company_agencyfr_center98_res_partner;True;True;fr_FR;REIMS;45 B Grand'Rue;;Europe/Paris;57130
+RENNES;base.fr;scenario.company_agencyfr_center99_res_partner;True;True;fr_FR;RENNES;24 A Bd Laennec;;Europe/Paris;35000
+RENNES;base.fr;scenario.user_center_rennes_res_partner;False;False;fr_FR;RENNES;32 boulevard de la liberté;;Europe/Paris;35000
+SAINTE MARIE;base.re;scenario.company_agencyre_center100_res_partner;True;True;fr_FR;SAINT DENIS DE LA REUNION;85 IMPASSE CORNEIL;;Indian/Reunion;97438
+SAINT DENIS DE LA REUNION;base.re;scenario.user_center_saintdenis_res_partner;False;False;fr_FR;SAINT DENIS DE LA REUNION;101 rue Général de Gaulle;;Indian/Reunion;97400
+ROUEN;base.fr;scenario.company_agencyfr_center101_res_partner;True;True;fr_FR;ROUEN;23 RUE GRAND PONT;;Europe/Paris;76000
+ROUEN;base.fr;scenario.user_center_rouen_res_partner;False;False;fr_FR;ROUEN;23 rue Grand Pont;;Europe/Paris;76000
+YERRES;base.fr;scenario.company_agencyfr_center102_res_partner;True;True;fr_FR;SABLE SUR SARTHE;17 rue des Biches;;Europe/Paris;91330
+SABLE-SUR-SARTHE;base.fr;scenario.user_center_sable_res_partner;False;False;fr_FR;SABLE SUR SARTHE;Route du Mans;;Europe/Paris;72300
+THIONVILLE;base.fr;scenario.company_agencyfr_center104_res_partner;True;True;fr_FR;THIONVILLE;36 RUE DE PARIS;;Europe/Paris;57100
+THIONVILLE;base.fr;scenario.user_center_thionville_res_partner;False;False;fr_FR;THIONVILLE;36 rue de Paris;;Europe/Paris;57100
+RODEZ;base.fr;scenario.company_agencyfr_center105_res_partner;True;True;fr_FR;RODEZ;3 Avenue de Bourran;;Europe/Paris;12000
+RODEZ;base.fr;scenario.user_center_rodez_res_partner;False;False;fr_FR;RODEZ;3 avenue Bourran - Res. Acropolis;;Europe/Paris;12000
+MULHOUSE;base.fr;scenario.company_agencyfr_center106_res_partner;True;True;fr_FR;STRASBOURG;36 rue Paul Cézanne;;Europe/Paris;68200
+STRASBOURG;base.fr;scenario.user_center_strasbourg_res_partner;False;False;fr_FR;STRASBOURG;20 Rue du Jeu des Enfants;;Europe/Paris;67000
+TOULOUSE;base.fr;scenario.company_agencyfr_center107_res_partner;True;True;fr_FR;TOULOUSE;17 rue de Metz;;Europe/Paris;31000
+TOULOUSE;base.fr;scenario.user_center_toulouse_res_partner;False;False;fr_FR;TOULOUSE;17 rue de Metz;;Europe/Paris;31000
+CHÂTEAUROUX;base.fr;scenario.company_agencyfr_center108_res_partner;True;True;fr_FR;TOURS;12 square St John Perse;;Europe/Paris;36000
+TOURS;base.fr;scenario.user_center_tours_res_partner;False;False;fr_FR;TOURS;10 rue de Néricault;;Europe/Paris;37000
+PONT DU CHATEAU;base.fr;scenario.company_agencyfr_center109_res_partner;True;True;fr_FR;VICHY;70 Chemin des Littes;;Europe/Paris;63430
+VICHY;base.fr;scenario.user_center_vichy_res_partner;False;False;fr_FR;VICHY;24 rue de Paris;;Europe/Paris;3200
+MULHOUSE;base.fr;scenario.company_agencyfr_center110_res_partner;True;True;fr_FR;MULHOUSE;25 rue Henriette;;Europe/Paris;68100
+MULHOUSE;base.fr;scenario.user_center_mulhouse_res_partner;False;False;fr_FR;MULHOUSE;25 rue Henriette;;Europe/Paris;68100
+AGNETZ;base.fr;scenario.company_agencyfr_center111_res_partner;True;True;fr_FR;BEAUVAIS;303 Rue de Fay;;Europe/Paris;60600
+ANGERS;base.fr;scenario.company_agencyfr_center112_res_partner;True;True;fr_FR;VANNES;3 Bd du Maréchal JOFFRE;;Europe/Paris;49100
+VANNES;base.fr;scenario.user_center_vannes_res_partner;False;False;fr_FR;VANNES;11 rue Emile Burgault;;Europe/Paris;56000
+CHAMBERY;base.fr;scenario.company_agencyfr_center114_res_partner;True;True;fr_FR;CHAMBERY;11 rue DOPPET;;Europe/Paris;73000
+CHAMBERY;base.fr;scenario.user_center_chambery_res_partner;False;False;fr_FR;CHAMBERY;11 rue DOPPET;;Europe/Paris;73000
+ROUEN;base.fr;scenario.company_agencyfr_center115_res_partner;True;True;fr_FR;SAINT-GERMAIN-EN-LAYE;23 rue du Grand Pont;;Europe/Paris;76000
+CAEN;base.fr;scenario.company_agencyfr_center116_res_partner;True;True;fr_FR;CAEN;166 rue Saint Jean;;Europe/Paris;14000
+CAEN;base.fr;scenario.user_center_caen_res_partner;False;False;fr_FR;CAEN;166 rue Saint Jean;;Europe/Paris;14000
+POITIERS;base.fr;scenario.company_agencyfr_center117_res_partner;True;True;fr_FR;POITIERS;216 avenue du 8 mai 1945;;Europe/Paris;86000
+POITIERS;base.fr;scenario.user_center_poitiers_res_partner;False;False;fr_FR;POITIERS;216 avenue du 8 Mai 1945;;Europe/Paris;86000
+;base.fr;scenario.company_agencyfr_center118_res_partner;True;True;;QUIMPER;;;Europe/Paris;
+DIJON;base.fr;scenario.company_agencyfr_center119_res_partner;True;True;fr_FR;DIJON;6 Rue du Docteur Quignard;;Europe/Paris;21000
+DIJON;base.fr;scenario.user_center_dijon_res_partner;False;False;fr_FR;DIJON;3 rue Parmentier;;Europe/Paris;21000
+LYON;base.fr;scenario.company_agencyfr_center120_res_partner;True;True;fr_FR;PARIS 15 BEAUGRENELLE;2 place jules Ferry;;Europe/Paris;69006
+PARIS;base.fr;scenario.user_center_paris15_res_partner;False;False;fr_FR;PARIS 15 BEAUGRENELLE;16 Rue Beaugrenelle;;Europe/Paris;75015
+SAINT LAURENT DU VAR;base.fr;scenario.company_agencyfr_center122_res_partner;True;True;fr_FR;SAINT LAURENT DU VAR;29 avenue du maréchal juin;;Europe/Paris;6700
+SAINT LAURENT DU VAR - CAP 3000;base.fr;scenario.user_center_saintlaurent_res_partner;False;False;fr_FR;SAINT LAURENT DU VAR;Secteur Cap 3000;;Europe/Paris;6700
+PARIS;base.fr;scenario.company_agencyfr_center123_res_partner;True;True;fr_FR;PARIS 14 DENFERT ROCHEREAU;161 AVENUE DU MAINE;;Europe/Paris;75014
+PARIS;base.fr;scenario.user_center_paris14_res_partner;False;False;fr_FR;PARIS 14 DENFERT ROCHEREAU;161 avenue du Maine;;Europe/Paris;75014
+VERTOU;base.fr;scenario.company_agencyfr_center124_res_partner;True;True;fr_FR;NANTES-VERTOU;522 route de Clisson;;Europe/Paris;44120
+VERTOU;base.fr;scenario.user_center_nantes-vertou_res_partner;False;False;fr_FR;NANTES-VERTOU;522 route de Clisson;;Europe/Paris;44120
+;base.fr;scenario.company_agencyfr_center125_res_partner;True;True;;NANTES NORD;;;Europe/Paris;
+ROANNE;base.fr;scenario.company_agencyfr_center127_res_partner;True;True;fr_FR;ROANNE;18 rue Maréchal Foch;;Europe/Paris;42300
+ROANNE;base.fr;scenario.user_center_roanne_res_partner;False;False;fr_FR;ROANNE;18 rue Maréchal Foch;;Europe/Paris;42300
+LEVALLOIS PERRET;base.fr;scenario.company_agencyfr_center128_res_partner;True;True;fr_FR;LEVALLOIS PERRET;20 rue Camille PELLETAN;;Europe/Paris;92300
+LEVALLOIS PERRET;base.fr;scenario.user_center_levallois_res_partner;False;False;fr_FR;LEVALLOIS PERRET;73 rue du Président Wilson;;Europe/Paris;92300
+NANCY;base.fr;scenario.company_agencyfr_center129_res_partner;True;True;fr_FR;NANCY;27 avenue du XX ème Corps;;Europe/Paris;54000
+NANCY;base.fr;scenario.user_center_nancy_res_partner;False;False;fr_FR;NANCY;27 avenue du XX Corps;;Europe/Paris;54000
+CAVEIRAC;base.fr;scenario.company_agencyfr_center130_res_partner;True;True;fr_FR;MONTPELLIER;5 rue des éperviers;;Europe/Paris;30820
+MONTPELLIER;base.fr;scenario.user_center_montpellier_res_partner;False;False;fr_FR;MONTPELLIER;15 Boulevard du Jeu de Paume;;Europe/Paris;34000
+NIORT;base.fr;scenario.company_agencyfr_center131_res_partner;True;True;fr_FR;NIORT;6 rue Jean-Baptiste COLBERT;;Europe/Paris;79000
+PARIS;base.fr;scenario.company_agencyfr_center133_res_partner;True;True;fr_FR;PARIS 8 HAUSSMANN - GRANDS MAGASINS;98 bis Boulevard Haussmann;;Europe/Paris;75008
+PARIS;base.fr;scenario.user_center_paris8_res_partner;False;False;fr_FR;PARIS 8 HAUSSMANN - GRANDS MAGASINS;98 bis Boulevard Haussmann;;Europe/Paris;75008
+BASTIA;base.fr;scenario.company_agencyfr_center134_res_partner;True;True;fr_FR;BASTIA;2 rue Gabriel Peri;;Europe/Paris;20020
+BASTIA;base.fr;scenario.user_center_bastia_res_partner;False;False;fr_FR;BASTIA;2 rue gabriel PERI;;Europe/Paris;20200
+BORDEAUX;base.fr;scenario.company_agencyfr_center135_res_partner;True;True;fr_FR;BORDEAUX PEY BERLAND;91 Rue du Loup;;Europe/Paris;33000
+BORDEAUX;base.fr;scenario.user_center_bordeaux2_res_partner;False;False;fr_FR;BORDEAUX PEY BERLAND;91 Rue du Loup;;Europe/Paris;33000
+PARIS;base.fr;scenario.company_agencyfr_center136_res_partner;True;True;fr_FR;PARIS 17;19 rue Théodore de Banville;;Europe/Paris;75017
+CLERMONT-FERRAND;base.fr;scenario.company_agencyfr_center137_res_partner;True;True;fr_FR;AVIGNON LES ANGLES;71 Boulevard BERTHELOT;;Europe/Paris;63000
+LES ANGLES;base.fr;scenario.user_center_avignon-lesangles_res_partner;False;False;fr_FR;AVIGNON LES ANGLES;Centre Commercial Grand Angle;;Europe/Paris;30133
+CARQUEIRANNE;base.fr;scenario.company_agencyfr_center138_res_partner;True;True;fr_FR;HYÈRES;96 Val de l'éolienne;;Europe/Paris;83320
+HYÈRES;base.fr;scenario.user_center_hyeres_res_partner;False;False;fr_FR;HYÈRES;1 bis rue soldat bellon;;Europe/Paris;83400
+BIARRITZ;base.fr;scenario.company_agencyfr_center140_res_partner;True;True;fr_FR;BIARRITZ;14 Allée de la Forêt;;Europe/Paris;64200
+ALES;base.fr;scenario.company_agencyfr_center141_res_partner;True;True;fr_FR;ALÈS;6 Rue Albert 1er;;Europe/Paris;30100
+MONTLUÇON;base.fr;scenario.company_agencyfr_center143_res_partner;True;True;fr_FR;BOURGES;9 rue du faubourg St Pierre;;Europe/Paris;3100
+BOURGES;base.fr;scenario.user_center_bourges_res_partner;False;False;fr_FR;BOURGES;Centre Commercial Avaricum;;Europe/Paris;18000
+TOURNEFEUILLE;base.fr;scenario.company_agencyfr_center144_res_partner;True;True;fr_FR;CASTRES;16 rue du Cours d'eau;;Europe/Paris;31170
+PERPIGNAN;base.fr;scenario.company_agencyfr_center145_res_partner;True;True;fr_FR;PERPIGNAN;235 avenue d'Espagne;;Europe/Paris;66000
+PERPIGNAN;base.fr;scenario.user_center_perpignan_res_partner;False;False;fr_FR;PERPIGNAN;235 avenue d'Espagne;;Europe/Paris;66000
+LYON;base.fr;scenario.company_agencyfr_center146_res_partner;True;True;fr_FR;LYON 4 CROIX-ROUSSE;20 rue du Mail;;Europe/Paris;69004
+LYON;base.fr;scenario.user_center_lyon4_res_partner;False;False;fr_FR;LYON 4 CROIX-ROUSSE;20 rue du Mail;;Europe/Paris;69004
+NEUILLY SUR SEINE;base.fr;scenario.company_agencyfr_center147_res_partner;True;True;fr_FR;NEUILLY SUR SEINE;203 avenue Achille PERETTI;;Europe/Paris;92200
+NEUILLY SUR SEINE;base.fr;scenario.user_center_neuilly_res_partner;False;False;fr_FR;NEUILLY SUR SEINE;150 avenue Achille Péretti;;Europe/Paris;92200
+;base.fr;scenario.company_agencyfr_center148_res_partner;True;True;;PARIS 11;;;Europe/Paris;
+RODEZ;base.fr;scenario.company_agencyfr_center149_res_partner;True;True;fr_FR;ALBI;3 avenue BOURRAN;;Europe/Paris;12000
+BROGNON;base.fr;scenario.company_agencyfr_center150_res_partner;True;True;fr_FR;VERSAILLES;1 rue du pré de la Croix;;Europe/Paris;21490
+SETE;base.fr;scenario.company_agencyfr_center152_res_partner;True;True;fr_FR;SÈTE;30 rue marie Rostand;;Europe/Paris;34200
+SÈTE;base.fr;scenario.user_center_sete_res_partner;False;False;fr_FR;SÈTE;30 Grande Rue Mario Roustan;;Europe/Paris;34200
+ARLES;base.fr;scenario.company_agencyfr_center153_res_partner;True;True;fr_FR;ARLES;11 rue des Suisses;;Europe/Paris;13200
+ARLES;base.fr;scenario.user_center_arles_res_partner;False;False;fr_FR;ARLES;11 rue des Suisses;;Europe/Paris;13200
+PERPIGNAN;base.fr;scenario.company_agencyfr_center154_res_partner;True;True;fr_FR;NARBONNE;235 avenue d'Espagne;;Europe/Paris;66000
+FIGANIÈRES;base.fr;scenario.company_agencyfr_center155_res_partner;True;True;fr_FR;DRAGUIGNAN;4 rue principale;;Europe/Paris;83830
+AUTERIVE;base.fr;scenario.company_agencyfr_center156_res_partner;True;True;fr_FR;MURET;9 Chemin des Bruzes;;Europe/Paris;31190
+MURET;base.fr;scenario.user_center_muret_res_partner;False;False;fr_FR;MURET;4 avenue des pyrénées;;Europe/Paris;31600
+TOURNEFEUILLE;base.fr;scenario.company_agencyfr_center157_res_partner;True;True;fr_FR;AUCH;16 rue du Cours d'eau;;Europe/Paris;31170
+AUCH;base.fr;scenario.user_center_auch_res_partner;False;False;fr_FR;AUCH;C.C. d'Endoumingue;;Europe/Paris;32000
+NICE;base.fr;scenario.company_agencyfr_center158_res_partner;True;True;fr_FR;PARIS 3 REPUBLIQUE;196 av de la californie;;Europe/Paris;6200
+PARIS;base.fr;scenario.user_center_paris3_res_partner;False;False;fr_FR;PARIS 3 REPUBLIQUE;60 rue de Turbigo;;Europe/Paris;75003
+NICE;base.fr;scenario.company_agencyfr_center159_res_partner;True;True;fr_FR;PARIS 16 LA POMPE;196 av de la californie;;Europe/Paris;6200
+PARIS;base.fr;scenario.user_center_paris16_res_partner;False;False;fr_FR;PARIS 16 LA POMPE;45 rue de la pompe;;Europe/Paris;75016
+ST PIERRE DE LA RÉUNION;base.re;scenario.company_agencyre_center160_res_partner;True;True;fr_FR;SAINT PIERRE DE LA REUNION;124 rue Marius & Ary Leblond;;Europe/Paris;97410
+SAINT PIERRE DE LA RÉUNION;base.re;scenario.user_center_saintpierre_res_partner;False;False;fr_FR;SAINT PIERRE DE LA REUNION;124 rue Marius et Ary Leblond;;Europe/Paris;97410
+DISTRITO FEDERAL;base.mx;scenario.company_agencymx_center161_res_partner;True;True;fr_FR;MEXICO CITY;Homero 408, int. 3;;America/Mexico_City;11570
+MEXICO;base.mx;scenario.user_center_mexico_res_partner;False;False;es_MX;MEXICO CITY;Homero 408, Polanco;;America/Mexico_City;11570
+BOULOGNE BILLANCOURT;base.fr;scenario.company_agencyfr_center162_res_partner;True;True;fr_FR;BOULOGNE BILLANCOURT NORD;33 boulevard Jean Jaurès;;Europe/Paris;92100
+BOULOGNE BILLANCOURT;base.fr;scenario.user_center_boulogne-nord_res_partner;False;False;fr_FR;BOULOGNE BILLANCOURT NORD;33 boulevard Jean Jaurès;;Europe/Paris;92100
+SANARY SUR MER;base.fr;scenario.company_agencyfr_center163_res_partner;True;True;fr_FR;SANARY SUR MER;Place des poilus;;Europe/Paris;83110
+SANARY-SUR-MER;base.fr;scenario.user_center_sanary_res_partner;False;False;fr_FR;SANARY SUR MER;40 Place des poilus;;Europe/Paris;83110
+AUBIERE;base.fr;scenario.company_agencyfr_center164_res_partner;True;True;fr_FR;SAINT NAZAIRE;24 rue des Chazots;;Europe/Paris;63170
+OLIVET;base.fr;scenario.company_agencyfr_center165_res_partner;True;True;fr_FR;OLIVET;67 Place Louis Sallé;;Europe/Paris;45160
+OLIVET;base.fr;scenario.user_center_olivet_res_partner;False;False;fr_FR;OLIVET;67, place Louis Sallé;;Europe/Paris;45160
+LYON;base.fr;scenario.company_agencyfr_center166_res_partner;True;True;fr_FR;LYON 6 BROTTEAUX;2 Place Général BROSSET;;Europe/Paris;69006
+LYON;base.fr;scenario.user_center_lyon6_res_partner;False;False;fr_FR;LYON 6 BROTTEAUX;2 avenue du Général Brosset;;Europe/Paris;69006
+BRUXELLES;base.be;scenario.company_agencybe_center167_res_partner;True;True;fr_FR;BRUXELLES;BE0627 692 344;;Europe/Brussels;1000
+BRUXELLES;base.be;scenario.user_center_bruxelles_res_partner;False;False;fr_FR;BRUXELLES;149 rue Antoine Dansaert;;Europe/Brussels;1000
+ST QUENTIN;base.fr;scenario.company_agencyfr_center168_res_partner;True;True;fr_FR;SAINT QUENTIN;12 rue St André;;Europe/Paris;2100
+SAINT QUENTIN;base.fr;scenario.user_center_saintquentin_res_partner;False;False;fr_FR;SAINT QUENTIN;12 Rue St André;;Europe/Paris;2100
+VIRY CHATILLON;base.fr;scenario.company_agencyfr_center171_res_partner;True;True;fr_FR;COLOMBES;129 boulevard Gabriel Péri;;Europe/Paris;91170
+LYON;base.fr;scenario.company_agencyfr_center172_res_partner;True;True;fr_FR;TASSIN LA DEMI LUNE;64 rue du Commandant CHARCOT;;Europe/Paris;69005
+TASSIN LA DEMI LUNE;base.fr;scenario.user_center_tassin_res_partner;False;False;fr_FR;TASSIN LA DEMI LUNE;60 avenue Victor hugo;;Europe/Paris;69160
+PARIS;base.fr;scenario.company_agencyfr_center173_res_partner;True;True;fr_FR;ISSY LES MOULINEAUX;157 rue du Faubourg St Antoine;;Europe/Paris;75011
+ISSY LES MOULINEAUX;base.fr;scenario.user_center_issy_res_partner;False;False;fr_FR;ISSY LES MOULINEAUX;42 rue Danton;;Europe/Paris;92130
+TOURNEFEUILLE;base.fr;scenario.company_agencyfr_center174_res_partner;True;True;fr_FR;CARCASSONNE;16 rue du Cours d'eau;;Europe/Paris;31170
+NANTES;base.fr;scenario.company_agencyfr_center176_res_partner;True;True;fr_FR;CERGY 3 FONTAINES;13 rue bias;;Europe/Paris;44000
+CERGY;base.fr;scenario.user_center_cergy_res_partner;False;False;fr_FR;CERGY 3 FONTAINES;Centre commercial Cergy 3 Fontaines;;Europe/Paris;95000
+PUBLIER;base.fr;scenario.company_agencyfr_center180_res_partner;True;True;fr_FR;ANNEMASSE;354 Rue Chez Demay;;Europe/Paris;74500
+ANNEMASSE;base.fr;scenario.user_center_annemasse_res_partner;False;False;fr_FR;ANNEMASSE;1 Allée Simone SIGNORET;;Europe/Paris;74100
+LYON;base.fr;scenario.company_agencyfr_center181_res_partner;True;True;fr_FR;CNIT;2 Place Jules Ferry;;Europe/Paris;69006
+STRASBOURG;base.fr;scenario.company_agencyfr_center186_res_partner;True;True;fr_FR;STRASBOURG OBERHAUSBERGEN;95 avenue Racine;;Europe/Paris;67200
+STRASBOURG;base.fr;scenario.user_center_strasbourg-ouest_res_partner;False;False;fr_FR;STRASBOURG OBERHAUSBERGEN;95 Avenue Racine;;Europe/Paris;67200
+GREZIEU LA VARENNE;base.fr;scenario.company_agencyfr_center188_res_partner;True;True;fr_FR;OULLINS;14 Route du Col de la Luere;;Europe/Paris;69290
+OULLINS;base.fr;scenario.user_center_oullins_res_partner;False;False;fr_FR;OULLINS;188 Grande Rue;;Europe/Paris;69600
+MONTELIMAR;base.fr;scenario.company_agencyfr_center189_res_partner;True;True;fr_FR;MONTÉLIMAR;200 route de Marseille;;Europe/Paris;26200
+MONTELIMAR;base.fr;scenario.user_center_montelimar_res_partner;False;False;fr_FR;MONTÉLIMAR;200 route de Marseille;;Europe/Paris;26200
+BELFORT;base.fr;scenario.company_agencyfr_center194_res_partner;True;True;fr_FR;VILLEFRANCHE SUR SAÔNE;7 rue des Acacias;;Europe/Paris;90000
+NOISY LE GRAND;base.fr;scenario.company_agencyfr_center195_res_partner;True;True;fr_FR;MEAUX;51 rue de l'université;;Europe/Paris;93160
+CHAUCONIN-NEUFMONTIERS;base.fr;scenario.user_center_meaux_res_partner;False;False;fr_FR;MEAUX;CC Les saisons de Meaux;;Europe/Paris;77124
+VIRY CHATILLON;base.fr;scenario.company_agencyfr_center196_res_partner;True;True;fr_FR;AUBERVILLIERS;129 boulevard Gabriel Péri;;Europe/Paris;91170
+AMBLENY;base.fr;scenario.company_agencyfr_center197_res_partner;True;True;fr_FR;SOISSONS;34 rue du Soulier;;Europe/Paris;2290
+TIGERY;base.fr;scenario.company_agencyfr_center199_res_partner;True;True;fr_FR;LES ULIS;15 rue henri poincaré;;Europe/Paris;91250
+CASTELCULIER;base.fr;scenario.company_agencyfr_center203_res_partner;True;True;fr_FR;AGEN;9 rue de Garonne;;Europe/Paris;47240
+DIFFERDANGE LUXEMBOURG;base.lu;scenario.company_agencylu_center204_res_partner;True;True;fr_FR;DIFFERDANGE;1-2 place Marie Paule Molitor-Peffer;;Europe/Luxembourg;L4549
+DIFFERDANGE;base.lu;scenario.user_center_differdange_res_partner;False;False;fr_FR;DIFFERDANGE;1-2 place Marie-Paule Molitor-Peffer;;Europe/Luxembourg;L-4549
+LA COROGNA ESPAGNE;base.es;scenario.company_agencyes_center205_res_partner;True;True;fr_FR;LA COROGNE;Avenida Montserrat 14 4A;;Europe/Madrid;15009
+FREJUS;base.fr;scenario.company_agencyfr_center206_res_partner;True;True;fr_FR;FRÉJUS;354 avenue Victor Raybaud;;Europe/Paris;83700
+FREJUS;base.fr;scenario.user_center_frejus_res_partner;False;False;fr_FR;FRÉJUS;354 Rue Victor RAYBAUD;;Europe/Paris;83600
+LEVALLOIS PERRET;base.fr;scenario.company_agencyfr_center207_res_partner;True;True;fr_FR;COURBEVOIE;20 rue Camille PELLETAN;;Europe/Paris;92300
+COURBEVOIE;base.fr;scenario.user_center_courbevoie_res_partner;False;False;fr_FR;COURBEVOIE;25 bis Bd Georges Clémenceau;;Europe/Paris;92400
+SAINT ETIENNE;base.fr;scenario.company_agencyfr_center208_res_partner;True;True;fr_FR;SAINT ETIENNE;4 Rue Michelet;;Europe/Paris;42000
+SAINT ETIENNE;base.fr;scenario.user_center_saintetienne_res_partner;False;False;fr_FR;SAINT ETIENNE;4 rue Michelet;;Europe/Paris;42000
+SECLIN;base.fr;scenario.company_agencyfr_center212_res_partner;True;True;fr_FR;DOUAI;11 Rue de la Tannerie;;Europe/Paris;59113
+CHATENAY MALABRY;base.fr;scenario.company_agencyfr_center214_res_partner;True;True;fr_FR;CHATENAY-MALABRY;103 avenue de la Division Leclerc;;Europe/Paris;92290
+CHATENAY-MALABRY;base.fr;scenario.user_center_chatenay-malabry_res_partner;False;False;fr_FR;CHATENAY-MALABRY;103/105 avenue de la Division Leclerc;;Europe/Paris;92290
+TOURNEFEUILLE;base.fr;scenario.company_agencyfr_center215_res_partner;True;True;fr_FR;MONTAUBAN;16 rue du Cours d'eau;;Europe/Paris;31170
+;base.fr;scenario.company_agencyfr_center216_res_partner;True;True;;FENOUILLET;;;Europe/Paris;
+TOURNEFEUILLE;base.fr;scenario.company_agencyfr_center217_res_partner;True;True;fr_FR;TOURNEFEUILLE;16 rue du cours d'eau;;Europe/Paris;31170
+TOURNEFEUILLE;base.fr;scenario.user_center_tournefeuille_res_partner;False;False;fr_FR;TOURNEFEUILLE;50 rue Gaston Doumergue;;Europe/Paris;31170
+MONTGERON;base.fr;scenario.company_agencyfr_center218_res_partner;True;True;fr_FR;MONTGERON;40 avenue de la République;;Europe/Paris;91230
+MONTGERON;base.fr;scenario.user_center_montgeron_res_partner;False;False;fr_FR;MONTGERON;40 avenue de la République;;Europe/Paris;91230
+SURESNES;base.fr;scenario.company_agencyfr_center219_res_partner;True;True;fr_FR;SURESNES;26 bis rue Jean Jaurès;;Europe/Paris;92150
+SURESNES;base.fr;scenario.user_center_suresnes_res_partner;False;False;fr_FR;SURESNES;26 bis avenue Jean Jaurès;;Europe/Paris;92150
+;base.fr;scenario.company_agencyfr_center220_res_partner;True;True;;ROSNY 2;;;Europe/Paris;
+LYON;base.fr;scenario.company_agencyfr_center221_res_partner;True;True;fr_FR;ITALIE 2;2 place jules Ferry;;Europe/Paris;69006
+LYON;base.fr;scenario.company_agencyfr_center222_res_partner;True;True;fr_FR;LES ARCADES;2 place Jules FERRY;;Europe/Paris;69006
+LYON;base.fr;scenario.company_agencyfr_center223_res_partner;True;True;fr_FR;PARIS 19 VILL UP;2 place jules Ferry;;Europe/Paris;69006
+PARIS;base.fr;scenario.user_center_villup_res_partner;False;False;fr_FR;PARIS 19 VILL UP;30 Avenue Corentin Cariou;;Europe/Paris;75019
+FRANCONVILLE;base.fr;scenario.company_agencyfr_center224_res_partner;True;True;fr_FR;VILLENEUVE LA GARENNE;81 rue du Dr ROUX;;Europe/Paris;95130
+LIEUSAINT;base.fr;scenario.company_agencyfr_center226_res_partner;True;True;fr_FR;BELFORT;Carré Haussmann II;;Europe/Paris;77127
+POITIERS;base.fr;scenario.company_agencyfr_center227_res_partner;True;True;fr_FR;POITIERS CENTRE VILLE;7 rue du marché Notre Dame;;Europe/Paris;86000
+;base.fr;scenario.company_agencyfr_center228_res_partner;True;True;;ROUBAIX CENTRE-VILLE;;;Europe/Paris;
+ROUBAIX;base.fr;scenario.user_center_roubaix_res_partner;False;False;fr_FR;ROUBAIX CENTRE-VILLE;20 Ter Grand'Rue;;Europe/Paris;59100
+BRUXELLES;base.be;scenario.company_agencybe_center229_res_partner;True;True;fr_FR;BRUXELLES 2;37/19 Quai Pierre aux Tailles;;Europe/Paris;1000
+;base.fr;scenario.company_agencyfr_center230_res_partner;True;True;;LOMME C.C CARREFOUR;;;Europe/Paris;
+LOMME;base.fr;scenario.user_center_lomme_res_partner;False;False;fr_FR;LOMME C.C CARREFOUR;130 rue du Grand But;;Europe/Paris;59160
+PARIS;base.fr;scenario.company_agencyfr_center231_res_partner;True;True;fr_FR;GAP;90 boulevard de Courcelles;;Europe/Paris;75017
+MONT DE MARSAN;base.fr;scenario.company_agencyfr_center233_res_partner;True;True;fr_FR;PESSAC;9 Place Nonères;;Europe/Paris;42000
+MONT DE MARSAN;base.fr;scenario.company_agencyfr_center234_res_partner;True;True;fr_FR;MONT DE MARSAN;9 Place Nonères;;Europe/Paris;40000
+EVRY;base.fr;scenario.company_agencyfr_center236_res_partner;True;True;fr_FR;MAISONS ALFORT;46 Rue Carles Bonnaventure Delage;;Europe/Paris;91000
+LAMBERSART;base.fr;scenario.company_agencyfr_center237_res_partner;True;True;fr_FR;MÉRIGNAC;42 rue Louis BRAILLE;;Europe/Paris;59130
+SAINT LOUIS;base.fr;scenario.company_agencyfr_center238_res_partner;True;True;fr_FR;SAINT LOUIS;18 rue de Mulhouse;;Europe/Paris;68300
+SAINT LOUIS;base.fr;scenario.user_center_saintlouis_res_partner;False;False;fr_FR;SAINT LOUIS;18 Rue de Mulhouse;;Europe/Paris;68300
+TOULON;base.fr;scenario.company_agencyfr_center239_res_partner;True;True;fr_FR;TOULON MAYOL;CC Toulon Mayol;;Europe/Paris;83000
+TOULON;base.fr;scenario.user_center_toulonmayol_res_partner;False;False;fr_FR;TOULON MAYOL;CC Toulon Mayol;;Europe/Paris;83000
+ZAPOPAN - JALISCO;base.mx;scenario.company_agencymx_center240_res_partner;True;True;fr_FR;LOMAS DE CHAPULTEPEC;Paseo LomasAltas 334;;Europe/Paris;45128
+SARAGOZA;base.es;scenario.company_agencyes_center241_res_partner;True;True;fr_FR;SARAGOSSE;Calle Joaquim Guiral N°1;;Europe/Paris;50013
+MEXICO;base.mx;scenario.company_agencymx_center243_res_partner;True;True;fr_FR;INTERLOMAS;Avenida centenacio 367;;Europe/Paris;2070
+VIENNE;base.fr;scenario.company_agencyfr_center244_res_partner;True;True;fr_FR;VIENNE;20 allée des Centaures;;Europe/Paris;38200
+ROCOURT;base.be;scenario.company_agencybe_center245_res_partner;True;True;fr_FR;LIEGE;Clos des Cherwiers,40;;Europe/Paris;4000
+STRASBOURG;base.fr;scenario.company_agencyfr_center246_res_partner;True;True;fr_FR;ILLKIRCH-GRAFFENSTADEN;23 rue de la Baronne d'Oberkirch;;Europe/Paris;67000
+TOULOUSE;base.fr;scenario.company_agencyfr_center247_res_partner;True;True;fr_FR;CAHORS;9 Chemin de l'Abbé Grégoire;;Europe/Paris;31100
+BONSECOURS;base.fr;scenario.company_agencyfr_center248_res_partner;True;True;fr_FR;LE HAVRE;8 square des Platanes;;Europe/Paris;76240
+HUIXQUILUCAN;base.mx;scenario.company_agencymx_center249_res_partner;True;True;fr_FR;HUIXQUILUCAN;Fuente de Molinos 32-402;;Europe/Paris;53950
+Nice;base.fr;scenario.user_dt_pauljean-baptiste-mauvenu_res_partner;False;False;fr_FR;Paul & Jean-baptiste Mauvenu;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_marion-vaast_res_partner;False;False;fr_FR;Marion Vaast;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_valerie-elbaz_res_partner;False;False;fr_FR;Valérie Elbaz;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_aurelie-betto_res_partner;False;False;fr_FR;Aurélie Betto;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_nathalie-schlemmer-maire_res_partner;False;False;fr_FR;Nathalie Schlemmer-maire;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_daniel-makanda_res_partner;False;False;fr_FR;Daniel Makanda;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_vincent-rouzier_res_partner;False;False;fr_FR;Vincent Rouzier;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_margaux-carleschi_res_partner;False;False;fr_FR;Margaux Carleschi;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_arnaud-brusseau_res_partner;False;False;fr_FR;Arnaud Brusseau;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_annie-housseini_res_partner;False;False;fr_FR;Annie Housseini;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_emmanuelle-lasfargues_res_partner;False;False;fr_FR;Emmanuelle Lasfargues;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_alexandra-viera_res_partner;False;False;fr_FR;Alexandra Viera;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_jeremy-gay_res_partner;False;False;fr_FR;Jérémy Gay;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_joel-gaujard_res_partner;False;False;fr_FR;Joël Gaujard;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_jessica-noviant_res_partner;False;False;fr_FR;Jessica Noviant;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_myriam-bougdim_res_partner;False;False;fr_FR;Myriam Bougdim;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_cheraz-sermouk_res_partner;False;False;fr_FR;Cheraz Sermouk;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_virginie-mauri_res_partner;False;False;fr_FR;Virginie Mauri;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_julie-lionet-bourgat_res_partner;False;False;fr_FR;Julie Lionet-bourgat;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_vincenzo-mallia_res_partner;False;False;fr_FR;Vincenzo Mallia;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_vanessa-schmitt_res_partner;False;False;fr_FR;Vanessa Schmitt;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_laura-tripodi_res_partner;False;False;fr_FR;Laura Tripodi;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_eric-donnay_res_partner;False;False;fr_FR;Eric Donnay;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_emilie-ribes_res_partner;False;False;fr_FR;Emilie Ribes;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_renaud-labaume_res_partner;False;False;fr_FR;Renaud Labaume;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_emilie-peisino_res_partner;False;False;fr_FR;Emilie Peisino;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_lydie-maillard_res_partner;False;False;fr_FR;Lydie Maillard;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_sylvie-baudet_res_partner;False;False;fr_FR;Sylvie Baudet;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_christelle-pouderon_res_partner;False;False;fr_FR;Christelle Pouderon;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_vincent-depernon_res_partner;False;False;fr_FR;Vincent Depernon;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_lucie-moinel_res_partner;False;False;fr_FR;Lucie Moinel;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_helene-miller_res_partner;False;False;fr_FR;Hélène Miller;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_nicolas-caugant_res_partner;False;False;fr_FR;Nicolas Caugant;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_caroline-yanculovici_res_partner;False;False;fr_FR;Caroline Yanculovici;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_barbara-libolt_res_partner;False;False;fr_FR;Barbara Libolt;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_dorothee-maillard_res_partner;False;False;fr_FR;Dorothée Maillard;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_renaud-terry_res_partner;False;False;fr_FR;Renaud Terry;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_guillaume-brenot_res_partner;False;False;fr_FR;Guillaume Brenot;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_sandrine-chaulet_res_partner;False;False;fr_FR;Sandrine Chaulet;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_helene-briand-loublier_res_partner;False;False;fr_FR;Helene Briand-loublier;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_david-besson_res_partner;False;False;fr_FR;David Besson;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_sandrine-salvi_res_partner;False;False;fr_FR;Sandrine Salvi;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_mathieu-pradies_res_partner;False;False;fr_FR;Mathieu Pradies;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_julie-monnier_res_partner;False;False;fr_FR;Julie Monnier;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_catherine-larrouturou_res_partner;False;False;fr_FR;Catherine Larrouturou;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_cyril-talien_res_partner;False;False;fr_FR;Cyril Talien;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_anicet-gabillard_res_partner;False;False;fr_FR;Anicet Gabillard;;;Europe/Paris;6200
+Nice;base.fr;scenario.user_dt_fanny-roux_res_partner;False;False;fr_FR;Fanny Roux;;;Europe/Paris;6200
+LYON;base.fr;scenario.user_manager_dt-sasnoo_res_partner;False;False;fr_FR;Johanne Malfoy / Cedric Roubin - SAS Noo;2 place jules Ferry;;Europe/Paris;69006
+TOURNEFEUILLE;base.fr;scenario.user_manager_dt-hamel_res_partner;False;False;fr_FR;Karine & Sylvain Hamel - EURL Hamel Invest;16 rue du Cours d'eau;;Europe/Paris;31170
