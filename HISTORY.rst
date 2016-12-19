@@ -21,6 +21,7 @@ Unreleased
 **Features and Improvements**
 
 * Card 183: Add discount description on sale order
+* Add initial import of groups/partners/company/products
 
 **Bugfixes**
 
