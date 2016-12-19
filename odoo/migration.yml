@@ -3,6 +3,16 @@ migration:
     - version: 9.1.0
       operations:
         post:
+          - oerpscenario -t setup_before_modules
+          # Install account without l10n to avoid auto install
+          - odoo.py -i account --stop-after-init --workers=0
+          - anthem songs.install.pre_holding::no_accounting
+          - oerpscenario -t setup_only_modules
+          - anthem songs.install.post_holding::cleanup
+          - oerpscenario -t setup_after_modules
+          - anthem songs.install.data::main_first_data
           - oerpscenario -t setup
+          - anthem songs.install.data::main_others_data
           - anthem songs.install.accounting::main
-          - anthem songs.install.data::main
+          - anthem songs.install.stock::main
+          - anthem songs.install.company::main

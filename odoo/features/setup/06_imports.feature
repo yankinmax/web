@@ -16,17 +16,14 @@ Feature: Parameter the new database
   Scenario: import csv
     Given "survey.question" is imported from CSV "setup/survey.question.csv" using delimiter ","
 
-  @csv_import_warehouse
-  Scenario: import csv
-    Given "stock.warehouse" is imported from CSV "setup/stock.warehouse.csv" using delimiter ","
-
   @csv_import_product_category
   Scenario: import csv
     Given "product.category" is imported from CSV "setup/product.category.csv" using delimiter ";"
 
   @csv_import_product
   Scenario: import csv
-    Given "product.product" is imported from CSV "setup/product.csv" using delimiter ";"
+    Given "product.product" is imported from CSV "install/10.product - all.csv" using delimiter ","
+    And "product.product" is imported from CSV "install/11.product - new.csv" using delimiter ","
 
   @csv_import_programs
   Scenario: import csv
