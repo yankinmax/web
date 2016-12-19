@@ -8,6 +8,18 @@ Unreleased
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+9.8.0 (2016-12-19)
+++++++++++++++++++
+
+**Features and Improvements**
+
 * Clean demo data (and reorganize initial setup)
 * Refresh initial data (CSV imports)
 * Setup chart of account for all centers (not main companies)
@@ -15,13 +27,9 @@ Unreleased
 * Create a default warehouse for each company
 * Setup company report footer
 
-**Bugfixes**
-
 **Build**
 
 * Update rancher configuration for environments (prod, integration, test)
-
-**Documentation**
 
 
 9.7.0 (2016-12-07)
