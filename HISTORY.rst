@@ -13,6 +13,7 @@ Unreleased
 * Setup chart of account for all centers (not main companies)
 * Delete taxes on products (default taxes will be defined on accounts)
 * Create a default warehouse for each company
+* Setup company report footer
 
 **Bugfixes**
 
