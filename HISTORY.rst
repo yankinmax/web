@@ -12,6 +12,8 @@ Unreleased
 
 **Build**
 
+* Update rancher configuration for environments (prod, integration, test)
+
 **Documentation**
 
 
