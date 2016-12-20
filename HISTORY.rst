@@ -55,6 +55,7 @@ Unreleased
 ++++++++++++++++++
 
 **Features and Improvements**
+
 * #129: Add specific payment mode module
 * #173: Manual discount.
 * #161: Quantity is not editable if product has the 'no quantity' flag.
@@ -65,12 +66,14 @@ Unreleased
 ++++++++++++++++++
 
 **Features and Improvements**
+
 * #181: Voucher are linked to sale.order and generated at sale.order confirmation.
 * #184: User can select voucher for all center's customer (instead of only quotation customer)
 * Disable product popup in sale order lines.
 * Create discount program in scenario
 
 **Bugfixes**
+
 * #182: Remove select vouchers when user change the quotation customer.
 
 
@@ -78,10 +81,12 @@ Unreleased
 ++++++++++++++++++
 
 **Features and Improvements**
+
 * Program condition: allow to choose quantity computation type.
 * Add taxes.
 
 **Bugfixes**
+
 * Fixed product price didn't work when another program defined a pricelist.
 
 
@@ -89,6 +94,7 @@ Unreleased
 ++++++++++++++++++
 
 **Features and Improvements**
+
 * Enhance product add action in program.
 
 
@@ -96,10 +102,12 @@ Unreleased
 ++++++++++++++++++
 
 **Features and Improvements**
+
 * Product category condition: Manage sub category.
 * Update products csv files.
 
 **Bugfixes**
+
 * Condition was not save when type was product category.
 * Fix discout program ACL
 * Configure report.url settings
@@ -110,9 +118,11 @@ Unreleased
 ++++++++++++++++++
 
 **Bugfixes**
+
 * RRR fix: Case when we have two discount apply on the same line
 
 **Build**
+
 * Migrate integration database on postgres rds server
 * Deployment configuration fixes
 
@@ -121,6 +131,7 @@ Unreleased
 ++++++++++++++++++
 
 **Features and Improvements**
+
 * Display pricelist for all users
 * Product and product category imports
 * Discount program acl
