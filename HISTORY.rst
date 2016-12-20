@@ -12,6 +12,8 @@ Unreleased
 
 **Build**
 
+* Fix log level on integration/prod environments
+
 **Documentation**
 
 
