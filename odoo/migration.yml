@@ -16,3 +16,4 @@ migration:
           - anthem songs.install.accounting::main
           - anthem songs.install.stock::main
           - anthem songs.install.company::main
+          - anthem songs.install.post::main

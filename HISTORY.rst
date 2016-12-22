@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* Change admin password at the end of setup
+
 **Bugfixes**
 
 **Build**
