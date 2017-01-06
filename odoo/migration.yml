@@ -23,3 +23,5 @@ migration:
           # Odoo
           - auth_oauth
           - base # To update all addons
+          # Specific
+          - specific_account
