@@ -17,3 +17,11 @@ migration:
           - anthem songs.install.stock::main
           - anthem songs.install.company::main
           - anthem songs.install.post::main
+    - version: 9.9.0
+      addons:
+        upgrade:
+          # Odoo
+          - auth_oauth
+          - base # To update all addons
+          # Specific
+          - specific_account

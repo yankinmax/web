@@ -4,3 +4,4 @@ unidecode==0.04.19
 phonenumbers==7.5.2
 xlsxwriter==0.9.3
 ofxparse==0.15
+openupgradelib==1.2.2
