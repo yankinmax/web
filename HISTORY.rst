@@ -8,18 +8,26 @@ Unreleased
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+9.9.0 (2017-01-06)
+++++++++++++++++++
+
+**Features and Improvements**
+
 * Change admin password at the end of setup
 * Update all modules (odoo and oca) at last version
 * Card 99: Install module to activate authentication by google account
 * Card 216: On payment, set partner and ref even on VAT item entries
 
-**Bugfixes**
-
 **Build**
 
 * Fix log level on integration/prod environments
-
-**Documentation**
 
 
 9.8.0 (2016-12-19)
