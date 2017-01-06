@@ -9,6 +9,7 @@ Unreleased
 **Features and Improvements**
 
 * Change admin password at the end of setup
+* Card 99: Install module to activate authentication by google account
 
 **Bugfixes**
 
