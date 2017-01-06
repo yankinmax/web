@@ -22,3 +22,4 @@ migration:
         upgrade:
           # Odoo
           - auth_oauth
+          - base # To update all addons

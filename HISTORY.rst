@@ -9,6 +9,7 @@ Unreleased
 **Features and Improvements**
 
 * Change admin password at the end of setup
+* Update all modules (odoo and oca) at last version
 * Card 99: Install module to activate authentication by google account
 
 **Bugfixes**
