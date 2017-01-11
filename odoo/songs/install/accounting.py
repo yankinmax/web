@@ -16,8 +16,8 @@ def define_auto_generate_invoices_for_companies(ctx):
 
 
 @anthem.log
-def configure_chart_of_account(ctx):
-    """Configure COA for companies"""
+def configure_missing_chart_of_account(ctx, full_mode=True):
+    """Configure Missing COA for companies"""
 
     coa_dict = {
         'scenario.company_depiltechSAS': {
@@ -27,6 +27,13 @@ def configure_chart_of_account(ctx):
             'purchase_tax_id': 'l10n_fr.tva_acq_normale',
         },
     }
+    if full_mode:
+        coa_dict['scenario.company_agencyFR'] = {
+            'chart_template_id': 'l10n_fr.l10n_fr_pcg_chart_template',
+            'template_transfer_account_id': 'l10n_fr.pcg_58',
+            'sale_tax_id': 'l10n_fr.tva_normale',
+            'purchase_tax_id': 'l10n_fr.tva_acq_normale',
+        }
     for company_xml_id, values in coa_dict.iteritems():
         main_company = ctx.env.ref(company_xml_id)
         coa = ctx.env.ref(values['chart_template_id'])
@@ -39,21 +46,22 @@ def configure_chart_of_account(ctx):
             ('parent_id', '=', main_company.id),
         ])
         for company in companies:
-            wizard = ctx.env['wizard.multi.charts.accounts'].create({
-                'company_id': company.id,
-                'chart_template_id': coa.id,
-                'transfer_account_id': template_transfer_account.id,
-                'code_digits': 8,
-                'sale_tax_id': sale_tax.id,
-                'purchase_tax_id': purchase_tax.id,
-                'sale_tax_rate': 15,
-                'purchase_tax_rate': 15,
-                'complete_tax_set': coa.complete_tax_set,
-                'currency_id': ctx.env.ref('base.EUR').id,
-                'bank_account_code_prefix': coa.bank_account_code_prefix,
-                'cash_account_code_prefix': coa.cash_account_code_prefix,
-            })
-            wizard.execute()
+            if not company.chart_template_id:
+                wizard = ctx.env['wizard.multi.charts.accounts'].create({
+                    'company_id': company.id,
+                    'chart_template_id': coa.id,
+                    'transfer_account_id': template_transfer_account.id,
+                    'code_digits': 8,
+                    'sale_tax_id': sale_tax.id,
+                    'purchase_tax_id': purchase_tax.id,
+                    'sale_tax_rate': 15,
+                    'purchase_tax_rate': 15,
+                    'complete_tax_set': coa.complete_tax_set,
+                    'currency_id': ctx.env.ref('base.EUR').id,
+                    'bank_account_code_prefix': coa.bank_account_code_prefix,
+                    'cash_account_code_prefix': coa.cash_account_code_prefix,
+                })
+                wizard.execute()
 
 
 @anthem.log
@@ -118,6 +126,6 @@ def import_account_account(ctx):
 @anthem.log
 def main(ctx):
     define_auto_generate_invoices_for_companies(ctx)
-    configure_chart_of_account(ctx)
+    configure_missing_chart_of_account(ctx, full_mode=False)
     remove_useless_accounts(ctx)
     import_account_account(ctx)

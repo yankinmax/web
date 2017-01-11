@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* Card 206: Configure chart of account for all FR company (only centers)
+
 **Bugfixes**
 
 **Build**

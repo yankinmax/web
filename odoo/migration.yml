@@ -25,3 +25,9 @@ migration:
           - base # To update all addons
           # Specific
           - specific_account
+    - version: 9.10.0
+      modes:
+        full:
+          operations:
+            post:
+              - anthem songs.install.accounting::configure_missing_chart_of_account
