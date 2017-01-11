@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* Card 217: Add a partner type 'agency customer'
+
 **Bugfixes**
 
 **Build**

@@ -25,3 +25,8 @@ migration:
           - base # To update all addons
           # Specific
           - specific_account
+    - version: 9.10.0
+      addons:
+        upgrade:
+          # Specific
+          - specific_base
