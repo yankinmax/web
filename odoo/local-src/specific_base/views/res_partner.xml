@@ -48,6 +48,13 @@
         <field name="priority">48</field>
         <field name="arch" type="xml">
 
+            <field name="company_type" position="after">
+                <field name="company_type_visible" invisible="True"/>
+            </field>
+            <field name="company_type" position="attributes">
+                <attribute name="attrs">{'invisible': [('company_type_visible', '=', False)]}</attribute>
+            </field>
+
             <!-- disable duplicate button -->
             <xpath expr="//form" position="attributes">
                 <attribute name="duplicate">0</attribute>

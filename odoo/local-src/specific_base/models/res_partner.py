@@ -178,7 +178,31 @@ class ResPartner(models.Model):
 
     company_type = fields.Selection(
         selection_add=[('agency_customer', 'Agency customer')],
+        default=lambda self: self._default_company_type(),
     )
+
+    @api.model
+    def _default_company_type(self):
+        return (
+            'agency_customer'
+            if self.env.user.has_group('scenario.grp_centers')
+            else 'person'
+        )
+
+    company_type_visible = fields.Boolean(
+        default=lambda self: not self.env.user.has_group(
+            'scenario.grp_centers'
+        ),
+        compute='_compute_company_type_visible',
+        store=False,
+    )
+
+    @api.multi
+    def _compute_company_type_visible(self):
+        for item in self:
+            item.company_type_visible = not self.env.user.has_group(
+                'scenario.grp_centers'
+            )
 
     phototherapist_id = fields.Many2one(
         comodel_name='res.company.phototherapist',
