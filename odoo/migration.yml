@@ -31,3 +31,7 @@ migration:
           operations:
             post:
               - anthem songs.install.accounting::configure_missing_chart_of_account
+      addons:
+        upgrade:
+          # Specific
+          - specific_base
