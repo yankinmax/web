@@ -5,7 +5,9 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <field name="type" position="before">
-                <field name="sponsor_id" options="{'no_create' : True, 'no_open': True}"/>
+                <field name="sponsor_id"
+                       options="{'no_create' : True, 'no_open': True}"
+                       attrs="{'invisible': [('company_type', '!=', 'agency_customer')]}"/>
             </field>
         </field>
     </record>

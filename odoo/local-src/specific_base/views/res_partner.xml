@@ -58,63 +58,64 @@
             </xpath>
             <!-- hide fields -->
             <field name="title" position="attributes">
-                <attribute name="invisible">1</attribute>
+                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
             </field>
             <field name="fax" position="attributes">
-                <attribute name="invisible">1</attribute>
+                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
             </field>
             <field name="category_id" position="attributes">
-                <attribute name="invisible">1</attribute>
+                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
             </field>
             <field name="website" position="attributes">
-                <attribute name="invisible">1</attribute>
+                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
             </field>
             <field name="function" position="attributes">
-                <attribute name="invisible">1</attribute>
+                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
             </field>
-            <xpath expr="//field[@name='opt_out']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
 
             <field name="name" position="attributes">
                 <attribute name="attrs">{
-                'readonly': [('is_company', '=', False)],
-                'required': [('is_company', '=', True)],
-                'invisible': [('is_company', '=', False)],
+                'readonly': [('company_type', '=', 'agency_customer')],
+                'required': [('company_type', '!=', 'agency_customer')],
+                'invisible': [('company_type', '=', 'agency_customer')],
                 }</attribute>
             </field>
             <field name="firstname" position="after">
-                <field name="birthday" attrs="{'required': [('is_company', '=', False)]}"/>
+                <field name="birthday"
+                       attrs="{'required': [('company_type', '=', 'agency_customer')], 'invisible': [('company_type', '!=', 'agency_customer')]}"/>
             </field>
             <field name="email" position="attributes">
-                <attribute name="required">1</attribute>
+                <attribute name="attrs">{'required': [('company_type', '=', 'agency_customer')]}</attribute>
             </field>
             <field name="street" position="attributes">
-                <attribute name="required">1</attribute>
+                <attribute name="attrs">{'required': [('company_type', '=', 'agency_customer')]}</attribute>
             </field>
             <field name="city" position="attributes">
-                <attribute name="required">1</attribute>
+                <attribute name="attrs">{'required': [('company_type', '=', 'agency_customer')]}</attribute>
             </field>
             <field name="zip" position="attributes">
-                <attribute name="required">1</attribute>
+                <attribute name="attrs">{'required': [('company_type', '=', 'agency_customer')]}</attribute>
             </field>
             <field name="mobile" position="attributes">
-                <attribute name="required">1</attribute>
+                <attribute name="attrs">{'required': [('company_type', '=', 'agency_customer')]}</attribute>
             </field>
             <field name="firstname" position="attributes">
-                <attribute name="attrs">{'required': [('is_company', '=', False)]}</attribute>
+                <attribute name="attrs">{'required': [('company_type', '=', 'agency_customer')], 'invisible': [('company_type', '!=', 'agency_customer')]}</attribute>
             </field>
             <field name="lastname" position="attributes">
-                <attribute name="attrs">{'required': [('is_company', '=', False)]}</attribute>
+                <attribute name="attrs">{'required': [('company_type', '=', 'agency_customer')], 'invisible': [('company_type', '!=', 'agency_customer')]}</attribute>
             </field>
 
+            <field name="opt_out" position="replace"/>
             <field name="phone" position="before">
-                <field name="opt_out"/>
-                <field name="provenance"/>
+                <field name="opt_out" string="Mailing Opt-Out"/>
+                <field name="provenance" attrs="{'invisible': [('company_type', '!=', 'agency_customer')]}"/>
             </field>
             <field name="lastname" position="before">
-                <field name="phototherapist_id" attrs="{'required': [('is_company', '=', False)]}"/>
-                <field name="title" attrs="{'required': [('is_company', '=', False)]}"/>
+                <field name="phototherapist_id"
+                       attrs="{'required': [('company_type', '=', 'agency_customer')], 'invisible': [('company_type', '!=', 'agency_customer')]}"/>
+                <field name="title"
+                       attrs="{'required': [('company_type', '=', 'agency_customer')], 'invisible': [('company_type', '!=', 'agency_customer')]}"/>
             </field>
             <xpath expr="//div[@class='oe_title']/div[@class='oe_edit_only']" position="attributes">
                 <attribute name="class"></attribute>
@@ -130,7 +131,7 @@
                 <attribute name="groups">base.group_multi_company</attribute>
             </xpath>
             <xpath expr="//notebook/page[@name='internal_notes']" position="before">
-                <page name="more_infos" string="Extra Infos" attrs="{'invisible': [('company_type', '=', 'company')]}">
+                <page name="more_infos" string="Extra Infos" attrs="{'invisible': [('company_type', '!=', 'agency_customer')]}">
                     <group>
                         <group>
                             <field name="function"/>
@@ -156,7 +157,7 @@
                         </group>
                     </group>
                 </page>
-                <page name="survey" string="Diagnostic">
+                <page name="survey" string="Diagnostic" attrs="{'invisible': [('company_type', '!=', 'agency_customer')]}">
                     <button name="take_me_to_diagnostic_survey" type="object" string="Fill Diagnostic" class="oe_highlight"/>
                     <group name="survey_answers" string="Answers">
                         <field name="survey_input_lines">
@@ -169,15 +170,15 @@
                         </field>
                     </group>
                 </page>
-                <page name="sales_invoices" string="Sales / Invoices">
+                <page name="sales_invoices" string="Sales / Invoices" attrs="{'invisible': [('company_type', '!=', 'agency_customer')]}">
                     <group name="sales" string="Sales">
                         <field name="sale_order_ids" nolabel="1"/>
                     </group>
-                    <group name="invoices" string="Invoices">
+                    <group name="invoices" string="Invoices" attrs="{'invisible': [('company_type', '!=', 'agency_customer')]}">
                         <field name="invoice_ids" nolabel="1"/>
                     </group>
                 </page>
-                <page name="meetings" string="Meetings">
+                <page name="meetings" string="Meetings" attrs="{'invisible': [('company_type', '!=', 'agency_customer')]}">
                         <field name="meeting_ids" nolabel="1"/>
                 </page>
             </xpath>

@@ -176,6 +176,10 @@ class ResPartner(models.Model):
         ])
         return l
 
+    company_type = fields.Selection(
+        selection_add=[('agency_customer', 'Agency customer')],
+    )
+
     phototherapist_id = fields.Many2one(
         comodel_name='res.company.phototherapist',
         string='Phototherapist')
