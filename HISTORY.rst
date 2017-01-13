@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* Card 223: Inverse phototherapist and reference fields position on account invoice form view
+
 **Bugfixes**
 
 **Build**

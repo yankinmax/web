@@ -8,10 +8,15 @@
         <field name="priority" eval="48"/>
         <field name="arch" type="xml">
 
-            <xpath expr="//field[@name='partner_id']" position="before">
-                <field name="phototherapist_id"/>
-            </xpath>
+            <field name="name" position="replace"/>
 
+            <field name="payment_term_id" position="after">
+                <field name="name"/>
+            </field>
+
+            <field name="fiscal_position_id" position="after">
+                <field name="phototherapist_id"/>
+            </field>
 
         </field>
     </record>
