@@ -114,3 +114,17 @@ class ResCompany(models.Model):
             value['tz'] = pytz.country_timezones[
                 self.env['res.country'].browse(country_id).code][0]
         return res
+
+    partner_zip = fields.Char(
+        related='partner_id.zip',
+        string='Zip',
+        store=True,
+        readonly=True,
+    )
+
+    partner_city = fields.Char(
+        related='partner_id.city',
+        string='City',
+        store=True,
+        readonly=True,
+    )

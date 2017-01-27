@@ -60,3 +60,15 @@ class CrmLeadTag(models.Model):
         help='Unique id for lead tag',
         size=128,
     )
+
+    name = fields.Char(
+        translate=True,
+    )
+
+
+class CrmLostReason(models.Model):
+    _inherit = 'crm.lost.reason'
+
+    name = fields.Char(
+        translate=True,
+    )

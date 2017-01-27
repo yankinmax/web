@@ -37,6 +37,10 @@ class UtmMedium(models.Model):
         size=128,
     )
 
+    name = fields.Char(
+        translate=True,
+    )
+
 
 class UtmCampaign(models.Model):
     _inherit = 'utm.campaign'
