@@ -96,6 +96,11 @@ class ResCompany(models.Model):
     # product management
     can_create_product = fields.Boolean(default=False)
 
+    qualitelis_center_id = fields.Integer(
+        string='Qualitelis, center id',
+        help='Center id in Qualitelis'
+    )
+
     @api.onchange('opening')
     def onchange_opening(self):
         if not self.opening:

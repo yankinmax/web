@@ -53,6 +53,7 @@
                         <group>
                             <field name="active_campaigns"/>
                             <field name="display_teleop"/>
+                            <field name="qualitelis_center_id"/>
                             <field name="nb_desk"/>
                             <field name="nb_room"/>
                             <field name="description_active"/>

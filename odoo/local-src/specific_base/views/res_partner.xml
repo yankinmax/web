@@ -155,12 +155,13 @@
                             <field name="beauty_institute_attented"/>
                         </group>
                         <group>
-                            <label for="comment1" colspan="4"/>
-                            <field name="comment1" nolabel="1" colspan="4"/>
-                            <label for="comment2" colspan="4"/>
-                            <field name="comment2" nolabel="1" colspan="4"/>
-                            <label for="comment3" colspan="4"/>
-                            <field name="comment3" nolabel="1" colspan="4"/>
+                            <label for="comment1" colspan="2"/>
+                            <field name="comment1" nolabel="1" colspan="2"/>
+                            <label for="comment2" colspan="2"/>
+                            <field name="comment2" nolabel="1" colspan="2"/>
+                            <label for="comment3" colspan="2"/>
+                            <field name="comment3" nolabel="1" colspan="2"/>
+                            <field name="coffret_date_remise"/>
                         </group>
                     </group>
                 </page>

@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* Card 193: Add specific fields on several models
+
 **Bugfixes**
 
 * Remove useless import on install/company.py songs
