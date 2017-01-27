@@ -40,3 +40,6 @@
 [submodule "odoo/oerpscenario"]
 	path = odoo/oerpscenario
 	url = https://github.com/camptocamp/oerpscenario.git
+[submodule "odoo/external-src/sale-workflow"]
+	path = odoo/external-src/sale-workflow
+	url = git@github.com:OCA/sale-workflow.git

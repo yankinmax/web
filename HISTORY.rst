@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* Card 237: Add several modules
+
 **Bugfixes**
 
 * Remove useless import on install/company.py songs
