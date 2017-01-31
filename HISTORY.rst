@@ -15,6 +15,14 @@ Unreleased
 **Documentation**
 
 
+9.10.1 (2017-01-31)
++++++++++++++++++++
+
+**Bugfixes**
+
+* Add missing pull master before tag
+
+
 9.10.0 (2017-01-31)
 +++++++++++++++++++
 
