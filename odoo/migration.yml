@@ -26,6 +26,9 @@ migration:
           # Specific
           - specific_account
     - version: 9.10.0
+      operations:
+        post:
+          - anthem songs.install.company::setup_company_logo
       modes:
         full:
           operations:
