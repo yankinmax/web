@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* Fix card 97: Configure SMTP outgoing server mail on PROD environment
+
 **Build**
 
 **Documentation**
