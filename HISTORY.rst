@@ -8,16 +8,22 @@ Unreleased
 
 **Features and Improvements**
 
-* Add depiltech logo on main company
-* Card 97: Configure SMTP outgoing server mail on PROD environment
-* Card 206: Configure chart of account for all FR company (only centers)
-* Card 217: Add a partner type 'agency customer'
-
 **Bugfixes**
 
 **Build**
 
 **Documentation**
+
+
+9.10.0 (2017-01-31)
++++++++++++++++++++
+
+**Features and Improvements**
+
+* Add depiltech logo on main company
+* Card 97: Configure SMTP outgoing server mail on PROD environment
+* Card 206: Configure chart of account for all FR company (only centers)
+* Card 217: Add a partner type 'agency customer'
 
 
 9.9.0 (2017-01-06)
