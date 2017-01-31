@@ -8,6 +8,7 @@ Unreleased
 
 **Features and Improvements**
 
+* Card 97: Configure SMTP outgoing server mail on PROD environment
 * Card 206: Configure chart of account for all FR company (only centers)
 * Card 217: Add a partner type 'agency customer'
 
