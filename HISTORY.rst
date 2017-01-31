@@ -10,11 +10,17 @@ Unreleased
 
 **Bugfixes**
 
-* Fix card 97: Configure SMTP outgoing server mail on PROD environment
-
 **Build**
 
 **Documentation**
+
+
+9.10.2 (2017-01-31)
++++++++++++++++++++
+
+**Bugfixes**
+
+* Fix card 97: Configure SMTP outgoing server mail on PROD environment
 
 
 9.10.1 (2017-01-31)
