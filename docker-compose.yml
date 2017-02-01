@@ -1,19 +1,25 @@
+# Root file for the composition.
+#
+# The options specific to the development should go in
+# 'docker-compose.override.yml' which is automatically applied on top of this
+# file when the option '-f' of docker-compose is not used
+
 version: '2'
 services:
   odoo:
+    tty: true
     build: ./odoo/
-    volumes:
-      - "data-odoo:/data/odoo"
+    command: odoo --load=web,web_kanban,attachment_s3,session_redis,logging_json
     depends_on:
       - db
+    volumes:
+      - "data-odoo:/data/odoo"
     environment:
       - SCENARIO_MAIN_TAG=depiltech
       - DB_USER=odoo
       - DB_PASSWORD=odoo
       - DB_NAME=odoodb
       - ADMIN_PASSWD=admin
-      - LIMIT_TIME_CPU=5000
-      - LIMIT_TIME_REAL=5000
       - RUNNING_ENV=dev
       - DEMO=False
 
@@ -29,7 +35,6 @@ services:
     volumes:
       - "data-db:/var/lib/postgresql/data"
 
-  # can be useful for dev when longpolling is required
   nginx:
     image: camptocamp/odoo-nginx:9.0
     depends_on:
