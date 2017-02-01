@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* Remove useless import on install/company.py songs
+
 **Build**
 
 **Documentation**
