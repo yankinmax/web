@@ -2,8 +2,6 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from anthem.lyrics.records import create_or_update
-
 import anthem
 from base64 import b64encode
 from pkg_resources import Requirement, resource_string
