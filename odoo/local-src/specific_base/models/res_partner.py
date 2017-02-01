@@ -243,6 +243,11 @@ class ResPartner(models.Model):
     comment2 = fields.Text(string='Cosmetic habits / Brand used')
     comment3 = fields.Text(string='Other')
 
+    coffret_date_remise = fields.Date(
+        string='Delivery date of the box',
+        help='Delivery date of the gift box to the customer',
+    )
+
     @api.multi
     def take_me_to_diagnostic_survey(self):
         self.ensure_one()

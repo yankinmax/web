@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-11 13:01+0000\n"
-"PO-Revision-Date: 2017-01-11 13:01+0000\n"
+"POT-Creation-Date: 2017-01-27 13:19+0000\n"
+"PO-Revision-Date: 2017-01-27 13:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,6 +37,16 @@ msgstr "2 mois"
 #, python-format
 msgid "3 months"
 msgstr "3 mois"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_country_is_active_b2b
+msgid "Activate on B2B site"
+msgstr "Activation sur le site B2B ?"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_country_is_active_b2c
+msgid "Activate on B2C site"
+msgstr "Activation sur le site B2C ?"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_active
@@ -75,6 +85,11 @@ msgid "Allowed company ids"
 msgstr "Sociétés autorisées"
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead_has_franchisee
+msgid "Already owning a franchise"
+msgstr "Déjà propriétaire d'une franchise ?"
+
+#. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_partner_comment1
 msgid "Anecdote/Vacations"
 msgstr "Anecdote/Vacations"
@@ -89,6 +104,11 @@ msgstr "Réponses"
 #, python-format
 msgid "Artisan"
 msgstr "Artisan"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead_specific_form
+msgid "B2B"
+msgstr "B2B"
 
 #. module: specific_base
 #: model:ir.ui.view,arch_db:specific_base.back_partner
@@ -112,6 +132,11 @@ msgid "Branch"
 msgstr "Branch"
 
 #. module: specific_base
+#: model:ir.model,name:specific_base.model_utm_campaign
+msgid "Campaign"
+msgstr "Campagne"
+
+#. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_can_create_product
 msgid "Can create product"
 msgstr "Can create product"
@@ -122,9 +147,24 @@ msgid "Capital stock"
 msgstr "Capital stock"
 
 #. module: specific_base
+#: model:ir.model,name:specific_base.model_crm_lead_tag
+msgid "Category of lead"
+msgstr "Catégorie de piste"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_company_qualitelis_center_id
+msgid "Center id in Qualitelis"
+msgstr "Id dans le SI de Qualitelis du centre"
+
+#. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_center_manager_name
 msgid "Center manager name"
 msgstr "Center manager name"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_utm_medium
+msgid "Channels"
+msgstr "Canaux"
 
 #. module: specific_base
 #: code:addons/specific_base/models/res_company.py:43
@@ -220,6 +260,11 @@ msgid "Cosmetic habits / Brand used"
 msgstr "Cosmetic habits / Brand used"
 
 #. module: specific_base
+#: model:ir.model,name:specific_base.model_res_country
+msgid "Country"
+msgstr "Pays"
+
+#. module: specific_base
 #: code:addons/specific_base/models/res_partner.py:148
 #, python-format
 msgid "Couple"
@@ -256,6 +301,18 @@ msgstr "Date ouverture"
 #: model:ir.model.fields,field_description:specific_base.field_res_company_date_start_contract
 msgid "Date start contract"
 msgstr "Date de début de contrat"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_coffret_date_remise
+#: model:ir.model.fields,field_description:specific_base.field_res_users_coffret_date_remise
+msgid "Delivery date of the box"
+msgstr "Date de remise du coffret"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_partner_coffret_date_remise
+#: model:ir.model.fields,help:specific_base.field_res_users_coffret_date_remise
+msgid "Delivery date of the gift box to the customer"
+msgstr "Date de remise du coffret cadeau au client"
 
 #. module: specific_base
 #: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
@@ -324,6 +381,11 @@ msgid "Employees of private enterprise"
 msgstr "Employés d’entreprise privée"
 
 #. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_crm_lead_opening_date
+msgid "Estimated date of opening of the future center"
+msgstr "Date prévisionnelle d'ouverture du futur centre"
+
+#. module: specific_base
 #: model:ir.model,name:specific_base.model_calendar_event
 msgid "Event"
 msgstr "Évènement"
@@ -389,6 +451,11 @@ msgid "Flash test zone"
 msgstr "Flash test zone"
 
 #. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_users_qualitelis_responsable_region_id
+msgid "For network animators, region id in Qualitelis for the responsible of the user"
+msgstr "Pour les animateurs réseau, id dans le SI de Qualitelis de la région dont le user est responsable"
+
+#. module: specific_base
 #: code:addons/specific_base/models/res_partner.py:131
 #, python-format
 msgid "Foremen, supervisors"
@@ -424,6 +491,16 @@ msgstr "Nom"
 #: model:ir.ui.view,arch_db:specific_base.view_company_schedule_form
 msgid "Friday"
 msgstr "Vendredi"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead_graduate_education
+msgid "Graduate education"
+msgstr "Niveau d'études"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_crm_lead_has_franchisee
+msgid "Has candidate ever been responsible of a franchise?"
+msgstr "Le candidat a t'il déjà été responsable d'une franchise ?"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_calendar_event_has_come
@@ -489,6 +566,16 @@ msgstr "Facture"
 #: model:ir.ui.view,arch_db:specific_base.view_partner_center_form
 msgid "Invoices"
 msgstr "Factures"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_country_is_active_b2b
+msgid "Is country activated on B2B site?"
+msgstr "Le pays est-il activé sur le site B2B ?"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_res_country_is_active_b2c
+msgid "Is country activated on B2C site?"
+msgstr "Le pays est-il activé sur le site B2C ?"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_is_open_am_0
@@ -559,6 +646,11 @@ msgstr "Dernière mise à jour le"
 #: model:ir.model.fields,field_description:specific_base.field_res_company_latitude
 msgid "Latitude"
 msgstr "Latitude"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Piste/opportunité"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_form
@@ -693,9 +785,34 @@ msgid "Opening at"
 msgstr "Ouvre à"
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead_opening_country_id
+msgid "Opening country"
+msgstr "Pays d'ouverture"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_crm_lead_opening_country_id
+msgid "Opening country of the future center"
+msgstr "Pays du futur centre"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead_opening_date
+msgid "Opening date"
+msgstr "Date d'ouverture"
+
+#. module: specific_base
 #: model:ir.model.fields,help:specific_base.field_res_company_opening
 msgid "Opening in progress"
 msgstr "En cours d'ouverture"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead_opening_location
+msgid "Opening location"
+msgstr "Lieu d'ouverture"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_crm_lead_opening_location
+msgid "Opening location of the future center"
+msgstr "Lieu d'ouverture du futur centre"
 
 #. module: specific_base
 #: code:addons/specific_base/models/res_partner.py:167
@@ -748,6 +865,16 @@ msgstr "En passant devant le centre / Vitrine"
 #: model:ir.model.fields,field_description:specific_base.field_res_company_payments_mode
 msgid "Payments mode"
 msgstr "Mode de paiements"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead_personal_contribution
+msgid "Personal contribution"
+msgstr "Apport personnel"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_crm_lead_personal_contribution
+msgid "Amount of personal contribution in currency of the future franchise"
+msgstr "Montant de l'apport personnel dans la devise du futur franchisé"
 
 #. module: specific_base
 #: code:addons/specific_base/models/res_partner.py:136
@@ -804,6 +931,16 @@ msgstr "Communication Prospectus (Flyers, publipostage en boite aux lettres...)"
 #: model:ir.model.fields,field_description:specific_base.field_res_partner_provenance_other
 msgid "Provenance other"
 msgstr "Provenance other"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_qualitelis_center_id
+msgid "Qualitelis, center id"
+msgstr "Qualitelis, identifiant du centre"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_users_qualitelis_responsable_region_id
+msgid "Qualitelis, region id"
+msgstr "Qualitelis, identifiant de la région"
 
 #. module: specific_base
 #: code:addons/specific_base/models/res_partner.py:57
@@ -881,6 +1018,26 @@ msgid "School teachers, teachers and assimilated"
 msgstr "Professeurs des écoles, instituteurs et assimilés"
 
 #. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_utm_campaign_specific_search
+msgid "Search campaign"
+msgstr "Recherche campagne"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead_tag_specific_search
+msgid "Search lead tag"
+msgstr "Recherche piste étiquettes"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_utm_medium_specific_search
+msgid "Search medium"
+msgstr "Recherche moyenne"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_utm_source_specific_search
+msgid "Search source"
+msgstr "Recherche source"
+
+#. module: specific_base
 #: code:addons/specific_base/models/res_partner.py:147
 #, python-format
 msgid "Single"
@@ -892,6 +1049,27 @@ msgid "Siège DT"
 msgstr "Siège DT"
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead_tag_slug
+#: model:ir.model.fields,field_description:specific_base.field_utm_campaign_slug
+#: model:ir.model.fields,field_description:specific_base.field_utm_medium_slug
+#: model:ir.model.fields,field_description:specific_base.field_utm_source_slug
+msgid "Slug"
+msgstr "Slug"
+
+#. module: specific_base
+#: code:addons/specific_base/models/crm_lead.py:54
+#: code:addons/specific_base/models/utm.py:15
+#: code:addons/specific_base/models/utm.py:31
+#: code:addons/specific_base/models/utm.py:47
+#: sql_constraint:crm.lead.tag:0
+#: sql_constraint:utm.campaign:0
+#: sql_constraint:utm.medium:0
+#: sql_constraint:utm.source:0
+#, python-format
+msgid "Slug should be unique"
+msgstr "Slug doit être unique"
+
+#. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_sms_abo
 msgid "Sms abo"
 msgstr "Sms abo"
@@ -900,6 +1078,11 @@ msgstr "Sms abo"
 #: model:ir.model.fields,field_description:specific_base.field_res_partner_socio_professional_category
 msgid "Socio-Professional Category"
 msgstr "Socio-Professional Category"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_utm_source
+msgid "Source"
+msgstr "Source"
 
 #. module: specific_base
 #: code:addons/specific_base/models/res_partner.py:65
@@ -982,6 +1165,11 @@ msgid "Timezone"
 msgstr "Fuseau horaire"
 
 #. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_crm_lead_graduate_education
+msgid "Training and diplomas"
+msgstr "Formations et diplômes"
+
+#. module: specific_base
 #: code:addons/specific_base/models/res_company.py:45
 #, python-format
 msgid "Transfer"
@@ -1004,6 +1192,26 @@ msgid "Unemployed"
 msgstr "Chômeurs"
 
 #. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_utm_campaign_slug
+msgid "Unique id for campaign"
+msgstr "Identification unique d'une campagne"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_crm_lead_tag_slug
+msgid "Unique id for lead tag"
+msgstr "Identification unique d'un tag de lead"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_utm_medium_slug
+msgid "Unique id for medium"
+msgstr "Identification unique d'un média"
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_utm_source_slug
+msgid "Unique id for source"
+msgstr "Identification unique d'une source"
+
+#. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_url_customer_reviews
 msgid "Url customer reviews"
 msgstr "Url customer reviews"
@@ -1017,6 +1225,11 @@ msgstr "Url virtual visit"
 #: model:ir.model.fields,help:specific_base.field_res_company_info_phoning
 msgid "Used by teleop user to inform a customer"
 msgstr "Used by teleop user to inform a customer"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
 
 #. module: specific_base
 #: model:ir.ui.view,arch_db:specific_base.view_company_schedule_form
