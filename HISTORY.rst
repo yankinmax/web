@@ -8,6 +8,18 @@ Unreleased
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+9.11.0 (2017-02-01)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Card 193: Add specific fields on several models
 * Card 195: Add translatable flag on several fields
 * Card 223: Inverse phototherapist and reference fields position on account invoice form view
@@ -16,10 +28,6 @@ Unreleased
 **Bugfixes**
 
 * Remove useless import on install/company.py songs
-
-**Build**
-
-**Documentation**
 
 
 9.10.2 (2017-01-31)
