@@ -38,3 +38,8 @@ migration:
         upgrade:
           # Specific
           - specific_base
+    - version: 9.11.0
+      addons:
+        upgrade:
+          # Specific
+          - specific_base
