@@ -41,5 +41,12 @@ migration:
     - version: 9.11.0
       addons:
         upgrade:
+          # Odoo
+          - board
+          - subscription
+          # OCA
+          - account_yodlee
+          - partner_changeset
+          - sale_automatic_workflow
           # Specific
           - specific_base
