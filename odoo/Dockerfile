@@ -1,4 +1,4 @@
-FROM camptocamp/odoo-project:9.0-1.5.0
+FROM camptocamp/odoo-project:9.0-2.0.0
 MAINTAINER Camptocamp
 
 COPY requirements.txt /opt/odoo/requirements.txt
@@ -23,4 +23,5 @@ ENV ADDONS_PATH="/opt/odoo/local-src, \
   /opt/odoo/external-src/reporting-engine, \
   /opt/odoo/external-src/sale-workflow, \
   /opt/odoo/external-src/connector-telephony, \
-  /opt/odoo/external-src/partner-contact"
+  /opt/odoo/external-src/partner-contact, \
+  /opt/odoo/external-src/odoo-cloud-platform"

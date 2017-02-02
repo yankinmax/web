@@ -15,7 +15,7 @@ Unreleased
 **Documentation**
 
 
-9.11.0 (2017-02-01)
+9.13.0 (2017-02-02)
 +++++++++++++++++++
 
 **Features and Improvements**
@@ -25,9 +25,17 @@ Unreleased
 * Card 223: Inverse phototherapist and reference fields position on account invoice form view
 * Card 237: Add several modules
 
+
+9.12.0 (2017-02-02)
++++++++++++++++++++
+
 **Bugfixes**
 
 * Remove useless import on install/company.py songs
+
+**Build**
+
+* Migration of instances on cloud-platform
 
 
 9.10.2 (2017-01-31)
