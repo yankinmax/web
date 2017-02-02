@@ -10,13 +10,21 @@ Unreleased
 
 **Bugfixes**
 
+**Build**
+
+**Documentation**
+
+
+9.12.0 (2017-02-02)
++++++++++++++++++++
+
+**Bugfixes**
+
 * Remove useless import on install/company.py songs
 
 **Build**
 
 * Migration of instances on cloud-platform
-
-**Documentation**
 
 
 9.10.2 (2017-01-31)
