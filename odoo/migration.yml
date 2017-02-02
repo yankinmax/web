@@ -25,6 +25,10 @@ migration:
           - anthem songs.install.stock::main
           - anthem songs.install.company::main
           - anthem songs.install.post::main
+      addons:
+        upgrade:
+          #camptocamp/cloud-platform
+          - cloud_platform
     - version: 9.9.0
       addons:
         upgrade:
