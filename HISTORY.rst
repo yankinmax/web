@@ -12,6 +12,8 @@ Unreleased
 
 **Build**
 
+* Add missing environment variable on test instance
+
 **Documentation**
 
 
