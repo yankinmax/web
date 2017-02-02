@@ -15,6 +15,7 @@ services:
     volumes:
       - "data-odoo:/data/odoo"
     environment:
+      - OERPSCENARIO_ODOO_CONFIG=/opt/odoo/etc/odoo.cfg
       - SCENARIO_MAIN_TAG=depiltech
       - DB_USER=odoo
       - DB_PASSWORD=odoo
