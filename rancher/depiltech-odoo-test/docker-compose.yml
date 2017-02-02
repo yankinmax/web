@@ -1,9 +1,10 @@
 odoo:
   image: camptocamp/depiltech_odoo:latest
+  command: "odoo --load=web,web_kanban,attachment_s3,session_redis,logging_json"
+  external_links:
+    - redis/redis:redis
   links:
     - db:db
-  volumes:
-    - depiltech-latest-dataodoo:/data/odoo
   environment:
     - DB_USER=${DB_USER}
     - DB_PASSWORD=${DB_PASSWORD}
@@ -22,32 +23,41 @@ odoo:
     - LIMIT_REQUEST=${LIMIT_REQUEST}
     - LIMIT_TIME_CPU=${LIMIT_TIME_CPU}
     - LIMIT_TIME_REAL=${LIMIT_TIME_REAL}
+    - ODOO_BASE_URL=${ODOO_BASE_URL}
     - MARABUNTA_ALLOW_SERIE=True
-    - MARABUNTA_MODE=demo
+    - MARABUNTA_MODE=${MARABUNTA_MODE}
+    - ODOO_SESSION_REDIS=${ODOO_SESSION_REDIS}
+    - ODOO_SESSION_REDIS_HOST=${ODOO_SESSION_REDIS_HOST}
+    - ODOO_SESSION_REDIS_PREFIX=${ODOO_SESSION_REDIS_PREFIX}
+    - ODOO_SESSION_REDIS_EXPIRATION=${ODOO_SESSION_REDIS_EXPIRATION}
+    - ODOO_LOGGING_JSON=${ODOO_LOGGING_JSON}
+    - ODOO_CLOUD_PLATFORM_UNSAFE=${ODOO_CLOUD_PLATFORM_UNSAFE}
+  labels:
+    io.rancher.sidekicks: nginx
+    odoo.publish: true
+
+
+nginx:
+  image: camptocamp/odoo-nginx:9.0-1.1.0
+  net: "container:odoo"
+  environment:
+    - NGX_ODOO_HOST=127.0.0.1
+  links:
+    - odoo:odoo
 
 db:
   image: camptocamp/postgresql:pg9.5-latest
   environment:
     - POSTGRES_USER=${DB_USER}
     - POSTGRES_PASSWORD=${DB_PASSWORD}
-    - PG_SYSTEM_SHARED_BUFFERS=256MB
-    - PG_SYSTEM_MAINTENANCE_WORK_MEM=256MB
-    - PG_SYSTEM_WAL_BUFFERS=8MB
-    - PG_SYSTEM_EFFECTIVE_CACHE_SIZE=1024MB
-  volumes:
-    - depiltech-latest-datadb:/var/lib/postgresql
 
-nginx:
-  image: camptocamp/odoo-nginx:9.0
-  links:
-    - odoo:odoo
 
 letsencrypt:
   environment:
     API_VERSION: Production
-    AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
-    AWS_SECRET_KEY: ${AWS_SECRET_KEY}
-    CERT_NAME: depiltech-odoo-test
+    AWS_ACCESS_KEY: ${LETSENCRYPT_AWS_ACCESS_KEY}
+    AWS_SECRET_KEY: ${LETSENCRYPT_AWS_SECRET_KEY}
+    CERT_NAME: ${DOMAIN_NAME}
     CLOUDFLARE_EMAIL: ''
     CLOUDFLARE_KEY: ''
     DNSIMPLE_EMAIL: ''
@@ -67,4 +77,4 @@ letsencrypt:
     io.rancher.container.agent.role: environment
   image: janeczku/rancher-letsencrypt:v0.3.0
   volumes:
-  - /etc/letsencrypt/production/certs
+    - depiltech-test-certs:/etc/letsencrypt/production/certs

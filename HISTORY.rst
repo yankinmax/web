@@ -14,6 +14,8 @@ Unreleased
 
 **Build**
 
+* Migration of instances on cloud-platform
+
 **Documentation**
 
 

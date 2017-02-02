@@ -15,13 +15,14 @@ env:
     - DOCKER_COMPOSE_VERSION="1.7.1"
     - TESTS="0" LINT_CHECK="0"
     - ADDONS_DIR=${TRAVIS_BUILD_DIR}/odoo/local-src
+    - SONGS_DIR=${TRAVIS_BUILD_DIR}/odoo/songs
     - COMPOSE_PROJECT_NAME=depiltech
     - RANCHER_STACK_NAME=depiltech-odoo-test
     - secure: "Jn2x7RO9aSXeeUReZY3KC5YRKeL3+vZLhkjVwZq32JxBtM5cemhdVdB2YS3I0dGTk+Ag0PceMvs3Nzjk+49nbYsD06bXo7T8xnGajeJLQcZq8z/UTy+XuxMuDZ4IHuGn9zr9Yp5li80O96RbLn8RkYFlGlQDPgU4qbM9ukRIP5W2r58/LKObRumN61S1wZmDJEgiavWquh43nZKHXjRZVU9mgTcL0kLBgt1ZIf7Rf/fiE+TouD2sy1g1QTQP/dL1G7RODkBKMVRJp3c5XKofhaUYfsQpzqYITPK8+3V8zkmxjHpWGLI4jrdIq41fZma7sa5jeN95pQxBtNwZbgybgqYh4R+9LijBl0eq6uyjUEO6ozzwDHIURU2y9IMFBlgKPFZdKKaW6xA5ZpVEwmrfvWhD9ziyxH4cMaz5k+gIjiMjoe2Yb35atY3QJkZ/PhJ2zed3Eqau1sJba1y/FSLbFnqSdlgUucePYmkoeG/B5HRYsoChLsutBxsxyjdIP0WZYoSlrIPSdTxBAlnhcUo/1Ep3oQL+zfnW0iqSc0VxVQMEhz0KbTfxBZ3+cINnKsMwNGHA44snI1YD4xv9mkurU4garnWv/7RAk8ZEeKW5Vv+Pp7TzD9xH8fly+XcrWCtX+EI8EWXJZyT4JS6C5lBSDE1IaPrh4l8BNdDUyklp9jw="
 
 before_install:
   - sudo apt-get update
-  - sudo DEBIAN_FRONTEND=noninteractive apt-get install -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" docker-engine --yes
+  - sudo DEBIAN_FRONTEND=noninteractive apt-get install -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" docker-engine --yes --force-yes
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
@@ -42,11 +43,10 @@ install:
 # We run the tests and scenario in the same build, so we can push the docker image
 # after that we validated it has tests and scenario passing
 script:
-  - if [ "$LINT_CHECK" == "1" ] ; then flake8 ${ADDONS_DIR} --exclude=__init__.py ; fi
-  # run tests on an empty database, which is dropped afterwards
-  - if [ "$TESTS" == "1" ] ; then docker-compose -f docker-compose.yml run --rm -e RUNNING_ENV=travis odoo runtests ; fi
+  - if [ "$LINT_CHECK" == "1" ] ; then flake8 ${ADDONS_DIR} ${SONGS_DIR} --exclude=__init__.py ; fi
+  - if [ "$TESTS" == "1" ] ; then docker-compose -f docker-compose.yml run --rm -e ODOO_CLOUD_PLATFORM_UNSAFE=1 -e DEMO=True -e CI=True odoo runtests ; fi
   # run the scenario
-  - if [ "$TESTS" == "1" ] ; then docker-compose -f docker-compose.yml run --rm -e RUNNING_ENV=travis -e MARABUNTA_MODE=demo -e MARABUNTA_ALLOW_SERIE=True odoo odoo.py --stop-after-init ; fi
+  - if [ "$TESTS" == "1" ] ; then docker-compose -f docker-compose.yml run --rm -e ODOO_CLOUD_PLATFORM_UNSAFE=1 -e MARABUNTA_MODE=demo -e MARABUNTA_ALLOW_SERIE=True odoo odoo.py --stop-after-init ; fi
 
 after_success:
   - if [ "$TESTS" == "1" ] ; then ./travis/publish.sh ; fi

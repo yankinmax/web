@@ -1,8 +1,16 @@
 migration:
+  options:
+    install_command: odoo.py
+    # Workaround for https://github.com/odoo/odoo/pull/12730
+    # Please remove once merged.
+    # Warning: the DEMO flag will never be considered as we force
+    # the 'without demo' mode
+    install_args: --without-demo=all --load=web,web_kanban,session_redis,attachment_s3,logging_json
   versions:
     - version: 9.1.0
       operations:
         post:
+          - anthem openerp.addons.cloud_platform.songs::install_exoscale
           - oerpscenario -t setup_before_modules
           # Install account without l10n to avoid auto install
           - odoo.py -i account --stop-after-init --workers=0
@@ -17,6 +25,10 @@ migration:
           - anthem songs.install.stock::main
           - anthem songs.install.company::main
           - anthem songs.install.post::main
+      addons:
+        upgrade:
+          #camptocamp/cloud-platform
+          - cloud_platform
     - version: 9.9.0
       addons:
         upgrade:
@@ -38,3 +50,13 @@ migration:
         upgrade:
           # Specific
           - specific_base
+    - version: 9.12.0
+      modes:
+        full:
+          operations:
+            post:
+              - anthem openerp.addons.cloud_platform.songs::install_exoscale
+      addons:
+        upgrade:
+          #camptocamp/cloud-platform
+          - cloud_platform

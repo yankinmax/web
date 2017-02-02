@@ -5,3 +5,7 @@ phonenumbers==7.5.2
 xlsxwriter==0.9.3
 ofxparse==0.15
 openupgradelib==1.2.2
+boto==2.42.0
+redis==2.10.5
+python-json-logger==0.1.5
+statsd==3.2.1
