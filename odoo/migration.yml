@@ -10,6 +10,7 @@ migration:
     - version: 9.1.0
       operations:
         post:
+          - anthem openerp.addons.cloud_platform.songs::install_exoscale
           - oerpscenario -t setup_before_modules
           # Install account without l10n to avoid auto install
           - odoo.py -i account --stop-after-init --workers=0
@@ -45,3 +46,13 @@ migration:
         upgrade:
           # Specific
           - specific_base
+    - version: 9.12.0
+      modes:
+        full:
+          operations:
+            post:
+              - anthem openerp.addons.cloud_platform.songs::install_exoscale
+      addons:
+        upgrade:
+          #camptocamp/cloud-platform
+          - cloud_platform
