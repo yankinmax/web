@@ -21,7 +21,6 @@ env:
     - secure: "Jn2x7RO9aSXeeUReZY3KC5YRKeL3+vZLhkjVwZq32JxBtM5cemhdVdB2YS3I0dGTk+Ag0PceMvs3Nzjk+49nbYsD06bXo7T8xnGajeJLQcZq8z/UTy+XuxMuDZ4IHuGn9zr9Yp5li80O96RbLn8RkYFlGlQDPgU4qbM9ukRIP5W2r58/LKObRumN61S1wZmDJEgiavWquh43nZKHXjRZVU9mgTcL0kLBgt1ZIf7Rf/fiE+TouD2sy1g1QTQP/dL1G7RODkBKMVRJp3c5XKofhaUYfsQpzqYITPK8+3V8zkmxjHpWGLI4jrdIq41fZma7sa5jeN95pQxBtNwZbgybgqYh4R+9LijBl0eq6uyjUEO6ozzwDHIURU2y9IMFBlgKPFZdKKaW6xA5ZpVEwmrfvWhD9ziyxH4cMaz5k+gIjiMjoe2Yb35atY3QJkZ/PhJ2zed3Eqau1sJba1y/FSLbFnqSdlgUucePYmkoeG/B5HRYsoChLsutBxsxyjdIP0WZYoSlrIPSdTxBAlnhcUo/1Ep3oQL+zfnW0iqSc0VxVQMEhz0KbTfxBZ3+cINnKsMwNGHA44snI1YD4xv9mkurU4garnWv/7RAk8ZEeKW5Vv+Pp7TzD9xH8fly+XcrWCtX+EI8EWXJZyT4JS6C5lBSDE1IaPrh4l8BNdDUyklp9jw="
 
 before_install:
-  - sudo sh -c "echo '54.230.142.136 apt.dockerproject.org' > /etc/hosts"
   - sudo apt-get update
   - sudo DEBIAN_FRONTEND=noninteractive apt-get install -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" docker-engine --yes --force-yes
   - sudo rm /usr/local/bin/docker-compose
