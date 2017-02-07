@@ -13,6 +13,7 @@ Unreleased
 **Build**
 
 * Add missing environment variable on test instance
+* travis - Download Github archive zip files for submodules in order to speed up builds
 
 **Documentation**
 
