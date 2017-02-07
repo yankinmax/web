@@ -23,6 +23,28 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="view_crm_lead_case_form_specific_form">
+        <field name="name">crm.lead.case.form.specific.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+        <field name="arch" type="xml">
+
+            <notebook position="inside">
+                <page string="B2B">
+                    <group>
+                        <field name="opening_date"/>
+                        <field name="opening_location"/>
+                        <field name="opening_country_id"/>
+                        <field name="personal_contribution"/>
+                        <field name="graduate_education"/>
+                        <field name="has_franchisee"/>
+                    </group>
+                </page>
+            </notebook>
+
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="view_crm_lead_tag_specific_form">
         <field name="name">crm.lead.tag.specific.form</field>
         <field name="model">crm.lead.tag</field>

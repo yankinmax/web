@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* Card 193: Fix add specific fields on several models
+
 **Build**
 
 * Add missing environment variable on test instance

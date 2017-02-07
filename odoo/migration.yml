@@ -72,3 +72,8 @@ migration:
           - sale_automatic_workflow
           # Specific
           - specific_base
+    - version: 9.13.1
+      addons:
+        upgrade:
+          # Specific
+          - specific_base
