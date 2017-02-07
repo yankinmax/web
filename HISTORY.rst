@@ -10,14 +10,22 @@ Unreleased
 
 **Bugfixes**
 
+**Build**
+
+**Documentation**
+
+
+9.13.1 (2017-02-07)
++++++++++++++++++++
+
+**Bugfixes**
+
 * Card 193: Fix add specific fields on several models
 
 **Build**
 
 * Add missing environment variable on test instance
 * travis - Download Github archive zip files for submodules in order to speed up builds
-
-**Documentation**
 
 
 9.13.0 (2017-02-02)
