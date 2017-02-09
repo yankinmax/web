@@ -77,3 +77,8 @@ migration:
         upgrade:
           # Specific
           - specific_base
+    - version: 9.14.0
+      addons:
+        upgrade:
+          #camptocamp/cloud-platform
+          - attachment_s3
