@@ -12,6 +12,8 @@ Unreleased
 
 **Build**
 
+* Upgrade attachment_s3
+
 **Documentation**
 
 
