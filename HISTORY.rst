@@ -10,13 +10,21 @@ Unreleased
 
 **Bugfixes**
 
+**Build**
+
+**Documentation**
+
+
+9.14.0 (2017-02-23)
++++++++++++++++++++
+
+**Bugfixes**
+
 * Change res.company _where_calc to allow access rights on inactive companies
 
 **Build**
 
 * Upgrade attachment_s3
-
-**Documentation**
 
 
 9.13.1 (2017-02-07)
