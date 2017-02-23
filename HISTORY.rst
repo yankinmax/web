@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* Change res.company _where_calc to allow access rights on inactive companies
+
 **Build**
 
 **Documentation**
