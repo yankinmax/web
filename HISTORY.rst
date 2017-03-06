@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* DT-1: Change rights on res partner for all users
+
 **Bugfixes**
 
 **Build**

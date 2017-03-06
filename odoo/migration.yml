@@ -82,3 +82,7 @@ migration:
         upgrade:
           #camptocamp/cloud-platform
           - attachment_s3
+    - version: 9.15.0
+      operations:
+        post:
+          - anthem songs.updates.update_9_15_0.update::main
