@@ -25,8 +25,8 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     echo "Deploying image to docker hub for master (latest)"
     docker tag depiltech_odoo camptocamp/depiltech_odoo:latest
     docker push "camptocamp/depiltech_odoo:latest"
-    echo "Building test server"
-    deploy $RANCHER_STACK_NAME
+    # echo "Building test server"
+    # deploy $RANCHER_STACK_NAME
   elif [ ! -z "$TRAVIS_TAG" ]; then
     echo "Deploying image to docker hub for tag ${TRAVIS_TAG}"
     docker tag depiltech_odoo camptocamp/depiltech_odoo:${TRAVIS_TAG}
