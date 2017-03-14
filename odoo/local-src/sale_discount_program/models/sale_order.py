@@ -54,7 +54,7 @@ class SaleOrder(models.Model):
         program_model.reset_sale_programs(self)
 
         programs = program_model.sort_programs(
-            self.program_code_ids | program_model.get_automatic_programs()
+            self.program_code_ids | program_model.get_automatic_programs(self)
         )
         programs.apply_for_sale(self)
 
