@@ -76,13 +76,13 @@ class Program(models.Model):
                 )
 
     @api.model
-    def get_automatic_program(self):
+    def get_automatic_programs(self, order):
         domain = [
             '&',
             ('automatic', '=', True),
             '|',
             ('allowed_company_ids', '=', False),
-            ('allowed_company_ids', 'parent_of', self.env.user.company_id)
+            ('allowed_company_ids', 'parent_of', order.company_id.id)
         ]
 
         return self.search(domain)

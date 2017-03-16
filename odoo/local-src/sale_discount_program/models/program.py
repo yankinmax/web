@@ -294,7 +294,7 @@ class Program(models.Model):
                 line.product_uom_change()
 
     @api.model
-    def get_automatic_programs(self):
+    def get_automatic_programs(self, order):
         """ Return all programs marked as automatic.
         """
         return self.search([

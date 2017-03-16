@@ -21,6 +21,7 @@ Unreleased
 **Features and Improvements**
 
 * DT-1: Change rights on res partner for all users
+* Fix domain for discount program
 
 
 9.14.0 (2017-02-23)
