@@ -1,0 +1,39 @@
+[submodule "odoo/external-src/server-tools"]
+	path = odoo/external-src/server-tools
+	url = git@github.com:OCA/server-tools.git
+	branch = 9.0
+[submodule "odoo/src"]
+	path = odoo/src
+	url = git@github.com:OCA/OCB.git
+	branch = 9.0
+[submodule "odoo/external-src/odoo-cloud-platform"]
+	path = odoo/external-src/odoo-cloud-platform
+	url = git@github.com:camptocamp/odoo-cloud-platform.git
+[submodule "odoo/external-src/l10n-switzerland"]
+	path = odoo/external-src/l10n-switzerland
+	url = git@github.com:OCA/l10n-switzerland.git
+	branch = 10.0
+[submodule "odoo/external-src/enterprise"]
+	path = odoo/external-src/enterprise
+	url = git@github.com:odoo/enterprise.git
+	branch = 10.0
+[submodule "odoo/external-src/account-financial-tools"]
+	path = odoo/external-src/account-financial-tools
+	url = git@github.com:OCA/account-financial-tools.git
+	branch = 10.0
+[submodule "odoo/external-src/account-financial-reporting"]
+	path = odoo/external-src/account-financial-reporting
+	url = git@github.com:OCA/account-financial-reporting.git
+	branch = 10.0
+[submodule "odoo/external-src/bank-payment"]
+	path = odoo/external-src/bank-payment
+	url = git@github.com:OCA/bank-payment.git
+	branch = 10.0
+[submodule "odoo/external-src/reporting-engine"]
+	path = odoo/external-src/reporting-engine
+	url = git@github.com:OCA/reporting-engine.git
+	branch = 10.0
+[submodule "odoo/external-src/partner-contact"]
+	path = odoo/external-src/partner-contact
+	url = git@github.com:OCA/partner-contact.git
+	branch = 10.0
