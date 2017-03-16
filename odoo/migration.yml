@@ -1,6 +1,7 @@
 migration:
   options:
     install_command: odoo
+    install_args: --load=web,web_kanban,attachment_s3,session_redis,logging_json
   versions:
     - version: 10.0.0
       operations:
@@ -8,9 +9,9 @@ migration:
           - anthem songs.install.pre::main
         post:
           - anthem openerp.addons.cloud_platform.songs::install_exoscale
-          - anthem songs.install.accounting::main
-          - anthem songs.install.logistics::main
           - anthem songs.install.data_all::main
+          - anthem songs.install.mts.accounting::main
+          - anthem songs.install.mte.accounting::main
       modes:
         full:
           operations:
@@ -22,9 +23,36 @@ migration:
               - anthem songs.install.data_demo::main
       addons:
         upgrade:
-          - server_environment
           #### core
-          # - sale_stock
-          # - purchase
-          #### local-src
-          # - my_addon
+          - account_accountant
+          - analytic
+          - board
+          - hr_timesheet
+          - mrp
+          - procurement
+          - product
+          - project
+          - purchase
+          - sale
+          - sale_stock
+          - stock
+          - stock_account
+          # l10n-switzerland
+          - l10n_ch
+          - l10n_ch_bank
+          - l10n_ch_base_bank
+          - l10n_ch_dta
+          - l10n_ch_pain_base
+          - l10n_ch_states
+          - l10n_ch_zip
+          #### OCA/server-tools
+          - base_technical_features
+          - date_range
+          - mail_environment
+          - server_environment
+          #### camptocamp/cloud-platform
+          - cloud_platform
+          #### OCA/account-financial-reporting
+          - account_financial_report_qweb
+          #### OCA/account-financial-tools
+          - account_fiscal_year
