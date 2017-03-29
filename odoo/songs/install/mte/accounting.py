@@ -4,6 +4,7 @@
 
 import anthem
 from anthem.lyrics.records import create_or_update
+from . import mte_vars
 
 
 @anthem.log
@@ -12,14 +13,32 @@ def set_fiscalyear(ctx):
               'name': '2017',
               'date_end': '2017-12-31',
               'type_id': 1,
-              'company_id': ctx.env.ref('base.main_company').id,
+              'company_id': ctx.env.ref('__setup__.company_mte').id,
               'active': True,
               }
     create_or_update(ctx, 'date.range',
-                     '__setup__.date_range_mts_2017', values)
+                     '__setup__.date_range_mte_2017', values)
+
+
+@anthem.log
+def configure_chart_of_account(ctx):
+    """Configure COA for companies"""
+    account_settings = ctx.env['account.config.settings']
+
+    for company_xml_id, coa in mte_vars.coa_dict.iteritems():
+        company = ctx.env.ref(company_xml_id)
+        with ctx.log("Import basic CoA for %s:" % company.name):
+            vals = {'company_id': company.id,
+                    'chart_template_id': ctx.env.ref(coa).id,
+                    }
+            acs = account_settings.create(vals)
+            acs.onchange_chart_template_id()
+            acs.execute()
 
 
 @anthem.log
 def main(ctx):
     """ Configuring accounting """
     set_fiscalyear(ctx)
+    # reset_main_company_chart(ctx)
+    configure_chart_of_account(ctx)
