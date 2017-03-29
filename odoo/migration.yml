@@ -56,3 +56,13 @@ migration:
           - account_financial_report_qweb
           #### OCA/account-financial-tools
           - account_fiscal_year
+    - version: 10.0.1
+      operations:
+      modes:
+        demo:
+          operations:
+            post:
+              - anthem songs.install.data_demo::main
+      addons:
+        upgrade:
+          - server_environment_files

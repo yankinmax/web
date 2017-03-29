@@ -19,10 +19,12 @@ Release History
 latest (unreleased)
 +++++++++++++++++++
 
-*Features and Improvements*
+**Features and Improvements**
 
-*Bugfixes*
+* Add demo data
 
-*Build*
+**Bugfixes**
 
-*Documentation*
+**Build**
+
+**Documentation**
