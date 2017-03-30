@@ -22,6 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Add demo data
+* Update COA for MT
 
 **Bugfixes**
 

@@ -12,11 +12,11 @@ def set_fiscalyear(ctx):
               'name': '2017',
               'date_end': '2017-12-31',
               'type_id': 1,
-              'company_id': ctx.env.ref('__setup__.company_mte').id,
+              'company_id': ctx.env.ref('base.main_company').id,
               'active': True,
               }
     create_or_update(ctx, 'date.range',
-                     '__setup__.date_range_mte_2017', values)
+                     '__setup__.date_range_mts_2017', values)
 
 
 @anthem.log
