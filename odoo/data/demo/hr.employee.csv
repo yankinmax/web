@@ -1,0 +1,9 @@
+id,name,department_id/id,job_id/id,country_id,gender,marital,work_email,work_location,mobile_phone,work_phone,company_id/id
+__setup__.hr_employee_AnaGirardin,Ana Girardin,,,Switzerland,Male,,ana.girardin@mtssa.ch,,41788191020,,base.main_company
+__setup__.hr_employee_AmelaMalagic,Amela Malagic,,,Switzerland,Female,,administratif@mtssa.ch,,41789730706,,base.main_company
+__setup__.hr_employee_AnaSottomayor-Droux,Ana Sottomayor-Droux,,,Switzerland,Female,,,,41787553308,,base.main_company
+__setup__.hr_employee_EdivaniaOliveira,Edivania Oliveira,,,Switzerland,Female,,,,41789475185,,base.main_company
+__setup__.hr_employee_JonasBraichet,Jonas Braichet,,,Switzerland,Male,,,,41796711661,,base.main_company
+__setup__.hr_employee_LuanaSilva,Luana Silva,,,Switzerland,Female,,secretariat@mtssa.ch,,41791743587,,base.main_company
+__setup__.hr_employee_MayLeeBertolotti,May Lee Bertolotti,,,Switzerland,Female,,secretariat@mtssa.ch,,41787976880,,base.main_company
+__setup__.hr_employee_OcéaneReis,Océane Reis,,,Switzerland,Female,,,,41787980206,,base.main_company
