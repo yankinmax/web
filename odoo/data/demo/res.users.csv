@@ -3,10 +3,10 @@ __setup__.res_users_agirardin,agirardin,Ana Girardin,changeme,fr_FR,ana.girardin
 __setup__.res_users_pgirardin,pgirardin,Philippe Girardin,changeme,fr_FR,philippe.girardin@metallo-tests.ch,base.ch,Europe/Zurich,base.group_user,base.main_company
 __setup__.res_users_mtsadmin,mtsadmin,Administratif MTS,changeme,fr_FR,,base.ch,Europe/Zurich,base.group_user,base.main_company
 __setup__.res_users_mtssecretariat,mtssecretariat,Secrétariat MTS,changeme,fr_FR,,base.ch,Europe/Zurich,base.group_user,base.main_company
-scenario.res_user_erp_manager,erp_manager,ERP Manager,erp_manager,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,base.group_user,base.main_company
-scenario.res_user_purchase,purchase,Purchase,purchase,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,"sale.group_delivery_invoice_address,base.group_no_one,base.group_user,account.group_account_invoice,product.group_product_variant,stock_account.group_inventory_valuation,stock.group_adv_location,product.group_sale_pricelist,base.group_multi_currency,sale.group_discount_per_so_line,stock.group_stock_manager,purchase.group_purchase_manager,purchase.group_purchase_user,stock.group_stock_user",base.main_company
-scenario.res_user_logistic,logistic,Logistic,logistic,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,stock.group_stock_manager,base.main_company
-scenario.res_user_accounting,accounting,Accounting,accounting,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,account.group_account_manager,base.main_company
-scenario.res_user_sale,sale,Sale,sale,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,base.group_user,base.main_company
-scenario.res_user_shop,shop,Shop,shop,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,base.group_user,base.main_company
-scenario.res_user_storeman,storeman,Storeman,storeman,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,stock.group_stock_user,base.main_company
+__setup__.res_user_erp_manager,erp_manager,ERP Manager,erp_manager,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,base.group_user,base.main_company
+__setup__.res_user_purchase,purchase,Purchase,purchase,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,"sale.group_delivery_invoice_address,base.group_no_one,base.group_user,account.group_account_invoice,product.group_product_variant,stock_account.group_inventory_valuation,stock.group_adv_location,product.group_sale_pricelist,base.group_multi_currency,sale.group_discount_per_so_line,stock.group_stock_manager,purchase.group_purchase_manager,purchase.group_purchase_user,stock.group_stock_user",base.main_company
+__setup__.res_user_logistic,logistic,Logistic,logistic,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,stock.group_stock_manager,base.main_company
+__setup__.res_user_accounting,accounting,Accounting,accounting,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,account.group_account_manager,base.main_company
+__setup__.res_user_sale,sale,Sale,sale,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,base.group_user,base.main_company
+__setup__.res_user_shop,shop,Shop,shop,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,base.group_user,base.main_company
+__setup__.res_user_storeman,storeman,Storeman,storeman,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,stock.group_stock_user,base.main_company
