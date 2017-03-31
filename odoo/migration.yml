@@ -28,6 +28,7 @@ migration:
           - analytic
           - board
           - hr_timesheet
+          - maintenance
           - mrp
           - procurement
           - product
@@ -59,3 +60,5 @@ migration:
           #### Specific
           - server_environment_files
     - version: 10.0.1
+    - version: 10.0.2
+
