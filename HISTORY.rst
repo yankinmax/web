@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.0.1 (2017-03-31)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add demo data
 * Update COA for MT
 

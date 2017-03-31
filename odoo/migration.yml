@@ -58,3 +58,4 @@ migration:
           - account_fiscal_year
           #### Specific
           - server_environment_files
+    - version: 10.0.1
