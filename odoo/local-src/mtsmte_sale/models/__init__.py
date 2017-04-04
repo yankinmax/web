@@ -5,3 +5,4 @@ from . import sale_order
 from . import project
 from . import product
 from . import substance
+from . import sale_order_line

@@ -5,11 +5,21 @@
     <field name="model">sale.order</field>
     <field name="inherit_id" ref="sale.view_order_form"/>
     <field name="arch" type="xml">
-      <field name='partner_id' position="after">
-        <group name="samples" string="Samples">
+      <xpath expr="//sheet/group" position="inside">
           <field name='analyze_sample'/>
-        </group>
-      </field>
+      </xpath>
+      <!-- Remove Editable bottom in soline tree view -->
+      <xpath expr="//tree" position="attributes">
+        <attribute name="editable"/>
+      </xpath>
+
+      <xpath expr="//tree/field[@name='product_id']" position="after">
+        <field name='product_substance_ids'/>
+      </xpath>
+      <xpath expr="//form/group/group/field[@name='product_id']" position="after">
+        <field name='is_chemistry' invisible="True"/>
+        <field name='product_substance_ids' attrs="{'invisible': [('is_chemistry', '=', False)]}"/>
+      </xpath>
     </field>
   </record>
 

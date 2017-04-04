@@ -7,20 +7,20 @@
     <field name="arch" type="xml">
       <xpath expr='//field[@name="purchase_ok"]/..' position="after">
         <div>
-          <field name='is_chemistry'/>
           <label for="is_chemistry"/>
+          <field name='is_chemistry'/>
         </div>
       </xpath>
       <notebook position="inside">
         <page string="Substances to analyze" attrs="{'invisible': [('is_chemistry', '=', False)]}">
           <group>
-            <group name="Substances" string="Substances">
-              <field name='product_substance_ids'>
-                <tree>
+            <group name="Substances"> <!-- string="Substances" -->
+              <field name='product_substance_ids' widget="one2many">
+                <tree editable="bottom">
                   <field name='name'/>
+                  <field name='product_uom_id'/>
                   <field name='legal_limit'/>
                   <field name='comments'/>
-                  <field name='product_uom_id'/>
                 </tree>
               </field>
             </group>
