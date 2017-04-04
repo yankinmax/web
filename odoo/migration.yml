@@ -12,6 +12,7 @@ migration:
           - anthem songs.install.data_all::main
           - anthem songs.install.mts.accounting::main
           - anthem songs.install.mte.accounting::main
+          - anthem songs.install.accounting::main
       modes:
         full:
           operations:
