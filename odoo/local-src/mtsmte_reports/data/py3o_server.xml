@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="py3o_server_main" model="py3o.server">
+    <field name="url">http://py3ofusion.py3o:8765/form</field>
+  </record>
+</odoo>
