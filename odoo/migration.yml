@@ -13,6 +13,7 @@ migration:
           - anthem songs.install.mts.accounting::main
           - anthem songs.install.mte.accounting::main
           - anthem songs.install.accounting::main
+          - anthem songs.install.sale::main
       modes:
         full:
           operations:
@@ -60,7 +61,10 @@ migration:
           #### OCA/account-financial-tools
           - account_fiscal_year
           - account_reports_followup
+          #### OCA/project
+          - project_task_default_stage
           #### Specific
           - server_environment_files
+          - mtsmte_project
     - version: 10.0.1
     - version: 10.0.2
