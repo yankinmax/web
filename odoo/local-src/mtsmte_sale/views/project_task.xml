@@ -17,6 +17,7 @@
                   <field name='comments' readonly="True"/>
                   <field name='measure'/>
                   <field name='conformity'/>
+                  <field name='project_task_ids'/>
                 </tree>
               </field>
             </group>

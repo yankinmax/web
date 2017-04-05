@@ -29,6 +29,15 @@ class ProductSubstance(models.Model):
         string='Substance UOM',
         required=True,
     )
+    project_task_ids = fields.Many2many(
+        'project.task',
+        invisible=True,
+    )
+    sale_order_line_ids = fields.Many2many(
+        'sale.order.line',
+        string='Products',
+        invisible=True,
+    )
     measure = fields.Float(
         'Measure',
     )
