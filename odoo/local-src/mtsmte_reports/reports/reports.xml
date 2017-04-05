@@ -28,7 +28,7 @@
   <record id="report_py3o_project" model="ir.actions.report.xml">
     <field name="report_type">py3o</field>
     <field name="py3o_filetype">odt</field>
-    <field name="py3o_is_local_fusion" eval="False"/>
+    <field name="py3o_is_local_fusion" eval="True"/>
     <field name="py3o_server_id" ref="py3o_server_main"/>
     <field name="py3o_template_id" ref="py3o_template_project"/>
     <field name="module">mtsmte_reports</field>
