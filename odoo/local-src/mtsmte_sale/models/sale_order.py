@@ -17,10 +17,11 @@ class SaleOrder(models.Model):
     def action_confirm(self):
         for order in self:
             super(SaleOrder, self).action_confirm()
-            prj = self.env['project.project'].search(
-                [('analytic_account_id', '=', order.project_id.id)])
-            vals = {
-                'analyze_sample': order.analyze_sample
-            }
-            prj.write(vals)
+            if order.project_id:
+                prj = self.env['project.project'].search(
+                    [('analytic_account_id', '=', order.project_id.id)])
+                vals = {
+                    'analyze_sample': order.analyze_sample
+                }
+                prj.write(vals)
         return True
