@@ -66,5 +66,6 @@ migration:
           #### Specific
           - server_environment_files
           - mtsmte_project
+          - mtsmte_sale
     - version: 10.0.1
     - version: 10.0.2
