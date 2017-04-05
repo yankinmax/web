@@ -1,0 +1,5 @@
+id,name,active,user_id/id,date_start,description,date_deadline,priority,project_id/id,company_id/id,stage_id/id
+__setup__.project_task_demo_1,Chocs thermiques,True,base.user_root,2017-04-04 08:23:44,<p>Une description</p>,2017-04-29,Normale,__setup__.project_project_demo_1,base.main_company,
+__setup__.project_task_demo_2,Cadrans n° 2 & 4 → Test groupé,True,base.user_root,2017-04-04 13:46:45,,,Normale,__setup__.project_project_demo_1,base.main_company,
+__setup__.project_task_demo_3,Corro. Chaleur Humidité,True,base.user_root,2017-04-04 13:46:45,,,Normale,__setup__.project_project_demo_1,base.main_company,
+__setup__.project_task_demo_4,Cadrans n° 1 à 4 → Test groupé,True,base.user_root,2017-04-04 13:46:33,,,Normale,__setup__.project_project_demo_1,base.main_company,
