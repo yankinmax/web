@@ -12,6 +12,8 @@ migration:
           - anthem songs.install.data_all::main
           - anthem songs.install.mts.accounting::main
           - anthem songs.install.mte.accounting::main
+          - anthem songs.install.accounting::main
+          - anthem songs.install.sale::main
       modes:
         full:
           operations:
@@ -27,6 +29,7 @@ migration:
           - account_accountant
           - analytic
           - board
+          - hr_holidays
           - hr_timesheet
           - maintenance
           - mrp
@@ -57,8 +60,12 @@ migration:
           - account_financial_report_qweb
           #### OCA/account-financial-tools
           - account_fiscal_year
+          - account_reports_followup
+          #### OCA/project
+          - project_task_default_stage
           #### Specific
           - server_environment_files
+          - mtsmte_project
+          - mtsmte_sale
     - version: 10.0.1
     - version: 10.0.2
-

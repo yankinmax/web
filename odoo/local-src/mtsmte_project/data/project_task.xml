@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="True">
+  <record id="project_stage_planned" model="project.task.type">
+    <field name="sequence">1</field>
+    <field name="name">Planned</field>
+    <field name="case_default" eval="True"/>
+  </record>
+  <record id="project_stage_todo" model="project.task.type">
+    <field name="sequence">2</field>
+    <field name="name">Todo</field>
+    <field name="case_default" eval="True"/>
+  </record>
+  <record id="project_stage_in_progress" model="project.task.type">
+    <field name="sequence">3</field>
+    <field name="name">In Progress</field>
+    <field name="case_default" eval="True"/>
+  </record>
+  <record id="project_stage_suspended" model="project.task.type">
+    <field name="sequence">4</field>
+    <field name="name">Suspended</field>
+    <field name="case_default" eval="True"/>
+  </record>
+  <record id="project_stage_done" model="project.task.type">
+    <field name="sequence">5</field>
+    <field name="name">Done</field>
+    <field name="case_default" eval="True"/>
+  </record>
+</odoo>

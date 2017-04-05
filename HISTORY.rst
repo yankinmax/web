@@ -22,6 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Install module maintenance
+* Songs configuration for accounting/sale
 
 **Bugfixes**
 

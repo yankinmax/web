@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="project_edit_project_specific" model="ir.ui.view">
+    <field name="name">project.project.form.specific</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.edit_project"/>
+    <field name="arch" type="xml">
+      <field name='partner_id' position="after">
+        <group name="samples" string="Samples">
+          <field name='analyze_sample'/>
+        </group>
+      </field>
+    </field>
+  </record>
+
+</odoo>
