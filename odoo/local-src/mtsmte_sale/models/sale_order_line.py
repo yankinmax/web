@@ -15,5 +15,6 @@ class SaleOrderLine(models.Model):
     )
     is_chemistry = fields.Boolean(
         string='Field Label',
-        related='product_id.is_chemistry'
+        related='product_id.is_chemistry',
+        readonly=True,
     )

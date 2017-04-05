@@ -11,6 +11,7 @@ class ProductSubstance(models.Model):
 
     name = fields.Char(
         string='Name',
+        required=True,
     )
     legal_limit = fields.Float(
         string='Legal limit',
@@ -21,8 +22,10 @@ class ProductSubstance(models.Model):
     product_ids = fields.Many2many(
         'product.template',
         string='Products',
+        required=True,
     )
     product_uom_id = fields.Many2one(
         'product.uom',
         string='Substance UOM',
+        required=True,
     )
