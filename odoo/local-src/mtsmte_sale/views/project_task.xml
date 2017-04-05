@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="view_task_form2_specific" model="ir.ui.view">
+    <field name="name">project.task.form.specific</field>
+    <field name="model">project.task</field>
+    <field name="inherit_id" ref="project.view_task_form2"/>
+    <field name="arch" type="xml">
+      <notebook position="inside">
+        <page string="Substances to analyze">
+          <group>
+            <group name="Substances"> <!-- string="Substances" -->
+              <field name='product_substance_ids' widget="one2many">
+                <tree editable="bottom">
+                  <field name='name' readonly="True"/>
+                  <field name='product_uom_id' readonly="True"/>
+                  <field name='legal_limit' readonly="True"/>
+                  <field name='comments' readonly="True"/>
+                  <field name='measure'/>
+                  <field name='conformity'/>
+                </tree>
+              </field>
+            </group>
+          </group>
+        </page>
+      </notebook>
+    </field>
+  </record>
+
+</odoo>

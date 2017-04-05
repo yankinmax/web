@@ -24,4 +24,8 @@ class SaleOrder(models.Model):
                     'analyze_sample': order.analyze_sample
                 }
                 prj.write(vals)
+                for line in order.order_line:
+                    task = self.env['project.task'].search(
+                        [('sale_line_id', '=', line.id)])
+                    task.product_substance_ids |= line.product_substance_ids
         return True

@@ -29,3 +29,9 @@ class ProductSubstance(models.Model):
         string='Substance UOM',
         required=True,
     )
+    measure = fields.Float(
+        'Measure',
+    )
+    conformity = fields.Boolean(
+        string='Conformity',
+    )

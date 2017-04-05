@@ -17,6 +17,7 @@
         'views/sale_order.xml',
         'views/project.xml',
         'views/product.xml',
+        'views/project_task.xml',
         # 'data/res_groups_data.xml',
     ],
     'installable': True,
