@@ -23,10 +23,10 @@ The platform is on
 [https://caas-dev.camptocamp.com/env/1a100359/apps/stacks](https://caas-dev.camptocamp.com/env/1a100359/apps/stacks).
 
 **Minions overview**:
-https://depiltech_odoo.odoo-test.camptocamp.ch
+https://depiltech.odoo-test.camptocamp.ch
 
 Minion test instances are created in the `*.odoo-test.camptocamp.ch`
-subdomain, such as depiltech_odoo-1.odoo-test.camptocamp.ch.
+subdomain, such as depiltech-1.odoo-test.camptocamp.ch.
 
 ## Setup 
 
@@ -63,13 +63,13 @@ https://github.com/camptocamp/odoo-cloud-platform-test-rancher-templates.
 
 The passwords generated on Lastpass are:
 
-* `[odoo-test] depiltech_odoo auth token for creating stacks on rancher-minion server`:
+* `[odoo-test] depiltech auth token for creating stacks on rancher-minion server`:
   is the token used by the client in the project repository to be able to generate new Minions on Travis builds
-* `[odoo-test] depiltech_odoo rancher-minion for test servers`:
+* `[odoo-test] depiltech rancher-minion for test servers`:
   is the Basic Auth to access the Rancher Minion server and see the instances
-* `[odoo-test] depiltech_odoo default Test DB password`:
+* `[odoo-test] depiltech default Test DB password`:
   is the PostgreSQL password of the generated test databases
-* `[odoo-test] depiltech_odoo default Test database manager password`:
+* `[odoo-test] depiltech default Test database manager password`:
   is the Odoo's Database Manager password for the test instances
 
 ### Setup the Rancher Minion client
@@ -94,7 +94,7 @@ Configure in the `.travis.yml` file the global variables:
 
 * `GENERATED_IMAGE=${COMPOSE_PROJECT_NAME}_odoo`
 * `DOCKER_HUB_REPO=camptocamp/depiltech_odoo_odoo`
-* `RANCHER_MINION_SERVER=https://depiltech_odoo.odoo-test.camptocamp.ch`
+* `RANCHER_MINION_SERVER=https://depiltech.odoo-test.camptocamp.ch`
 
 Then, set the Rancher Minion server token in a secured variable.  It has been
 generated previously and must be set in a secure variable named
