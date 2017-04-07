@@ -35,6 +35,7 @@ PROJECT_ID = '1836'
 VERSION_FILE = build_path('odoo/VERSION')
 VERSION_RANCHER_FILES = (
     build_path('rancher/integration/docker-compose.yml'),
+    build_path('rancher/prod/docker-compose.yml'),
 )
 HISTORY_FILE = build_path('HISTORY.rst')
 DOCKER_IMAGE = 'camptocamp/depiltech_odoo'
