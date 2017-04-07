@@ -38,9 +38,3 @@ class ProductSubstance(models.Model):
         string='Products',
         invisible=True,
     )
-    measure = fields.Float(
-        'Measure',
-    )
-    conformity = fields.Boolean(
-        string='Conformity',
-    )

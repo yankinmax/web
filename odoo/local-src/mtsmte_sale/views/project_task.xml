@@ -9,15 +9,17 @@
         <page string="Substances to analyze">
           <group>
             <group name="Substances"> <!-- string="Substances" -->
-              <field name='product_substance_ids' widget="one2many">
+              <field name='product_substance_mesure_ids' widget="one2many">
                 <tree editable="bottom">
-                  <field name='name' readonly="True"/>
-                  <field name='product_uom_id' readonly="True"/>
-                  <field name='legal_limit' readonly="True"/>
-                  <field name='comments' readonly="True"/>
+                  <field name='task_id' readonly="True"/>
+                  <field name='product_substance_id' readonly="True">
+                    <field name='name' readonly="True"/>
+                    <field name='product_uom_id' readonly="True"/>
+                    <field name='legal_limit' readonly="True"/>
+                    <field name='comments' readonly="True"/>
+                  </field>
                   <field name='measure'/>
                   <field name='conformity'/>
-                  <field name='project_task_ids'/>
                 </tree>
               </field>
             </group>

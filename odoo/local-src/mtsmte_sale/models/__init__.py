@@ -7,3 +7,4 @@ from . import product
 from . import substance
 from . import sale_order_line
 from . import project_task
+from . import substance_mesure
