@@ -42,4 +42,6 @@
     - oca 10.0
       # Fix py3o freeze when using server fusion
     - oca refs/pull/120/head
+      # Pass option for escaping False values to server
+    - oca refs/pull/122/head
   target: *default_target
