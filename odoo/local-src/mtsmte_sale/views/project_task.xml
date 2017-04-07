@@ -7,13 +7,11 @@
     <field name="arch" type="xml">
       <notebook position="inside">
         <page string="Substances to analyze">
-          <group>
-            <group name="Substances"> <!-- string="Substances" -->
-              <field name='product_substance_mesure_ids' widget="one2many">
+            <group name="Substances" col="6"> <!-- string="Substances" -->
+              <field name='product_substance_measure_ids' colspan="6">
                 <tree editable="bottom">
-                  <field name='task_id' readonly="True"/>
+                  <field name='task_id' attrs="{'invisible': True, 'readonly': True}"/>
                   <field name='product_substance_id' readonly="True">
-                    <field name='name' readonly="True"/>
                     <field name='product_uom_id' readonly="True"/>
                     <field name='legal_limit' readonly="True"/>
                     <field name='comments' readonly="True"/>
@@ -23,7 +21,6 @@
                 </tree>
               </field>
             </group>
-          </group>
         </page>
       </notebook>
     </field>

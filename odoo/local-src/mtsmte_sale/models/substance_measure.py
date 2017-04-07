@@ -7,7 +7,7 @@ from odoo import models, fields
 
 
 class ProductSubstanceMesure(models.Model):
-    _name = 'product.substance.mesure'
+    _name = 'product.substance.measure'
 
     product_substance_id = fields.Many2one(
         'product.substance',

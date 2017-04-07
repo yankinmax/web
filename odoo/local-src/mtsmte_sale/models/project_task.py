@@ -13,8 +13,8 @@ class ProjectTask(models.Model):
         'product.substance',
         string='Substances',
     )
-    product_substance_mesure_ids = fields.One2many(
-        'product.substance.mesure',
+    product_substance_measure_ids = fields.One2many(
+        'product.substance.measure',
         'task_id',
-        string='Substance Mesure',
+        string='Substance Measure',
     )
