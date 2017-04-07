@@ -28,6 +28,7 @@ class SaleOrder(models.Model):
                 for line in order.order_line:
                     task = self.env['project.task'].search(
                         [('sale_line_id', '=', line.id)])
+                    # Adding mesures todo in tasks
                     for substance in line.product_substance_ids:
                         vals_mesure = {
                             'task_id': task.id,

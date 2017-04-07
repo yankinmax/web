@@ -18,7 +18,7 @@
         'views/project.xml',
         'views/product.xml',
         'views/project_task.xml',
-        # 'data/res_groups_data.xml',
+        'security/ir.model.access.csv',
     ],
     'installable': True,
 }
