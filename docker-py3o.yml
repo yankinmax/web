@@ -1,0 +1,35 @@
+# If you want to use Odoo with py3o,
+# run the composition with
+# docker-compose -f docker-compose.yml -f docker-compose.override.yml -f docker-py3o.yml up
+#
+version: '2'
+services:
+
+  oooserver:
+    image: xcgd/libreoffice
+    volumes:
+      - "data-py3o:/tmp"
+
+  py3orenderserver:
+    image: xcgd/py3oserver-docker
+    depends_on:
+      - oooserver
+    ports:
+      - "8994:8994"
+    volumes:
+      - "data-py3o:/tmp"
+
+  py3ofusion:
+    image: xcgd/py3o.fusion
+    depends_on:
+      - py3orenderserver
+    ports:
+      - "8765:8765"
+
+  odoo:
+    depends_on:
+      - py3ofusion
+      - py3orenderserver
+
+volumes:
+  data-py3o:

@@ -1,0 +1,2 @@
+id,active,partner_id/id,name,allow_timesheets,use_tasks,user_id/id,company_id/id
+__setup__.project_project_demo_1,True,__setup__.res_partner_1247,SO-111604,True,True,base.user_root,base.main_company

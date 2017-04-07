@@ -63,9 +63,12 @@ migration:
           - account_reports_followup
           #### OCA/project
           - project_task_default_stage
+          #### OCA/reporting-engine
+          - report_py3o
           #### Specific
           - server_environment_files
           - mtsmte_project
           - mtsmte_sale
+          - mtsmte_reports
     - version: 10.0.1
     - version: 10.0.2
