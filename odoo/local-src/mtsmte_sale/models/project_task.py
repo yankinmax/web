@@ -9,10 +9,6 @@ from odoo import models, fields
 class ProjectTask(models.Model):
     _inherit = 'project.task'
 
-    product_substance_ids = fields.Many2many(
-        'product.substance',
-        string='Substances',
-    )
     product_substance_measure_ids = fields.One2many(
         'product.substance.measure',
         'task_id',

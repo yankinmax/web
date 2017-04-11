@@ -9,13 +9,14 @@
         <page string="Substances to analyze">
             <group name="Substances" col="6"> <!-- string="Substances" -->
               <field name='product_substance_measure_ids' colspan="6">
-                <tree editable="bottom">
-                  <field name='task_id' attrs="{'invisible': True, 'readonly': True}"/>
-                  <field name='product_substance_id' readonly="True">
-                    <field name='product_uom_id' readonly="True"/>
-                    <field name='legal_limit' readonly="True"/>
-                    <field name='comments' readonly="True"/>
-                  </field>
+                <tree editable="bottom"
+                      create="false"
+                      delete="false">
+                  <field name='task_id'
+                         attrs="{'invisible':'1', 'readonly':'1'}"/>
+                  <field name='product_substance_id' readonly="True"/>
+                  <field name='product_uom_id' readonly="True"/>
+                  <field name='legal_limit' readonly="True"/>
                   <field name='measure'/>
                   <field name='conformity'/>
                 </tree>
