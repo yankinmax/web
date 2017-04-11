@@ -21,14 +21,27 @@ latest (unreleased)
 
 **Features and Improvements**
 
-* Install module maintenance
-* Songs configuration for accounting/sale
-
 **Bugfixes**
 
 **Build**
 
 **Documentation**
+
+
+10.0.2 (2017-04-11)
++++++++++++++++++++
+
+**Features and Improvements**
+
+* Install modules maintenance, holidays, account follow-up
+* Songs configuration for accounting/sale
+* Configure project tasks status
+* Add a new py3o report template for projects
+* Add substances, configured on products and sales orders, set on tasks
+
+**Build**
+
+* Add possibility to use py3o for reports
 
 
 10.0.1 (2017-03-31)

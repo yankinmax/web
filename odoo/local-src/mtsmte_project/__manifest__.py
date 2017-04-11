@@ -10,7 +10,7 @@
     ],
     "author": "Camptocamp,Odoo Community Association (OCA)",
     "website": "http://www.camptocamp.com",
-    "license": "GPL-3",
+    "license": "AGPL-3",
     "category": "Project",
     "data": [
         # data
