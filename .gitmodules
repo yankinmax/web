@@ -31,7 +31,7 @@
 	branch = 10.0
 [submodule "odoo/external-src/reporting-engine"]
 	path = odoo/external-src/reporting-engine
-	url = git@github.com:camptocamp/reporting-engine.git
+	url = git@github.com:OCA/reporting-engine.git
 	branch = 10.0
 [submodule "odoo/external-src/partner-contact"]
 	path = odoo/external-src/partner-contact
