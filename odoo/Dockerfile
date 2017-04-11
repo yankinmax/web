@@ -1,13 +1,17 @@
-FROM camptocamp/odoo-project:9.0-2.0.0
+FROM camptocamp/odoo-project:10.0-2.0.0
 MAINTAINER Camptocamp
 
-COPY requirements.txt /opt/odoo/requirements.txt
-RUN pip install -r /opt/odoo/requirements.txt
+# Install additional debian packages if needed
+# RUN set -x; \
+#         apt-get update \
+#         && apt-get install -y --no-install-recommends \
+#         python-shapely \
+#         && apt-get clean \
+#         && rm -rf /var/lib/apt/lists/*
 
-COPY ./features /opt/odoo/features
-
-COPY oerpscenario /opt/odoo/oerpscenario
-COPY bin/oerpscenario /opt/odoo/bin/oerpscenario
+# Install additional python packages if needed
+COPY ./requirements.txt /opt/odoo
+RUN cd /opt/odoo && pip install -r requirements.txt
 
 ENV ADDONS_PATH="/opt/odoo/local-src, \
   /opt/odoo/external-src/enterprise, \
@@ -24,4 +28,8 @@ ENV ADDONS_PATH="/opt/odoo/local-src, \
   /opt/odoo/external-src/sale-workflow, \
   /opt/odoo/external-src/connector-telephony, \
   /opt/odoo/external-src/partner-contact, \
-  /opt/odoo/external-src/odoo-cloud-platform"
+  /opt/odoo/external-src/odoo-cloud-platform" \
+  LIMIT_TIME_CPU=86400 \
+  LIMIT_TIME_REAL=86400 \
+  LIMIT_MEMORY_SOFT=1342177280 \
+  LIMIT_MEMORY_HARD=1610612736

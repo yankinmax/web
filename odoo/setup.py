@@ -8,7 +8,7 @@ with open('VERSION') as fd:
 setup(
     name="depiltech-odoo",
     version=version,
-    description="depiltech Odoo",
+    description="Depiltech Odoo",
     license='GNU Affero General Public License v3 or later (AGPLv3+)',
     author="Camptocamp",
     author_email="info@camptocamp.com",
