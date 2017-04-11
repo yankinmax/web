@@ -14,9 +14,12 @@
     "license": "AGPL-3",
     "category": "Sale",
     "data": [
-        'views/sale_order.xml',
-        'views/project.xml',
-        # 'data/res_groups_data.xml',
+        'views/sale_order_views.xml',
+        'views/project_views.xml',
+        'views/product_views.xml',
+        'views/project_task_views.xml',
+        'views/substance_views.xml',
+        'security/ir.model.access.csv',
     ],
     'installable': True,
 }

@@ -15,13 +15,29 @@ class SaleOrder(models.Model):
 
     @api.multi
     def action_confirm(self):
+        super(SaleOrder, self).action_confirm()
         for order in self:
-            super(SaleOrder, self).action_confirm()
-            if order.project_id:
-                prj = self.env['project.project'].search(
-                    [('analytic_account_id', '=', order.project_id.id)])
-                vals = {
-                    'analyze_sample': order.analyze_sample
-                }
-                prj.write(vals)
+            if not order.project_id:
+                continue
+            prj = self.env['project.project'].search(
+                [('analytic_account_id', '=', order.project_id.id)])
+            vals = {
+                # We don't know if related or not
+                'analyze_sample': order.analyze_sample
+            }
+            prj.write(vals)
+            for line in order.order_line:
+                task = self.env['project.task'].search(
+                    [('sale_line_id', '=', line.id)])
+                # Adding measures todo in tasks
+                product_substance_measure = []
+                for substance in line.product_substance_ids:
+                    vals_measure = {
+                        'task_id': task.id,
+                        'product_substance_id': substance.id,
+                    }
+                    product_substance_measure += [(0, 0, vals_measure)]
+                task.write({
+                    'product_substance_measure_ids': product_substance_measure,
+                })
         return True

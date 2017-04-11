@@ -3,3 +3,8 @@
 
 from . import sale_order
 from . import project
+from . import product
+from . import substance
+from . import sale_order_line
+from . import project_task
+from . import substance_measure

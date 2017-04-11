@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <record id="product_template_form_view_specific" model="ir.ui.view">
+    <field name="name">product.template.common.form.specific</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_form_view"/>
+    <field name="arch" type="xml">
+      <xpath expr='//field[@name="purchase_ok"]/..' position="after">
+        <div>
+          <field name='is_chemistry'/>
+          <label for="is_chemistry"/>
+        </div>
+      </xpath>
+      <notebook position="inside">
+        <page string="Substances to analyze" attrs="{'invisible': [('is_chemistry', '=', False)]}">
+          <field name='product_substance_ids' widget="one2many">
+            <tree editable="bottom">
+              <field name='name'/>
+              <field name='product_uom_id'/>
+              <field name='legal_limit'/>
+              <field name='comments'/>
+            </tree>
+          </field>
+        </page>
+      </notebook>
+    </field>
+  </record>
+
+</odoo>

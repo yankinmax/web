@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_substance_employee,product.substance,mtsmte_sale.model_product_substance,sales_team.group_sale_salesman,1,1,1,1
+access_product_substance_measure_employee,product.substance.measure,mtsmte_sale.model_product_substance_measure,sales_team.group_sale_salesman,1,1,0,0
+access_product_substance_measure_project_user,product.substance.measure,mtsmte_sale.model_product_substance_measure,project.group_project_user,1,1,0,0
