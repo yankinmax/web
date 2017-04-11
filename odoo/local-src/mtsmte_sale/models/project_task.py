@@ -14,3 +14,4 @@ class ProjectTask(models.Model):
         'task_id',
         string='Substance Measure',
     )
+    sale_line_id = fields.Many2one(index=True)
