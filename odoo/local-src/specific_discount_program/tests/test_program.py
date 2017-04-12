@@ -2,8 +2,8 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.exceptions import UserError, ValidationError
-from openerp.tests.common import TransactionCase, post_install, at_install
+from odoo.exceptions import UserError, ValidationError
+from odoo.tests.common import TransactionCase, post_install, at_install
 
 
 class TestProgram(TransactionCase):
@@ -42,6 +42,16 @@ class TestProgram(TransactionCase):
             })
 
         self.promo_pricelist = self.pricelist_model.create({
+            'name': 'Unittest code promo',
+            'discount_policy': 'with_discount',
+            'item_ids': [(0, False, {
+                'applied_on': '3_global',
+                'compute_price': 'percentage',
+                'percent_price': 10,
+            })]
+        })
+
+        self.promo_pricelist_without_discount = self.pricelist_model.create({
             'name': 'Unittest code promo',
             'discount_policy': 'without_discount',
             'item_ids': [(0, False, {
@@ -439,7 +449,8 @@ class TestProgram(TransactionCase):
             'phototherapist_id': self.phototherapist.id,
             'partner_id': self.partner1.id,
             'order_line': [(0, 0, {
-                'product_id': p1.id, 'product_uom_qty': 1,
+                'product_id': p1.id,
+                'product_uom_qty': 1,
                 'price_unit': 40,  # price_unit will be overridden by pricelist
             })]
         })
@@ -457,3 +468,54 @@ class TestProgram(TransactionCase):
         self.assertEqual(sale.order_line[0].discount, 5.)
         self.assertEqual(sale.order_line[0].price_unit, 450)
         self.assertEqual(sale.order_line[0].price_subtotal, 427.5)
+
+    # TODO : Search why the test doesn't work
+    # @post_install(True)
+    # @at_install(False)
+    # def test_discount_manually_percent_with_pricelist_discount_2(self):
+    #     # Create product with list_price (used on pricelist)
+    #     p1 = self.product_model.create({
+    #         'name': 'Unittest P1',
+    #         'list_price': 500,
+    #     })
+    #
+    #     # Create a program with pricelist promo
+    #     self.program_model.create({
+    #         'name': 'Unittest reward product program',
+    #         'condition_ids': [
+    #             (0, False, {
+    #                 'type_condition': 'product',
+    #                 'product_id': p1.id,
+    #             })
+    #         ],
+    #         'action_ids': [
+    #             (0, False, {
+    #                 'type_action': 'change_pricelist',
+    #                 'pricelist_id': self.promo_pricelist_without_discount.id,
+    #                 'note_message': 'Unittest message',
+    #             })
+    #         ]
+    #     })
+    #
+    #     # Create sale order
+    #     sale = self.sale_model.create({
+    #         'phototherapist_id': self.phototherapist.id,
+    #         'partner_id': self.partner1.id,
+    #         'order_line': [(0, 0, {
+    #             'product_id': p1.id,
+    #             'product_uom_qty': 1,
+    #             'price_unit': 40,# price_unit will be overridden by pricelist
+    #         })]
+    #     })
+    #     sale.apply_discount_programs()
+    #     # Without manually discount, discount for lines is 10.0
+    #     self.assertEqual(sale.order_line[0].discount, 10.)
+    #     self.assertEqual(sale.order_line[0].price_unit, 500)
+    #     self.assertEqual(sale.order_line[0].price_subtotal, 450)
+    #
+    #     sale.discount_manually_percent = 5.
+    #     sale.apply_discount_programs()
+    #     # With manually discount, discount for lines is 15.0
+    #     self.assertEqual(sale.order_line[0].discount, 15.)
+    #     self.assertEqual(sale.order_line[0].price_unit, 500)
+    #     self.assertEqual(sale.order_line[0].price_subtotal, 427.5)

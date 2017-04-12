@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-<data>
+<odoo>
 
     <template id="inherit_survey_sfinished" inherit_id="survey.sfinished">
         <xpath expr="//t[@t-call='survey.back']" position="after">
@@ -8,16 +7,16 @@
         </xpath>
     </template>
 
-<!--     <template id="inherit_survey_init" inherit_id="survey.survey_init">
-        <xpath expr="//t[@t-call='survey.back']" position="after">
-            <t t-call="specific_base.back_partner" />
-        </xpath>
-    </template> -->
-<!--     <template id="inherit_survey_survey" inherit_id="survey.survey">
-        <xpath expr="//t[@t-call='survey.back']" position="after">
-            <t t-call="specific_base.back_partner" />
-        </xpath>
-    </template> -->
+    <!--     <template id="inherit_survey_init" inherit_id="survey.survey_init">
+            <xpath expr="//t[@t-call='survey.back']" position="after">
+                <t t-call="specific_base.back_partner" />
+            </xpath>
+        </template> -->
+    <!--     <template id="inherit_survey_survey" inherit_id="survey.survey">
+            <xpath expr="//t[@t-call='survey.back']" position="after">
+                <t t-call="specific_base.back_partner" />
+            </xpath>
+        </template> -->
 
 
     <template id="back_partner" name="BackPartner">
@@ -26,6 +25,4 @@
         </div>
     </template>
 
-
-</data>
-</openerp>
+</odoo>

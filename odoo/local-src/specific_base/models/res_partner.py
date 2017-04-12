@@ -7,7 +7,7 @@ import uuid
 
 from datetime import datetime, timedelta
 
-from openerp import models, fields, api, _
+from odoo import models, fields, api, _
 
 
 DUPLICATE_FIELDS_KEY = ['company_type', 'company_id',

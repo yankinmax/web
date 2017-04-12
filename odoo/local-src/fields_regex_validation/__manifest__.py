@@ -5,7 +5,7 @@
 
 {'name': 'Fields Regex Validation',
  'summary': "Validate Odoo fields with regular expression",
- 'version': '1.0',
+ 'version': '10.0.1.0.0',
  'author': 'Camptocamp',
  'license': 'AGPL-3',
  'category': 'Others',

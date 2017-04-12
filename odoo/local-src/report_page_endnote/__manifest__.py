@@ -6,7 +6,7 @@
 {'name': 'Report Page EndNote',
  'summary': "Add a page to any report with content (HTML) "
             "taken from an Odoo object",
- 'version': '1.0',
+ 'version': '10.0.1.0.0',
  'author': 'Camptocamp',
  'license': 'AGPL-3',
  'category': 'Others',

@@ -5,7 +5,7 @@
 
 {'name': 'DepilTech Specific base',
  'description': "",
- 'version': '1.0',
+ 'version': '10.0.1.0.0',
  'author': 'Camptocamp',
  'license': 'AGPL-3',
  'category': 'Others',
@@ -19,6 +19,7 @@
              'utm',
              'sale_crm',
              'sale_stock',
+             'sales_team',
              'stock',
              'survey',
              ],

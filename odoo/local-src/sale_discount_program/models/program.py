@@ -3,9 +3,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from datetime import date
 
-from openerp import _, api, fields, models
-from openerp.exceptions import UserError
-from openerp.tools.misc import DEFAULT_SERVER_DATE_FORMAT
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError
+from odoo.tools.misc import DEFAULT_SERVER_DATE_FORMAT
 
 
 class Program(models.Model):
@@ -292,6 +292,7 @@ class Program(models.Model):
             sale.pricelist_id = sale.partner_id.property_product_pricelist
             for line in sale.order_line:
                 line.product_uom_change()
+                line._onchange_discount()
 
     @api.model
     def get_automatic_programs(self, order):

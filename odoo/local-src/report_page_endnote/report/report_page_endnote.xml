@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-        <template id="page_endnote">
-            <div class="row" style="page-break-before:always">
-                <div t-raw="xx.env['report.page.endnote'].render(xx)" style="font-size:12px; text-align:justify;"/>
-            </div>
-        </template>
+<odoo>
 
-    </data>
-</openerp>
+    <template id="page_endnote">
+        <div class="row" style="page-break-before:always">
+            <div t-raw="xx.env['report.page.endnote'].render(xx)" style="font-size:12px; text-align:justify;"/>
+        </div>
+    </template>
+
+</odoo>

@@ -54,13 +54,15 @@ migration:
           - partner_survey
           - sale_automatic_workflow
           - web_duplicate_visibility
+          # TODO : Vérifier que ça fonctionne toujours même sans ce module
+          # - web_easy_switch_company
           #### camptocamp/cloud-platform
           - attachment_s3
           - cloud_platform
           #### local-src
-#          - specific_account
-#          - specific_base
-#          - report_page_endnote
-#          - fields_regex_validation
-#          - specific_discount_program
-#          - specific_payment_mode
+          - fields_regex_validation
+          - report_page_endnote
+          - specific_account
+          - specific_base
+          - specific_discount_program
+          - specific_payment_mode

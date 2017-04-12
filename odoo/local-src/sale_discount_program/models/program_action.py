@@ -2,9 +2,9 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import _, api, fields, models
-from openerp.addons import decimal_precision as dp
-from openerp.models import MAGIC_COLUMNS
+from odoo import _, api, fields, models
+from odoo.addons import decimal_precision as dp
+from odoo.models import MAGIC_COLUMNS
 
 
 class DiscountProgramAction(models.Model):
@@ -173,6 +173,7 @@ class DiscountProgramAction(models.Model):
             lambda l: not l.price_program
         ):
             line.product_uom_change()
+            line._onchange_discount()
 
     @api.multi
     def _get_change_pricelist_name(self):

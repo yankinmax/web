@@ -102,7 +102,7 @@
 
     </record>
 
-    <menuitem id="menu_discount_program" action="action_discount_program_list" parent="base.menu_sales" sequence="100"/>
-    <menuitem id="menu_discount_promo" action="action_promo_codes_list" parent="base.menu_sales" sequence="110"/>
-    <menuitem id="menu_discount_voucher" action="action_voucher_codes_list" parent="base.menu_sales" sequence="120"/>
+    <menuitem id="menu_discount_program" action="action_discount_program_list" parent="sales_team.menu_sales" sequence="100"/>
+    <menuitem id="menu_discount_promo" action="action_promo_codes_list" parent="sales_team.menu_sales" sequence="110"/>
+    <menuitem id="menu_discount_voucher" action="action_voucher_codes_list" parent="sales_team.menu_sales" sequence="120"/>
 </odoo>

@@ -4,13 +4,15 @@
 
 {
     'name': 'Discount Programs',
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.0',
     'author': 'Camptocamp',
     'license': 'AGPL-3',
     'category': 'Others',
     'depends': [
+        'sale',
         'sale_stock',
-        'product_visible_discount',
+        # TODO: remove if OCA
+        'specific_base',
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
