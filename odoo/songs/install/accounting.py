@@ -1,12 +1,34 @@
 # -*- coding: utf-8 -*-
-# © 2016 Camptocamp SA
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2016 Camptocamp SA
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from pkg_resources import Requirement
 from pkg_resources import resource_stream
 
 import anthem
+from anthem.lyrics.records import create_or_update
 from anthem.lyrics.loaders import load_csv_stream
+
+from ..common import req
+
+
+@anthem.log
+def no_coa_instance_lock(ctx):
+    """Prepare no accounting in holding"""
+    values = {
+        'name': "Dummy account to delete",
+        'code': "DUMMY",
+        'user_type_id': ctx.env.ref('account.data_account_type_equity').id,
+        }
+    create_or_update(ctx, 'account.account',
+                     '__setup__.dummy_holding_account', values)
+    company = ctx.env.ref('base.main_company')
+    company.expects_chart_of_accounts = False
+
+
+@anthem.log
+def no_coa_instance_unlock(ctx):
+    """ Remove dummy account on main company """
+    ctx.env.ref('__setup__.dummy_holding_account').unlink()
 
 
 @anthem.log
@@ -106,7 +128,6 @@ def remove_useless_accounts(ctx):
 def import_account_account(ctx):
     """ Import account account
     """
-    req = Requirement.parse('depiltech-odoo')
     content = resource_stream(req, 'data/install/CoA/CoA_Boulogne_50.csv')
     load_csv_stream(ctx, 'account.account', content, delimiter=',')
     content = resource_stream(req, 'data/install/CoA/CoA_Nice_RdF_10.csv')

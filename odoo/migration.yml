@@ -5,21 +5,30 @@ migration:
     - version: 10.0.0
       operations:
         pre:
+          # ***********************************************************
+          # ************* Avoid auto-install chart of accounts ********
+          # ***********************************************************
           - anthem songs.install.pre::main
+          # Install account without l10n to avoid auto install
+          - odoo -i account --stop-after-init --workers=0
+          - anthem songs.install.accounting::no_coa_instance_lock
         post:
+          - anthem songs.install.accounting::no_coa_instance_unlock
+          - anthem songs.install.pre::setup_company
           - anthem openerp.addons.cloud_platform.songs::install_exoscale
-#          - anthem songs.install.accounting::main
-#          - anthem songs.install.logistics::main
-#          - anthem songs.install.data_all::main
-#      modes:
-#        full:
-#          operations:
-#            post:
-#              - anthem songs.install.data_full::main
-#        demo:
-#          operations:
-#            post:
-#              - anthem songs.install.data_demo::main
+          - anthem songs.install.data::main_first_data
+          - anthem songs.install.setup::main
+          - anthem songs.install.data::main_others_data
+          - anthem songs.install.accounting::main
+          # TODO : Voir si ce songs est toujours utile
+          # - anthem songs.install.stock::main
+          - anthem songs.install.company::main
+          - anthem songs.install.rights::main
+      modes:
+        full:
+          operations:
+            post:
+              - anthem songs.install.accounting::configure_missing_chart_of_account
       addons:
         upgrade:
           - base_technical_features
@@ -31,11 +40,14 @@ migration:
           - auth_oauth
           - board
           - crm
+          - inter_company_rules
           - l10n_be
           - l10n_ch
           - l10n_fr
           - l10n_lu
           - l10n_mx
+          - marketing_campaign
+          - purchase
           - sale
           - subscription
           - survey

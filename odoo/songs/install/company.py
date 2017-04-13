@@ -3,8 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import anthem
-from base64 import b64encode
-from pkg_resources import Requirement, resource_string
 
 
 @anthem.log
@@ -34,18 +32,6 @@ def setup_company_report_footer(ctx):
             'Siège : 196 avenue de la Californie, '
             'California Park – Château de Leliwa, 06200 NICE'
     })
-
-
-@anthem.log
-def setup_company_logo(ctx):
-    """ Setup company logo """
-    company = ctx.env.ref('base.main_company')
-
-    # load logo on company
-    req = Requirement.parse('depiltech-odoo')
-    logo_content = resource_string(req, 'data/images/logo.png')
-    b64_logo = b64encode(logo_content)
-    company.logo = b64_logo
 
 
 @anthem.log

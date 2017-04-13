@@ -2,59 +2,18 @@
 # © 2016 Julien Coux (Camptocamp)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from pkg_resources import Requirement
 from pkg_resources import resource_stream
 
 import anthem
-import codecs
-
-import csv
-
-
-# csv_unireader and load_csv_stream methods
-# will be integrated to anthem common code
-# but only at the next release
-
-def csv_unireader(f, encoding="utf-8", **fmtparams):
-    data = csv.reader(
-        codecs.iterencode(codecs.iterdecode(f, encoding), "utf-8"), **fmtparams
-    )
-    for row in data:
-        yield [e.decode("utf-8") for e in row]
-
-
-def load_csv_stream(ctx, model_name, data, dialect='excel', encoding='utf-8',
-                    **fmtparams):
-    """ Load a CSV from a stream
-    Usage example::
-      from pkg_resources import Requirement, resource_stream
-      req = Requirement.parse('my-project')
-      load_csv_stream(ctx, 'res.users',
-                      resource_stream(req, 'data/users.csv'),
-                      delimiter=',')
-    """
-    data = csv_unireader(data, encoding=encoding, **fmtparams)
-    head = data.next()
-    values = list(data)
-    if values:
-        result = ctx.env[model_name].load(head, values)
-        ids = result['ids']
-        if not ids:
-            messages = u'\n'.join(
-                u'- %s' % msg for msg in result['messages']
-            )
-            ctx.log_line(u"Failed to load CSV "
-                         u"in '%s'. Details:\n%s" %
-                         (model_name, messages))
-            raise Exception(u'Could not import CSV. See the logs')
-        else:
-            ctx.log_line(u"Imported %d records in '%s'" %
-                         (len(ids), model_name))
+from anthem.lyrics.loaders import load_csv_stream
+from ..common import req
 
 
 @anthem.log
-def import_groups(ctx, req):
+def import_groups(ctx):
     """ Importing groups """
+    # TODO : Voir le groupe base.group_configuration qui a été enlevé
+    # TODO : Voir le groupe base.group_light_multi_company qui a été enlevé
     content = resource_stream(
         req, 'data/install/01.groups.csv'
     )
@@ -62,7 +21,7 @@ def import_groups(ctx, req):
 
 
 @anthem.log
-def import_partners(ctx, req):
+def import_partners(ctx):
     """ Importing partners """
     content = resource_stream(
         req, 'data/install/02.partners.csv'
@@ -71,25 +30,42 @@ def import_partners(ctx, req):
 
 
 @anthem.log
-def import_users(ctx, req):
+def import_users(ctx):
     """ Importing users """
+
+    load_ctx = ctx.env.context.copy()
+    load_ctx.update({'no_reset_password': True})
+    users_model = ctx.env['res.users'].with_context(load_ctx)
+
     content = resource_stream(
         req, 'data/install/03.users.csv'
     )
-    load_csv_stream(ctx, 'res.users', content, delimiter=';')
+    load_csv_stream(ctx, users_model, content, delimiter=';')
 
 
 @anthem.log
-def import_centers(ctx, req):
+def import_centers(ctx):
     """ Importing centers """
+    # TODO : Voir le VAT number FR9812708097 qui a été enlevé
+
+    load_ctx = ctx.env.context.copy()
+    load_ctx.update({'defer_parent_store_computation': 'manually'})
+    company_model = ctx.env['res.company'].with_context(load_ctx)
+
     content = resource_stream(
         req, 'data/install/04.centers.csv'
     )
-    load_csv_stream(ctx, 'res.company', content, delimiter=';')
+    load_csv_stream(ctx, company_model, content, delimiter=';')
 
 
 @anthem.log
-def import_users_dependances(ctx, req):
+def location_compute_parents(ctx):
+    """Compute parent_left, parent_right"""
+    ctx.env['stock.location']._parent_store_compute()
+
+
+@anthem.log
+def import_users_dependances(ctx):
     """ Importing users dependances """
     content = resource_stream(
         req, 'data/install/05.users_dependances.csv'
@@ -98,7 +74,7 @@ def import_users_dependances(ctx, req):
 
 
 @anthem.log
-def import_centers_dependances(ctx, req):
+def import_centers_dependances(ctx):
     """ Importing centers dependances """
     content = resource_stream(
         req, 'data/install/06.centers_dependances.csv'
@@ -107,7 +83,7 @@ def import_centers_dependances(ctx, req):
 
 
 @anthem.log
-def import_centers_horaires(ctx, req):
+def import_centers_horaires(ctx):
     """ Importing centers horaires """
     content = resource_stream(
         req, 'data/install/07.centers_horaires.csv'
@@ -116,7 +92,7 @@ def import_centers_horaires(ctx, req):
 
 
 @anthem.log
-def import_centers_pts(ctx, req):
+def import_centers_pts(ctx):
     """ Importing centers pts """
     content = resource_stream(
         req, 'data/install/08.centers_pts.csv'
@@ -125,7 +101,7 @@ def import_centers_pts(ctx, req):
 
 
 @anthem.log
-def import_partners_dependances(ctx, req):
+def import_partners_dependances(ctx):
     """ Importing partner dependances """
     content = resource_stream(
         req, 'data/install/09.partners_dependances.csv'
@@ -136,19 +112,18 @@ def import_partners_dependances(ctx, req):
 @anthem.log
 def main_first_data(ctx):
     """ Loading data """
-    req = Requirement.parse('depiltech-odoo')
-    import_groups(ctx, req)
-    import_partners(ctx, req)
-    import_users(ctx, req)
-    import_centers(ctx, req)
+    import_groups(ctx)
+    import_partners(ctx)
+    import_users(ctx)
+    import_centers(ctx)
+    location_compute_parents(ctx)
 
 
 @anthem.log
 def main_others_data(ctx):
     """ Loading data """
-    req = Requirement.parse('depiltech-odoo')
-    import_users_dependances(ctx, req)
-    import_centers_dependances(ctx, req)
-    import_centers_horaires(ctx, req)
-    import_centers_pts(ctx, req)
-    import_partners_dependances(ctx, req)
+    import_users_dependances(ctx)
+    import_centers_dependances(ctx)
+    import_centers_horaires(ctx)
+    import_centers_pts(ctx)
+    import_partners_dependances(ctx)
