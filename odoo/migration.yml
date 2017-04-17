@@ -65,6 +65,10 @@ migration:
           - project_task_default_stage
           #### OCA/reporting-engine
           - report_py3o
+          #### OCA/bank-statement-import
+          - account_bank_statement_import_camt
+          #### OCA/account-invoicing
+          -  account_invoice_rounding
           #### Specific
           - server_environment_files
           - mtsmte_project
