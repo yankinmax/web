@@ -41,3 +41,6 @@
 	path = odoo/external-src/project
 	url = git@github.com:OCA/project.git
 	branch = 10.0
+[submodule "odoo/external-src/account-invoicing"]
+	path = odoo/external-src/account-invoicing
+	url = git@github.com:camptocamp/account-invoicing.git
