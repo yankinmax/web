@@ -22,6 +22,8 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/bank-payment, \
   /opt/odoo/external-src/l10n-switzerland, \
   /opt/odoo/external-src/project, \
+  /opt/odoo/external-src/account-invoicing, \
+  /opt/odoo/external-src/bank-statement-import, \
   /opt/odoo/external-src/odoo-cloud-platform, \
   /opt/odoo/src/addons, \
   /opt/odoo/local-src," \
