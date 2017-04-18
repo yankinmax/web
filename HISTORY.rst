@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Add 'client_order_ref' in SO Tree view
+
 **Bugfixes**
 
 **Build**

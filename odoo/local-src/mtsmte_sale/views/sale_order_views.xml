@@ -23,4 +23,14 @@
     </field>
   </record>
 
+  <record id="sale_view_tree_specific" model="ir.ui.view">
+    <field name="name">sale.order.tree.specific</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_tree"/>
+    <field name="arch" type="xml">
+      <field name='partner_id' position="after">
+        <field name='client_order_ref'/>
+      </field>
+    </field>
+  </record>
 </odoo>
