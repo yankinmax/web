@@ -22,6 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Add 'client_order_ref' in SO Tree view
+* Install account_invoice_rounding & account_bank_statement_import_camt
 
 **Bugfixes**
 

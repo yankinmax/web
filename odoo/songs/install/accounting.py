@@ -17,6 +17,7 @@ def base_conf(ctx):
             {'group_analytic_accounting': True,
              'group_multi_currency': True,
              'group_analytic_account_for_purchases': True,
+             'tax_calculation_rounding_method': 'swedish_round_globally',
              }
         )
         acs.execute()
