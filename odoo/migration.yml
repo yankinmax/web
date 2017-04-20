@@ -9,6 +9,7 @@ migration:
           - anthem songs.install.pre::main
         post:
           - anthem openerp.addons.cloud_platform.songs::install_exoscale
+          - anthem songs.install.post::main
           - anthem songs.install.data_all::main
           - anthem songs.install.mts.accounting::main
           - anthem songs.install.mte.accounting::main
