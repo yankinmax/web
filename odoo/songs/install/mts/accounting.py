@@ -4,6 +4,7 @@
 
 import anthem
 from anthem.lyrics.records import create_or_update
+from ...common import load_chart_of_accounts
 
 
 @anthem.log
@@ -20,6 +21,14 @@ def set_fiscalyear(ctx):
 
 
 @anthem.log
+def import_chart_of_account(ctx):
+    """ Customize accounts """
+    load_chart_of_accounts(ctx, 'base.main_company',
+                           'data/install/mts/account.account.csv')
+
+
+@anthem.log
 def main(ctx):
     """ Configuring accounting """
     set_fiscalyear(ctx)
+    import_chart_of_account(ctx)

@@ -5,6 +5,7 @@
 import anthem
 from anthem.lyrics.records import create_or_update
 from . import mte_vars
+from ...common import load_chart_of_accounts
 
 
 @anthem.log
@@ -37,8 +38,15 @@ def configure_chart_of_account(ctx):
 
 
 @anthem.log
+def import_chart_of_account(ctx):
+    """ Customize accounts """
+    load_chart_of_accounts(ctx, '__setup__.company_mte',
+                           'data/install/mte/account.account.csv')
+
+
+@anthem.log
 def main(ctx):
     """ Configuring accounting """
     set_fiscalyear(ctx)
-    # reset_main_company_chart(ctx)
     configure_chart_of_account(ctx)
+    import_chart_of_account(ctx)
