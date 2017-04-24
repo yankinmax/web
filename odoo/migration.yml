@@ -16,12 +16,9 @@ migration:
           - anthem songs.install.accounting::no_coa_instance_unlock
           - anthem songs.install.pre::setup_company
           - anthem openerp.addons.cloud_platform.songs::install_exoscale
-          - anthem songs.install.data::main_first_data
           - anthem songs.install.setup::main
-          - anthem songs.install.data::main_others_data
+          - anthem songs.install.data::main
           - anthem songs.install.accounting::main
-          # TODO : Voir si ce songs est toujours utile
-          # - anthem songs.install.stock::main
           - anthem songs.install.company::main
           - anthem songs.install.rights::main
       modes:

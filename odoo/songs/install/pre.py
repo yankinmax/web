@@ -81,8 +81,8 @@ def admin_user_password(ctx):
         ctx.log_line('Not changing password for dev RUNNING_ENV')
         return
     ctx.env.user.password_crypt = (
-        '$pbkdf2-sha512$12000$utdaq3UuxViLsbaW0jonpA$NI26S.9DH8INhevccSvtF'
-        'Sf7.sv6iSjD/0fnsXDHXu51OZOkciNI6AeomyZboTQw30cXduO.4wrYBGHUP95G/Q'
+        '$pbkdf2-sha512$19000$xBiDsLY2BqDU.n8PYew9Bw$O3hHKc9f.OyeDPD2A6lvf'
+        'aebpmIYjB.8HGOABIh5Cc1xE387/Di.A0ok/qF8WzEyjzlEM67sm.VkhOBEdcJcBg'
     )
 
 

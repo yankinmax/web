@@ -7,13 +7,15 @@ import anthem
 
 @anthem.log
 def setup_admin_companies(ctx):
+    """ setup_admin_companies """
     companies = ctx.env['res.company'].search([])
     admin = ctx.env['res.users'].search([('login', '=', 'admin')])
     admin.company_ids = companies.ids
 
 
 @anthem.log
-def remove_company_for_partners_of_coampnies(ctx):
+def remove_company_for_partners_of_companies(ctx):
+    """ remove_company_for_partners_of_companies """
     companies = ctx.env['res.company'].search([])
     for company in companies:
         partner = company.partner_id
@@ -23,6 +25,7 @@ def remove_company_for_partners_of_coampnies(ctx):
 
 @anthem.log
 def setup_company_report_footer(ctx):
+    """ setup_company_report_footer """
     companies = ctx.env['res.company'].search([])
     companies.write({
         'custom_footer': True,
@@ -37,5 +40,5 @@ def setup_company_report_footer(ctx):
 @anthem.log
 def main(ctx):
     setup_admin_companies(ctx)
-    remove_company_for_partners_of_coampnies(ctx)
+    remove_company_for_partners_of_companies(ctx)
     setup_company_report_footer(ctx)

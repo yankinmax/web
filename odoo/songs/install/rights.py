@@ -8,6 +8,25 @@ import anthem
 
 
 @anthem.log
+def add_groups_to_admin_user(ctx):
+    """ add_groups_to_admin_user """
+    ctx.env.user.company_ids = ctx.env.ref('base.main_company').ids
+    groups = [
+        ctx.env.ref('account.group_account_manager'),
+        ctx.env.ref('purchase.group_purchase_manager'),
+        ctx.env.ref('sales_team.group_sale_manager'),
+        ctx.env.ref('sales_team.group_sale_salesman'),
+        ctx.env.ref('sales_team.group_sale_salesman_all_leads'),
+        ctx.env.ref('base.group_no_one'),
+        ctx.env.ref('base.group_multi_currency'),
+        ctx.env.ref('base.group_multi_company'),
+    ]
+    group_ids = [g.id for g in groups]
+    curr_groups = [g.id for g in ctx.env.user.groups_id]
+    ctx.env.user.group_id = list(set(group_ids + curr_groups))
+
+
+@anthem.log
 def update_res_partner_rules(ctx):
     """ Update rules for res partner """
 
@@ -60,4 +79,5 @@ def update_res_partner_rules(ctx):
 
 @anthem.log
 def main(ctx):
+    add_groups_to_admin_user(ctx)
     update_res_partner_rules(ctx)

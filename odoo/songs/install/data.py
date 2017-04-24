@@ -12,8 +12,6 @@ from ..common import req
 @anthem.log
 def import_groups(ctx):
     """ Importing groups """
-    # TODO : Voir le groupe base.group_configuration qui a été enlevé
-    # TODO : Voir le groupe base.group_light_multi_company qui a été enlevé
     content = resource_stream(
         req, 'data/install/01.groups.csv'
     )
@@ -46,7 +44,6 @@ def import_users(ctx):
 @anthem.log
 def import_centers(ctx):
     """ Importing centers """
-    # TODO : Voir le VAT number FR9812708097 qui a été enlevé
 
     load_ctx = ctx.env.context.copy()
     load_ctx.update({'defer_parent_store_computation': 'manually'})
@@ -110,20 +107,69 @@ def import_partners_dependances(ctx):
 
 
 @anthem.log
-def main_first_data(ctx):
+def survey_survey_import(ctx):
+    """ survey_survey_import """
+    content = resource_stream(req, 'data/setup/survey.survey.csv')
+    load_csv_stream(ctx, 'survey.survey', content, delimiter=',')
+
+
+@anthem.log
+def survey_page_import(ctx):
+    """ survey_page_import """
+    content = resource_stream(req, 'data/setup/survey.page.csv')
+    load_csv_stream(ctx, 'survey.page', content, delimiter=',')
+
+
+@anthem.log
+def survey_question_import(ctx):
+    """ survey_question_import """
+    content = resource_stream(req, 'data/setup/survey.question.csv')
+    load_csv_stream(ctx, 'survey.question', content, delimiter=',')
+
+
+@anthem.log
+def product_category_import(ctx):
+    """ product_category_import """
+    content = resource_stream(req, 'data/setup/product.category.csv')
+    load_csv_stream(ctx, 'product.category', content, delimiter=';')
+
+
+@anthem.log
+def product_product_import(ctx):
+    """ product_product_import """
+    content = resource_stream(req, 'data/install/10.product - all.csv')
+    load_csv_stream(ctx, 'product.product', content, delimiter=',')
+
+    content = resource_stream(req, 'data/install/11.product - new.csv')
+    load_csv_stream(ctx, 'product.product', content, delimiter=',')
+
+
+@anthem.log
+def sale_discount_program_import(ctx):
+    """ sale_discount_program_import """
+    content = resource_stream(req, 'data/setup/sale.discount.program.csv')
+    load_csv_stream(ctx, 'sale.discount.program', content, delimiter=',')
+
+
+@anthem.log
+def main(ctx):
     """ Loading data """
     import_groups(ctx)
     import_partners(ctx)
     import_users(ctx)
     import_centers(ctx)
+
     location_compute_parents(ctx)
 
-
-@anthem.log
-def main_others_data(ctx):
-    """ Loading data """
     import_users_dependances(ctx)
     import_centers_dependances(ctx)
     import_centers_horaires(ctx)
     import_centers_pts(ctx)
     import_partners_dependances(ctx)
+
+    survey_survey_import(ctx)
+    survey_page_import(ctx)
+    survey_question_import(ctx)
+    product_category_import(ctx)
+    product_product_import(ctx)
+    sale_discount_program_import(ctx)
