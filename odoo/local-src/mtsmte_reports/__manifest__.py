@@ -13,6 +13,7 @@
  'website': 'https://www.camptocamp.com',
  'data': ['data/py3o_server.xml',
           'reports/reports.xml',
+          'reports/layouts.xml',
           ],
  'installable': True,
  }

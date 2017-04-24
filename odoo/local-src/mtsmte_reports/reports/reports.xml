@@ -34,4 +34,11 @@
     <field name="module">mtsmte_reports</field>
   </record>
 
+  <!-- Import specifici Assets -->
+  <template id="assets_common" name="Mtsmte reports assets" inherit_id="report.assets_common">
+    <xpath expr="." position="inside">
+      <link href="/mtsmte_reports/static/src/less/mtsmte_reports.less" rel="stylesheet"/>
+    </xpath>
+  </template>
+
 </odoo>

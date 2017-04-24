@@ -31,6 +31,9 @@ latest (unreleased)
   domains per company
 * Load warehouses
 * Add MT Sales Teams
+* Set web_base_url for reports
+* Base layout Header for reports of mts/mte
+* Fax at company setup for mte
 
 **Bugfixes**
 
