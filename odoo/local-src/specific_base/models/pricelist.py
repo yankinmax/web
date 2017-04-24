@@ -10,13 +10,3 @@ class ProductPricelist(models.Model):
     _inherit = 'product.pricelist'
 
     allowed_company_ids = fields.Many2many(comodel_name='res.company')
-
-
-class ProductPricelistItem(models.Model):
-    _inherit = 'product.pricelist.item'
-
-    allowed_company_ids = fields.Many2many(
-        comodel_name='res.company',
-        # TODO: To be fixed
-        # related='pricelist_id.allowed_company_ids',
-        store='True')

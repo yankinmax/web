@@ -4,7 +4,7 @@
       self.domain_force = domain_force
 -
   !python {model: ir.rule, id: product.product_pricelist_item_comp_rule} : |
-      domain_force = "['|', ('allowed_company_ids','=',False), ('allowed_company_ids','in',[user.company_id.id])]"
+      domain_force = "['|', ('pricelist_id.allowed_company_ids','=',False), ('pricelist_id.allowed_company_ids','in',[user.company_id.id])]"
       self.domain_force = domain_force
 -
   !python {model: ir.rule, id: base.res_partner_rule} : |
@@ -25,7 +25,3 @@
 -
   !python {model: res.partner.title, id: base.res_partner_title_miss} : |
       self.active = False
-# TODO : Check it's OK
-#-
-#  !python {model: res.partner.title, id: base.res_partner_title_sir} : |
-#      self.active = False

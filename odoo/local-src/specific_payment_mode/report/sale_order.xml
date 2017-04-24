@@ -5,8 +5,6 @@
 
         <p t-field="doc.note" position="replace"/>
         <p t-if="doc.payment_term_id.note" position="replace"/>
-        <!-- TODO : A remplacer par ? -->
-        <!--<p t-if="not doc.payment_term_id and doc.partner_id.property_payment_term_id" position="replace"/>-->
         <p id="fiscal_position_remark" position="replace"/>
 
         <xpath expr="//div[@name='total']" position="after">
@@ -16,10 +14,9 @@
                     <p t-if="doc.payment_term_id.note">
                         <span t-field="doc.payment_term_id.note"/>
                     </p>
-                    <!-- TODO : A remplacer par ? -->
-                    <!--<p t-if="not doc.payment_term_id and doc.partner_id.property_payment_term_id">-->
-                        <!--<span t-field="doc.partner_id.property_payment_term_id.note"/>-->
-                    <!--</p>-->
+                    <p t-if="not doc.payment_term_id and doc.partner_id.property_payment_term_id">
+                        <span t-field="doc.partner_id.property_payment_term_id.note"/>
+                    </p>
                     <p id="fiscal_position_remark" t-if="doc.fiscal_position_id and doc.fiscal_position_id.note">
                         <strong>Fiscal Position Remark:</strong>
                         <span t-field="doc.fiscal_position_id.note"/>

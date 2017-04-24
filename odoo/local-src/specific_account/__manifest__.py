@@ -12,10 +12,6 @@
     'depends': [
         'base',
         'account',
-        # TODO: The module 'account_tax_exigible' disapeared in V10.
-        # TODO: Check if this content added in another module ?
-        # TODO: To check all are OK, look the trello card 216:
-        # 'account_tax_exigible',
     ],
     'data': [],
     'test': [],

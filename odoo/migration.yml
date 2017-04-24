@@ -37,6 +37,7 @@ migration:
           #### core
           - account
           - account_cancel
+          - account_tax_cash_basis
           - auth_oauth
           - board
           - crm
@@ -66,8 +67,6 @@ migration:
           - partner_survey
           - sale_automatic_workflow
           - web_duplicate_visibility
-          # TODO : Vérifier que ça fonctionne toujours même sans ce module
-          # - web_easy_switch_company
           #### camptocamp/cloud-platform
           - attachment_s3
           - cloud_platform

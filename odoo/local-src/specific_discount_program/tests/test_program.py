@@ -11,6 +11,10 @@ class TestProgram(TransactionCase):
     def setUp(self):
         super(TestProgram, self).setUp()
 
+        self.env['sale.config.settings'].create({
+            'group_discount_per_so_line': 1,
+        }).execute()
+
         self.invoice_model = self.env['account.invoice']
         self.partner_model = self.env['res.partner']
         self.product_model = self.env['product.product']
@@ -52,7 +56,7 @@ class TestProgram(TransactionCase):
         })
 
         self.promo_pricelist_without_discount = self.pricelist_model.create({
-            'name': 'Unittest code promo',
+            'name': 'Unittest code promo (without discount)',
             'discount_policy': 'without_discount',
             'item_ids': [(0, False, {
                 'applied_on': '3_global',
@@ -470,52 +474,52 @@ class TestProgram(TransactionCase):
         self.assertEqual(sale.order_line[0].price_subtotal, 427.5)
 
     # TODO : Search why the test doesn't work
-    # @post_install(True)
-    # @at_install(False)
-    # def test_discount_manually_percent_with_pricelist_discount_2(self):
-    #     # Create product with list_price (used on pricelist)
-    #     p1 = self.product_model.create({
-    #         'name': 'Unittest P1',
-    #         'list_price': 500,
-    #     })
-    #
-    #     # Create a program with pricelist promo
-    #     self.program_model.create({
-    #         'name': 'Unittest reward product program',
-    #         'condition_ids': [
-    #             (0, False, {
-    #                 'type_condition': 'product',
-    #                 'product_id': p1.id,
-    #             })
-    #         ],
-    #         'action_ids': [
-    #             (0, False, {
-    #                 'type_action': 'change_pricelist',
-    #                 'pricelist_id': self.promo_pricelist_without_discount.id,
-    #                 'note_message': 'Unittest message',
-    #             })
-    #         ]
-    #     })
-    #
-    #     # Create sale order
-    #     sale = self.sale_model.create({
-    #         'phototherapist_id': self.phototherapist.id,
-    #         'partner_id': self.partner1.id,
-    #         'order_line': [(0, 0, {
-    #             'product_id': p1.id,
-    #             'product_uom_qty': 1,
-    #             'price_unit': 40,# price_unit will be overridden by pricelist
-    #         })]
-    #     })
-    #     sale.apply_discount_programs()
-    #     # Without manually discount, discount for lines is 10.0
-    #     self.assertEqual(sale.order_line[0].discount, 10.)
-    #     self.assertEqual(sale.order_line[0].price_unit, 500)
-    #     self.assertEqual(sale.order_line[0].price_subtotal, 450)
-    #
-    #     sale.discount_manually_percent = 5.
-    #     sale.apply_discount_programs()
-    #     # With manually discount, discount for lines is 15.0
-    #     self.assertEqual(sale.order_line[0].discount, 15.)
-    #     self.assertEqual(sale.order_line[0].price_unit, 500)
-    #     self.assertEqual(sale.order_line[0].price_subtotal, 427.5)
+    @post_install(True)
+    @at_install(False)
+    def test_discount_manually_percent_with_pricelist_discount_2(self):
+        # Create product with list_price (used on pricelist)
+        p1 = self.product_model.create({
+            'name': 'Unittest P1',
+            'list_price': 500,
+        })
+
+        # Create a program with pricelist promo
+        self.program_model.create({
+            'name': 'Unittest reward product program',
+            'condition_ids': [
+                (0, False, {
+                    'type_condition': 'product',
+                    'product_id': p1.id,
+                })
+            ],
+            'action_ids': [
+                (0, False, {
+                    'type_action': 'change_pricelist',
+                    'pricelist_id': self.promo_pricelist_without_discount.id,
+                    'note_message': 'Unittest message',
+                })
+            ]
+        })
+
+        # Create sale order
+        sale = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': self.partner1.id,
+            'order_line': [(0, 0, {
+                'product_id': p1.id,
+                'product_uom_qty': 1,
+                'price_unit': 40,  # price_unit will be overridden by pricelist
+            })]
+        })
+        sale.apply_discount_programs()
+        # Without manually discount, discount for lines is 10.0
+        self.assertEqual(sale.order_line[0].discount, 10.)
+        self.assertEqual(sale.order_line[0].price_unit, 500)
+        self.assertEqual(sale.order_line[0].price_subtotal, 450)
+
+        sale.discount_manually_percent = 5.
+        sale.apply_discount_programs()
+        # With manually discount, discount for lines is 15.0
+        self.assertEqual(sale.order_line[0].discount, 15.)
+        self.assertEqual(sale.order_line[0].price_unit, 500)
+        self.assertEqual(sale.order_line[0].price_subtotal, 425)

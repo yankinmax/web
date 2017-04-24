@@ -14,6 +14,7 @@
              'account',
              'partner_survey',
              'partner_firstname',
+             'product',
              'l10n_fr_siret',
              'crm',
              'utm',
