@@ -1,0 +1,120 @@
+id,code,name,user_type_id/id,reconcile,currency_id/id,company_id/id
+__setup__.mte_coa_1000,1000,Petite caisse,account.data_account_type_liquidity,,,__setup__.company_mte
+__setup__.mte_coa_1020,1020,Compte courant bancaire,account.data_account_type_liquidity,,,__setup__.company_mte
+__setup__.mte_coa_1040,1040,Compte courant Euro,account.data_account_type_liquidity,,,__setup__.company_mte
+__setup__.mte_coa_1050,1050,Compte courant dollars,account.data_account_type_liquidity,,,__setup__.company_mte
+__setup__.mte_coa_1060,1060,Obligations,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.l10n_ch_coa_original_1100___setup___company_mte,1100,Clients,account.data_account_type_receivable,1,,__setup__.company_mte
+__setup__.mte_coa_1176,1176,Impôt anticipé à récupérer,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.mte_coa_1200,1200,Travaux en cours,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.mte_coa_1300,1300,Actifs de régularisation,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.mte_coa_1500,1500,Machines et appareils,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.mte_coa_1505,1505,Matériel laboratoire+métallographique,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.mte_coa_1510,1510,Outillage,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.mte_coa_1520,1520,Mobilier de bureau/rénovation,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.mte_coa_1525,1525,Matériel informatique,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.mte_coa_1530,1530,Automobiles,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.mte_coa_1600,1600,Bâtiments d'exploitation,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.mte_coa_1610,1610,Usines,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.mte_coa_1990,1990,Compte de régularisation,account.data_account_type_current_assets,,,__setup__.company_mte
+__setup__.l10n_ch_coa_original_2000___setup___company_mte,2000,Créanciers,account.data_account_type_payable,1,,__setup__.company_mte
+__setup__.mte_coa_2009,2009,Compte salaire,account.data_account_type_current_liabilities,,,__setup__.company_mte
+__setup__.mte_coa_2100,2100,Dettes bancaires à court terme,account.data_account_type_current_liabilities,,,__setup__.company_mte
+__setup__.mte_coa_2208,2208,Impôt à la source,account.data_account_type_current_liabilities,,,__setup__.company_mte
+__setup__.mte_coa_2230,2230,c/c Philippe Girardin,account.data_account_type_current_liabilities,,,__setup__.company_mte
+__setup__.mte_coa_2300,2300,Passifs de régularisation,account.data_account_type_current_liabilities,,,__setup__.company_mte
+__setup__.mte_coa_2400,2400,Dettes bancaires à long terme,account.data_account_type_current_liabilities,,,__setup__.company_mte
+__setup__.mte_coa_2500,2500,Ducroire sur débiteur,account.data_account_type_current_liabilities,,,__setup__.company_mte
+__setup__.mte_coa_2550,2550,Provision 13ème salaire et vacances,account.data_account_type_current_liabilities,,,__setup__.company_mte
+__setup__.mte_coa_2600,2600,Provision pour impôts,account.data_account_type_current_liabilities,,,__setup__.company_mte
+__setup__.mte_coa_2700,2700,Provision pour garanties,account.data_account_type_current_liabilities,,,__setup__.company_mte
+__setup__.mte_coa_2710,2710,Provision conjoncturelle,account.data_account_type_current_liabilities,,,__setup__.company_mte
+__setup__.mte_coa_2800,2800,Capital,account.data_account_type_equity,,,__setup__.company_mte
+__setup__.mte_coa_2900,2900,Réserves générales,account.data_account_type_equity,,,__setup__.company_mte
+__setup__.mte_coa_2910,2910,Réserves libres,account.data_account_type_equity,,,__setup__.company_mte
+__setup__.mte_coa_2990,2990,Bénéfice reporté,account.data_account_type_equity,,,__setup__.company_mte
+__setup__.mte_coa_2995,2995,Bénéfice/perte de l'exercice,account.data_account_type_equity,,,__setup__.company_mte
+__setup__.l10n_ch_coa_original_3000___setup___company_mte,3000,Tests mécaniques,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.mte_coa_3010,3010,Prestations,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.mte_coa_3020,3020,Frais,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.mte_coa_3030,3030,Frais dossier,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.mte_coa_3040,3040,Analyse/Mesure,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.mte_coa_3041,3041,Analyse/Mesure-Chimie,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.mte_coa_3050,3050,Tests environnement,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.mte_coa_3060,3060,R & D,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.mte_coa_3070,3070,?,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.mte_coa_3900,3900,Escomptes,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.l10n_ch_coa_original_4000___setup___company_mte,4000,Tests mécaniques,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_4010,4010,Prestations,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_4020,4020,Frais,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_4030,4030,Divers,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_4040,4040,Analyse/Mesure,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_4041,4041,Analyse/Mesure-Chimie,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_4050,4050,Tests environnement,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_4060,4060,Produits pour Analyse/Mesure,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_4070,4070,Outillage et renouvellement d'installations,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_4080,4080,Leasing achat matériel laboratoire,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_4090,4090,Développement R & D,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5000,5000,Salaires,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5020,5020,Primes et provisions,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5700,5700,"AVS, AI, APG",account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5710,5710,Caisse de compensation familiale,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5720,5720,Prévoyance professionnelle,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5730,5730,Assurance-accidents,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5740,5740,Assurance pour indémnités maladie,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5790,5790,Impôts à la source,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5810,5810,Manifeations en faveur du personnel,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5820,5820,Frais de voyages,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5830,5830,Frais forfaitaires,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5890,5890,Autres charges de personnel,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_5900,5900,Employés temporaires,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6000,6000,Loyer,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6030,6030,Charges accessoires,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6040,6040,Nettoyage + frais de locaux,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6200,6200,"Réparation, service et nettoyage",account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6210,6210,Carburants,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6215,6215,Part privée véhicule,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6220,6220,Assurances,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6230,6230,Divers,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6240,6240,Leasing voiture,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6270,6270,"Frets, frais de transport",account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6300,6300,Assurance RC entreprise,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6310,6310,Assurance installations éléctrotechniques,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6400,6400,Electricité,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6500,6500,Matériel de bureau,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6501,6501,Matériel informatique,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6502,6502,Consommables de bureau,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6510,6510,Téléphone,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6512,6512,Frais de timbre,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6513,6513,Frais de colis,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6520,6520,Dons et cadeaux,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6530,6530,Honoraires pour fiduciaire/avocat/notaire,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6540,6540,Produits entretien/nettoyage,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6560,6560,Développement ERP,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6570,6570,Divers,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6575,6575,Horaires et frais d'accréditation,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6580,6580,Honoraires pour informatique,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6590,6590,Documentations professionnelle,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6600,6600,Publicité,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6610,6610,Imprimés publicitaires,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6640,6640,Frais de voyage,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6641,6641,Conseils à la clientèle,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6650,6650,Charges extraordinaires,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6700,6700,Carte crédit entreprise,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6800,6800,Charges financières pour crédit bancaire,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6840,6840,Frais de banque,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6850,6850,Intérêts créanciers,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6860,6860,Gains de change,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6865,6865,Pertes de change,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6900,6900,Amortissements sur machines et appareils,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6905,6905,Amortissements matériel laboratoire+métallogr.,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6910,6910,Amortissements sur mobilier et installations,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6920,6920,Amortissement machines de bureau et informatiq-,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_6930,6930,Amortissement automobile,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_7500,7500,Variation de ducroire sur débiteurs,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.mte_coa_7700,7700,Variation provision garanties,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_7710,7710,Variation provision conjoncturelle,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_8900,8900,Impôts,account.data_account_type_expenses,,,__setup__.company_mte
+__setup__.mte_coa_8910,8910,Produits extraordinaires,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.mte_coa_9001,9001,Produits extraordinaires,account.data_account_type_revenue,,,__setup__.company_mte
+__setup__.l10n_ch_coa_original_999999___setup___company_mte,9999,Interne,account.data_unaffected_earnings,,,__setup__.company_mte

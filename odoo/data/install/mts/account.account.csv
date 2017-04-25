@@ -1,0 +1,104 @@
+id,code,name,user_type_id/id,reconcile,currency_id/id,company_id/id
+__setup__.mts_coa_1020,1020,Compte courant bancaire,account.data_account_type_liquidity,,,base.main_company
+__setup__.mts_coa_1040,1040,Compte postal,account.data_account_type_liquidity,,,base.main_company
+__setup__.mts_coa_1050,1050,Caisse,account.data_account_type_liquidity,,,base.main_company
+__setup__.mts_coa_1060,1060,Obligations,account.data_account_type_current_assets,,,base.main_company
+__setup__.l10n_ch_coa_original_1100_base_main_company,1100,Clients,account.data_account_type_receivable,1,,base.main_company
+__setup__.mts_coa_1173,1173,TVA sur Acquis de Douanes,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1176,1176,Impôt anticipé à récupérer,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1200,1200,Stock de marchandises,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1300,1300,Actifs de régularisation,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1500,1500,Machines et appareils,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1510,1510,Mobilier aménagements,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1520,1520,Informatique,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1530,1530,Automobiles,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1600,1600,Bâtiments d'exploitation,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1610,1610,Usines,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1700,1700,Capital non libéré,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1800,1800,Frais 1er établissement,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1900,1900,Garantie Loyer,account.data_account_type_current_assets,,,base.main_company
+__setup__.mts_coa_1990,1990,Compte de régularisation,account.data_account_type_current_assets,,,base.main_company
+__setup__.l10n_ch_coa_original_2000_base_main_company,2000,Créanciers,account.data_account_type_payable,1,,base.main_company
+__setup__.mts_coa_2009,2009,Compte salaire,account.data_account_type_current_liabilities,,,base.main_company
+__setup__.mts_coa_2010,2010,CC bancaire,account.data_account_type_current_liabilities,,,base.main_company
+__setup__.mts_coa_2100,2100,Dettes bancaires à court terme,account.data_account_type_current_liabilities,,,base.main_company
+__setup__.mts_coa_2208,2208,Impôt à la source,account.data_account_type_current_liabilities,,,base.main_company
+__setup__.mts_coa_2300,2300,Passifs de régularisation,account.data_account_type_current_liabilities,,,base.main_company
+__setup__.mts_coa_2400,2400,Dettes bancaires à long terme,account.data_account_type_current_liabilities,,,base.main_company
+__setup__.mts_coa_2500,2500,Ducroire sur débiteur,account.data_account_type_current_liabilities,,,base.main_company
+__setup__.mts_coa_2600,2600,Provision pour impôts,account.data_account_type_current_liabilities,,,base.main_company
+__setup__.mts_coa_2700,2700,Provision pour garanties,account.data_account_type_current_liabilities,,,base.main_company
+__setup__.mts_coa_2800,2800,Capital,account.data_account_type_equity,,,base.main_company
+__setup__.mts_coa_2900,2900,Réserves générales,account.data_account_type_equity,,,base.main_company
+__setup__.mts_coa_2910,2910,Réserves libres,account.data_account_type_equity,,,base.main_company
+__setup__.mts_coa_2990,2990,Bénéfice reporté,account.data_account_type_equity,,,base.main_company
+__setup__.mts_coa_2995,2995,Bénéfice/perte de l'exercice,account.data_account_type_equity,,,base.main_company
+__setup__.l10n_ch_coa_original_3000_base_main_company,3000,Ventes,account.data_account_type_revenue,,,base.main_company
+__setup__.mts_coa_3010,3010,Ventes B,account.data_account_type_revenue,,,base.main_company
+__setup__.mts_coa_3900,3900,Escomptes,account.data_account_type_revenue,,,base.main_company
+__setup__.l10n_ch_coa_original_4000_base_main_company,4000,Achat,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_4010,4010,Achats de matières B,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_4020,4020,Abrasif,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_4030,4030,Porteur,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_4040,4040,Outillage de production,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_4050,4050,Consommable de production,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_4052,4052,Matériel polissage,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_4060,4060,Sous-traitance traitement de surface,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_4070,4070,Sous-traitance Bodycote,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_4072,4072,Sous-traitance DLC/PVD,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_4072,4072,Sous-traitance Polissage,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5000,5000,Salaires,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5020,5020,Primes et provisions,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5050,5050,Indemnités reçues,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5700,5700,"AVS, AI, APG",account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5710,5710,Caisse de compensation familiale,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5720,5720,Prévoyance professionnelle,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5730,5730,Assurance-accidents,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5740,5740,Assurance pour indemnités maladie,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5790,5790,Impôts à la source,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5810,5810,Manifestations en faveur du personnel,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5820,5820,Frais de voyages,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5830,5830,Frais forfaitaires,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5890,5890,Autres charges de personnel,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_5900,5900,Employée temporaires,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6000,6000,Loyer,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6030,6030,Charges accessoires,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6040,6040,Nettoyage,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6050,6050,Aménagements locaux,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6200,6200,"Réparation, et autres charges véhicule",account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6210,6210,Carburants,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6220,6220,Assurances,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6240,6240,Leasing voiture,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6270,6270,"Frets, frais de transport",account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6300,6300,Assurance pour dommages,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6370,6370,Autorisations,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6400,6400,Electricité,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6500,6500,Matériel de bureau,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6501,6501,Matériel informatique,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6502,6502,Consommable de bureau,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6510,6510,Téléphone,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6512,6512,Frais postaux,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6520,6520,Dons et cadeaux,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6530,6530,Honoraires pour fiduciaire/avocat/notaire,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6540,6540,Produit entretien/nettoyage,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6560,6560,Leasing Hardware,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6570,6570,Investissement de faible montant,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6580,6580,Honoraire pour informatique,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6600,6600,Publicité et frais d'exposition,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6610,6610,Imprimés publicitaires,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6640,6640,Frais de voyage,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6641,6641,Conseils à la clientèle,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6700,6700,Assistance technique laboratoire,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6800,6800,Charges financières pour crédit bancaire,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6840,6840,Frais de banque,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6850,6850,Produits financiers sur des avoirs bancaires,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6860,6860,Gains de change,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6900,6900,Amortissements sur machines et appareils,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6910,6910,Amortissements sur mobilier aménagements,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6920,6920,Amortissement informatique,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6930,6930,Amortissement automobile,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_6980,6980,Amortissement frais 1er établissement,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_7500,7500,Variation de ducroire sur débiteurs,account.data_account_type_revenue,,,base.main_company
+__setup__.mts_coa_7700,7700,Variation provision garanties,account.data_account_type_expenses,,,base.main_company
+__setup__.mts_coa_8900,8900,Impôts,account.data_account_type_expenses,,,base.main_company
+__setup__.l10n_ch_coa_original_999999_base_main_company,9999,Interne,account.data_unaffected_earnings,,,base.main_company
