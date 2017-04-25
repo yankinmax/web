@@ -27,6 +27,8 @@ latest (unreleased)
 * Load custom chart of accounts
 * Improve loading of users during setup (disable sending of emails)
 * Add mailtrap email accounts and production accounts (without usernames)
+* Add new module ``mail_company_domain`` allowing to have different alias
+  domains per company
 
 **Bugfixes**
 

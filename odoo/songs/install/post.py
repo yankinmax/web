@@ -35,6 +35,25 @@ def create_incoming_mail_server(ctx):
                      '__setup__.fetchmail_mail_in_mtsmte',
                      {'name': 'mail_in_mtsmte'})
 
+def setup_mail_catchall_domain(ctx):
+    """ Setup e-mail catchall domains """
+    def ref_id(xmlid):
+        return ctx.env.ref(xmlid).id
+
+    # TODO: set correct domains
+    domains = {
+        '__setup__.catchall_domain_mts': {
+            'name': 'mts.com',
+            'company_id': ref_id('base.main_company'),
+        },
+        '__setup__.catchall_domain_mte': {
+            'name': 'mte.com',
+            'company_id': ref_id('__setup__.company_mte'),
+        },
+    }
+    for xmlid, values in domains.iteritems():
+        create_or_update(ctx, 'mail.catchall.domain', xmlid, values)
+
 
 @anthem.log
 def main(ctx):
@@ -42,3 +61,4 @@ def main(ctx):
     setup_multi_company(ctx)
     add_company_to_user(ctx)
     create_incoming_mail_server(ctx)
+    setup_mail_catchall_domain(ctx)

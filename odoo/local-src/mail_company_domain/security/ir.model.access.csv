@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mail_catchall_domain_all,mail.catchall.domain all,model_mail_catchall_domain,,1,0,0,0
+access_mail_catchall_domain_system,mail.catchall.domain system,model_mail_catchall_domain,base.group_system,1,1,1,1
