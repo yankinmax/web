@@ -70,3 +70,12 @@ def load_chart_of_accounts(ctx, company_xmlid, filepath):
     with ctx.log('Import Accounts for company %s' % company.name):
         csv_content = resource_stream(req, filepath)
         load_csv_stream(ctx, 'account.account', csv_content)
+
+
+def load_users_csv(ctx, content, delimiter=','):
+    # make sure we don't send any email
+    model = ctx.env['res.users'].with_context({
+        'no_reset_password': True,
+        'tracking_disable': True,
+    })
+    load_csv_stream(ctx, model, content, delimiter=delimiter)
