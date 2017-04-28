@@ -4,8 +4,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 company_xmlids = [
-    '__setup__.company_mte',
     'base.main_company',
+    '__setup__.company_mte',
 ]
 
 

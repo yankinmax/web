@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 import anthem
-from anthem.lyrics.records import create_or_update
 
 from . import base_vars
 
@@ -37,22 +36,22 @@ def create_incoming_mail_server(ctx):
 
 def setup_mail_catchall_domain(ctx):
     """ Setup e-mail catchall domains """
-    def ref_id(xmlid):
-        return ctx.env.ref(xmlid).id
-
-    # TODO: set correct domains
     domains = {
-        '__setup__.catchall_domain_mts': {
-            'name': 'mts.com',
-            'company_id': ref_id('base.main_company'),
-        },
-        '__setup__.catchall_domain_mte': {
-            'name': 'mte.com',
-            'company_id': ref_id('__setup__.company_mte'),
-        },
+        'base.main_company': 'mtssa.ch',
+        '__setup__.company_mte': 'metallo-tests.ch',
     }
-    for xmlid, values in domains.iteritems():
-        create_or_update(ctx, 'mail.catchall.domain', xmlid, values)
+    current_company = ctx.env.user.company_id
+    try:
+        for company_xmlid in base_vars.company_xmlids:
+            company = ctx.env.ref(company_xmlid)
+            domain = domains[company_xmlid]
+            ctx.env.user.company_id = company
+            ctx.env['ir.config_parameter'].set_param(
+                'mail.catchall.domain',
+                domain
+            )
+    finally:
+        ctx.env.user.company_id = current_company
 
 
 @anthem.log
