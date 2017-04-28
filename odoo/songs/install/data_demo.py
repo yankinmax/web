@@ -6,7 +6,7 @@ from pkg_resources import resource_stream
 
 import anthem
 from anthem.lyrics.loaders import load_csv_stream
-from ..common import req
+from ..common import req, load_users_csv
 
 """ File for demo data
 
@@ -48,7 +48,7 @@ def import_partner(ctx):
 def import_users(ctx):
     """ Importing users from csv """
     content = resource_stream(req, 'data/demo/res.users.csv')
-    load_csv_stream(ctx, 'res.users', content, delimiter=',')
+    load_users_csv(ctx, content, delimiter=',')
 
 
 @anthem.log
