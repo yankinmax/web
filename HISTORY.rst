@@ -29,6 +29,7 @@ latest (unreleased)
 * Add mailtrap email accounts and production accounts (without usernames)
 * Add new module ``mail_company_domain`` allowing to have different alias
   domains per company
+* Load warehouses
 
 **Bugfixes**
 

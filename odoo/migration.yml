@@ -15,6 +15,7 @@ migration:
           - anthem songs.install.mte.accounting::main
           - anthem songs.install.accounting::main
           - anthem songs.install.sale::main
+          - anthem songs.install.stock::main
       modes:
         full:
           operations:

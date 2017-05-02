@@ -9,6 +9,7 @@ import os
 import anthem
 
 from anthem.lyrics.loaders import load_csv_stream
+from anthem.lyrics.records import add_xmlid
 
 from ..common import req
 
@@ -23,6 +24,11 @@ def setup_company(ctx):
 
     content = resource_stream(req, 'data/install/res.company.csv')
     load_csv_stream(ctx, 'res.company', content, delimiter=',')
+
+    # set a xmlid on the partner of the second company, so
+    # we'll be able to use it in other parts of the setup
+    add_xmlid(ctx, ctx.env.ref('__setup__.company_mte').partner_id,
+              '__setup__.partner_mte')
 
 
 @anthem.log

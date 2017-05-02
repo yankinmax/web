@@ -1,0 +1,3 @@
+"id","code","name","partner_id/id"
+"stock.warehouse0","MTS","MTS Matériaux Technologies Surfaces SA","base.main_partner"
+"__export__.stock_warehouse_2","MT","Métallo-Tests S.A.","__setup__.partner_mte"
