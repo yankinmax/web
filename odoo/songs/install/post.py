@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 import anthem
+from anthem.lyrics.records import create_or_update
 
 from . import base_vars
 
@@ -28,7 +29,16 @@ def add_company_to_user(ctx):
 
 
 @anthem.log
+def create_incoming_mail_server(ctx):
+    """ Create incoming mail server """
+    create_or_update(ctx, 'fetchmail.server',
+                     '__setup__.fetchmail_mail_in_mtsmte',
+                     {'name': 'mail_in_mtsmte'})
+
+
+@anthem.log
 def main(ctx):
     """ Post """
     setup_multi_company(ctx)
     add_company_to_user(ctx)
+    create_incoming_mail_server(ctx)

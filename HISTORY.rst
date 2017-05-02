@@ -26,6 +26,7 @@ latest (unreleased)
 * Activate multi-company features
 * Load custom chart of accounts
 * Improve loading of users during setup (disable sending of emails)
+* Add mailtrap email accounts and production accounts (without usernames)
 
 **Bugfixes**
 
