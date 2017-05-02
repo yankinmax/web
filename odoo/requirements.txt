@@ -5,5 +5,3 @@ statsd==3.2.1
 unidecode==0.04.20
 py3o.template==0.9.11
 py3o.formats==0.3
-html2text==2016.9.19
-anthem==0.7.0
