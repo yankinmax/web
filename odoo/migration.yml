@@ -13,6 +13,7 @@ migration:
           - anthem songs.install.data_all::main
           - anthem songs.install.mts.accounting::main
           - anthem songs.install.mte.accounting::main
+          - anthem songs.install.crm::main
           - anthem songs.install.accounting::main
           - anthem songs.install.sale::main
           - anthem songs.install.stock::main

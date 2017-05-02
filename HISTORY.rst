@@ -30,6 +30,7 @@ latest (unreleased)
 * Add new module ``mail_company_domain`` allowing to have different alias
   domains per company
 * Load warehouses
+* Add MT Sales Teams
 
 **Bugfixes**
 

@@ -10,3 +10,4 @@ __setup__.res_user_accounting,accounting,Accounting,accounting,fr_FR,nomail@mtss
 __setup__.res_user_sale,sale,Sale,sale,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,base.group_user,base.main_company
 __setup__.res_user_shop,shop,Shop,shop,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,base.group_user,base.main_company
 __setup__.res_user_storeman,storeman,Storeman,storeman,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,stock.group_stock_user,base.main_company
+__setup__.res_users_chimistes,chimiste,chimiste,chimiste,fr_FR,nomail@mtssa.ch,base.ch,Europe/Zurich,base.group_user,base.main_company
