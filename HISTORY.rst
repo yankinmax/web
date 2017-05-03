@@ -12,9 +12,15 @@ Unreleased
 
 **Build**
 
-* DT-27: Migration instance to V10
-
 **Documentation**
+
+
+10.0.0 (2017-05-03)
++++++++++++++++++++
+
+**Build**
+
+* DT-27: Migration instance to V10
 
 
 9.15.0 (2017-03-10)
