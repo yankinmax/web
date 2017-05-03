@@ -23,13 +23,14 @@ def setup_company_minimal(ctx):
 @anthem.log
 def setup_company(ctx):
     """ Configuring company data """
-    company = ctx.env.ref('base.main_company')
-    company.country_id = ctx.env.ref('base.fr').id
-
-    # load logo on company
     logo_content = resource_string(req, 'data/images/logo.png')
     b64_logo = b64encode(logo_content)
-    company.logo = b64_logo
+
+    company = ctx.env.ref('base.main_company')
+    company.write({
+        'country_id': ctx.env.ref('base.fr').id,
+        'logo': b64_logo,
+    })
 
     with ctx.log(u'Configuring company'):
         values = {

@@ -2,13 +2,11 @@
 # Copyright 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from pkg_resources import resource_stream
-
 import anthem
-from anthem.lyrics.records import create_or_update
-from anthem.lyrics.loaders import load_csv_stream
 
-from ..common import req
+from ..common import load_csv
+
+from anthem.lyrics.records import create_or_update
 
 
 @anthem.log
@@ -128,20 +126,13 @@ def remove_useless_accounts(ctx):
 def import_account_account(ctx):
     """ Import account account
     """
-    content = resource_stream(req, 'data/install/CoA/CoA_Boulogne_50.csv')
-    load_csv_stream(ctx, 'account.account', content, delimiter=',')
-    content = resource_stream(req, 'data/install/CoA/CoA_Nice_RdF_10.csv')
-    load_csv_stream(ctx, 'account.account', content, delimiter=',')
-    content = resource_stream(req, 'data/install/CoA/CoA_Nice_Tra_15.csv')
-    load_csv_stream(ctx, 'account.account', content, delimiter=',')
-    content = resource_stream(req, 'data/install/CoA/CoA_Paris3_20.csv')
-    load_csv_stream(ctx, 'account.account', content, delimiter=',')
-    content = resource_stream(req, 'data/install/CoA/CoA_Paris16_25.csv')
-    load_csv_stream(ctx, 'account.account', content, delimiter=',')
-    content = resource_stream(req, 'data/install/CoA/CoA_Siege_00.csv')
-    load_csv_stream(ctx, 'account.account', content, delimiter=',')
-    content = resource_stream(req, 'data/install/CoA/CoA_Toulon_40.csv')
-    load_csv_stream(ctx, 'account.account', content, delimiter=',')
+    load_csv(ctx, 'data/install/CoA/CoA_Boulogne_50.csv', 'account.account')
+    load_csv(ctx, 'data/install/CoA/CoA_Nice_RdF_10.csv', 'account.account')
+    load_csv(ctx, 'data/install/CoA/CoA_Nice_Tra_15.csv', 'account.account')
+    load_csv(ctx, 'data/install/CoA/CoA_Paris3_20.csv', 'account.account')
+    load_csv(ctx, 'data/install/CoA/CoA_Paris16_25.csv', 'account.account')
+    load_csv(ctx, 'data/install/CoA/CoA_Siege_00.csv', 'account.account')
+    load_csv(ctx, 'data/install/CoA/CoA_Toulon_40.csv', 'account.account')
 
 
 @anthem.log
