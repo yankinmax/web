@@ -21,9 +21,10 @@ def add_groups_to_admin_user(ctx):
         ctx.env.ref('base.group_multi_currency'),
         ctx.env.ref('base.group_multi_company'),
     ]
-    group_ids = [g.id for g in groups]
-    curr_groups = [g.id for g in ctx.env.user.groups_id]
-    ctx.env.user.group_id = list(set(group_ids + curr_groups))
+    for group in groups:
+        group.write({
+            'users': [(4, ctx.env.user.id)]
+        })
 
 
 @anthem.log
