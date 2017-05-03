@@ -5,6 +5,7 @@
 import anthem
 from anthem.lyrics.records import create_or_update
 
+from ..common import load_file_content
 from . import base_vars
 
 
@@ -57,9 +58,30 @@ def setup_mail_catchall_domain(ctx):
 
 
 @anthem.log
+def setup_reports_info(ctx):
+    mts = ctx.env.ref('base.main_company')
+    mts_logo = 'local-src/mtsmte_reports/static/src/img/mts_logo.jpg'
+    if not mts.report_logo:
+        mts.write({
+            'report_logo': load_file_content(mts_logo).read().encode('base64'),
+            'report_show_address_header': False,
+        })
+        ctx.log_line('MTS report info updated')
+    mte = ctx.env.ref('__setup__.company_mte')
+    mte_logo = 'local-src/mtsmte_reports/static/src/img/mte_logo.jpg'
+    if not mte.report_logo:
+        mte.write({
+            'report_logo': load_file_content(mte_logo).read().encode('base64'),
+            'report_show_address_header': True,
+        })
+        ctx.log_line('MTE report info updated')
+
+
+@anthem.log
 def main(ctx):
     """ Post """
     setup_multi_company(ctx)
     add_company_to_user(ctx)
     create_incoming_mail_server(ctx)
     setup_mail_catchall_domain(ctx)
+    setup_reports_info(ctx)
