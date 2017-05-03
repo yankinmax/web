@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 import anthem
+from anthem.lyrics.records import create_or_update
 
 from . import base_vars
 
@@ -33,6 +34,7 @@ def create_incoming_mail_server(ctx):
     create_or_update(ctx, 'fetchmail.server',
                      '__setup__.fetchmail_mail_in_mtsmte',
                      {'name': 'mail_in_mtsmte'})
+
 
 def setup_mail_catchall_domain(ctx):
     """ Setup e-mail catchall domains """
