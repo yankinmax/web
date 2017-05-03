@@ -55,17 +55,8 @@ def admin_user_password(ctx):
 
 
 @anthem.log
-def set_web_base_url(ctx):
-    """ Configuring web.base.url """
-    url = 'http://localhost:8069'
-    ctx.env['ir.config_parameter'].set_param('web.base.url', url)
-    ctx.env['ir.config_parameter'].set_param('web.base.url.freeze', 'True')
-
-
-@anthem.log
 def main(ctx):
     """ Main: creating demo data """
     setup_company(ctx)
     setup_language(ctx)
     admin_user_password(ctx)
-    set_web_base_url(ctx)
