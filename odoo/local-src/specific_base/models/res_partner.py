@@ -7,7 +7,7 @@ import uuid
 
 from datetime import datetime, timedelta
 
-from openerp import models, fields, api, _
+from odoo import models, fields, api, _
 
 
 DUPLICATE_FIELDS_KEY = ['company_type', 'company_id',
@@ -176,9 +176,26 @@ class ResPartner(models.Model):
         ])
         return l
 
+    @api.model
+    def create(self, values):
+        new_values = values.copy()
+        if not new_values.get('company_type'):
+            new_values['company_type'] = (
+                'company'
+                if new_values.get('is_company')
+                else 'person'
+            )
+        return super(ResPartner, self).create(new_values)
+
+    @api.depends('is_company')
+    def _compute_company_type(self):
+        # Do nothing
+        pass
+
     company_type = fields.Selection(
         selection_add=[('agency_customer', 'Agency customer')],
         default=lambda self: self._default_company_type(),
+        compute=False
     )
 
     @api.model

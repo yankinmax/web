@@ -1,46 +1,26 @@
 migration:
   options:
-    install_command: odoo.py
-    # Workaround for https://github.com/odoo/odoo/pull/12730
-    # Please remove once merged.
-    # Warning: the DEMO flag will never be considered as we force
-    # the 'without demo' mode
-    install_args: --without-demo=all --load=web,web_kanban,session_redis,attachment_s3,logging_json
+    install_command: odoo
   versions:
-    - version: 9.1.0
+    - version: 10.0.0
       operations:
-        post:
-          - anthem openerp.addons.cloud_platform.songs::install_exoscale
-          - oerpscenario -t setup_before_modules
+        pre:
+          # ***********************************************************
+          # ************* Avoid auto-install chart of accounts ********
+          # ***********************************************************
+          - anthem songs.install.pre::main
           # Install account without l10n to avoid auto install
-          - odoo.py -i account --stop-after-init --workers=0
-          - anthem songs.install.pre_holding::no_accounting
-          - oerpscenario -t setup_only_modules
-          - anthem songs.install.post_holding::cleanup
-          - oerpscenario -t setup_after_modules
-          - anthem songs.install.data::main_first_data
-          - oerpscenario -t setup
-          - anthem songs.install.data::main_others_data
-          - anthem songs.install.accounting::main
-          - anthem songs.install.stock::main
-          - anthem songs.install.company::main
-          - anthem songs.install.post::main
-      addons:
-        upgrade:
-          #camptocamp/cloud-platform
-          - cloud_platform
-    - version: 9.9.0
-      addons:
-        upgrade:
-          # Odoo
-          - auth_oauth
-          - base # To update all addons
-          # Specific
-          - specific_account
-    - version: 9.10.0
-      operations:
+          - odoo -i account --stop-after-init --workers=0
+          - anthem songs.install.accounting::no_coa_instance_lock
         post:
-          - anthem songs.install.company::setup_company_logo
+          - anthem songs.install.accounting::no_coa_instance_unlock
+          - anthem songs.install.pre::setup_company
+          - anthem openerp.addons.cloud_platform.songs::install_exoscale
+          - anthem songs.install.setup::main
+          - anthem songs.install.data::main
+          - anthem songs.install.accounting::main
+          - anthem songs.install.company::main
+          - anthem songs.install.rights::main
       modes:
         full:
           operations:
@@ -48,41 +28,49 @@ migration:
               - anthem songs.install.accounting::configure_missing_chart_of_account
       addons:
         upgrade:
-          # Specific
-          - specific_base
-    - version: 9.12.0
-      modes:
-        full:
-          operations:
-            post:
-              - anthem openerp.addons.cloud_platform.songs::install_exoscale
-      addons:
-        upgrade:
-          #camptocamp/cloud-platform
-          - cloud_platform
-    - version: 9.13.0
-      addons:
-        upgrade:
-          # Odoo
+          - base_technical_features
+          - mail_environment
+          - server_environment
+          #### core
+          - account
+          - account_cancel
+          - account_tax_cash_basis
+          - auth_oauth
           - board
+          - crm
+          - inter_company_rules
+          - l10n_be
+          - l10n_ch
+          - l10n_fr
+          - l10n_lu
+          - l10n_mx
+          - marketing_campaign
+          - purchase
+          - sale
           - subscription
-          # OCA
+          - survey
+          - web
+          #### OCA
+          - account_bank_statement_import_ofx
+          - account_banking_sepa_credit_transfer
+          - account_financial_report_qweb
+          - account_fiscal_year
+          - account_move_locking
           - account_yodlee
+          - base_phone
+          - l10n_fr_siret
           - partner_changeset
+          - partner_firstname
+          - partner_survey
           - sale_automatic_workflow
-          # Specific
-          - specific_base
-    - version: 9.13.1
-      addons:
-        upgrade:
-          # Specific
-          - specific_base
-    - version: 9.14.0
-      addons:
-        upgrade:
-          #camptocamp/cloud-platform
+          - web_duplicate_visibility
+          #### camptocamp/cloud-platform
           - attachment_s3
-    - version: 9.15.0
-      operations:
-        post:
-          - anthem songs.updates.update_9_15_0.update::main
+          - cloud_platform
+          #### local-src
+          - fields_regex_validation
+          - report_page_endnote
+          - specific_account
+          - specific_base
+          - specific_discount_program
+          - specific_payment_mode

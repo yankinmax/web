@@ -2,153 +2,165 @@
 # © 2016 Julien Coux (Camptocamp)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from pkg_resources import Requirement
-from pkg_resources import resource_stream
-
 import anthem
-import codecs
 
-import csv
-
-
-# csv_unireader and load_csv_stream methods
-# will be integrated to anthem common code
-# but only at the next release
-
-def csv_unireader(f, encoding="utf-8", **fmtparams):
-    data = csv.reader(
-        codecs.iterencode(codecs.iterdecode(f, encoding), "utf-8"), **fmtparams
-    )
-    for row in data:
-        yield [e.decode("utf-8") for e in row]
-
-
-def load_csv_stream(ctx, model_name, data, dialect='excel', encoding='utf-8',
-                    **fmtparams):
-    """ Load a CSV from a stream
-    Usage example::
-      from pkg_resources import Requirement, resource_stream
-      req = Requirement.parse('my-project')
-      load_csv_stream(ctx, 'res.users',
-                      resource_stream(req, 'data/users.csv'),
-                      delimiter=',')
-    """
-    data = csv_unireader(data, encoding=encoding, **fmtparams)
-    head = data.next()
-    values = list(data)
-    if values:
-        result = ctx.env[model_name].load(head, values)
-        ids = result['ids']
-        if not ids:
-            messages = u'\n'.join(
-                u'- %s' % msg for msg in result['messages']
-            )
-            ctx.log_line(u"Failed to load CSV "
-                         u"in '%s'. Details:\n%s" %
-                         (model_name, messages))
-            raise Exception(u'Could not import CSV. See the logs')
-        else:
-            ctx.log_line(u"Imported %d records in '%s'" %
-                         (len(ids), model_name))
+from ..common import deferred_compute_parents
+from ..common import deferred_import
+from ..common import load_csv
+from ..common import load_users_csv
 
 
 @anthem.log
-def import_groups(ctx, req):
+def import_groups(ctx):
     """ Importing groups """
-    content = resource_stream(
-        req, 'data/install/01.groups.csv'
-    )
-    load_csv_stream(ctx, 'res.groups', content, delimiter=';')
+    load_csv(ctx, 'data/install/01.groups.csv', 'res.groups', delimiter=';')
 
 
 @anthem.log
-def import_partners(ctx, req):
+def import_partners(ctx):
     """ Importing partners """
-    content = resource_stream(
-        req, 'data/install/02.partners.csv'
-    )
-    load_csv_stream(ctx, 'res.partner', content, delimiter=';')
+    load_csv(ctx, 'data/install/02.partners.csv', 'res.partner', delimiter=';')
 
 
 @anthem.log
-def import_users(ctx, req):
+def import_users(ctx):
     """ Importing users """
-    content = resource_stream(
-        req, 'data/install/03.users.csv'
-    )
-    load_csv_stream(ctx, 'res.users', content, delimiter=';')
+    load_users_csv(ctx, 'data/install/03.users.csv', delimiter=';')
 
 
 @anthem.log
-def import_centers(ctx, req):
+def import_centers(ctx):
     """ Importing centers """
-    content = resource_stream(
-        req, 'data/install/04.centers.csv'
+    deferred_import(
+        ctx, 'res.company', 'data/install/04.centers.csv', delimiter=';'
     )
-    load_csv_stream(ctx, 'res.company', content, delimiter=';')
 
 
 @anthem.log
-def import_users_dependances(ctx, req):
+def location_compute_parents(ctx):
+    """Compute parent_left, parent_right"""
+    deferred_compute_parents(ctx, 'stock.location')
+
+
+@anthem.log
+def import_users_dependances(ctx):
     """ Importing users dependances """
-    content = resource_stream(
-        req, 'data/install/05.users_dependances.csv'
+    load_csv(
+        ctx,
+        'data/install/05.users_dependances.csv',
+        'res.users',
+        delimiter=';'
     )
-    load_csv_stream(ctx, 'res.users', content, delimiter=';')
 
 
 @anthem.log
-def import_centers_dependances(ctx, req):
+def import_centers_dependances(ctx):
     """ Importing centers dependances """
-    content = resource_stream(
-        req, 'data/install/06.centers_dependances.csv'
+    load_csv(
+        ctx,
+        'data/install/06.centers_dependances.csv',
+        'res.company',
+        delimiter=';'
     )
-    load_csv_stream(ctx, 'res.company', content, delimiter=';')
 
 
 @anthem.log
-def import_centers_horaires(ctx, req):
+def import_centers_horaires(ctx):
     """ Importing centers horaires """
-    content = resource_stream(
-        req, 'data/install/07.centers_horaires.csv'
+    load_csv(
+        ctx,
+        'data/install/07.centers_horaires.csv',
+        'res.company.schedule',
+        delimiter=';'
     )
-    load_csv_stream(ctx, 'res.company.schedule', content, delimiter=';')
 
 
 @anthem.log
-def import_centers_pts(ctx, req):
+def import_centers_pts(ctx):
     """ Importing centers pts """
-    content = resource_stream(
-        req, 'data/install/08.centers_pts.csv'
+    load_csv(
+        ctx,
+        'data/install/08.centers_pts.csv',
+        'res.company.phototherapist',
+        delimiter=';'
     )
-    load_csv_stream(ctx, 'res.company.phototherapist', content, delimiter=';')
 
 
 @anthem.log
-def import_partners_dependances(ctx, req):
+def import_partners_dependances(ctx):
     """ Importing partner dependances """
-    content = resource_stream(
-        req, 'data/install/09.partners_dependances.csv'
+    load_csv(
+        ctx,
+        'data/install/09.partners_dependances.csv',
+        'res.partner',
+        delimiter=';'
     )
-    load_csv_stream(ctx, 'res.partner', content, delimiter=';')
 
 
 @anthem.log
-def main_first_data(ctx):
-    """ Loading data """
-    req = Requirement.parse('depiltech-odoo')
-    import_groups(ctx, req)
-    import_partners(ctx, req)
-    import_users(ctx, req)
-    import_centers(ctx, req)
+def survey_survey_import(ctx):
+    """ survey_survey_import """
+    load_csv(ctx, 'data/setup/survey.survey.csv', 'survey.survey')
 
 
 @anthem.log
-def main_others_data(ctx):
+def survey_page_import(ctx):
+    """ survey_page_import """
+    load_csv(ctx, 'data/setup/survey.page.csv', 'survey.page')
+
+
+@anthem.log
+def survey_question_import(ctx):
+    """ survey_question_import """
+    load_csv(ctx, 'data/setup/survey.question.csv', 'survey.question')
+
+
+@anthem.log
+def product_category_import(ctx):
+    """ product_category_import """
+    load_csv(
+        ctx,
+        'data/setup/product.category.csv',
+        'product.category',
+        delimiter=';'
+    )
+
+
+@anthem.log
+def product_product_import(ctx):
+    """ product_product_import """
+    load_csv(ctx, 'data/install/10.product - all.csv', 'product.product')
+
+    load_csv(ctx, 'data/install/11.product - new.csv', 'product.product')
+
+
+@anthem.log
+def sale_discount_program_import(ctx):
+    """ sale_discount_program_import """
+    load_csv(
+        ctx, 'data/setup/sale.discount.program.csv', 'sale.discount.program'
+    )
+
+
+@anthem.log
+def main(ctx):
     """ Loading data """
-    req = Requirement.parse('depiltech-odoo')
-    import_users_dependances(ctx, req)
-    import_centers_dependances(ctx, req)
-    import_centers_horaires(ctx, req)
-    import_centers_pts(ctx, req)
-    import_partners_dependances(ctx, req)
+    import_groups(ctx)
+    import_partners(ctx)
+    import_users(ctx)
+    import_centers(ctx)
+
+    location_compute_parents(ctx)
+
+    import_users_dependances(ctx)
+    import_centers_dependances(ctx)
+    import_centers_horaires(ctx)
+    import_centers_pts(ctx)
+    import_partners_dependances(ctx)
+
+    survey_survey_import(ctx)
+    survey_page_import(ctx)
+    survey_question_import(ctx)
+    product_category_import(ctx)
+    product_product_import(ctx)
+    sale_discount_program_import(ctx)

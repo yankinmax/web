@@ -32,7 +32,7 @@
 
     <menuitem id="menu_depiltech_payment_mode"
               action="action_depiltech_payment_mode"
-              parent="base.menu_sale_config"
+              parent="sales_team.menu_sale_config"
               groups="specific_base.group_admin_depiltech"
               sequence="100"/>
 

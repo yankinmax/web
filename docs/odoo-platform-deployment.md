@@ -57,11 +57,11 @@ All the stacks templates are on the [odoo-cloud-platform-ch-rancher-templates Gi
 
 **Odoo stacks**:
 
-* **depiltech_odoo-odoo-integration**
+* **depiltech-odoo-integration**
  * odoo: Your odoo image with a fixed version (e.g.: 9.1.0) build from a github tag
  * nginx: it's a sidekick of the odoo container [Nginx proxy for odoo](https://github.com/camptocamp/docker-odoo-nginx)
  * letsencrypt: [Container managing the certificate for the integraton domain name](https://github.com/janeczku/rancher-letsencrypt)
-* **depiltech_odoo-odoo-prod**
+* **depiltech-odoo-prod**
  * odoo: Your odoo image with a fixed production version (e.g.: 9.1.0) build from a github tag
  * nginx: it's a sidekick of the odoo container [Nginx proxy for odoo](https://github.com/camptocamp/docker-odoo-nginx)
  * letsencrypt: [Container managing the certificate for the production domain name](https://github.com/janeczku/rancher-letsencrypt)
@@ -174,7 +174,7 @@ dedicated to the platform:
 https://github.com/camptocamp/odoo-cloud-platform-ch-rancher-templates
 
 Let's talk about the difference with test stack:
- * Odoo docker image version is a fixed version (e.g: 9.0.0 for the first one) instead of latest
+ * Odoo docker image version is a fixed version (e.g: 10.0.0 for the first one) instead of latest
  * No db container but an external links to the postgres stacks. But the hostname of the database server for Odoo is still "db".
  * Filestore is stored on S3
  * Scaling: for Production, Rancher will spawn as much odoo container as application servers (so 2 at the moment)
@@ -189,7 +189,7 @@ Let's talk about the difference with test stack:
 
  ```
  odoo:
-  image: camptocamp/depiltech_odoo:9.0.0
+  image: camptocamp/depiltech_odoo:10.0.0
    command: odoo --load=web,web_kanban,attachment_s3,session_redis,logging_json
    external_links:
      - postgres-integration/postgres:db
@@ -273,7 +273,7 @@ Let's talk about the difference with test stack:
 * `rancher.public.env`
 
  ```
- export DOMAIN_NAME=integration.depiltech_odoo.odoo.camptocamp.ch
+ export DOMAIN_NAME=integration.depiltech.odoo.camptocamp.ch
  export ODOO_BASE_URL="https://${DOMAIN_NAME}"
  
  export DB_USER=
@@ -294,11 +294,11 @@ Let's talk about the difference with test stack:
  export DEMO=False
  export MARABUNTA_MODE=full
  
- export AWS_BUCKETNAME=depiltech_odoo-odoo-integration
+ export AWS_BUCKETNAME=depiltech-odoo-integration
  
  export ODOO_SESSION_REDIS=1
  export ODOO_SESSION_REDIS_HOST=redis
- export ODOO_SESSION_REDIS_PREFIX=depiltech_odoo-odoo-integration
+ export ODOO_SESSION_REDIS_PREFIX=depiltech-odoo-integration
  
  export ODOO_LOGGING_JSON=1
  
@@ -324,7 +324,7 @@ Let's talk about the difference with test stack:
 
  ```
  odoo:
-  image: camptocamp/depiltech_odoo:9.0.0
+  image: camptocamp/depiltech_odoo:10.0.0
    command: odoo --load=web,web_kanban,attachment_s3,session_redis,logging_json
    external_links:
      - postgres-cluster/lb:db
@@ -403,13 +403,13 @@ Let's talk about the difference with test stack:
      io.rancher.container.agent.role: environment
    image: janeczku/rancher-letsencrypt:v0.3.0
    volumes:
-     - depiltech_odoo-prod-certs:/etc/letsencrypt/production/certs
+     - depiltech-prod-certs:/etc/letsencrypt/production/certs
  ```
 
 * `rancher.public.env`
 
  ```
- export DOMAIN_NAME=integration.depiltech_odoo.odoo.camptocamp.ch
+ export DOMAIN_NAME=integration.depiltech.odoo.camptocamp.ch
  export ODOO_BASE_URL="https://${DOMAIN_NAME}"
  
  export DB_USER=
@@ -430,11 +430,11 @@ Let's talk about the difference with test stack:
  export DEMO=False
  export MARABUNTA_MODE=full
  
- export AWS_BUCKETNAME=depiltech_odoo-odoo-prod
+ export AWS_BUCKETNAME=depiltech-odoo-prod
  
  export ODOO_SESSION_REDIS=1
  export ODOO_SESSION_REDIS_HOST=redis
- export ODOO_SESSION_REDIS_PREFIX=depiltech_odoo-odoo-prod
+ export ODOO_SESSION_REDIS_PREFIX=depiltech-odoo-prod
  
  export ODOO_LOGGING_JSON=1
  
@@ -473,8 +473,8 @@ as soon as possible, considering Let's Encrypt has rate limits, it would be a
 pity to be unable to create the certificate the day of the golive. In the platform project:
 
 ```
-./rancher depiltech_odoo-odoo-integration up -d letsencrypt
-./rancher depiltech_odoo-odoo-prod up -d letsencrypt
+./rancher depiltech-odoo-integration up -d letsencrypt
+./rancher depiltech-odoo-prod up -d letsencrypt
 ```
 
 ### Stack Deployment
@@ -511,7 +511,7 @@ The integration stack is deployed manually after a release.
 * Use the local `./rancher` script, example to start the containers:
   
   ```
-  ./rancher depiltech_odoo-odoo-integration up -d
+  ./rancher depiltech-odoo-integration up -d
   ```
 
 ### Upgrade stack
@@ -556,7 +556,7 @@ Take a look at [releases.md](releases.md) for more details but here is a quick s
 * Use the local `./rancher` script, example to upgrade the containers:
   
   ```
-  ./rancher depiltech_odoo-odoo-integration up --pull --recreate --confirm-upgrade -d
+  ./rancher depiltech-odoo-integration up --pull --recreate --confirm-upgrade -d
   ```
 
 At start, the new container will automatically execute the upgrade defined in

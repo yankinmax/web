@@ -12,6 +12,8 @@ Unreleased
 
 **Build**
 
+* DT-27: Migration instance to V10
+
 **Documentation**
 
 

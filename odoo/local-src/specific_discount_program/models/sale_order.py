@@ -6,10 +6,10 @@ from lxml import etree
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-from openerp.addons import decimal_precision as dp
-from openerp.tools import float_compare
+from odoo.addons import decimal_precision as dp
+from odoo.tools import float_compare
 
-from openerp import api, fields, models, SUPERUSER_ID, exceptions, _
+from odoo import api, fields, models, SUPERUSER_ID, exceptions, _
 
 
 class SaleOrder(models.Model):

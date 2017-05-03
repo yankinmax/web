@@ -2,9 +2,9 @@
 # © 2016 Julien Coux (Camptocamp)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.exceptions import ValidationError
+from odoo.exceptions import ValidationError
 
-from openerp.tests.common import TransactionCase, post_install, at_install
+from odoo.tests.common import TransactionCase, post_install, at_install
 
 
 class TestSaleOrder(TransactionCase):

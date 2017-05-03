@@ -2,7 +2,7 @@
 
 The template for the configuration (`openerp.cfg`) is in [the base Docker project image]
 
-https://github.com/camptocamp/docker-odoo-project/tree/master/9.0/etc/openerp.cfg.tmpl
+https://github.com/camptocamp/docker-odoo-project/blob/master/10.0/etc/odoo.cfg.tmpl
 
 
 Most of the values here are set by environment variables, which looks like:

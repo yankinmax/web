@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<openerp>
-  <data>
+<odoo>
+
     <record model="ir.actions.server" id="cancel_so">
-      <field name="code"># Available locals:
+        <field name="code"># Available locals:
 #  - time, datetime, dateutil: Python libraries
 #  - env: Odoo Environement
 #  - model: Model of the record on which the action is triggered
@@ -12,13 +12,13 @@
 #  - Warning: Warning Exception to use with raise
 # To return an action, assign: action = {...}
 object.action_cancel()</field>
-      <field name="condition">True</field>
-      <field name="model_id" ref="sale.model_sale_order"/>
-      <field name="name">cancel so</field>
-      <field name="sequence" eval="5"/>
-      <field name="state">code</field>
-      <field name="type">ir.actions.server</field>
-      <field name="use_relational_model">base</field>
+        <field name="condition">True</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="name">cancel so</field>
+        <field name="sequence" eval="5"/>
+        <field name="state">code</field>
+        <field name="type">ir.actions.server</field>
+        <field name="use_relational_model">base</field>
     </record>
-  </data>
-</openerp>
+
+</odoo>

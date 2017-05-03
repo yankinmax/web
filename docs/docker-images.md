@@ -32,12 +32,12 @@ This script will tag docker image with:
 So Travis must have access to your project on Docker Hub. If it's not the case, ask someone with access to:
  * Create if needed the [project on Docker Hub](https://hub.docker.com/r/camptocamp/depiltech_odoo/)
  * Create access for Travis in this new project and put auth informations in Lastpass
-  * user: c2cbusinessdepiltech_odootravis
+  * user: c2cbusinessdepiltechtravis
   * password: Generated password
-  * email: business-deploy+depiltech_odoo-travis@camptocamp.com (which is aliased on camptocamp@camptocamp.com)
+  * email: business-deploy+depiltech-travis@camptocamp.com (which is aliased on camptocamp@camptocamp.com)
 
 On Travis, in [settings page](https://travis-ci.com/camptocamp/depiltech_odoo/settings) , add following environnement variables:
- * DOCKER_USERNAME : c2cbusinessdepiltech_odootravis
+ * DOCKER_USERNAME : c2cbusinessdepiltechtravis
  * DOCKER_PASSWORD : The generated password in previous step, so you can find it in Lastpass
 
 **From there, each travis successful build on master or on tags will build a docker image and push it to Docker Hub**

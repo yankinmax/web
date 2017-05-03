@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
+<odoo>
 
-        <record id="view_report_page_endnote_form" model="ir.ui.view">
-            <field name="name">report.page.endnote.form</field>
-            <field name="model">report.page.endnote</field>
-            <field name="arch" type="xml">
-                <form string="Report Page EndNote">
-                  <sheet>
+    <record id="view_report_page_endnote_form" model="ir.ui.view">
+        <field name="name">report.page.endnote.form</field>
+        <field name="model">report.page.endnote</field>
+        <field name="arch" type="xml">
+            <form string="Report Page EndNote">
+                <sheet>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only"/>
                         <h1>
@@ -24,28 +23,28 @@
                         <field name="content"/>
                         <field name="report_ids"/>
                     </group>
-                  </sheet>
-                </form>
-            </field>
-        </record>
-        <record id="view_report_page_endnote_tree" model="ir.ui.view">
-            <field name="name">report.page.endnote.tree</field>
-            <field name="model">report.page.endnote</field>
-            <field name="field_parent">child_ids</field>
-            <field name="arch" type="xml">
-                <tree string="Report Page EndNote">
-                    <field name="name"/>
-                    <field name="country_id"/>
-                </tree>
-            </field>
-        </record>
-        <record id="report_page_endnote_action_tree" model="ir.actions.act_window">
-            <field name="name">Report Page EndNote</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">report.page.endnote</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-        <menuitem action="report_page_endnote_action_tree" id="menu_action_report_page_endnote_form" parent="report.reporting_menuitem"/>
-    </data>
-</openerp>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_report_page_endnote_tree" model="ir.ui.view">
+        <field name="name">report.page.endnote.tree</field>
+        <field name="model">report.page.endnote</field>
+        <field name="field_parent">child_ids</field>
+        <field name="arch" type="xml">
+            <tree string="Report Page EndNote">
+                <field name="name"/>
+                <field name="country_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="report_page_endnote_action_tree" model="ir.actions.act_window">
+        <field name="name">Report Page EndNote</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">report.page.endnote</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem action="report_page_endnote_action_tree" id="menu_action_report_page_endnote_form" parent="report.reporting_menuitem"/>
+
+</odoo>

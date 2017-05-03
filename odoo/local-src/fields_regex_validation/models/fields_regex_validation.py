@@ -5,9 +5,9 @@
 
 import uuid
 from psycopg2 import IntegrityError, ProgrammingError
-import openerp
-from openerp import models, fields, api, _
-from openerp.modules.registry import RegistryManager
+import odoo
+from odoo import models, fields, api, _
+from odoo.modules.registry import RegistryManager
 
 
 class FieldsRegexValidation(models.Model):
@@ -102,7 +102,7 @@ Detailled error: %r"""
 
         # signal changes to registry to the others (eventual) workers
         # be aware of this new constraint
-        if not openerp.multi_process:
+        if not odoo.multi_process:
             self.pool._sql_error.update({constraint_name: values['error_msg']})
         else:
             RegistryManager.signal_registry_change(self.env.cr.dbname)
@@ -135,7 +135,7 @@ Detailled error: %r"""
 
         # signal changes to registry to the others (eventual) workers
         # be aware of this new constraint
-        if not openerp.multi_process:
+        if not odoo.multi_process:
             for rec in self:
                 self.pool._sql_error.update(
                     {rec.constraint_name: rec.error_msg})
@@ -155,7 +155,7 @@ Detailled error: %r"""
         super(FieldsRegexValidation, self).unlink()
         # signal changes to registry to the others (eventual) workers
         # be aware of this new constraint
-        if not openerp.multi_process:
+        if not odoo.multi_process:
             for rec in self:
                 del self.pool._sql_error[rec.constraint_name]
         else:

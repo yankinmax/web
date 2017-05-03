@@ -2,8 +2,8 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import _, api, fields, models
-from openerp.exceptions import UserError
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError
 
 
 class SaleOrder(models.Model):
@@ -121,16 +121,18 @@ class SaleOrderLine(models.Model):
         """
         self.discount_program = False
 
-    @api.onchange('product_uom', 'product_uom_qty')
-    def product_uom_change(self):
-        """ Let product_visible_discount computes pricelist discount, after we
+    @api.onchange(
+        'product_id', 'price_unit', 'product_uom', 'product_uom_qty', 'tax_id'
+    )
+    def _onchange_discount(self):
+        """ Let sale computes pricelist discount, after we
         add a possible existing program discount on this line.
         """
         if self.discount_program:
             program_discount = self.discount
             self.discount = 0
 
-        res = super(SaleOrderLine, self).product_uom_change()
+        res = super(SaleOrderLine, self)._onchange_discount()
 
         if self.discount_program:
             self.discount += program_discount

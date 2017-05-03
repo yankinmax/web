@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/camptocamp/depiltech_odoo.svg?token=3A3ZhwttEcmdqp7JzQb7&branch=master)](https://travis-ci.com/camptocamp/depiltech_odoo)
 
-# Depil'tech Odoo
+# Depiltech Odoo
 
 **Our internal id for this project is: 1836.**
 
