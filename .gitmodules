@@ -1,30 +1,30 @@
 [submodule "odoo/external-src/enterprise"]
 	path = odoo/external-src/enterprise
-	url = git@github.com:odoo/enterprise
+	url = git@github.com:enterprise/enterprise
 [submodule "odoo/external-src/server-tools"]
 	path = odoo/external-src/server-tools
-	url = git@github.com:OCA/server-tools
+	url = git@github.com:camptocamp/server-tools
 [submodule "odoo/external-src/web"]
 	path = odoo/external-src/web
-	url = git@github.com:OCA/web
+	url = git@github.com:camptocamp/web
 [submodule "odoo/src"]
 	path = odoo/src
 	url = git@github.com:OCA/OCB
 [submodule "odoo/external-src/survey"]
 	path = odoo/external-src/survey
-	url = git@github.com:OCA/survey
+	url = git@github.com:camptocamp/survey
 [submodule "odoo/external-src/l10n-france"]
 	path = odoo/external-src/l10n-france
 	url = git@github.com:OCA/l10n-france.git
 [submodule "odoo/external-src/partner-contact"]
 	path = odoo/external-src/partner-contact
-	url = git@github.com:OCA/partner-contact.git
+	url = git@github.com:camptocamp/partner-contact.git
 [submodule "odoo/external-src/connector-telephony"]
 	path = odoo/external-src/connector-telephony
 	url = git@github.com:OCA/connector-telephony.git
 [submodule "odoo/external-src/account-financial-tools"]
 	path = odoo/external-src/account-financial-tools
-	url = git@github.com:OCA/account-financial-tools.git
+	url = git@github.com:camptocamp/account-financial-tools.git
 [submodule "odoo/external-src/account-financial-reporting"]
 	path = odoo/external-src/account-financial-reporting
 	url = git@github.com:OCA/account-financial-reporting.git
@@ -39,7 +39,7 @@
 	url = git@github.com:OCA/reporting-engine.git
 [submodule "odoo/external-src/sale-workflow"]
 	path = odoo/external-src/sale-workflow
-	url = git@github.com:OCA/sale-workflow.git
+	url = git@github.com:camptocamp/sale-workflow.git
 [submodule "odoo/external-src/odoo-cloud-platform"]
 	path = odoo/external-src/odoo-cloud-platform
 	url = git@github.com:camptocamp/odoo-cloud-platform.git
