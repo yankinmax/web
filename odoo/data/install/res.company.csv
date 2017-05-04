@@ -1,3 +1,3 @@
 id,parent_id/id,name,street,street2,city,zip,country_id,website,phone,fax,email,vat,company_registry,currency_id/id,rml_header1
 base.main_company,,MTS Matériaux Technologies Surfaces SA,Rue de la Paix 101,,La Chaux-de-Fonds,2300,Switzerland,http://www.mtssa.ch,+41 32 968 08 16,,info@mtssa.ch,CHE-113.860.047,CH-645.4.101.800-0,base.CHF,
-__setup__.company_mte,,Métallo-Tests S.A.,rue du Pont 12a,,La Chaux-de-Fonds,2300,Switzerland,https://www.metallo-tests.ch,+41 32 967 99 11,,info@metallo-tests.ch,CHE-108.119.705,CH-645.1.002.843-0,base.CHF,
+__setup__.company_mte,,Métallo-Tests S.A.,rue du Pont 12a,,La Chaux-de-Fonds,2300,Switzerland,https://www.metallo-tests.ch,+41 32 967 99 11,+41 32 967 99 10,info@metallo-tests.ch,CHE-108.119.705,CH-645.1.002.843-0,base.CHF,

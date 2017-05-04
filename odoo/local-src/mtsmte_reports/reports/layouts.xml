@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template
+      id="external_layout_header_specific"
+      inherit_id="report.external_layout_header">
+
+      <xpath expr="//div[@class='header']" position="replace">
+
+          <div class="header">
+            <div class="row" name="company_address">
+              <div t-att-class="'col-xs-12' if not company.report_show_address_header else 'col-xs-3 pull-left'">
+                <img t-if="company.report_logo"
+                     t-att-src="'data:image/png;base64,%s' % (company.report_logo,)"
+                     alt="Company Logo"
+                     class="img img-responsive"/>
+              </div>
+              <t t-if="company.report_show_address_header">
+                <div class="col-xs-5 pull-right red-right">
+                  <!-- TODO: is this condition still needed? -->
+                  <ul t-if="not company.custom_footer" class="list-unstyled">
+                    <t t-set="company" t-value="company.sudo()"/>
+                    <li t-if="company.phone"><span t-field="company.phone"/></li>
+                    <li t-if="company.fax"><span t-field="company.fax"/></li>
+                    <li t-if="company.email"><span t-field="company.email"/></li>
+                    <li t-if="company.street"><span t-field="company.street"/></li>
+                    <li><t t-if="company.zip"><span t-field="company.zip"/> </t>
+                        <t t-if="company.city"><span t-field="company.city"/></t></li>
+                  </ul>
+                </div>
+              </t>
+            </div>
+          </div>
+
+      </xpath>
+    </template>
+
+    <!-- Footer fot both companies -->
+    <template
+      id="external_layout_footer_specific"
+      inherit_id="report.external_layout_footer">
+      <xpath expr="//ul[@t-if='not company.custom_footer']" position="attributes">
+        <attribute name="class">hidden</attribute>
+      </xpath>
+    </template>
+
+</odoo>

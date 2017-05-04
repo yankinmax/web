@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record model="ir.ui.view" id="company_form_view">
+    <field name="name">mts.res.company.form.inherit</field>
+    <field name="model">res.company</field>
+    <field name="inherit_id" ref="base.view_company_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//notebook" position="inside">
+        <page string="Report Data">
+            <group colspan="4">
+                <field name="report_logo" widget="image" options="{'size': [300, 100]}"/>
+                <field name="report_show_address_header"/>
+            </group>
+        </page>
+      </xpath>
+    </field>
+  </record>
+
+
+</odoo>

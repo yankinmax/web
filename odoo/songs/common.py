@@ -11,6 +11,10 @@ from anthem.lyrics.loaders import load_csv_stream
 req = Requirement.parse('mtsmte-odoo')
 
 
+def load_file_content(path):
+    return resource_stream(req, path)
+
+
 def load_chart_of_accounts(ctx, company_xmlid, filepath):
     """ Import Chart of Accounts """
     company = ctx.env.ref(company_xmlid)

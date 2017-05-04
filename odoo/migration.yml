@@ -84,6 +84,7 @@ migration:
       addons:
         upgrade:
           - mail_company_domain
+          - mtsmte_reports
       operations:
         post:
           - anthem songs.install.post::setup_mail_catchall_domain
