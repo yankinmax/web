@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.0.3 (2017-05-05)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add 'client_order_ref' in SO Tree view
 * Install account_invoice_rounding & account_bank_statement_import_camt
 * Activate multi-company features
@@ -35,13 +47,9 @@ latest (unreleased)
 * Base layout Header for reports of mts/mte
 * Fax at company setup for mte
 
-**Bugfixes**
-
 **Build**
 
 * Use camptocamp/odoo-project:10.0-2.1.0
-
-**Documentation**
 
 
 10.0.2 (2017-04-11)
