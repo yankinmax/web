@@ -10,6 +10,7 @@ Unreleased
 
 * DT-22: Client view : hide tabs (Contacts Addresses, Sales & Purchases,
   Accounting). And set country by default using company user connected.
+* DT-5: Apply same logic for sale tax calculation than on invoices
 
 **Bugfixes**
 

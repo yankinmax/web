@@ -71,6 +71,7 @@ migration:
           #### local-src
           - fields_regex_validation
           - report_page_endnote
+          - sale_discount_program
           - specific_account
           - specific_base
           - specific_discount_program
@@ -78,3 +79,8 @@ migration:
     # For migration fix, we don't increment version number here.
     # But only in VERSION and HISTORY.rst files.
     # The integration database must be deleted for each deployment.
+    - version: 10.1.0
+      addons:
+        upgrade:
+          #### local-src
+          - sale_tax_calculation

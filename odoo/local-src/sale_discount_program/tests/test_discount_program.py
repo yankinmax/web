@@ -37,11 +37,15 @@ class TestDiscountProgram(TransactionCase):
 
         self.product_category = self.product_category_model.create({
             'name': 'Unittest product category',
+            # Required with sale_tax_calculation module
+            'property_account_income_categ_id': False,
         })
 
         self.sub_category = self.product_category_model.create({
             'name': 'Unittest product sub category',
             'parent_id': self.product_category.id,
+            # Required with sale_tax_calculation module
+            'property_account_income_categ_id': False,
         })
 
         self.p1 = self.product_model.create({
