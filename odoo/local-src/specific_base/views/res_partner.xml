@@ -61,7 +61,7 @@
             </xpath>
 
             <xpath expr="//button[@name='toggle_active']" position="attributes">
-                <attribute name="groups"></attribute>
+                <attribute name="groups">specific_base.group_client_archive</attribute>
             </xpath>
             <!-- hide fields -->
             <field name="title" position="attributes">

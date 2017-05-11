@@ -84,3 +84,4 @@ migration:
         upgrade:
           #### local-src
           - sale_tax_calculation
+          - specific_base
