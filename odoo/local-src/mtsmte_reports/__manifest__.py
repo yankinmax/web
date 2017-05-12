@@ -11,6 +11,7 @@
     'depends': [
         'report_py3o',
         'project',
+        'sale',
     ],
     'website': 'https://www.camptocamp.com',
     'data': [
@@ -18,6 +19,7 @@
         'views/company.xml',
         'reports/reports.xml',
         'reports/layouts.xml',
+        'reports/sale.xml',
     ],
     'installable': True,
 }

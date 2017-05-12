@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_saleorder_document_specific"
+          inherit_id="sale.report_saleorder_document">
+  <xpath expr="//p[@t-field='doc.note']" position="replace">
+    <p><span t-raw="doc.note"/></p>
+  </xpath>
+</template>
+</odoo>
