@@ -8,6 +8,9 @@ Unreleased
 
 **Features and Improvements**
 
+* DT-22: Client view : hide tabs (Contacts Addresses, Sales & Purchases,
+  Accounting). And set country by default using company user connected.
+
 **Bugfixes**
 
 **Build**

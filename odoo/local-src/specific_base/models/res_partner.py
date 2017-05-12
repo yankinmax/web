@@ -41,6 +41,10 @@ class ResPartner(models.Model):
                     self._name
                 )
 
+    country_id = fields.Many2one(
+        default=lambda self: self.env.user.company_id.partner_id.country_id
+    )
+
     @api.model
     def _get_partner_provenance_selection(self):
         """
