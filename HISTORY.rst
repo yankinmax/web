@@ -21,7 +21,7 @@ latest (unreleased)
 
 **Features and Improvements**
 
-* Add purchase_workflow pending merge
+* Add purchase_workflow pending merge & install it
 
 **Bugfixes**
 
