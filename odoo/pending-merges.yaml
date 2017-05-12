@@ -43,3 +43,12 @@
       # migration of account_invoice_rounding
     - oca refs/pull/212/head
   target: *default_target
+./external-src/purchase-workflow:
+  remotes:
+    oca: git@github.com:OCA/purchase-workflow.git
+    camptocamp: git@github.com:camptocamp/purchase-workflow.git
+  merges:
+    - oca 10.0
+      # migration of purchase_discount
+    - oca refs/pull/316/head
+  target: *default_target

@@ -48,3 +48,7 @@
 	path = odoo/external-src/bank-statement-import
 	url = git@github.com:OCA/bank-statement-import.git
 	branch = 10.0
+[submodule "odoo/external-src/purchase-workflow"]
+	path = odoo/external-src/purchase-workflow
+	url = https://github.com/OCA/purchase-workflow.git
+	branch = 10.0
