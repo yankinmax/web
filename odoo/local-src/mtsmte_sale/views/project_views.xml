@@ -5,11 +5,21 @@
     <field name="model">project.project</field>
     <field name="inherit_id" ref="project.edit_project"/>
     <field name="arch" type="xml">
+      <field name='user_id' position="after">
+        <field name='resp_one_id'/>
+        <field name='resp_two_id'/>
+      </field>
       <field name='partner_id' position="after">
         <group name="samples" string="Samples">
           <field name='analyze_sample'/>
+          <field name='send_sample_back'/>
         </group>
       </field>
+      <xpath expr="//notebook" position="inside">
+        <page string="Conclusions">
+          <field name='conclusion'/>
+        </page>
+      </xpath>
     </field>
   </record>
 

@@ -22,6 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Add purchase_workflow pending merge & install it
+* Add fields in project and responsibles as followers
 
 **Bugfixes**
 

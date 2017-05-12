@@ -96,3 +96,4 @@ migration:
         upgrade:
           - purchase_discount
           - l10n_ch_payment_slip
+          - mtsmte_sale
