@@ -14,6 +14,7 @@ Unreleased
 * DT-39: Fix migration to V10
 
   * Fix customer invoice form view migration
+  * Add migration additional requests before the marabunta migration
 
 **Build**
 

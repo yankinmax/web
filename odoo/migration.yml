@@ -74,3 +74,6 @@ migration:
           - specific_base
           - specific_discount_program
           - specific_payment_mode
+    # For migration fix, we don't increment version number here.
+    # But only in VERSION and HISTORY.rst files.
+    # The integration database must be deleted for each deployment.
