@@ -53,6 +53,16 @@ def import_crm_teams(ctx):
 
 
 @anthem.log
+def import_project_task_type(ctx):
+    """ Deactivate project task installed by default and keep
+        the ones installed by specific_module """
+    task_types = ctx.env['project.task.type'].search([])
+    for task_type in task_types:
+        if 'mtsmte_project' not in task_type.get_external_id().values()[0]:
+            task_type.unlink()
+
+
+@anthem.log
 def main(ctx):
     """ Loading data """
     import_users(ctx)
@@ -60,3 +70,4 @@ def main(ctx):
     import_partner_contact(ctx)
     import_employee(ctx)
     import_crm_teams(ctx)
+    import_project_task_type(ctx)
