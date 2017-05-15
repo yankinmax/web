@@ -50,6 +50,7 @@ migration:
           - l10n_ch_base_bank
           - l10n_ch_dta
           - l10n_ch_pain_base
+          - l10n_ch_payment_slip
           - l10n_ch_states
           - l10n_ch_zip
           #### OCA/server-tools
@@ -94,3 +95,4 @@ migration:
       addons:
         upgrade:
           - purchase_discount
+          - l10n_ch_payment_slip
