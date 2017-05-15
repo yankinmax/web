@@ -63,6 +63,7 @@ migration:
           - partner_firstname
           - partner_survey
           - sale_automatic_workflow
+          - sale_automatic_workflow_payment_mode
           - web_duplicate_visibility
           #### camptocamp/cloud-platform
           - attachment_s3
