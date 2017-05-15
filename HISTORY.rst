@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* Fix secure token to minion creation
+
 **Build**
 
 **Documentation**
