@@ -96,3 +96,12 @@ migration:
         upgrade:
           - purchase_discount
           - l10n_ch_payment_slip
+      modes:
+        full:
+          operations:
+            post:
+              - anthem songs.install.data_full::main
+        demo:
+          operations:
+            post:
+              - anthem songs.install.data_demo::main

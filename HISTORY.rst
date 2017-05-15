@@ -22,6 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Add purchase_workflow pending merge & install it
+* Remove default project_task_type and install the right ones
 
 **Bugfixes**
 

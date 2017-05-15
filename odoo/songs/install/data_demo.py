@@ -31,6 +31,16 @@ def import_projects(ctx):
 
 
 @anthem.log
+def import_project_task_type(ctx):
+    """ Deactivate project task installed by default and keep
+        the ones installed by specific_module """
+    task_types = ctx.env['project.task.type'].search([])
+    for task_type in task_types:
+        if 'mtsmte_project' not in task_type.get_external_id().values()[0]:
+            task_type.unlink()
+
+
+@anthem.log
 def import_project_tasks(ctx):
     """ Importing project tasks from csv """
     content = resource_stream(req, 'data/demo/project.task.csv')
@@ -40,5 +50,6 @@ def import_project_tasks(ctx):
 @anthem.log
 def main(ctx):
     """ Loading demo data """
+    import_project_task_type(ctx)
     import_projects(ctx)
     import_project_tasks(ctx)
