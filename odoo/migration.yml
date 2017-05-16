@@ -103,5 +103,14 @@ migration:
       operations:
         post:
           - anthem songs.install.data_all::import_project_task_type
-          - anthem songs.install.mts.sales::main
-          - anthem songs.install.mte.sales::main
+          - anthem songs.install.mts.sales::set_sale_conditions
+          - anthem songs.install.mte.sales::set_sale_conditions
+      modes:
+        full:
+          operations:
+            post:
+              - anthem songs.install.data_full::main
+        demo:
+          operations:
+            post:
+              - anthem songs.install.data_demo::main
