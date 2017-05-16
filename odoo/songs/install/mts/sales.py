@@ -12,15 +12,11 @@ from ...common import req
 @anthem.log
 def set_sale_conditions(ctx):
     """ Set sale description """
-    sales_settings = ctx.env['sale.config.settings']
     company = ctx.env.ref('base.main_company')
     note = resource_stream(
         req,
         'data/install/mts/mts_sale_conditions_2017_04.html')
-    scs = sales_settings.with_context(company_id=company.id).create(
-        {'sale_note': note.read()}
-    )
-    scs.execute()
+    company.sale_note = note.read()
 
 
 @anthem.log
