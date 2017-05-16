@@ -9,4 +9,4 @@ from odoo import models, fields
 class ProjectProject(models.Model):
     _inherit = 'project.task.type'
 
-    active = fields.Boolean()
+    active = fields.Boolean(default=True)
