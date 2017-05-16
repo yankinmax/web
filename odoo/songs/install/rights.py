@@ -31,7 +31,7 @@ def add_groups_to_admin_user(ctx):
 def update_res_partner_rules(ctx):
     """ Update rules for res partner """
 
-    group_dt_compta = ctx.env.ref('scenario.grp_dt_compta')
+    group_dt_compta = ctx.env.ref('specific_security.grp_dt_compta')
 
     # Update the default rule
     res_partner_rule = ctx.env.ref('base.res_partner_rule')

@@ -1,0 +1,62 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* specific_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-18 10:56+0000\n"
+"PO-Revision-Date: 2017-05-18 10:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.group_admin_depiltech
+msgid "Admin DT"
+msgstr "Admin DT"
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_agency
+msgid "DT-GRP Agence"
+msgstr "DT-GRP Agence"
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_dt_animateurs
+msgid "DT-GRP Animateurs"
+msgstr "DT-GRP Animateurs"
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_centers
+msgid "DT-GRP Centres"
+msgstr "DT-GRP Centres"
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_center_managers
+msgid "DT-GRP Centres Managers"
+msgstr "DT-GRP Centres Managers"
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_dt_compta
+msgid "DT-GRP Compta"
+msgstr "DT-GRP Compta"
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_dt_info
+msgid "DT-GRP Info"
+msgstr "DT-GRP Info"
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_dt_siege
+msgid "DT-GRP Siege"
+msgstr "DT-GRP Siège"
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.group_siege_depiltech
+msgid "Siège DT"
+msgstr "Siège DT"
+

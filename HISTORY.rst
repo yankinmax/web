@@ -14,6 +14,7 @@ Unreleased
 * DT-17 : Add group to control visibility of archive button on client view
 * DT-6: Add early payment discount on customer invoices
 * [DT-26] Change the code of the vouchers, random generated not in a sequence
+* DT-12: Improve leads in Sales and add a module specific_security
 
 **Bugfixes**
 

@@ -11,12 +11,6 @@ from ..common import load_users_csv
 
 
 @anthem.log
-def import_groups(ctx):
-    """ Importing groups """
-    load_csv(ctx, 'data/install/01.groups.csv', 'res.groups', delimiter=';')
-
-
-@anthem.log
 def import_partners(ctx):
     """ Importing partners """
     load_csv(ctx, 'data/install/02.partners.csv', 'res.partner', delimiter=';')
@@ -145,7 +139,6 @@ def sale_discount_program_import(ctx):
 @anthem.log
 def main(ctx):
     """ Loading data """
-    import_groups(ctx)
     import_partners(ctx)
     import_users(ctx)
     import_centers(ctx)

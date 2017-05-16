@@ -9,7 +9,7 @@
     <record id="program_admin_dt_rule" model="ir.rule">
         <field name="name" >Discount Program Center Rule</field>
         <field name="model_id" ref="model_sale_discount_program"/>
-        <field name="groups" eval="[(4,ref('specific_base.group_admin_depiltech'))]"/>
+        <field name="groups" eval="[(4,ref('specific_security.group_admin_depiltech'))]"/>
         <field name="active" eval="True"/>
     </record>
 </odoo>

@@ -80,9 +80,13 @@ migration:
     # But only in VERSION and HISTORY.rst files.
     # The integration database must be deleted for each deployment.
     - version: 10.1.0
+      operations:
+        pre:
+          - anthem songs.updates.update_10_1_0.update::main
       addons:
         upgrade:
           #### local-src
           - report_invoice
           - sale_tax_calculation
           - specific_base
+          - specific_security
