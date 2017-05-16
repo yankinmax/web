@@ -15,6 +15,7 @@ Unreleased
 
   * Fix customer invoice form view migration
   * Add migration additional requests before the marabunta migration
+  * Add a default value for partner pricelist on partner creation
 
 **Build**
 
