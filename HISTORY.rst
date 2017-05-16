@@ -23,6 +23,7 @@ latest (unreleased)
 
 * Add purchase_workflow pending merge & install it
 * Remove default project_task_type and install the right ones
+* Add fields in project and responsibles as followers
 
 **Bugfixes**
 
