@@ -26,4 +26,6 @@ class SaleOrderLine(models.Model):
                 'invoice_id': invoice.id,
             })
             invoice_line._onchange_product_id()
-            line.tax_id = invoice_line.invoice_line_tax_ids.ids
+            line.update({
+                'tax_id': [(6, False, invoice_line.invoice_line_tax_ids.ids)],
+            })
