@@ -59,7 +59,8 @@ def import_project_task_type(ctx):
     task_types = ctx.env['project.task.type'].search([])
     for task_type in task_types:
         if 'mtsmte_project' not in task_type.get_external_id().values()[0]:
-            task_type.unlink()
+            task_type.write({'active': False,
+                             'case_default': False})
 
 
 @anthem.log

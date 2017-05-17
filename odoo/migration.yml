@@ -92,17 +92,12 @@ migration:
         post:
           - anthem songs.install.post::setup_mail_catchall_domain
     - version: 10.0.4
-      modes:
-        full:
-          operations:
-            post:
-              - anthem songs.install.data_full::main
-        demo:
-          operations:
-            post:
-              - anthem songs.install.data_demo::main
       addons:
         upgrade:
           - purchase_discount
           - l10n_ch_payment_slip
           - mtsmte_sale
+          - mtsmte_project
+      operations:
+        post:
+          - anthem songs.install.data_all::import_project_task_type
