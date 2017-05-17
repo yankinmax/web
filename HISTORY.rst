@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.0.4 (2017-05-17)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add purchase_workflow pending merge & install it
 * Remove default project_task_type and install the right ones
 * Add fields in project and responsibles as followers
