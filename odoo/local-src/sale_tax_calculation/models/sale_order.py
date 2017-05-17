@@ -10,15 +10,17 @@ class SaleOrderLine(models.Model):
 
     @api.multi
     def _compute_tax_id(self):
+        invoice_model = self.env['account.invoice']
+        invoice_line_model = self.env['account.invoice.line']
         for line in self:
             order = line.order_id
-            invoice = self.env['account.invoice'].new({
+            invoice = invoice_model.new({
                 'partner_id': order.partner_id.id,
                 'type': 'out_invoice',
                 'fiscal_position_id': order.fiscal_position_id.id,
                 'company_id': order.company_id.id,
             })
-            invoice_line = self.env['account.invoice.line'].new({
+            invoice_line = invoice_line_model.new({
                 'name': line.name,
                 'product_id': line.product_id.id,
                 'product_uom_qty': line.product_uom_qty,

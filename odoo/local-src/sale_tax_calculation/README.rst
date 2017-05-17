@@ -6,7 +6,7 @@
 Sale Tax Calculation
 ====================
 
-This module change the sale order tax calculation
+This module changes and replaces the sale order tax calculation
 to use the same logic than on the invoices.
 
 
