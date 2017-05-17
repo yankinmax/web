@@ -100,6 +100,7 @@ migration:
           - l10n_ch_payment_slip
           - mtsmte_sale
           - mtsmte_project
+          - mtsmte_reports
       operations:
         post:
           - anthem songs.install.data_all::import_project_task_type
