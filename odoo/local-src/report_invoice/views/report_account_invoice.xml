@@ -1,0 +1,38 @@
+<odoo>
+
+  <template name="report_invoice_document" inherit_id="account.report_invoice_document">
+
+    <xpath expr="//span[@t-field='o.amount_untaxed']/ancestor::table" postion="after">
+      <t t-if="o.has_early_payment_discount">
+        <table class="table table-condensed">
+          <tr class="border-black">
+            <td>Early payment discount</td>
+            <td class="text-right">
+              <span t-field="o.early_payment_discount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Subtotal</strong></td>
+            <td class="text-right">
+              <span t-field="o.amount_untaxed_discount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Taxes</strong></td>
+            <td class="text-right">
+              <span t-field="o.amount_tax_discount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+            </td>
+          </tr>
+          <tr class="border-black">
+            <td><strong>Total</strong></td>
+            <td class="text-right">
+              <span t-field="o.amount_total_discount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+            </td>
+          </tr>
+        </table>
+      </t>
+    </xpath>
+
+  </template>
+
+</odoo>

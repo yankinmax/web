@@ -83,5 +83,6 @@ migration:
       addons:
         upgrade:
           #### local-src
+          - report_invoice
           - sale_tax_calculation
           - specific_base

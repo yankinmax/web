@@ -1,0 +1,7 @@
+<odoo noupdate="True">
+  <record model="ir.config_parameter" id="early_payment_discount_rate">
+    <field name="key">early.payment.discount.rate</field>
+    <field name="value">0.015</field>
+    <field name="group_ids" eval="[(4, ref('base.group_system'))]" />
+  </record>
+</odoo>
