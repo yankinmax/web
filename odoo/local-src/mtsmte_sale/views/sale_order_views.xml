@@ -20,6 +20,11 @@
         <field name='is_chemistry' invisible="True"/>
         <field name='product_substance_ids' attrs="{'invisible': [('is_chemistry', '=', False)]}"/>
       </xpath>
+
+      <!-- Better view for sales conditions -->
+      <xpath expr="//field[@name='note']" position="attributes">
+        <attribute name="widget">html</attribute>
+      </xpath>
     </field>
   </record>
 
@@ -31,6 +36,17 @@
       <field name='partner_id' position="after">
         <field name='client_order_ref'/>
       </field>
+    </field>
+  </record>
+
+  <record id="sale_view_inherit_config_specific" model="ir.ui.view">
+    <field name="name">sale.order.form.config.specific</field>
+    <field name="model">sale.config.settings</field>
+    <field name="inherit_id" ref="sale.view_sales_config"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='sale_note']" position="attributes">
+        <attribute name="widget">html</attribute>
+      </xpath>
     </field>
   </record>
 </odoo>

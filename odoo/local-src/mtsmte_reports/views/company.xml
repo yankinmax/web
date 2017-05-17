@@ -11,6 +11,7 @@
             <group colspan="4">
                 <field name="report_logo" widget="image" options="{'size': [300, 100]}"/>
                 <field name="report_show_address_header"/>
+                <field name="sale_note" widget="html"/>
             </group>
         </page>
       </xpath>
