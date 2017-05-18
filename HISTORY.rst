@@ -11,6 +11,11 @@ Unreleased
 **Bugfixes**
 
 * Fix secure token to minion creation
+* DT-39: Fix migration to V10
+
+  * Fix customer invoice form view migration
+  * Add migration additional requests before the marabunta migration
+  * Add a default value for partner pricelist on partner creation
 
 **Build**
 

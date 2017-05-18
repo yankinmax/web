@@ -23,6 +23,24 @@ class ResPartnerTitle(models.Model):
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
+    property_product_pricelist = fields.Many2one(
+        compute='_compute_product_pricelist'
+    )
+
+    @api.multi
+    @api.depends('country_id')
+    def _compute_product_pricelist(self):
+        for p in self:
+            if not isinstance(p.id, models.NewId):  # if not onchange
+                p.property_product_pricelist = (
+                    self.env['product.pricelist']._get_partner_pricelist(p.id)
+                )
+            else:
+                p.property_product_pricelist = self.env['ir.property'].get(
+                    'property_product_pricelist',
+                    self._name
+                )
+
     @api.model
     def _get_partner_provenance_selection(self):
         """

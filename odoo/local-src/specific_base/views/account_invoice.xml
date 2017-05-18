@@ -8,7 +8,7 @@
         <field name="priority" eval="48"/>
         <field name="arch" type="xml">
 
-            <field name="name" position="replace"/>
+            <xpath expr="//page[@name='other_info']//field[@name='name']" position="replace"/>
 
             <field name="payment_term_id" position="after">
                 <field name="name"/>

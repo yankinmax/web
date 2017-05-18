@@ -1,0 +1,113 @@
+#!/bin/bash
+
+#
+# After restore database migrated in v10 by Odoo, we need to execute following request.
+#
+
+if [ "$( psql -tAc "SELECT 1 FROM pg_database WHERE datname='$DB_NAME'" )" != '1' ]
+then
+    echo "Database does not exist"
+    exit 0
+fi
+
+if [ "$RUNNING_ENV" = "dev" ] ; then
+
+psql << EOF
+
+DELETE FROM
+    ir_attachment
+WHERE
+    store_fname IS NOT NULL
+AND store_fname LIKE 's3%'
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+EOF
+
+fi
+
+if [ "$RUNNING_ENV" = "integration" ] ; then
+
+psql << EOF
+
+UPDATE
+    ir_attachment
+SET
+    store_fname = 's3://depiltech-odoo-integration/' || substring(store_fname, 4)
+WHERE
+    store_fname IS NOT NULL
+AND store_fname NOT LIKE 's3%'
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+EOF
+
+fi
+
+if [ "$RUNNING_ENV" = "prod" ] ; then
+
+psql << EOF
+
+UPDATE
+    ir_attachment
+SET
+    store_fname = 's3://depiltech-odoo-prod/' || substring(store_fname, 4)
+WHERE
+    store_fname IS NOT NULL
+AND store_fname NOT LIKE 's3%'
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+EOF
+
+fi
+
+psql << EOF
+
+DELETE FROM
+    ir_ui_view
+WHERE
+    id IN (
+        SELECT res_id
+        FROM ir_model_data
+        WHERE module IN ('account_banking_pain_base', 'attachment_s3')
+        AND model = 'ir.ui.view'
+    )
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+UPDATE
+    ir_module_module
+SET
+    state = 'to upgrade'
+WHERE
+    name = 'base'
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+UPDATE
+    ir_module_module
+SET
+    state = 'uninstallable'
+WHERE
+    name = 'web_easy_switch_company'
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+INSERT INTO
+    marabunta_version
+        (number, date_start, date_done)
+SELECT
+    '10.0.0', '2017-05-03 16:00:00', '2017-05-03 16:40:00'
+WHERE NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+)
+;
+
+EOF
