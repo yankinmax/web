@@ -30,6 +30,8 @@ class SaleOrder(models.Model):
         default=0.0
     )
 
+    gift_quotation = fields.Boolean('This quotation is a gift')
+
     @api.depends(
         'pricelist_id',
         'partner_id', 'partner_id.sponsor_id', 'partner_id.sponsor_id.active'
@@ -184,6 +186,13 @@ class SaleOrder(models.Model):
                 if self.note and self.note != '':
                     self.note += '\n'
                 self.note += message
+
+    @api.multi
+    def _prepare_invoice(self):
+        self.ensure_one()
+        res = super(SaleOrder, self)._prepare_invoice()
+        res['gift_quotation'] = self.gift_quotation
+        return res
 
 
 class SaleOrderLine(models.Model):

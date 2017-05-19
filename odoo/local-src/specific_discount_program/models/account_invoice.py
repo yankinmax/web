@@ -5,6 +5,12 @@
 from odoo import api, fields, models
 
 
+class AccountInvoice(models.Model):
+    _inherit = 'account.invoice'
+
+    gift_quotation = fields.Boolean('This quotation is a gift')
+
+
 class AccountInvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
 

@@ -16,6 +16,7 @@ Unreleased
 * [DT-26] Change the code of the vouchers, random generated not in a sequence
 * DT-12: Improve leads in Sales and add a module specific_security
 * Hide payment mode field on quotations
+* Add field 'This quotation is a gift' on sale.order and account.invoice
 
 **Bugfixes**
 

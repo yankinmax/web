@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0e\n"
+"Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 10:51+0000\n"
-"PO-Revision-Date: 2016-12-06 10:51+0000\n"
+"POT-Creation-Date: 2017-05-19 13:56+0000\n"
+"PO-Revision-Date: 2017-05-19 13:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,7 @@ msgstr "Société autorisées"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_res_partner_already_bought
+#: model:ir.model.fields,field_description:specific_discount_program.field_res_users_already_bought
 msgid "Already bought"
 msgstr "Déjà acheté"
 
@@ -74,7 +75,7 @@ msgstr "Description de la remise"
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_display_name
 msgid "Display Name"
-msgstr "Afficher le nom"
+msgstr "Nom affiché"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_generated_voucher_ids
@@ -84,12 +85,17 @@ msgstr "Bons d'achat générés"
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_id
 msgid "ID"
-msgstr "Identifiant"
+msgstr "ID"
+
+#. module: specific_discount_program
+#: model:ir.model,name:specific_discount_program.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_account_invoice_line
 msgid "Invoice Line"
-msgstr "Ligne de facuration"
+msgstr "Ligne de facture"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_is_sponsored
@@ -99,7 +105,7 @@ msgstr "Parrainé"
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor___last_update
 msgid "Last Modified on"
-msgstr "Dernière modification le"
+msgstr "Dernière Modification le"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_write_uid
@@ -117,7 +123,7 @@ msgid "Manually Discount (%)"
 msgstr "Remise manuelle (%)"
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/sale_order.py:158
+#: code:addons/specific_discount_program/models/sale_order.py:162
 #, python-format
 msgid "Max manually discount allowed is %s %% for a sale order."
 msgstr "Le pourcentage maximum de remise manuelle est de %s %% pour une commande."
@@ -138,6 +144,7 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_product_product_no_quantity
 #: model:ir.model.fields,field_description:specific_discount_program.field_product_template_no_quantity
 msgid "No quantity"
 msgstr "Quantité non modifiable"
@@ -190,8 +197,15 @@ msgstr "Commande d'origine"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_res_partner_sponsor_id
+#: model:ir.model.fields,field_description:specific_discount_program.field_res_users_sponsor_id
 msgid "Sponsor"
 msgstr "Sponsor"
+
+#. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_account_invoice_gift_quotation
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_gift_quotation
+msgid "This quotation is a gift"
+msgstr "Ce devis est un cadeau"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_line_price_unit_readonly

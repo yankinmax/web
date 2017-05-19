@@ -66,6 +66,7 @@
         <field name="arch" type="xml">
             <field name="program_code_ids" position="after">
                 <field name="discount_manually_percent"/>
+                <field name="gift_quotation" />
             </field>
         </field>
     </record>
