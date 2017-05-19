@@ -15,6 +15,7 @@ Unreleased
 * DT-6: Add early payment discount on customer invoices
 * [DT-26] Change the code of the vouchers, random generated not in a sequence
 * DT-12: Improve leads in Sales and add a module specific_security
+* Hide payment mode field on quotations
 
 **Bugfixes**
 

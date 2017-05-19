@@ -12,6 +12,7 @@
         'base',
         'specific_base',
         'sale',
+        'account_payment_sale',
     ],
     'data': [
         'data/depiltech_payment_mode.xml',
