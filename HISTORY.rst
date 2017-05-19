@@ -16,6 +16,7 @@ Unreleased
   * Fix customer invoice form view migration
   * Add migration additional requests before the marabunta migration
   * Add a default value for partner pricelist on partner creation
+  * Install sale_automatic_workflow_payment_mode module
 
 * DT-43: Migration: fix the docker-odoo-project version
 

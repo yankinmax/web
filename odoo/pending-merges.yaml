@@ -31,8 +31,8 @@
     camptocamp: git@github.com:camptocamp/sale-workflow.git
   merges:
     - oca 10.0
-    # [10.0][MIG] sale_automatic_workflow
-    - oca refs/pull/391/head
+    # [10.0] [MIG] sale_automatic_workflow_payment_mode
+    - oca refs/pull/471/head
   target: *default_target
 ./external-src/server-tools:
   remotes:
