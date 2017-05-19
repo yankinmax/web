@@ -17,6 +17,8 @@ Unreleased
   * Add migration additional requests before the marabunta migration
   * Add a default value for partner pricelist on partner creation
 
+* DT-43: Migration: fix the docker-odoo-project version
+
 **Build**
 
 **Documentation**
