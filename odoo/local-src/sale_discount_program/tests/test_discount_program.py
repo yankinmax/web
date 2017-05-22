@@ -358,6 +358,7 @@ class TestDiscountProgram(TransactionCase):
             'partner_id': self.client.id,
             'voucher_amount': 150,
             'note_message_for_action': 'Unittest message',
+            'max_use_by_month': 1000,
         })
 
         self.assertEqual(False, program.automatic)
@@ -380,7 +381,22 @@ class TestDiscountProgram(TransactionCase):
 
         self.assertEqual(100, program.voucher_amount)
 
-        program.sale_confirmed()
+        # Sale used only for technical reason
+        sale = self.sale_model.create({
+            'partner_id': self.client.id,
+            'phototherapist_id': self.phototherapist.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'price_unit': 150,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ]
+        })
+        sale.program_to_add = 'UNITTEST_VOUCHER'
+        sale.onchange_program_to_add()
+        sale.action_confirm()
 
         self.assertEqual(1, program.max_use)
         self.assertEqual(1, program.nb_use)
@@ -395,7 +411,7 @@ class TestDiscountProgram(TransactionCase):
         program.max_use = 1
         self.assertEqual(False, program.code_valid)
 
-        program.sale_cancelled()
+        sale.action_cancel()
         self.assertEqual(1, program.max_use)
         self.assertEqual(0, program.nb_use)
 
@@ -684,3 +700,82 @@ class TestDiscountProgram(TransactionCase):
 
         self.assertEqual(0, sale.order_line[1].discount)
         self.assertEqual(self.p1, sale.order_line[1].product_id)
+
+    @post_install(True)
+    @at_install(False)
+    def test_voucher_max_use_by_month(self):
+
+        program = self.program_model.create({
+            'voucher_code': 'UNITTEST_VOUCHER',
+            'partner_id': self.client.id,
+            'voucher_amount': 150,
+            'note_message_for_action': 'Unittest message',
+            'max_use': 1000,
+            'max_use_by_month': 2,
+        })
+
+        self.assertEqual(False, program.automatic)
+        self.assertEqual(1000, program.max_use)
+        self.assertEqual(2, program.max_use_by_month)
+        self.assertEqual(0, program.nb_use)
+        self.assertEqual(False, program.used)
+        self.assertEqual(True, program.code_valid)
+
+        sale_1 = self.sale_model.create({
+            'partner_id': self.client.id,
+            'phototherapist_id': self.phototherapist.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'price_unit': 150,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ]
+        })
+        sale_1.program_to_add = 'UNITTEST_VOUCHER'
+        sale_1.onchange_program_to_add()
+        sale_1.action_confirm()
+
+        self.assertEqual(1000, program.max_use)
+        self.assertEqual(2, program.max_use_by_month)
+        self.assertEqual(1, program.nb_use)
+        self.assertEqual(False, program.used)
+
+        self.assertEqual(True, program.code_valid)
+
+        sale_2 = self.sale_model.create({
+            'partner_id': self.client.id,
+            'phototherapist_id': self.phototherapist.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'price_unit': 150,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ]
+        })
+        sale_2.program_to_add = 'UNITTEST_VOUCHER'
+        sale_2.onchange_program_to_add()
+        sale_2.action_confirm()
+
+        program._compute_code_valid()
+
+        self.assertEqual(1000, program.max_use)
+        self.assertEqual(2, program.max_use_by_month)
+        self.assertEqual(2, program.nb_use)
+        self.assertEqual(False, program.used)
+
+        self.assertEqual(False, program.code_valid)
+
+        sale_1.confirmation_date = '2017-01-01 10:00:00'
+
+        program._compute_code_valid()
+
+        self.assertEqual(1000, program.max_use)
+        self.assertEqual(2, program.max_use_by_month)
+        self.assertEqual(2, program.nb_use)
+        self.assertEqual(False, program.used)
+
+        self.assertEqual(True, program.code_valid)

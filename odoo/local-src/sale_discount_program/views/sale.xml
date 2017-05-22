@@ -9,9 +9,14 @@
             </button>
 
             <field name="partner_id" position="after">
-                <field name="program_code_ids" widget="many2many_tags"
-                       options="{'no_create' : True, 'no_open': True}"
-                />
+                <field name="program_to_add"/>
+                <field name="program_code_ids_readonly" widget="many2many_tags"/>
+                <field name="supporting_document_required" invisible="True"/>
+                <field name="supporting_document"
+                       attrs="{'required':[('supporting_document_required', '=', True)]}"/>
+                <field name="program_code_ids"
+                       widget="many2many_tags"
+                       invisible="True"/>
             </field>
         </field>
     </record>

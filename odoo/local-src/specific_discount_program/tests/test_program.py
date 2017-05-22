@@ -31,20 +31,9 @@ class TestProgram(TransactionCase):
         for program in self.program_model.search([]):
             program.unlink()
 
-        try:
-            self.sponsor_pricelist = self.env.ref(
-                'scenario.pricelist_sponsorship'
-            )
-        except ValueError:
-            self.sponsor_pricelist = self.env['product.pricelist'].create({
-                'name': 'Unittest sponsor pricelist',
-            })
-            self.env['ir.model.data'].create({
-                'model': 'product.pricelist',
-                'module': 'scenario',
-                'name': 'pricelist_sponsorship',
-                'res_id': self.sponsor_pricelist.id,
-            })
+        self.sponsor_pricelist = self.env.ref(
+            'specific_discount_program.pricelist_sponsorship'
+        )
 
         self.promo_pricelist = self.pricelist_model.create({
             'name': 'Unittest code promo',
@@ -309,6 +298,73 @@ class TestProgram(TransactionCase):
 
     @post_install(True)
     @at_install(False)
+    def test_promo_limit(self):
+        v1 = self.program_model.create({
+            'promo_code': 'UNITTEST_V1',
+            'partner_id': self.partner1.id,
+            'note_message_for_action': 'Unittest message',
+        })
+
+        v2 = self.program_model.create({
+            'promo_code': 'UNITTEST_V2',
+            'partner_id': self.partner1.id,
+            'note_message_for_action': 'Unittest message',
+        })
+
+        sale = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': self.partner1.id,
+            'program_code_ids': [(6, False, [v1.id, v2.id])],
+            'order_line': [(0, 0, {
+                'product_id': self.p1.id, 'product_uom_qty': 1,
+                'price_unit': 500,
+            })]
+        })
+
+        with self.assertRaises(UserError):
+            sale.apply_discount_programs()
+
+        sale.write({
+            'program_code_ids': [(6, False, [v1.id])],
+        })
+        sale.apply_discount_programs()
+
+        self.assertEqual(1, len(sale.applied_program_ids))
+
+    @post_install(True)
+    @at_install(False)
+    def test_voucher_and_promo_limit(self):
+        icp = self.env['ir.config_parameter']
+        icp.set_param('voucher_max_count', 10)
+
+        v1 = self.program_model.create({
+            'promo_code': 'UNITTEST_V1',
+            'partner_id': self.partner1.id,
+            'note_message_for_action': 'Unittest message',
+        })
+
+        v2 = self.program_model.create({
+            'voucher_code': 'UNITTEST_V2',
+            'voucher_amount': 100,
+            'partner_id': self.partner1.id,
+            'note_message_for_action': 'Unittest message',
+        })
+
+        sale = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': self.partner1.id,
+            'program_code_ids': [(6, False, [v1.id, v2.id])],
+            'order_line': [(0, 0, {
+                'product_id': self.p1.id, 'product_uom_qty': 1,
+                'price_unit': 500,
+            })]
+        })
+
+        with self.assertRaises(UserError):
+            sale.apply_discount_programs()
+
+    @post_install(True)
+    @at_install(False)
     def test_discount_manually_percent_max(self):
         sale = self.sale_model.create({
             'phototherapist_id': self.phototherapist.id,
@@ -482,7 +538,6 @@ class TestProgram(TransactionCase):
         self.assertEqual(sale.order_line[0].price_unit, 450)
         self.assertEqual(sale.order_line[0].price_subtotal, 427.5)
 
-    # TODO : Search why the test doesn't work
     @post_install(True)
     @at_install(False)
     def test_discount_manually_percent_with_pricelist_discount_2(self):

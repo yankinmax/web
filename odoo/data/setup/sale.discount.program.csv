@@ -13,7 +13,7 @@ scenario.discount_program_coffret_esthederm,,True,Coffret Cadeau - Dermlight - E
 ,,,,,,,,,,,,,,0,,scenario.product_category_dermlight_esthederm_3seances,0,2,Quantity is the sum of matching products quantities,10,Product Category
 scenario.discount_program_coffret_clayton,,True,Coffret Cadeau - Dermlight - Clayton-Shagal,True,0,,0,scenario.product_coffretcosmetique_clayton_shagal,,10,True,Add Product,Vous avez bénéficié d’un produit offert.,0,,scenario.product_category_dermlight_Clayton-Shagal_5seances,0,1,Quantity is the sum of matching products quantities,10,Product Category
 ,,,,,,,,,,,,,,0,,scenario.product_category_dermlight_Clayton-Shagal_3seances,0,2,Quantity is the sum of matching products quantities,10,Product Category
-scenario.discount_program_parrainage,,True,Parrainage,True,0,scenario.pricelist_sponsorship,0,,,10,False,Change sale order pricelist,Vous avez bénéficié de 10% de bon parrainage.,0,,,0,0,,10,Sponsorship
+scenario.discount_program_parrainage,,True,Parrainage,True,0,specific_discount_program.pricelist_sponsorship,0,,,10,False,Change sale order pricelist,Vous avez bénéficié de 10% de bon parrainage.,0,,,0,0,,10,Sponsorship
 scenario.discount_program_cumul_2_zones,,True,Cumul de zone - 2 zones,True,20,,0,,Most expensive without discount,10,False,Discount on product,Vous avez bénéficié de 20% de de réduction sur un produit.,400,,scenario.product_category_depil_femmes_forfait,2,2,Quantity is the sum of matching products quantities,10,Product Category
 ,,,,,,,,,,,,,,400,,scenario.product_category_depil_hommes_forfait,2,2,Quantity is the sum of matching products quantities,10,Product Category
 ,,,,,,,,,,,,,,88,,scenario.product_category_depil_femmes_seance,2,2,Quantity is the sum of matching products quantities,10,Product Category

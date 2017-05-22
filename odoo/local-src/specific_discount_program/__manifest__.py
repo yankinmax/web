@@ -17,9 +17,14 @@
         # Data
         'data/ir_config_parameter.xml',
         'data/product.xml',
+        'data/product.pricelist.csv',
+        'data/product.pricelist.item.csv',
+        # Report
         'report/account_invoice.xml',
+        # Security
         'security/ir.model.access.csv',
         'security/program.xml',
+        # Views
         'views/account_invoice.xml',
         'views/program.xml',
         'views/program_action.xml',

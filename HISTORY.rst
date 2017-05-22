@@ -18,6 +18,11 @@ Unreleased
 * Hide payment mode field on quotations
 * Add field 'This quotation is a gift' on sale.order and account.invoice
 * DT-8: Install specific_sale_order module
+* DT-7: Add 'Signature bloc' in sale order report
+* DT-7: Change the input of promo code on sale order
+* DT-7: Custom limit of usage for discount programs
+* DT-9: Add a global limit on promo code use
+* DT-9: Add a required attachment on sale order when using promo code
 
 **Bugfixes**
 

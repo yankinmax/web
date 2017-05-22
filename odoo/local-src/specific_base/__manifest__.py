@@ -47,6 +47,7 @@
           'data/base_override.yml',
           'data/ir_actions_server.xml',
           'data/base_action_rule.xml',
+          'report/sale_order.xml',
           ],
  'installable': True,
  }

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <template id="report_saleorder_specific" inherit_id="sale.report_saleorder_document">
+
+        <p id="fiscal_position_remark" position="after">
+
+            <br/>
+
+            <div class="oe_structure row">
+                <div class="col-xs-5">
+                    <div>
+                        <span><strong>Date</strong></span>
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                    <div>
+                        <span><strong>Initials</strong></span>
+                    </div>
+                </div>
+
+            </div>
+            <br/>
+            <br/>
+            <div class="oe_structure row">
+                <div class="col-xs-10">
+                    <div>
+                        <span><strong>Signature preceded by the words "Read and approved"</strong></span>
+                    </div>
+                </div>
+            </div>
+
+        </p>
+
+    </template>
+
+</odoo>

@@ -36,7 +36,9 @@ class SaleOrder(models.Model):
         'partner_id', 'partner_id.sponsor_id', 'partner_id.sponsor_id.active'
     )
     def _compute_is_sponsored(self):
-        sponsor_pricelist = self.env.ref('scenario.pricelist_sponsorship')
+        sponsor_pricelist = self.env.ref(
+            'specific_discount_program.pricelist_sponsorship'
+        )
         for sale in self:
             if not sponsor_pricelist:
                 sale.is_sponsored = False

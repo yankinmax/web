@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 15:47+0000\n"
-"PO-Revision-Date: 2017-05-23 17:51+0200\n"
+"POT-Creation-Date: 2017-05-30 15:26+0000\n"
+"PO-Revision-Date: 2017-05-30 15:26+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -48,6 +48,11 @@ msgstr "Prix unitaire éditable"
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_line_can_edit_qty
 msgid "Can edit qty"
 msgstr "Quantité éditable"
+
+#. module: specific_discount_program
+#: model:product.pricelist,name:specific_discount_program.pricelist_code_promo
+msgid "Code promo"
+msgstr "Code promo"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_partner_company_id
@@ -154,7 +159,7 @@ msgid "Manually Discount (%)"
 msgstr "Remise manuelle (%)"
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/sale_order.py:147
+#: code:addons/specific_discount_program/models/sale_order.py:150
 #, python-format
 msgid "Max manually discount allowed is %s %% for a sale order."
 msgstr "Le pourcentage maximum de remise manuelle est de %s %% pour une commande."
@@ -190,6 +195,11 @@ msgstr "Nombre de bons d'achats autorisé par commande"
 #, python-format
 msgid "Number of vouchers is limited to %s"
 msgstr "Le nombre de bon d'achat est limité à %s"
+
+#. module: specific_discount_program
+#: model:product.pricelist,name:specific_discount_program.pricelist_sponsorship
+msgid "Parrainage"
+msgstr "Parrainage"
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_res_partner
