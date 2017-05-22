@@ -29,7 +29,13 @@
                     <field name="note_message_for_action" required="context.get('program_voucher', False)" invisible="not context.get('program_voucher')"/>
                 </group>
             </xpath>
-
+            <field name="partner_id" position="after">
+                <field name="gift_voucher" />
+                <field name="customer_required" invisible="1" />
+            </field>
+            <field name="partner_id" position="attributes">
+                <attribute name="attrs">{'required': [('customer_required', '=', True), ('gift_voucher', '=', False)]}</attribute>
+            </field>
         </field>
     </record>
 

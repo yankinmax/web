@@ -34,7 +34,7 @@
 
                 <group name="voucher_group" invisible="not context.get('program_voucher')">
                     <field name="voucher_code" readonly="1"/>
-                    <field name="partner_id" required="context.get('program_voucher')"/>
+                    <field name="partner_id" />
                     <field name="voucher_amount" required="context.get('program_voucher')"/>
                     <field name="used"/>
                 </group>

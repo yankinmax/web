@@ -11,10 +11,7 @@
             <field name="partner_id" position="after">
                 <field name="program_code_ids" widget="many2many_tags"
                        options="{'no_create' : True, 'no_open': True}"
-                       domain="['|',
-                                '&amp;', ('promo_code', '!=', False), ('code_valid', '=', True),
-                                '&amp;', '&amp;', ('voucher_code', '!=', False), ('code_valid', '=', True), ('partner_id', '=', partner_id)
-                               ]"/>
+                />
             </field>
         </field>
     </record>

@@ -22,6 +22,13 @@ class Program(models.Model):
 
     # For vouchers created by sale.order
     source_sale_id = fields.Many2one(comodel_name='sale.order')
+    # For vouchers created by account.invoice
+    source_invoice_id = fields.Many2one(comodel_name='account.invoice')
+
+    gift_voucher = fields.Boolean('Gift voucher', readonly=True)
+
+    customer_required = fields.Boolean('Requires customer',
+                                       compute='_compute_cust_req')
 
     note_message_for_action = fields.Char(
         string='Voucher description',
@@ -30,7 +37,10 @@ class Program(models.Model):
     _sql_constraints = [
         ('voucher_source_sale_id',
          'check(source_sale_id is null or voucher_code is not null)',
-         _("source_sale_id can be filled only for voucher"))
+         _("source_sale_id can be filled only for voucher")),
+        ('voucher_source_invoice_id',
+         'check(source_invoice_id is null or voucher_code is not null)',
+         _('source_invoice_id can be filled only for voucher'))
     ]
 
     @api.depends(
@@ -39,7 +49,12 @@ class Program(models.Model):
     )
     def _compute_name(self):
         for program in self:
-            if program.voucher_code:
+            if program.gift_voucher:
+                program.name = _("Gift: %s (%s)") % (
+                    program.voucher_code,
+                    program.voucher_amount
+                )
+            elif program.voucher_code:
                 program.name = "%s: %s (%s)" % (
                     program.partner_id.name,
                     program.voucher_code,
@@ -48,6 +63,14 @@ class Program(models.Model):
 
             else:
                 super(Program, program)._compute_name()
+
+    @api.multi
+    def _compute_cust_req(self):
+        for prog in self:
+            if self.env.context.get('program_voucher', False):
+                prog.customer_required = True
+            else:
+                prog.customer_required = False
 
     @api.model
     def create(self, vals):

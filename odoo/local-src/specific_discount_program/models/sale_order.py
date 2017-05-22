@@ -2,7 +2,6 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from lxml import etree
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
@@ -44,39 +43,6 @@ class SaleOrder(models.Model):
             else:
                 sale.is_sponsored = sale.partner_id.sponsor_id.active \
                     and sale.pricelist_id == sponsor_pricelist
-
-    @api.model
-    def fields_view_get(self, view_id=None, view_type='form',
-                        toolbar=False, submenu=False):
-        """ Modify the domain of program_code_ids field in form view because
-        the domain depens on connected user company.
-        """
-        result = super(SaleOrder, self).fields_view_get(
-            view_id=view_id, view_type=view_type,
-            toolbar=toolbar, submenu=submenu
-        )
-
-        if view_type == 'form':
-            eview = etree.fromstring(result['arch'])
-            nodes = eview.xpath("//field[@name='program_code_ids']")
-            if nodes:
-                nodes[0].set(
-                    'domain',
-                    "['|', "
-
-                    "'&', ('promo_code', '!=', False), "
-                    "('code_valid', '=', True),"
-
-                    "'&', '&', "
-                    "('voucher_code', '!=', False), "
-                    "('code_valid', '=', True), "
-                    "('partner_company_id', '=', %d)"
-                    "]"
-                    % self.env.user.company_id.id
-                )
-            result['arch'] = etree.tostring(eview)
-
-        return result
 
     @api.multi
     def create_partner_voucher(self, partner_id):
@@ -123,18 +89,20 @@ class SaleOrder(models.Model):
 
     @api.multi
     def action_confirm(self):
+
         super(SaleOrder, self).action_confirm()
 
         for sale in self:
-            # Bon d'achat si la commande a utilisé le programme de
-            # parainnage et si le parrain est toujours valide
-            if sale.is_sponsored:
-                sale.create_partner_voucher(
-                    sale.partner_id.sponsor_id.partner_id.id
-                )
+            if not sale.gift_quotation:
+                # Bon d'achat si la commande a utilisé le programme de
+                # parainnage et si le parrain est toujours valide
+                if sale.is_sponsored:
+                    sale.create_partner_voucher(
+                        sale.partner_id.sponsor_id.partner_id.id
+                    )
 
-            # Bon d'achat pour chaque commande
-            sale.create_partner_voucher(sale.partner_id.id)
+                # Bon d'achat pour chaque commande
+                sale.create_partner_voucher(sale.partner_id.id)
 
     @api.multi
     def action_cancel(self):
@@ -146,6 +114,24 @@ class SaleOrder(models.Model):
                 program.sudo().unlink()
 
         return result
+
+    @api.one
+    @api.constrains('gift_quotation')
+    def _check_gift_quotation_product(self):
+        if self.gift_quotation:
+            if not (
+                len(self.order_line) == 1 and
+                self.order_line[0].product_id == self.env.ref(
+                                'scenario.product_cartecadeaux') and
+                self.order_line[0].product_uom_qty == 1
+            ):
+                raise exceptions.ValidationError(
+                    'Only 1 (one) Gift card product is allowed to create '
+                    'a gift quotation !')
+
+    @api.onchange('gift_quotation')
+    def _onchange_gift_quotation(self):
+        self._check_gift_quotation_product()
 
     @api.one
     @api.constrains('discount_manually_percent')
