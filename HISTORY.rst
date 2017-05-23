@@ -13,6 +13,7 @@ Unreleased
 * DT-5: Apply same logic for sale tax calculation than on invoices
 * DT-17 : Add group to control visibility of archive button on client view
 * DT-6: Add early payment discount on customer invoices
+* [DT-26] Change the code of the vouchers, random generated not in a sequence
 
 **Bugfixes**
 

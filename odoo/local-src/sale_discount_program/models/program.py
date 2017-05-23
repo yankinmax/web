@@ -2,6 +2,7 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from datetime import date
+import shortuuid
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
@@ -73,12 +74,7 @@ class Program(models.Model):
     ]
 
     def _default_voucher_code(self):
-        if self.env.context.get('program_voucher'):
-            return self.env['ir.sequence'].next_by_code(
-                'discount.program.voucher_code'
-            )
-        else:
-            return False
+        return shortuuid.uuid()[:10]
 
     @api.depends(
         'program_name', 'voucher_code', 'promo_code', 'voucher_amount'
