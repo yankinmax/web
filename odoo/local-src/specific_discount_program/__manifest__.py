@@ -17,6 +17,7 @@
         # Data
         'data/ir_config_parameter.xml',
         'data/product.xml',
+        'report/account_invoice.xml',
         'security/ir.model.access.csv',
         'security/program.xml',
         'views/account_invoice.xml',

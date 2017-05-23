@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document">
+        <xpath expr="//p[@t-if='o.comment']" position="before" >
+            <p t-if="o.generated_voucher_ids">
+                <strong>Please copy this code on a Depiltech gift card :</strong>
+                <span t-field="o.generated_voucher_ids[0].voucher_code"/>
+            </p>
+        </xpath>
+    </template>
+</odoo>
