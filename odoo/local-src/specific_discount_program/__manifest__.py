@@ -16,6 +16,7 @@
     'data': [
         # Data
         'data/ir_config_parameter.xml',
+        'data/product.xml',
         'security/ir.model.access.csv',
         'security/program.xml',
         'views/account_invoice.xml',

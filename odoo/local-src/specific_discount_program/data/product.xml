@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="gift_card_category" model="product.category">
+            <field name="name">Gift cards</field>
+        </record>
+        <record id="gift_card_template" model="product.template"
+                context="{'create_product_product': False}">
+            <field name="name">Gift card</field>
+            <field name="sale_ok" eval="True" />
+            <field name="purchase_ok" eval="False" />
+            <field name="list_price">50</field>
+            <field name="categ_id" ref="gift_card_category"/>
+        </record>
+        <record id="gift_card" model="product.product">
+            <field name="name">Gift card</field>
+            <field name="lst_price">50</field>
+            <field name="product_tmpl_id" ref="gift_card_template" />
+        </record>
+    </data>
+</odoo>

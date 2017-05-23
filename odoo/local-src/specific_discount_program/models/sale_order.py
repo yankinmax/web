@@ -122,8 +122,7 @@ class SaleOrder(models.Model):
             if not (
                 len(self.order_line) == 1 and
                 self.order_line[0].product_id == self.env.ref(
-                                'scenario.product_cartecadeaux') and
-                self.order_line[0].product_uom_qty == 1
+                                'specific_discount_program.gift_card')
             ):
                 raise exceptions.ValidationError(
                     'Only 1 (one) Gift card product is allowed to create '

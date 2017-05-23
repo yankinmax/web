@@ -51,8 +51,7 @@ class AccountInvoice(models.Model):
             if not (
                 len(self.invoice_line_ids) == 1 and
                 self.invoice_line_ids[0].product_id == self.env.ref(
-                                'scenario.product_cartecadeaux') and
-                self.invoice_line_ids[0].quantity == 1
+                                'specific_discount_program.gift_card')
             ):
                 return False
             else:
