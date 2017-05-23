@@ -23,6 +23,7 @@ class TestProgram(TransactionCase):
         self.sponsor_model = self.env['partner.sponsor']
         self.settings_model = self.env['sale.config.settings']
         self.pricelist_model = self.env['product.pricelist']
+        self.account_model = self.env['account.account']
 
         for sponsor in self.sponsor_model.search([]):
             sponsor.unlink()
@@ -91,6 +92,14 @@ class TestProgram(TransactionCase):
             ('partner_id', '=', self.partner1.id)
         ])
         created_voucher.unlink()
+
+        # Create Sale Journal
+        self.sale_journal = self.env['account.journal'].create({
+            'name': 'Sale Journal - Test',
+            'code': 'STSJ',
+            'type': 'sale',
+            'company_id': self.env.user.company_id.id
+        })
 
     @post_install(True)
     @at_install(False)
@@ -523,3 +532,81 @@ class TestProgram(TransactionCase):
         self.assertEqual(sale.order_line[0].discount, 15.)
         self.assertEqual(sale.order_line[0].price_unit, 500)
         self.assertEqual(sale.order_line[0].price_subtotal, 425)
+
+    def test_gift_voucher(self):
+        # Set two partner
+        ordering_partner = self.env.ref('base.partner_demo')
+        receiving_partner = ordering_partner.copy()
+
+        # Create gift quotation order
+        gift_order = self.sale_model.create({
+            'partner_id': ordering_partner.id,
+            'order_line': [(0, 0, {
+                'product_id': self.env.ref(
+                    'specific_discount_program.gift_card').id,
+                'quantity': 1,
+                'price_unit': 50,
+            })],
+            'gift_quotation': True,
+            'phototherapist_id': self.phototherapist.id,
+        })
+
+        gift_order_context = {"active_model": 'sale.order',
+                              "active_ids": [gift_order.id],
+                              "active_id": gift_order.id}
+
+        # Confirm gift quotation
+        gift_order.with_context(gift_order_context).action_confirm()
+
+        self.assertFalse(gift_order.generated_voucher_ids)
+
+        # Create invoice
+        payment_wiz = self.env['sale.advance.payment.inv'].create({
+            'advance_payment_method': 'all',
+        })
+        payment_wiz.with_context(gift_order_context).create_invoices()
+        gift_invoice = gift_order.invoice_ids[0]
+
+        # Validate invoice
+        gift_invoice.with_context(gift_order_context).invoice_validate()
+
+        self.assertEqual(len(gift_invoice.generated_voucher_ids), 1)
+        gift_voucher = gift_invoice.generated_voucher_ids[0]
+
+        self.assertEqual(gift_voucher.voucher_amount, 50.0)
+        self.assertFalse(gift_voucher.partner_id)
+        self.assertFalse(gift_voucher.used)
+
+        # Create sale order using gift voucher
+        reduced_order = self.sale_model.create({
+            'partner_id': receiving_partner.id,
+            'program_code_ids': [(4, gift_voucher.id, False)],
+            'order_line': [(0, 0, {
+                'product_id': self.p1.id,
+                'quantity': 1,
+                'price_unit': 100,
+            })],
+            'gift_quotation': False,
+            'phototherapist_id': self.phototherapist.id,
+        })
+
+        self.assertEqual(reduced_order.state, 'draft')
+        self.assertEqual(len(reduced_order.order_line), 1)
+
+        # Apply gift voucher
+        reduced_order.apply_discount_programs()
+        self.assertEqual(len(reduced_order.order_line), 2)
+
+        # Remove automatic taxes
+        reduced_order.order_line.write({
+            'tax_id': [(5, False, False)]
+        })
+
+        reduced_order_context = {"active_model": 'sale.order',
+                                 "active_ids": [reduced_order.id],
+                                 "active_id": reduced_order.id}
+
+        # Confirm sale.order
+        reduced_order.with_context(reduced_order_context).action_confirm()
+        self.assertEqual(reduced_order.state, 'sale')
+        self.assertEqual(reduced_order.amount_total, 50.0)
