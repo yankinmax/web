@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Author: Denis Leemann
 # Copyright 2017 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -40,5 +39,10 @@ class SaleOrder(models.Model):
                 task.write({
                     'product_substance_measure_ids': product_substance_measure,
                     'tested_sample': line.tested_sample,
+                    'test_parameters': line.product_id.test_parameters,
+                    'applied_dose': line.product_id.applied_dose,
+                    'duration': line.product_id.duration,
+                    'nb_shocks': line.product_id.nb_shocks,
+                    'results': line.product_id.results,
                 })
         return True

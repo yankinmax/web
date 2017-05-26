@@ -22,6 +22,8 @@ latest (unreleased)
 **Features and Improvements**
 
 * Update odoo user list
+* Additional Fields for SO lines/product/substance/mesures/project/tasks
+  BSMTS-99
 
 **Bugfixes**
 

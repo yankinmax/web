@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-# Author: Denis Leemann
 # Copyright 2017 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields
+from odoo import models, fields, api, _
+from odoo.tools import float_compare
+from odoo.exceptions import ValidationError
 
 
 class ProductSubstance(models.Model):
@@ -13,11 +14,20 @@ class ProductSubstance(models.Model):
         string='Name',
         required=True,
     )
-    legal_limit = fields.Float(
-        string='Legal limit',
+    legal_limit_min = fields.Float(
+        string='Legal limit min value',
+    )
+    legal_limit_max = fields.Float(
+        string='Legal limit max value',
     )
     comments = fields.Char(
         string='Comments',
+    )
+    has_limit_min = fields.Boolean(
+        string='Has limit min',
+    )
+    has_limit_max = fields.Boolean(
+        string='Has limit max',
     )
     product_ids = fields.Many2many(
         'product.template',
@@ -38,3 +48,17 @@ class ProductSubstance(models.Model):
         string='Products',
         invisible=True,
     )
+    detection_limit = fields.Char(
+        string='Detection Limit',
+    )
+    quantification_limit = fields.Char(
+        string='Quantification Limit',
+    )
+
+    @api.constrains('legal_limit_min', 'legal_limit_max')
+    def _onchange_legal_limit(self):
+        if ((self.has_limit_min and self.has_limit_max) and
+                (float_compare(self.legal_limit_min, self.legal_limit_max,
+                               False, False) > 0)):
+            raise ValidationError(_('Legal limit min should be smaller than '
+                                    'Legal limit max'))
