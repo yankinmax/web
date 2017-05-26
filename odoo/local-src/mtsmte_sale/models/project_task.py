@@ -15,3 +15,6 @@ class ProjectTask(models.Model):
         string='Substance Measure',
     )
     sale_line_id = fields.Many2one(index=True)
+    tested_sample = fields.Text(
+        string='Tested Samples',
+    )

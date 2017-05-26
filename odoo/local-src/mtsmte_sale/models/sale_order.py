@@ -23,7 +23,7 @@ class SaleOrder(models.Model):
                 [('analytic_account_id', '=', order.project_id.id)])
             vals = {
                 # We don't know if related or not
-                'analyze_sample': order.analyze_sample
+                'analyze_sample': order.analyze_sample,
             }
             prj.write(vals)
             for line in order.order_line:
@@ -39,5 +39,6 @@ class SaleOrder(models.Model):
                     product_substance_measure += [(0, 0, vals_measure)]
                 task.write({
                     'product_substance_measure_ids': product_substance_measure,
+                    'tested_sample': line.tested_sample,
                 })
         return True

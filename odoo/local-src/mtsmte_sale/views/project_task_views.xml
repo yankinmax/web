@@ -5,6 +5,9 @@
     <field name="model">project.task</field>
     <field name="inherit_id" ref="project.view_task_form2"/>
     <field name="arch" type="xml">
+      <xpath expr="//field[@name='planned_hours']" position="after">
+          <field name='tested_sample'/>
+      </xpath>
       <notebook position="inside">
         <page string="Substances to analyze">
           <field name="product_substance_measure_ids">

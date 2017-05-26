@@ -18,6 +18,9 @@ class SaleOrderLine(models.Model):
         related='product_id.is_chemistry',
         readonly=True,
     )
+    tested_sample = fields.Text(
+        string='Tested Samples',
+    )
 
     @api.onchange('product_id')
     def onchange_product_id(self):
