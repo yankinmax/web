@@ -74,7 +74,7 @@ migration:
           #### OCA/bank-statement-import
           - account_bank_statement_import_camt
           #### OCA/account-invoicing
-          -  account_invoice_rounding
+          - account_invoice_rounding
           #### OCA/purchase-workflow
           - purchase_discount
           #### Specific
@@ -106,3 +106,7 @@ migration:
           - anthem songs.install.data_all::import_project_task_type
           - anthem songs.install.mts.sales::set_sale_conditions
           - anthem songs.install.mte.sales::set_sale_conditions
+    - version: 10.0.5
+      operations:
+        post:
+          - anthem songs.install.data_all::import_users
