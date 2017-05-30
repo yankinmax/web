@@ -16,6 +16,8 @@
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
+        # Data
+        'data/ir_config_parameter.xml',
         'data/product_voucher.xml',
         'data/program_sequence.xml',
         'security/ir.model.access.csv',

@@ -14,6 +14,8 @@
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
+        # Data
+        'data/ir_config_parameter.xml',
         'security/ir.model.access.csv',
         'security/program.xml',
         'views/account_invoice.xml',

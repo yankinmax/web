@@ -68,6 +68,20 @@ fi
 psql << EOF
 
 DELETE FROM
+    ir_config_parameter
+WHERE
+    key IN (
+        'force_discount_apply',
+        'voucher_default_validity',
+        'voucher_max_count',
+        'voucher_max_amount',
+        'voucher_percent'
+    )
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+DELETE FROM
     ir_ui_view
 WHERE
     id IN (
