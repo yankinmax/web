@@ -8,50 +8,6 @@ from ..common import define_settings
 
 
 @anthem.log
-def discount_parameter_config(ctx):
-    """ discount_parameter_config """
-    values = {
-        'key': 'force_discount_apply',
-        'value': True,
-    }
-    create_or_update(ctx, 'ir.config_parameter',
-                     'force_discount_apply',
-                     values)
-
-    values = {
-        'key': 'voucher_default_validity',
-        'value': 10,
-    }
-    create_or_update(ctx, 'ir.config_parameter',
-                     'voucher_default_validity',
-                     values)
-
-    values = {
-        'key': 'voucher_max_count',
-        'value': 2,
-    }
-    create_or_update(ctx, 'ir.config_parameter',
-                     'voucher_max_count',
-                     values)
-
-    values = {
-        'key': 'voucher_max_amount',
-        'value': 100,
-    }
-    create_or_update(ctx, 'ir.config_parameter',
-                     'voucher_max_amount',
-                     values)
-
-    values = {
-        'key': 'voucher_percent',
-        'value': 10,
-    }
-    create_or_update(ctx, 'ir.config_parameter',
-                     'voucher_percent',
-                     values)
-
-
-@anthem.log
 def base_settings(ctx):
     """ base_settings """
     define_settings(
@@ -122,7 +78,6 @@ def discount_pricelist(ctx):
 
 @anthem.log
 def main(ctx):
-    discount_parameter_config(ctx)
     base_settings(ctx)
     sale_settings(ctx)
     discount_pricelist(ctx)
