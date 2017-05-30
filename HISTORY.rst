@@ -25,6 +25,8 @@ latest (unreleased)
 
 **Build**
 
+* Use camptocamp/odoo-project:10.0-2.2.0
+
 **Documentation**
 
 
