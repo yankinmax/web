@@ -74,7 +74,10 @@ class Program(models.Model):
     ]
 
     def _default_voucher_code(self):
-        return shortuuid.uuid()[:10]
+        if self.env.context.get('program_voucher'):
+            return shortuuid.uuid()[:10]
+        else:
+            return False
 
     @api.depends(
         'program_name', 'voucher_code', 'promo_code', 'voucher_amount'
