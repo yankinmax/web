@@ -11,6 +11,7 @@
     'depends': [
         'sale',
         'sale_stock',
+        'sales_team',
         # TODO: remove if OCA
         'specific_base',
     ],

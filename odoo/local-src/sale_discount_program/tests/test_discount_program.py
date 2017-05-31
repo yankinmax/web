@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
+from odoo.exceptions import AccessError
 from datetime import timedelta, date
 
 from odoo.tests.common import TransactionCase, post_install, at_install
@@ -779,3 +781,56 @@ class TestDiscountProgram(TransactionCase):
         self.assertEqual(False, program.used)
 
         self.assertEqual(True, program.code_valid)
+
+    @post_install(True)
+    @at_install(False)
+    def test_voucher_max_use_by_month_multi_company_with_rights(self):
+
+        self.env.ref(
+            'sale_discount_program.access_sale_discount_program'
+        ).write({
+            'perm_write': True,
+        })
+
+        user = self.env['res.users'].create({
+            'name': 'Unittest user',
+            'login': 'test@example.com',
+            'new_password': 'pwd',
+            'groups_id': [(6, 0, [
+                self.env.ref('sales_team.group_sale_salesman').id,
+            ])]
+        })
+
+        program = self.program_model.create({
+            'voucher_code': 'UNITTEST_VOUCHER',
+            'partner_id': self.client.id,
+            'voucher_amount': 150,
+            'note_message_for_action': 'Unittest message',
+            'max_use': 1000,
+            'max_use_by_month': 1,
+        })
+
+        sale = self.sale_model.create({
+            'partner_id': self.client.id,
+            'phototherapist_id': self.phototherapist.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'price_unit': 150,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ],
+        })
+        sale.program_to_add = 'UNITTEST_VOUCHER'
+        sale.onchange_program_to_add()
+        sale.action_confirm()
+
+        # user has no access to sale order
+        with self.assertRaises(AccessError):
+            sale.sudo(user).read()
+
+        program.sudo(user)._compute_code_valid()
+
+        # but user get the correct value for program.code_valid
+        self.assertEqual(False, program.code_valid)

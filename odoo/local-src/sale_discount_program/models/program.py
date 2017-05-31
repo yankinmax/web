@@ -170,14 +170,17 @@ class Program(models.Model):
                 if program.max_use and program.nb_use >= program.max_use:
                     code_valid = False
 
+            confirmed_sales_which_used = (
+                program.sudo().confirmed_sales_which_used
+            )
             check_max_use_by_month = (
                 code_valid and
                 program.max_use_by_month and
-                program.confirmed_sales_which_used
+                confirmed_sales_which_used
             )
             if check_max_use_by_month:
                 current_confirmed_sales_which_used = (
-                    program.confirmed_sales_which_used.filtered(
+                    confirmed_sales_which_used.filtered(
                         lambda s: s.confirmation_date[:7] == today_str
                     )
                 )
