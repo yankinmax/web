@@ -597,16 +597,18 @@ class TestProgram(TransactionCase):
         reduced_order.apply_discount_programs()
         self.assertEqual(len(reduced_order.order_line), 2)
 
-        # Remove automatic taxes
-        reduced_order.order_line.write({
-            'tax_id': [(5, False, False)]
-        })
-
         reduced_order_context = {"active_model": 'sale.order',
                                  "active_ids": [reduced_order.id],
                                  "active_id": reduced_order.id}
 
         # Confirm sale.order
         reduced_order.with_context(reduced_order_context).action_confirm()
+
+        # TODO : TO BE CHANGED ! THE VOUCHER PRODUCTS MUST BE HAVE TAX INCLUDED
+        # Remove automatic taxes
+        reduced_order.order_line.write({
+            'tax_id': [(5, False, False)]
+        })
+
         self.assertEqual(reduced_order.state, 'sale')
         self.assertEqual(reduced_order.amount_total, 50.0)
