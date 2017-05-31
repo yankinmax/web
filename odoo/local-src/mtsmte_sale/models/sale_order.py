@@ -21,8 +21,8 @@ class SaleOrder(models.Model):
             prj = self.env['project.project'].search(
                 [('analytic_account_id', '=', order.project_id.id)])
             vals = {
-                # We don't know if related or not
                 'analyze_sample': order.analyze_sample,
+                'client_order_ref': order.client_order_ref,
             }
             prj.write(vals)
             for line in order.order_line:

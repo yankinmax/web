@@ -8,6 +8,8 @@ from odoo import models, fields
 class ProjectProject(models.Model):
     _inherit = 'project.project'
 
+    client_order_ref = fields.Char(string='Customer Reference', copy=False)
+    reception_date = fields.Date(string='Reception Date')
     analyze_sample = fields.Text(
         string='Samples To Analyze',
     )

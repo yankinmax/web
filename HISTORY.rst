@@ -25,6 +25,8 @@ latest (unreleased)
 * Additional Fields for SO lines/product/substance/mesures/project/tasks
   BSMTS-99
 
+* Add Customer Reference and Reception Date on project (BSMTS-98)
+
 **Bugfixes**
 
 **Build**
