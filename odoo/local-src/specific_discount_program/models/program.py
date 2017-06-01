@@ -67,10 +67,8 @@ class Program(models.Model):
     @api.multi
     def _compute_cust_req(self):
         for prog in self:
-            if self.env.context.get('program_voucher', False):
-                prog.customer_required = True
-            else:
-                prog.customer_required = False
+            prog.customer_required = self.env.context.get('program_voucher',
+                                                          False)
 
     @api.model
     def create(self, vals):
