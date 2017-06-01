@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
@@ -20,9 +21,13 @@ class AccountInvoice(models.Model):
     @api.multi
     def create_voucher(self):
         self.ensure_one()
-        months_validity = int(self.env['ir.config_parameter'].get_param(
-            'voucher_default_validity', '0'
-        ))
+        try:
+            months_validity = int(self.env['ir.config_parameter'].get_param(
+                'voucher_default_validity', '0'))
+        except ValueError:
+            raise UserError(
+                "Configuration parameter 'voucher_default_validity' "
+                "is invalid.\n This parameter value has to be an Integer.")
 
         expiration_date = None
         if months_validity:
