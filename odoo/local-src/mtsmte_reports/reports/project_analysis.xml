@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="report_analysis_doc" name="MT analysis report content">
+    <t t-call="report.external_layout">
+      <!-- TODO: force language from wizard -->
+      <t t-set="doc" t-value="doc.with_context({'lang': forced_lang or doc.partner_id.lang})" />
+      <t t-set="tasks" t-value="tasks or doc.task_ids" />
+      <div class="page analysis">
+        <t t-foreach="tasks" t-as="task">
+          <t t-set="product" t-value="task.sale_line_id.product_id" />
+          <t t-set="atype" t-value="report.get_analysis_type(product)" />
+          <div t-attf-class="task_wrapper type_#{atype}">
+            <div class="section task_header">
+              <h1 class="heading task_title" t-field="task.name" />
+              <div class="content">
+                <t t-raw="product.description_sale" />
+              </div>
+            </div>
+            <div class="section test_samples">
+              <h2 class="heading">Tested samples</h2>
+              <div class="content">
+                <t t-raw="task.tested_sample" />
+              </div>
+            </div>
+            <div class="section test_params">
+              <h2 class="heading">Test / Parameters</h2>
+              <div class="content">
+                <t t-raw="task.test_parameters" />
+              </div>
+            </div>
+            <t t-if="atype == 'mech_env'">
+              <t t-call="mtsmte_reports.mech_env_results" />
+            </t>
+            <t t-else="">
+              <t t-call="mtsmte_reports.chemical_results" />
+            </t>
+          </div>
+        </t>
+      </div>
+    </t>
+  </template>
+
+
+  <template id="mech_env_results">
+    <t t-set="details" t-value="report.get_mech_env_details(task)" />
+    <div class="section mech_env_details" t-if="details">
+      <h2 class="heading" t-esc="details['label']"/>
+      <div class="content">
+        <t t-raw="details['val']" />
+      </div>
+    </div>
+    <div class="section test_results">
+      <h2 class="heading">Results &amp;amp; Observations</h2>
+      <div class="content">
+        <t t-raw="task.results" />
+      </div>
+    </div>
+  </template>
+
+
+  <template id="chemical_results">
+    <div class="section test_results">
+      <h2 class="heading">Results &amp;amp; Observations</h2>
+      <div class="content">
+        <table>
+          <thead>
+            <tr>
+              <th class="substance">Substance Measure</th>
+              <th class="legal_limit">Legal limit</th>
+              <th class="detect_limit">Detection limit</th>
+              <th class="quantif_limit">Quantification limit</th>
+              <th class="result">Result</th>
+              <th class="conformity">Conformity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <t t-foreach="task.product_substance_measure_ids" t-as="meas">
+              <tr>
+                <td class="substance">
+                  <span t-field="meas.product_substance_id" />
+                </td>
+                <td class="legal_limit">
+                  <t t-if="meas.legal_limit_min">
+                    <span class="limit_min" t-field="meas.legal_limit_min" />
+                    <span class="limit_min_sep sep">&lt;</span>
+                  </t>
+                  <span class="limit_uom" t-field="meas.product_uom_id" />
+                  <t t-if="meas.legal_limit_max">
+                    <span class="limit_max_sep sep">&lt;</span>
+                    <span class="limit_max" t-field="meas.legal_limit_max" />
+                  </t>
+                </td>
+                <td class="detect_limit">
+                  <span t-field="meas.detection_limit" />
+                </td>
+                <td class="quantif_limit">
+                  <span t-field="meas.quantification_limit" />
+                </td>
+                <td class="result">
+                  <span t-field="meas.measure" />
+                </td>
+                <td class="conformity">
+                  <span t-field="meas.conformity" />
+                </td>
+              </tr>
+            </t>
+          </tbody>
+        </table>
+        <t t-raw="task.results" />
+      </div>
+    </div>
+  </template>
+
+  <template id="report_project_analysis">
+    <t t-call="report.html_container">
+      <t t-set="analysis_report" t-value="1" />
+      <t t-foreach="docs" t-as="doc">
+        <t t-call="mtsmte_reports.report_analysis_doc" t-lang="doc.partner_id.lang" />
+      </t>
+    </t>
+  </template>
+
+</odoo>

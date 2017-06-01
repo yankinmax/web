@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="assets_common" name="Mtsmte reports assets" inherit_id="report.assets_common">
+    <xpath expr="." position="inside">
+      <link href="/mtsmte_reports/static/src/less/mtsmte_reports.less" rel="stylesheet" type="text/less"/>
+    </xpath>
+  </template>
+
+</odoo>

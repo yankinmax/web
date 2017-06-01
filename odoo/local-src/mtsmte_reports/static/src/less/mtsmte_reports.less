@@ -4,3 +4,44 @@
     border-right-style: solid;
     text-align: right;
 }
+// just for debug
+/*body{
+    background: red !important;
+}
+.header{
+    background: green !important;
+}
+.footer{
+    background: blue !important;
+}*/
+
+// analysis reports
+@logo-w: 50px;
+@logo-h: 150px;
+
+.header.analysis_header{
+    position: relative;
+    background-color: #ccc;
+    .page-logo{
+        position: absolute;
+        top: 0;
+        left: -@logo-w;
+        width: @logo-w;
+        height: @logo-h;
+        background-image: url('/mtsmte_reports/static/src/img/analysis_header_lines.png');
+        background-position: top left;
+        background-repeat: no-repeat;
+    }
+}
+.footer.analysis_footer .disclaimer{
+    color: #aaa;
+}
+
+.page.analysis{
+    .task_wrapper{
+        &.type_mech_env{
+            // page break on each task for mech/env analysis
+            page-break-after: always;
+        }
+    }
+}
