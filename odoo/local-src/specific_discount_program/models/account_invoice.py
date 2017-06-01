@@ -58,25 +58,33 @@ class AccountInvoice(models.Model):
                 self.invoice_line_ids[0].product_id == self.env.ref(
                                 'specific_discount_program.gift_card')
             ):
-                return False
-            else:
-                return True
-        else:
-            raise UserWarning(
-                "Only 1 (one) Gift card product "
-                "is allowed for gift quotations.")
+                raise UserWarning(
+                    "Only 1 (one) Gift card product "
+                    "is allowed for gift quotations.")
+        return True
 
     @api.multi
     def action_invoice_open(self):
         gift_quotation_invoices = self.filtered(lambda i: i.gift_quotation)
         other_invoices = self - gift_quotation_invoices
         super(AccountInvoice, other_invoices).action_invoice_open()
-        for invoice in gift_quotation_invoices:
-            if invoice.gift_quotation_invoice_validation():
-                # We don't raise validation error if gift quotation invoice
-                # was modified but leave it as draft instead, so we don't
+        if len(gift_quotation_invoices) == 1:
+            # If the user confirms only one invoice, we want the UserWarning
+            # to appear
+            gift_quotation_invoices.gift_quotation_invoice_validation()
+            super(AccountInvoice,
+                  gift_quotation_invoices).action_invoice_open()
+        else:
+            for invoice in gift_quotation_invoices:
+                # If the user confirms multiple invoices we don't raise
+                # UserWarning but leave it as draft instead, so we don't
                 # block confirmation of correct invoices
-                super(AccountInvoice, invoice).action_invoice_open()
+                try:
+                    validated = invoice.gift_quotation_invoice_validation()
+                except UserWarning:
+                    validated = False
+                if validated:
+                    super(AccountInvoice, invoice).action_invoice_open()
 
     @api.multi
     def action_invoice_paid(self):
