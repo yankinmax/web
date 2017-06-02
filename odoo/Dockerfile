@@ -9,6 +9,11 @@ MAINTAINER Camptocamp
 #         && apt-get clean \
 #         && rm -rf /var/lib/apt/lists/*
 
+COPY ./before-migrate-entrypoint.d/* odoo/before-migrate-entrypoint.d/
+COPY ./start-entrypoint.d/* odoo/start-entrypoint.d/
+RUN chmod +x odoo/before-migrate-entrypoint.d/* \
+    && chmod +x odoo/start-entrypoint.d/*
+
 # Install additional python packages if needed
 COPY ./requirements.txt /opt/odoo
 RUN cd /opt/odoo && pip install -r requirements.txt

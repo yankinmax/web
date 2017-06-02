@@ -28,6 +28,9 @@ latest (unreleased)
 **Build**
 
 * Use camptocamp/odoo-project:10.0-2.2.0
+* Update session_redis to use redis sentinel
+* Add entrypoints from odoo-template
+* Sync from odoo-template
 
 **Documentation**
 
