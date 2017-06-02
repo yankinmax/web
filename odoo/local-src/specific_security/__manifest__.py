@@ -10,6 +10,7 @@
  'license': 'AGPL-3',
  'category': 'Others',
  'depends': ['sale',
+             'account',
              'purchase',
              'marketing_campaign',
              'account_payment_order'
@@ -17,6 +18,8 @@
  'website': 'http://www.camptocamp.com',
  'data': ['security/groups.xml',
           'security/res.groups.csv',
+          'views/sale_order.xml',
+          'views/account_invoice.xml',
           ],
  'installable': True,
  }

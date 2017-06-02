@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="name">account.invoice.form.inherit</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="model">account.invoice</field>
+        <field name="arch" type="xml">
+            <xpath expr="/form" position="attributes">
+                <attribute name="create">0</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="invoice_form_create" model="ir.ui.view">
+        <field name="name">account.invoice.form.inherit</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="model">account.invoice</field>
+        <field name="groups_id" eval="[(4, ref('specific_security.group_invoice_creation'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form" position="attributes">
+                <attribute name="create">1</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="invoice_kanban">
+            <field name="name">account.invoice.kanban.inherit</field>
+            <field name="inherit_id" ref="account.invoice_kanban" />
+            <field name="model">account.invoice</field>
+            <field name="arch" type="xml">
+                <xpath expr="/kanban" position="attributes">
+                    <attribute name="create">0</attribute>
+                </xpath>
+            </field>
+    </record>
+    <record model="ir.ui.view" id="invoice_kanban_create">
+            <field name="name">account.invoice.kanban.inherit</field>
+            <field name="inherit_id" ref="account.invoice_kanban" />
+            <field name="model">account.invoice</field>
+            <field name="groups_id" eval="[(4, ref('specific_security.group_invoice_creation'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/kanban" position="attributes">
+                    <attribute name="create">1</attribute>
+                </xpath>
+            </field>
+    </record>
+    <record id="invoice_tree" model="ir.ui.view">
+        <field name="name">account.invoice.tree.inherit</field>
+        <field name="inherit_id" ref="account.invoice_tree" />
+        <field name="model">account.invoice</field>
+        <field name="arch" type="xml">
+            <xpath expr="/tree" position="attributes">
+                <attribute name="create">0</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="invoice_tree_create" model="ir.ui.view">
+        <field name="name">account.invoice.tree.inherit</field>
+        <field name="inherit_id" ref="account.invoice_tree" />
+        <field name="model">account.invoice</field>
+        <field name="groups_id" eval="[(4, ref('specific_security.group_invoice_creation'))]"/>
+        <field name="arch" type="xml">
+            <xpath expr="/tree" position="attributes">
+                <attribute name="create">1</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
