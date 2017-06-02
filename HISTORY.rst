@@ -23,6 +23,9 @@ Unreleased
 
 **Build**
 
+* Sync with odoo-template
+* Update cloud platform addons to use Redis Sentinel
+
 **Documentation**
 
 
