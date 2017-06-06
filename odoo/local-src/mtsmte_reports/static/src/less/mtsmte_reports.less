@@ -5,27 +5,32 @@
     text-align: right;
 }
 // just for debug
-/*body{
-    background: red !important;
+.page{
+    // background:  !important;
+    border: 2px dotted;
 }
-.header{
-    background: green !important;
-}
+// .header{
+//     background: green !important;
+// }
 .footer{
     background: blue !important;
-}*/
+}
+
+@grey: #ccc;
 
 // analysis reports
 @logo-w: 50px;
 @logo-h: 150px;
 
+.footer.analysis_footer .disclaimer{
+    color: #aaa;
+}
 .header.analysis_header{
     position: relative;
-    background-color: #ccc;
     .page-logo{
         position: absolute;
         top: 0;
-        left: -@logo-w;
+        left: 0;
         width: @logo-w;
         height: @logo-h;
         background-image: url('/mtsmte_reports/static/src/img/analysis_header_lines.png');
@@ -33,15 +38,30 @@
         background-repeat: no-repeat;
     }
 }
-.footer.analysis_footer .disclaimer{
-    color: #aaa;
-}
 
 .page.analysis{
+    padding: @logo-w + 20px;
     .task_wrapper{
+        margin-bottom: 1em;
         &.type_mech_env{
             // page break on each task for mech/env analysis
             page-break-after: always;
+        }
+        .task_header{
+            border-bottom: 1px solid @grey;
+        }
+        .test_results{
+            border-top: 1px solid @grey;
+        }
+    }
+    .heading{
+        text-transform: uppercase;
+        &:not(h1){
+            padding-left: 40px;
+            background-image: url('/mtsmte_reports/static/src/img/analysis_heading.gif');
+            background-position: center left;
+            background-repeat: no-repeat;
+            background-size: 25px;
         }
     }
 }
