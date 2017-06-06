@@ -90,3 +90,4 @@ migration:
           - sale_tax_calculation
           - specific_base
           - specific_security
+          - specific_sale_order

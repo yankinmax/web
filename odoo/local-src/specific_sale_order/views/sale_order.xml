@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale.action_orders" model="ir.actions.act_window">
+        <field name="domain">[('state', 'not in', ('draft', 'sent'))]</field>
+    </record>
+    <record id="sale.action_quotations" model="ir.actions.act_window">
+        <field name="domain">[('state', '!=', 'cancel')]</field>
+    </record>
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_draft']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_order_form_back_to_quot" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="groups_id" eval="[(4, ref('specific_sale_order.group_back_to_quotation'))]" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_draft']" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
