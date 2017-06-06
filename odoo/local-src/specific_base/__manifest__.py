@@ -41,6 +41,7 @@
           'views/crm_lead.xml',
           'views/utm.xml',
           'views/res_country.xml',
+          'views/account_payment.xml',
           'data/ir_rule.xml',
           'data/ir_property.xml',
           'data/base_override.yml',
