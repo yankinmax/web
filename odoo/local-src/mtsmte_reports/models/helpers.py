@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 from odoo import models, api
+from html2text import html2text
 
 
 class Helpers(models.AbstractModel):
@@ -45,7 +46,8 @@ class Helpers(models.AbstractModel):
     def get_mech_env_details(self, task):
         details = {}
         for fname in self.mech_test_fields:
-            if task[fname]:
+            # an "empty" field contains u'<p><br></p>'
+            if html2text(task[fname]).strip():
                 info = self.task_field_info(fname)
                 details['label'] = info['string']
                 details['val'] = task[fname]
