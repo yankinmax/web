@@ -10,4 +10,8 @@
     file="mtsmte_reports.report_project_analysis"
     />
 
+  <record id="action_report_analysis" model="ir.actions.report.xml">
+    <field name="paperformat_id" ref="paperformat_euro_no_margin"/>
+  </record>
+
 </odoo>
