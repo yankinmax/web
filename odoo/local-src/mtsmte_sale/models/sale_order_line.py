@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Author: Denis Leemann
 # Copyright 2017 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -13,10 +12,12 @@ class SaleOrderLine(models.Model):
         'product.substance',
         string='Substances',
     )
-    is_chemistry = fields.Boolean(
-        string='Field Label',
-        related='product_id.is_chemistry',
+    chemistry = fields.Selection(
+        related='product_id.chemistry',
         readonly=True,
+    )
+    tested_sample = fields.Text(
+        string='Tested Samples',
     )
 
     @api.onchange('product_id')

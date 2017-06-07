@@ -6,22 +6,41 @@
     <field name="model">product.template</field>
     <field name="inherit_id" ref="product.product_template_form_view"/>
     <field name="arch" type="xml">
-      <xpath expr='//field[@name="purchase_ok"]/..' position="after">
+      <xpath expr="//field[@name='purchase_ok']/.." position="after">
         <div>
-          <field name='is_chemistry'/>
-          <label for="is_chemistry"/>
+          <field name="chemistry"/>
         </div>
       </xpath>
       <notebook position="inside">
-        <page string="Substances to analyze" attrs="{'invisible': [('is_chemistry', '=', False)]}">
-          <field name='product_substance_ids' widget="one2many">
+        <page string="Substances to analyze" attrs="{'invisible': [('chemistry', '!=', 'chem')]}">
+          <field name="product_substance_ids" widget="one2many">
             <tree editable="bottom">
-              <field name='name'/>
-              <field name='product_uom_id'/>
-              <field name='legal_limit'/>
-              <field name='comments'/>
+              <field name="name"/>
+              <field name="legal_limit_min"/>
+              <field name="product_uom_id"/>
+              <field name="legal_limit_max"/>
+              <field name="comments"/>
+              <field name="has_limit_min"/>
+              <field name="has_limit_max"/>
+              <field name="detection_limit"/>
+              <field name="quantification_limit"/>
             </tree>
           </field>
+
+        </page>
+        <page string="Test Parameters" attrs="{'invisible': [('chemistry', 'not in', ('test_env','test_mec'))]}">
+          <group>
+              <field name="test_parameters"/>
+              <field name="applied_dose"/>
+              <field name="duration"/>
+              <field name="nb_shocks"/>
+          </group>
+        </page>
+        <page string="Results &amp; Observations"
+              attrs="{'invisible': [('chemistry', 'not in', ('chem','test_env','test_mec'))]}">
+          <group>
+              <field name="results" nolabel="1"/>
+          </group>
         </page>
       </notebook>
     </field>

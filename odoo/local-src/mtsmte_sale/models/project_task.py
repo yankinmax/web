@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Author: Denis Leemann
 # Copyright 2017 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -15,3 +14,21 @@ class ProjectTask(models.Model):
         string='Substance Measure',
     )
     sale_line_id = fields.Many2one(index=True)
+    tested_sample = fields.Text(
+        string='Tested Samples',
+    )
+    test_parameters = fields.Html(
+        string='Test Parameters',
+    )
+    applied_dose = fields.Html(
+        string='Applied Dose',
+    )
+    duration = fields.Html(
+        string='Duration',
+    )
+    nb_shocks = fields.Html(
+        string='Number of Shocks',
+    )
+    results = fields.Html(
+        string='Results',
+    )

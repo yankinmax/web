@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Author: Denis Leemann
 # Copyright 2017 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -23,7 +22,7 @@ class SaleOrder(models.Model):
                 [('analytic_account_id', '=', order.project_id.id)])
             vals = {
                 # We don't know if related or not
-                'analyze_sample': order.analyze_sample
+                'analyze_sample': order.analyze_sample,
             }
             prj.write(vals)
             for line in order.order_line:
@@ -39,5 +38,11 @@ class SaleOrder(models.Model):
                     product_substance_measure += [(0, 0, vals_measure)]
                 task.write({
                     'product_substance_measure_ids': product_substance_measure,
+                    'tested_sample': line.tested_sample,
+                    'test_parameters': line.product_id.test_parameters,
+                    'applied_dose': line.product_id.applied_dose,
+                    'duration': line.product_id.duration,
+                    'nb_shocks': line.product_id.nb_shocks,
+                    'results': line.product_id.results,
                 })
         return True
