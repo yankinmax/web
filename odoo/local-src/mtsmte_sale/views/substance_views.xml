@@ -10,11 +10,11 @@
         <field name="legal_limit_min"/>
         <field name="product_uom_id"/>
         <field name="legal_limit_max"/>
-        <field name='has_limit_min'/>
-        <field name='has_limit_max'/>
+        <field name="has_limit_min"/>
+        <field name="has_limit_max"/>
         <field name="comments"/>
-        <field name='detection_limit'/>
-        <field name='quantification_limit'/>
+        <field name="detection_limit"/>
+        <field name="quantification_limit"/>
       </tree>
     </field>
   </record>
@@ -30,11 +30,11 @@
             <field name="legal_limit_min"/>
             <field name="product_uom_id"/>
             <field name="legal_limit_max"/>
-            <field name='has_limit_min'/>
-            <field name='has_limit_max'/>
+            <field name="has_limit_min"/>
+            <field name="has_limit_max"/>
             <field name="comments"/>
-            <field name='detection_limit'/>
-            <field name='quantification_limit'/>
+            <field name="detection_limit"/>
+            <field name="quantification_limit"/>
           </group>
         </sheet>
       </form>
