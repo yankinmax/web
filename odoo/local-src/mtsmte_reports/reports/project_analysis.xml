@@ -64,7 +64,7 @@
     <div class="section test_results">
       <h2 class="heading">Results &amp;amp; Observations</h2>
       <div class="content">
-        <table>
+        <table class="substances">
           <thead>
             <tr>
               <th class="substance">Substance Measure</th>
