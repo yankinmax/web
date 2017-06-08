@@ -8,13 +8,15 @@
       <field name="user_id" position="after">
         <field name="resp_one_id"/>
         <field name="resp_two_id"/>
+        <field name="client_order_ref"/>
       </field>
-      <field name="partner_id" position="after">
+      <group name="misc" position="before">
         <group name="samples" string="Samples">
           <field name="analyze_sample"/>
           <field name="send_sample_back"/>
+          <field name="reception_date"/>
         </group>
-      </field>
+      </group>
       <xpath expr="//notebook" position="inside">
         <page string="Conclusions">
           <field name="conclusion"/>

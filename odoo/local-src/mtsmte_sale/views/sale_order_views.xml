@@ -22,8 +22,11 @@
       </xpath>
 
       <!-- Better view for sales conditions -->
-      <xpath expr="//field[@name='note']" position="attributes">
-        <attribute name="widget">html</attribute>
+      <xpath expr="//field[@name='note']" position="replace">
+        <div class="oe_clear"/>
+        <field name="note"
+          widget="html"
+          placeholder="Setup default terms and conditions in your company settings."/>
       </xpath>
 
       <!-- Add tested samples on so line-->
