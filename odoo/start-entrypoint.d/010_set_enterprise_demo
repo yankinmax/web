@@ -1,17 +1,13 @@
 #!/bin/bash
+# This file has been generated with 'invoke project.sync'.
+# Do not modify. Any manual change will be lost.
 
 #
 # Often in development mode, we retrieve a database from a production server
 # with a enterprise subscription. This script automatically changes
 # the config parameters to set enterprise subscription in demo mode
-# when working in dev, test and integration.
+# when working in dev.
 #
-
-if [ "$( psql -tAc "SELECT 1 FROM pg_database WHERE datname='$DB_NAME'" )" != '1' ]
-then
-    echo "Database does not exist"
-    exit 0
-fi
 
 keep_enterprise_subscription=$(echo "${ODOO_KEEP_ENTERPRISE_SUBSCRIPTION}" | tr '[:upper:]' '[:lower:]' )
 
