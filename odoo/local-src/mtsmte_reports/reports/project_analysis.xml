@@ -15,7 +15,7 @@
             <div class="section task_header">
               <h1 class="heading task_title" t-field="task.name" />
               <div class="content">
-                <t t-raw="product.description_sale" />
+                <span t-field="product.description_sale" />
               </div>
             </div>
             <div class="section test_samples">
