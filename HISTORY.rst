@@ -50,6 +50,11 @@ latest (unreleased)
 
 **Bugfixes**
 
+* Upgrade odoo source to include `[SEC] ODOO-SA-2017-06-02-1` fix
+  
+  See https://github.com/odoo/odoo/issues/17394
+
+
 **Build**
 
 **Documentation**

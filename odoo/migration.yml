@@ -112,4 +112,4 @@ migration:
           - anthem songs.install.data_all::import_users
       addons:
         upgrade:
-          - mtsmte_sale
+          - base
