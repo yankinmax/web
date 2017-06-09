@@ -5,16 +5,16 @@
     text-align: right;
 }
 // just for debug
-.page{
+// .page{
     // background:  !important;
-    border: 2px dotted;
-}
+    // border: 2px dotted;
+// }
 // .header{
 //     background: green !important;
 // }
-.footer{
-    background: blue !important;
-}
+// .footer{
+//     background: blue !important;
+// }
 
 @grey: #ccc;
 
@@ -41,6 +41,12 @@
 
 .page.analysis{
     padding: @logo-w + 20px;
+
+    .content{
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
     .task_wrapper{
         margin-bottom: 1em;
         &.type_mech_env{
@@ -70,6 +76,15 @@
 
       thead{
         border-bottom: 1px solid @grey;
+      }
+    }
+    .test_results {
+      .result-state{
+
+        div:first-of-type {
+          background-color: #cccccc;
+        }
+
       }
     }
 }
