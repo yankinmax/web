@@ -6,8 +6,7 @@
 }
 // just for debug
 // .page{
-    // background:  !important;
-    // border: 2px dotted;
+//     border: 2px dotted;
 // }
 // .header{
 //     background: green !important;
@@ -15,18 +14,17 @@
 // .footer{
 //     background: blue !important;
 // }
-
 @grey: #ccc;
+@red: #800000;
 
 // analysis reports
 @logo-w: 50px;
 @logo-h: 150px;
 
-.footer.analysis_footer .disclaimer{
-    color: #aaa;
-}
+
 .header.analysis_header{
     position: relative;
+    height: @logo-h;
     .page-logo{
         position: absolute;
         top: 0;
@@ -37,16 +35,43 @@
         background-position: top left;
         background-repeat: no-repeat;
     }
-}
 
+}
+.footer.analysis_footer {
+  height: 150px;
+  position: relative;
+  padding: 0 @logo-w;
+  .disclaimer{
+    color: #aaa;
+    font-size: 95%;
+  }
+  .report-number{
+    position: absolute;
+    bottom: 50%;
+    right: -@logo-w;
+    -webkit-transform: rotate(270deg);
+    writing-mode: lr-tb;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 153px;
+    span {
+      color: @red;
+    }
+  }
+}
+h1 {
+  font-size: 25px;
+}
+h2 {
+  font-size: 20px;
+}
 .page.analysis{
-    padding: @logo-w + 20px;
+  padding: 0 @logo-w;
 
     .content{
-      margin-top: 16px;
-      margin-bottom: 16px;
+      // margin-top: 16px;
+      // margin-bottom: 16px;
     }
-
     .task_wrapper{
         margin-bottom: 1em;
         &.type_mech_env{
@@ -73,7 +98,8 @@
     .substances{
       border-collapse: collapse;
       width: 100%;
-
+      // no page break into a substance table
+      page-break-inside: avoid;
       thead{
         border-bottom: 1px solid @grey;
       }

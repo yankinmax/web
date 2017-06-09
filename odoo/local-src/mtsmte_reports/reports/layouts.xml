@@ -70,6 +70,7 @@
   <template id="analysis_report_header" name="MTS / MT analysis report header">
     <div class="header analysis_header">
       <div class="page-logo">&amp;nbsp;</div>
+      &amp;nbsp;
     </div>
   </template>
 
@@ -79,6 +80,7 @@
         Les résultats contenus ne concernent que les échantillons soumis à l’examen.
         Une reproduction partielle de ce rapport ne pourra être exécutée sans notre accord.
       </p>
+      <div class="report-number">Report No <span t-field="doc.name"></span></div>
     </div>
   </template>
 
