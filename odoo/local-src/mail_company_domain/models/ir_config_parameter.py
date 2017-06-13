@@ -37,6 +37,7 @@ class IrConfigParameter(models.Model):
             [('company_id', '=', company_id)]
         ).name or None
 
+    @api.model
     def set_param(self, key, value, groups=()):
         if key == 'mail.catchall.domain':
             if groups:
