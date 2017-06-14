@@ -155,9 +155,6 @@ class Program(models.Model):
     @api.depends('expiration_date', 'nb_use', 'max_use', 'max_use_by_month')
     def _compute_code_valid(self):
         today = fields.Date.today()
-        today_str = fields.Date.from_string(
-            fields.Date.today()
-        ).strftime('%Y-%m')
         for program in self:
             code_valid = True
             if program.automatic:
@@ -181,7 +178,7 @@ class Program(models.Model):
             if check_max_use_by_month:
                 current_confirmed_sales_which_used = (
                     confirmed_sales_which_used.filtered(
-                        lambda s: s.confirmation_date[:7] == today_str
+                        lambda s: s.check_current_month()
                     )
                 )
                 sale_count = len(current_confirmed_sales_which_used)

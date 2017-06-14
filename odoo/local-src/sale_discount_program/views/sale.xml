@@ -14,6 +14,11 @@
                 <field name="supporting_document_required" invisible="True"/>
                 <field name="supporting_document"
                        attrs="{'required':[('supporting_document_required', '=', True)]}"/>
+                 <!--
+                 The widget many2many_tags is defined even if the field is invisible.
+                 Without this widget, we have a bug between Odoo JS and Odoo server,
+                 and the "program_code_ids" field is not updated in all cases.
+                  -->
                 <field name="program_code_ids"
                        widget="many2many_tags"
                        invisible="True"/>

@@ -30,7 +30,7 @@ class SaleOrder(models.Model):
                 ('voucher_code', '=', self.program_to_add),
             ], limit=1)
             if promo_code:
-                if promo_code.id in self.program_code_ids.ids:
+                if promo_code in self.program_code_ids:
                     ids = self.program_code_ids.ids
                     ids.remove(promo_code.id)
                     values['program_code_ids'] = [(6, False, ids)]
@@ -143,6 +143,18 @@ class SaleOrder(models.Model):
     def print_quotation(self):
         self.force_apply()
         return super(SaleOrder, self).print_quotation()
+
+    @api.multi
+    def check_current_month(self):
+        self.ensure_one()
+        today = fields.Date.from_string(
+            fields.Date.today()
+        )
+        confirm_date = fields.Date.from_string(self.confirmation_date)
+        return (
+            confirm_date.year == today.year and
+            confirm_date.month == today.month
+        )
 
 
 class SaleOrderLine(models.Model):
