@@ -76,21 +76,23 @@ migration:
           - specific_base
           - specific_discount_program
           - specific_payment_mode
-    # For migration fix, we don't increment version number here.
-    # But only in VERSION and HISTORY.rst files.
-    # The integration database must be deleted for each deployment.
     - version: 10.1.0
       operations:
         pre:
           - anthem songs.updates.update_10_1_0.update::main
+          - odoo -i account_payment_term_extension,specific_security --stop-after-init --workers=0
+          - anthem songs.updates.update_10_1_0.update::unlink_depiltech_payment_modes
       addons:
         upgrade:
+          #### OCA/account-invoicing
+          - account_payment_term_extension
           #### local-src
           - report_invoice
           - sale_discount_program
           - sale_tax_calculation
           - specific_base
           - specific_discount_program
+          - specific_payment_mode
           - specific_security
           - specific_sale_order
           - discount_program_report

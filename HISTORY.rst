@@ -26,6 +26,7 @@ Unreleased
 * DT-44: Fix the creation of companies for non admin (with group)
 * DT-13: Install module discount_program_report
 * DT-13/DT-18: Install module discount_program_report
+* DT-20: Develop the depiltech payment modes
 
 **Bugfixes**
 

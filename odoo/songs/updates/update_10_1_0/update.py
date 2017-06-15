@@ -29,6 +29,13 @@ def move_pricelists(ctx):
     """)
 
 
+# Don't execute this script before install of specific_security module
+@anthem.log
+def unlink_depiltech_payment_modes(ctx):
+    """ Unlink all existing depiltech payment modes"""
+    ctx.env['depiltech.payment.mode'].search([]).unlink()
+
+
 @anthem.log
 def main(ctx):
     """ Main: update 10.1.0 """

@@ -2,9 +2,11 @@
 # © 2016 Julien Coux (Camptocamp)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+import math
 import odoo.addons.decimal_precision as dp
 
 from odoo.exceptions import ValidationError
+from odoo.tools import float_compare
 
 from odoo import models, fields, api, _
 
@@ -12,15 +14,97 @@ from odoo import models, fields, api, _
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
+    def _get_default_depiltech_payment_mode(self):
+        return self.env['depiltech.payment.mode'].search(
+            [('use_as_default', '=', True)],
+            limit=1
+        )
+
+    partner_company_type = fields.Selection(
+        related='partner_id.company_type',
+        readonly=True,
+    )
+
     depiltech_payment_mode = fields.Many2one(
         comodel_name='depiltech.payment.mode',
         string='Payment mode',
+        default=_get_default_depiltech_payment_mode,
+        required=True,
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+            'sent': [('readonly', False)]
+        },
     )
 
-    provision = fields.Integer()
-    month_number = fields.Integer()
+    compute_calculator = fields.Boolean(
+        related='depiltech_payment_mode.compute_calculator',
+        readonly=True,
+        store=False,
+    )
+
+    calculator_link = fields.Char(
+        related='depiltech_payment_mode.calculator_link',
+        readonly=True,
+        store=False,
+    )
+
+    provision = fields.Float(
+        digits=dp.get_precision('Account'),
+        required=True,
+        default=0.0,
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+            'sent': [('readonly', False)]
+        },
+    )
+    month_number = fields.Integer(
+        required=True,
+        default=0,
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+            'sent': [('readonly', False)]
+        },
+    )
+    first_monthly_payment = fields.Float(
+        digits=dp.get_precision('Account'),
+        required=True,
+        default=0.0,
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+            'sent': [('readonly', False)]
+        },
+    )
+    first_monthly_payment_readonly = fields.Float(
+        related='first_monthly_payment',
+        readonly=True,
+    )
     monthly_payment = fields.Float(
-        digits=dp.get_precision('Account')
+        digits=dp.get_precision('Account'),
+        required=True,
+        default=0.0,
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+            'sent': [('readonly', False)]
+        },
+    )
+    date_of_first_monthly_payment = fields.Date(
+        required=True,
+        default=lambda s: fields.Date.today(),
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+            'sent': [('readonly', False)]
+        },
+    )
+    day_of_payment = fields.Integer(
+        compute='_compute_day_of_payment',
+        readonly=True,
+        store=True,
     )
     # This field is only used to deactivate check payment rules,
     # in some cases on write method
@@ -28,64 +112,149 @@ class SaleOrder(models.Model):
         store=False
     )
 
-    @api.model
-    def _check_provision(self, provision, month_number, monthly_payment):
-        if provision or month_number or monthly_payment:
-            if provision < 10 or provision > 1000:
-                raise ValidationError(_(
-                    'Provision must be an integer between 10 and 1000'
-                ))
+    payment_term_id = fields.Many2one(
+        copy=False,
+    )
 
-    @api.model
-    def _check_month_number(self, provision, month_number, monthly_payment):
-        if provision or month_number or monthly_payment:
-            if month_number < 0 or month_number > 20:
-                raise ValidationError(_(
-                    'Month number must be an integer between 0 and 20'
-                ))
+    @api.one
+    @api.depends('date_of_first_monthly_payment')
+    def _compute_day_of_payment(self):
+        day_of_payment = False
+        if self.date_of_first_monthly_payment:
+            day_of_payment = fields.Date.from_string(
+                self.date_of_first_monthly_payment
+            ).day
+        self.day_of_payment = day_of_payment
 
-    @api.model
-    def _check_monthly_payment(self, provision, month_number, monthly_payment):
-        if provision or month_number or monthly_payment:
-            if monthly_payment < 0:
-                raise ValidationError(_(
-                    'Monthly payment must be a positive float'
-                ))
-
-    @api.model
-    def _check_payment_rules(self, provision, month_number, monthly_payment):
-        self._check_provision(provision, month_number, monthly_payment)
-        self._check_month_number(provision, month_number, monthly_payment)
-        self._check_monthly_payment(provision, month_number, monthly_payment)
-
-    @api.model
-    def create(self, values):
-        self._check_payment_rules(
-            values.get('provision'),
-            values.get('month_number'),
-            values.get('monthly_payment'),
+    @api.one
+    @api.constrains('state', 'depiltech_payment_mode', 'partner_company_type')
+    def _check_state(self):
+        # If partner company type is a agency customer,
+        # check state
+        to_be_check = (
+            self.partner_company_type == 'agency_customer' and
+            not self.no_check_payment_rules
         )
-        return super(SaleOrder, self).create(values)
+        if to_be_check:
+            forbidden_payment_modes = self.env[
+                'depiltech.payment.mode'
+            ].search(
+                [('deny_to_confirm_order', '=', True)],
+            )
+            is_not_ok = (
+                self.state == 'sale' and
+                self.depiltech_payment_mode in forbidden_payment_modes
+            )
+            if is_not_ok:
+                raise ValidationError(_(
+                    'Depiltech payment mode invalid to confirm sale order'
+                ))
 
-    @api.multi
-    def write(self, values):
-        result = super(SaleOrder, self).write(values)
-        if (
-            'provision' in values
-            or 'month_number' in values
-            or 'monthly_payment' in values
-        ):
-            for order in self:
-                if not order.no_check_payment_rules:
-                    self._check_payment_rules(
-                        order.provision,
-                        order.month_number,
-                        order.monthly_payment
-                    )
-        return result
+    @api.one
+    @api.constrains('provision', 'amount_total', 'partner_company_type')
+    def _check_provision(self):
+        # If partner company type is a agency customer,
+        # check provision
+        to_be_check = (
+            self.partner_company_type == 'agency_customer' and
+            not self.no_check_payment_rules
+        )
+        if to_be_check:
+            provision_ok = (
+                self.provision < 0 or
+                float_compare(
+                    self.provision,
+                    self.amount_total,
+                    precision_digits=2
+                ) == 1
+            )
+            if provision_ok:
+                raise ValidationError(_(
+                    'Provision must be a float '
+                    'between 0 and %.2f' % self.amount_total
+                ))
+
+    @api.one
+    @api.constrains('month_number', 'partner_company_type')
+    def _check_month_number(self):
+        # If partner company type is a agency customer,
+        # check month number
+        to_be_check = (
+            self.partner_company_type == 'agency_customer' and
+            not self.no_check_payment_rules
+        )
+        if to_be_check:
+            icp = self.env['ir.config_parameter']
+            max_month_number = int(icp.get_param('max_month_number', '0'))
+            if self.month_number < 0 or self.month_number > max_month_number:
+                raise ValidationError(_(
+                    'Month number must be an integer between 0 and %d' %
+                    max_month_number
+                ))
+
+    @api.one
+    @api.constrains(
+        'first_monthly_payment', 'amount_total', 'partner_company_type'
+    )
+    def _check_first_monthly_payment(self):
+        to_be_check = (
+            self.partner_company_type == 'agency_customer' and
+            not self.no_check_payment_rules
+        )
+        if to_be_check:
+            is_not_ok = (
+                self.first_monthly_payment < 0 or
+                float_compare(
+                    self.first_monthly_payment,
+                    self.amount_total,
+                    precision_digits=2
+                ) == 1
+            )
+            if is_not_ok:
+                raise ValidationError(_(
+                    'First monthly payment must be a float '
+                    'between 0 and %.2f' % self.amount_total
+                ))
+
+    @api.one
+    @api.constrains('monthly_payment', 'amount_total', 'partner_company_type')
+    def _check_monthly_payment(self):
+        to_be_check = (
+            self.partner_company_type == 'agency_customer' and
+            not self.no_check_payment_rules
+        )
+        if to_be_check:
+            is_not_ok = (
+                self.monthly_payment < 0 or
+                float_compare(
+                    self.monthly_payment,
+                    self.amount_total,
+                    precision_digits=2
+                ) == 1
+            )
+            if is_not_ok:
+                raise ValidationError(_(
+                    'Next monthly payment must be a float '
+                    'between 0 and %.2f' % self.amount_total
+                ))
+
+    @api.one
+    @api.constrains('day_of_payment', 'partner_company_type')
+    def _check_day_of_payment(self):
+        to_be_check = (
+            self.partner_company_type == 'agency_customer' and
+            not self.no_check_payment_rules
+        )
+        if to_be_check:
+            if self.day_of_payment < 1 or self.day_of_payment > 31:
+                raise ValidationError(_(
+                    'Day of payment must be an integer between 1 and 31'
+                ))
 
     def _compute_provision(self):
-        return self.amount_total - (self.month_number * self.monthly_payment)
+        return self.amount_total - (
+            self.month_number * self.monthly_payment
+        )
 
     def _compute_month_number(self):
         return (self.amount_total - self.provision) / self.monthly_payment
@@ -95,66 +264,78 @@ class SaleOrder(models.Model):
 
     @api.onchange('provision')
     def _onchange_provision(self):
-        if (
-            not self.provision
-            or (self.month_number and self.monthly_payment)
-        ):
-            self.no_check_payment_rules = True
-            self.month_number = False
-            self.monthly_payment = False
-            self.no_check_payment_rules = False
-        elif self.month_number and not self.monthly_payment:
-            self.monthly_payment = self._compute_monthly_payment()
-        elif not self.month_number and self.monthly_payment:
-            self.month_number = self._compute_month_number()
-            self.monthly_payment = self._compute_monthly_payment()
-        self._check_provision(
-            self.provision, self.month_number, self.monthly_payment
-        )
+        if self.compute_calculator:
+            if (
+                not self.provision
+                or (self.month_number and self.monthly_payment)
+            ):
+                self.no_check_payment_rules = True
+                self.month_number = False
+                self.monthly_payment = False
+                self.first_monthly_payment = self.monthly_payment
+                self.no_check_payment_rules = False
+            elif self.month_number and not self.monthly_payment:
+                self.monthly_payment = self._compute_monthly_payment()
+                self.first_monthly_payment = self.monthly_payment
+            elif not self.month_number and self.monthly_payment:
+                self.month_number = self._compute_month_number()
+                self.monthly_payment = self._compute_monthly_payment()
+                self.first_monthly_payment = self.monthly_payment
+        self._check_provision()
 
     @api.onchange('month_number')
     def _onchange_month_number(self):
-        if (
-            not self.month_number
-            or (self.provision and self.monthly_payment)
-        ):
-            self.no_check_payment_rules = True
-            self.provision = False
-            self.monthly_payment = False
-            self.no_check_payment_rules = False
-        elif self.provision and not self.monthly_payment:
-            self.monthly_payment = self._compute_monthly_payment()
-        elif not self.provision and self.monthly_payment:
-            self.provision = self._compute_provision()
-        self._check_month_number(
-            self.provision, self.month_number, self.monthly_payment
-        )
+        if self.compute_calculator:
+            if (
+                not self.month_number
+                or (self.provision and self.monthly_payment)
+            ):
+                self.no_check_payment_rules = True
+                self.provision = False
+                self.monthly_payment = False
+                self.first_monthly_payment = self.monthly_payment
+                self.no_check_payment_rules = False
+            elif self.provision and not self.monthly_payment:
+                self.monthly_payment = self._compute_monthly_payment()
+                self.first_monthly_payment = self.monthly_payment
+            elif not self.provision and self.monthly_payment:
+                self.provision = self._compute_provision()
+        self._check_month_number()
 
     @api.onchange('monthly_payment')
     def _onchange_monthly_payment(self):
-        if (
-            not self.monthly_payment
-            or (self.provision and self.month_number)
-        ):
-            self.no_check_payment_rules = True
-            self.provision = False
-            self.month_number = False
-            self.no_check_payment_rules = False
-        elif self.provision and not self.month_number:
-            self.month_number = self._compute_month_number()
-            self.monthly_payment = self._compute_monthly_payment()
-        elif not self.provision and self.month_number:
-            self.provision = self._compute_provision()
-        self._check_monthly_payment(
-            self.provision, self.month_number, self.monthly_payment
-        )
+        if self.compute_calculator:
+            if (
+                not self.monthly_payment
+                or (self.provision and self.month_number)
+            ):
+                self.no_check_payment_rules = True
+                self.provision = False
+                self.month_number = False
+                self.no_check_payment_rules = False
+            elif self.provision and not self.month_number:
+                self.month_number = self._compute_month_number()
+                self.monthly_payment = self._compute_monthly_payment()
+            elif not self.provision and self.month_number:
+                self.provision = self._compute_provision()
+            self.first_monthly_payment = self.monthly_payment
+        self._check_monthly_payment()
 
-    @api.onchange('amount_total')
+    @api.onchange('first_monthly_payment')
+    def _onchange_first_monthly_payment(self):
+        self._check_first_monthly_payment()
+
+    @api.onchange('day_of_payment')
+    def _onchange_day_of_payment(self):
+        self._check_day_of_payment()
+
+    @api.onchange('amount_total', 'depiltech_payment_mode')
     def _onchange_amount_total(self):
         self.no_check_payment_rules = True
         self.provision = False
         self.month_number = False
         self.monthly_payment = False
+        self.first_monthly_payment = False
         self.no_check_payment_rules = False
 
     @api.multi
@@ -173,3 +354,119 @@ class SaleOrder(models.Model):
         return super(SaleOrder, self).onchange(
             values, field_name, new_field_onchange
         )
+
+    @api.multi
+    @api.onchange('partner_id')
+    def onchange_partner_id(self):
+        result = super(SaleOrder, self).onchange_partner_id()
+        # If partner company type is a agency customer,
+        # we reset custom payment terms
+        if self.partner_company_type == 'agency_customer':
+            self.payment_term_id = False
+        return result
+
+    @api.multi
+    def action_cancel(self):
+        # If partner company type is a agency customer,
+        # we unlink custom payment terms
+        if self.partner_company_type == 'agency_customer':
+            self.payment_term_id.unlink()
+        return super(SaleOrder, self).action_cancel()
+
+    @api.multi
+    def action_confirm(self):
+        # If partner company type isn't a agency customer,
+        # don't create custom payment terms
+        if self.partner_company_type != 'agency_customer':
+            return super(SaleOrder, self).action_confirm()
+        # Creation of custom payment terms
+        values = {
+            'name': self.name,
+            'active': False,
+            'sequential_lines': True,
+            'sale_order_id': self.id,
+            # First line is the provision
+            'line_ids': [
+                (0, False, {
+                    'sequence': 1,
+                    'value': 'fixed',
+                    'value_amount': self.provision,
+                    'days': 0,
+                    'option': 'day_after_invoice_date',
+                }),
+            ]
+        }
+        # PNF payment case
+        if not self.compute_calculator:
+            # In PNF payment case, we have only 2 payments :
+            # - the provision
+            # - the balance
+            values['line_ids'].append(
+                (0, False, {
+                    'sequence': 2,
+                    'value': 'balance',
+                    'days': self.depiltech_payment_mode.days_before_payment,
+                    'option': 'day_after_invoice_date',
+                }),
+            )
+        # Other payment case
+        else:
+            if self.month_number > 0:
+                # Calculation of compute days provides from :
+                # hr_holidays._get_number_of_days()
+                from_date = fields.Datetime.from_string(
+                    fields.Datetime.now()  # = confirmation_date
+                )
+                to_date = fields.Datetime.from_string(
+                    self.date_of_first_monthly_payment
+                )
+
+                time_delta = to_date - from_date
+                days = math.ceil(
+                    time_delta.days + float(time_delta.seconds) / 86400)
+                if not days:
+                    days = 0
+
+                # Add the first month payment
+                # If we have only one month, the payment will be in the balance
+                if self.month_number > 1:
+                    # If we add more than one month number,
+                    # we create here the first payment
+                    values['line_ids'].append(
+                        (0, False, {
+                            'sequence': 2,
+                            'value': 'fixed',
+                            'value_amount': self.monthly_payment,
+                            'days': days,
+                            'payment_days': self.day_of_payment,
+                            'option': 'day_after_invoice_date',
+                        }),
+                    )
+
+                # We create here payments for all month
+                # (except the first and the last month)
+                for month in range(2, self.month_number):
+                    values['line_ids'].append(
+                        (0, False, {
+                            'sequence': month + 1,
+                            'value': 'fixed',
+                            'value_amount': self.monthly_payment,
+                            'months': 1,
+                            'payment_days': self.day_of_payment,
+                            'option': 'day_after_invoice_date',
+                        }),
+                    )
+
+                # The last month payment is the balance
+                values['line_ids'].append(
+                    (0, False, {
+                        'sequence': self.month_number + 1,
+                        'value': 'balance',
+                        'months': 1,
+                        'payment_days': self.day_of_payment,
+                        'option': 'day_after_invoice_date',
+                    }),
+                )
+        payment_term = self.env['account.payment.term'].create(values)
+        self.payment_term_id = payment_term.id
+        return super(SaleOrder, self).action_confirm()

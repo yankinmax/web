@@ -11,4 +11,17 @@ class DepiltechPaymentMode(models.Model):
 
     name = fields.Char(
         required=True,
+        translate=True,
     )
+
+    calculator_link = fields.Char(
+        translate=True,
+    )
+
+    use_as_default = fields.Boolean()
+
+    deny_to_confirm_order = fields.Boolean()
+
+    compute_calculator = fields.Boolean()
+
+    days_before_payment = fields.Integer()

@@ -8,6 +8,11 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="calculator_link"/>
+                        <field name="use_as_default"/>
+                        <field name="deny_to_confirm_order"/>
+                        <field name="compute_calculator"/>
+                        <field name="days_before_payment"/>
                     </group>
                 </sheet>
             </form>
@@ -20,6 +25,11 @@
         <field name="arch" type="xml">
             <tree string="Depiltech payment modes">
                 <field name="name" />
+                <field name="calculator_link"/>
+                <field name="use_as_default"/>
+                <field name="deny_to_confirm_order"/>
+                <field name="compute_calculator"/>
+                <field name="days_before_payment"/>
             </tree>
         </field>
     </record>

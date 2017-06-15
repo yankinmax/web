@@ -9,17 +9,24 @@
     'category': 'Specific',
     'website': 'http://www.camptocamp.com',
     'depends': [
-        'base',
-        'specific_base',
-        'sale',
         'account_payment_sale',
+        'account_payment_term_extension',
+        'sale',
+        'specific_base',
+        'specific_discount_program',
     ],
     'data': [
+        # Data
         'data/depiltech_payment_mode.xml',
+        'data/ir_config_parameter.xml',
+        # Security
         'security/ir.model.access.csv',
+        # Report
         'report/sale_order.xml',
+        # Views
         'views/depiltech_payment_mode.xml',
-        'views/sale_order.xml'
+        'views/sale_config.xml',
+        'views/sale_order.xml',
     ],
     'installable': True,
     'auto_install': False,
