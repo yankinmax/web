@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import anthem
-from anthem.lyrics.records import create_or_update
 from ..common import define_settings
 
 
@@ -35,49 +34,6 @@ def sale_settings(ctx):
 
 
 @anthem.log
-def discount_pricelist(ctx):
-    """ discount_pricelist """
-    values = {
-        'name': 'Parrainage',
-        'discount_policy': 'without_discount',
-        'item_ids': False,
-    }
-    create_or_update(ctx, 'product.pricelist',
-                     'scenario.pricelist_sponsorship',
-                     values)
-
-    values = {
-        'pricelist_id': ctx.env.ref('scenario.pricelist_sponsorship').id,
-        'applied_on': '3_global',
-        'compute_price': 'percentage',
-        'percent_price': 10,
-    }
-    create_or_update(ctx, 'product.pricelist.item',
-                     'scenario.pricelist_sponsorship_item1',
-                     values)
-
-    values = {
-        'name': 'Code promo',
-        'discount_policy': 'without_discount',
-        'item_ids': False,
-    }
-    create_or_update(ctx, 'product.pricelist',
-                     'scenario.pricelist_code_promo',
-                     values)
-
-    values = {
-        'pricelist_id': ctx.env.ref('scenario.pricelist_code_promo').id,
-        'applied_on': '3_global',
-        'compute_price': 'percentage',
-        'percent_price': 10,
-    }
-    create_or_update(ctx, 'product.pricelist.item',
-                     'scenario.pricelist_code_promo_item1',
-                     values)
-
-
-@anthem.log
 def main(ctx):
     base_settings(ctx)
     sale_settings(ctx)
-    discount_pricelist(ctx)

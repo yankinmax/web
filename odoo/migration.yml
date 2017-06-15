@@ -90,5 +90,6 @@ migration:
           - sale_discount_program
           - sale_tax_calculation
           - specific_base
+          - specific_discount_program
           - specific_security
           - specific_sale_order

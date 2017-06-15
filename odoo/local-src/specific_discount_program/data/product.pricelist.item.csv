@@ -1,3 +1,3 @@
 "id","pricelist_id/id","applied_on","compute_price","percent_price"
 "pricelist_sponsorship_item1","pricelist_sponsorship","3_global","percentage","10"
-"pricelist_code_promo_item1","pricelist_sponsorship","3_global","percentage","10"
+"pricelist_code_promo_item1","pricelist_code_promo","3_global","percentage","10"

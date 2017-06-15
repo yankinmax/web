@@ -15,7 +15,22 @@ def move_groups(ctx):
     """)
 
 
+def move_pricelists(ctx):
+    """ Moving pricelists to specific_discount_program"""
+    ctx.env.cr.execute("""
+        UPDATE ir_model_data SET module = 'specific_discount_program'
+        WHERE module = 'scenario'
+        AND model = 'product.pricelist';
+    """)
+    ctx.env.cr.execute("""
+        UPDATE ir_model_data SET module = 'specific_discount_program'
+        WHERE module = 'scenario'
+        AND model = 'product.pricelist.item';
+    """)
+
+
 @anthem.log
 def main(ctx):
     """ Main: update 10.1.0 """
     move_groups(ctx)
+    move_pricelists(ctx)
