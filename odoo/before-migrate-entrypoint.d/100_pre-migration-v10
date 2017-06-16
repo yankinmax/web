@@ -84,17 +84,31 @@ AND NOT EXISTS (
 DELETE FROM
     ir_rule
 WHERE
-    model_id =
+    id =
         (
             SELECT
-                id
+                res_id
             FROM
-                ir_model
+                ir_model_data
             WHERE
-                model = 'res.company'
+                name = 'res_company_rule'
+            AND
+                module = 'base'
+            AND
+                model = 'ir.rule'
         )
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+DELETE FROM
+    ir_model_data
+WHERE
+    name = 'res_company_rule'
 AND
-    global = True
+    module = 'base'
+AND
+    model = 'ir.rule'
 AND NOT EXISTS (
     SELECT number FROM marabunta_version WHERE number = '10.0.0'
 );
@@ -107,11 +121,15 @@ WHERE
     model_id =
         (
             SELECT
-                id
+                res_id
             FROM
-                ir_model
+                ir_model_data
             WHERE
-                model = 'res.company'
+                name = 'res_company_rule_employee'
+            AND
+                module = 'base'
+            AND
+                model = 'ir.rule'
         )
 AND NOT EXISTS (
     SELECT number FROM marabunta_version WHERE number = '10.0.0'
