@@ -117,7 +117,10 @@ class ResCompany(models.Model):
 
     @api.model
     def create(self, values):
-        return super(ResCompany, self.sudo()).create(values)
+        if self.env.user.has_group('specific_security.group_company_creation'):
+            return super(ResCompany, self.sudo()).create(values)
+        else:
+            return super(ResCompany, self).create(values)
 
     partner_zip = fields.Char(
         related='partner_id.zip',

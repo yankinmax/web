@@ -23,6 +23,7 @@ Unreleased
 * DT-7: Custom limit of usage for discount programs
 * DT-9: Add a global limit on promo code use
 * DT-9: Add a required attachment on sale order when using promo code
+* DT-44: Fix the creation of companies for non admin (with group)
 
 **Bugfixes**
 
