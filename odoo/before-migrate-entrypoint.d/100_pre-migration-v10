@@ -82,6 +82,46 @@ AND NOT EXISTS (
 );
 
 DELETE FROM
+    ir_rule
+WHERE
+    model_id =
+        (
+            SELECT
+                id
+            FROM
+                ir_model
+            WHERE
+                model = 'res.company'
+        )
+AND
+    global = True
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+UPDATE
+    ir_rule
+SET
+    perm_read = True
+WHERE
+    model_id =
+        (
+            SELECT
+                id
+            FROM
+                ir_model
+            WHERE
+                model = 'res.company'
+        )
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+EOF
+
+psql << EOF
+
+DELETE FROM
     ir_ui_view
 WHERE
     id IN (

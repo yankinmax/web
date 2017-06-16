@@ -18,6 +18,7 @@ Unreleased
   * Add a default value for partner pricelist on partner creation
   * Install sale_automatic_workflow_payment_mode module
   * Define default config parameter in 'discount program' modules
+  * DT-44: Fix the creation/updating of companies for non admin
 
 * DT-43: Migration: fix the docker-odoo-project version
 

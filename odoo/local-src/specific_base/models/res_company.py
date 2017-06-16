@@ -115,20 +115,9 @@ class ResCompany(models.Model):
                 self.env['res.country'].browse(country_id).code][0]
         return res
 
-    # TODO : Check if this code works again
     @api.model
-    def _where_calc(self, domain, active_test=True):
-        # In the base code, when access rules are "computed", the context is
-        # usually empty. That's not really critical, but since "active" was
-        # added to res.company, and many "child_of" searches are done without
-        # context, if you don't initialize it here, all the inactive companies
-        # will be read-only for every user except "admin".
-        context = self.env.context
-        if not context:
-            context = {'active_test': active_test}
-        return super(ResCompany, self.with_context(context))._where_calc(
-            domain, active_test=active_test
-        )
+    def create(self, values):
+        return super(ResCompany, self.sudo()).create(values)
 
     partner_zip = fields.Char(
         related='partner_id.zip',
