@@ -82,6 +82,64 @@ AND NOT EXISTS (
 );
 
 DELETE FROM
+    ir_rule
+WHERE
+    id =
+        (
+            SELECT
+                res_id
+            FROM
+                ir_model_data
+            WHERE
+                name = 'res_company_rule'
+            AND
+                module = 'base'
+            AND
+                model = 'ir.rule'
+        )
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+DELETE FROM
+    ir_model_data
+WHERE
+    name = 'res_company_rule'
+AND
+    module = 'base'
+AND
+    model = 'ir.rule'
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+UPDATE
+    ir_rule
+SET
+    perm_read = True
+WHERE
+    model_id =
+        (
+            SELECT
+                res_id
+            FROM
+                ir_model_data
+            WHERE
+                name = 'res_company_rule_employee'
+            AND
+                module = 'base'
+            AND
+                model = 'ir.rule'
+        )
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+EOF
+
+psql << EOF
+
+DELETE FROM
     ir_ui_view
 WHERE
     id IN (
