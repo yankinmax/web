@@ -10,6 +10,16 @@ Unreleased
 
 **Bugfixes**
 
+**Build**
+
+**Documentation**
+
+
+10.0.1 (2017-06-19)
++++++++++++++++++++
+
+**Bugfixes**
+
 * Fix secure token to minion creation
 * DT-39: Fix migration to V10
 
@@ -26,8 +36,6 @@ Unreleased
 
 * Sync with odoo-template
 * Update cloud platform addons to use Redis Sentinel
-
-**Documentation**
 
 
 10.0.0 (2017-05-03)
