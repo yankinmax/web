@@ -1,0 +1,224 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mtsmte_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-20 12:43+0000\n"
+"PO-Revision-Date: 2017-06-20 14:59+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_header
+msgid "&amp;nbsp;"
+msgstr "&amp;nbsp;"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "<span>Task name</span>"
+msgstr "<span>Nom de l'article</span>"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "<span>Task state</span>"
+msgstr "<span>Etape de la tâche</span>"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.project_analysis_wiz_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: mtsmte_reports
+#: model:ir.model,name:mtsmte_reports.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.external_layout_header
+msgid "Company Logo"
+msgstr "Logo de la companie"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "Conformity"
+msgstr "Conformité"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_task_description_text
+msgid "Description as text"
+msgstr "Description comme texte"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "Detection limit"
+msgstr "Limit détection"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_display_name
+#: model:ir.model.fields,field_description:mtsmte_reports.field_report_mtsmte_reports_report_project_analysis_display_name
+msgid "Display Name"
+msgstr "Afficher le nom"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_id
+#: model:ir.model.fields,field_description:mtsmte_reports.field_report_mtsmte_reports_report_project_analysis_id
+msgid "ID"
+msgstr "ID"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,help:mtsmte_reports.field_res_company_report_logo
+msgid "Image to be used only in reports."
+msgstr "Image utilisée seulement pour les rapports"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_lang_id
+msgid "Language"
+msgstr "Langue"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz___last_update
+#: model:ir.model.fields,field_description:mtsmte_reports.field_report_mtsmte_reports_report_project_analysis___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "Legal limit"
+msgstr "Limite légale"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
+msgid ""
+"Les résultats contenus ne concernent que les échantillons soumis à l’examen.\n"
+"        Une reproduction partielle de ce rapport ne pourra être exécutée sans notre accord."
+msgstr ""
+"Les résultats contenus ne concernent que les échantillons soumis à l’examen.\n"
+"        Une reproduction partielle de ce rapport ne pourra être exécutée sans notre accord."
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.project_analysis_wiz_form
+msgid "Print"
+msgstr "Imprimer"
+
+#. module: mtsmte_reports
+#: model:ir.actions.act_window,name:mtsmte_reports.act_project_analysis_wiz_form
+#: model:ir.ui.view,arch_db:mtsmte_reports.project_analysis_wiz_form
+#: model:ir.ui.view,arch_db:mtsmte_reports.project_print_view
+msgid "Print analysis"
+msgstr "Impression de l'analyse"
+
+#. module: mtsmte_reports
+#: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_project
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_project_id
+msgid "Project"
+msgstr "Projet"
+
+#. module: mtsmte_reports
+#: model:ir.actions.report.xml,name:mtsmte_reports.action_report_analysis
+msgid "Project analysis"
+msgstr "Project d'analyse"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "Quantification limit"
+msgstr "Limite quantification"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.company_form_view
+msgid "Report Data"
+msgstr "Données du rapport"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
+msgid "Report No"
+msgstr "Rapport No"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_res_company_report_logo
+msgid "Report logo"
+msgstr "Logo du rapport"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_res_company_report_show_address_header
+msgid "Report show address in header"
+msgstr "Le rapport affiche l'adresse dans l'entête"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "Result"
+msgstr "Résultat"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+#: model:ir.ui.view,arch_db:mtsmte_reports.mech_env_results
+msgid "Results &amp;amp; Observations"
+msgstr "Résultats &amp;amp; Observations"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.project_analysis_wiz_form
+msgid "Select tasks"
+msgstr "Sélectionnez des tâches"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "Substance Measure"
+msgstr "Mesure de substance"
+
+#. module: mtsmte_reports
+#: model:ir.model,name:mtsmte_reports.model_project_task
+msgid "Task"
+msgstr "Tâche"
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_task_ids
+msgid "Tasks"
+msgstr "Tâches"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_analysis_doc
+msgid "Test / Parameters"
+msgstr "Test / Paramètres"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_analysis_doc
+msgid "Tested samples"
+msgstr "Pièces Testées"
+
+#. module: mtsmte_reports
+#: model:ir.model,name:mtsmte_reports.model_project_analysis_print_wiz
+msgid "project.analysis.print.wiz"
+msgstr "project.analysis.print.wiz"
+
+#. module: mtsmte_reports
+#: model:ir.model,name:mtsmte_reports.model_report_mtsmte_reports_report_project_analysis
+msgid "report.mtsmte_reports.report_project_analysis"
+msgstr "report.mtsmte_reports.report_project_analysis"
