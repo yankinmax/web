@@ -44,6 +44,8 @@
     - oca refs/pull/607/head
     # [10.0][MIG] base_report_auto_create_qweb
     - oca refs/pull/808/head
+    # [10.0][MIG] base_export_manager
+    - oca refs/pull/712/head
   target: *default_target
 ./external-src/survey:
   remotes:
