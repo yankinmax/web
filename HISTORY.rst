@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* DT-50: Fix companies rights and pricelist
+
 **Build**
 
 **Documentation**

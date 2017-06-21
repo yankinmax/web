@@ -114,23 +114,31 @@ AND NOT EXISTS (
 );
 
 UPDATE
-    ir_rule
+    ir_property
 SET
-    perm_read = True
+    value_reference = 'product.pricelist,1'
 WHERE
-    model_id =
-        (
-            SELECT
-                res_id
-            FROM
-                ir_model_data
-            WHERE
-                name = 'res_company_rule_employee'
-            AND
-                module = 'base'
-            AND
-                model = 'ir.rule'
-        )
+    name = 'property_product_pricelist'
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+UPDATE
+    product_pricelist
+SET
+    active = False
+WHERE
+    id = 4
+AND NOT EXISTS (
+    SELECT number FROM marabunta_version WHERE number = '10.0.0'
+);
+
+UPDATE
+    product_pricelist
+SET
+    sequence = id
+WHERE
+    id IN (1, 2, 3)
 AND NOT EXISTS (
     SELECT number FROM marabunta_version WHERE number = '10.0.0'
 );
