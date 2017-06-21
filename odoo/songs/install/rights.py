@@ -79,6 +79,21 @@ def update_res_partner_rules(ctx):
 
 
 @anthem.log
+def setup_export_rights(ctx):
+    """ disable export for all object
+
+    Export is allowed for Export group only, this is defined in
+    module specific_security
+    """
+    export_group = ctx.env.ref('specific_security.group_export')
+    # group_id is a m2m
+    domain = [('group_id', 'not in', [export_group.id])]
+    model_accesses = ctx.env['ir.model.access'].search(domain)
+    model_accesses.write({'perm_export': False})
+
+
+@anthem.log
 def main(ctx):
     add_groups_to_admin_user(ctx)
     update_res_partner_rules(ctx)
+    setup_export_rights(ctx)

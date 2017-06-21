@@ -13,7 +13,7 @@
              'account',
              'purchase',
              'marketing_campaign',
-             'account_payment_order'
+             'account_payment_order',
              ],
  'website': 'http://www.camptocamp.com',
  'data': ['security/groups.xml',
