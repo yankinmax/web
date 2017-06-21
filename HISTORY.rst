@@ -10,11 +10,17 @@ Unreleased
 
 **Bugfixes**
 
-* DT-50: Fix companies rights and pricelist
-
 **Build**
 
 **Documentation**
+
+
+10.0.2 (2017-06-21)
++++++++++++++++++++
+
+**Bugfixes**
+
+* DT-50: Fix companies rights and pricelist
 
 
 10.0.1 (2017-06-19)
