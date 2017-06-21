@@ -110,6 +110,8 @@ migration:
       operations:
         post:
           - anthem songs.install.data_all::import_users
+          - anthem songs.install.mts.sales::set_sale_conditions
+          - anthem songs.install.mte.sales::set_sale_conditions
       addons:
         upgrade:
           - base
