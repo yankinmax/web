@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-  <record id="paperformat_euro_no_margin" model="report.paperformat">
-    <field name="name">European A4 No Margin</field>
+  <record id="paperformat_euro_a4_analysis_report" model="report.paperformat">
+    <field name="name">European A4 Analysis Report</field>
     <field name="default" eval="True" />
     <field name="format">A4</field>
     <field name="page_height">0</field>

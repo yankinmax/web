@@ -3,7 +3,6 @@
 
   <template id="report_analysis_doc" name="MT analysis report content">
     <t t-call="report.external_layout">
-      <!-- TODO: force language from wizard -->
       <t t-set="doc" t-value="doc.with_context({'lang': forced_lang or doc.partner_id.lang})" />
       <t t-set="tasks" t-value="tasks or doc.task_ids" />
       <div class="page analysis">

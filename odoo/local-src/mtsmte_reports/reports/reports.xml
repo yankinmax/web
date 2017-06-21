@@ -11,7 +11,7 @@
     />
 
   <record id="action_report_analysis" model="ir.actions.report.xml">
-    <field name="paperformat_id" ref="paperformat_euro_no_margin"/>
+    <field name="paperformat_id" ref="paperformat_euro_a4_analysis_report"/>
   </record>
 
 </odoo>
