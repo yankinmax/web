@@ -21,6 +21,7 @@ services:
       - ADMIN_PASSWD=mijaebohb8Thae1g
       - RUNNING_ENV=dev
       - ODOO_CONNECTOR_CHANNELS=root:4
+      # - ODOO_BASE_URL=http://localhost:8069
 
   db:
     image: camptocamp/postgresql:pg9.5-latest

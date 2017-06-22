@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- change to 1 -->
+  <data noupdate="0">
+    <record id="py3o_template_project" model="py3o.template">
+      <field name="name">Project</field>
+      <field name="filetype">odt</field>
+      <field name="py3o_template_data"
+        type="base64"
+        file="mtsmte_reports/reports/project.odt"></field>
+    </record>
+  </data>
+
+  <!--
+  We first create the 'report' as qweb-pdf then updates it
+  as py3o otherwise it complains about missing py3o* fields
+  -->
+  <report
+    id="report_py3o_project"
+    string="Project"
+    model="project.project"
+    report_type="qweb-pdf"
+    name="mtsmte_reports.py3o_project"
+    file="mtsmte_reports.py3o_project"
+    />
+
+  <record id="report_py3o_project" model="ir.actions.report.xml">
+    <field name="report_type">py3o</field>
+    <field name="py3o_filetype">odt</field>
+    <field name="py3o_is_local_fusion" eval="True"/>
+    <field name="py3o_server_id" ref="py3o_server_main"/>
+    <field name="py3o_template_id" ref="py3o_template_project"/>
+    <field name="module">mtsmte_reports</field>
+  </record>
+
+</odoo>

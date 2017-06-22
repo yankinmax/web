@@ -1,47 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template
-      id="external_layout_header_specific"
-      inherit_id="report.external_layout_header">
+  <template id="external_layout" inherit_id="report.external_layout">
 
-      <xpath expr="//div[@class='header']" position="replace">
+    <xpath expr="//t[@t-call='report.external_layout_header']" position="replace">
+      <t t-if="analysis_report">
+        <t t-call="mtsmte_reports.analysis_report_header" />
+      </t>
+      <t t-else="">
+        <t t-call="report.external_layout_header" />
+      </t>
+    </xpath>
+    <xpath expr="//t[@t-call='report.external_layout_footer']" position="replace">
+      <t t-if="analysis_report">
+        <t t-call="mtsmte_reports.analysis_report_footer" />
+      </t>
+      <t t-else="">
+        <t t-call="report.external_layout_footer" />
+      </t>
+    </xpath>
+  </template>
 
-          <div class="header">
-            <div class="row" name="company_address">
-              <div t-att-class="'col-xs-12' if not company.report_show_address_header else 'col-xs-3 pull-left'">
-                <img t-if="company.report_logo"
-                     t-att-src="'data:image/png;base64,%s' % (company.report_logo,)"
-                     alt="Company Logo"
-                     class="img img-responsive"/>
-              </div>
-              <t t-if="company.report_show_address_header">
-                <div class="col-xs-5 pull-right red-right">
-                  <!-- TODO: is this condition still needed? -->
-                  <ul t-if="not company.custom_footer" class="list-unstyled">
-                    <t t-set="company" t-value="company.sudo()"/>
-                    <li t-if="company.phone"><span t-field="company.phone"/></li>
-                    <li t-if="company.fax"><span t-field="company.fax"/></li>
-                    <li t-if="company.email"><span t-field="company.email"/></li>
-                    <li t-if="company.street"><span t-field="company.street"/></li>
-                    <li><t t-if="company.zip"><span t-field="company.zip"/> </t>
-                        <t t-if="company.city"><span t-field="company.city"/></t></li>
-                  </ul>
-                </div>
-              </t>
-            </div>
+  <template
+      id="external_layout_header"
+      inherit_id="report.external_layout_header"
+      name="MTS / MT header override">
+
+    <xpath expr="//div[@class='header']" position="replace">
+
+      <div class="header default_header">
+        <div class="row" name="company_address">
+          <div t-att-class="'col-xs-12' if not company.report_show_address_header else 'col-xs-3 pull-left'">
+            <img t-if="company.report_logo"
+                 t-att-src="'data:image/png;base64,%s' % (company.report_logo,)"
+                 alt="Company Logo"
+                 class="img img-responsive"/>
           </div>
+          <t t-if="company.report_show_address_header">
+            <div class="col-xs-5 pull-right red-right">
+              <!-- TODO: is this condition still needed? -->
+              <ul t-if="not company.custom_footer" class="list-unstyled">
+                <t t-set="company" t-value="company.sudo()"/>
+                <li t-if="company.phone"><span t-field="company.phone"/></li>
+                <li t-if="company.fax"><span t-field="company.fax"/></li>
+                <li t-if="company.email"><span t-field="company.email"/></li>
+                <li t-if="company.street"><span t-field="company.street"/></li>
+                <li><t t-if="company.zip"><span t-field="company.zip"/> </t>
+                    <t t-if="company.city"><span t-field="company.city"/></t></li>
+              </ul>
+            </div>
+          </t>
+        </div>
+      </div>
 
-      </xpath>
-    </template>
+    </xpath>
+  </template>
 
-    <!-- Footer fot both companies -->
-    <template
-      id="external_layout_footer_specific"
+  <template
+      id="external_layout_footer"
+      name="MTS / MT footer override"
       inherit_id="report.external_layout_footer">
-      <xpath expr="//ul[@t-if='not company.custom_footer']" position="attributes">
-        <attribute name="class">hidden</attribute>
-      </xpath>
-    </template>
+
+    <xpath expr="//ul[@t-if='not company.custom_footer']" position="attributes">
+      <attribute name="class">hidden</attribute>
+    </xpath>
+
+  </template>
+
+  <template id="analysis_report_header" name="MTS / MT analysis report header">
+    <div class="header analysis_header">
+      <div class="page-logo">&amp;nbsp;</div>
+      &amp;nbsp;
+    </div>
+  </template>
+
+  <template id="analysis_report_footer" name="MTS / MT analysis report footer">
+    <div class="footer analysis_footer">
+      <p class="disclaimer">
+        Les résultats contenus ne concernent que les échantillons soumis à l’examen.
+        Une reproduction partielle de ce rapport ne pourra être exécutée sans notre accord.
+      </p>
+      <div class="report-number">Report No <span t-field="doc.name"></span></div>
+    </div>
+  </template>
 
 </odoo>

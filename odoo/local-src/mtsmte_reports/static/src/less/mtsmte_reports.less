@@ -4,3 +4,114 @@
     border-right-style: solid;
     text-align: right;
 }
+// just for debug
+// .page{
+//     border: 2px dotted;
+// }
+// .header{
+//     background: green !important;
+// }
+// .footer{
+//     background: blue !important;
+// }
+@grey: #ccc;
+@red: #800000;
+
+// analysis reports
+@logo-w: 50px;
+@logo-h: 150px;
+
+
+.header.analysis_header{
+    position: relative;
+    height: @logo-h;
+    .page-logo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: @logo-w;
+        height: @logo-h;
+        background-image: url('/mtsmte_reports/static/src/img/analysis_header_lines.png');
+        background-position: top left;
+        background-repeat: no-repeat;
+    }
+
+}
+.footer.analysis_footer {
+  height: 150px;
+  position: relative;
+  padding: 0 @logo-w;
+  .disclaimer{
+    color: #aaa;
+    font-size: 95%;
+  }
+  .report-number{
+    position: absolute;
+    bottom: 50%;
+    right: -@logo-w;
+    -webkit-transform: rotate(270deg);
+    writing-mode: lr-tb;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 153px;
+    span {
+      color: @red;
+    }
+  }
+}
+h1 {
+  font-size: 25px;
+}
+h2 {
+  font-size: 20px;
+}
+.page.analysis{
+  padding: 0 @logo-w;
+
+    .content{
+      // margin-top: 16px;
+      // margin-bottom: 16px;
+    }
+    .task_wrapper{
+        margin-bottom: 1em;
+        &.type_mech_env{
+            // page break on each task for mech/env analysis
+            page-break-after: always;
+        }
+        .task_header{
+            border-bottom: 1px solid @grey;
+        }
+        .test_results{
+            border-top: 1px solid @grey;
+        }
+    }
+    .heading{
+        text-transform: uppercase;
+        &:not(h1){
+            padding-left: 40px;
+            background-image: url('/mtsmte_reports/static/src/img/analysis_heading.gif');
+            background-position: center left;
+            background-repeat: no-repeat;
+            background-size: 25px;
+        }
+    }
+    .substances{
+      border-collapse: collapse;
+      width: 100%;
+      // no page break into a substance table
+      page-break-inside: avoid;
+      thead{
+        border-bottom: 1px solid @grey;
+      }
+    }
+    .test_results {
+      .result-state{
+
+        div:first-of-type {
+          background-color: #cccccc;
+        }
+
+      }
+    }
+}
+

@@ -9,6 +9,7 @@
     'license': 'AGPL-3',
     'category': 'Reporting',
     'depends': [
+        'report',
         'report_py3o',
         'project',
         'sale',
@@ -16,10 +17,17 @@
     'website': 'https://www.camptocamp.com',
     'data': [
         'data/py3o_server.xml',
-        'views/company.xml',
-        'reports/reports.xml',
+        'data/report_paperformat.xml',
+        'reports/assets.xml',
         'reports/layouts.xml',
+        'reports/reports.xml',
+        'reports/reports_py3o.xml',
+        'reports/project_analysis.xml',
         'reports/sale.xml',
+        'reports/sale.xml',
+        'wizards/project_analysis_wiz.xml',
+        'views/company.xml',
+        'views/project.xml',
     ],
     'installable': True,
 }
