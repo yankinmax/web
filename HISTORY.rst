@@ -29,6 +29,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* Layout in SO and PO. Related to sales_conditions BSMTS105
+
 **Build**
 
 * Use camptocamp/odoo-project:10.0-2.2.0
@@ -51,7 +53,7 @@ latest (unreleased)
 **Bugfixes**
 
 * Upgrade odoo source to include `[SEC] ODOO-SA-2017-06-02-1` fix
-  
+
   See https://github.com/odoo/odoo/issues/17394
 
 
