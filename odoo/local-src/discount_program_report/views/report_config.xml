@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_config_form" model="ir.ui.view">
+        <field name="name">sale.discount.program.report.config.form</field>
+        <field name="model">sale.discount.program.report.config</field>
+        <field name="arch" type="xml">
+            <form string="Discount Program Report Configuration">
+                <group>
+                    <field name="program_type" />
+                    <field name="lang_id" />
+                    <field name="top_image" widget="image" />
+                    <field name="left_image" widget="image" />
+                    <field name="right_image" widget="image" />
+                    <field name="bottom_image" widget="image" />
+                    <field name="ribbon_text" />
+                    <field name="general_terms_conditions_title" />
+                    <field name="general_terms_conditions_left" />
+                    <field name="general_terms_conditions_right" />
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="report_config_tree" model="ir.ui.view">
+        <field name="name">sale.discount.program.report.config.tree</field>
+        <field name="model">sale.discount.program.report.config</field>
+        <field name="arch" type="xml">
+            <tree string="Discount Program Report Configuration">
+                <field name="program_type" />
+                <field name="lang_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_report_config_list" model="ir.actions.act_window">
+        <field name="name">Discount Program Report Configuration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.discount.program.report.config</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_report_config" action="action_report_config_list" parent="sales_team.menu_sale_config" sequence="200"/>
+</odoo>
