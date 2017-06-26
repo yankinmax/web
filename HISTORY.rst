@@ -12,9 +12,15 @@ Unreleased
 
 **Build**
 
-* Travis.yml remove docker&docker-compose installation
-
 **Documentation**
+
+
+10.0.3 (2017-06-26)
++++++++++++++++++++
+
+**Build**
+
+* Travis.yml remove docker&docker-compose installation
 
 
 10.0.2 (2017-06-21)
