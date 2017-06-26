@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <template id="report_discount_program_document">
-
         <div class="page">
             <!-- Images header -->
             <div class="col-xs-12">
                 <div>
                     <img t-if="doc.report_config_id.top_image" t-att-src="'data:image/png;base64,%s' % (doc.report_config_id.top_image,)" style="width: 1083px;"/>
-                </div>
-                <div style="max-width: 1083px">
-                    <img t-if="doc.report_config_id.left_image" t-att-src="'data:image/png;base64,%s' % (doc.report_config_id.left_image,)" style="width: 757px; float: left;"/>
-                    <!-- Price -->
-                    <div style="display: inline-block; font-size: 1.5em; width: 273px; max-width: 273px; text-align: center; font-weight: bold; padding: 0px; margin: 0px;">
-                        <p style="margin: 0px; padding-top: 5px;"><span t-esc="'%.2f'%(doc.voucher_amount)" /> <span t-field="doc.partner_id.company_id.currency_id.symbol" /></p>
+                    <div id='amount_container' t-att-style="doc.report_config_id.amount_container_style">
+                        <p ><span t-esc="'%.2f'%(doc.voucher_amount)" /> <span t-field="doc.partner_id.company_id.currency_id.symbol" /></p>
                     </div>
-                    <img t-if="doc.report_config_id.right_image" t-att-src="'data:image/png;base64,%s' % (doc.report_config_id.right_image,)" style="width: 48px; left: 1050px; position: absolute;"/>
-                </div>
-                <div>
-                    <img t-if="doc.report_config_id.bottom_image" t-att-src="'data:image/png;base64,%s' % (doc.report_config_id.bottom_image,)" style="width: 1083px;" />
                 </div>
             </div>
 
@@ -40,7 +30,7 @@
                 </div>
             </div>
             <!-- Black ribbon -->
-            <div class="col-xs-12" style="background-color: black; color: white; font-weight: bold; font-size: 1.5em;">
+            <div class="col-xs-12" style="background-color: black; color: white; font-weight: bold; font-size: 1.5em; margin: 10px 0 10px 0;">
                 <p t-field="doc.report_config_id.ribbon_text" style="text-align: center;"/>
             </div>
 

@@ -6,12 +6,13 @@
         <field name="arch" type="xml">
             <form string="Discount Program Report Configuration">
                 <group>
-                    <field name="program_type" />
+                    <field name="name" />
                     <field name="lang_id" />
+                    <field name="active" />
                     <field name="top_image" widget="image" />
-                    <field name="left_image" widget="image" />
-                    <field name="right_image" widget="image" />
-                    <field name="bottom_image" widget="image" />
+                    <field name="amount_zone_width" />
+                    <field name="amount_position_top" />
+                    <field name="amount_position_left" />
                     <field name="ribbon_text" />
                     <field name="general_terms_conditions_title" />
                     <field name="general_terms_conditions_left" />
@@ -25,8 +26,9 @@
         <field name="model">sale.discount.program.report.config</field>
         <field name="arch" type="xml">
             <tree string="Discount Program Report Configuration">
-                <field name="program_type" />
+                <field name="name" />
                 <field name="lang_id" />
+                <field name="active" />
             </tree>
         </field>
     </record>
@@ -37,6 +39,7 @@
         <field name="res_model">sale.discount.program.report.config</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
+        <field name="context">{'active_test': False}</field>
     </record>
 
 
