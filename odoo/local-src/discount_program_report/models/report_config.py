@@ -55,7 +55,6 @@ class SaleDiscountProgramReportConfig(models.Model):
 
     @api.constrains('lang_id', 'active')
     def _check_unique_active_lang(self):
-        import pdb; pdb.set_trace()
         langs = []
         for conf in self.with_context(active_test=False).search([]):
             lang = conf.lang_id

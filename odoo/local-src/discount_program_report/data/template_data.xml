@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="config_template_fr" model="sale.discount.program.report.config">
+        <field name="name">Modèle Bon d'achat</field>
+        <field name="lang_id" ref="base.lang_fr" />
+        <field name="active" eval="True" />
+        <field name="amount_zone_width">273</field>
+        <field name="amount_position_top">368</field>
+        <field name="amount_position_left">775</field>
+        <field name="ribbon_text">Imprimez votre bon d'achat ou présentez le directement avec votre smartphon</field>
+        <field name="general_terms_conditions_title"><![CDATA[
+         <p>Conditions générales d'utilisation des Bons d'achat Dépil Tech.<br></p>
+]]></field>
+        <field name="general_terms_conditions_left"><![CDATA[
+<p>1. Le montant de la somme du bon d'achat généré à chaque achat est calculé sur une base de 10% du montant de l'achat avec un montant maximum de 100€.<br>2. Un bon d'achat est généré à chaque création de facture acquittée et est valable 10 mois maximum à compter de sa date d'émission qui est la date de la facture acquittée. <br>3. Après expiration de la date inscrite sur le bon, le bon n'est plus utilisable et ceci sous aucune condition. Il devient obsolète et perdu pour son acquéreur.<br>4. Les bons d'achat sont un moyen de paiement utilisables au comptant et utilisables uniquement dans le centre qui les a généré.<br>5. Un bon d'achat est transmissible à la personne de son choix, ne nécessitant pas l'accord préalable du centre. <br>6. Deux bons d'achat maximum sont cumulables, peu importe leur montant. <br>7. Un bon d'achat ne peut être remboursé.<br>8. Le bon d'achat est valable uniquement sur les prochaines factures et n'est pas rétroactif sur les autres factures et paiements en cours.<br>9. Si le montant d'un achat est inférieur à la valeur du ou des bons d'achat, la différence est perdue et ne peut être remboursée sous quelque forme que se soit.<br></p>
+]]></field>
+        <field name="general_terms_conditions_right"><![CDATA[
+<p>10. Un bon d'achat n'est pas cumulable avec les remises générées par le mécanisme du parrainage. Le client choisit la remise qu'il préfère, entre l'utilisation du bon d'achat ou les 10% de remise générée par le parrainage.<br>11. Les bons d'achat sont utilisables sur toutes les prestations de lumière pulsée.<br>12. Un bon d’achat est utilisable sur les produits cosmétiques uniquement si la valeur d'achat est du double de la valeur du bon (ex : si bon d’achat de 70€ l’achat doit être de 140€ / autre ex : si bon d’achat de 50€ l’achat doit être de 100€)<br>13. Le bon d'achat est remis en mains propres et envoyé par email.<br>14. Les bons d'achat envoyés aux clients ont uniquement une valeur informative, les remises sont appliquées uniquement d'après les bons d'achat présents dans les logiciels de Dépil Tech.<br>Par conséquent, en cas de litige, seuls les bons d'achat présents dans les logiciels Dépil Tech ont une valeur.<br></p>
+]]></field>
+        <field name="top_image" type="base64" file="discount_program_report/static/img/voucher_achat_fr.png"/>
+    </record>
+</odoo>
