@@ -13,12 +13,13 @@
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
-        # Report
-        'report/program_mail_template.xml',
-        'report/program_report_templates.xml',
         # Data
         'data/report_data.xml',
         'data/template_data.xml',
+        'data/ir_cron_data.xml',
+        # Report
+        'report/program_mail_template.xml',
+        'report/program_report_templates.xml',
         # Views
         'views/program.xml',
         'views/report_config.xml',

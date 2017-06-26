@@ -1,107 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <!--<data noupdate="1">-->
-    <data>
-        <record id="email_template_discount_program" model="mail.template">
-            <field name="name">Discount program - Send by Email</field>
-            <!--<field name="email_from">${(object.user_id.email and '%s &lt;%s&gt;' % (object.user_id.name, object.user_id.email) or '')|safe}</field>-->
-            <field name="email_from">'test@depiltech.com'</field>
-            <!--<field name="subject">${company.name} : ${object.note_message_for_action}</field>-->
-            <field name="subject">TEST : ${object.note_message_for_action}</field>
-            <field name="partner_to">${object.source_invoice_id.partner_id.id or object.source_sale_id.partner_id.id}</field>
-            <field name="model_id" ref="specific_discount_program.model_sale_discount_program"/>
-            <field name="auto_delete" eval="True"/>
-            <field name="report_template" ref="report_discount_program"/>
-            <field name="report_name">${(object.name or '').replace('/','_')}</field>
-            <field name="lang">${object.source_invoice_id.partner_id.lang or object.source_sale_id.partner_id.lang}</field>
-            <field name="body_html"><![CDATA[
-                <p>Dear ${object.source_invoice_id.partner_id.name},</p>
-                <p>Please find hereby your <strong>${object.name}</strong></p>
-                <p>----------------------------------------</p>
-                <p>Sincerely yours,</p>
-                <p>Depil Tech</p>
-                ]]>
-            </field>
-        </record>
-
-        <!--Default Notification Email template for sale discount program-->
-        <record id="mail_template_data_notification_email_discount_program" model="mail.template">
-            <field name="name">Discount Program Notification Email</field>
-            <field name="subject">${object.subject}</field>
-            <field name="model_id" ref="mail.model_mail_message"/>
-            <field name="auto_delete" eval="True"/>
-            <field name="body_html"><![CDATA[<html>
-                <head></head>
-                % set record = ctx.get('record')
-                % set company = record and record.company_id or user.company_id
-                <body style="margin: 0; padding: 0;">
-                <table border="0" width="100%" cellpadding="0" bgcolor="#ededed" style="padding: 20px; background-color: #ededed" summary="o_mail_notification">
-                    <tbody>
-
-                      <!-- HEADER -->
-                      <tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#875A7B" style="min-width: 590px; background-color: rgb(135,90,123); padding: 20px;">
-                            <tr>
-                              <td valign="middle">
-                                  <span style="font-size:20px; color:white; font-weight: bold;">
-                                      ${object.record_name}
-                                  </span>
-                              </td>
-                              <td valign="middle" align="right">
-                                  <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${company.name}">
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-
-                      <!-- CONTENT -->
-                      <tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#ffffff" style="min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px;">
-                            <tbody>
-                              <td valign="top" style="font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;">
-                                ${object.body | safe}
-                              </td>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-
-                      <!-- FOOTER -->
-                      <tr>
-                        <td align="center" style="min-width: 590px;">
-                          <table width="590" border="0" cellpadding="0" bgcolor="#875A7B" style="min-width: 590px; background-color: rgb(135,90,123); padding: 20px;">
-                            <tr>
-                              <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
-                                ${company.name}<br/>
-                                ${company.phone or ''}
-                              </td>
-                              <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
-                                % if company.email:
-                                <a href="mailto:${company.email}" style="text-decoration:none; color: white;">${company.email}</a><br/>
-                                % endif
-                                % if company.website:
-                                    <a href="${company.website}" style="text-decoration:none; color: white;">
-                                        ${company.website}
-                                    </a>
-                                % endif
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td align="center">
-                            Powered by <a href="https://www.odoo.com">Odoo</a>.
-                        </td>
-                      </tr>
-                    </tbody>
-                </table>
-                </body>
-                </html>
-            ]]></field>
-        </record>
-    </data>
+<odoo noupdate="1">
+    <record id="email_template_discount_program" model="mail.template">
+        <field name="name">Discount program - Send by Email</field>
+        <!--<field name="email_from">${(object.user_id.email and '%s &lt;%s&gt;' % (object.user_id.name, object.user_id.email) or '')|safe}</field>-->
+        <field name="email_from">'test@depiltech.com'</field>
+        <!--<field name="subject">${company.name} : ${object.note_message_for_action}</field>-->
+        <field name="subject">${object.note_message_for_action or object.name }</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="model_id" ref="specific_discount_program.model_sale_discount_program"/>
+        <field name="auto_delete" eval="True" />
+        <field name="report_template" ref="report_discount_program"/>
+        <field name="report_name">${(object.name or '').replace('/','_')}</field>
+        <field name="lang">${object.partner_id.company_id.partner_id.lang}</field>
+        <field name="body_html"><![CDATA[
+            <p>Dear ${object.source_invoice_id.partner_id.name},</p>
+            <p>Please find hereby your <strong>${object.name}</strong></p>
+            <p>----------------------------------------</p>
+            <p>Sincerely yours,</p>
+            <p>Depil Tech</p>
+            ]]>
+        </field>
+    </record>
 </odoo>

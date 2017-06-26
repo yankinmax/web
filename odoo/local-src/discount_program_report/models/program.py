@@ -2,7 +2,8 @@
 # Copyright 2017 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 
 class Program(models.Model):
@@ -11,15 +12,36 @@ class Program(models.Model):
 
     report_config_id = fields.Many2one('sale.discount.program.report.config',
                                        'discount_program_ids',
-                                       compute='_get_report_config',
-                                       store=True)
+                                       compute='_get_report_config')
 
-    @api.depends('partner_id.lang_id', 'report_config_id.lang_id')
+    is_printable = fields.Boolean('Printable', compute='_get_is_printable',
+                                  store=True)
+
+    sent_to_customer = fields.Boolean('Sent to customer', default=False,
+                                      track_visibility='onchange')
+
+    @api.depends('gift_voucher', 'voucher_code', 'partner_id')
+    def _get_is_printable(self):
+        for program in self:
+            program.is_printable = (
+                not program.gift_voucher
+                and program.voucher_code
+                and program.partner_id
+            )
+
+    @api.depends('is_printable')
     def _get_report_config(self):
         for program in self:
-            program.report_config_id = self.env[
-                'sale.discount.program.report.config'].search(
-                [('lang_id', '=', self.env.ref('base.lang_fr').id)]).id
+            if program.is_printable:
+                report_config = self.env[
+                    'sale.discount.program.report.config'].search(
+                    [('lang_id.code', '=',
+                      program.partner_id.company_id.partner_id.lang)])
+                if report_config:
+                    program.report_config_id = report_config.id
+                else:
+                    raise UserError(_('There is no active report.config '
+                                      'matching this program language.'))
 
     @api.multi
     def action_program_send(self):
@@ -43,6 +65,7 @@ class Program(models.Model):
             'default_use_template': bool(template_id),
             'default_template_id': template_id,
             'default_composition_mode': 'comment',
+            'mark_program_as_sent': True,
             'custom_layout':
                 "discount_program_report."
                 "mail_template_data_notification_email_discount_program"
@@ -57,3 +80,15 @@ class Program(models.Model):
             'target': 'new',
             'context': ctx,
         }
+
+    @api.model
+    def _cron_send_vouchers_to_customers(self):
+        vouchers = self.search([('is_printable', '=', True),
+                                ('sent_to_customer', '=', False)])
+        for voucher in vouchers:
+            email_act = voucher.action_program_send()
+            if email_act and email_act.get('context'):
+                email_ctx = email_act['context']
+                email_ctx.update(mark_program_as_sent=True)
+                voucher.with_context(email_ctx).message_post_with_template(
+                    email_ctx.get('default_template_id'))

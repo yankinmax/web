@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="discount_program_send_mails" model="ir.cron">
+        <field name="name">Send discount program e-mails</field>
+        <field name="active" eval="True" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">60</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field  name="doall" eval="False" />
+        <field name="model">sale.discount.program</field>
+        <field name="function">_cron_send_vouchers_to_customers</field>
+        <field name="args">()</field>
+    </record>
+</odoo>

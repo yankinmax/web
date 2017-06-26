@@ -10,6 +10,7 @@ from odoo.exceptions import UserError
 
 class Program(models.Model):
     _name = 'sale.discount.program'
+    _inherit = 'mail.thread'
 
     name = fields.Char('Name', compute='_compute_name', store=True)
 
