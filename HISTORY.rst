@@ -12,6 +12,8 @@ Unreleased
 
 **Build**
 
+* Travis.yml remove docker&docker-compose installation
+
 **Documentation**
 
 
