@@ -93,3 +93,4 @@ migration:
           - specific_discount_program
           - specific_security
           - specific_sale_order
+          - discount_program_report
