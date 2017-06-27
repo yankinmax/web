@@ -19,10 +19,10 @@ class SaleDiscountProgramReportConfig(models.Model):
                                    'of 1083px at the top of the report')
 
     amount_zone_height = fields.Integer('Amount zone height (in px)',
-                                       help='This is the height of the amount '
-                                            'zone in the top picture.'
-                                            'Be aware that a 20px padding is'
-                                            'applied both on top and bottom.')
+                                        help='This is the height of the amount'
+                                             ' zone in the top picture.'
+                                             'Be aware that a 20px padding is'
+                                             'applied both on top and bottom.')
     amount_zone_width = fields.Integer('Amount zone width (in px)',
                                        help='This is the width of the amount '
                                             'zone in the top picture ')
