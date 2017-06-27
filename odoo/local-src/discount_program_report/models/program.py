@@ -11,7 +11,7 @@ class Program(models.Model):
     _inherit = 'sale.discount.program'
 
     report_config_id = fields.Many2one('sale.discount.program.report.config',
-                                       'discount_program_ids',
+                                       'Report config',
                                        compute='_get_report_config')
 
     is_printable = fields.Boolean('Printable', compute='_get_is_printable',
@@ -46,24 +46,16 @@ class Program(models.Model):
     @api.multi
     def action_program_send(self):
         self.ensure_one()
-        ir_model_data = self.env['ir.model.data']
-        try:
-            template_id = ir_model_data.get_object_reference(
-                'discount_program_report',
-                'email_template_discount_program')[1]
-        except ValueError:
-            template_id = False
-        try:
-            compose_form_id = ir_model_data.get_object_reference(
-                'mail', 'email_compose_message_wizard_form')[1]
-        except ValueError:
-            compose_form_id = False
+
+        template = self.env.ref(
+            'discount_program_report.email_template_discount_program')
+        compose_form = self.env.ref('mail.email_compose_message_wizard_form')
         ctx = dict()
         ctx.update({
             'default_model': 'sale.discount.program',
-            'default_res_id': self.ids[0],
-            'default_use_template': bool(template_id),
-            'default_template_id': template_id,
+            'default_res_id': self.id,
+            'default_use_template': bool(template.id),
+            'default_template_id': template.id,
             'default_composition_mode': 'comment',
             'mark_program_as_sent': True,
             'custom_layout':
@@ -75,8 +67,8 @@ class Program(models.Model):
             'view_type': 'form',
             'view_mode': 'form',
             'res_model': 'mail.compose.message',
-            'views': [(compose_form_id, 'form')],
-            'view_id': compose_form_id,
+            'views': [(compose_form.id, 'form')],
+            'view_id': compose_form.id,
             'target': 'new',
             'context': ctx,
         }
@@ -89,6 +81,5 @@ class Program(models.Model):
             email_act = voucher.action_program_send()
             if email_act and email_act.get('context'):
                 email_ctx = email_act['context']
-                email_ctx.update(mark_program_as_sent=True)
                 voucher.with_context(email_ctx).message_post_with_template(
                     email_ctx.get('default_template_id'))

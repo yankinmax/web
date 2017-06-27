@@ -9,7 +9,8 @@
     'category': 'Others',
     'depends': [
         'specific_discount_program',
-        'report'
+        'report',
+        'mail',
     ],
     'website': 'http://www.camptocamp.com',
     'data': [

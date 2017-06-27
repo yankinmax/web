@@ -10,9 +10,11 @@
                     <field name="lang_id" />
                     <field name="active" />
                     <field name="top_image" widget="image" />
+                    <field name="amount_zone_height" />
                     <field name="amount_zone_width" />
                     <field name="amount_position_top" />
                     <field name="amount_position_left" />
+                    <field name="date_format" />
                     <field name="ribbon_text" />
                     <field name="general_terms_conditions_title" />
                     <field name="general_terms_conditions_left" />

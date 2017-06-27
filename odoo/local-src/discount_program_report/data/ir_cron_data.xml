@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<odoo noupdate="1">
     <record id="discount_program_send_mails" model="ir.cron">
         <field name="name">Send discount program e-mails</field>
-        <field name="active" eval="True" />
+        <field name="active" eval="False" />
         <field name="user_id" ref="base.user_root" />
-        <field name="interval_number">60</field>
-        <field name="interval_type">minutes</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
         <field name="numbercall">-1</field>
         <field  name="doall" eval="False" />
         <field name="model">sale.discount.program</field>

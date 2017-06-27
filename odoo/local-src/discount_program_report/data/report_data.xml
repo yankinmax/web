@@ -17,7 +17,7 @@
     </record>
     <report
         id="report_discount_program"
-        string="Gift voucher"
+        string="Voucher discount program"
         model="sale.discount.program"
         report_type="qweb-pdf"
         file="discount_program_report.report_discountprogram"

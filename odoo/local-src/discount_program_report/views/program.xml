@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <div class="oe_title" position="before">
                 <header>
-                    <button name="action_program_send" string="Send by Email" type="object" attrs="{'invisible': [('report_config_id', '=', False)]}"/>
+                    <button name="action_program_send" string="Send by Email" type="object" attrs="{'invisible': [('report_config_id', '=', False)]}" groups="specific_security.group_admin_depiltech"/>
                     <field name="report_config_id" invisible="1" />
                 </header>
             </div>

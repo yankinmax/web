@@ -17,9 +17,8 @@ class MailComposeMessage(models.TransientModel):
         )
         if condition:
             program = self.env['sale.discount.program'].browse(
-                [self._context['default_res_id']])
+                self._context['default_res_id'])
             if not program.sent_to_customer:
                 program.sent_to_customer = True
-            self = self.with_context(mail_post_autofollow=True)
         return super(MailComposeMessage, self).send_mail(
             auto_commit=auto_commit)
