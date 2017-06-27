@@ -20,6 +20,8 @@
         # Report
         'report/program_mail_template.xml',
         'report/program_report_templates.xml',
+        # Security
+        'security/ir.model.access.csv',
         # Views
         'views/program.xml',
         'views/report_config.xml',
