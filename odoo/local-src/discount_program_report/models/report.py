@@ -27,7 +27,6 @@ class Report(models.Model):
                         html, data)
                     if voucher_pdf:
                         voucher_pdfs.append(voucher_pdf)
-                        voucher.sent_to_customer = True
             return self.merge_pdf_in_memory([sale_order_pdf] + voucher_pdfs)
 
         else:
