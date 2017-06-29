@@ -2,9 +2,7 @@
 <odoo noupdate="1">
     <record id="email_template_discount_program" model="mail.template">
         <field name="name">Discount program - Send by Email</field>
-        <!--<field name="email_from">${(object.user_id.email and '%s &lt;%s&gt;' % (object.user_id.name, object.user_id.email) or '')|safe}</field>-->
         <field name="email_from">'test@depiltech.com'</field>
-        <!--<field name="subject">${company.name} : ${object.note_message_for_action}</field>-->
         <field name="subject">${object.note_message_for_action or object.name }</field>
         <field name="partner_to">${object.partner_id.id}</field>
         <field name="model_id" ref="specific_discount_program.model_sale_discount_program"/>
