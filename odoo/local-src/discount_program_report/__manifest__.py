@@ -16,7 +16,7 @@
     'data': [
         # Data
         'data/report_data.xml',
-        'data/template_data.xml',
+        'data/report_config_data.xml',
         'data/ir_cron_data.xml',
         # Report
         'report/program_mail_template.xml',
