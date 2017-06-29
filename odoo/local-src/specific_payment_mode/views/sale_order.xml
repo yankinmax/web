@@ -24,7 +24,7 @@
                             <field name="partner_company_type" invisible="True"/>
                             <field name="depiltech_payment_mode"/>
                             <field name="compute_calculator" invisible="True"/>
-                            <field name="calculator_link" widget="url" attrs="{'invisible': ['|', ('calculator_link', '=', False)]}"/>
+                            <field name="calculator_link" widget="url" attrs="{'invisible': [('calculator_link', '=', False)]}"/>
                             <field name="provision"/>
                             <field name="month_number"/>
                             <field name="monthly_payment"/>

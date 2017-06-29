@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0e\n"
+"Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-30 06:58+0000\n"
-"PO-Revision-Date: 2016-11-30 06:58+0000\n"
+"POT-Creation-Date: 2017-06-29 13:11+0000\n"
+"PO-Revision-Date: 2017-06-29 13:11+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,6 +31,23 @@ msgid "Calculation of monthly payments"
 msgstr ""
 
 #. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_calculator_link
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_calculator_link
+msgid "Calculator link"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_partner_company_type
+msgid "Company Type"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_compute_calculator
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_compute_calculator
+msgid "Compute calculator"
+msgstr ""
+
+#. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_create_uid
 msgid "Created by"
 msgstr ""
@@ -38,6 +55,38 @@ msgstr ""
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_create_date
 msgid "Created on"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_date_of_first_monthly_payment
+msgid "Date of first monthly payment"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_day_of_payment
+msgid "Day of payment"
+msgstr ""
+
+#. module: specific_payment_mode
+#: code:addons/specific_payment_mode/models/sale_order.py:250
+#, python-format
+msgid "Day of payment must be an integer between 1 and 31"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_days_before_payment
+msgid "Days before payment"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_deny_to_confirm_order
+msgid "Deny to confirm order"
+msgstr ""
+
+#. module: specific_payment_mode
+#: code:addons/specific_payment_mode/models/sale_order.py:149
+#, python-format
+msgid "Depiltech payment mode invalid to confirm sale order"
 msgstr ""
 
 #. module: specific_payment_mode
@@ -50,6 +99,23 @@ msgstr ""
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:depiltech.payment.mode,name:specific_payment_mode.estimate
+msgid "Estimate"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_first_monthly_payment
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_first_monthly_payment_readonly
+msgid "First monthly payment"
+msgstr ""
+
+#. module: specific_payment_mode
+#: code:addons/specific_payment_mode/models/sale_order.py:214
+#, python-format
+msgid "First monthly payment must be a float between 0 and %.2f"
 msgstr ""
 
 #. module: specific_payment_mode
@@ -73,15 +139,20 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_sale_config_settings_max_month_number
+msgid "Max month number used in sale order payment calculator"
+msgstr ""
+
+#. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_month_number
 #: model:ir.ui.view,arch_db:specific_payment_mode.report_saleorder_specific
 msgid "Month number"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:43
+#: code:addons/specific_payment_mode/models/sale_order.py:190
 #, python-format
-msgid "Month number must be an integer between 0 and 20"
+msgid "Month number must be an integer between 0 and %d"
 msgstr ""
 
 #. module: specific_payment_mode
@@ -91,19 +162,49 @@ msgid "Monthly payment"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:51
-#, python-format
-msgid "Monthly payment must be a positive float"
-msgstr ""
-
-#. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_name
 msgid "Name"
 msgstr ""
 
 #. module: specific_payment_mode
+#: code:addons/specific_payment_mode/models/sale_order.py:236
+#, python-format
+msgid "Next monthly payment must be a float between 0 and %.2f"
+msgstr ""
+
+#. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_no_check_payment_rules
 msgid "No check payment rules"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:depiltech.payment.mode,name:specific_payment_mode.other
+msgid "Other payment modes"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:depiltech.payment.mode,name:specific_payment_mode.pnf10
+msgid "PNF10"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:depiltech.payment.mode,name:specific_payment_mode.pnf3
+msgid "PNF3"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:depiltech.payment.mode,name:specific_payment_mode.pnf4
+msgid "PNF4"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:depiltech.payment.mode,name:specific_payment_mode.pnf5
+msgid "PNF5"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model,name:specific_payment_mode.model_account_payment_term
+msgid "Payment Term"
 msgstr ""
 
 #. module: specific_payment_mode
@@ -118,9 +219,14 @@ msgid "Provision"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:35
+#: code:addons/specific_payment_mode/models/sale_order.py:172
 #, python-format
-msgid "Provision must be an integer between 10 and 1000"
+msgid "Provision must be a float between 0 and %.2f"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_term_sale_order_id
+msgid "Sale order id"
 msgstr ""
 
 #. module: specific_payment_mode
@@ -139,7 +245,17 @@ msgid "Type"
 msgstr ""
 
 #. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_use_as_default
+msgid "Use as default"
+msgstr ""
+
+#. module: specific_payment_mode
 #: model:ir.model,name:specific_payment_mode.model_depiltech_payment_mode
 msgid "depiltech.payment.mode"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model,name:specific_payment_mode.model_sale_config_settings
+msgid "sale.config.settings"
 msgstr ""
 
