@@ -34,7 +34,9 @@
      'decimal_precision',
      'fetchmail',
      'fields_regex_validation',
-     'inter_company_rules',
+
+     # 'inter_company_rules',
+
      'mail_push',
      'mail',
      'marketing_campaign',
