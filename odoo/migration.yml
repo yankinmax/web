@@ -75,6 +75,7 @@ migration:
           - specific_account
           - specific_base
           - specific_discount_program
+          - specific_security
           - specific_payment_mode
     - version: 10.1.0
       operations:

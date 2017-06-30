@@ -10,9 +10,19 @@ from ...install.rights import setup_export_rights
 def move_groups(ctx):
     """ Moving groups to specific_base"""
     ctx.env.cr.execute("""
-        UPDATE ir_model_data SET module = 'specific_base'
+        UPDATE ir_model_data SET module = 'specific_security'
         WHERE module = 'scenario'
         AND model = 'res.groups';
+    """)
+
+
+@anthem.log
+def move_rules(ctx):
+    """ Moving rules to specific_security"""
+    ctx.env.cr.execute("""
+        UPDATE ir_model_data SET module = 'specific_base'
+        WHERE module = 'scenario'
+        AND model = 'ir.rule';
     """)
 
 
@@ -41,5 +51,6 @@ def unlink_depiltech_payment_modes(ctx):
 def main(ctx):
     """ Main: update 10.1.0 """
     move_groups(ctx)
+    move_rules(ctx)
     move_pricelists(ctx)
     setup_export_rights(ctx)

@@ -32,6 +32,8 @@ Unreleased
 
 **Bugfixes**
 
+* DT-52: Fix partners rights
+
 **Build**
 
 **Documentation**

@@ -42,4 +42,28 @@
          <field name="domain_force">[('company_id', 'child_of', [user.company_id.id])]</field>
      </record>
 
+    <record model="ir.rule" id="res_partner_rule_dt_accounting_group">
+        <field name="name">res.partner for "DT accounting group</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="global" eval="False"/>
+        <field name="groups" eval="[(6,0,[ref('specific_security.grp_dt_compta')])]"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record model="ir.rule" id="res_partner_rule_base_group_user">
+        <field name="name">res.partner for base group user</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="global" eval="False"/>
+        <field name="groups" eval="[(6,0,[ref('base.group_user')])]"/>
+        <field name="domain_force">['|',('company_id','child_of',[user.company_id.id]),('company_id','=',False)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
 </odoo>
