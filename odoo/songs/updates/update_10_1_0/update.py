@@ -8,7 +8,7 @@ from ...install.rights import setup_export_rights
 
 @anthem.log
 def move_groups(ctx):
-    """ Moving groups to specific_base"""
+    """ Moving groups to specific_security"""
     ctx.env.cr.execute("""
         UPDATE ir_model_data SET module = 'specific_security'
         WHERE module = 'scenario'
@@ -18,7 +18,7 @@ def move_groups(ctx):
 
 @anthem.log
 def move_rules(ctx):
-    """ Moving rules to specific_security"""
+    """ Moving rules to specific_base"""
     ctx.env.cr.execute("""
         UPDATE ir_model_data SET module = 'specific_base'
         WHERE module = 'scenario'
