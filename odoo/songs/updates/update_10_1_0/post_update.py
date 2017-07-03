@@ -8,9 +8,8 @@ import anthem
 @anthem.log
 def change_voucher_code_from_sequence(ctx):
     Program = ctx.env['sale.discount.program']
-    programs = Program.search([('voucher_code', '=like', 'VOU%'),
-                               ('used', '!=', True)])
-    for prog in programs:
+    programs = Program.search([('voucher_code', '=like', 'VOU%')])
+    for prog in programs.filtered(lambda p: not p.used):
         prog.voucher_code = Program.with_context(
             program_voucher=True)._default_voucher_code()
 
@@ -18,7 +17,8 @@ def change_voucher_code_from_sequence(ctx):
 @anthem.log
 def remove_discount_program_sequence(ctx):
     seq = ctx.env.ref(
-        'sale_discount_program.seq_sale_discount_program_voucher')
+        'sale_discount_program.seq_sale_discount_program_voucher',
+        raise_if_not_found=False)
     if seq:
         seq.unlink()
 
