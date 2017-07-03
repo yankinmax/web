@@ -37,9 +37,6 @@ class AccountInvoice(models.Model):
         self.sudo().write({
             'generated_voucher_ids': [(0, False, {
                 'combinable': True,
-                'voucher_code': self.env['ir.sequence'].next_by_code(
-                    'discount.program.voucher_code'
-                ),
                 'gift_voucher': True,
                 'voucher_amount': (self.invoice_line_ids[0].quantity *
                                    self.invoice_line_ids[0].price_unit),

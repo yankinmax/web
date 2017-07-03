@@ -63,9 +63,6 @@ class SaleOrder(models.Model):
             'generated_voucher_ids': [(0, False, {
                 'partner_id': partner_id,
                 'combinable': True,
-                'voucher_code': self.env['ir.sequence'].next_by_code(
-                    'discount.program.voucher_code'
-                ),
                 'voucher_amount': self.get_voucher_amount(),
                 'max_use': 1,
                 'expiration_date': expiration_date,

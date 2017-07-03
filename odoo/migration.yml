@@ -83,6 +83,8 @@ migration:
           - anthem songs.updates.update_10_1_0.update::main
           - odoo -i account_payment_term_extension,specific_security --stop-after-init --workers=0
           - anthem songs.updates.update_10_1_0.update::unlink_depiltech_payment_modes
+        post:
+          - anthem songs.updates.update_10_1_0.post_update::main
       addons:
         upgrade:
           #### OCA/account-invoicing

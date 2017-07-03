@@ -20,7 +20,6 @@
         # Data
         'data/ir_config_parameter.xml',
         'data/product_voucher.xml',
-        'data/program_sequence.xml',
         # Security
         'security/ir.model.access.csv',
         # Views

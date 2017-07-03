@@ -26,7 +26,8 @@ class Program(models.Model):
 
     promo_code = fields.Char('Promo code')
     voucher_code = fields.Char(
-        'Voucher code', default=lambda self: self._default_voucher_code()
+        'Voucher code', default=lambda self: self._default_voucher_code(),
+        readonly=True, track_visibility='onchange'
     )
 
     partner_id = fields.Many2one(comodel_name='res.partner', string='Customer')
@@ -83,6 +84,7 @@ class Program(models.Model):
          _("Promo code should be unique"))
     ]
 
+    @api.model
     def _default_voucher_code(self):
         if self.env.context.get('program_voucher'):
             return shortuuid.uuid()[:10]
