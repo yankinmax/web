@@ -25,13 +25,6 @@ def import_users(ctx):
 
 
 @anthem.log
-def import_partner(ctx):
-    """ Importing demo partner from csv """
-    content = resource_stream(req, 'data/demo/res.partner.csv')
-    load_csv_stream(ctx, 'res.partner', content, delimiter=',')
-
-
-@anthem.log
 def import_partner_contact(ctx):
     """ Importing demo partner_contact from csv """
     content = resource_stream(req, 'data/demo/res.partner.contact.csv')
@@ -67,8 +60,7 @@ def import_project_task_type(ctx):
 def main(ctx):
     """ Loading data """
     import_users(ctx)
-    import_partner(ctx)
-    import_partner_contact(ctx)
+    # import_partner_contact(ctx)
     import_employee(ctx)
     import_crm_teams(ctx)
     import_project_task_type(ctx)

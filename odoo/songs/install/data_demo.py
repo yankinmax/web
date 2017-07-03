@@ -38,7 +38,15 @@ def import_project_tasks(ctx):
 
 
 @anthem.log
+def import_partner(ctx):
+    """ Importing demo partner from csv """
+    content = resource_stream(req, 'data/demo/res.partner.csv')
+    load_csv_stream(ctx, 'res.partner', content, delimiter=',')
+
+
+@anthem.log
 def main(ctx):
     """ Loading demo data """
+    import_partner(ctx)
     import_projects(ctx)
     import_project_tasks(ctx)

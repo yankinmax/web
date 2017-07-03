@@ -24,8 +24,8 @@ latest (unreleased)
 * Update odoo user list
 * Additional Fields for SO lines/product/substance/mesures/project/tasks
   BSMTS-99
-
 * Add Customer Reference and Reception Date on project (BSMTS-98)
+* Update res.partner import BSMTS-95
 
 **Bugfixes**
 
