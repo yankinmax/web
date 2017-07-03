@@ -33,10 +33,15 @@ class Program(models.Model):
     def _get_report_config(self):
         for program in self:
             if program.is_printable:
-                report_config = self.env[
-                    'sale.discount.program.report.config'].search(
-                    [('lang_id.code', '=',
-                      program.partner_id.company_id.partner_id.lang)])
+                company_lang = program.partner_id.company_id.partner_id.lang
+                if company_lang:
+                    report_config = self.env[
+                        'sale.discount.program.report.config'].search(
+                        [('lang_id.code', '=', company_lang)])
+                else:
+                    report_config = self.env[
+                        'sale.discount.program.report.config'].search(
+                        [('lang_id.code', '=', 'fr_FR')])
                 if report_config:
                     program.report_config_id = report_config.id
                 else:
