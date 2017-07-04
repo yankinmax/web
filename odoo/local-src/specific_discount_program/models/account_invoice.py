@@ -34,7 +34,7 @@ class AccountInvoice(models.Model):
             expiration_date = date.today() + relativedelta(
                 months=months_validity
             )
-        self.sudo().write({
+        self.with_context(program_voucher=True).sudo().write({
             'generated_voucher_ids': [(0, False, {
                 'combinable': True,
                 'gift_voucher': True,

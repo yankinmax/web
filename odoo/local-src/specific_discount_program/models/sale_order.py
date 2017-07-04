@@ -59,7 +59,7 @@ class SaleOrder(models.Model):
                 months=months_validity
             )
 
-        self.sudo().write({
+        self.with_context(program_voucher=True).sudo().write({
             'generated_voucher_ids': [(0, False, {
                 'partner_id': partner_id,
                 'combinable': True,
