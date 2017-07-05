@@ -42,6 +42,7 @@ latest (unreleased)
 
 **Build**
 
+* Update to Docker image 10.0-2.3.0
 * Use camptocamp/odoo-project:10.0-2.2.0
 * Update session_redis to use redis sentinel
 * Add entrypoints from odoo-template
