@@ -45,8 +45,19 @@ def import_chart_of_account(ctx):
 
 
 @anthem.log
+def set_currency_update(ctx):
+    """ Configure currency update """
+    ctx.env['account.config.settings'].create(
+        {'currency_interval_unit': 'monthly',
+         'currency_provider': 'ecb',
+         }
+    ).execute()
+
+
+@anthem.log
 def main(ctx):
     """ Configuring accounting """
     set_fiscalyear(ctx)
     configure_chart_of_account(ctx)
     import_chart_of_account(ctx)
+    set_currency_update(ctx)
