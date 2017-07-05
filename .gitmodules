@@ -9,7 +9,7 @@
 	url = git@github.com:camptocamp/web
 [submodule "odoo/src"]
 	path = odoo/src
-	url = git@github.com:OCA/OCB
+	url = git@github.com:camptocamp/odoo
 [submodule "odoo/external-src/survey"]
 	path = odoo/external-src/survey
 	url = git@github.com:camptocamp/survey

@@ -1,0 +1,25 @@
+From 16714a7e71da91382bb111fad32282a65205dffd Mon Sep 17 00:00:00 2001
+From: Olivier Dony <odo@openerp.com>
+Date: Thu, 15 Jun 2017 16:23:44 +0200
+Subject: [PATCH] [FIX] auth_oauth: correctly register token field
+
+---
+ addons/auth_oauth/models/res_users.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/addons/auth_oauth/models/res_users.py b/addons/auth_oauth/models/res_users.py
+index f48802c..b10f19a 100644
+--- a/addons/auth_oauth/models/res_users.py
++++ b/addons/auth_oauth/models/res_users.py
+@@ -10,6 +10,8 @@ from odoo import api, fields, models
+ from odoo.exceptions import AccessDenied
+ from odoo.addons.auth_signup.models.res_users import SignupError
+ 
++from odoo.addons import base
++base.res.res_users.USER_PRIVATE_FIELDS.append('oauth_access_token')
+ 
+ class ResUsers(models.Model):
+     _inherit = 'res.users'
+-- 
+2.7.4
+
