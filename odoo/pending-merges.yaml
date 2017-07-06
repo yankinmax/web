@@ -65,3 +65,18 @@
     # [10.0] [MIG] web_duplicate_visibility
     - oca refs/pull/557/head
   target: *default_target
+./src:
+  defaults:
+    depth: 50
+  remotes:
+    oca: git@github.com:OCA/OCB.git
+    camptocamp: git@github.com:camptocamp/odoo.git
+  merges:
+    - oca 8a818066ce6d3a6def3af7ef93a754e795fe459b
+  target: *default_target
+  shell_command_after:
+    - git am "$(git format-patch -1 625c0d5d8eb2c196ffcb04304a3ec7cfc48027ac -o ../patches)"
+    - git am "$(git format-patch -1 16714a7e71da91382bb111fad32282a65205dffd -o ../patches)"
+    - git am "$(git format-patch -1 eaa3682bb609dc69a5499f2c223da479d0d9697b -o ../patches)"
+  fetch_all:
+    - oca

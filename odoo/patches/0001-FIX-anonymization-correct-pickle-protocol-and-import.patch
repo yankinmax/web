@@ -1,0 +1,44 @@
+From 625c0d5d8eb2c196ffcb04304a3ec7cfc48027ac Mon Sep 17 00:00:00 2001
+From: Olivier Dony <odo@openerp.com>
+Date: Thu, 15 Jun 2017 16:25:25 +0200
+Subject: [PATCH] [FIX] anonymization: correct pickle protocol and import
+
+---
+ addons/anonymization/wizard/anonymize_wizard.py | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/addons/anonymization/wizard/anonymize_wizard.py b/addons/anonymization/wizard/anonymize_wizard.py
+index a0b355d..0d0ecfa 100644
+--- a/addons/anonymization/wizard/anonymize_wizard.py
++++ b/addons/anonymization/wizard/anonymize_wizard.py
+@@ -4,16 +4,14 @@
+ import base64
+ import os
+ import random
+-try:
+-    import cPickle as pickle
+-except ImportError:
+-    import pickle
++
+ from lxml import etree
+ from operator import itemgetter
+ 
+ from odoo import api, fields, models, _
+ from odoo.exceptions import UserError
+ from odoo.release import version_info
++from odoo.tools import pickle
+ from odoo.tools.safe_eval import safe_eval
+ from odoo.addons.anonymization.models.anonymization import group
+ 
+@@ -207,7 +205,7 @@ class IrModelFieldsAnonymizeWizard(models.TransientModel):
+ 
+         # save pickle:
+         fn = open(abs_filepath, 'w')
+-        pickle.dump(data, fn, pickle.HIGHEST_PROTOCOL)
++        pickle.dump(data, fn, protocol=-1)
+ 
+         # update the anonymization fields:
+         ano_fields.write({'state': 'anonymized'})
+-- 
+2.7.4
+
