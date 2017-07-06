@@ -29,6 +29,7 @@ Unreleased
 * DT-20: Develop the depiltech payment modes
 * DT-44: Fix the creation of companies for non admin (with group)
 * DT-11: Add security group for export to csv feature
+* DT-10: Add a program condition based on last validated order
 
 **Bugfixes**
 

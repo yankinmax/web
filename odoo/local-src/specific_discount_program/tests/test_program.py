@@ -2,6 +2,11 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
+from odoo import fields
+
 from odoo.exceptions import UserError, ValidationError
 from odoo.tests.common import TransactionCase, post_install, at_install
 
@@ -24,6 +29,7 @@ class TestProgram(TransactionCase):
         self.settings_model = self.env['sale.config.settings']
         self.pricelist_model = self.env['product.pricelist']
         self.account_model = self.env['account.account']
+        self.mail_mail_model = self.env['mail.mail']
 
         for sponsor in self.sponsor_model.search([]):
             sponsor.unlink()
@@ -588,6 +594,8 @@ class TestProgram(TransactionCase):
         self.assertEqual(sale.order_line[0].price_unit, 500)
         self.assertEqual(sale.order_line[0].price_subtotal, 425)
 
+    @post_install(True)
+    @at_install(False)
     def test_gift_voucher(self):
         # Set two partner
         ordering_partner = self.env.ref('base.partner_demo')
@@ -667,3 +675,276 @@ class TestProgram(TransactionCase):
 
         self.assertEqual(reduced_order.state, 'sale')
         self.assertEqual(reduced_order.amount_total, 50.0)
+
+    @post_install(True)
+    @at_install(False)
+    def test_program_from_sale_order_validated(self):
+        # Create program based on
+        # another order validated between 10 and 19 days
+        self.program_model.create({
+            'name': 'Unittest another_order_validated program',
+            'condition_ids': [
+                (0, False, {
+                    'type_condition': 'another_order_validated',
+                    'sale_order_validated_since': 10,
+                    'sale_order_validated_until': 19,
+                })
+            ],
+            'action_ids': [
+                (0, False, {
+                    'type_action': 'product_discount',
+                    'product_discount_selection': 'most_expensive_no_discount',
+                    'discount_percent': 10,
+                    'note_message': 'Unittest another_order_validated message',
+                })
+            ]
+        })
+
+        # Create partner
+        partner = self.partner_model.create({
+            'name': 'UNITTEST partner',
+        })
+
+        # Create first sale order validated
+        sale_validated_1 = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': partner.id,
+            'order_line': [(0, 0, {
+                'product_id': self.p1.id,
+                'product_uom_qty': 1,
+                'price_unit': 100,
+            })]
+        })
+        sale_validated_1.order_line.write({
+            'tax_id': [(5, False, False)]
+        })
+        sale_validated_1.action_confirm()
+
+        # Create second sale order validated
+        sale_validated_2 = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': partner.id,
+            'order_line': [(0, 0, {
+                'product_id': self.p1.id,
+                'product_uom_qty': 1,
+                'price_unit': 150,
+            })]
+        })
+        sale_validated_2.order_line.write({
+            'tax_id': [(5, False, False)]
+        })
+        sale_validated_2.action_confirm()
+
+        # Create first sale order for test
+        sale_for_test_1 = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': partner.id,
+            'order_line': [(0, 0, {
+                'product_id': self.p1.id,
+                'product_uom_qty': 1,
+                'price_unit': 200,
+            })]
+        })
+        sale_for_test_1.order_line.write({
+            'tax_id': [(5, False, False)]
+        })
+        sale_for_test_1.apply_discount_programs()
+        self.assertFalse(sale_for_test_1.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_1.program_alert)
+        self.assertEqual(sale_for_test_1.amount_total, 200.0)
+
+        # Create second sale order for test
+        sale_for_test_2 = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': partner.id,
+            'order_line': [(0, 0, {
+                'product_id': self.p1.id,
+                'product_uom_qty': 1,
+                'price_unit': 300,
+            })]
+        })
+        sale_for_test_2.order_line.write({
+            'tax_id': [(5, False, False)]
+        })
+        sale_for_test_2.apply_discount_programs()
+        self.assertFalse(sale_for_test_2.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_2.program_alert)
+
+        # Define confirmation_date 20 days ago
+        # ==> Program is not used
+        sale_validated_1.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=50)
+        )
+        sale_validated_2.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=20)
+        )
+
+        sale_for_test_1.apply_discount_programs()
+        sale_for_test_2.apply_discount_programs()
+
+        self.assertFalse(sale_for_test_1.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_1.program_alert)
+        self.assertEqual(sale_for_test_1.amount_total, 200.0)
+
+        self.assertFalse(sale_for_test_2.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_2.program_alert)
+        self.assertEqual(sale_for_test_2.amount_total, 300.0)
+
+        # Define confirmation_date 19 days ago
+        # ==> Program used on first test order
+        # ==> Program match on second validated order
+        sale_validated_1.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=50)
+        )
+        sale_validated_2.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=19)
+        )
+
+        sale_for_test_1.apply_discount_programs()
+        sale_for_test_2.apply_discount_programs()
+
+        self.assertIn(sale_validated_2,
+                      sale_for_test_1.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_1.program_alert)
+        self.assertEqual(sale_for_test_1.amount_total, 180.0)
+
+        self.assertFalse(sale_for_test_2.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_2.program_alert)
+        self.assertEqual(sale_for_test_2.amount_total, 300.0)
+
+        # Define confirmation_date 9 days ago
+        # ==> Program is not used
+        sale_validated_1.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=50)
+        )
+        sale_validated_2.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=9)
+        )
+
+        sale_for_test_1.apply_discount_programs()
+        sale_for_test_2.apply_discount_programs()
+
+        self.assertFalse(sale_for_test_1.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_1.program_alert)
+        self.assertEqual(sale_for_test_1.amount_total, 200.0)
+
+        self.assertFalse(sale_for_test_2.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_2.program_alert)
+        self.assertEqual(sale_for_test_2.amount_total, 300.0)
+
+        # Define confirmation_date 10 days ago
+        # ==> Program used on first test order
+        # ==> Program match on second validated order
+        sale_validated_1.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=50)
+        )
+        sale_validated_2.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=10)
+        )
+
+        sale_for_test_1.apply_discount_programs()
+        sale_for_test_2.apply_discount_programs()
+
+        self.assertIn(sale_validated_2,
+                      sale_for_test_1.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_1.program_alert)
+        self.assertEqual(sale_for_test_1.amount_total, 180.0)
+
+        self.assertFalse(sale_for_test_2.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_2.program_alert)
+        self.assertEqual(sale_for_test_2.amount_total, 300.0)
+
+        # Inverse confirmation_date between 2 validated orders
+        # ==> Program used on first test order
+        # ==> Program match on first validated order
+        sale_validated_1.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=10)
+        )
+        sale_validated_2.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=50)
+        )
+
+        sale_for_test_1.apply_discount_programs()
+        sale_for_test_2.apply_discount_programs()
+
+        self.assertIn(sale_validated_1,
+                      sale_for_test_1.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_1.program_alert)
+        self.assertEqual(sale_for_test_1.amount_total, 180.0)
+
+        self.assertFalse(sale_for_test_2.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_2.program_alert)
+        self.assertEqual(sale_for_test_2.amount_total, 300.0)
+
+        # Check that the mail message
+        # for program alert is missing for first test order
+        domain = [
+            ('model', '=', 'sale.order'),
+            ('res_id', '=', sale_for_test_1.id),
+            ('message_type', '=', 'email'),
+            ('subject', '=', 'Program alert on %s' % sale_for_test_1.name),
+        ]
+        self.assertEqual(len(self.mail_mail_model.search(domain)), 0)
+
+        # Cancel first validated order
+        # ==> The first test order is now in program alert
+        sale_validated_1.action_cancel()
+        self.assertTrue(sale_for_test_1.program_alert)
+        self.assertEqual(len(self.mail_mail_model.search(domain)), 1)
+
+        # Reset alert on first test order
+        # ==> The first test order is not anymore in program alert
+        sale_for_test_1.action_reset_alert_program()
+        self.assertFalse(sale_for_test_1.program_alert)
+
+        # Re-apply discount programs on tests orders
+        # ==> Program is not used now
+        sale_for_test_1.apply_discount_programs()
+        sale_for_test_2.apply_discount_programs()
+
+        self.assertFalse(sale_for_test_1.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_1.program_alert)
+        self.assertEqual(sale_for_test_1.amount_total, 200.0)
+
+        self.assertFalse(sale_for_test_2.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_2.program_alert)
+        self.assertEqual(sale_for_test_2.amount_total, 300.0)
+
+        # Re-confirm first validated order and
+        # ==> Program is not used (because the confirmation date is now)
+        sale_validated_1.action_confirm()
+
+        sale_for_test_1.apply_discount_programs()
+        sale_for_test_2.apply_discount_programs()
+
+        self.assertFalse(sale_for_test_1.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_1.program_alert)
+        self.assertEqual(sale_for_test_1.amount_total, 200.0)
+
+        self.assertFalse(sale_for_test_2.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_2.program_alert)
+        self.assertEqual(sale_for_test_2.amount_total, 300.0)
+
+        # Define confirmation_date 10 days ago
+        # AND apply discount program on second test order
+        # before the first test order
+        # ==> Program used on SECOND test order
+        # ==> Program match on second validated order
+        sale_validated_1.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=50)
+        )
+        sale_validated_2.confirmation_date = fields.Datetime.to_string(
+            datetime.now() - relativedelta(days=10)
+        )
+
+        sale_for_test_2.apply_discount_programs()
+        sale_for_test_1.apply_discount_programs()
+
+        self.assertFalse(sale_for_test_1.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_1.program_alert)
+        self.assertEqual(sale_for_test_1.amount_total, 200.0)
+
+        self.assertIn(sale_validated_2,
+                      sale_for_test_2.sale_order_used_by_program_ids)
+        self.assertFalse(sale_for_test_2.program_alert)
+        self.assertEqual(sale_for_test_2.amount_total, 270.0)

@@ -1,21 +1,38 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* specific_discount_program
+#	* specific_discount_program
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-30 15:26+0000\n"
-"PO-Revision-Date: 2017-05-30 15:26+0000\n"
+"POT-Creation-Date: 2017-07-07 12:15+0000\n"
+"PO-Revision-Date: 2017-07-07 12:15+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: fr\n"
-"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: specific_discount_program
+#: model:mail.template,body_html:specific_discount_program.email_template_alert_program_on_sale_order
+msgid "\n"
+"            <p>Dear ${object.company_id.coach_id.name},</p>\n"
+"            <p>Program alert on <strong>${object.name}</strong></p>\n"
+"            <p>----------------------------------------</p>\n"
+"            <p>Sincerely yours,</p>\n"
+"            <p>Depil Tech</p>\n"
+"            \n"
+"        "
+msgstr "\n"
+"            <p>Cher ${object.company_id.coach_id.name},</p>\n"
+"            <p>Alerte de programme sur <strong>${object.name}</strong></p>\n"
+"            <p>----------------------------------------</p>\n"
+"            <p>Cordialement,</p>\n"
+"            <p>Depil Tech</p>\n"
+"            \n"
+"        "
 
 #. module: specific_discount_program
 #: model:ir.ui.view,arch_db:specific_discount_program.report_invoice_document_inherit
@@ -34,9 +51,14 @@ msgstr "Société autorisées"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_res_partner_already_bought
-#: model:ir.model.fields,field_description:specific_discount_program.field_res_users_already_bought
 msgid "Already bought"
 msgstr "Déjà acheté"
+
+#. module: specific_discount_program
+#: code:addons/specific_discount_program/models/program_condition.py:35
+#, python-format
+msgid "Another order validated between %s and %s days"
+msgstr "Autre commande validée entre %s et %s jours"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_line_can_edit_price_unit
@@ -159,7 +181,7 @@ msgid "Manually Discount (%)"
 msgstr "Remise manuelle (%)"
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/sale_order.py:150
+#: code:addons/specific_discount_program/models/sale_order.py:176
 #, python-format
 msgid "Max manually discount allowed is %s %% for a sale order."
 msgstr "Le pourcentage maximum de remise manuelle est de %s %% pour une commande."
@@ -191,7 +213,7 @@ msgid "Number of vouchers allowed by sale order"
 msgstr "Nombre de bons d'achats autorisé par commande"
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/program.py:97
+#: code:addons/specific_discount_program/models/program.py:95
 #, python-format
 msgid "Number of vouchers is limited to %s"
 msgstr "Le nombre de bon d'achat est limité à %s"
@@ -222,9 +244,44 @@ msgid "Product Template"
 msgstr "Modèle d'article"
 
 #. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_program_alert
+msgid "Program alert"
+msgstr "Alerte de programme"
+
+#. module: specific_discount_program
+#: model:mail.template,subject:specific_discount_program.email_template_alert_program_on_sale_order
+msgid "Program alert on ${object.name}"
+msgstr "Alerte de programme sur ${object.name}"
+
+#. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_customer_required
 msgid "Requires customer"
 msgstr "Requires customer"
+
+#. module: specific_discount_program
+#: model:ir.ui.view,arch_db:specific_discount_program.sale_discount_program_view_order_form
+msgid "Reset program alert"
+msgstr "Réintialiser l'alerte de programme"
+
+#. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_sale_order_used_by_program_ids
+msgid "Sale order used by program"
+msgstr "Bon de commande utilisé par le programme"
+
+#. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_condition_sale_order_validated_since
+msgid "Sale order validated since"
+msgstr "Bon de commande validé depuis"
+
+#. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_condition_sale_order_validated_until
+msgid "Sale order validated until"
+msgstr "Bon de commande validé jusqu'à"
+
+#. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_sale_order_which_use_me_in_program_id
+msgid "Sale order which use me in program"
+msgstr "Bon de commande qui m'utilise dans son programme"
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_sale_order
@@ -248,7 +305,6 @@ msgstr "Commande d'origine"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_res_partner_sponsor_id
-#: model:ir.model.fields,field_description:specific_discount_program.field_res_users_sponsor_id
 msgid "Sponsor"
 msgstr "Sponsor"
 
@@ -269,7 +325,7 @@ msgid "Voucher description"
 msgstr "Description du bon d'achat"
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/account_invoice.py:44
+#: code:addons/specific_discount_program/models/account_invoice.py:46
 #, python-format
 msgid "You received a gift voucher !"
 msgstr "Vous avez bénéficié d'un bon cadeau !"
@@ -312,3 +368,4 @@ msgstr "source_invoice_id can be filled only for voucher"
 #, python-format
 msgid "source_sale_id can be filled only for voucher"
 msgstr "source_sale_id can be filled only for voucher"
+

@@ -438,11 +438,6 @@ msgid "Specify product price"
 msgstr "Spécifier le prix de l'article"
 
 #. module: sale_discount_program
-#: selection:sale.discount.program.condition,type_condition:0
-msgid "Sponsorship"
-msgstr "Parrainage"
-
-#. module: sale_discount_program
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_order_supporting_document
 msgid "Supporting document"
 msgstr "Pièce justificative"

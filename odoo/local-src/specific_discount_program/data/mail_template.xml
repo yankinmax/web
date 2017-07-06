@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="email_template_alert_program_on_sale_order" model="mail.template">
+        <field name="name">Program alert on sale order</field>
+        <field name="email_from">'test@depiltech.com'</field>
+        <field name="partner_to">${object.company_id.coach_id.id}</field>
+        <field name="email_cc">'alerte@depiltech.com'</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="auto_delete" eval="True" />
+        <field name="lang">${object.company_id.partner_id.lang}</field>
+        <field name="subject">Program alert on ${object.name}</field>
+        <field name="body_html"><![CDATA[
+            <p>Dear ${object.company_id.coach_id.name},</p>
+            <p>Program alert on <strong>${object.name}</strong></p>
+            <p>----------------------------------------</p>
+            <p>Sincerely yours,</p>
+            <p>Depil Tech</p>
+            ]]>
+        </field>
+    </record>
+
+</odoo>

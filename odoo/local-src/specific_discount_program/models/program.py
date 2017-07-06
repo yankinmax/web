@@ -118,6 +118,9 @@ class Program(models.Model):
                 line.write({
                     'discount': False
                 })
+        sale.sale_order_used_by_program_ids.write({
+            'sale_order_which_use_me_in_program_id': False,
+        })
         super(Program, self).reset_sale_programs(sale)
 
     def _get_action_values_for_voucher_amount(self, product_add_price):
@@ -127,3 +130,17 @@ class Program(models.Model):
         if self.note_message_for_action:
             values['note_message'] = self.note_message_for_action
         return values
+
+    @api.multi
+    def apply_actions(self, sale):
+        self.ensure_one()
+        for condition in self.condition_ids:
+            another_order_validated_used = (
+                condition.type_condition == 'another_order_validated' and
+                condition.check(sale)
+            )
+            if another_order_validated_used:
+                condition.get_another_order_validated(
+                    sale
+                ).sale_order_which_use_me_in_program_id = sale.id
+        return super(Program, self).apply_actions(sale)

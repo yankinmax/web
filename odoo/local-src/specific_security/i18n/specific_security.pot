@@ -18,80 +18,80 @@ msgstr ""
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_admin_depiltech
 msgid "Admin DT"
-msgstr "Admin DT"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_reset_alert_program
 msgid "Reset program alert on sale order allowed"
-msgstr "Réintialisation de l'alerte de programme sur les bons de commande autorisée"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_client_archive
 msgid "Client archivage"
-msgstr "Client archivage"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_company_creation
 msgid "Company creation allowed"
-msgstr "Création de société autorisée"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.grp_dt_compta
 msgid "DT-GRP Accounting"
-msgstr "DT-GRP Accounting"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.grp_agency
 msgid "DT-GRP Agence"
-msgstr "DT-GRP Agence"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.grp_dt_animateurs
 msgid "DT-GRP Animators"
-msgstr "DT-GRP Animators"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.grp_centers
 msgid "DT-GRP Centers"
-msgstr "DT-GRP Centers"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.grp_center_managers
 msgid "DT-GRP Centers Managers"
-msgstr "DT-GRP Centers Managers"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.grp_dt_siege
 msgid "DT-GRP Headquarter"
-msgstr "DT-GRP Headquarter"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.grp_dt_info
 msgid "DT-GRP Info"
-msgstr "DT-GRP Info"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_export
 msgid "Export"
-msgstr "Export"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_siege_depiltech
 msgid "Headquarters DT"
-msgstr "Headquarters DT"
+msgstr ""
 
 #. module: specific_security
 #: model:ir.model,name:specific_security.model_account_invoice
 msgid "Invoice"
-msgstr "Facture"
+msgstr ""
 
 #. module: specific_security
 #: model:ir.model,name:specific_security.model_account_invoice_refund
 msgid "Invoice Refund"
-msgstr "Avoir"
+msgstr ""
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_invoice_creation
 msgid "Invoice creation allowed"
-msgstr "Création de facture autorisée"
+msgstr ""
 

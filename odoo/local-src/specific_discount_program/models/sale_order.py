@@ -31,6 +31,17 @@ class SaleOrder(models.Model):
 
     gift_quotation = fields.Boolean('This quotation is a gift')
 
+    sale_order_which_use_me_in_program_id = fields.Many2one(
+        comodel_name='sale.order',
+        string='Sale order which use me in program',
+    )
+    sale_order_used_by_program_ids = fields.One2many(
+        comodel_name='sale.order',
+        inverse_name='sale_order_which_use_me_in_program_id',
+        string='Sale order used by program',
+    )
+    program_alert = fields.Boolean()
+
     @api.depends(
         'pricelist_id',
         'partner_id', 'partner_id.sponsor_id', 'partner_id.sponsor_id.active'
@@ -112,7 +123,26 @@ class SaleOrder(models.Model):
             if program.nb_use == 0:
                 program.sudo().unlink()
 
+        # Send a email alert
+        # if this order is used by another order to have promotion
+        for sale in self:
+            if sale.sale_order_which_use_me_in_program_id:
+                sale.sale_order_which_use_me_in_program_id.program_alert = True
+                template = self.env.ref(
+                    'specific_discount_program.'
+                    'email_template_alert_program_on_sale_order'
+                )
+                template.send_mail(
+                    sale.sale_order_which_use_me_in_program_id.id
+                )
+
         return result
+
+    @api.multi
+    def action_reset_alert_program(self):
+        self.write({
+            'program_alert': False,
+        })
 
     @api.one
     @api.constrains('gift_quotation')

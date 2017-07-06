@@ -30,4 +30,9 @@
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
     </record>
 
+    <record model="res.groups" id="group_reset_alert_program">
+        <field name="name">Reset program alert on sale order allowed</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
 </odoo>

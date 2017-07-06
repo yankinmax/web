@@ -355,7 +355,6 @@ class SaleOrder(models.Model):
             values, field_name, new_field_onchange
         )
 
-    @api.multi
     @api.onchange('partner_id')
     def onchange_partner_id(self):
         result = super(SaleOrder, self).onchange_partner_id()

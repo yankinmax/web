@@ -13,10 +13,6 @@
                     <field name="condition_ids" required="1"/>
                     <field name="action_ids" required="1"/>
                 </group>
-
-                <group>
-                    <field name="confirmed_sales_which_used"/>
-                </group>
             </form>
         </field>
     </record>
