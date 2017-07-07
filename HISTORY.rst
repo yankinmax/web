@@ -14,6 +14,7 @@ Unreleased
 
 * Upgrade Docker image to 10.0-2.3.0
 * Patch odoo/src with security fixes
+* Skip '100_pre-migration-v10' script, because migration done
 
 **Documentation**
 
