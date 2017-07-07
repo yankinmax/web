@@ -119,6 +119,7 @@ migration:
           - anthem songs.install.mte.accounting::set_fiscalyear
           - anthem songs.install.accounting::update_code_digits
           - anthem songs.install.data_all::import_crm_teams
+          - anthem songs.install.data_all::import_maint_equipment
       addons:
         upgrade:
           - base

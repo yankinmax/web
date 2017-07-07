@@ -30,6 +30,7 @@ latest (unreleased)
 * Import date.range BSMTS-126
 * Update account settings update code digits BSMTS109
 * Add salesteam to mts BSMTS110
+* Import Equipments  BSMTS-115
 
 **Bugfixes**
 
