@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Migration already done: skip this script!"
+exit 0
+
 #
 # After restore database migrated in v10 by Odoo, we need to execute following request.
 #
