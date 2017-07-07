@@ -28,6 +28,7 @@ latest (unreleased)
 * Update res.partner import BSMTS-95
 * Set Currency updates BSMTS-77
 * Import date.range BSMTS-126
+* Update account settings update code digits BSMTS109
 
 **Bugfixes**
 
