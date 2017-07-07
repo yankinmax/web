@@ -1,0 +1,2 @@
+id,name,user_id/id,member_ids/id,company_id/id
+__setup__.crm_team_7,Direct Sales,__setup__.res_users_agirardin,__setup__.res_users_agirardin,base.main_company

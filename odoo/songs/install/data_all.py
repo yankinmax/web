@@ -43,6 +43,8 @@ def import_crm_teams(ctx):
     """ Importing CRM teams from CSV """
     content = resource_stream(req, 'data/install/mte/crm.team.csv')
     load_csv_stream(ctx, 'crm.team', content, delimiter=',')
+    content = resource_stream(req, 'data/install/mts/crm.team.csv')
+    load_csv_stream(ctx, 'crm.team', content, delimiter=',')
 
 
 @anthem.log
