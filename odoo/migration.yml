@@ -71,6 +71,8 @@ migration:
           - project_task_default_stage
           #### OCA/reporting-engine
           - report_py3o
+          #### OCA/bank-payment
+          - account_banking_sepa_credit_transfer
           #### OCA/bank-statement-import
           - account_bank_statement_import_camt
           #### OCA/account-invoicing
@@ -121,8 +123,11 @@ migration:
           - anthem songs.install.data_all::import_crm_teams
           - anthem songs.install.data_all::import_maint_equipment
           - anthem songs.update.update_10_0_5.update_10_0_5_post::main
+          - anthem songs.install.accounting::create_account_payment_mode
       addons:
         upgrade:
           - base
           - account_cancel
           - web_sheet_full_width
+          - account_banking_sepa_credit_transfer
+          - l10n_ch_pain_credit_transfer
