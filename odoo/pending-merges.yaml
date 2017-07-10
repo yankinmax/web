@@ -56,3 +56,12 @@
     # [10.0] [MIG] web_duplicate_visibility
     - oca refs/pull/557/head
   target: *default_target
+./external-src/bank-payment:
+  remotes:
+    oca: git@github.com:OCA/bank-payment.git
+    camptocamp: git@github.com:camptocamp/bank-payment.git
+  merges:
+    - oca 10.0
+    # [10.0]Fix payment method onchange with multicompany
+    - oca refs/pull/374/head
+  target: *default_target
