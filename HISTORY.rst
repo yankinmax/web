@@ -31,6 +31,7 @@ latest (unreleased)
 * Update account settings update code digits BSMTS109
 * Add salesteam to mts BSMTS110
 * Import Equipments  BSMTS-115
+* Install account_cancel BSMTS-125
 
 **Bugfixes**
 

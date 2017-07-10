@@ -120,6 +120,8 @@ migration:
           - anthem songs.install.accounting::update_code_digits
           - anthem songs.install.data_all::import_crm_teams
           - anthem songs.install.data_all::import_maint_equipment
+          - anthem songs.update.update_10_0_5.update_10_0_5_post::main
       addons:
         upgrade:
           - base
+          - account_cancel
