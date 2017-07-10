@@ -113,6 +113,8 @@ migration:
           - anthem songs.install.mts.sales::set_sale_conditions
           - anthem songs.install.mte.sales::set_sale_conditions
           - anthem songs.install.data_demo::import_partner
+          - anthem songs.install.mts.accounting::set_fiscalyear
+          - anthem songs.install.mte.accounting::set_fiscalyear
       addons:
         upgrade:
           - base
