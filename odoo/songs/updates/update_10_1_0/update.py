@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 import anthem
-from ...install.rights import setup_export_rights
 
 
 @anthem.log
@@ -53,4 +52,3 @@ def main(ctx):
     move_groups(ctx)
     move_rules(ctx)
     move_pricelists(ctx)
-    setup_export_rights(ctx)
