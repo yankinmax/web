@@ -35,10 +35,12 @@ latest (unreleased)
 * Install web_sheet_full_width BSMTS-121
 * Install l10n_ch_pain_credit_transfer & PAIN & Payment mode BSMTS-116
 * Tasks: add Deadline field and groupby on tree/search views BSMTS-124
+* Add product.substance.line, setting menu & fix so_line view BSMTS-114/113
 
 **Bugfixes**
 
 * Layout in SO and PO. Related to sales_conditions BSMTS105
+* Fix so_line errors BSMTS-113
 
 **Build**
 

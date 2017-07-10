@@ -22,4 +22,5 @@ class SaleOrderLine(models.Model):
 
     @api.onchange('product_id')
     def onchange_product_id(self):
-        self.product_substance_ids = self.product_id.product_substance_ids
+        for line in self.product_id.product_substance_line_ids:
+            self.product_substance_ids |= line.product_substance_id

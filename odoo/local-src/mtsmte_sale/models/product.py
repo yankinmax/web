@@ -13,9 +13,10 @@ class ProductTemplate(models.Model):
          ('test_env', 'Test Environment'),
          ('test_mec', 'Test Mécanique')],
     )
-    product_substance_ids = fields.Many2many(
-        'product.substance',
-        string='Substances',
+    product_substance_line_ids = fields.One2many(
+        'product.substance.line',
+        'product_id',
+        string='Substance lines'
     )
     test_parameters = fields.Html(
         string='Test Parameters',

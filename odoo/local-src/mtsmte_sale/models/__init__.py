@@ -9,3 +9,4 @@ from . import sale_order_line
 from . import project_task
 from . import substance_measure
 from . import accounting
+from . import substance_line

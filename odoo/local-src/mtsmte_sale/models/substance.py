@@ -29,11 +29,6 @@ class ProductSubstance(models.Model):
     has_limit_max = fields.Boolean(
         string='Has limit max',
     )
-    product_ids = fields.Many2many(
-        'product.template',
-        string='Products',
-        required=True,
-    )
     product_uom_id = fields.Many2one(
         'product.uom',
         string='Substance UOM',
@@ -53,6 +48,11 @@ class ProductSubstance(models.Model):
     )
     quantification_limit = fields.Char(
         string='Quantification Limit',
+    )
+    customer_id = fields.Many2one(
+        'res.partner',
+        string='Customer',
+        domain=[('customer', '=', True)],
     )
 
     @api.constrains('legal_limit_min', 'legal_limit_max')
