@@ -120,3 +120,4 @@ migration:
       addons:
         upgrade:
           - base
+          - mtsmte_stock
