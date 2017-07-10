@@ -18,6 +18,7 @@
     ],
     'data': [
         # Data
+        'data/account_payment_method.xml',
         'data/depiltech_payment_mode.xml',
         'data/ir_config_parameter.xml',
         # Security

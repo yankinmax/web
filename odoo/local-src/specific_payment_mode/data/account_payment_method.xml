@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="account.payment.method" id="cadhoc_method">
+        <field name="name">Cadhoc</field>
+        <field name="code">CADHOC</field>
+        <field name="payment_type">inbound</field>
+    </record>
+    <record model="account.payment.method" id="carrefour_method">
+        <field name="name">Carrefour Card</field>
+        <field name="code">CARREFOUR</field>
+        <field name="payment_type">inbound</field>
+    </record>
+    <record model="account.payment.method" id="cb_method">
+        <field name="name">Credit Card</field>
+        <field name="code">CB</field>
+        <field name="payment_type">inbound</field>
+    </record>
+    <record model="account.payment.method" id="cheque_method">
+        <field name="name">Cheque</field>
+        <field name="code">CHQ</field>
+        <field name="payment_type">inbound</field>
+    </record>
+    <record model="account.payment.method" id="cash_method">
+        <field name="name">Cash</field>
+        <field name="code">CASH</field>
+        <field name="payment_type">inbound</field>
+    </record>
+    <record model="account.payment.method" id="kadeo_method">
+        <field name="name">Kadéo Card</field>
+        <field name="code">KADEO</field>
+        <field name="payment_type">inbound</field>
+    </record>
+    <record model="account.payment.method" id="pnf3_method">
+        <field name="name">PNF3</field>
+        <field name="code">PNF3</field>
+        <field name="payment_type">inbound</field>
+    </record>
+    <record model="account.payment.method" id="pnf4_method">
+        <field name="name">PNF4</field>
+        <field name="code">PNF4</field>
+        <field name="payment_type">inbound</field>
+    </record>
+    <record model="account.payment.method" id="pnf5_method">
+        <field name="name">PNF5</field>
+        <field name="code">PNF5</field>
+        <field name="payment_type">inbound</field>
+    </record>
+    <record model="account.payment.method" id="pnf10_method">
+        <field name="name">PNF10</field>
+        <field name="code">PNF10</field>
+        <field name="payment_type">inbound</field>
+    </record>
+    <record model="account.payment.method" id="sepa_method">
+        <field name="name">SEPA Direct Debit</field>
+        <field name="code">SEPA</field>
+        <field name="payment_type">inbound</field>
+    </record>
+    <record model="account.payment.method" id="bank_method">
+        <field name="name">Bank</field>
+        <field name="code">BNK</field>
+        <field name="payment_type">inbound</field>
+    </record>
+</odoo>
