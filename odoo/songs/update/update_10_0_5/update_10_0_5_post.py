@@ -9,7 +9,6 @@ import anthem
 def journal_cancel(ctx):
     """ Allow canceling entries on journal """
     journals = ctx.env['account.journal'].search([])
-    import pdb; pdb.set_trace()
     for journal in journals:
         journal.write({'update_posted': True})
 

@@ -32,6 +32,7 @@ latest (unreleased)
 * Add salesteam to mts BSMTS110
 * Import Equipments  BSMTS-115
 * Install account_cancel BSMTS-125
+* Install web_sheet_full_width BSMTS-121
 
 **Bugfixes**
 

@@ -125,3 +125,4 @@ migration:
         upgrade:
           - base
           - account_cancel
+          - web_sheet_full_width
