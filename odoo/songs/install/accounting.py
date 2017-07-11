@@ -6,6 +6,7 @@
 import anthem
 
 from . import base_vars
+from anthem.lyrics.records import create_or_update
 
 
 @anthem.log
@@ -34,7 +35,60 @@ def update_code_digits(ctx):
 
 
 @anthem.log
+def create_account_payment_mode(ctx):
+    """ import new account_journal """
+    sepa = ctx.env.ref(
+        'account_banking_sepa_credit_transfer.sepa_credit_transfer')
+    # MTS account.payment.mode
+    jour_bank_mts = ctx.env['account.journal'].search([
+        ('name', '=', 'Bank'),
+        ('type', '=', 'bank'),
+        ('company_id', '=', ctx.env.ref('base.main_company').id)])
+    jour_vendor_mts = ctx.env['account.journal'].search([
+        ('name', '=', 'Vendor Bills'),
+        ('type', '=', 'purchase'),
+        ('company_id', '=', ctx.env.ref('base.main_company').id)])
+    values = {
+        'name': 'Paiements SEPA',
+        'company_id': ctx.env.ref('base.main_company').id,
+        'active': True,
+        'payment_method_id': sepa.id,
+        'bank_account_link': 'fixed',
+        'fixed_journal_id': jour_bank_mts.id,
+        'default_journal_ids': [(6, 0, jour_vendor_mts.ids)],
+        'default_payment_mode': 'any',
+        'default_target_move': 'posted',
+    }
+    create_or_update(ctx, 'account.payment.mode',
+                     '__setup__.account_payment_mode_mts_sepa', values)
+
+    # MTE account.payment.mode
+    jour_bank_mte = ctx.env['account.journal'].search([
+        ('name', '=', 'Bank'),
+        ('type', '=', 'bank'),
+        ('company_id', '=', ctx.env.ref('__setup__.company_mte').id)])
+    jour_vendor_mte = ctx.env['account.journal'].search([
+        ('name', '=', 'Vendor Bills'),
+        ('type', '=', 'purchase'),
+        ('company_id', '=', ctx.env.ref('__setup__.company_mte').id)])
+    values = {
+        'name': 'Paiements SEPA',
+        'company_id': ctx.env.ref('__setup__.company_mte').id,
+        'active': True,
+        'payment_method_id': sepa.id,
+        'bank_account_link': 'fixed',
+        'fixed_journal_id': jour_bank_mte.id,
+        'default_journal_ids': [(6, 0, jour_vendor_mte.ids)],
+        'default_payment_mode': 'any',
+        'default_target_move': 'posted',
+    }
+    create_or_update(ctx, 'account.payment.mode',
+                     '__setup__.account_payment_mode_mte_sepa', values)
+
+
+@anthem.log
 def main(ctx):
     """ Configuring accounting """
     base_conf(ctx)
     update_code_digits(ctx)
+    create_account_payment_mode(ctx)
