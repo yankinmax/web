@@ -26,6 +26,7 @@
         # Report
         'report/sale_order.xml',
         # Views
+        'wizard/account_payment_mode_generator.xml',
         'views/account_payment_method.xml',
         'views/account_payment_mode.xml',
         'views/depiltech_payment_mode.xml',
