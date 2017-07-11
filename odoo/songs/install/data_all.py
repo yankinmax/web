@@ -43,6 +43,8 @@ def import_crm_teams(ctx):
     """ Importing CRM teams from CSV """
     content = resource_stream(req, 'data/install/mte/crm.team.csv')
     load_csv_stream(ctx, 'crm.team', content, delimiter=',')
+    content = resource_stream(req, 'data/install/mts/crm.team.csv')
+    load_csv_stream(ctx, 'crm.team', content, delimiter=',')
 
 
 @anthem.log
@@ -57,6 +59,13 @@ def import_project_task_type(ctx):
 
 
 @anthem.log
+def import_maint_equipment(ctx):
+    """ Importing CRM teams from CSV """
+    content = resource_stream(req, 'data/demo/maint.equipment.csv')
+    load_csv_stream(ctx, 'maintenance.equipment', content, delimiter=',')
+
+
+@anthem.log
 def main(ctx):
     """ Loading data """
     import_users(ctx)
@@ -64,3 +73,4 @@ def main(ctx):
     import_employee(ctx)
     import_crm_teams(ctx)
     import_project_task_type(ctx)
+    import_maint_equipment(ctx)

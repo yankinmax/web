@@ -1,0 +1,10 @@
+id,name
+__setup__.maintenance_equipment_1,GC-MS
+__setup__.maintenance_equipment_2,HPLC-MS
+__setup__.maintenance_equipment_3,pH mètre
+__setup__.maintenance_equipment_4,EDX
+__setup__.maintenance_equipment_5,Headspace
+__setup__.maintenance_equipment_6,GC-MS / Headspace
+__setup__.maintenance_equipment_7,UV-VIS
+__setup__.maintenance_equipment_8,ICP-OES
+__setup__.maintenance_equipment_9,GC-NCI-MS

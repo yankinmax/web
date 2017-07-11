@@ -25,6 +25,16 @@ def base_conf(ctx):
 
 
 @anthem.log
+def update_code_digits(ctx):
+    for company_xml_id, coa in base_vars.coa_dict.iteritems():
+        ctx.env['account.config.settings'].create(
+            {'company_id': ctx.env.ref(company_xml_id).id,
+             'code_digits': 4}
+        ).execute
+
+
+@anthem.log
 def main(ctx):
     """ Configuring accounting """
     base_conf(ctx)
+    update_code_digits(ctx)
