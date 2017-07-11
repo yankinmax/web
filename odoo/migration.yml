@@ -131,3 +131,4 @@ migration:
           - web_sheet_full_width
           - account_banking_sepa_credit_transfer
           - l10n_ch_pain_credit_transfer
+          - mtsmte_stock
