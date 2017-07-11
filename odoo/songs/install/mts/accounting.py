@@ -9,15 +9,17 @@ from ...common import load_chart_of_accounts
 
 @anthem.log
 def set_fiscalyear(ctx):
-    values = {'date_start': '2017-01-01',
-              'name': '2017',
-              'date_end': '2017-12-31',
-              'type_id': 1,
-              'company_id': ctx.env.ref('base.main_company').id,
-              'active': True,
-              }
-    create_or_update(ctx, 'date.range',
-                     '__setup__.date_range_mts_2017', values)
+    for year in ['2010', '2011', '2012', '2013', '2014', '2015', '2016',
+                 '2017', '2018']:
+        values = {'date_start': year + '-01-01',
+                  'name': year,
+                  'date_end': year + '-12-31',
+                  'type_id': 1,
+                  'company_id': ctx.env.ref('base.main_company').id,
+                  'active': True,
+                  }
+        create_or_update(ctx, 'date.range',
+                         '__setup__.date_range_mts_' + year, values)
 
 
 @anthem.log

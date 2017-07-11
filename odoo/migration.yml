@@ -115,6 +115,8 @@ migration:
           - anthem songs.install.data_demo::import_partner
           - anthem songs.install.mts.accounting::set_currency_update
           - anthem songs.install.mte.accounting::set_currency_update
+          - anthem songs.install.mts.accounting::set_fiscalyear
+          - anthem songs.install.mte.accounting::set_fiscalyear
       addons:
         upgrade:
           - base

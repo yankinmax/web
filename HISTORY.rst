@@ -27,6 +27,7 @@ latest (unreleased)
 * Add Customer Reference and Reception Date on project (BSMTS-98)
 * Update res.partner import BSMTS-95
 * Set Currency updates BSMTS-77
+* Import date.range BSMTS-126
 
 **Bugfixes**
 
