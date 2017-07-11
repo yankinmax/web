@@ -20,6 +20,7 @@ class AccountPaymentMethod(models.Model):
 
     @api.depends('company_ids', 'company_ids.child_ids')
     def _compute_children_company_ids(self):
-        companies = self.env['res.company'].search(
-            [('id', 'child_of', self.company_ids.ids)])
-        self.children_company_ids = companies.ids
+        for method in self:
+            companies = self.env['res.company'].search(
+                [('id', 'child_of', method.company_ids.ids)])
+            method.children_company_ids = companies.ids
