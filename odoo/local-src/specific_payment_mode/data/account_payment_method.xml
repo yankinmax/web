@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<odoo noupdate="1">
     <record model="account.payment.method" id="cadhoc_method">
         <field name="name">Cadhoc</field>
         <field name="code">CADHOC</field>
@@ -30,24 +30,9 @@
         <field name="code">KADEO</field>
         <field name="payment_type">inbound</field>
     </record>
-    <record model="account.payment.method" id="pnf3_method">
-        <field name="name">PNF3</field>
-        <field name="code">PNF3</field>
-        <field name="payment_type">inbound</field>
-    </record>
-    <record model="account.payment.method" id="pnf4_method">
-        <field name="name">PNF4</field>
-        <field name="code">PNF4</field>
-        <field name="payment_type">inbound</field>
-    </record>
-    <record model="account.payment.method" id="pnf5_method">
-        <field name="name">PNF5</field>
-        <field name="code">PNF5</field>
-        <field name="payment_type">inbound</field>
-    </record>
-    <record model="account.payment.method" id="pnf10_method">
-        <field name="name">PNF10</field>
-        <field name="code">PNF10</field>
+    <record model="account.payment.method" id="pnf_method">
+        <field name="name">PNF</field>
+        <field name="code">PNF</field>
         <field name="payment_type">inbound</field>
     </record>
     <record model="account.payment.method" id="sepa_method">
