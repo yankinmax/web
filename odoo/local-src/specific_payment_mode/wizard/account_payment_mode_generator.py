@@ -13,14 +13,17 @@ class AccountPaymentModeGenerator(models.TransientModel):
     to_activate_payment_mode_ids = fields.Many2many(
         'account.payment.mode',
         'account_payment_mode_generator_activate_rel',
+        string='Payment modes to activate',
         readonly=1)
 
     to_deactivate_payment_mode_ids = fields.Many2many(
         'account.payment.mode',
         'account_payment_mode_generator_deactivate_rel',
+        string='Payment modes to deactivate',
         readonly=1)
 
-    company_modes_to_create_ids = fields.Many2many('res.company', readonly=1)
+    company_modes_to_create_ids = fields.Many2many(
+        'res.company', string='Payment modes to create', readonly=1)
 
     account_payment_method_id = fields.Many2one('account.payment.method',
                                                 string='Payment method',

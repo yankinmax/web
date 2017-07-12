@@ -12,7 +12,9 @@ class ResCompany(models.Model):
     children_company_ids = fields.Many2many(
         'res.company', 'res_company_res_company_children_rel',
         'father_company_id', 'child_company_id',
-        compute='_compute_children_company_ids', store=True
+        string='Children companies',
+        compute='_compute_children_company_ids',
+        store=True
     )
 
     @api.depends('child_ids.children_company_ids')
