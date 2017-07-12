@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="account_payment_mode.account_payment_mode_form" />
         <field name="arch" type="xml">
             <field name="payment_method_id" position="attributes">
-                <attribute name="domain">[('children_company_ids', 'in', company_id)]</attribute>
+                <attribute name="domain">[('company_ids.children_company_ids', 'in', company_id)]</attribute>
             </field>
         </field>
     </record>

@@ -36,7 +36,8 @@ class AccountPaymentModeGenerator(models.TransientModel):
         if payment_method_id:
             payment_method = self.env['account.payment.method'].browse(
                 payment_method_id)
-            allowed_companies = payment_method.children_company_ids
+            allowed_companies = payment_method.company_ids.mapped(
+                'children_company_ids')
             payment_modes = payment_method.with_context(
                 active_test=False).payment_mode_ids
             modes_to_activate = payment_modes.filtered(
