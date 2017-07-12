@@ -74,4 +74,18 @@
     </field>
   </record>
 
+  <record id="product_method_action_tree" model="ir.actions.act_window">
+      <field name="name">Methods</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">product.method</field>
+      <field name="view_mode">tree,form</field>
+  </record>
+
+  <record id="product_extraction_type_action_tree" model="ir.actions.act_window">
+      <field name="name">Extraction Types</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">product.extraction.type</field>
+      <field name="view_mode">tree,form</field>
+  </record>
+
 </odoo>
