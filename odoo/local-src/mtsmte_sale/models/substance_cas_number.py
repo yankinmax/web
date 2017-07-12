@@ -15,6 +15,10 @@ class SubstanceCasNumber(models.Model):
         'product.substance',
         string='Product',
     )
+    substance_mesure_id = fields.Many2one(
+        'product.substance.mesure',
+        string='Product',
+    )
     _sql_constraints = [
         ('name_uniq', 'unique (name)', _('The name must be unique')),
     ]

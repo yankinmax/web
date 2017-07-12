@@ -16,6 +16,10 @@ class ProductMethod(models.Model):
         'product_method_id',
         string='Product',
     )
+    task_id = fields.Many2one(
+        'project.task',
+        string='Task',
+    )
     _sql_constraints = [
         ('name_uniq', 'unique (name)', _('The name must be unique')),
     ]

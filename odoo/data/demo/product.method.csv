@@ -1,23 +1,23 @@
-name
-Extraction acétone
-Extraction AcN
-ISO 4045
-ISO 3071
-Par intermédiaire MDA
-ISO 17234 (leather) EN 14362 (textile)
-Extraction MeOH
-ISO 16186
-Extraction toluène / EtOH ISO 17070
-DIN 54231
-EDX ou CEN/TS 15968 ou
-Headspace
-Extraction acétone ou Headspace
-ISO/TS 16189 ou Headspace
-Afps-65 2014-01-PAK
-ISO 17075-1
-ISO 17072-1 (cuir & textile) Minéralisation acide (autres)
-ISO/TS 16179
-ISO DIS 18219
-ISO 14389 (textile) ISO/TS 16181 (cuir/caoutchouc)
-Sous-traitance
-ISO 17881-1
+id,name
+__setup__.prod_method_acetone,Extraction acétone
+__setup__.prod_method_acn,Extraction AcN
+__setup__.prod_method_iso_4045,ISO 4045
+__setup__.prod_method_iso_3071,ISO 3071
+__setup__.prod_method_mda,Par intermédiaire MDA
+__setup__.prod_method_iso_17234,ISO 17234 (leather) EN 14362 (textile)
+__setup__.prod_method_meoh,Extraction MeOH
+__setup__.prod_method_iso_16186,ISO 16186
+__setup__.prod_method_toluene,Extraction toluène / EtOH ISO 17070
+__setup__.prod_method_din_54231,DIN 54231
+__setup__.prod_method_edx,EDX ou CEN/TS 15968 ou
+__setup__.prod_method_headspace,Headspace
+__setup__.prod_method_acetone_headspace,Extraction acétone ou Headspace
+__setup__.prod_method_iso161869_headspace,ISO/TS 16189 ou Headspace
+__setup__.prod_method_afps_65,Afps-65 2014-01-PAK
+__setup__.prod_method_iso_17075_1,ISO 17075-1
+__setup__.prod_method_iso_17072_1,ISO 17072-1 (cuir & textile) Minéralisation acide (autres)
+__setup__.prod_method_iso_16179,ISO/TS 16179
+__setup__.prod_method_iso_18219,ISO DIS 18219
+__setup__.prod_method_iso_14389,ISO 14389 (textile) ISO/TS 16181 (cuir/caoutchouc)
+__setup__.prod_method_sous_traitance,Sous-traitance
+__setup__.prod_method_iso_17881_1,ISO 17881-1

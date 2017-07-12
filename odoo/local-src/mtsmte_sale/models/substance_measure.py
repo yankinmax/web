@@ -65,6 +65,18 @@ class ProductSubstanceMesure(models.Model):
         related='product_substance_id.quantification_limit',
         readonly=True,
     )
+    sub_cas_number_ids = fields.One2many(
+        'substance.cas.number',
+        'substance_id',
+        string='CAS Number',
+        related='product_substance_id.sub_cas_number_ids',
+        readonly=True,
+    )
+    comments = fields.Char(
+        string='Comments',
+        related='product_substance_id.comments',
+        readonly=True,
+    )
 
     @api.depends('legal_limit_min', 'legal_limit_max', 'measure')
     def _compute_conformity(self):

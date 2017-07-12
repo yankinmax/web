@@ -10,22 +10,32 @@
       </xpath>
       <notebook position="inside">
         <page string="Substances to analyze">
+          <group>
+            <field name="product_method_ids"/>
+            <field name="equipment_ids"/>
+            <field name="product_extraction_type_ids"/>
+          </group>
           <field name="product_substance_measure_ids">
             <tree editable="bottom"
               create="false"
               delete="false">
               <field name="task_id"
-                attrs="{'invisible':'1', 'readonly':'1'}"/>
+                     attrs="{'readonly':'1'}"
+                     invisible="True"/>
               <field name="product_substance_id" readonly="True"/>
+              <field name="sub_cas_number_ids" readonly="True" widget="many2many_tags"/>
+              <field name="comments"/>
               <field name="legal_limit_min" readonly="True"/>
               <field name="product_uom_id" readonly="True"/>
               <field name="legal_limit_max" readonly="True"/>
-              <field name="measure"/>
-              <field name="conformity"/>
-              <field name="has_limit_min" attrs="{'readonly':'1'}"/>
-              <field name="has_limit_max" attrs="{'readonly':'1'}"/>
+              <field name="has_limit_min" attrs="{'readonly':'1'}"
+                     invisible="True"/>
+              <field name="has_limit_max" attrs="{'readonly':'1'}"
+                     invisible="True"/>
               <field name="detection_limit" attrs="{'readonly':'1'}"/>
               <field name="quantification_limit" attrs="{'readonly':'1'}"/>
+              <field name="measure"/>
+              <field name="conformity"/>
             </tree>
           </field>
         </page>

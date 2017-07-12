@@ -1,15 +1,15 @@
-name
-Acétone
-Acétonitrile (AcN)
-Eau (H2O)
-MeOH
-Coupure réductrice du colorant dithionite de sodium / MeOH
-Toluène
-Méthanol
-Dégazage
-Dégazage ou acétone
-Dégazage ou méthanol
-Hydrogénophosphate de K
-Digestion acide
-MeOH / EtOH
-Hexane
+id,name
+__setup__.prod_extra_type_acetone,Acétone
+__setup__.prod_extra_type_acetonitrile,Acétonitrile (AcN)
+__setup__.prod_extra_type_eau,Eau (H2O)
+__setup__.prod_extra_type_meoh,MeOH
+__setup__.prod_extra_type_sod_meoh,Coupure réductrice du colorant dithionite de sodium / MeOH
+__setup__.prod_extra_type_toluene,Toluène
+__setup__.prod_extra_type_methanol,Méthanol
+__setup__.prod_extra_type_degaz,Dégazage
+__setup__.prod_extra_type_degaz_acetone,Dégazage ou acétone
+__setup__.prod_extra_type_degaz_methanol,Dégazage ou méthanol
+__setup__.prod_extra_type_hydrogenophosphate,Hydrogénophosphate de K
+__setup__.prod_extra_type_digestion_acide,Digestion acide
+__setup__.prod_extra_type_meoh_etoh,MeOH / EtOH
+__setup__.prod_extra_type_hexane,Hexane

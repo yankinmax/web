@@ -16,6 +16,10 @@ class ProductExtractionType(models.Model):
         'product_extraction_type_id',
         string='Product',
     )
+    task_id = fields.Many2one(
+        'project.task',
+        string='Task',
+    )
     _sql_constraints = [
         ('name_uniq', 'unique (name)', _('The name must be unique')),
     ]
