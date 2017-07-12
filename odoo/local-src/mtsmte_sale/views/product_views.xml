@@ -13,36 +13,46 @@
       </xpath>
       <notebook position="inside">
         <page string="Substances to analyze" attrs="{'invisible': [('chemistry', '!=', 'chem')]}">
-          <field name="product_substance_line_ids">
-            <form>
-              <field name="product_substance_id"/>
-              <group>
+          <group>
+            <field name="product_method_ids" widget="many2many_tags"
+                   context="{'default_product_id': active_id}"/>
+            <field name="equipment_ids" widget="many2many_tags"
+                   context="{'default_product_id': active_id}"/>
+            <field name="product_extraction_type_ids" widget="many2many_tags"
+                   context="{'default_product_id': active_id}"/>
+          </group>
+          <group>
+            <field name="product_substance_line_ids">
+              <form>
+                <field name="product_substance_id"/>
+                <group>
+                  <field name="legal_limit_min"/>
+                  <field name="product_uom_id"/>
+                  <field name="legal_limit_max"/>
+                  <field name="comments"/>
+                </group>
+                <group>
+                  <field name="has_limit_min"/>
+                  <field name="has_limit_max"/>
+                </group>
+                <group>
+                  <field name="detection_limit"/>
+                  <field name="quantification_limit"/>
+                </group>
+              </form>
+              <tree>
+                <field name="product_substance_id"/>
                 <field name="legal_limit_min"/>
                 <field name="product_uom_id"/>
                 <field name="legal_limit_max"/>
                 <field name="comments"/>
-              </group>
-              <group>
                 <field name="has_limit_min"/>
                 <field name="has_limit_max"/>
-              </group>
-              <group>
                 <field name="detection_limit"/>
                 <field name="quantification_limit"/>
-              </group>
-            </form>
-            <tree>
-              <field name="product_substance_id"/>
-              <field name="legal_limit_min"/>
-              <field name="product_uom_id"/>
-              <field name="legal_limit_max"/>
-              <field name="comments"/>
-              <field name="has_limit_min"/>
-              <field name="has_limit_max"/>
-              <field name="detection_limit"/>
-              <field name="quantification_limit"/>
-            </tree>
-          </field>
+              </tree>
+            </field>
+          </group>
         </page>
         <page string="Test Parameters" attrs="{'invisible': [('chemistry', 'not in', ('test_env','test_mec'))]}">
           <group>

@@ -13,6 +13,7 @@ class ProductSubstance(models.Model):
     name = fields.Char(
         string='Name',
         required=True,
+        translate=True,
     )
     legal_limit_min = fields.Float(
         string='Legal limit min value',

@@ -9,6 +9,7 @@
         'project',
         'sale_timesheet',
         'account',
+        'maintenance',
     ],
     "author": "Camptocamp,Odoo Community Association (OCA)",
     "website": "http://www.camptocamp.com",
