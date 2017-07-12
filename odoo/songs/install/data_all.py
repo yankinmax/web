@@ -73,6 +73,13 @@ def import_product_extraction_type(ctx):
 
 
 @anthem.log
+def import_product_method(ctx):
+    """ Importing product methods from csv """
+    content = resource_stream(req, 'data/demo/product.method.csv')
+    load_csv_stream(ctx, 'product.method', content, delimiter=',')
+
+
+@anthem.log
 def main(ctx):
     """ Loading data """
     import_users(ctx)
@@ -82,3 +89,4 @@ def main(ctx):
     import_project_task_type(ctx)
     import_maint_equipment(ctx)
     import_product_extraction_type(ctx)
+    import_product_method(ctx)

@@ -125,6 +125,7 @@ migration:
           - anthem songs.update.update_10_0_5.update_10_0_5_post::main
           - anthem songs.install.accounting::create_account_payment_mode
           - anthem songs.install.data_all::import_product_extraction_type
+          - anthem songs.install.data_all::import_product_method
       addons:
         upgrade:
           - base

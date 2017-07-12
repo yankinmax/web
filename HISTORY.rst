@@ -37,6 +37,7 @@ latest (unreleased)
 * Tasks: add Deadline field and groupby on tree/search views BSMTS-124
 * Add product.substance.line, setting menu & fix so_line view BSMTS-114/113
 * Populate the new model Extraction Types BSMTS-117
+* Populate the new model Produt method BSMTS-118
 
 **Bugfixes**
 
