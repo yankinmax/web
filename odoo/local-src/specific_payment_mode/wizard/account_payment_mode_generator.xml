@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <form string="Generate payment modes">
                 <group>
+                    <field name="account_payment_method_id" readonly="1" />
                     <field name="account_payment_mode_ids" context="{'active_test': False}" readonly="1">
                         <tree>
                             <field name="name" />

@@ -13,10 +13,14 @@ class AccountPaymentModeGenerator(models.TransientModel):
     account_payment_mode_ids = fields.Many2many(
         'account.payment.mode', string='Existing payment modes')
 
+    account_payment_method_id = fields.Many2one('account.payment.method',
+                                                string='Payment method')
+
     @api.model
     def default_get(self, fields):
         res = super(AccountPaymentModeGenerator, self).default_get(fields)
-        payment_method_id = self.env.context.get('active_id')
+        payment_method_id = (res.get('account_payment_method_id')
+                             or self.env.context.get('active_id'))
         if payment_method_id:
             res['account_payment_mode_ids'] = self.with_context(
                 active_test=False).env['account.payment.mode'].search([
