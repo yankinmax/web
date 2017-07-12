@@ -64,4 +64,6 @@
     - oca 10.0
     # [10.0]Fix payment method onchange with multicompany
     - oca refs/pull/374/head
+    # [10.0][ADD] relational inverse field for payment.mode on payment.method
+    - oca refs/pull/375/head
   target: *default_target
