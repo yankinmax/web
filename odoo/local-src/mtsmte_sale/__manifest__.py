@@ -22,6 +22,7 @@
         'views/project_task_views.xml',
         'views/substance_views.xml',
         'views/invoice_views.xml',
+        'views/menu_items.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,

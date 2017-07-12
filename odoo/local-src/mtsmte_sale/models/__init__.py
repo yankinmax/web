@@ -13,3 +13,4 @@ from . import project_task
 from . import substance_measure
 from . import accounting
 from . import substance_line
+from . import substance_cas_number

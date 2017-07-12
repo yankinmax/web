@@ -67,3 +67,10 @@ class ProductSubstanceLine(models.Model):
         string='Product',
         required=True,
     )
+    sub_cas_number_ids = fields.One2many(
+        'substance.cas.number',
+        'substance_id',
+        string='CAS Number',
+        related='product_substance_id.sub_cas_number_ids',
+        readonly=True,
+    )

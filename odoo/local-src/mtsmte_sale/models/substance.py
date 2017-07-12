@@ -55,6 +55,11 @@ class ProductSubstance(models.Model):
         string='Customer',
         domain=[('customer', '=', True)],
     )
+    sub_cas_number_ids = fields.One2many(
+        'substance.cas.number',
+        'substance_id',
+        string='CAS Number',
+    )
 
     @api.constrains('legal_limit_min', 'legal_limit_max')
     def _onchange_legal_limit(self):

@@ -7,13 +7,14 @@
     <field name="arch" type="xml">
       <tree string="Substance">
         <field name="name"/>
+        <field name="sub_cas_number_ids"/>
         <field name="customer_id"/>
         <field name="legal_limit_min"/>
         <field name="product_uom_id"/>
         <field name="legal_limit_max"/>
+        <field name="comments"/>
         <field name="has_limit_min"/>
         <field name="has_limit_max"/>
-        <field name="comments"/>
         <field name="detection_limit"/>
         <field name="quantification_limit"/>
       </tree>
@@ -28,13 +29,14 @@
         <sheet>
           <group>
             <field name="name"/>
+            <field name="sub_cas_number_ids"/>
             <field name="customer_id"/>
             <field name="legal_limit_min"/>
             <field name="product_uom_id"/>
             <field name="legal_limit_max"/>
+            <field name="comments"/>
             <field name="has_limit_min"/>
             <field name="has_limit_max"/>
-            <field name="comments"/>
             <field name="detection_limit"/>
             <field name="quantification_limit"/>
           </group>
@@ -43,21 +45,19 @@
     </field>
   </record>
 
-  <menuitem id="settings_substance_menu"
-            name="Substances"
-            parent="sale.prod_config_main"
-            sequence="50"/>
-
   <record id="product_substance_action_tree" model="ir.actions.act_window">
-      <field name="name">Product Substances</field>
+      <field name="name">Substances</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">product.substance</field>
       <field name="view_type">form</field>
       <field name="view_id" ref="product_substance_view_tree"/>
   </record>
 
-  <menuitem action="product_substance_action_tree"
-            id="menu_product_substance_action_form"
-            parent="sale.prod_config_main" sequence="50"/>
+  <record id="product_substance_cas_number_action_tree" model="ir.actions.act_window">
+      <field name="name">CAS Number</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">substance.cas.number</field>
+      <field name="view_mode">tree,form</field>
+  </record>
 
 </odoo>
