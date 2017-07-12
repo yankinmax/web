@@ -66,6 +66,13 @@ def import_maint_equipment(ctx):
 
 
 @anthem.log
+def import_product_extraction_type(ctx):
+    """ Importing product.extraction.type from csv """
+    content = resource_stream(req, 'data/demo/product.extraction.type.csv')
+    load_csv_stream(ctx, 'product.extraction.type', content, delimiter=',')
+
+
+@anthem.log
 def main(ctx):
     """ Loading data """
     import_users(ctx)
@@ -74,3 +81,4 @@ def main(ctx):
     import_crm_teams(ctx)
     import_project_task_type(ctx)
     import_maint_equipment(ctx)
+    import_product_extraction_type(ctx)

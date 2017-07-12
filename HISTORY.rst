@@ -36,6 +36,7 @@ latest (unreleased)
 * Install l10n_ch_pain_credit_transfer & PAIN & Payment mode BSMTS-116
 * Tasks: add Deadline field and groupby on tree/search views BSMTS-124
 * Add product.substance.line, setting menu & fix so_line view BSMTS-114/113
+* Populate the new model Extraction Types BSMTS-117
 
 **Bugfixes**
 
