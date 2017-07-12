@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="account_payment_mode.account_payment_method_form" />
         <field name="arch" type="xml">
             <xpath expr="//group" position="before">
-                <header>
+                <header class="oe_read_only">
                     <button name="%(account_payment_mode_generator_action)d" type="action" context="{'default_account_payment_method_id': active_id}" string="Generate payment modes" />
                 </header>
             </xpath>

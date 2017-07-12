@@ -7,7 +7,24 @@
             <form string="Generate payment modes">
                 <group>
                     <field name="account_payment_method_id" readonly="1" />
-                    <field name="account_payment_mode_ids" context="{'active_test': False}" readonly="1">
+                </group>
+                <group attrs="{'invisible': [('errors', '=', False)]}">
+                    <field name="errors" readonly="1" />
+                </group>
+                <group attrs="{'invisible': [('errors', '!=', False)]}">
+                    <field name="company_modes_to_create_ids" readonly="1">
+                        <tree>
+                            <field name="name" />
+                        </tree>
+                    </field>
+                    <field name="to_activate_payment_mode_ids" context="{'active_test': False}" readonly="1">
+                        <tree>
+                            <field name="name" />
+                            <field name="company_id" />
+                            <field name="active" />
+                        </tree>
+                    </field>
+                    <field name="to_deactivate_payment_mode_ids" readonly="1">
                         <tree>
                             <field name="name" />
                             <field name="company_id" />
@@ -16,7 +33,9 @@
                     </field>
                 </group>
                 <footer>
-                    <button name="generate_payment_modes" string="Generate" type="object" class="btn btn-sm btn-primary"/>
+                    <button name="generate_payment_modes" string="Generate"
+                            type="object" class="btn btn-sm btn-primary"
+                            attrs="{'invisible': [('errors', '!=', False)]}" />
                     <button string="Cancel" class="btn btn-sm btn-default" special="cancel"/>
                 </footer>
             </form>
