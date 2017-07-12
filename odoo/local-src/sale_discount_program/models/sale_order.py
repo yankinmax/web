@@ -18,17 +18,24 @@ class SaleOrder(models.Model):
         store=False
     )
 
+    def search_program_to_add(self, program_to_add):
+        self.ensure_one()
+        return self.env['sale.discount.program'].search([
+            '|',
+            ('promo_code', '=', program_to_add),
+            ('voucher_code', '=', program_to_add),
+            '|',
+            ('partner_id', '=', self.partner_id.id),
+            ('partner_id', '=', False),
+        ], limit=1)
+
     @api.onchange('program_to_add')
     def onchange_program_to_add(self):
         if self.program_to_add:
             values = {
                 'program_to_add': False,
             }
-            promo_code = self.env['sale.discount.program'].search([
-                '|',
-                ('promo_code', '=', self.program_to_add),
-                ('voucher_code', '=', self.program_to_add),
-            ], limit=1)
+            promo_code = self.search_program_to_add(self.program_to_add)
             if promo_code:
                 if promo_code in self.program_code_ids:
                     ids = self.program_code_ids.ids
@@ -39,7 +46,11 @@ class SaleOrder(models.Model):
                         promo_code.code_valid and
                         (
                             promo_code.promo_code or
-                            promo_code.partner_id == self.partner_id
+                            promo_code.partner_id == self.partner_id or
+                            (
+                                promo_code.voucher_code and
+                                not promo_code.partner_id
+                            )
                         )
                     )
                     if code_valid:

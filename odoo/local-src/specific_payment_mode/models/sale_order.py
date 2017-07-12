@@ -369,7 +369,7 @@ class SaleOrder(models.Model):
         # If partner company type is a agency customer,
         # we unlink custom payment terms
         if self.partner_company_type == 'agency_customer':
-            self.payment_term_id.unlink()
+            self.payment_term_id.sudo().unlink()
         return super(SaleOrder, self).action_cancel()
 
     @api.multi
@@ -381,11 +381,17 @@ class SaleOrder(models.Model):
         # Creation of custom payment terms
         values = {
             'name': self.name,
+            'company_id': self.company_id.id,
             'active': False,
             'sequential_lines': True,
             'sale_order_id': self.id,
-            # First line is the provision
-            'line_ids': [
+            'line_ids': []
+        }
+        # PNF payment case
+        if not self.compute_calculator:
+            # In PNF payment case, we have only 2 payments :
+            # - the provision
+            values['line_ids'].append(
                 (0, False, {
                     'sequence': 1,
                     'value': 'fixed',
@@ -393,12 +399,7 @@ class SaleOrder(models.Model):
                     'days': 0,
                     'option': 'day_after_invoice_date',
                 }),
-            ]
-        }
-        # PNF payment case
-        if not self.compute_calculator:
-            # In PNF payment case, we have only 2 payments :
-            # - the provision
+            )
             # - the balance
             values['line_ids'].append(
                 (0, False, {
@@ -411,6 +412,16 @@ class SaleOrder(models.Model):
         # Other payment case
         else:
             if self.month_number > 0:
+                # First line is the provision
+                values['line_ids'].append(
+                    (0, False, {
+                        'sequence': 1,
+                        'value': 'fixed',
+                        'value_amount': self.provision,
+                        'days': 0,
+                        'option': 'day_after_invoice_date',
+                    }),
+                )
                 # Calculation of compute days provides from :
                 # hr_holidays._get_number_of_days()
                 from_date = fields.Datetime.from_string(
@@ -466,6 +477,22 @@ class SaleOrder(models.Model):
                         'option': 'day_after_invoice_date',
                     }),
                 )
-        payment_term = self.env['account.payment.term'].create(values)
+            else:
+                # First line is the provision, but also the only line
+                values['line_ids'].append(
+                    (0, False, {
+                        'sequence': 1,
+                        'value': 'balance',
+                        'days': 0,
+                        'option': 'day_after_invoice_date',
+                    }),
+                )
+        try:
+            payment_term = (
+                self.env['account.payment.term'].sudo().create(values)
+            )
+        except ValidationError:
+            raise ValidationError(
+                _('Invalid data for the calculator.'))
         self.payment_term_id = payment_term.id
         return super(SaleOrder, self).action_confirm()

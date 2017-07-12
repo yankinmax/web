@@ -48,15 +48,4 @@
 
         </field>
     </record>
-
-    <record id="view_order_form" model="ir.ui.view">
-        <field name="name">specific_payment_mode.sale_order.form</field>
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="account_payment_sale.view_order_form"/>
-        <field name="arch" type="xml">
-            <field name="payment_mode_id" position="attributes">
-                <attribute name="attrs">{'invisible': [('state', '=', 'draft')]}</attribute>
-            </field>
-        </field>
-    </record>
 </odoo>

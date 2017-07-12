@@ -97,6 +97,20 @@ class SaleOrder(models.Model):
         )
         return amount
 
+    def search_program_to_add(self, program_to_add):
+        self.ensure_one()
+        return self.env['sale.discount.program'].search([
+            '|',
+            ('promo_code', '=', program_to_add),
+            ('voucher_code', '=', program_to_add),
+            '|',
+            ('allowed_company_ids', 'parent_of', self.company_id.id),
+            ('allowed_company_ids', '=', False),
+            '|',
+            ('partner_id', '=', self.partner_id.id),
+            ('partner_id', '=', False),
+        ], limit=1)
+
     @api.multi
     def action_confirm(self):
 
@@ -219,6 +233,12 @@ class SaleOrderLine(models.Model):
     price_unit_readonly = fields.Float(
         'Unit Price',
         related='price_unit',
+        readonly=True,
+    )
+    tax_id_readonly = fields.Many2many(
+        comodel_name='account.tax',
+        string='Taxes',
+        related='tax_id',
         readonly=True,
     )
 
