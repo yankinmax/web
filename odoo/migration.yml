@@ -89,6 +89,8 @@ migration:
           - anthem songs.updates.update_10_1_0.post_update::main
       addons:
         upgrade:
+          #### core
+          - base  # Because we updated all repositories
           #### OCA/account-invoicing
           - account_payment_term_extension
           #### local-src
