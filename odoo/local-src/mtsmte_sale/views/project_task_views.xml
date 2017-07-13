@@ -23,7 +23,7 @@
                      attrs="{'readonly':'1'}"
                      invisible="True"/>
               <field name="product_substance_id" readonly="True"/>
-              <field name="sub_cas_number_ids" readonly="True" widget="many2many_tags"/>
+              <field name="sub_cas_number" readonly="True" widget="one2many_tags"/>
               <field name="comments"/>
               <field name="legal_limit_min" readonly="True"/>
               <field name="product_uom_id" readonly="True"/>

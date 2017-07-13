@@ -27,7 +27,7 @@
                />
             <tree>
               <field name="name"/>
-              <field name="sub_cas_number_ids" widget="many2many_tags"/>
+              <field name="sub_cas_number"/>
               <field name="customer_id" invisible="True"/>
               <field name="legal_limit_min"/>
               <field name="product_uom_id"/>

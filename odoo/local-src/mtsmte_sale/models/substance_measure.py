@@ -65,11 +65,9 @@ class ProductSubstanceMesure(models.Model):
         related='product_substance_id.quantification_limit',
         readonly=True,
     )
-    sub_cas_number_ids = fields.One2many(
-        'substance.cas.number',
-        'substance_id',
+    sub_cas_number = fields.Char(
         string='CAS Number',
-        related='product_substance_id.sub_cas_number_ids',
+        related='product_substance_id.sub_cas_number',
         readonly=True,
     )
     comments = fields.Char(
