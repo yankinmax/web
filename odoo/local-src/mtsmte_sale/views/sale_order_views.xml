@@ -25,6 +25,18 @@
         <field name="product_substance_ids" attrs="{'invisible': [('chemistry', '!=', 'chem')]}"
                domain="['|',('customer_id', '=', parent.commercial_partner_id),('customer_id', 'in', False)]"
                />
+            <tree>
+              <field name="name"/>
+              <field name="sub_cas_number_ids" widget="many2many_tags"/>
+              <field name="customer_id" invisible="True"/>
+              <field name="legal_limit_min"/>
+              <field name="product_uom_id"/>
+              <field name="legal_limit_max"/>
+              <field name="comments"/>
+              <field name="detection_limit"/>
+              <field name="quantification_limit"/>
+            </tree>
+          </field>
       </xpath>
 
       <!-- Better view for sales conditions -->
