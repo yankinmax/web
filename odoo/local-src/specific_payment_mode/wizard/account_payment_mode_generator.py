@@ -78,13 +78,15 @@ class AccountPaymentModeGenerator(models.TransientModel):
                                     mode.name, mode.company_id.name)))
         modes_used_on_sales = self.env['sale.order'].search([
             ('payment_mode_id', 'in', payment_modes.ids),
-            ('state', '!=', 'draft')
+            '|', ('invoice_status', '!=', 'invoiced'),
+            ('state', '!=', 'cancel')
         ]).mapped('payment_mode_id')
         if modes_used_on_sales:
             for mode in modes_used_on_sales:
-                errors.append(_('Payment mode %s from company %s is '
-                                'used on confirmed sales.' % (
-                                    mode.name, mode.company_id.name)))
+                errors.append(_('Payment mode %s from company %s is used on '
+                                'sales order which are not totally invoiced '
+                                'or cancelled.' % (mode.name,
+                                                   mode.company_id.name)))
         return errors
 
     def _check_if_creatable(self, companies):
