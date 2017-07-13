@@ -1,19 +1,21 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* specific_payment_mode
+# 	* specific_payment_mode
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-29 13:11+0000\n"
-"PO-Revision-Date: 2017-06-29 13:11+0000\n"
+"POT-Creation-Date: 2017-07-13 09:21+0000\n"
+"PO-Revision-Date: 2017-07-13 13:02+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: specific_payment_mode
 #: model:ir.ui.view,arch_db:specific_payment_mode.view_order_specific_form
@@ -24,6 +26,21 @@ msgstr "(mise à jour)"
 #: model:ir.ui.view,arch_db:specific_payment_mode.report_saleorder_specific
 msgid "<strong>Fiscal Position Remark:</strong>"
 msgstr "<strong>Remarque sur le régime fiscal :</strong>"
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_method_company_ids
+msgid "Allowed companies"
+msgstr "Sociétés autorisées"
+
+#. module: specific_payment_mode
+#: model:account.payment.method,name:specific_payment_mode.bank_method
+msgid "Bank"
+msgstr "Banque"
+
+#. module: specific_payment_mode
+#: model:account.payment.method,name:specific_payment_mode.cadhoc_method
+msgid "Cadhoc"
+msgstr "Cadhoc"
 
 #. module: specific_payment_mode
 #: model:ir.ui.view,arch_db:specific_payment_mode.report_saleorder_specific
@@ -37,6 +54,36 @@ msgid "Calculator link"
 msgstr "Lien vers la calculatrice"
 
 #. module: specific_payment_mode
+#: model:ir.ui.view,arch_db:specific_payment_mode.account_payment_mode_generator_view_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: specific_payment_mode
+#: model:account.payment.method,name:specific_payment_mode.carrefour_method
+msgid "Carrefour Card"
+msgstr "Carte Carrefour"
+
+#. module: specific_payment_mode
+#: model:account.payment.method,name:specific_payment_mode.cash_method
+msgid "Cash"
+msgstr "Espèces"
+
+#. module: specific_payment_mode
+#: model:account.payment.method,name:specific_payment_mode.cheque_method
+msgid "Cheque"
+msgstr "Chèque"
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_res_company_children_company_ids
+msgid "Children companies"
+msgstr "Sociétés filles"
+
+#. module: specific_payment_mode
+#: model:ir.model,name:specific_payment_mode.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_partner_company_type
 msgid "Company Type"
 msgstr "Type de société"
@@ -48,14 +95,21 @@ msgid "Compute calculator"
 msgstr "Calculer la calculatrice"
 
 #. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_create_uid
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_create_uid
 msgid "Created by"
 msgstr "Créé par"
 
 #. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_create_date
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_create_date
 msgid "Created on"
 msgstr "Créé le"
+
+#. module: specific_payment_mode
+#: model:account.payment.method,name:specific_payment_mode.cb_method
+msgid "Credit Card"
+msgstr "Carte bleue"
 
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_date_of_first_monthly_payment
@@ -97,9 +151,15 @@ msgid "Depiltech payment modes"
 msgstr "Modes de paiement Depiltech"
 
 #. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_display_name
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_display_name
 msgid "Display Name"
 msgstr "Afficher le nom"
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_errors
+msgid "Errors"
+msgstr "Erreurs"
 
 #. module: specific_payment_mode
 #: model:depiltech.payment.mode,name:specific_payment_mode.estimate
@@ -119,21 +179,42 @@ msgid "First monthly payment must be a float between 0 and %.2f"
 msgstr "La première mensualité doit être un décimal entre 0 et %.2f"
 
 #. module: specific_payment_mode
+#: model:ir.ui.view,arch_db:specific_payment_mode.account_payment_mode_generator_view_form
+msgid "Generate"
+msgstr "Générer"
+
+#. module: specific_payment_mode
+#: model:ir.actions.act_window,name:specific_payment_mode.account_payment_mode_generator_action
+#: model:ir.ui.view,arch_db:specific_payment_mode.account_payment_method_form
+#: model:ir.ui.view,arch_db:specific_payment_mode.account_payment_mode_generator_view_form
+msgid "Generate payment modes"
+msgstr "Générer les modes de paiement"
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_id
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_id
 msgid "ID"
 msgstr "Identifiant"
 
 #. module: specific_payment_mode
-#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode___last_update
-msgid "Last Modified on"
-msgstr "Dernière modification le"
+#: model:account.payment.method,name:specific_payment_mode.kadeo_method
+msgid "Kadéo Card"
+msgstr "Carte Kadéo"
 
 #. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator___last_update
+#: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_write_uid
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_write_uid
 msgid "Last Updated by"
 msgstr "Dernière mise à jour par"
 
 #. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_write_date
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_write_date
 msgid "Last Updated on"
 msgstr "Dernière mise à jour le"
@@ -173,6 +254,13 @@ msgid "Next monthly payment must be a float between 0 and %.2f"
 msgstr "Les mensualités suivantes doivent être un décimal entre 0 et %.2f"
 
 #. module: specific_payment_mode
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:99
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:125
+#, python-format
+msgid "No bank journal found for company %s "
+msgstr "Il n'y a pas de journal de banque pour la société %s"
+
+#. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_no_check_payment_rules
 msgid "No check payment rules"
 msgstr "Pas de vérification des règles de paiement"
@@ -181,6 +269,11 @@ msgstr "Pas de vérification des règles de paiement"
 #: model:depiltech.payment.mode,name:specific_payment_mode.other
 msgid "Other payment modes"
 msgstr "Autres modes de paiements"
+
+#. module: specific_payment_mode
+#: model:account.payment.method,name:specific_payment_mode.pnf_method
+msgid "PNF"
+msgstr "PNF"
 
 #. module: specific_payment_mode
 #: model:depiltech.payment.mode,name:specific_payment_mode.pnf10
@@ -203,14 +296,51 @@ msgid "PNF5"
 msgstr "PNF5"
 
 #. module: specific_payment_mode
+#: model:ir.model,name:specific_payment_mode.model_account_payment_method
+msgid "Payment Methods"
+msgstr "Méthodes de paiements"
+
+#. module: specific_payment_mode
 #: model:ir.model,name:specific_payment_mode.model_account_payment_term
 msgid "Payment Term"
 msgstr "Conditions de paiement"
 
 #. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_account_payment_method_id
+msgid "Payment method"
+msgstr "Méthode de paiement"
+
+#. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_depiltech_payment_mode
 msgid "Payment mode"
 msgstr "Mode de paiement"
+
+#. module: specific_payment_mode
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:77
+#, python-format
+msgid "Payment mode %s from company %s is used on an open invoice."
+msgstr "Le mode de paiement %s de la société %s est utilisée sur une facture ouverte."
+
+#. module: specific_payment_mode
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:88
+#, python-format
+msgid "Payment mode %s from company %s is used on sales order which are not totally invoiced or cancelled."
+msgstr "Le mode de paiement %s de la société %s est utilisé sur une vente qui n'est pas totalement facturée ou annulée."
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_to_activate_payment_mode_ids
+msgid "Payment modes to activate"
+msgstr "Modes de paiement à activer"
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_company_modes_to_create_ids
+msgid "Payment modes to create"
+msgstr "Modes de paiement à créer"
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_to_deactivate_payment_mode_ids
+msgid "Payment modes to deactivate"
+msgstr "Modes de paiement à désactiver"
 
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_provision
@@ -223,6 +353,11 @@ msgstr "Apport"
 #, python-format
 msgid "Provision must be a float between 0 and %.2f"
 msgstr "L'apport doit être un entier entre 0 et %.2f"
+
+#. module: specific_payment_mode
+#: model:account.payment.method,name:specific_payment_mode.sepa_method
+msgid "SEPA Direct Debit"
+msgstr "Prélèvement SEPA"
 
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_term_sale_order_id
@@ -240,6 +375,12 @@ msgid "Setup default terms and conditions in your company settings."
 msgstr "Définir les termes et conditions par défaut dans vos réglages d'entreprise "
 
 #. module: specific_payment_mode
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:60
+#, python-format
+msgid "There is nothing to do."
+msgstr "Il n'y a rien à faire."
+
+#. module: specific_payment_mode
 #: model:ir.ui.view,arch_db:specific_payment_mode.report_saleorder_specific
 msgid "Type"
 msgstr "Type"
@@ -250,6 +391,11 @@ msgid "Use as default"
 msgstr "Utilisé par défaut"
 
 #. module: specific_payment_mode
+#: model:ir.model,name:specific_payment_mode.model_account_payment_mode_generator
+msgid "account.payment.mode.generator"
+msgstr "account.payment.mode.generator"
+
+#. module: specific_payment_mode
 #: model:ir.model,name:specific_payment_mode.model_depiltech_payment_mode
 msgid "depiltech.payment.mode"
 msgstr "depiltech.payment.mode"
@@ -258,4 +404,3 @@ msgstr "depiltech.payment.mode"
 #: model:ir.model,name:specific_payment_mode.model_sale_config_settings
 msgid "sale.config.settings"
 msgstr "sale.config.settings"
-
