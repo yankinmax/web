@@ -9,13 +9,6 @@
     sequence="50"/>
 
   <menuitem
-    id="settings_substance_cas_number_menu"
-    name="CAS Number"
-    parent="sale.prod_config_main"
-    action="product_substance_cas_number_action_tree"
-    sequence="50"/>
-
-  <menuitem
     id="settings_product_method_menu"
     name="Methods"
     parent="sale.prod_config_main"

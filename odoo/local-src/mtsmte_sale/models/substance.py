@@ -55,9 +55,7 @@ class ProductSubstance(models.Model):
         string='Customer',
         domain=[('customer', '=', True)],
     )
-    sub_cas_number_ids = fields.One2many(
-        'substance.cas.number',
-        'substance_id',
+    sub_cas_number = fields.Char(
         string='CAS Number',
     )
 

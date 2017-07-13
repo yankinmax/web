@@ -32,7 +32,7 @@ class Helpers(models.AbstractModel):
             'docs': docs,
             'tasks': tasks,
             'report': self,
-            'forced_lang': data.get('lang'),
+            'forced_lang': data.get('forced_lang'),
         }
         return report_obj.render(report_name, docargs)
 
@@ -46,9 +46,10 @@ class Helpers(models.AbstractModel):
     def get_mech_env_details(self, task):
         details = {}
         for fname in self.mech_test_fields:
+            content = task[fname]
             # an "empty" field contains u'<p><br></p>'
-            if html2text(task[fname]).strip():
+            if content and html2text(content).strip():
                 info = self.task_field_info(fname)
                 details['label'] = info['string']
-                details['val'] = task[fname]
+                details['val'] = content
         return details

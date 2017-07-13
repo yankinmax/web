@@ -49,7 +49,7 @@ class ProjectAnalyisPrintWiz(models.TransientModel):
         )
         res = {k: v for k, v in res.iteritems() if k in to_keep}
         res['data'] = {
-            'lang': self.lang_id.code,
+            'forced_lang': self.lang_id.code,
             'project_id': self.project_id.id,
             'task_ids': self.task_ids.ids,
         }

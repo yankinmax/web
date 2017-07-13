@@ -7,7 +7,7 @@
     <field name="arch" type="xml">
       <tree string="Substance">
         <field name="name"/>
-        <field name="sub_cas_number_ids"/>
+        <field name="sub_cas_number"/>
         <field name="customer_id"/>
         <field name="legal_limit_min"/>
         <field name="product_uom_id"/>
@@ -29,7 +29,7 @@
         <sheet>
           <group>
             <field name="name"/>
-            <field name="sub_cas_number_ids"/>
+            <field name="sub_cas_number"/>
             <field name="customer_id"/>
             <field name="legal_limit_min"/>
             <field name="product_uom_id"/>
@@ -51,13 +51,6 @@
       <field name="res_model">product.substance</field>
       <field name="view_type">form</field>
       <field name="view_id" ref="product_substance_view_tree"/>
-  </record>
-
-  <record id="product_substance_cas_number_action_tree" model="ir.actions.act_window">
-      <field name="name">CAS Number</field>
-      <field name="type">ir.actions.act_window</field>
-      <field name="res_model">substance.cas.number</field>
-      <field name="view_mode">tree,form</field>
   </record>
 
 </odoo>

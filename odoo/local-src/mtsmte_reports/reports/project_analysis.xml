@@ -131,7 +131,7 @@
     <t t-call="report.html_container">
       <t t-set="analysis_report" t-value="1" />
       <t t-foreach="docs" t-as="doc">
-        <t t-call="mtsmte_reports.report_analysis_doc" t-lang="doc.partner_id.lang" />
+        <t t-call="mtsmte_reports.report_analysis_doc" t-lang="forced_lang or doc.partner_id.lang" />
       </t>
     </t>
   </template>
