@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_payment_method_form" model="ir.ui.view">
+        <field name="name">account_payment_method.form.inherit</field>
+        <field name="model">account.payment.method</field>
+        <field name="inherit_id" ref="account_payment_mode.account_payment_method_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="before">
+                <header class="oe_read_only">
+                    <button name="%(account_payment_mode_generator_action)d" type="action" context="{'default_account_payment_method_id': active_id}" string="Generate payment modes" />
+                </header>
+            </xpath>
+            <field name="active" position="after">
+                <field name="company_ids" widget="many2many_tags" />
+            </field>
+        </field>
+    </record>
+</odoo>

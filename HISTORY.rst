@@ -30,6 +30,7 @@ Unreleased
 * DT-44: Fix the creation of companies for non admin (with group)
 * DT-11: Add security group for export to csv feature
 * DT-10: Add a program condition based on last validated order
+* DT-46: Add account payment mode generator wizard
 
 **Bugfixes**
 

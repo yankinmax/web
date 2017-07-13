@@ -11,12 +11,14 @@
     'depends': [
         'account_payment_sale',
         'account_payment_term_extension',
+        'account_payment_mode',
         'sale',
         'specific_base',
         'specific_discount_program',
     ],
     'data': [
         # Data
+        'data/account_payment_method.xml',
         'data/depiltech_payment_mode.xml',
         'data/ir_config_parameter.xml',
         # Security
@@ -24,6 +26,9 @@
         # Report
         'report/sale_order.xml',
         # Views
+        'wizard/account_payment_mode_generator.xml',
+        'views/account_payment_method.xml',
+        'views/account_payment_mode.xml',
         'views/depiltech_payment_mode.xml',
         'views/sale_config.xml',
         'views/sale_order.xml',

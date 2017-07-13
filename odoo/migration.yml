@@ -93,6 +93,8 @@ migration:
           - base  # Because we updated all repositories
           #### OCA/account-invoicing
           - account_payment_term_extension
+          #### OCA/bank-payment
+          - account_payment_order
           #### local-src
           - discount_program_report
           - report_invoice
