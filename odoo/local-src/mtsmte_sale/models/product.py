@@ -33,18 +33,15 @@ class ProductTemplate(models.Model):
     results = fields.Html(
         string='Results',
     )
-    product_method_ids = fields.One2many(
+    product_method_id = fields.Many2one(
         'product.method',
-        'product_id',
         string='Methods',
     )
-    equipment_ids = fields.One2many(
+    equipment_id = fields.Many2one(
         'maintenance.equipment',
-        'product_id',
         string='Equipment',
     )
-    product_extraction_type_ids = fields.One2many(
+    product_extraction_type_id = fields.Many2one(
         'product.extraction.type',
-        'product_id',
         string='Extraction Type',
     )

@@ -11,8 +11,9 @@ class ProductMethod(models.Model):
     name = fields.Char(
         required=True,
     )
-    product_id = fields.Many2one(
+    product_ids = fields.One2many(
         'product.template',
+        'product_method_id',
         string='Product',
     )
     _sql_constraints = [

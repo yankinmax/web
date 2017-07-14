@@ -11,8 +11,9 @@ class ProductExtractionType(models.Model):
     name = fields.Char(
         required=True,
     )
-    product_id = fields.Many2one(
+    product_ids = fields.One2many(
         'product.template',
+        'product_extraction_type_id',
         string='Product',
     )
     _sql_constraints = [

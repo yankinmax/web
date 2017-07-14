@@ -11,8 +11,9 @@ class MaintenanceEquipment(models.Model):
     name = fields.Char(
         required=True,
     )
-    product_id = fields.Many2one(
+    product_ids = fields.One2many(
         'product.template',
+        'equipment_id',
         string='Product',
     )
     _sql_constraints = [

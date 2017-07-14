@@ -22,6 +22,8 @@
         'views/project_task_views.xml',
         'views/substance_views.xml',
         'views/invoice_views.xml',
+        'views/product_method.xml',
+        'views/product_extraction_type.xml',
         'views/menu_items.xml',
         'security/ir.model.access.csv',
     ],
