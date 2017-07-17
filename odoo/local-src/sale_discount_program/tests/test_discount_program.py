@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
+from odoo.exceptions import AccessError
 from datetime import timedelta, date
 
 from odoo.tests.common import TransactionCase, post_install, at_install
@@ -37,11 +39,15 @@ class TestDiscountProgram(TransactionCase):
 
         self.product_category = self.product_category_model.create({
             'name': 'Unittest product category',
+            # Required with sale_tax_calculation module
+            'property_account_income_categ_id': False,
         })
 
         self.sub_category = self.product_category_model.create({
             'name': 'Unittest product sub category',
             'parent_id': self.product_category.id,
+            # Required with sale_tax_calculation module
+            'property_account_income_categ_id': False,
         })
 
         self.p1 = self.product_model.create({
@@ -354,6 +360,7 @@ class TestDiscountProgram(TransactionCase):
             'partner_id': self.client.id,
             'voucher_amount': 150,
             'note_message_for_action': 'Unittest message',
+            'max_use_by_month': 1000,
         })
 
         self.assertEqual(False, program.automatic)
@@ -376,7 +383,22 @@ class TestDiscountProgram(TransactionCase):
 
         self.assertEqual(100, program.voucher_amount)
 
-        program.sale_confirmed()
+        # Sale used only for technical reason
+        sale = self.sale_model.create({
+            'partner_id': self.client.id,
+            'phototherapist_id': self.phototherapist.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'price_unit': 150,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ]
+        })
+        sale.program_to_add = 'UNITTEST_VOUCHER'
+        sale.onchange_program_to_add()
+        sale.action_confirm()
 
         self.assertEqual(1, program.max_use)
         self.assertEqual(1, program.nb_use)
@@ -391,7 +413,7 @@ class TestDiscountProgram(TransactionCase):
         program.max_use = 1
         self.assertEqual(False, program.code_valid)
 
-        program.sale_cancelled()
+        sale.action_cancel()
         self.assertEqual(1, program.max_use)
         self.assertEqual(0, program.nb_use)
 
@@ -680,3 +702,135 @@ class TestDiscountProgram(TransactionCase):
 
         self.assertEqual(0, sale.order_line[1].discount)
         self.assertEqual(self.p1, sale.order_line[1].product_id)
+
+    @post_install(True)
+    @at_install(False)
+    def test_voucher_max_use_by_month(self):
+
+        program = self.program_model.create({
+            'voucher_code': 'UNITTEST_VOUCHER',
+            'partner_id': self.client.id,
+            'voucher_amount': 150,
+            'note_message_for_action': 'Unittest message',
+            'max_use': 1000,
+            'max_use_by_month': 2,
+        })
+
+        self.assertEqual(False, program.automatic)
+        self.assertEqual(1000, program.max_use)
+        self.assertEqual(2, program.max_use_by_month)
+        self.assertEqual(0, program.nb_use)
+        self.assertEqual(False, program.used)
+        self.assertEqual(True, program.code_valid)
+
+        sale_1 = self.sale_model.create({
+            'partner_id': self.client.id,
+            'phototherapist_id': self.phototherapist.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'price_unit': 150,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ]
+        })
+        sale_1.program_to_add = 'UNITTEST_VOUCHER'
+        sale_1.onchange_program_to_add()
+        sale_1.action_confirm()
+
+        self.assertEqual(1000, program.max_use)
+        self.assertEqual(2, program.max_use_by_month)
+        self.assertEqual(1, program.nb_use)
+        self.assertEqual(False, program.used)
+
+        self.assertEqual(True, program.code_valid)
+
+        sale_2 = self.sale_model.create({
+            'partner_id': self.client.id,
+            'phototherapist_id': self.phototherapist.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'price_unit': 150,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ]
+        })
+        sale_2.program_to_add = 'UNITTEST_VOUCHER'
+        sale_2.onchange_program_to_add()
+        sale_2.action_confirm()
+
+        program._compute_code_valid()
+
+        self.assertEqual(1000, program.max_use)
+        self.assertEqual(2, program.max_use_by_month)
+        self.assertEqual(2, program.nb_use)
+        self.assertEqual(False, program.used)
+
+        self.assertEqual(False, program.code_valid)
+
+        sale_1.confirmation_date = '2017-01-01 10:00:00'
+
+        program._compute_code_valid()
+
+        self.assertEqual(1000, program.max_use)
+        self.assertEqual(2, program.max_use_by_month)
+        self.assertEqual(2, program.nb_use)
+        self.assertEqual(False, program.used)
+
+        self.assertEqual(True, program.code_valid)
+
+    @post_install(True)
+    @at_install(False)
+    def test_voucher_max_use_by_month_multi_company_with_rights(self):
+
+        self.env.ref(
+            'sale_discount_program.access_sale_discount_program'
+        ).write({
+            'perm_write': True,
+        })
+
+        user = self.env['res.users'].create({
+            'name': 'Unittest user',
+            'login': 'test@example.com',
+            'new_password': 'pwd',
+            'groups_id': [(6, 0, [
+                self.env.ref('sales_team.group_sale_salesman').id,
+            ])]
+        })
+
+        program = self.program_model.create({
+            'voucher_code': 'UNITTEST_VOUCHER',
+            'partner_id': self.client.id,
+            'voucher_amount': 150,
+            'note_message_for_action': 'Unittest message',
+            'max_use': 1000,
+            'max_use_by_month': 1,
+        })
+
+        sale = self.sale_model.create({
+            'partner_id': self.client.id,
+            'phototherapist_id': self.phototherapist.id,
+            'order_line': [
+                (0, False, {
+                    'product_id': self.p1.id,
+                    'price_unit': 150,
+                    'product_uom_qty': 1,
+                    'product_uom': self.ref('product.product_uom_unit'),
+                })
+            ],
+        })
+        sale.program_to_add = 'UNITTEST_VOUCHER'
+        sale.onchange_program_to_add()
+        sale.action_confirm()
+
+        # user has no access to sale order
+        with self.assertRaises(AccessError):
+            sale.sudo(user).read()
+
+        program.sudo(user)._compute_code_valid()
+
+        # but user get the correct value for program.code_valid
+        self.assertEqual(False, program.code_valid)

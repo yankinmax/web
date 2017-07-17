@@ -198,7 +198,6 @@ scenario.product_dermlight_clayton-shagal_5seances_visage_soin_perfect_lift_30-5
 scenario.product_dermlight_clayton-shagal_1seance_visage_soin_richesse_+50_ans,scenario.product_category_dermlight_Clayton-Shagal_1seance_visage,Derm Light Visage Soin Richesse (+50 ans) 1 Séance,True,False,True,116.67
 scenario.product_dermlight_clayton-shagal_3seances_visage_soin_richesse_+50_ans_3_séances,scenario.product_category_dermlight_Clayton-Shagal_3seances_visage,Derm Light Visage Soin Richesse (+50 ans) 3 Séances,True,False,True,332.5
 scenario.product_dermlight_clayton-shagal_5seances_visage_soin_richesse_+50_ans_5_séances,scenario.product_category_dermlight_Clayton-Shagal_5seances_visage,Derm Light Visage Soin Richesse (+50 ans) 5 Séances,True,False,True,525
-scenario.product_cartecadeaux,scenario.product_category_carteCadeaux,Carte Cadeaux,False,False,True,0.83
 scenario.product_coffretcosmetique_esthederm,scenario.product_category_coffretCosmetique,Coffret Esthederm,False,True,True,74.16
 scenario.product_coffretcosmetique_clayton_shagal,scenario.product_category_coffretCosmetique,Coffret Clayton Shagal,False,True,True,100
 scenario.product_transfertdossier_fiche_client,scenario.product_category_transfertDossier,Transfert Fiche Client,False,False,True,0.833

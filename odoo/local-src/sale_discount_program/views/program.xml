@@ -34,7 +34,7 @@
 
                 <group name="voucher_group" invisible="not context.get('program_voucher')">
                     <field name="voucher_code" readonly="1"/>
-                    <field name="partner_id" required="context.get('program_voucher')"/>
+                    <field name="partner_id" />
                     <field name="voucher_amount" required="context.get('program_voucher')"/>
                     <field name="used"/>
                 </group>
@@ -44,10 +44,36 @@
                     <field name="expiration_date"/>
                     <field name="nb_use" invisible="context.get('program_voucher')"/>
                     <field name="max_use" invisible="context.get('program_voucher')"/>
+                    <field name="max_use_by_month" invisible="context.get('program_voucher')"/>
                 </group>
+
+                <group>
+                    <field name="sale_supporting_document_required"/>
+                </group>
+
                 <group invisible="context.get('program_voucher')">
                     <field name="action_ids"/>
                 </group>
+
+                <group>
+                    <field name="confirmed_sales_which_used">
+                        <tree string="Sale Order">
+                            <field name="name" string="Quotation Number"/>
+                            <field name="date_order"/>
+                            <field name="confirmation_date"/>
+                            <field name="company_id"/>
+                            <field name="partner_id"/>
+                            <field name="user_id"/>
+                            <field name="amount_total" sum="Total Tax Included" widget="monetary"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </group>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
             </form>
         </field>
     </record>

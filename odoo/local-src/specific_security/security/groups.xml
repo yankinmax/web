@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <record model="res.groups" id="group_admin_depiltech">
+        <field name="name">Admin DT</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+    <record model="res.groups" id="group_siege_depiltech">
+        <field name="name">Headquarters DT</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+    <record model="res.groups" id="group_client_archive">
+        <field name="name">Client archivage</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+    <record model="res.groups" id="group_invoice_creation" >
+        <field name="name">Invoice creation allowed</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+    <record id="group_company_creation" model="res.groups">
+        <field name="name">Company creation allowed</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+    <record model="res.groups" id="group_export">
+        <field name="name">Export</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+    <record model="res.groups" id="group_reset_alert_program">
+        <field name="name">Reset program alert on sale order allowed</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+</odoo>

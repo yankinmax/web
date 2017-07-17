@@ -14,6 +14,50 @@ class SaleOrder(models.Model):
         relation='sale_order_applied_program'
     )
 
+    program_to_add = fields.Char(
+        store=False
+    )
+
+    def search_program_to_add(self, program_to_add):
+        self.ensure_one()
+        return self.env['sale.discount.program'].search([
+            '|',
+            ('promo_code', '=', program_to_add),
+            ('voucher_code', '=', program_to_add),
+            '|',
+            ('partner_id', '=', self.partner_id.id),
+            ('partner_id', '=', False),
+        ], limit=1)
+
+    @api.onchange('program_to_add')
+    def onchange_program_to_add(self):
+        if self.program_to_add:
+            values = {
+                'program_to_add': False,
+            }
+            promo_code = self.search_program_to_add(self.program_to_add)
+            if promo_code:
+                if promo_code in self.program_code_ids:
+                    ids = self.program_code_ids.ids
+                    ids.remove(promo_code.id)
+                    values['program_code_ids'] = [(6, False, ids)]
+                else:
+                    code_valid = (
+                        promo_code.code_valid and
+                        (
+                            promo_code.promo_code or
+                            promo_code.partner_id == self.partner_id or
+                            (
+                                promo_code.voucher_code and
+                                not promo_code.partner_id
+                            )
+                        )
+                    )
+                    if code_valid:
+                        ids = self.program_code_ids.ids + [promo_code.id]
+                        values['program_code_ids'] = [(6, False, ids)]
+            self.update(values)
+
     program_code_ids = fields.Many2many(
         comodel_name='sale.discount.program',
         domain=[
@@ -22,7 +66,28 @@ class SaleOrder(models.Model):
         string='Discount Codes'
     )
 
+    program_code_ids_readonly = fields.Many2many(
+        related='program_code_ids',
+        store=False,
+        readonly=True,
+    )
+
     pricelist_program = fields.Boolean()
+
+    supporting_document_required = fields.Boolean(
+        compute='_compute_supporting_document_required',
+    )
+    supporting_document = fields.Binary(
+        attachment=True
+    )
+
+    @api.depends('program_code_ids')
+    def _compute_supporting_document_required(self):
+        for order in self:
+            order.supporting_document_required = any(
+                program.sale_supporting_document_required
+                for program in order.program_code_ids
+            )
 
     @api.onchange('partner_id')
     def onchange_partner_id_remove_vouchers(self):
@@ -69,14 +134,14 @@ class SaleOrder(models.Model):
         self.force_apply()
 
         for sale in self:
-            sale.program_code_ids.sale_confirmed()
+            sale.program_code_ids.sale_confirmed(sale.id)
 
         return super(SaleOrder, self).action_confirm()
 
     @api.multi
     def action_cancel(self):
         for sale in self:
-            sale.program_code_ids.sale_cancelled()
+            sale.program_code_ids.sale_cancelled(sale.id)
 
         return super(SaleOrder, self).action_cancel()
 
@@ -89,6 +154,18 @@ class SaleOrder(models.Model):
     def print_quotation(self):
         self.force_apply()
         return super(SaleOrder, self).print_quotation()
+
+    @api.multi
+    def check_current_month(self):
+        self.ensure_one()
+        today = fields.Date.from_string(
+            fields.Date.today()
+        )
+        confirm_date = fields.Date.from_string(self.confirmation_date)
+        return (
+            confirm_date.year == today.year and
+            confirm_date.month == today.month
+        )
 
 
 class SaleOrderLine(models.Model):

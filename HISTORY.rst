@@ -8,9 +8,37 @@ Unreleased
 
 **Features and Improvements**
 
+* DT-22: Client view : hide tabs (Contacts Addresses, Sales & Purchases,
+  Accounting). And set country by default using company user connected.
+* DT-5: Apply same logic for sale tax calculation than on invoices
+* DT-17 : Add group to control visibility of archive button on client view
+* DT-6: Add early payment discount on customer invoices
+* [DT-26] Change the code of the vouchers, random generated not in a sequence
+* DT-12: Improve leads in Sales and add a module specific_security
+* Hide payment mode field on quotations
+* Add field 'This quotation is a gift' on sale.order and account.invoice
+* DT-8: Install specific_sale_order module
+* DT-7: Add 'Signature bloc' in sale order report
+* DT-7: Change the input of promo code on sale order
+* DT-7: Custom limit of usage for discount programs
+* DT-9: Add a global limit on promo code use
+* DT-9: Add a required attachment on sale order when using promo code
+* DT-44: Fix the creation of companies for non admin (with group)
+* DT-13: Install module discount_program_report
+* DT-13/DT-18: Install module discount_program_report
+* DT-20: Develop the depiltech payment modes
+* DT-44: Fix the creation of companies for non admin (with group)
+* DT-11: Add security group for export to csv feature
+* DT-10: Add a program condition based on last validated order
+* DT-46: Add account payment mode generator wizard
+
 **Bugfixes**
 
+* DT-52: Fix partners rights
+
 **Build**
+
+* Update all repositories
 
 **Documentation**
 

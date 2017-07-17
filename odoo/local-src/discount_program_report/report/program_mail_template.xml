@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="email_template_discount_program" model="mail.template">
+        <field name="name">Discount program - Send by Email</field>
+        <field name="email_from">'test@depiltech.com'</field>
+        <field name="subject">${object.note_message_for_action or object.name }</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="model_id" ref="specific_discount_program.model_sale_discount_program"/>
+        <field name="auto_delete" eval="True" />
+        <field name="report_template" ref="report_discount_program"/>
+        <field name="report_name">${(object.name or '').replace('/','_')}</field>
+        <field name="lang">${object.partner_id.company_id.partner_id.lang}</field>
+        <field name="body_html"><![CDATA[
+            <p>Dear ${object.source_invoice_id.partner_id.name},</p>
+            <p>Please find hereby your <strong>${object.name}</strong></p>
+            <p>----------------------------------------</p>
+            <p>Sincerely yours,</p>
+            <p>Depil Tech</p>
+            ]]>
+        </field>
+    </record>
+</odoo>

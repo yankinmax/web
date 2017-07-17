@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0e\n"
+"Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-30 13:08+0000\n"
-"PO-Revision-Date: 2016-11-30 13:08+0000\n"
+"POT-Creation-Date: 2017-05-30 15:23+0000\n"
+"PO-Revision-Date: 2017-05-30 15:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,14 +16,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program.py:218
+#: code:addons/sale_discount_program/models/program.py:250
 #, python-format
 msgid "%s can not be combined with %s .Please remove it and apply discounts again."
 msgstr "%s ne peut-être cumulé avec %s. Merci de le supprimer et appliquer à nouveau les promotions."
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program.py:168
-#: code:addons/sale_discount_program/models/program.py:253
+#: code:addons/sale_discount_program/models/program.py:204
+#: code:addons/sale_discount_program/models/program.py:285
 #, python-format
 msgid "%s is not valid anymore."
 msgstr "%s n'est plus valide."
@@ -86,7 +86,7 @@ msgid "Bon d'achat"
 msgstr "Bon d'achat"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program_action.py:181
+#: code:addons/sale_discount_program/models/program_action.py:182
 #, python-format
 msgid "Change pricelist to %s"
 msgstr "Changement de liste de prix pour %s"
@@ -117,6 +117,11 @@ msgid "Conditions"
 msgstr "Conditions"
 
 #. module: sale_discount_program
+#: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_confirmed_sales_which_used
+msgid "Confirmed sales which used"
+msgstr "Commandes confirmées qui l'utilisent"
+
+#. module: sale_discount_program
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_action_create_uid
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_condition_create_uid
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_create_uid
@@ -142,6 +147,7 @@ msgstr "Remise"
 
 #. module: sale_discount_program
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_order_program_code_ids
+#: model:ir.model.fields,field_description:sale_discount_program.field_sale_order_program_code_ids_readonly
 msgid "Discount Codes"
 msgstr "Codes promotions"
 
@@ -227,6 +233,11 @@ msgstr "Dernière mise à jour le"
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_max_use
 msgid "Max use"
 msgstr "Nombre d'utilisation possible"
+
+#. module: sale_discount_program
+#: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_max_use_by_month
+msgid "Max use by month"
+msgstr "Nombre d'utilisation possible par mois"
 
 #. module: sale_discount_program
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_condition_product_min_price_unit
@@ -336,14 +347,19 @@ msgid "Program name"
 msgstr "Nom du programme"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program.py:89
+#: model:ir.model.fields,field_description:sale_discount_program.field_sale_order_program_to_add
+msgid "Program to add"
+msgstr "Programme à ajouter"
+
+#. module: sale_discount_program
+#: code:addons/sale_discount_program/models/program.py:97
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_promo_code
 #, python-format
 msgid "Promo code"
 msgstr "Code promo"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program.py:72
+#: code:addons/sale_discount_program/models/program.py:80
 #: sql_constraint:sale.discount.program:0
 #, python-format
 msgid "Promo code should be unique"
@@ -367,6 +383,11 @@ msgstr "La quantité est la somme est quantités des produits correspondants"
 
 #. module: sale_discount_program
 #: model:ir.ui.view,arch_db:sale_discount_program.sale_discount_program_code_form
+msgid "Quotation Number"
+msgstr "N° de devis"
+
+#. module: sale_discount_program
+#: model:ir.ui.view,arch_db:sale_discount_program.sale_discount_program_code_form
 msgid "Sale Discount Code"
 msgstr "Sale Discount Code"
 
@@ -374,6 +395,16 @@ msgstr "Sale Discount Code"
 #: model:ir.ui.view,arch_db:sale_discount_program.sale_discount_program_form
 msgid "Sale Discount Program"
 msgstr "Sale Discount Program"
+
+#. module: sale_discount_program
+#: model:ir.ui.view,arch_db:sale_discount_program.sale_discount_program_code_form
+msgid "Sale Order"
+msgstr "Bon de commande"
+
+#. module: sale_discount_program
+#: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_sale_supporting_document_required
+msgid "Sale supporting document required"
+msgstr "Pièce justificative obligatoire"
 
 #. module: sale_discount_program
 #: model:ir.model,name:sale_discount_program.model_sale_order
@@ -407,15 +438,25 @@ msgid "Specify product price"
 msgstr "Spécifier le prix de l'article"
 
 #. module: sale_discount_program
-#: selection:sale.discount.program.condition,type_condition:0
-msgid "Sponsorship"
-msgstr "Parrainage"
+#: model:ir.model.fields,field_description:sale_discount_program.field_sale_order_supporting_document
+msgid "Supporting document"
+msgstr "Pièce justificative"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program.py:194
+#: model:ir.model.fields,field_description:sale_discount_program.field_sale_order_supporting_document_required
+msgid "Supporting document required"
+msgstr "Pièce justificative obligatoire"
+
+#. module: sale_discount_program
+#: code:addons/sale_discount_program/models/program.py:230
 #, python-format
 msgid "Too many vouchers for the quotation amount"
 msgstr "Trop de bons d'achat pour le montant du devis"
+
+#. module: sale_discount_program
+#: model:ir.ui.view,arch_db:sale_discount_program.sale_discount_program_code_form
+msgid "Total Tax Included"
+msgstr "Total taxes incluses"
 
 #. module: sale_discount_program
 #: model:ir.model.fields,field_description:sale_discount_program.field_sale_discount_program_action_type_action
@@ -433,7 +474,7 @@ msgid "Used"
 msgstr "Utilisé"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program.py:93
+#: code:addons/sale_discount_program/models/program.py:101
 #: selection:sale.discount.program.action,type_action:0
 #, python-format
 msgid "Voucher"
@@ -450,7 +491,7 @@ msgid "Voucher code"
 msgstr "Code bon d'achat"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program.py:69
+#: code:addons/sale_discount_program/models/program.py:77
 #: sql_constraint:sale.discount.program:0
 #, python-format
 msgid "Voucher code should be unique"
@@ -463,7 +504,7 @@ msgid "Vouchers"
 msgstr "Bons d'achat"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/sale_order.py:51
+#: code:addons/sale_discount_program/models/sale_order.py:105
 #, python-format
 msgid "You need to add order lines before apply discount"
 msgstr "Vous devez ajouter des lignes de commandes avant d'appliquer les promotions"

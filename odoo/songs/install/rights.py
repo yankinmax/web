@@ -2,8 +2,6 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from anthem.lyrics.records import create_or_update
-
 import anthem
 
 
@@ -28,57 +26,20 @@ def add_groups_to_admin_user(ctx):
 
 
 @anthem.log
-def update_res_partner_rules(ctx):
-    """ Update rules for res partner """
+def setup_export_rights(ctx):
+    """ disable export for all object
 
-    group_dt_compta = ctx.env.ref('scenario.grp_dt_compta')
-
-    # Update the default rule
-    res_partner_rule = ctx.env.ref('base.res_partner_rule')
-    res_partner_rule.write({
-        'groups': [(5, 0, 0)],
-        'domain_force': "[(1, '=', 1)]",
-        'active': True,
-    })
-
-    # Create a specific rule for DT accounting group
-    create_or_update(
-        ctx,
-        'ir.rule',
-        'scenario.res_partner_rule_dt_accounting_group',
-        {
-            'name': 'res.partner for "DT accounting group"',
-            'model_id': ctx.env.ref('base.model_res_partner').id,
-            'perm_read': True,
-            'perm_create': True,
-            'perm_write': True,
-            'perm_unlink': True,
-            'domain_force': "[(1, '=', 1)]",
-            'groups': [(6, 0, [group_dt_compta.id])],
-        }
-    )
-
-    # Create a specific rule for base group user
-    create_or_update(
-        ctx,
-        'ir.rule',
-        'scenario.res_partner_rule_base_group_user',
-        {
-            'name': 'res.partner for base group user',
-            'model_id': ctx.env.ref('base.model_res_partner').id,
-            'perm_read': True,
-            'perm_create': True,
-            'perm_write': True,
-            'perm_unlink': True,
-            'domain_force': "['|',"
-                            "('company_id','child_of',[user.company_id.id]),"
-                            "('company_id','=',False)]",
-            'groups': [(6, 0, [ctx.env.ref('base.group_user').id])],
-        }
-    )
+    Export is allowed for Export group only, this is defined in
+    module specific_security
+    """
+    export_group = ctx.env.ref('specific_security.group_export')
+    # group_id is a m2m
+    domain = [('group_id', 'not in', [export_group.id])]
+    model_accesses = ctx.env['ir.model.access'].search(domain)
+    model_accesses.write({'perm_export': False})
 
 
 @anthem.log
 def main(ctx):
     add_groups_to_admin_user(ctx)
-    update_res_partner_rules(ctx)
+    setup_export_rights(ctx)

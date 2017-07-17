@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_discount_program_code_form" model="ir.ui.view">
+        <field name="inherit_id" ref="sale_discount_program.sale_discount_program_code_form"/>
+        <field name="model">sale.discount.program</field>
+        <field name="arch" type="xml">
+            <div class="oe_title" position="before">
+                <header>
+                    <button name="action_program_send" string="Send by Email" type="object" attrs="{'invisible': [('report_config_id', '=', False)]}" groups="specific_security.group_admin_depiltech"/>
+                    <field name="report_config_id" invisible="1" />
+                </header>
+            </div>
+            <field name="confirmed_sales_which_used" position="after">
+                <field name="sent_to_customer" readonly="1" />
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -71,10 +71,38 @@ migration:
           #### local-src
           - fields_regex_validation
           - report_page_endnote
+          - sale_discount_program
           - specific_account
           - specific_base
           - specific_discount_program
+          - specific_security
           - specific_payment_mode
-    # For migration fix, we don't increment version number here.
-    # But only in VERSION and HISTORY.rst files.
-    # The integration database must be deleted for each deployment.
+    - version: 10.1.0
+      operations:
+        pre:
+          - anthem songs.updates.update_10_1_0.update::main
+          - odoo -i account_payment_term_extension,specific_security --stop-after-init --workers=0
+          # These 2 scripts must be executed after install of specific_security module
+          - anthem songs.install.rights::setup_export_rights
+          - anthem songs.updates.update_10_1_0.update::unlink_depiltech_payment_modes
+        post:
+          - anthem songs.updates.update_10_1_0.post_update::main
+      addons:
+        upgrade:
+          #### core
+          - base  # Because we updated all repositories
+          #### OCA/account-invoicing
+          - account_payment_term_extension
+          #### OCA/bank-payment
+          - account_payment_order
+          #### local-src
+          - discount_program_report
+          - report_invoice
+          - sale_discount_program
+          - sale_tax_calculation
+          - specific_base
+          - specific_discount_program
+          - specific_export_manager
+          - specific_payment_mode
+          - specific_sale_order
+          - specific_security

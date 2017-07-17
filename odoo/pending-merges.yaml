@@ -31,8 +31,8 @@
     camptocamp: git@github.com:camptocamp/sale-workflow.git
   merges:
     - oca 10.0
-    # [10.0] [MIG] sale_automatic_workflow_payment_mode
-    - oca refs/pull/471/head
+    # [10.0][IMP] sale_automatic_workflow support multicompany
+    - oca refs/pull/493/head
   target: *default_target
 ./external-src/server-tools:
   remotes:
@@ -44,17 +44,8 @@
     - oca refs/pull/607/head
     # [10.0][MIG] base_report_auto_create_qweb
     - oca refs/pull/808/head
-    # [10.0][MIG] base_export_manager
-    - oca refs/pull/712/head
-  target: *default_target
-./external-src/survey:
-  remotes:
-    oca: git@github.com:OCA/survey.git
-    camptocamp: git@github.com:camptocamp/survey.git
-  merges:
-    - oca 10.0
-    # [10.0][MIG] partner_survey
-    - oca refs/pull/22/head
+    # [10.0][MIG][base_export_manager] Full migration to version 10
+    - oca refs/pull/870/head
   target: *default_target
 ./external-src/web:
   remotes:
@@ -65,18 +56,14 @@
     # [10.0] [MIG] web_duplicate_visibility
     - oca refs/pull/557/head
   target: *default_target
-./src:
-  defaults:
-    depth: 50
+./external-src/bank-payment:
   remotes:
-    oca: git@github.com:OCA/OCB.git
-    camptocamp: git@github.com:camptocamp/odoo.git
+    oca: git@github.com:OCA/bank-payment.git
+    camptocamp: git@github.com:camptocamp/bank-payment.git
   merges:
-    - oca 8a818066ce6d3a6def3af7ef93a754e795fe459b
+    - oca 10.0
+    # [10.0]Fix payment method onchange with multicompany
+    - oca refs/pull/374/head
+    # [10.0][ADD] relational inverse field for payment.mode on payment.method
+    - oca refs/pull/375/head
   target: *default_target
-  shell_command_after:
-    - git am "$(git format-patch -1 625c0d5d8eb2c196ffcb04304a3ec7cfc48027ac -o ../patches)"
-    - git am "$(git format-patch -1 16714a7e71da91382bb111fad32282a65205dffd -o ../patches)"
-    - git am "$(git format-patch -1 eaa3682bb609dc69a5499f2c223da479d0d9697b -o ../patches)"
-  fetch_all:
-    - oca

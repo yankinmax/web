@@ -11,6 +11,10 @@
             <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="attributes">
                 <attribute name="attrs">{'readonly': [('can_edit_qty', '=', False)]}</attribute>
             </xpath>
+
+            <field name="partner_id" position="after">
+                <field name="gift_quotation" />
+            </field>
         </field>
     </record>
 

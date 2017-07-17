@@ -1,0 +1,19 @@
+<odoo>
+
+  <record id="invoice_form" model="ir.ui.view">
+    <field name="name">account.invoice.form</field>
+    <field name="model">account.invoice</field>
+    <field name="inherit_id" ref="account.invoice_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='amount_total']/ancestor::group" position="inside">
+        <field name="has_early_payment_discount" invisible="True"/>
+        <div colspan="2" style="text-align: center; margin-bottom: 10px" attrs="{'invisible': [('has_early_payment_discount', '=', False)]}">Early payment discount</div>
+        <field name="early_payment_discount" string="Discount" attrs="{'invisible': [('has_early_payment_discount', '=', False)]}"/>
+        <field name="amount_untaxed_discount" attrs="{'invisible': [('has_early_payment_discount', '=', False)]}"/>
+        <field name="amount_tax_discount" attrs="{'invisible': [('has_early_payment_discount', '=', False)]}"/>
+        <field name="amount_total_discount" class="oe_subtotal_footer_separator" attrs="{'invisible': [('has_early_payment_discount', '=', False)]}"/>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>

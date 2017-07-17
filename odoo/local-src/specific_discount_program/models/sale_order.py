@@ -2,7 +2,6 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from lxml import etree
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
@@ -30,51 +29,33 @@ class SaleOrder(models.Model):
         default=0.0
     )
 
+    gift_quotation = fields.Boolean('This quotation is a gift')
+
+    sale_order_which_use_me_in_program_id = fields.Many2one(
+        comodel_name='sale.order',
+        string='Sale order which use me in program',
+    )
+    sale_order_used_by_program_ids = fields.One2many(
+        comodel_name='sale.order',
+        inverse_name='sale_order_which_use_me_in_program_id',
+        string='Sale order used by program',
+    )
+    program_alert = fields.Boolean()
+
     @api.depends(
         'pricelist_id',
         'partner_id', 'partner_id.sponsor_id', 'partner_id.sponsor_id.active'
     )
     def _compute_is_sponsored(self):
-        sponsor_pricelist = self.env.ref('scenario.pricelist_sponsorship')
+        sponsor_pricelist = self.env.ref(
+            'specific_discount_program.pricelist_sponsorship'
+        )
         for sale in self:
             if not sponsor_pricelist:
                 sale.is_sponsored = False
             else:
                 sale.is_sponsored = sale.partner_id.sponsor_id.active \
                     and sale.pricelist_id == sponsor_pricelist
-
-    @api.model
-    def fields_view_get(self, view_id=None, view_type='form',
-                        toolbar=False, submenu=False):
-        """ Modify the domain of program_code_ids field in form view because
-        the domain depens on connected user company.
-        """
-        result = super(SaleOrder, self).fields_view_get(
-            view_id=view_id, view_type=view_type,
-            toolbar=toolbar, submenu=submenu
-        )
-
-        if view_type == 'form':
-            eview = etree.fromstring(result['arch'])
-            nodes = eview.xpath("//field[@name='program_code_ids']")
-            if nodes:
-                nodes[0].set(
-                    'domain',
-                    "['|', "
-
-                    "'&', ('promo_code', '!=', False), "
-                    "('code_valid', '=', True),"
-
-                    "'&', '&', "
-                    "('voucher_code', '!=', False), "
-                    "('code_valid', '=', True), "
-                    "('partner_company_id', '=', %d)"
-                    "]"
-                    % self.env.user.company_id.id
-                )
-            result['arch'] = etree.tostring(eview)
-
-        return result
 
     @api.multi
     def create_partner_voucher(self, partner_id):
@@ -89,13 +70,10 @@ class SaleOrder(models.Model):
                 months=months_validity
             )
 
-        self.sudo().write({
+        self.with_context(program_voucher=True).sudo().write({
             'generated_voucher_ids': [(0, False, {
                 'partner_id': partner_id,
                 'combinable': True,
-                'voucher_code': self.env['ir.sequence'].next_by_code(
-                    'discount.program.voucher_code'
-                ),
                 'voucher_amount': self.get_voucher_amount(),
                 'max_use': 1,
                 'expiration_date': expiration_date,
@@ -119,20 +97,36 @@ class SaleOrder(models.Model):
         )
         return amount
 
+    def search_program_to_add(self, program_to_add):
+        self.ensure_one()
+        return self.env['sale.discount.program'].search([
+            '|',
+            ('promo_code', '=', program_to_add),
+            ('voucher_code', '=', program_to_add),
+            '|',
+            ('allowed_company_ids', 'parent_of', self.company_id.id),
+            ('allowed_company_ids', '=', False),
+            '|',
+            ('partner_id', '=', self.partner_id.id),
+            ('partner_id', '=', False),
+        ], limit=1)
+
     @api.multi
     def action_confirm(self):
+
         super(SaleOrder, self).action_confirm()
 
         for sale in self:
-            # Bon d'achat si la commande a utilisé le programme de
-            # parainnage et si le parrain est toujours valide
-            if sale.is_sponsored:
-                sale.create_partner_voucher(
-                    sale.partner_id.sponsor_id.partner_id.id
-                )
+            if not sale.gift_quotation:
+                # Bon d'achat si la commande a utilisé le programme de
+                # parainnage et si le parrain est toujours valide
+                if sale.is_sponsored:
+                    sale.create_partner_voucher(
+                        sale.partner_id.sponsor_id.partner_id.id
+                    )
 
-            # Bon d'achat pour chaque commande
-            sale.create_partner_voucher(sale.partner_id.id)
+                # Bon d'achat pour chaque commande
+                sale.create_partner_voucher(sale.partner_id.id)
 
     @api.multi
     def action_cancel(self):
@@ -143,7 +137,43 @@ class SaleOrder(models.Model):
             if program.nb_use == 0:
                 program.sudo().unlink()
 
+        # Send a email alert
+        # if this order is used by another order to have promotion
+        for sale in self:
+            if sale.sale_order_which_use_me_in_program_id:
+                sale.sale_order_which_use_me_in_program_id.program_alert = True
+                template = self.env.ref(
+                    'specific_discount_program.'
+                    'email_template_alert_program_on_sale_order'
+                )
+                template.send_mail(
+                    sale.sale_order_which_use_me_in_program_id.id
+                )
+
         return result
+
+    @api.multi
+    def action_reset_alert_program(self):
+        self.write({
+            'program_alert': False,
+        })
+
+    @api.one
+    @api.constrains('gift_quotation')
+    def _check_gift_quotation_product(self):
+        if self.gift_quotation:
+            if not (
+                len(self.order_line) == 1 and
+                self.order_line[0].product_id == self.env.ref(
+                                'specific_discount_program.gift_card')
+            ):
+                raise exceptions.ValidationError(
+                    'Only 1 (one) Gift card product is allowed to create '
+                    'a gift quotation !')
+
+    @api.onchange('gift_quotation')
+    def _onchange_gift_quotation(self):
+        self._check_gift_quotation_product()
 
     @api.one
     @api.constrains('discount_manually_percent')
@@ -185,6 +215,13 @@ class SaleOrder(models.Model):
                     self.note += '\n'
                 self.note += message
 
+    @api.multi
+    def _prepare_invoice(self):
+        self.ensure_one()
+        res = super(SaleOrder, self)._prepare_invoice()
+        res['gift_quotation'] = self.gift_quotation
+        return res
+
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
@@ -196,6 +233,12 @@ class SaleOrderLine(models.Model):
     price_unit_readonly = fields.Float(
         'Unit Price',
         related='price_unit',
+        readonly=True,
+    )
+    tax_id_readonly = fields.Many2many(
+        comodel_name='account.tax',
+        string='Taxes',
+        related='tax_id',
         readonly=True,
     )
 

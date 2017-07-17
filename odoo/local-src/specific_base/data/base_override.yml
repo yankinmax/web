@@ -26,6 +26,13 @@
   !python {model: ir.rule, id: base.res_company_rule_erp_manager} : |
       self.perm_read = False
 -
+  !python {model: ir.rule, id: base.res_partner_rule} : |
+      self.write({
+          'groups': [(5, 0, 0)],
+          'domain_force': "[(1, '=', 1)]",
+          'active': True,
+      })
+-
   !python {model: res.partner.title, id: base.res_partner_title_doctor} : |
       self.active = False
 -

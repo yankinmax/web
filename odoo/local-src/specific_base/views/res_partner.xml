@@ -61,12 +61,10 @@
             </xpath>
 
             <xpath expr="//button[@name='toggle_active']" position="attributes">
-                <attribute name="groups"></attribute>
+                <attribute name="groups">specific_base.group_client_archive</attribute>
             </xpath>
             <!-- hide fields -->
-            <field name="title" position="attributes">
-                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
-            </field>
+            <field name="title" position="replace"/>
             <field name="fax" position="attributes">
                 <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
             </field>
@@ -131,11 +129,14 @@
                 <attributes name="groups">base.group_multi_company</attributes>
             </field>
 
+
+            <!-- Hide the contacts addresses tab -->
+            <xpath expr="//page[//field[@name='child_ids']]" position="attributes">
+                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
+            </xpath>
             <xpath expr="//page[@name='sales_purchases']" position="attributes">
                 <attribute name="groups">base.group_multi_company</attribute>
-            </xpath>
-            <xpath expr="//page[@name='accounting']" position="attributes">
-                <attribute name="groups">base.group_multi_company</attribute>
+                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
             </xpath>
             <xpath expr="//notebook/page[@name='internal_notes']" position="before">
                 <page name="more_infos" string="Extra Infos" attrs="{'invisible': [('company_type', '!=', 'agency_customer')]}">
@@ -191,6 +192,21 @@
                 </page>
             </xpath>
 
+
+        </field>
+    </record>
+
+    <record id="view_partner_center_form_2" model="ir.ui.view">
+        <field name="name">res.partner.center.form.2</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="priority">48</field>
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='accounting']" position="attributes">
+                <attribute name="groups">base.group_multi_company</attribute>
+                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
+            </xpath>
 
         </field>
     </record>

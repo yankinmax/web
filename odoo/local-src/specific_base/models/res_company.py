@@ -117,7 +117,17 @@ class ResCompany(models.Model):
 
     @api.model
     def create(self, values):
-        return super(ResCompany, self.sudo()).create(values)
+        if self.env.user.has_group('specific_security.group_company_creation'):
+            return super(ResCompany, self.sudo()).create(values)
+        else:
+            return super(ResCompany, self).create(values)
+
+    @api.depends('child_ids.children_company_ids')
+    def _compute_children_company_ids(self):
+        for company in self:
+            companies = self.env['res.company'].search(
+                [('id', 'child_of', company.id)])
+            company.children_company_ids = companies.ids
 
     partner_zip = fields.Char(
         related='partner_id.zip',
@@ -131,4 +141,12 @@ class ResCompany(models.Model):
         string='City',
         store=True,
         readonly=True,
+    )
+
+    children_company_ids = fields.Many2many(
+        'res.company', 'res_company_res_company_children_rel',
+        'father_company_id', 'child_company_id',
+        string='Children companies',
+        compute='_compute_children_company_ids',
+        store=True
     )

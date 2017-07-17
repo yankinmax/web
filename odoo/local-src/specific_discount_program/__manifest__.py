@@ -9,18 +9,28 @@
     'license': 'AGPL-3',
     'category': 'Others',
     'depends': [
+        'sale_discount_program',
         'specific_base',
-        'sale_discount_program'
+        'specific_security',
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
         # Data
         'data/ir_config_parameter.xml',
+        'data/mail_template.xml',
+        'data/product.xml',
+        'data/product.pricelist.csv',
+        'data/product.pricelist.item.csv',
+        # Report
+        'report/account_invoice.xml',
+        # Security
         'security/ir.model.access.csv',
         'security/program.xml',
+        # Views
         'views/account_invoice.xml',
         'views/program.xml',
         'views/program_action.xml',
+        'views/program_condition.xml',
         'views/product_template.xml',
         'views/res_config.xml',
         'views/res_partner.xml',

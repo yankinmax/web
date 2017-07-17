@@ -11,6 +11,7 @@
     'depends': [
         'sale',
         'sale_stock',
+        'sales_team',
         # TODO: remove if OCA
         'specific_base',
     ],
@@ -19,8 +20,9 @@
         # Data
         'data/ir_config_parameter.xml',
         'data/product_voucher.xml',
-        'data/program_sequence.xml',
+        # Security
         'security/ir.model.access.csv',
+        # Views
         'views/program.xml',
         'views/program_action.xml',
         'views/program_condition.xml',

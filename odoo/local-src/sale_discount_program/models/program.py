@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from datetime import date
+
+import shortuuid
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
-from odoo.tools.misc import DEFAULT_SERVER_DATE_FORMAT
 
 
 class Program(models.Model):
     _name = 'sale.discount.program'
+    _inherit = 'mail.thread'
 
     name = fields.Char('Name', compute='_compute_name', store=True)
 
@@ -25,16 +26,27 @@ class Program(models.Model):
 
     promo_code = fields.Char('Promo code')
     voucher_code = fields.Char(
-        'Voucher code', default=lambda self: self._default_voucher_code()
+        'Voucher code', default=lambda self: self._default_voucher_code(),
+        readonly=True, track_visibility='onchange'
     )
 
     partner_id = fields.Many2one(comodel_name='res.partner', string='Customer')
 
     expiration_date = fields.Date()
     nb_use = fields.Integer()
+
+    confirmed_sales_which_used = fields.Many2many(
+        comodel_name='sale.order',
+        relation='sale_discount_program_confirmed_sale_order_which_used_rel',
+        string='Confirmed sales which used',
+        readonly=True,
+    )
     max_use = fields.Integer(default=1)
+    max_use_by_month = fields.Integer(default=1)
 
     used = fields.Boolean(compute='_compute_used')
+
+    sale_supporting_document_required = fields.Boolean()
 
     voucher_amount = fields.Float(
         compute='_compute_voucher_amount',
@@ -72,11 +84,10 @@ class Program(models.Model):
          _("Promo code should be unique"))
     ]
 
+    @api.model
     def _default_voucher_code(self):
         if self.env.context.get('program_voucher'):
-            return self.env['ir.sequence'].next_by_code(
-                'discount.program.voucher_code'
-            )
+            return shortuuid.uuid()[:10]
         else:
             return False
 
@@ -144,19 +155,37 @@ class Program(models.Model):
                     ]
                 })
 
-    @api.depends('expiration_date', 'nb_use', 'max_use')
+    @api.depends('expiration_date', 'nb_use', 'max_use', 'max_use_by_month')
     def _compute_code_valid(self):
+        today = fields.Date.today()
         for program in self:
             code_valid = True
             if program.automatic:
                 code_valid = False
             else:
                 if program.expiration_date:
-                    today = date.today().strftime(DEFAULT_SERVER_DATE_FORMAT)
                     if program.expiration_date < today:
                         code_valid = False
 
                 if program.max_use and program.nb_use >= program.max_use:
+                    code_valid = False
+
+            confirmed_sales_which_used = (
+                program.sudo().confirmed_sales_which_used
+            )
+            check_max_use_by_month = (
+                code_valid and
+                program.max_use_by_month and
+                confirmed_sales_which_used
+            )
+            if check_max_use_by_month:
+                current_confirmed_sales_which_used = (
+                    confirmed_sales_which_used.filtered(
+                        lambda s: s.check_current_month()
+                    )
+                )
+                sale_count = len(current_confirmed_sales_which_used)
+                if sale_count >= program.max_use_by_month:
                     code_valid = False
 
             program.code_valid = code_valid
@@ -214,10 +243,6 @@ class Program(models.Model):
         not_combinable = sale.applied_program_ids.filtered(
             lambda p: not p.combinable
         )
-        if self.voucher_code:
-            not_combinable = not_combinable.filtered(
-                lambda p: p.voucher_code
-            )
         if not_combinable:
             if self.automatic:
                 return False
@@ -252,7 +277,7 @@ class Program(models.Model):
                 program.apply_actions(sale)
 
     @api.multi
-    def sale_confirmed(self):
+    def sale_confirmed(self, sale_id):
         """ Called when a sale.order is confirmed if this program is applied
         on the sale.order.
         """
@@ -264,14 +289,20 @@ class Program(models.Model):
                     )
 
                 program.sudo().nb_use += 1
+                program.sudo().write({
+                    'confirmed_sales_which_used': [(4, sale_id, False)]
+                })
 
-    def sale_cancelled(self):
+    def sale_cancelled(self, sale_id):
         """ Called when a sale.order is cancelled if this program is applied
         on the sale.order.
         """
         for program in self:
             if not program.automatic:
                 program.sudo().nb_use -= 1
+                program.sudo().write({
+                    'confirmed_sales_which_used': [(3, sale_id, False)]
+                })
 
     @api.model
     def reset_sale_programs(self, sale):

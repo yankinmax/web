@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
 
-    <record model="depiltech.payment.mode" id="especes">
-        <field name="name">Espèces</field>
+    <record model="depiltech.payment.mode" id="estimate">
+        <field name="name">Estimate</field>
+        <field name="use_as_default">True</field>
+        <field name="deny_to_confirm_order">True</field>
+        <field name="compute_calculator">True</field>
     </record>
-    <record model="depiltech.payment.mode" id="cb">
-        <field name="name">CB</field>
+
+    <record model="depiltech.payment.mode" id="pnf3">
+        <field name="name">PNF3</field>
+        <field name="days_before_payment">15</field>
     </record>
-    <record model="depiltech.payment.mode" id="sepa">
-        <field name="name">Prélèvement SEPA</field>
+
+    <record model="depiltech.payment.mode" id="pnf4">
+        <field name="name">PNF4</field>
+        <field name="days_before_payment">15</field>
     </record>
-    <record model="depiltech.payment.mode" id="virement">
-        <field name="name">Virement</field>
+
+    <record model="depiltech.payment.mode" id="pnf5">
+        <field name="name">PNF5</field>
+        <field name="days_before_payment">30</field>
     </record>
-    <record model="depiltech.payment.mode" id="cheque">
-        <field name="name">Chèque</field>
+
+    <record model="depiltech.payment.mode" id="pnf10">
+        <field name="name">PNF10</field>
+        <field name="days_before_payment">30</field>
     </record>
-    <record model="depiltech.payment.mode" id="carrefour">
-        <field name="name">Carte Carrefour</field>
-    </record>
-    <record model="depiltech.payment.mode" id="cadhoc">
-        <field name="name">Cadhoc</field>
-    </record>
-    <record model="depiltech.payment.mode" id="kadeo">
-        <field name="name">Kadéo</field>
+
+    <record model="depiltech.payment.mode" id="other">
+        <field name="name">Other payment modes</field>
+        <field name="compute_calculator">True</field>
     </record>
 
 </odoo>

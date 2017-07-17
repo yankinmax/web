@@ -9,12 +9,19 @@
             </button>
 
             <field name="partner_id" position="after">
-                <field name="program_code_ids" widget="many2many_tags"
-                       options="{'no_create' : True, 'no_open': True}"
-                       domain="['|',
-                                '&amp;', ('promo_code', '!=', False), ('code_valid', '=', True),
-                                '&amp;', '&amp;', ('voucher_code', '!=', False), ('code_valid', '=', True), ('partner_id', '=', partner_id)
-                               ]"/>
+                <field name="program_to_add"/>
+                <field name="program_code_ids_readonly" widget="many2many_tags"/>
+                <field name="supporting_document_required" invisible="True"/>
+                <field name="supporting_document"
+                       attrs="{'required':[('supporting_document_required', '=', True)]}"/>
+                 <!--
+                 The widget many2many_tags is defined even if the field is invisible.
+                 Without this widget, we have a bug between Odoo JS and Odoo server,
+                 and the "program_code_ids" field is not updated in all cases.
+                  -->
+                <field name="program_code_ids"
+                       widget="many2many_tags"
+                       invisible="True"/>
             </field>
         </field>
     </record>

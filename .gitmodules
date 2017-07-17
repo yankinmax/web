@@ -9,10 +9,10 @@
 	url = git@github.com:camptocamp/web
 [submodule "odoo/src"]
 	path = odoo/src
-	url = git@github.com:camptocamp/odoo
+	url = git@github.com:OCA/OCB
 [submodule "odoo/external-src/survey"]
 	path = odoo/external-src/survey
-	url = git@github.com:camptocamp/survey
+	url = git@github.com:OCA/survey
 [submodule "odoo/external-src/l10n-france"]
 	path = odoo/external-src/l10n-france
 	url = git@github.com:OCA/l10n-france.git
@@ -33,7 +33,7 @@
 	url = git@github.com:OCA/bank-statement-import.git
 [submodule "odoo/external-src/bank-payment"]
 	path = odoo/external-src/bank-payment
-	url = git@github.com:OCA/bank-payment.git
+	url = git@github.com:camptocamp/bank-payment.git
 [submodule "odoo/external-src/reporting-engine"]
 	path = odoo/external-src/reporting-engine
 	url = git@github.com:OCA/reporting-engine.git
@@ -43,3 +43,6 @@
 [submodule "odoo/external-src/odoo-cloud-platform"]
 	path = odoo/external-src/odoo-cloud-platform
 	url = git@github.com:camptocamp/odoo-cloud-platform.git
+[submodule "odoo/external-src/account-invoicing"]
+	path = odoo/external-src/account-invoicing
+	url = git@github.com:OCA/account-invoicing.git

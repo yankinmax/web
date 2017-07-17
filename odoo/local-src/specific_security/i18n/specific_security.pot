@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* specific_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-07 12:12+0000\n"
+"PO-Revision-Date: 2017-07-07 12:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.group_admin_depiltech
+msgid "Admin DT"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.group_reset_alert_program
+msgid "Reset program alert on sale order allowed"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.group_client_archive
+msgid "Client archivage"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.group_company_creation
+msgid "Company creation allowed"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_dt_compta
+msgid "DT-GRP Accounting"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_agency
+msgid "DT-GRP Agence"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_dt_animateurs
+msgid "DT-GRP Animators"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_centers
+msgid "DT-GRP Centers"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_center_managers
+msgid "DT-GRP Centers Managers"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_dt_siege
+msgid "DT-GRP Headquarter"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.grp_dt_info
+msgid "DT-GRP Info"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.group_export
+msgid "Export"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.group_siege_depiltech
+msgid "Headquarters DT"
+msgstr ""
+
+#. module: specific_security
+#: model:ir.model,name:specific_security.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: specific_security
+#: model:ir.model,name:specific_security.model_account_invoice_refund
+msgid "Invoice Refund"
+msgstr ""
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.group_invoice_creation
+msgid "Invoice creation allowed"
+msgstr ""
+

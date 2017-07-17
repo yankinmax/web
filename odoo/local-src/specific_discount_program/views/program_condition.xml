@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sale_discount_program_condition_specific_form" model="ir.ui.view">
+        <field name="name">sale.discount.program.condition.specific.form</field>
+        <field name="model">sale.discount.program.condition</field>
+        <field name="inherit_id" ref="sale_discount_program.sale_discount_program_condition_form"/>
+        <field name="arch" type="xml">
+
+            <sheet position="inside">
+
+                <group attrs="{'invisible': [('type_condition', '!=', 'another_order_validated')]}">
+                    <field name="sale_order_validated_since" attrs="{'required': [('type_condition', '=', 'another_order_validated')]}"/>
+                    <field name="sale_order_validated_until" attrs="{'required': [('type_condition', '=', 'another_order_validated')]}"/>
+                </group>
+
+            </sheet>
+
+        </field>
+    </record>
+
+</odoo>

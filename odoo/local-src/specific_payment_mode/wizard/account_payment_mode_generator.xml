@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_payment_mode_generator_view_form" model="ir.ui.view">
+        <field name="name">account.payment.mode.generator.form</field>
+        <field name="model">account.payment.mode.generator</field>
+        <field name="arch" type="xml">
+            <form string="Generate payment modes">
+                <group>
+                    <field name="account_payment_method_id" readonly="1" />
+                </group>
+                <notebook>
+                    <page string="Errors">
+                        <field name="errors" readonly="1" nolabel="1"/>
+                    </page>
+                    <page string="Payment modes to create">
+                        <group>
+                            <field name="company_modes_to_create_ids" readonly="1">
+                                <tree>
+                                    <field name="name" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page string="Payment modes to activate">
+                        <group>
+                            <field name="to_activate_payment_mode_ids" context="{'active_test': False}" readonly="1">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="company_id" />
+                                    <field name="active" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page string="Payment modes to deactivate">
+                        <group>
+                            <field name="to_deactivate_payment_mode_ids" readonly="1">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="company_id" />
+                                    <field name="active" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </notebook>
+                <footer>
+                    <button name="generate_payment_modes" string="Generate"
+                            type="object" class="btn btn-sm btn-primary" />
+                    <button string="Cancel" class="btn btn-sm btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="account_payment_mode_generator_action" model="ir.actions.act_window">
+        <field name="name">Generate payment modes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.payment.mode.generator</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="account_payment_mode_generator_view_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

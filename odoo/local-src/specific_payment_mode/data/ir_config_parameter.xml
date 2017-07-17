@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo noupdate="1">
+
+    <record id="max_month_number" model="ir.config_parameter">
+        <field name="key">max_month_number</field>
+        <field name="value">14</field>
+    </record>
+
+</odoo>

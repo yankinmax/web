@@ -3,10 +3,14 @@
     <record id="view_order_specific_form" model="ir.ui.view">
         <field name="name">sale.order.specific.form</field>
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="inherit_id" ref="specific_discount_program.view_order_form"/>
         <field name="arch" type="xml">
 
             <field name="note" position="replace"/>
+
+            <field name="payment_term_id" position="attributes">
+                <attribute name="attrs">{'readonly': [('partner_company_type', '=', 'agency_customer')]}</attribute>
+            </field>
 
             <group name="sale_total" position="replace">
                 <div>
@@ -16,11 +20,18 @@
                                    placeholder="Setup default terms and conditions in your company settings."
                                    nolabel="1"/>
                         </group>
-                        <group colspan="3">
+                        <group colspan="3" attrs="{'invisible': [('partner_company_type', '!=', 'agency_customer')]}">
+                            <field name="partner_company_type" invisible="True"/>
                             <field name="depiltech_payment_mode"/>
+                            <field name="compute_calculator" invisible="True"/>
+                            <field name="calculator_link" widget="url" attrs="{'invisible': [('calculator_link', '=', False)]}"/>
                             <field name="provision"/>
                             <field name="month_number"/>
                             <field name="monthly_payment"/>
+                            <field name="first_monthly_payment" attrs="{'invisible': [('compute_calculator', '=', True)]}"/>
+                            <field name="first_monthly_payment_readonly" attrs="{'invisible': [('compute_calculator', '!=', True)]}"/>
+                            <field name="date_of_first_monthly_payment"/>
+                            <field name="day_of_payment"/>
                         </group>
                         <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
                             <field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"/>
@@ -37,5 +48,4 @@
 
         </field>
     </record>
-
 </odoo>
