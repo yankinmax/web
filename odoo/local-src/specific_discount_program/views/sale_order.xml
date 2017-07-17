@@ -19,20 +19,31 @@
                 <attribute name="readonly">1</attribute>
             </xpath>
 
-            <!-- Set Price unit invisible and display another price unit field which is read only for non admin -->
+            <!-- Set Price unit and tax invisible and display another price unit and tax field which is read only for non admin -->
             <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="before">
                 <field name="can_edit_price_unit" invisible="1"/>
                 <field name="price_unit_readonly" attrs="{'readonly': [('can_edit_price_unit', '=', False)]}"/>
+                <!--<field name="tax_id_readonly" attrs="{'readonly': [('can_edit_price_unit', '=', False)]}"/>-->
             </xpath>
             <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='tax_id']" position="attributes">
                 <attribute name="invisible">True</attribute>
             </xpath>
 
             <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="before">
                 <field name="can_edit_price_unit" invisible="1"/>
                 <field name="price_unit_readonly" attrs="{'readonly': [('can_edit_price_unit', '=', False)]}"/>
+                <field name="tax_id_readonly"
+                       widget="many2many_tags"
+                       domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id)]"
+                       attrs="{'readonly': ['|', ('qty_invoiced', '&gt;', 0), ('can_edit_price_unit', '=', False)]}"/>
             </xpath>
             <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree//field[@name='tax_id']" position="attributes">
                 <attribute name="invisible">True</attribute>
             </xpath>
 

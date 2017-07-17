@@ -18,8 +18,8 @@ class Report(models.Model):
             sale_order_pdf = super(Report, self).get_pdf(
                 docids, 'sale.report_saleorder', html, data)
             sale_order = self.env['sale.order'].browse(docids)
+            voucher_pdfs = []
             for voucher in sale_order.generated_voucher_ids:
-                voucher_pdfs = []
                 if voucher.is_printable:
                     voucher_pdf = super(Report, self).get_pdf(
                         [voucher.id],

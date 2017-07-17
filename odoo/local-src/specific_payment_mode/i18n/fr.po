@@ -203,6 +203,12 @@ msgstr "Carte Kadéo"
 
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator___last_update
+#: code:addons/specific_payment_mode/models/sale_order.py:476
+#, python-format
+msgid "Invalid data for the calculator."
+msgstr "Données invalides pour la calculatrice."
+
+#. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode___last_update
 msgid "Last Modified on"
 msgstr "Dernière Modification le"

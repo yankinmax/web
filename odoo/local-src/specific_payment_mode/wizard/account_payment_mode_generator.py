@@ -31,6 +31,9 @@ class AccountPaymentModeGenerator(models.TransientModel):
 
     errors = fields.Text('Errors', readonly=1)
 
+    company_on_errors_ids = fields.Many2many(
+        'res.company', string='Companies on error', readonly=1)
+
     @api.model
     def default_get(self, fields):
         res = super(AccountPaymentModeGenerator, self).default_get(fields)
@@ -41,7 +44,7 @@ class AccountPaymentModeGenerator(models.TransientModel):
                 payment_method_id)
             allowed_companies = payment_method.company_ids.mapped(
                 'children_company_ids')
-            payment_modes = payment_method.with_context(
+            payment_modes = payment_method.sudo().with_context(
                 active_test=False).payment_mode_ids
             modes_to_activate = payment_modes.filtered(
                 lambda m: not m.active and m.company_id in allowed_companies)
@@ -50,23 +53,35 @@ class AccountPaymentModeGenerator(models.TransientModel):
             company_modes_to_create = allowed_companies - payment_modes.mapped(
                 'company_id')
             errors = []
-            errors += self._check_if_deactivable(modes_to_deactivate)
-            errors += self._check_if_creatable(company_modes_to_create)
+            companies_on_error = []
+            new_errors, new_companies_on_error = (
+                self._check_if_deactivable(modes_to_deactivate)
+            )
+            errors += new_errors
+            companies_on_error += new_companies_on_error
+            new_errors, new_companies_on_error = (
+                self._check_if_creatable(company_modes_to_create)
+            )
+            errors += new_errors
+            companies_on_error += new_companies_on_error
             if errors:
                 res['errors'] = '.\n'.join(errors)
+                res['company_on_errors_ids'] = companies_on_error
+                company_modes_to_create = company_modes_to_create.filtered(
+                    lambda c: c.id not in companies_on_error
+                )
             elif (len(modes_to_activate) == 0
                   and len(modes_to_deactivate) == 0
                   and len(company_modes_to_create) == 0):
                 res['errors'] = _('There is nothing to do.')
-            else:
-                res['to_activate_payment_mode_ids'] = modes_to_activate.ids
-                res['to_deactivate_payment_mode_ids'] = modes_to_deactivate.ids
-                res['company_modes_to_create_ids'] = \
-                    company_modes_to_create.ids
+            res['to_activate_payment_mode_ids'] = modes_to_activate.ids
+            res['to_deactivate_payment_mode_ids'] = modes_to_deactivate.ids
+            res['company_modes_to_create_ids'] = company_modes_to_create.ids
         return res
 
     def _check_if_deactivable(self, payment_modes):
         errors = []
+        companies_on_error = []
         modes_used_on_invoices = self.env['account.invoice'].search([
             ('payment_mode_id', 'in', payment_modes.ids),
             ('state', 'not in', ('paid', 'cancel'))
@@ -76,6 +91,7 @@ class AccountPaymentModeGenerator(models.TransientModel):
                 errors.append(_('Payment mode %s from company %s is '
                                 'used on an open invoice.' % (
                                     mode.name, mode.company_id.name)))
+                companies_on_error.append(mode.company_id.id)
         modes_used_on_sales = self.env['sale.order'].search([
             ('payment_mode_id', 'in', payment_modes.ids),
             '|', ('invoice_status', '!=', 'invoiced'),
@@ -87,19 +103,24 @@ class AccountPaymentModeGenerator(models.TransientModel):
                                 'sales order which are not totally invoiced '
                                 'or cancelled.' % (mode.name,
                                                    mode.company_id.name)))
-        return errors
+                companies_on_error.append(mode.company_id.id)
+        return errors, companies_on_error
 
     def _check_if_creatable(self, companies):
         errors = []
+        companies_on_error = []
         for company in companies:
             aj_obj = self.env['account.journal']
-            bank_journal = aj_obj.search(
+            # We must be a sudo here, because except admin user,
+            # journals are readable only for the connected company
+            bank_journal = aj_obj.sudo().search(
                 [('type', '=', 'bank'), ('company_id', '=', company.id)])
             if not bank_journal:
                 errors.append(_(
                     'No bank journal found for company %s '
                     % company.name))
-        return errors
+                companies_on_error.append(company.id)
+        return errors, companies_on_error
 
     @api.multi
     def generate_payment_modes(self):
@@ -119,7 +140,7 @@ class AccountPaymentModeGenerator(models.TransientModel):
         for company in companies:
 
             aj_obj = self.env['account.journal']
-            bank_journal = aj_obj.search(
+            bank_journal = aj_obj.sudo().search(
                 [('type', '=', 'bank'), ('company_id', '=', company.id)])
             if not bank_journal:
                 raise UserError(_('No bank journal found for company %s '
@@ -141,7 +162,7 @@ class AccountPaymentModeGenerator(models.TransientModel):
             vals.append(values)
 
         for v in vals:
-            self.env['account.payment.mode'].create(v)
+            self.env['account.payment.mode'].sudo().create(v)
 
     def _activate_payment_modes(self, modes):
         modes.write({'active': True})
