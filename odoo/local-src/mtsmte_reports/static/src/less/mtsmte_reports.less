@@ -20,7 +20,10 @@
 // analysis reports
 @logo-w: 50px;
 @logo-h: 150px;
-
+@font-face {
+  font-family: 'frutiger';
+  src: url('/mtsmte_reports/static/src/fonts/frutiger-lt-std-45-light.otf');
+}
 
 .header.analysis_header{
     position: relative;
@@ -60,10 +63,12 @@
   }
 }
 h1 {
-  font-size: 25px;
+  font-size: 23px;
+  font-family: frutiger;
 }
 h2 {
-  font-size: 20px;
+  font-size: 17px;
+  font-family: frutiger;
 }
 .page.analysis{
   padding: 0 @logo-w;
@@ -82,7 +87,9 @@ h2 {
             border-bottom: 1px solid @grey;
         }
         .test_results{
-            border-top: 1px solid @grey;
+            .heading{
+              margin-bottom: 15px;
+            }
         }
     }
     .heading{
@@ -106,7 +113,7 @@ h2 {
     }
     .test_results {
       .result-state{
-
+        margin-bottom: 15px;
         div:first-of-type {
           background-color: #cccccc;
         }
