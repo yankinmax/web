@@ -6,9 +6,7 @@
     <field name="model">product.substance.measure</field>
     <field name="arch" type="xml">
       <tree string="Measure">
-        <field name="name"/>
         <field name="sub_cas_number"/>
-        <field name="customer_id"/>
         <field name="legal_limit_min"/>
         <field name="product_uom_id"/>
         <field name="legal_limit_max"/>
@@ -28,9 +26,7 @@
       <form string="Measure">
         <sheet>
           <group>
-            <field name="name"/>
             <field name="sub_cas_number"/>
-            <field name="customer_id"/>
             <field name="legal_limit_min"/>
             <field name="product_uom_id"/>
             <field name="legal_limit_max"/>

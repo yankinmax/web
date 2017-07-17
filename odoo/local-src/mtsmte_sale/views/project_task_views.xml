@@ -20,20 +20,19 @@
               create="false"
               delete="false">
               <field name="task_id"
-                     attrs="{'readonly':'1'}"
                      invisible="True"/>
-              <field name="product_substance_id" readonly="True"/>
-              <field name="sub_cas_number" readonly="True" widget="one2many_tags"/>
+              <field name="product_substance_id"/>
+              <field name="sub_cas_number"/>
               <field name="comments"/>
-              <field name="legal_limit_min" readonly="True"/>
-              <field name="product_uom_id" readonly="True"/>
-              <field name="legal_limit_max" readonly="True"/>
-              <field name="has_limit_min" attrs="{'readonly':'1'}"
+              <field name="legal_limit_min"/>
+              <field name="product_uom_id"/>
+              <field name="legal_limit_max"/>
+              <field name="has_limit_min"
                      invisible="True"/>
-              <field name="has_limit_max" attrs="{'readonly':'1'}"
+              <field name="has_limit_max"
                      invisible="True"/>
-              <field name="detection_limit" attrs="{'readonly':'1'}"/>
-              <field name="quantification_limit" attrs="{'readonly':'1'}"/>
+              <field name="detection_limit"/>
+              <field name="quantification_limit"/>
               <field name="measure"/>
               <field name="conformity"/>
             </tree>

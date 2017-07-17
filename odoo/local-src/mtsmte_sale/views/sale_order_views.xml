@@ -17,14 +17,11 @@
         <field name="commercial_partner_id" invisible="True"/>
       </xpath>
 
-      <xpath expr="//tree/field[@name='product_id']" position="after">
-        <field name="product_substance_ids" domain="['|',('customer_id', '=', parent.partner_id),('customer_id', 'in', False)]"/>
-      </xpath>
       <xpath expr="//form/group/group/field[@name='product_id']" position="after">
         <field name="chemistry" invisible="True"/>
         <field name="product_substance_ids" attrs="{'invisible': [('chemistry', '!=', 'chem')]}"
                domain="['|',('customer_id', '=', parent.commercial_partner_id),('customer_id', 'in', False)]"
-               />
+               >
             <tree>
               <field name="name"/>
               <field name="sub_cas_number"/>
@@ -36,7 +33,7 @@
               <field name="detection_limit"/>
               <field name="quantification_limit"/>
             </tree>
-          </field>
+        </field>
       </xpath>
 
       <!-- Better view for sales conditions -->

@@ -41,10 +41,8 @@ class SaleOrder(models.Model):
                         'product_substance_id': substance.id,
                     }
                     product_substance_measure += [(0, 0, vals_measure)]
-                product_method_ids = line.product_id.product_method_ids.ids
-                equipment_ids = line.product_id.equipment_ids.ids
-                extaction_ids = line.product_id.product_extaction_type_ids.id
-                task.write({
+
+                vals = {
                     'product_substance_measure_ids': product_substance_measure,
                     'tested_sample': line.tested_sample,
                     'test_parameters': line.product_id.test_parameters,
@@ -52,8 +50,17 @@ class SaleOrder(models.Model):
                     'duration': line.product_id.duration,
                     'nb_shocks': line.product_id.nb_shocks,
                     'results': line.product_id.results,
-                    'product_method_ids': [(6, 0, product_method_ids)],
-                    'equipment_ids': [(6, 0, equipment_ids)],
-                    'extaction_ids': [(6, 0, extaction_ids)],
-                })
+                }
+
+                product_method_ids = line.product_id.product_method_id.ids
+                equipment_ids = line.product_id.equipment_id.ids
+                extraction_ids = line.product_id.product_extraction_type_id.ids
+
+                if product_method_ids:
+                    vals['product_method_ids'] = [(6, 0, product_method_ids)]
+                if equipment_ids:
+                    vals['equipment_ids'] = [(6, 0, equipment_ids)]
+                if extraction_ids:
+                    vals['extraction_ids'] = [(6, 0, extraction_ids)]
+                task.write(vals)
         return True

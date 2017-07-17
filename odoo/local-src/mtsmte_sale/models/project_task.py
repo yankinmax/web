@@ -44,6 +44,6 @@ class ProjectTask(models.Model):
     )
     product_extraction_type_ids = fields.One2many(
         'product.extraction.type',
-        'product_id',
+        'product_ids',
         string='Extraction Type',
     )
