@@ -25,6 +25,9 @@ class ProjectAnalyisPrintWiz(models.TransientModel):
         domain=lambda self: self._domain_task_ids(),
         default=lambda self: self._default_task_ids(),
     )
+    forced_lang = fields.Char(
+        string="forced lang"
+    )
 
     def _default_lang_id(self):
         lang = self.project_id.partner_id.lang
@@ -48,6 +51,7 @@ class ProjectAnalyisPrintWiz(models.TransientModel):
             'report_name', 'report_type', 'name'
         )
         res = {k: v for k, v in res.iteritems() if k in to_keep}
+        print self.lang_id.code, self.lang_id.id
         res['data'] = {
             'forced_lang': self.lang_id.code,
             'project_id': self.project_id.id,

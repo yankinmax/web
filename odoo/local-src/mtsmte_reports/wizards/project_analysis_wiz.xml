@@ -8,7 +8,7 @@
       <form string="Print analysis">
         <group name="main" col="4">
           <field name="project_id" readonly="1" colspan="2" />
-          <field name="lang_id" colspan="2" invisible="True"/>
+          <field name="lang_id" colspan="2"/>
           <separator string="Select tasks" />
           <field name="task_ids" colspan="4" nolabel="1">
             <tree>

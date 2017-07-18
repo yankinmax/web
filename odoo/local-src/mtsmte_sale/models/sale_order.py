@@ -61,6 +61,7 @@ class SaleOrder(models.Model):
                 if equipment_ids:
                     vals['equipment_id'] = [(6, 0, equipment_ids)]
                 if extraction_ids:
-                    vals['product_extraction_type_id'] = [(6, 0, extraction_ids)]
+                    extr = [(6, 0, extraction_ids)]
+                    vals['product_extraction_type_id'] = extr
                 task.write(vals)
         return True

@@ -3,13 +3,14 @@
 
   <template id="report_analysis_doc" name="MT analysis report content">
     <t t-call="report.external_layout">
-      <t t-set="doc" t-value="doc.with_context({'lang': forced_lang or doc.partner_id.lang})" />
+      <t t-set="doc" t-value="doc.with_context({'lang': lang_id or doc.partner_id.lang})" />
       <t t-set="tasks" t-value="tasks or doc.task_ids" />
       <div class="page analysis">
         <t t-foreach="tasks" t-as="task">
           <t t-set="product" t-value="task.sale_line_id.product_id" />
           <t t-set="atype" t-value="report.get_analysis_type(product)" />
           <div t-attf-class="task_wrapper type_#{atype}">
+          <t t-debug="pdb"/>
             <div class="section task_header">
               <h1 class="heading task_title" t-field="task.name" />
               <div class="content">
@@ -18,6 +19,8 @@
             </div>
             <div class="section test_samples">
               <h2 class="heading">Tested samples</h2>
+              <span t-raw="forced_lang"/>
+              <span t-raw="doc.partner_id.lang"/>
               <div class="content">
                 <t t-raw="task.tested_sample" />
               </div>
@@ -66,7 +69,10 @@
         <div class="row result-state">
           <div class="col-xs-6">
             <span>Task name</span>
-            <p t-field="task.name"></p>
+            <p>
+              <span t-field="task.name"/><br/>
+              <em>&#91;<span t-field="task.product_extraction_type_id"/>&#93;</em>
+            </p>
           </div>
           <div class="col-xs-6">
             <span>Task state</span>
@@ -91,7 +97,8 @@
             <t t-foreach="task.product_substance_measure_ids" t-as="meas">
               <tr>
                 <td class="substance">
-                  <span t-field="meas.product_substance_id" />
+                  <span t-field="meas.product_substance_id" /><br/>
+                  &#91;<span t-field="meas.product_substance_id.sub_cas_number"/>&#93;
                 </td>
                 <td class="legal_limit">
                   <t t-if="meas.legal_limit_min">
