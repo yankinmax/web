@@ -32,18 +32,15 @@ class ProjectTask(models.Model):
     results = fields.Html(
         string='Results',
     )
-    product_method_ids = fields.One2many(
+    product_method_id = fields.Many2one(
         'product.method',
-        'task_id',
         string='Method',
     )
-    equipment_ids = fields.One2many(
+    equipment_id = fields.Many2one(
         'maintenance.equipment',
-        'task_id',
         string='Equipment',
     )
-    product_extraction_type_ids = fields.One2many(
+    product_extraction_type_id = fields.Many2one(
         'product.extraction.type',
-        'product_ids',
         string='Extraction Type',
     )

@@ -16,8 +16,9 @@ class ProductExtractionType(models.Model):
         'product_extraction_type_id',
         string='Product',
     )
-    task_id = fields.Many2one(
+    task_ids = fields.One2many(
         'project.task',
+        'product_extraction_type_id',
         string='Task',
     )
     _sql_constraints = [

@@ -16,8 +16,9 @@ class ProductMethod(models.Model):
         'product_method_id',
         string='Product',
     )
-    task_id = fields.Many2one(
+    task_id = fields.One2many(
         'project.task',
+        'product_method_id',
         string='Task',
     )
     _sql_constraints = [

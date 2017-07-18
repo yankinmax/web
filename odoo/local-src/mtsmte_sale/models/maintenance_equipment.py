@@ -16,8 +16,9 @@ class MaintenanceEquipment(models.Model):
         'equipment_id',
         string='Product',
     )
-    task_id = fields.Many2one(
+    task_id = fields.One2many(
         'project.task',
+        'equipment_id',
         string='Task',
     )
     _sql_constraints = [

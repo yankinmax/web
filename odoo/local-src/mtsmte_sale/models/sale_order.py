@@ -57,10 +57,10 @@ class SaleOrder(models.Model):
                 extraction_ids = line.product_id.product_extraction_type_id.ids
 
                 if product_method_ids:
-                    vals['product_method_ids'] = [(6, 0, product_method_ids)]
+                    vals['product_method_id'] = [(6, 0, product_method_ids)]
                 if equipment_ids:
-                    vals['equipment_ids'] = [(6, 0, equipment_ids)]
+                    vals['equipment_id'] = [(6, 0, equipment_ids)]
                 if extraction_ids:
-                    vals['extraction_ids'] = [(6, 0, extraction_ids)]
+                    vals['product_extraction_type_id'] = [(6, 0, extraction_ids)]
                 task.write(vals)
         return True
