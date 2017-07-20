@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-30 11:09+0000\n"
-"PO-Revision-Date: 2017-05-30 11:09+0000\n"
+"POT-Creation-Date: 2017-07-20 06:35+0000\n"
+"PO-Revision-Date: 2017-07-20 06:35+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -82,7 +82,7 @@ msgid "Admin DT"
 msgstr "Admin DT"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:159
+#: code:addons/specific_base/models/res_partner.py:160
 #, python-format
 msgid "Aestheticians and other beauty professionals"
 msgstr "Esthéticiens et autres professions de la beauté"
@@ -113,7 +113,7 @@ msgid "Answers"
 msgstr "Réponses"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:137
+#: code:addons/specific_base/models/res_partner.py:138
 #, python-format
 msgid "Artisan"
 msgstr "Artisan"
@@ -187,7 +187,12 @@ msgid "Check"
 msgstr "Check"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:78
+#: model:ir.model.fields,field_description:specific_base.field_res_company_children_company_ids
+msgid "Children companies"
+msgstr "Sociétés enfants"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:79
 #, python-format
 msgid "Cinema, television"
 msgstr "Cinéma, télévision"
@@ -198,15 +203,10 @@ msgid "City"
 msgstr "Ville"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:149
+#: code:addons/specific_base/models/res_partner.py:150
 #, python-format
 msgid "Clergy, other religious professions"
 msgstr "Clergé, Autres professions religieuses"
-
-#. module: specific_base
-#: model:res.groups,name:specific_base.group_client_archive
-msgid "Client archivage"
-msgstr "Client archivage"
 
 #. module: specific_base
 #: code:addons/specific_base/models/res_company.py:19
@@ -262,13 +262,19 @@ msgid "Company name"
 msgstr "Nom de la société"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:187
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_company_type_visible
+#: model:ir.model.fields,field_description:specific_base.field_res_users_company_type_visible
+msgid "Company type visible"
+msgstr "Type de société visible"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:188
 #, python-format
 msgid "Conjoint disagreement"
 msgstr "Désaccord du conjoint"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:163
+#: code:addons/specific_base/models/res_partner.py:164
 #, python-format
 msgid "Conscripts"
 msgstr "Militaires du contingent"
@@ -289,7 +295,7 @@ msgid "Country"
 msgstr "Pays"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:170
+#: code:addons/specific_base/models/res_partner.py:171
 #, python-format
 msgid "Couple"
 msgstr "Couple"
@@ -375,31 +381,31 @@ msgid "Display teleop"
 msgstr "Display teleop"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:171
+#: code:addons/specific_base/models/res_partner.py:172
 #, python-format
 msgid "Divorced"
 msgstr "Divorcé"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:146
+#: code:addons/specific_base/models/res_partner.py:147
 #, python-format
 msgid "Doctors, Specialized Doctors"
 msgstr "Doctors, Specialized Doctors"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:80
+#: code:addons/specific_base/models/res_partner.py:81
 #, python-format
 msgid "Emailing communication"
 msgstr "Communication Emailing"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:155
+#: code:addons/specific_base/models/res_partner.py:156
 #, python-format
 msgid "Employees and agents of the Public Service"
 msgstr "Employés et agents de la fonction publique"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:157
+#: code:addons/specific_base/models/res_partner.py:158
 #, python-format
 msgid "Employees of private enterprise"
 msgstr "Employés d’entreprise privée"
@@ -415,19 +421,19 @@ msgid "Event"
 msgstr "Évènement"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:85
+#: code:addons/specific_base/models/res_partner.py:86
 #, python-format
 msgid "Event (stand in salon, open doors, fair, ...)"
 msgstr "Evénement (stand sur salon, porte ouverte, foire...)"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:145
+#: code:addons/specific_base/models/res_partner.py:146
 #, python-format
 msgid "Executive private companies"
 msgstr "Cadres d’entreprise privée"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:141
+#: code:addons/specific_base/models/res_partner.py:142
 #, python-format
 msgid "Executive public service"
 msgstr "Cadres de la fonction publique"
@@ -444,7 +450,7 @@ msgid "Family situation"
 msgstr "Situation familiale"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:136
+#: code:addons/specific_base/models/res_partner.py:137
 #, python-format
 msgid "Farmer"
 msgstr "Agriculteur"
@@ -480,7 +486,7 @@ msgid "For network animators, region id in Qualitelis for the responsible of the
 msgstr "Pour les animateurs réseau, id dans le SI de Qualitelis de la région dont le user est responsable"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:153
+#: code:addons/specific_base/models/res_partner.py:154
 #, python-format
 msgid "Foremen, supervisors"
 msgstr "Contremaîtres, agents de maîtrise"
@@ -532,7 +538,7 @@ msgid "Has come"
 msgstr "Has come"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:139
+#: code:addons/specific_base/models/res_partner.py:140
 #, python-format
 msgid "Head of a company more than 10 employees"
 msgstr "Chefs d’entreprise de 10 salariés ou plus"
@@ -559,24 +565,30 @@ msgid "ID"
 msgstr "Identifiant"
 
 #. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:352
+#, python-format
+msgid "Impossible to delete a partner linked to a company"
+msgstr "Impossible de supprimer un partenaire lié à une société"
+
+#. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_partner_info_meeting_date
 msgid "Info meeting date"
 msgstr "Info meeting date"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:144
+#: code:addons/specific_base/models/res_partner.py:145
 #, python-format
 msgid "Information professions, arts and entertainment"
 msgstr "Professions de l’information, des arts et des spectacles"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:74
+#: code:addons/specific_base/models/res_partner.py:75
 #, python-format
 msgid "Internet (website, blog post, search engine,social networks, forum, banner"
 msgstr "Internet (site Dépil Tech, article, moteur de recherche, réseaux sociaux, forum de discussion, bannière publicitaire...)"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:185
+#: code:addons/specific_base/models/res_partner.py:186
 #, python-format
 msgid "Intractable"
 msgstr "Intraitable"
@@ -688,7 +700,7 @@ msgid "Levy"
 msgstr "Levy"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:140
+#: code:addons/specific_base/models/res_partner.py:141
 #, python-format
 msgid "Liberal professions"
 msgstr "Professions libérales"
@@ -724,7 +736,7 @@ msgid "Monday"
 msgstr "Lundi"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:197
+#: code:addons/specific_base/models/res_partner.py:198
 #, python-format
 msgid "More than 1500"
 msgstr "Plus que 1500"
@@ -750,7 +762,7 @@ msgid "Nb room"
 msgstr "Nombre de cabines"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:76
+#: code:addons/specific_base/models/res_partner.py:77
 #, python-format
 msgid "Newspapers (post or advertisement"
 msgstr "Presse écrite (publicité ou article)"
@@ -762,7 +774,7 @@ msgid "No"
 msgstr "Non"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:186
+#: code:addons/specific_base/models/res_partner.py:187
 #, python-format
 msgid "No budget"
 msgstr "Pas de budget"
@@ -780,7 +792,7 @@ msgid "Not real"
 msgstr "Not real"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:188
+#: code:addons/specific_base/models/res_partner.py:189
 #, python-format
 msgid "Not the good time"
 msgstr "Ce n'est pas le bon moment"
@@ -839,20 +851,20 @@ msgid "Opening location of the future center"
 msgstr "Lieu d'ouverture du futur centre"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:189
+#: code:addons/specific_base/models/res_partner.py:190
 #: model:ir.model.fields,field_description:specific_base.field_res_partner_comment3
 #, python-format
 msgid "Other"
 msgstr "Autre"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:92
+#: code:addons/specific_base/models/res_partner.py:93
 #, python-format
 msgid "Other (precise)"
 msgstr "Other (precise)"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:148
+#: code:addons/specific_base/models/res_partner.py:149
 #, python-format
 msgid "Other Health Professions and Social Work"
 msgstr "Autres professions de la santé et du travail social"
@@ -863,13 +875,13 @@ msgid "Other configuration"
 msgstr "Other configuration"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:151
+#: code:addons/specific_base/models/res_partner.py:152
 #, python-format
 msgid "Other private business professions"
 msgstr "Autres professions d'entreprise privée"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:150
+#: code:addons/specific_base/models/res_partner.py:151
 #, python-format
 msgid "Other professions Public Service"
 msgstr "Autres professions de la fonction publique"
@@ -880,10 +892,15 @@ msgid "Partner"
 msgstr "Partenaire"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:91
+#: code:addons/specific_base/models/res_partner.py:92
 #, python-format
 msgid "Passing by the center / Showcase"
 msgstr "En passant devant le centre / Vitrine"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_account_payment
+msgid "Payments"
+msgstr "Paiements"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_payments_mode
@@ -896,7 +913,7 @@ msgid "Personal contribution"
 msgstr "Apport personnel"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:158
+#: code:addons/specific_base/models/res_partner.py:159
 #, python-format
 msgid "Personal services workers"
 msgstr "Personnels des services directs aux particuliers"
@@ -909,6 +926,7 @@ msgstr "Phoning infos"
 #. module: specific_base
 #: model:ir.actions.act_window,name:specific_base.company_phototherapist_action_tree
 #: model:ir.model.fields,field_description:specific_base.field_account_invoice_phototherapist_id
+#: model:ir.model.fields,field_description:specific_base.field_account_payment_phototherapist_id
 #: model:ir.model.fields,field_description:specific_base.field_calendar_event_phototherapist_id
 #: model:ir.model.fields,field_description:specific_base.field_res_partner_phototherapist_id
 #: model:ir.model.fields,field_description:specific_base.field_sale_order_phototherapist_id
@@ -919,13 +937,18 @@ msgid "Phototherapist"
 msgstr "Phototherapist"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:156
+#: model:ir.model.fields,field_description:specific_base.field_account_payment_phototherapist_required
+msgid "Phototherapist required"
+msgstr "Phototherapist requis"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:157
 #, python-format
 msgid "Police and military"
 msgstr "Policiers et militaires"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:77
+#: code:addons/specific_base/models/res_partner.py:78
 #, python-format
 msgid "Poster advertising, Signboard"
 msgstr "Poster advertising, Signboard"
@@ -941,7 +964,7 @@ msgid "Pricelist item"
 msgstr "Élément de la liste de prix"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:82
+#: code:addons/specific_base/models/res_partner.py:83
 #, python-format
 msgid "Prospectus communication (flyers, mail in letterbox"
 msgstr "Communication Prospectus (Flyers, publipostage en boite aux lettres...)"
@@ -962,7 +985,7 @@ msgid "Qualitelis, region id"
 msgstr "Qualitelis, identifiant de la région"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:79
+#: code:addons/specific_base/models/res_partner.py:80
 #, python-format
 msgid "Radio"
 msgstr "Radio"
@@ -973,7 +996,7 @@ msgid "Reason for loosing leads"
 msgstr "Raisons d'échec pour les Pistes"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:161
+#: code:addons/specific_base/models/res_partner.py:162
 #, python-format
 msgid "Retirees"
 msgstr "Retraités"
@@ -1010,7 +1033,7 @@ msgid "SEM active"
 msgstr "SEM active"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:84
+#: code:addons/specific_base/models/res_partner.py:85
 #, python-format
 msgid "SMS"
 msgstr "SMS"
@@ -1036,7 +1059,7 @@ msgid "Saturday"
 msgstr "Samedi"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:147
+#: code:addons/specific_base/models/res_partner.py:148
 #, python-format
 msgid "School teachers, teachers and assimilated"
 msgstr "Professeurs des écoles, instituteurs et assimilés"
@@ -1062,7 +1085,7 @@ msgid "Search source"
 msgstr "Recherche source"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:169
+#: code:addons/specific_base/models/res_partner.py:170
 #, python-format
 msgid "Single"
 msgstr "Célibataire"
@@ -1109,43 +1132,43 @@ msgid "Source"
 msgstr "Source"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:87
+#: code:addons/specific_base/models/res_partner.py:88
 #, python-format
 msgid "Sponsorship / Fitness Center"
 msgstr "Partenariat / Salle de sport"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:90
+#: code:addons/specific_base/models/res_partner.py:91
 #, python-format
 msgid "Sponsorship / Friend"
 msgstr "Parrainage / Amis"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:89
+#: code:addons/specific_base/models/res_partner.py:90
 #, python-format
 msgid "Sponsorship / Other (precise)"
 msgstr "Partenariat / Autre (préciser)"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:88
+#: code:addons/specific_base/models/res_partner.py:89
 #, python-format
 msgid "Sponsorship / School"
 msgstr "Partenariat / Ecole, étudiants"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:86
+#: code:addons/specific_base/models/res_partner.py:87
 #, python-format
 msgid "Sponsorship / Works Council"
 msgstr "Partenariat / CE"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:138
+#: code:addons/specific_base/models/res_partner.py:139
 #, python-format
 msgid "Storekeeper and equivalent"
 msgstr "Commerçant et assimilés"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:164
+#: code:addons/specific_base/models/res_partner.py:165
 #, python-format
 msgid "Student, pupils"
 msgstr "Étudiants, élèves"
@@ -1156,19 +1179,19 @@ msgid "Sunday"
 msgstr "Dimanche"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:142
+#: code:addons/specific_base/models/res_partner.py:143
 #, python-format
 msgid "Teachers, Researchers"
 msgstr "Teachers, Researchers"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:152
+#: code:addons/specific_base/models/res_partner.py:153
 #, python-format
 msgid "Technicians"
 msgstr "Technicians"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:83
+#: code:addons/specific_base/models/res_partner.py:84
 #, python-format
 msgid "Telemarketing (phone contact)"
 msgstr "Téléprospection (contact téléphonique)"
@@ -1210,7 +1233,7 @@ msgid "Type"
 msgstr "Type"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:162
+#: code:addons/specific_base/models/res_partner.py:163
 #, python-format
 msgid "Unemployed"
 msgstr "Chômeurs"
@@ -1266,13 +1289,13 @@ msgid "Why no buy"
 msgstr "Why no buy"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:172
+#: code:addons/specific_base/models/res_partner.py:173
 #, python-format
 msgid "Widower"
 msgstr "Veuf(ve)"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:160
+#: code:addons/specific_base/models/res_partner.py:161
 #, python-format
 msgid "Workers"
 msgstr "Ouvriers"
