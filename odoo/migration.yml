@@ -135,3 +135,4 @@ migration:
           - l10n_ch_pain_credit_transfer
           - mtsmte_stock
           - mtsmte_sale
+          - mtsmte_reports
