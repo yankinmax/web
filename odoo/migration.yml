@@ -106,3 +106,8 @@ migration:
           - specific_payment_mode
           - specific_sale_order
           - specific_security
+    - version: 10.1.1
+      addons:
+        upgrade:
+          #### local-src
+          - specific_base

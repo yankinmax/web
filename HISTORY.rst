@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* DT-56: Fix deletion of partner linked to a company
+
 **Build**
 
 **Documentation**

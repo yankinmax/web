@@ -7,6 +7,7 @@ import uuid
 
 from datetime import datetime, timedelta
 
+from odoo.exceptions import UserError
 from odoo import models, fields, api, _
 
 
@@ -341,3 +342,14 @@ class ResPartner(models.Model):
          'phone and email adress. Please use the search function to find it.'
          )
     ]
+
+    @api.multi
+    def unlink(self):
+        company = self.env['res.company'].sudo().search([
+            ('partner_id', 'in', self.ids)
+        ])
+        if company:
+            raise UserError(_(
+                "Impossible to delete a partner linked to a company"
+            ))
+        return super(ResPartner, self).unlink()
