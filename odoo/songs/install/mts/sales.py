@@ -6,7 +6,7 @@ from pkg_resources import resource_stream
 
 import anthem
 
-from ...common import req
+from ...common import req, load_csv
 
 
 @anthem.log
@@ -20,6 +20,28 @@ def set_sale_conditions(ctx):
 
 
 @anthem.log
+def import_product_category_MTS(ctx):
+    path = 'data/install/mts/product.category.MTS.csv'
+    load_csv(ctx, path, 'product.category')
+
+
+@anthem.log
+def import_product_template_MTS(ctx):
+    path = 'data/install/mts/product.template.MTS.csv'
+    load_csv(ctx, path, 'product.template')
+
+
+@anthem.log
+def import_product_sellers_MTS(ctx):
+    path = 'data/install/mts/product.product_sellers_rel.MTS.csv'
+    load_csv(ctx, path, 'product.template')
+
+
+@anthem.log
 def main(ctx):
     """ Configuring sales settings MTS """
     set_sale_conditions(ctx)
+    import_product_category_MTS(ctx)
+    import_product_template_MTS(ctx)
+    # TODO: activate this once stock setup is done
+    # import_product_sellers_MTS(ctx)

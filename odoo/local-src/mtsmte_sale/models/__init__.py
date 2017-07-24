@@ -7,6 +7,7 @@ from . import maintenance_equipment
 from . import product_method
 from . import product_extraction_type
 from . import product
+from . import product_categ
 from . import substance
 from . import sale_order_line
 from . import project_task

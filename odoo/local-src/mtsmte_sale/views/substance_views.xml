@@ -7,6 +7,7 @@
     <field name="arch" type="xml">
       <tree string="Substance">
         <field name="name"/>
+        <field name="company_id"/>
         <field name="sub_cas_number"/>
         <field name="customer_id"/>
         <field name="legal_limit_min"/>
