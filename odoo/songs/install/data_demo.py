@@ -2,11 +2,8 @@
 # Copyright 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from pkg_resources import resource_stream
-
 import anthem
-from anthem.lyrics.loaders import load_csv_stream
-from ..common import req
+from ..common import load_csv
 
 """ File for demo data
 
@@ -16,37 +13,34 @@ excerpt of data, while the full data is only imported in the 'full' mode.
 """
 
 
+# TODO: is this needed at all?
 @anthem.log
 def import_customers(ctx):
     """ Importing customers from csv """
-    content = resource_stream(req, 'data/demo/customers.csv')
-    load_csv_stream(ctx, 'res.partner', content, delimiter=',')
+    load_csv(ctx, 'data/demo/customers.csv', 'res.partner')
 
 
 @anthem.log
 def import_projects(ctx):
     """ Importing projects from csv """
-    content = resource_stream(req, 'data/demo/project.project.csv')
-    load_csv_stream(ctx, 'project.project', content, delimiter=',')
+    load_csv(ctx, 'data/demo/project.project.csv', 'project.project')
 
 
 @anthem.log
 def import_project_tasks(ctx):
     """ Importing project tasks from csv """
-    content = resource_stream(req, 'data/demo/project.task.csv')
-    load_csv_stream(ctx, 'project.task', content, delimiter=',')
+    load_csv(ctx, 'data/demo/project.task.csv', 'project.task')
 
 
 @anthem.log
-def import_partner(ctx):
+def import_partners(ctx):
     """ Importing demo partner from csv """
-    content = resource_stream(req, 'data/demo/res.partner.csv')
-    load_csv_stream(ctx, 'res.partner', content, delimiter=',')
+    load_csv(ctx, 'data/demo/res.partner.csv', 'res.partner')
 
 
 @anthem.log
 def main(ctx):
     """ Loading demo data """
-    import_partner(ctx)
+    import_partners(ctx)
     import_projects(ctx)
     import_project_tasks(ctx)

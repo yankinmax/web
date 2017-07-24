@@ -1,13 +1,12 @@
 FROM camptocamp/odoo-project:10.0-2.3.0
 MAINTAINER Camptocamp
 
-# Install additional debian packages if needed
-# RUN set -x; \
-#         apt-get update \
-#         && apt-get install -y --no-install-recommends \
-#         python-shapely \
-#         && apt-get clean \
-#         && rm -rf /var/lib/apt/lists/*
+RUN set -x; \
+         apt-get update \
+         && apt-get install -y --no-install-recommends \
+         parallel \
+         && apt-get clean \
+         && rm -rf /var/lib/apt/lists/*
 
 COPY ./before-migrate-entrypoint.d/* odoo/before-migrate-entrypoint.d/
 COPY ./start-entrypoint.d/* odoo/start-entrypoint.d/
@@ -17,6 +16,8 @@ RUN chmod +x odoo/before-migrate-entrypoint.d/* \
 # Install additional python packages if needed
 COPY ./requirements.txt /opt/odoo
 RUN cd /opt/odoo && pip install -r requirements.txt
+
+COPY ./importer.sh /opt/odoo/bin/
 
 ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/server-tools, \

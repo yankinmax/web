@@ -5,3 +5,6 @@ statsd==3.2.1
 unidecode==0.04.20
 py3o.template==0.9.11
 py3o.formats==0.3
+
+# tmp waiting for anthem 0.8.0
+https://github.com/camptocamp/anthem/tarball/master

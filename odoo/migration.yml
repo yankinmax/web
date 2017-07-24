@@ -3,18 +3,22 @@ migration:
     install_command: odoo
     install_args: --load=web,web_kanban,attachment_s3,session_redis,logging_json
   versions:
-    - version: 10.0.0
+    - version: 10.0.5
       operations:
         pre:
           - anthem songs.install.pre::main
         post:
           - anthem openerp.addons.cloud_platform.songs::install_exoscale
           - anthem songs.install.post::main
-          - anthem songs.install.data_all::main
+          - anthem songs.install.users::main
+          - anthem songs.install.crm::main
+          - anthem songs.install.mts.crm::main
+          - anthem songs.install.mte.crm::main
           - anthem songs.install.mts.accounting::main
           - anthem songs.install.mte.accounting::main
-          - anthem songs.install.crm::main
           - anthem songs.install.accounting::main
+          - anthem songs.install.hr::main
+          - anthem songs.install.project::main
           - anthem songs.install.sale::main
           - anthem songs.install.mts.sales::main
           - anthem songs.install.mte.sales::main
@@ -24,6 +28,9 @@ migration:
           operations:
             post:
               - anthem songs.install.data_full::main
+              - importer.sh songs.install.partners::import_partners /opt/odoo/data/install/res.partner.csv
+              - importer.sh songs.install.partners::import_partners_contacts /opt/odoo/data/install/res.partner.contact.csv
+              - anthem songs.install.partners::partner_compute_parents
         demo:
           operations:
             post:
@@ -32,6 +39,7 @@ migration:
         upgrade:
           #### core
           - account_accountant
+          - account_cancel
           - analytic
           - board
           - hr_holidays
@@ -55,6 +63,7 @@ migration:
           - l10n_ch_payment_slip
           - l10n_ch_states
           - l10n_ch_zip
+          - l10n_ch_pain_credit_transfer
           #### OCA/server-tools
           - base_technical_features
           - date_range
@@ -79,60 +88,13 @@ migration:
           - account_invoice_rounding
           #### OCA/purchase-workflow
           - purchase_discount
-          #### Specific
-          - server_environment_files
-          - mtsmte_project
-          - mtsmte_sale
-          - mtsmte_reports
-          - mail_company_domain
-    - version: 10.0.1
-    - version: 10.0.2
-    - version: 10.0.3
-      addons:
-        upgrade:
-          - mail_company_domain
-          - mtsmte_reports
-      operations:
-        post:
-          - anthem songs.install.post::setup_mail_catchall_domain
-    - version: 10.0.4
-      addons:
-        upgrade:
-          - purchase_discount
-          - l10n_ch_payment_slip
-          - mtsmte_sale
-          - mtsmte_project
-          - mtsmte_reports
-      operations:
-        post:
-          - anthem songs.install.data_all::import_project_task_type
-          - anthem songs.install.mts.sales::set_sale_conditions
-          - anthem songs.install.mte.sales::set_sale_conditions
-    - version: 10.0.5
-      operations:
-        post:
-          - anthem songs.install.data_all::import_users
-          - anthem songs.install.mts.sales::set_sale_conditions
-          - anthem songs.install.mte.sales::set_sale_conditions
-          - anthem songs.install.data_demo::import_partner
-          - anthem songs.install.mts.accounting::set_currency_update
-          - anthem songs.install.mte.accounting::set_currency_update
-          - anthem songs.install.mts.accounting::set_fiscalyear
-          - anthem songs.install.mte.accounting::set_fiscalyear
-          - anthem songs.install.accounting::update_code_digits
-          - anthem songs.install.data_all::import_crm_teams
-          - anthem songs.install.data_all::import_maint_equipment
-          - anthem songs.update.update_10_0_5.update_10_0_5_post::main
-          - anthem songs.install.accounting::create_account_payment_mode
-          - anthem songs.install.data_all::import_product_extraction_type
-          - anthem songs.install.data_all::import_product_method
-      addons:
-        upgrade:
-          - base
-          - account_cancel
+          #### OCA/web
           - web_sheet_full_width
-          - account_banking_sepa_credit_transfer
-          - l10n_ch_pain_credit_transfer
+          #### Specific
+          - mtsmte_project
+          - mtsmte_sale
+          - mtsmte_reports
           - mtsmte_stock
           - mtsmte_sale
-          - mtsmte_reports
+          - mail_company_domain
+          - server_environment_files

@@ -7,11 +7,11 @@ from ..common import load_csv
 
 
 @anthem.log
-def load_warehouses(ctx):
-    """ Importing warehouses from CSV """
-    load_csv(ctx, 'data/install/stock.warehouse.csv', 'stock.warehouse')
+def import_employees(ctx):
+    load_csv(ctx, 'data/install/hr.employee.csv', 'hr.employee')
 
 
 @anthem.log
 def main(ctx):
-    load_warehouses(ctx)
+    """ Configuring HR """
+    import_employees(ctx)
