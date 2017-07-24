@@ -50,7 +50,8 @@ def import_product_substance_MT(ctx):
 
 @anthem.log
 def import_product_substance_rel_MT(ctx):
-    load_csv(ctx, 'data/demo/product.substance.MT.csv', 'product.product')
+    load_csv(ctx, 'data/demo/product.product_substances_rel.MT.csv',
+             'product.template')
 
 
 @anthem.log

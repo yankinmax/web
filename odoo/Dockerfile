@@ -15,7 +15,7 @@ RUN chmod +x odoo/before-migrate-entrypoint.d/* \
 
 # Install additional python packages if needed
 COPY ./requirements.txt /opt/odoo
-RUN cd /opt/odoo && pip install -r requirements.txt
+RUN cd /opt/odoo && find . -maxdepth 1 -name "*requirements.txt" ! -name "base_requirements.txt" ! -name "src_requirements.txt" -exec pip install -r {} \;
 
 COPY ./importer.sh /opt/odoo/bin/
 
@@ -33,6 +33,7 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/purchase-workflow, \
   /opt/odoo/external-src/web, \
   /opt/odoo/external-src/odoo-cloud-platform, \
+  /opt/odoo/external-src/odoo-prototype, \
   /opt/odoo/src/addons, \
   /opt/odoo/local-src," \
   LIMIT_TIME_CPU=86400 \

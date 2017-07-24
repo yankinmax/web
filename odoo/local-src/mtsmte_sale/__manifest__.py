@@ -22,6 +22,7 @@
         'views/project_task_views.xml',
         'views/substance_views.xml',
         'views/invoice_views.xml',
+        'views/product_categ.xml',
         'views/product_method.xml',
         'views/product_extraction_type.xml',
         'views/substance_measure.xml',

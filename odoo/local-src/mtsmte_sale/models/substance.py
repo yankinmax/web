@@ -65,7 +65,6 @@ class ProductSubstance(models.Model):
         index=1
     )
 
-
     @api.constrains('legal_limit_min', 'legal_limit_max')
     def _onchange_legal_limit(self):
         if ((self.has_limit_min and self.has_limit_max) and

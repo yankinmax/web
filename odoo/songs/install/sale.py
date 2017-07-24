@@ -41,9 +41,15 @@ def import_product_method(ctx):
 
 
 @anthem.log
+def import_product_uom(ctx):
+    load_csv(ctx, 'data/install/product.uom.csv', 'product.uom')
+
+
+@anthem.log
 def main(ctx):
     """ Configuring sales """
     configure_sale_app(ctx)
     import_maint_equipment(ctx)
     import_product_extraction_type(ctx)
     import_product_method(ctx)
+    import_product_uom(ctx)

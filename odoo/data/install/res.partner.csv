@@ -328,6 +328,7 @@ __setup__.res_partner_1684,1684,TRUE,TRUE,,,,VERDON SA,Rue Président-Wilson 5,,
 __setup__.res_partner_1685,1685,TRUE,TRUE,,,,Werthanor SA,,,,,,,,,,,,,fr_FR,base.main_company
 __setup__.res_partner_1686,1686,TRUE,TRUE,,,,Your Watch SA,Rue des Draizes 5,,2000,Neuchâtel,CH,,,,,,,,fr_FR,base.main_company
 __setup__.res_partner_1687,1687,TRUE,TRUE,,,,"Zenith, succursale de LVMH Swiss Manufactures SA",Rue des Billodes 34-36,,2400,Le Locle,CH,,,,,,,,fr_FR,base.main_company
+__setup__.res_partner_1688,1688,TRUE,,,TRUE,,Calçada,Route de la Combe-Girard 8,,2400,Le Locle,CH,,,,,,,,fr_FR,base.main_company
 __setup__.res_partner_2000,2000,TRUE,,,TRUE,,A.M Automation,Eplatures-Grise 17,,2300,La Chaux-de-Fonds,CH,,,,,,,,fr_FR,__setup__.company_mte
 __setup__.res_partner_2001,2001,TRUE,,,TRUE,,Abecon AG,Friesenbergstrasse 108,,8055,Zürich,CH,,,,,,,,fr_FR,__setup__.company_mte
 __setup__.res_partner_2002,2002,TRUE,,,TRUE,,Adax SA,Chamin des Chapons-des-prés 1,,2022,Bevaix,CH,,,,,,,,fr_FR,__setup__.company_mte

@@ -33,15 +33,27 @@ def import_product_template_MTS(ctx):
 
 @anthem.log
 def import_product_sellers_MTS(ctx):
+    # this must run after partners have been imported
     path = 'data/install/mts/product.product_sellers_rel.MTS.csv'
     load_csv(ctx, path, 'product.template')
 
 
 @anthem.log
 def main(ctx):
-    """ Configuring sales settings MTS """
+    """ Configuring sales MTS main """
     set_sale_conditions(ctx)
     import_product_category_MTS(ctx)
     import_product_template_MTS(ctx)
-    # TODO: activate this once stock setup is done
-    # import_product_sellers_MTS(ctx)
+
+
+@anthem.log
+def full(ctx):
+    """ Configuring sales MTS full """
+    import_product_sellers_MTS(ctx)
+
+
+@anthem.log
+def demo(ctx):
+    """ Configuring sales MTS demo """
+    import_product_category_MTS(ctx)
+    import_product_template_MTS(ctx)
