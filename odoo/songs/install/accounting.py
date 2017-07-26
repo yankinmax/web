@@ -31,7 +31,7 @@ def update_code_digits(ctx):
         ctx.env['account.config.settings'].create(
             {'company_id': ctx.env.ref(company_xml_id).id,
              'code_digits': 4}
-        ).execute
+        ).execute()
 
 
 @anthem.log

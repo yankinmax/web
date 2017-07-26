@@ -39,8 +39,27 @@ def import_partners(ctx):
 
 
 @anthem.log
+def import_product_template_MT(ctx):
+    load_csv(ctx, 'data/demo/product.template.MT.csv', 'product.template')
+
+
+@anthem.log
+def import_product_substance_MT(ctx):
+    load_csv(ctx, 'data/demo/product.substance.MT.csv', 'product.substance')
+
+
+@anthem.log
+def import_product_substance_rel_MT(ctx):
+    load_csv(ctx, 'data/demo/product.product_substances_rel.MT.csv',
+             'product.template')
+
+
+@anthem.log
 def main(ctx):
     """ Loading demo data """
     import_partners(ctx)
     import_projects(ctx)
     import_project_tasks(ctx)
+    import_product_template_MT(ctx)
+    import_product_substance_MT(ctx)
+    import_product_substance_rel_MT(ctx)

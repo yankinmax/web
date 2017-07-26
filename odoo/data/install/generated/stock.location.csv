@@ -1,0 +1,13 @@
+id,active,barcode,comment,company_id/id,location_id/id,name,partner_id/id,posx,posy,posz,putaway_strategy_id/id,removal_strategy_id/id,return_location,scrap_location,usage,valuation_in_account_id/id,valuation_out_account_id/id
+__setup__.stock_location_kris_polissage,True,,,base.main_company,stock.stock_location_suppliers,Kris (Polissage),,0,0,0,,,False,False,internal,,
+__setup__.stock_location_bodycote_durcissement,True,,,base.main_company,stock.stock_location_suppliers,Bodycote (Durcissement),,0,0,0,,,False,False,internal,,
+__setup__.stock_location_ionbond_dlc_rhabillage,True,,,base.main_company,stock.stock_location_suppliers,Ionbond (DLC Rhabillage),,0,0,0,,,False,False,internal,,
+__setup__.stock_location_ionbond_dlc,True,,,base.main_company,stock.stock_location_suppliers,Ionbond (DLC),,0,0,0,,,False,False,internal,,
+__setup__.stock_location_mts_materiaux_technologies_surfaces_sa_transit_location,True,,,base.main_company,stock.stock_location_locations,MTS Matériaux Technologies Surfaces SA: Transit Location,,0,0,0,,,False,False,transit,,
+__setup__.stock_location_mts,True,,,base.main_company,stock.stock_location_locations,MTS,,0,0,0,,,False,False,view,,
+__setup__.stock_location_recu_dlc,True,,,base.main_company,__setup__.stock_location_mts,Reçu DLC,,0,0,0,,,False,False,internal,,
+__setup__.stock_location_recu_dlc_rhabillage,True,,,base.main_company,__setup__.stock_location_mts,Reçu DLC (Rhabillage),,0,0,0,,,False,False,internal,,
+__setup__.stock_location_recu_durcissement,True,,,base.main_company,__setup__.stock_location_mts,Reçu Durcissement,,0,0,0,,,False,False,internal,,
+__setup__.stock_location_recu_polissage,True,,,base.main_company,__setup__.stock_location_mts,Reçu Polissage,,0,0,0,,,False,False,internal,,
+stock.stock_location_stock,True,,,base.main_company,__setup__.stock_location_mts,Stock (Reçu client mat. premières),,0,0,0,,,False,False,internal,,
+__setup__.stock_location_client_mat_premiere,True,,,base.main_company,stock.stock_location_locations_partner,Client (Mat. première),,0,0,0,,,False,False,supplier,,

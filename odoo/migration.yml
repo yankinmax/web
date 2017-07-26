@@ -19,6 +19,7 @@ migration:
           - anthem songs.install.accounting::main
           - anthem songs.install.hr::main
           - anthem songs.install.project::main
+          - anthem songs.install.generated.stock::main
           - anthem songs.install.sale::main
           - anthem songs.install.mts.sales::main
           - anthem songs.install.mte.sales::main
@@ -31,10 +32,12 @@ migration:
               - importer.sh songs.install.partners::import_partners /opt/odoo/data/install/res.partner.csv
               - importer.sh songs.install.partners::import_partners_contacts /opt/odoo/data/install/res.partner.contact.csv
               - anthem songs.install.partners::partner_compute_parents
+              - anthem songs.install.mts.sales::full
         demo:
           operations:
             post:
               - anthem songs.install.data_demo::main
+              - anthem songs.install.mts.sales::demo
       addons:
         upgrade:
           #### core
@@ -71,6 +74,8 @@ migration:
           - server_environment
           #### camptocamp/cloud-platform
           - cloud_platform
+          #### camptocamp/odoo-prototype
+          - dj_compilation_stock
           #### OCA/account-financial-reporting
           - account_financial_report_qweb
           #### OCA/account-financial-tools

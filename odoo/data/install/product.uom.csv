@@ -1,0 +1,2 @@
+"id","active","category_id/id","factor","name","rounding","uom_type"
+"__setup__.product_uom_mg_kg","True","product.product_uom_categ_kgm","1.0","mg/kg","0.001","reference"

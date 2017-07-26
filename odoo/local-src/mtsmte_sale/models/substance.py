@@ -58,6 +58,12 @@ class ProductSubstance(models.Model):
     sub_cas_number = fields.Char(
         string='CAS Number',
     )
+    company_id = fields.Many2one(
+        'res.company',
+        string='Company',
+        default=lambda self: self.env.user.company_id.id,
+        index=1
+    )
 
     @api.constrains('legal_limit_min', 'legal_limit_max')
     def _onchange_legal_limit(self):

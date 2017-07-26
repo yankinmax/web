@@ -1,0 +1,156 @@
+id,name,sub_cas_number,has_limit_max,has_limit_min,legal_limit_min,legal_limit_max,quantification_limit,detection_limit,product_uom_id/id,comments,customer_id/id
+__setup__.product_substance1,o-Phénylènediamine,95-54-5,TRUE,TRUE,0,26,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance2,1-Naphthylamine,134-32-7,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance3,"2,2'-dichloro-4,4'-méthylènedianiline (MOCA)",101-14-4,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance4,"2,4,5-Triméthylaniline",137-17-7,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance5,"2,4,5-Triméthylaniline et ses sels acides",-,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance6,"2,4-Xylidine",95-68-1,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance7,"2,6-Xylidine (2,6-Diméthylaniline)",87-62-7,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance8,2-Naphthylamine,91-59-8,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance9,"3,3-Dichlorobenzidine
+ 3,3'-dichlorobiphényl-4,4'-ylènediamine",91-94-1,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance10,"3,3'-Diméthoxybenzidine (o-Dianisidine)",119-90-4,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance11,"3,3'-Diméthylbenzidine (ortho-Tolidine)",119-93-7,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance12,"4,4'-Metdylènedianiline
+ 4,4'-Diaminodiphénylméthane (MDA)",101-77-9,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance13,"4,4'-Méthylènedi-o-toluidine",838-88-0,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance14,"4,4'-Oxydianiline et ses sels",101-80-4,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance15,"4,4'-Thiodianiline",139-65-1,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance16,4-Amino azobenzène,60-09-3,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance17,4-Chloroaniline,106-47-8,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance18,4-Chloro-o-phénylènediamine,95-83-0,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance19,4-chloro-o-toluidine,95-69-2,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance20,4-Méthoxy-m-phénylènediamine,0615-05-04,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance21,"4-Méthyl-m-phénylènediamine (toluène-2,4-diamine)",95-80-7,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance22,5-Nitro-o-toluidine,99-55-8,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance23,6-Méthoxy-m-toluidine (p-crésidine),120-71-8,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance24,Aniline,62-53-3,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance25,Benzidine,92-87-5,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance26,Biphényl-4-ylamine 4-aminobiphénylxénylamine,92-67-1,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance27,"o-Aminoazotoluène 4-amino-2',3-dimetdylazobenzène 4-o-tolylazo-o-toluidine",97-56-3,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance28,o-Anisidine 2-méthoxyaniline,90-04-0,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance29,o-Toluidine 2-aminotoluène,95-53-4,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Références légales :
+30 mg/kg (REACH Annexe XVII, GB 20400/2006).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance30,Paraphénylènediamine (PPD),106-50-3,TRUE,TRUE,0,30,,,__setup__.product_uom_mg_kg,"Référence légale :
+Interdit (ORRChim).
+Directives 2002/61/CE et 2004/21/CE du Parlement européen :certains colorants azoïques, par coupures réductrices, donnent des amines en restriction. 
+Cas de concentrations par amine ≤ 30 mg/kg : selon l’analyse effectuée, les colorants azoïques qui peuvent libérer une ou plusieurs des amines répertoriées par clivage de leur(s) groupe(s) azoïque(s) n’ont pas été détectés dans l’échantillon examiné.
+Cas de concentrations par amine ˃ 30 mg/kg : le résultat de l’analyse suggère que l’article examiné a été fabriqué ou traité en utilisant un ou plusieurs colorants azoïques qui peuvent libérer une ou plusieurs amines répertoriées par clivage de leur(s) groupe(s) azoïque(s).",
+__setup__.product_substance31,"2,4,6-Trichlorophénol (TriCP)",88-06-2,TRUE,TRUE,,,,,__setup__.product_uom_mg_kg,"Référence légale : 10μg/day (California Prop. 65). Demande aux fournisseurs et producteurs d’avertir de la présence de la substance dans l'article (emballage, mode d’emploi…) si risk level dépassé.",
+__setup__.product_substance32,Pentachlorophénol (PCP) et ses sels et esters,87-86-5,TRUE,TRUE,,,,,__setup__.product_uom_mg_kg,"Références légales : Interdit (ORRchim, REACH, Annexe XVII et POP (EC/850/2004)). 40μg/day (California Prop. 65). Demande aux fournisseurs et producteurs d’avertir de la présence de la substance dans l'article (emballage, mode d’emploi…) si risk level dépassé.",
+__setup__.product_substance33,Tétrachlorophénol (TeCP),58-90-2 935-95-5 4901-51-3,TRUE,TRUE,,,,,__setup__.product_uom_mg_kg,Référence légale : Interdit (ORRchim).,
