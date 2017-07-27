@@ -1,5 +1,5 @@
-id,active,categ_ids,company_id/id,name,product_categ_selectable,product_selectable,push_ids/id,sale_selectable,sequence,supplied_wh_id/id,supplier_wh_id/id,warehouse_ids,warehouse_selectable
-__setup__.stock_location_route_mto_dur_pol_dlc,True,,base.main_company,MTO: Dur. + Pol. + DLC,False,True,,False,0,,,,False
-__setup__.stock_location_route_mto_dur,True,,base.main_company,MTO: Dur.,False,True,,False,0,,,,False
-__setup__.stock_location_route_mto_dur_pol,True,,base.main_company,MTO: Dur. + Pol.,False,True,,False,0,,,,False
-__setup__.stock_location_route_mto_rhabillage_dlc_pol,True,,base.main_company,MTO: Rhabillage DLC + Pol.,False,False,,True,0,,,,False
+"id","active","categ_ids","company_id/id","name","product_categ_selectable","product_selectable","push_ids/id","sale_selectable","sequence","supplied_wh_id/id","supplier_wh_id/id","warehouse_ids","warehouse_selectable"
+"__setup__.stock_location_route_mto_rhabillage_dlc_pol","True","","base.main_company","MTO: Rhabillage DLC + Pol.","False","False","","True","0","","","","False"
+"__setup__.stock_location_route_mto_dur_pol_dlc","True","","base.main_company","MTO: Dur. + Pol. + DLC","False","True","","False","0","","","","False"
+"__setup__.stock_location_route_mto_dur_pol","True","","base.main_company","MTO: Dur. + Pol.","False","True","","False","0","","","","False"
+"__setup__.stock_location_route_mto_dur","True","","base.main_company","MTO: Dur.","False","True","","False","0","","","","False"

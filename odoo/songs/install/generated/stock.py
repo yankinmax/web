@@ -12,16 +12,25 @@ from ...common import (
 
 
 @anthem.log
-def load_ir_sequence(ctx):
-    """ Import ir.sequence from csv """
-    model = ctx.env['ir.sequence'].with_context({'tracking_disable':1})  # noqa
-    load_csv(ctx, 'data/install/generated/ir.sequence.csv', model)
+def add_xmlid_to_existing_sequences(ctx):
+    # this works if `base_dj` is installed
+    model = ctx.env['ir.sequence'].with_context(
+        dj_export=1,
+        dj_xmlid_fields_map={'ir.sequence': ['prefix', ]},
+        dj_multicompany=True
+    )
+    for item in model.search([]):
+        item._dj_export_xmlid()
 
 
 @anthem.log
 def add_xmlid_to_existing_locations(ctx):
     # this works if `base_dj` is installed
-    model = ctx.env['stock.location'].with_context(dj_export=1)
+    model = ctx.env['stock.location'].with_context(
+        dj_export=1,
+        dj_xmlid_fields_map={'stock.location': ['name', ]},
+        dj_multicompany=True
+    )
     for item in model.search([]):
         item._dj_export_xmlid()
 
@@ -68,7 +77,7 @@ def load_procurement_rule(ctx):
 
 @anthem.log
 def main(ctx):
-    load_ir_sequence(ctx)
+    add_xmlid_to_existing_sequences(ctx)
     load_stock_location(ctx)
     load_stock_picking_type(ctx)
     load_stock_location_route(ctx)

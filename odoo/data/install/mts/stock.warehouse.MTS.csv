@@ -1,3 +1,2 @@
 id,code,name,partner_id/id,company_id/id
 stock.warehouse0,MTS,MTS Matériaux Technologies Surfaces SA,base.main_partner,base.main_company
-__setup__.stock_warehouse_mt,MT,Métallo-Tests S.A.,__setup__.partner_mte,__setup__.company_mte
