@@ -19,6 +19,7 @@ Unreleased
  * Fix translation on sale discount program
  * Configure sale automatic workflow settings
  * Fix 'Early payment discount' on account invoice
+ * Create voucher for confirmed sale order only for agency customer
 
 **Build**
 

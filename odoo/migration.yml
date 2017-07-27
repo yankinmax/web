@@ -119,4 +119,5 @@ migration:
           - report_invoice
           - sale_discount_program
           - specific_base
+          - specific_discount_program
           - specific_payment_mode

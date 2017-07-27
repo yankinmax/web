@@ -20,11 +20,6 @@ class SaleOrder(models.Model):
             limit=1
         )
 
-    partner_company_type = fields.Selection(
-        related='partner_id.company_type',
-        readonly=True,
-    )
-
     depiltech_payment_mode = fields.Many2one(
         comodel_name='depiltech.payment.mode',
         string='Payment mode',
@@ -126,16 +121,21 @@ class SaleOrder(models.Model):
             ).day
         self.day_of_payment = day_of_payment
 
+    def get_to_be_check(self):
+        context = self.env.context or {}
+        return (
+            self.partner_company_type == 'agency_customer' and
+            not self.no_check_payment_rules and
+            # Context used on specific_discount_program for unit tests
+            not context.get('no_check_payment_rules')
+        )
+
     @api.one
     @api.constrains('state', 'depiltech_payment_mode', 'partner_company_type')
     def _check_state(self):
         # If partner company type is a agency customer,
         # check state
-        to_be_check = (
-            self.partner_company_type == 'agency_customer' and
-            not self.no_check_payment_rules
-        )
-        if to_be_check:
+        if self.get_to_be_check():
             forbidden_payment_modes = self.env[
                 'depiltech.payment.mode'
             ].search(
@@ -155,11 +155,7 @@ class SaleOrder(models.Model):
     def _check_provision(self):
         # If partner company type is a agency customer,
         # check provision
-        to_be_check = (
-            self.partner_company_type == 'agency_customer' and
-            not self.no_check_payment_rules
-        )
-        if to_be_check:
+        if self.get_to_be_check():
             provision_ok = (
                 self.provision < 0 or
                 float_compare(
@@ -179,11 +175,7 @@ class SaleOrder(models.Model):
     def _check_month_number(self):
         # If partner company type is a agency customer,
         # check month number
-        to_be_check = (
-            self.partner_company_type == 'agency_customer' and
-            not self.no_check_payment_rules
-        )
-        if to_be_check:
+        if self.get_to_be_check():
             icp = self.env['ir.config_parameter']
             max_month_number = int(icp.get_param('max_month_number', '0'))
             if self.month_number < 0 or self.month_number > max_month_number:
@@ -197,11 +189,7 @@ class SaleOrder(models.Model):
         'first_monthly_payment', 'amount_total', 'partner_company_type'
     )
     def _check_first_monthly_payment(self):
-        to_be_check = (
-            self.partner_company_type == 'agency_customer' and
-            not self.no_check_payment_rules
-        )
-        if to_be_check:
+        if self.get_to_be_check():
             is_not_ok = (
                 self.first_monthly_payment < 0 or
                 float_compare(
@@ -219,11 +207,7 @@ class SaleOrder(models.Model):
     @api.one
     @api.constrains('monthly_payment', 'amount_total', 'partner_company_type')
     def _check_monthly_payment(self):
-        to_be_check = (
-            self.partner_company_type == 'agency_customer' and
-            not self.no_check_payment_rules
-        )
-        if to_be_check:
+        if self.get_to_be_check():
             is_not_ok = (
                 self.monthly_payment < 0 or
                 float_compare(
@@ -241,11 +225,7 @@ class SaleOrder(models.Model):
     @api.one
     @api.constrains('day_of_payment', 'partner_company_type')
     def _check_day_of_payment(self):
-        to_be_check = (
-            self.partner_company_type == 'agency_customer' and
-            not self.no_check_payment_rules
-        )
-        if to_be_check:
+        if self.get_to_be_check():
             if self.day_of_payment < 1 or self.day_of_payment > 31:
                 raise ValidationError(_(
                     'Day of payment must be an integer between 1 and 31'
