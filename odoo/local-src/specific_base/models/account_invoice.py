@@ -12,3 +12,8 @@ class AccountInvoice(models.Model):
     phototherapist_id = fields.Many2one(
         comodel_name='res.company.phototherapist',
         string='Phototherapist')
+
+    partner_company_type = fields.Selection(
+        related='partner_id.company_type',
+        readonly=True,
+    )
