@@ -6,6 +6,7 @@
 import anthem
 
 from . import base_vars
+from ..common import load_csv
 from anthem.lyrics.records import create_or_update
 
 
@@ -95,6 +96,12 @@ def journal_cancel(ctx):
 
 
 @anthem.log
+def load_journals(ctx):
+    model = ctx.env['account.journal'].with_context({'tracking_disable': 1})
+    load_csv(ctx, 'data/install/account.journal.csv', model)
+
+
+@anthem.log
 def set_pain_method(ctx):
     sepa = ctx.env.ref(
         'account_banking_sepa_credit_transfer.sepa_credit_transfer')
@@ -108,4 +115,5 @@ def main(ctx):
     update_code_digits(ctx)
     create_account_payment_mode(ctx)
     journal_cancel(ctx)
+    load_journals(ctx)
     set_pain_method(ctx)

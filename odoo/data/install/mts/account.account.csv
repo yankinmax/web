@@ -1,5 +1,5 @@
 id,code,name,user_type_id/id,reconcile,currency_id/id,company_id/id
-__setup__.mts_coa_1020,1020,Compte courant bancaire,account.data_account_type_liquidity,,,base.main_company
+__setup__.mts_coa_1020,1020,Compte courant bancaire,account.data_account_type_liquidity,,base.CHF,base.main_company
 __setup__.mts_coa_1040,1040,Compte postal,account.data_account_type_liquidity,,,base.main_company
 __setup__.mts_coa_1050,1050,Caisse,account.data_account_type_liquidity,,,base.main_company
 __setup__.mts_coa_1060,1060,Obligations,account.data_account_type_current_assets,,,base.main_company

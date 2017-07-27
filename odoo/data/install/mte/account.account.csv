@@ -1,8 +1,8 @@
 id,code,name,user_type_id/id,reconcile,currency_id/id,company_id/id
 __setup__.mte_coa_1000,1000,Petite caisse,account.data_account_type_liquidity,,,__setup__.company_mte
-__setup__.mte_coa_1020,1020,Compte courant bancaire,account.data_account_type_liquidity,,,__setup__.company_mte
-__setup__.mte_coa_1040,1040,Compte courant Euro,account.data_account_type_liquidity,,,__setup__.company_mte
-__setup__.mte_coa_1050,1050,Compte courant dollars,account.data_account_type_liquidity,,,__setup__.company_mte
+__setup__.mte_coa_1020,1020,Compte courant bancaire,account.data_account_type_liquidity,,base.CHF,__setup__.company_mte
+__setup__.mte_coa_1040,1040,Compte courant Euro,account.data_account_type_liquidity,,base.EUR,__setup__.company_mte
+__setup__.mte_coa_1050,1050,Compte courant dollars,account.data_account_type_liquidity,,base.USD,__setup__.company_mte
 __setup__.mte_coa_1060,1060,Obligations,account.data_account_type_current_assets,,,__setup__.company_mte
 __setup__.l10n_ch_coa_original_1100___setup___company_mte,1100,Clients,account.data_account_type_receivable,1,,__setup__.company_mte
 __setup__.mte_coa_1176,1176,Impôt anticipé à récupérer,account.data_account_type_current_assets,,,__setup__.company_mte
