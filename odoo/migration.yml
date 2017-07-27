@@ -107,17 +107,14 @@ migration:
           - specific_sale_order
           - specific_security
     - version: 10.1.1
+      operations:
+        pre:
+          - psql -f /opt/odoo/songs/updates/update_10_1_1/clean_translation.sql
+        post:
+          - anthem songs.updates.update_10_1_1.sale_workflow_settings::main
       addons:
         upgrade:
           #### local-src
-          - specific_base
-    - version: 10.1.2
-      operations:
-        post:
-          - anthem songs.updates.update_10_1_0.sale_workflow_settings::main
-      addons:
-        upgrade:
-          - specific_base
           - sale_discount_program
+          - specific_base
           - specific_payment_mode
-          -
