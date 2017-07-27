@@ -9,5 +9,11 @@ class Company(models.Model):
 
     early_payment_discount = fields.Boolean(
         "Early payment discount?", default=False,
-        help="Enable payment discount for invoice from the holding"
+        help="Enable early payment discount for invoice from the given company"
+    )
+
+    early_payment_discount_apply_on_company_id = fields.Many2one(
+        comodel_name='res.company',
+        string='Apply on',
+        help='Apply early payment discount on company',
     )

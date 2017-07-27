@@ -18,6 +18,7 @@ Unreleased
  * Add widget selection on depiltech_payment_mode on sale_order form view
  * Fix translation on sale discount program
  * Configure sale automatic workflow settings
+ * Fix 'Early payment discount' on account invoice
 
 **Build**
 
