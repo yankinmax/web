@@ -7,6 +7,16 @@ from ...common import load_warehouses
 
 
 @anthem.log
+def settings_MTS(ctx):
+    """ Configure Warehouse settings"""
+    ctx.env['stock.config.settings'].create({
+        'company_id': ctx.env.ref('base.main_company').id,
+        # enable multi locations
+        'group_stock_multi_locations': True,
+    }).execute()
+
+
+@anthem.log
 def load_warehouses_MTS(ctx):
     load_warehouses(
         ctx, 'base.main_company',
@@ -15,4 +25,5 @@ def load_warehouses_MTS(ctx):
 
 @anthem.log
 def main(ctx):
+    settings_MTS(ctx)
     load_warehouses_MTS(ctx)
