@@ -21,6 +21,7 @@ Unreleased
  * Fix 'Early payment discount' on account invoice
  * Create voucher for confirmed sale order only for agency customer
  * Fix Centers can only create agency customer
+ * Fix supporting document filename on sale order
 
 **Build**
 
