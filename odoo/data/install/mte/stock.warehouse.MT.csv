@@ -1,0 +1,2 @@
+id,code,name,partner_id/id,company_id/id
+__setup__.stock_warehouse_mt,MT,Métallo-Tests S.A.,__setup__.partner_mte,__setup__.company_mte

@@ -58,4 +58,4 @@
 	branch = 10.0
 [submodule "odoo/external-src/odoo-prototype"]
 	path = odoo/external-src/odoo-prototype
-	url = git@github.com:camptocamp/odoo-prototype.git
+	url = git@github.com:simahawk/odoo-prototype.git

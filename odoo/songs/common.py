@@ -4,7 +4,7 @@
 
 from pkg_resources import Requirement, resource_stream
 
-from anthem.lyrics.records import add_xmlid
+from anthem.lyrics.records import add_xmlid, switch_company
 from anthem.lyrics.loaders import load_csv_stream
 
 import os
@@ -30,6 +30,22 @@ def load_users_csv(ctx, path, delimiter=','):
         'tracking_disable': True,
     })
     load_csv(ctx, path, model, delimiter=delimiter)
+
+
+def load_warehouses(ctx, company, path):
+    # in multicompany moded we must force the company
+    # otherwise the sequences that stock module generates automatically
+    # will have the wrong company assigned.
+    with switch_company(ctx, company) as ctx:
+        load_csv(ctx, path, 'stock.warehouse')
+        # NOTE: dirty hack here.
+        # We are forced to load the CSV twice because
+        # if you are modifying the existing base warehouse (stock.warehouse0)
+        # and you've changed the `code` (short name)
+        # the changes are not reflected on existing sequences
+        # until you load warehouse data again.
+        # We usually don't have that many WHs so... it's fine :)
+        load_csv(ctx, path, 'stock.warehouse')
 
 
 def load_chart_of_accounts(ctx, company_xmlid, filepath):

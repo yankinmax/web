@@ -22,6 +22,14 @@ def setup_multi_company(ctx):
 
 
 @anthem.log
+def company_dj_set_aka(ctx):
+    # cannot set company aka via company csv import
+    # as it happens in `pre` and base_dj is not installed yet
+    ctx.env.ref('base.main_company').aka = 'MTS'
+    ctx.env.ref('__setup__.company_mte').aka = 'MT'
+
+
+@anthem.log
 def add_company_to_user(ctx):
     """ Add companies to users """
     ctx.env.ref('base.user_root').write({
@@ -81,6 +89,7 @@ def setup_reports_info(ctx):
 def main(ctx):
     """ Post """
     setup_multi_company(ctx)
+    company_dj_set_aka(ctx)
     add_company_to_user(ctx)
     create_incoming_mail_server(ctx)
     setup_mail_catchall_domain(ctx)

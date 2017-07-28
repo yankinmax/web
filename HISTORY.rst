@@ -38,6 +38,10 @@ latest (unreleased)
 * Add product.substance.line, setting menu & fix so_line view BSMTS-114/113
 * Populate the new model Extraction Types BSMTS-117
 * Populate the new model Produt method BSMTS-118
+* Add stock setup BSMTS-133
+* Update COA + journal setup BSMTS-112
+* Add products setup BSMTS-72
+
 
 **Bugfixes**
 
@@ -51,6 +55,7 @@ latest (unreleased)
 * Update session_redis to use redis sentinel
 * Add entrypoints from odoo-template
 * Sync from odoo-template
+* Add odoo-prototype and use `base_dj`
 
 **Documentation**
 
