@@ -225,13 +225,13 @@ class ResPartner(models.Model):
     def _default_company_type(self):
         return (
             'agency_customer'
-            if self.env.user.has_group('scenario.grp_centers')
+            if self.env.user.has_group('specific_security.grp_centers')
             else 'person'
         )
 
     company_type_visible = fields.Boolean(
         default=lambda self: not self.env.user.has_group(
-            'scenario.grp_centers'
+            'specific_security.grp_centers'
         ),
         compute='_compute_company_type_visible',
         store=False,
@@ -239,9 +239,9 @@ class ResPartner(models.Model):
 
     @api.multi
     def _compute_company_type_visible(self):
-        for item in self:
-            item.company_type_visible = not self.env.user.has_group(
-                'scenario.grp_centers'
+        for partner in self:
+            partner.company_type_visible = not self.env.user.has_group(
+                'specific_security.grp_centers'
             )
 
     phototherapist_id = fields.Many2one(

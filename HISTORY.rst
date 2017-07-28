@@ -20,6 +20,7 @@ Unreleased
  * Configure sale automatic workflow settings
  * Fix 'Early payment discount' on account invoice
  * Create voucher for confirmed sale order only for agency customer
+ * Fix Centers can only create agency customer
 
 **Build**
 
