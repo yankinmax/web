@@ -24,11 +24,24 @@
                             <field name="date_opening"/>
                         </group>
                         <group>
-                            <field name="company_name"/>
                             <field name="company_type"/>
                             <field name="form"/>
                             <field name="capital_stock"/>
                         </group>
+                    </group>
+                    <group name="Centre Informations">
+                        <group>
+                            <field name="company_name"/>
+                            <field name="centre_street" />
+                            <field name="centre_street2" />
+                            <field name="centre_zip" />
+                            <field name="centre_city" />
+                            <field name="centre_state_id" />
+                            <field name="centre_country_id" />
+                            <field name="centre_phone" />
+                            <field name="centre_email" />
+                        </group>
+                        <group />
                     </group>
                     <group name="franchised">
                         <group name="info_franchised" string="Franchised Infos">
