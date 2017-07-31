@@ -22,6 +22,7 @@ Unreleased
  * Create voucher for confirmed sale order only for agency customer
  * Fix Centers can only create agency customer
  * Fix supporting document filename on sale order
+ * Fix unlink rights on res partner (Client archivage group)
 
 **Build**
 

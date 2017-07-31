@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-20 06:35+0000\n"
-"PO-Revision-Date: 2017-07-20 06:35+0000\n"
+"POT-Creation-Date: 2017-07-31 11:23+0000\n"
+"PO-Revision-Date: 2017-07-31 11:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -249,6 +249,11 @@ msgstr "Sociétés"
 #: model:ir.ui.view,arch_db:specific_base.view_company_schedule_tree
 msgid "Company Schedule"
 msgstr "Company Schedule"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_account_invoice_partner_company_type
+msgid "Company Type"
+msgstr "Type de société"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_company_id
@@ -1305,6 +1310,12 @@ msgstr "Ouvriers"
 #: selection:res.partner,flash_done:0
 msgid "Yes"
 msgstr "Oui"
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:362
+#, python-format
+msgid "You don't have rights to delete partners"
+msgstr "Vous n'avez pas les droits pour supprimer des partenaires"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_partner_zip
