@@ -56,7 +56,8 @@ def push_branches(ctx, force=False):
             return
         for path, setup in merges.iteritems():
             print('pushing {}'.format(path))
-            with cd(build_path(path, from_file=PENDING_MERGES)):
+            with cd(build_path(
+                    path, from_root=False, from_file=PENDING_MERGES)):
                 try:
                     ctx.run(
                         'git config remote.{}.url'.format(GIT_REMOTE_NAME)

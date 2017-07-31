@@ -16,7 +16,7 @@
 Release History
 ---------------
 
-latest (unreleased)
+10.0.5 (2017-07-31)
 +++++++++++++++++++
 
 **Features and Improvements**
@@ -28,7 +28,7 @@ latest (unreleased)
 * Update res.partner import BSMTS-95
 * Set Currency updates BSMTS-77
 * Import date.range BSMTS-126
-* Update account settings update code digits BSMTS109
+* Update account settings update code digits BSMTS-109
 * Add salesteam to mts BSMTS110
 * Import Equipments  BSMTS-115
 * Install account_cancel BSMTS-125
@@ -56,6 +56,8 @@ latest (unreleased)
 * Add entrypoints from odoo-template
 * Sync from odoo-template
 * Add odoo-prototype and use `base_dj`
+* Upgrade odoo source to include security fixes
+
 
 **Documentation**
 
