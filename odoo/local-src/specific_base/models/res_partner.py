@@ -356,7 +356,7 @@ class ResPartner(models.Model):
             not self.env.user.has_group(
                 'specific_security.group_client_archive'
             ) and
-            self.env.user.id != 1
+            self.env.user != self.env.ref('base.user_root')
         )
         if deny_to_delete:
             raise UserError(_(
