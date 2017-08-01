@@ -52,7 +52,6 @@ class ResCompany(models.Model):
     active_campaigns = fields.Boolean(default=False,
                                       help="SEM active")
     form = fields.Char(string="Legal form", help="Juridical form")
-    company_name = fields.Char(help="Centre name")
     franchised_mobile = fields.Char()
     franchised_email = fields.Char()
     longitude = fields.Float()
@@ -93,14 +92,15 @@ class ResCompany(models.Model):
         selection='_get_royalties_freq_selection',
         default='1')
 
-    centre_street = fields.Char('Street')
-    centre_street2 = fields.Char('Street2')
-    centre_zip = fields.Char('ZIP')
-    centre_city = fields.Char('City')
-    centre_state_id = fields.Many2one('res.country.state', string='State')
-    centre_country_id = fields.Many2one('res.country', string='Country')
-    centre_email = fields.Char('Email')
-    centre_phone = fields.Char('Phone')
+    company_name = fields.Char('Center name')
+    center_street = fields.Char('Street')
+    center_street2 = fields.Char('Street2')
+    center_zip = fields.Char('ZIP')
+    center_city = fields.Char('City')
+    center_state_id = fields.Many2one('res.country.state', string='State')
+    center_country_id = fields.Many2one('res.country', string='Country')
+    center_email = fields.Char('Email')
+    center_phone = fields.Char('Phone')
 
     # product management
     can_create_product = fields.Boolean(default=False)

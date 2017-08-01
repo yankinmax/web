@@ -56,7 +56,7 @@ Unreleased
 * DT-11: Add security group for export to csv feature
 * DT-10: Add a program condition based on last validated order
 * DT-46: Add account payment mode generator wizard
-* DT-60: Add centre address fields on company
+* DT-60: Add center address fields on company
 
 **Bugfixes**
 
