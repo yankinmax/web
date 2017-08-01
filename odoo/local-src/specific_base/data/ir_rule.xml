@@ -70,7 +70,7 @@
         <field name="model_id" ref="base.model_res_partner"/>
         <field name="global" eval="False"/>
         <field name="groups" eval="[(6,0,[ref('specific_security.grp_dt_compta')])]"/>
-        <field name="domain_force">[('company_type', '!=', 'agency_customer')]</field>
+        <field name="domain_force">[(1, '=', 1)]</field>
         <field name="perm_read" eval="1"/>
         <field name="perm_write" eval="1"/>
         <field name="perm_create" eval="1"/>

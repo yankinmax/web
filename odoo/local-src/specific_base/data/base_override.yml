@@ -21,9 +21,6 @@
 -
   !python {model: ir.rule, id: base.res_company_rule_erp_manager} : |
       self.perm_read = False
-
-- !python {model: ir.rule, id: specific_base.res_partner_rule_dt_accounting_group} : |
-      self.domain_force = "[('company_type','!=','agency_customer')]"
 -
   !python {model: ir.rule, id: base.res_partner_rule} : |
       self.write({

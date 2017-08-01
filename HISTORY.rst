@@ -14,7 +14,6 @@ Unreleased
 * DT-55: Fix sprint 4:
 
  * A user can only see product from parents companies
- * dt_accounting_group should not see agency customers
  * Add widget selection on depiltech_payment_mode on sale_order form view
  * Fix translation on sale discount program
  * Configure sale automatic workflow settings
