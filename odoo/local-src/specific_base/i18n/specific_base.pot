@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-01 08:07+0000\n"
-"PO-Revision-Date: 2017-08-01 08:07+0000\n"
+"POT-Creation-Date: 2017-08-01 14:49+0000\n"
+"PO-Revision-Date: 2017-08-01 14:49+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,6 +78,7 @@ msgstr ""
 
 #. module: specific_base
 #: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead2opportunity_partner_specific_form
 msgid "Address"
 msgstr ""
 
@@ -140,6 +141,8 @@ msgid "Beauty institute attented"
 msgstr ""
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_birthday
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_birthday
 #: model:ir.model.fields,field_description:specific_base.field_res_partner_birthday
 msgid "Birthday"
 msgstr ""
@@ -158,6 +161,11 @@ msgstr ""
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_can_create_product
 msgid "Can create product"
+msgstr ""
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead_can_edit_user
+msgid "Can edit user"
 msgstr ""
 
 #. module: specific_base
@@ -213,9 +221,12 @@ msgid "Cinema, television"
 msgstr ""
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_city
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_city
 #: model:ir.model.fields,field_description:specific_base.field_res_company_center_city
 #: model:ir.model.fields,field_description:specific_base.field_res_company_partner_city
 #: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead2opportunity_partner_specific_form
 msgid "City"
 msgstr ""
 
@@ -308,8 +319,11 @@ msgstr ""
 
 #. module: specific_base
 #: model:ir.model,name:specific_base.model_res_country
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_country_id
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_country_id
 #: model:ir.model.fields,field_description:specific_base.field_res_company_center_country_id
 #: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead2opportunity_partner_specific_form
 msgid "Country"
 msgstr ""
 
@@ -329,6 +343,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_create_date
 #: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_create_date
 msgid "Created on"
+msgstr ""
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead2opportunity_partner_specific_form
+msgid "Customer informations"
 msgstr ""
 
 #. module: specific_base
@@ -412,6 +431,8 @@ msgid "Doctors, Specialized Doctors"
 msgstr ""
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_email
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_email
 #: model:ir.model.fields,field_description:specific_base.field_res_company_center_email
 msgid "Email"
 msgstr ""
@@ -432,6 +453,18 @@ msgstr ""
 #: code:addons/specific_base/models/res_partner.py:158
 #, python-format
 msgid "Employees of private enterprise"
+msgstr ""
+
+#. module: specific_base
+#: code:addons/specific_base/models/crm_lead.py:29
+#, python-format
+msgid "Error on configuration of lead planning url"
+msgstr ""
+
+#. module: specific_base
+#: code:addons/specific_base/models/res_partner.py:307
+#, python-format
+msgid "Error on configuration of partner planning url"
 msgstr ""
 
 #. module: specific_base
@@ -482,6 +515,12 @@ msgstr ""
 #. module: specific_base
 #: model:ir.ui.view,arch_db:specific_base.view_partner_center_form
 msgid "Fill Diagnostic"
+msgstr ""
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_firstname
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_firstname
+msgid "First name"
 msgstr ""
 
 #. module: specific_base
@@ -547,6 +586,12 @@ msgid "Friday"
 msgstr ""
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_function
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_function
+msgid "Function"
+msgstr ""
+
+#. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_crm_lead_graduate_education
 msgid "Graduate education"
 msgstr ""
@@ -589,7 +634,7 @@ msgid "ID"
 msgstr ""
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:352
+#: code:addons/specific_base/models/res_partner.py:371
 #, python-format
 msgid "Impossible to delete a partner linked to a company"
 msgstr ""
@@ -698,8 +743,30 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_lastname
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_lastname
+msgid "Last name"
+msgstr ""
+
+#. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_latitude
 msgid "Latitude"
+msgstr ""
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_crm_lead2opportunity_partner
+msgid "Lead To Opportunity Partner"
+msgstr ""
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead_lead_planning_url
+#: model:ir.model.fields,field_description:specific_base.field_sale_config_settings_lead_planning_url
+msgid "Lead planning url"
+msgstr ""
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_sale_config_settings_lead_planning_url
+msgid "Lead planning url with %s inside which be replaced by lead id"
 msgstr ""
 
 #. module: specific_base
@@ -747,6 +814,12 @@ msgstr ""
 #. module: specific_base
 #: model:ir.model.fields,help:specific_base.field_res_company_royalties_min
 msgid "Minimum royalties"
+msgstr ""
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_mobile
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_mobile
+msgid "Mobile"
 msgstr ""
 
 #. module: specific_base
@@ -911,6 +984,18 @@ msgid "Partner"
 msgstr ""
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_partner_partner_planning_url
+#: model:ir.model.fields,field_description:specific_base.field_res_users_partner_planning_url
+#: model:ir.model.fields,field_description:specific_base.field_sale_config_settings_partner_planning_url
+msgid "Partner planning url"
+msgstr ""
+
+#. module: specific_base
+#: model:ir.model.fields,help:specific_base.field_sale_config_settings_partner_planning_url
+msgid "Partner planning url with %s inside which be replaced by partner id"
+msgstr ""
+
+#. module: specific_base
 #: code:addons/specific_base/models/res_partner.py:92
 #, python-format
 msgid "Passing by the center / Showcase"
@@ -938,6 +1023,8 @@ msgid "Personal services workers"
 msgstr ""
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_phone
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_phone
 #: model:ir.model.fields,field_description:specific_base.field_res_company_center_phone
 msgid "Phone"
 msgstr ""
@@ -952,6 +1039,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:specific_base.field_account_invoice_phototherapist_id
 #: model:ir.model.fields,field_description:specific_base.field_account_payment_phototherapist_id
 #: model:ir.model.fields,field_description:specific_base.field_calendar_event_phototherapist_id
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_phototherapist_id
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_phototherapist_id
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead_phototherapist_id
 #: model:ir.model.fields,field_description:specific_base.field_res_partner_phototherapist_id
 #: model:ir.model.fields,field_description:specific_base.field_sale_order_phototherapist_id
 #: model:ir.ui.menu,name:specific_base.menu_action_company_phototherapist
@@ -963,6 +1053,11 @@ msgstr ""
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_account_payment_phototherapist_required
 msgid "Phototherapist required"
+msgstr ""
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_sales_config
+msgid "Planning"
 msgstr ""
 
 #. module: specific_base
@@ -1128,7 +1223,7 @@ msgid "Slug"
 msgstr ""
 
 #. module: specific_base
-#: code:addons/specific_base/models/crm_lead.py:55
+#: code:addons/specific_base/models/crm_lead.py:102
 #: code:addons/specific_base/models/utm.py:15
 #: code:addons/specific_base/models/utm.py:31
 #: code:addons/specific_base/models/utm.py:51
@@ -1186,8 +1281,11 @@ msgid "Sponsorship / Works Council"
 msgstr ""
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_state_id
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_state_id
 #: model:ir.model.fields,field_description:specific_base.field_res_company_center_state_id
 #: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead2opportunity_partner_specific_form
 msgid "State"
 msgstr ""
 
@@ -1198,21 +1296,27 @@ msgid "Storekeeper and equivalent"
 msgstr ""
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_street
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_street
 #: model:ir.model.fields,field_description:specific_base.field_res_company_center_street
 msgid "Street"
 msgstr ""
 
 #. module: specific_base
 #: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead2opportunity_partner_specific_form
 msgid "Street 2..."
 msgstr ""
 
 #. module: specific_base
 #: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead2opportunity_partner_specific_form
 msgid "Street..."
 msgstr ""
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_street2
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_street2
 #: model:ir.model.fields,field_description:specific_base.field_res_company_center_street2
 msgid "Street2"
 msgstr ""
@@ -1259,6 +1363,12 @@ msgstr ""
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_tz
 msgid "Timezone"
+msgstr ""
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_title_id
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_title_id
+msgid "Title"
 msgstr ""
 
 #. module: specific_base
@@ -1357,14 +1467,17 @@ msgid "Yes"
 msgstr ""
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_partner.py:362
+#: code:addons/specific_base/models/res_partner.py:381
 #, python-format
 msgid "You don't have rights to delete partners"
 msgstr ""
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_mass_partner_zip
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead2opportunity_partner_partner_zip
 #: model:ir.model.fields,field_description:specific_base.field_res_company_center_zip
 #: model:ir.ui.view,arch_db:specific_base.view_company_depiltech_form
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead2opportunity_partner_specific_form
 msgid "ZIP"
 msgstr ""
 
@@ -1396,5 +1509,10 @@ msgstr ""
 #. module: specific_base
 #: model:ir.model,name:specific_base.model_res_partner_title
 msgid "res.partner.title"
+msgstr ""
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_sale_config_settings
+msgid "sale.config.settings"
 msgstr ""
 

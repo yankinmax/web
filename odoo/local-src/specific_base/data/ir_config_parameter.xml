@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo noupdate="1">
+
+    <record id="lead_planning_url" model="ir.config_parameter">
+        <field name="key">lead_planning_url</field>
+        <field name="value">http://soft.depiltech.com/planning/lead/%s</field>
+    </record>
+
+    <record id="partner_planning_url" model="ir.config_parameter">
+        <field name="key">partner_planning_url</field>
+        <field name="value">http://soft.depiltech.com/planning/partner/%s</field>
+    </record>
+
+</odoo>

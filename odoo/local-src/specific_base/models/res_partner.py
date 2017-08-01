@@ -8,7 +8,7 @@ import uuid
 from datetime import datetime, timedelta
 
 from odoo.exceptions import UserError
-from odoo import models, fields, api, _
+from odoo import models, fields, api, _, SUPERUSER_ID
 
 
 DUPLICATE_FIELDS_KEY = ['company_type', 'company_id',
@@ -288,6 +288,25 @@ class ResPartner(models.Model):
         help='Delivery date of the gift box to the customer',
     )
 
+    partner_planning_url = fields.Char(
+        string='Partner planning url',
+        compute='_compute_partner_planning_url',
+    )
+
+    @api.model
+    def _compute_partner_planning_url(self):
+        try:
+            url = self.env['ir.config_parameter'].get_param(
+                'partner_planning_url'
+            )
+            for partner in self:
+                if url and partner.id:
+                    partner.partner_planning_url = url % partner.id
+        except Exception:
+            raise UserError(
+                _('Error on configuration of partner planning url')
+            )
+
     @api.multi
     def take_me_to_diagnostic_survey(self):
         self.ensure_one()
@@ -356,7 +375,7 @@ class ResPartner(models.Model):
             not self.env.user.has_group(
                 'specific_security.group_client_archive'
             ) and
-            self.env.user != self.env.ref('base.user_root')
+            self.env.user != SUPERUSER_ID
         )
         if deny_to_delete:
             raise UserError(_(

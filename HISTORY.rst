@@ -23,6 +23,9 @@ Unreleased
  * Fix unlink rights on res partner (Client archivage group)
 
 * DT-56: Fix deletion of partner linked to a company
+* DT-57: A conversion of lead create a agency customer
+* DT-58: Customize lead/opportunity objects and views
+* DT-59: Add planning url field on partner form view
 * DT-60: Add center address fields on company
 
 **Build**

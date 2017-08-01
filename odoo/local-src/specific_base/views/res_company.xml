@@ -32,7 +32,7 @@
                     <group name="center_informations" string="Center Informations">
                         <group>
                             <field name="company_name"/>
-                            <label for="street" string="Address"/>
+                            <label for="center_street" string="Address"/>
                             <div class="o_address_format">
                                 <field name="center_street" placeholder="Street..." class="o_address_street"/>
                                 <field name="center_street2" placeholder="Street 2..." class="o_address_street"/>

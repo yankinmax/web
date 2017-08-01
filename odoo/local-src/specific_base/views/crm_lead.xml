@@ -7,6 +7,43 @@
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
         <field name="arch" type="xml">
 
+            <div class="oe_title" position="after">
+                <group>
+                    <group>
+                        <field name="lead_planning_url" widget="url"/>
+                    </group>
+                </group>
+            </div>
+
+            <label for="contact_name" position="before">
+                <field name="phototherapist_id" options="{'no_create': True}"/>
+            </label>
+
+            <field name="partner_id" position="attributes">
+                <attribute name="readonly">True</attribute>
+            </field>
+
+            <field name="partner_name" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+
+            <field name="fax" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+
+            <field name="user_id" position="before">
+                <field name="can_edit_user" invisible="True"/>
+            </field>
+            <field name="user_id" position="attributes">
+                <attribute name="attrs">{'readonly':[('can_edit_user','=',False)]}</attribute>
+            </field>
+
+            <field name="campaign_id" position="before">
+                <field name="company_id"
+                       groups="base.group_multi_company"
+                       options="{'no_create': True}"/>
+            </field>
+
             <notebook position="inside">
                 <page string="B2B">
                     <group>
@@ -29,6 +66,37 @@
         <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
         <field name="arch" type="xml">
 
+            <div class="oe_title" position="after">
+                <group>
+                    <group>
+                        <field name="lead_planning_url" widget="url"/>
+                    </group>
+                </group>
+            </div>
+
+            <label for="contact_name" position="before">
+                <field name="phototherapist_id" options="{'no_create': True}"/>
+            </label>
+
+            <field name="partner_id" position="attributes">
+                <attribute name="readonly">True</attribute>
+            </field>
+
+            <field name="partner_name" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+
+            <field name="fax" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+
+            <field name="user_id" position="before">
+                <field name="can_edit_user" invisible="True"/>
+            </field>
+            <field name="user_id" position="attributes">
+                <attribute name="attrs">{'readonly':[('can_edit_user','=',False)]}</attribute>
+            </field>
+
             <notebook position="inside">
                 <page string="B2B">
                     <group>
@@ -45,6 +113,21 @@
             <field name="company_id" position="attributes">
                 <attribute name="required">True</attribute>
             </field>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_sale_crm_lead_specific_form">
+        <field name="name">sale.crm.lead.specific.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="sale_crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+
+            <button name="%(sale_crm.sale_action_quotations_new)d" position="attributes">
+                <attribute name="context">
+                    {'search_default_partner_id': partner_id, 'default_partner_id': partner_id, 'default_team_id': team_id, 'default_phototherapist_id': phototherapist_id}
+                </attribute>
+            </button>
 
         </field>
     </record>
@@ -76,11 +159,14 @@
     <record model="ir.ui.view" id="view_crm_lead_form_specific_form_group">
         <field name="name">crm.lead.form.specific.form</field>
         <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+        <field name="inherit_id" ref="specific_base.view_crm_lead_specific_form"/>
         <field name="groups_id" eval="[(6, 0, [ref('specific_security.grp_centers'), ref('specific_security.grp_center_managers')])]"/>
         <field name="arch" type="xml">
-            <field name="company_id" position="attributes">
-                <attribute name="readonly">1</attribute>
+            <field name="campaign_id" position="before">
+                <field name="company_id"
+                       groups="base.group_multi_company"
+                       options="{'no_create': True}"
+                       readonly="True"/>
             </field>
             <field name="campaign_id" position="attributes">
                 <attribute name="readonly">1</attribute>
