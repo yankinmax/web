@@ -10,7 +10,6 @@ Unreleased
 
 **Bugfixes**
 
-* DT-56: Fix deletion of partner linked to a company
 * DT-55: Fix sprint 4:
 
  * A user can only see product from parents companies
@@ -22,6 +21,9 @@ Unreleased
  * Fix Centers can only create agency customer
  * Fix supporting document filename on sale order
  * Fix unlink rights on res partner (Client archivage group)
+
+* DT-56: Fix deletion of partner linked to a company
+* DT-60: Add center address fields on company
 
 **Build**
 
@@ -56,7 +58,6 @@ Unreleased
 * DT-11: Add security group for export to csv feature
 * DT-10: Add a program condition based on last validated order
 * DT-46: Add account payment mode generator wizard
-* DT-60: Add center address fields on company
 
 **Bugfixes**
 
