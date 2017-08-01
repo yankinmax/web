@@ -10,6 +10,16 @@ Unreleased
 
 **Bugfixes**
 
+**Build**
+
+**Documentation**
+
+
+10.1.1 (2017-08-01)
++++++++++++++++++++
+
+**Bugfixes**
+
 * DT-55: Fix sprint 4:
 
  * A user can only see product from parents companies
@@ -27,10 +37,6 @@ Unreleased
 * DT-58: Customize lead/opportunity objects and views
 * DT-59: Add planning url field on partner form view
 * DT-60: Add center address fields on company
-
-**Build**
-
-**Documentation**
 
 
 10.1.0 (2017-07-17)
