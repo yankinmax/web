@@ -10,7 +10,23 @@ Unreleased
 
 **Bugfixes**
 
+* DT-55: Fix sprint 4:
+
+ * A user can only see product from parents companies
+ * Add widget selection on depiltech_payment_mode on sale_order form view
+ * Fix translation on sale discount program
+ * Configure sale automatic workflow settings
+ * Fix 'Early payment discount' on account invoice
+ * Create voucher for confirmed sale order only for agency customer
+ * Fix Centers can only create agency customer
+ * Fix supporting document filename on sale order
+ * Fix unlink rights on res partner (Client archivage group)
+
 * DT-56: Fix deletion of partner linked to a company
+* DT-57: A conversion of lead create a agency customer
+* DT-58: Customize lead/opportunity objects and views
+* DT-59: Add planning url field on partner form view
+* DT-60: Add center address fields on company
 
 **Build**
 

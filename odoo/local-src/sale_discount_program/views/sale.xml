@@ -11,9 +11,13 @@
             <field name="partner_id" position="after">
                 <field name="program_to_add"/>
                 <field name="program_code_ids_readonly" widget="many2many_tags"/>
+
                 <field name="supporting_document_required" invisible="True"/>
                 <field name="supporting_document"
+                       filename="supporting_document_filename"
                        attrs="{'required':[('supporting_document_required', '=', True)]}"/>
+                <field name="supporting_document_filename" invisible="True"/>
+
                  <!--
                  The widget many2many_tags is defined even if the field is invisible.
                  Without this widget, we have a bug between Odoo JS and Odoo server,

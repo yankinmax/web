@@ -36,6 +36,29 @@
         <field name="perm_unlink" eval="1"/>
     </record>
 
+    <record model="ir.rule" id="product_product_company_read">
+        <field name="name">product_product_company_read</field>
+        <field name="model_id" ref="product.model_product_product"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|', ('company_id', "=", False),('company_id', "parent_of", user.company_id.ids)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <record model="ir.rule" id="product_template_company_read">
+        <field name="name">product_template_company_read</field>
+        <field name="model_id" ref="product.model_product_template"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|', ('company_id', "=", False),('company_id', "parent_of", user.company_id.ids)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+
      <record model="ir.rule" id="crm_lead_company_rule">
          <field name="name">Leads by comapny</field>
          <field name="model_id" ref="crm.model_crm_lead"/>

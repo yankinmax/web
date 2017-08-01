@@ -16,6 +16,7 @@
 
             <field name="fiscal_position_id" position="after">
                 <field name="phototherapist_id"/>
+                <field name="partner_company_type" invisible="1"/>
             </field>
 
         </field>

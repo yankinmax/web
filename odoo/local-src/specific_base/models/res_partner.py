@@ -8,7 +8,7 @@ import uuid
 from datetime import datetime, timedelta
 
 from odoo.exceptions import UserError
-from odoo import models, fields, api, _
+from odoo import models, fields, api, _, SUPERUSER_ID
 
 
 DUPLICATE_FIELDS_KEY = ['company_type', 'company_id',
@@ -225,13 +225,13 @@ class ResPartner(models.Model):
     def _default_company_type(self):
         return (
             'agency_customer'
-            if self.env.user.has_group('scenario.grp_centers')
+            if self.env.user.has_group('specific_security.grp_centers')
             else 'person'
         )
 
     company_type_visible = fields.Boolean(
         default=lambda self: not self.env.user.has_group(
-            'scenario.grp_centers'
+            'specific_security.grp_centers'
         ),
         compute='_compute_company_type_visible',
         store=False,
@@ -239,9 +239,9 @@ class ResPartner(models.Model):
 
     @api.multi
     def _compute_company_type_visible(self):
-        for item in self:
-            item.company_type_visible = not self.env.user.has_group(
-                'scenario.grp_centers'
+        for partner in self:
+            partner.company_type_visible = not self.env.user.has_group(
+                'specific_security.grp_centers'
             )
 
     phototherapist_id = fields.Many2one(
@@ -261,24 +261,24 @@ class ResPartner(models.Model):
         string='Flash test done',
         required=True,
         default='n',
-        )
+    )
     socio_professional_category = fields.Selection(
         selection='_get_socio_pro_categ_selection',
         string='Socio-Professional Category'
-        )
+    )
     family_situation = fields.Selection(
         selection='_get_family_situation_selection'
-        )
+    )
     children_nb = fields.Integer(string='# Children')  # or Selection ???
     why_no_buy = fields.Selection(
         selection='_get_why_no_buy_selection'
-        )
+    )
     maximum_budget = fields.Selection(
         selection='_get_maximum_budget_selection'
-        )
+    )
     beauty_institute_attented = fields.Selection(
         selection=[('y', 'Yes'), ('n', 'No')],
-        )
+    )
     comment1 = fields.Text(string='Anecdote/Vacations')
     comment2 = fields.Text(string='Cosmetic habits / Brand used')
     comment3 = fields.Text(string='Other')
@@ -287,6 +287,25 @@ class ResPartner(models.Model):
         string='Delivery date of the box',
         help='Delivery date of the gift box to the customer',
     )
+
+    partner_planning_url = fields.Char(
+        string='Partner planning url',
+        compute='_compute_partner_planning_url',
+    )
+
+    @api.model
+    def _compute_partner_planning_url(self):
+        try:
+            url = self.env['ir.config_parameter'].get_param(
+                'partner_planning_url'
+            )
+            for partner in self:
+                if url and partner.id:
+                    partner.partner_planning_url = url % partner.id
+        except Exception:
+            raise UserError(
+                _('Error on configuration of partner planning url')
+            )
 
     @api.multi
     def take_me_to_diagnostic_survey(self):
@@ -322,7 +341,7 @@ class ResPartner(models.Model):
                 'token': token,
                 'partner_id': self.id,
                 'email': self.email}
-                )
+            )
             # get link to the survey
             url = '%s/%s' % (diagnostic_survey.public_url, token)
 
@@ -352,4 +371,15 @@ class ResPartner(models.Model):
             raise UserError(_(
                 "Impossible to delete a partner linked to a company"
             ))
+        deny_to_delete = (
+            not self.env.user.has_group(
+                'specific_security.group_client_archive'
+            ) and
+            self.env.user != SUPERUSER_ID
+        )
+        if deny_to_delete:
+            raise UserError(_(
+                "You don't have rights to delete partners"
+            ))
+
         return super(ResPartner, self).unlink()

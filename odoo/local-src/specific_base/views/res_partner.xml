@@ -48,6 +48,12 @@
         <field name="priority">48</field>
         <field name="arch" type="xml">
 
+            <field name="company_type" position="before">
+                <group attrs="{'invisible': [('company_type', '!=', 'agency_customer')]}">
+                    <field name="partner_planning_url" widget="url"/>
+                </group>
+            </field>
+
             <field name="company_type" position="after">
                 <field name="company_type_visible" invisible="True"/>
             </field>
@@ -61,7 +67,7 @@
             </xpath>
 
             <xpath expr="//button[@name='toggle_active']" position="attributes">
-                <attribute name="groups">specific_base.group_client_archive</attribute>
+                <attribute name="groups">specific_security.group_client_archive</attribute>
             </xpath>
             <!-- hide fields -->
             <field name="title" position="replace"/>
@@ -80,10 +86,10 @@
 
             <field name="name" position="attributes">
                 <attribute name="attrs">{
-                'readonly': [('company_type', '=', 'agency_customer')],
-                'required': [('company_type', '!=', 'agency_customer')],
-                'invisible': [('company_type', '=', 'agency_customer')],
-                }</attribute>
+                    'readonly': [('company_type', '=', 'agency_customer')],
+                    'required': [('company_type', '!=', 'agency_customer')],
+                    'invisible': [('company_type', '=', 'agency_customer')],
+                    }</attribute>
             </field>
             <field name="firstname" position="after">
                 <field name="birthday"
@@ -188,7 +194,7 @@
                     </group>
                 </page>
                 <page name="meetings" string="Meetings" attrs="{'invisible': [('company_type', '!=', 'agency_customer')]}">
-                        <field name="meeting_ids" nolabel="1"/>
+                    <field name="meeting_ids" nolabel="1"/>
                 </page>
             </xpath>
 

@@ -29,9 +29,13 @@ class Invoice(models.Model):
         a center with active discount and if the invoice
         is emited by the holding """
         res = False
-        if self.company_id == self.env.ref('base.main_company'):
-            cp_customer = self.env['res.company'].search(
-                [('partner_id', '=', self.partner_id.id)])
+        cp_customer = self.env['res.company'].search(
+            [('partner_id', '=', self.partner_id.id)]
+        )
+        early_payment_discount_apply_on_company_id = (
+            cp_customer.early_payment_discount_apply_on_company_id
+        )
+        if self.company_id == early_payment_discount_apply_on_company_id:
             res = cp_customer.early_payment_discount
         self.has_early_payment_discount = res
 

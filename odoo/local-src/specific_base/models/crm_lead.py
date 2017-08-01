@@ -3,11 +3,31 @@
 # Copyright 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, _
+from odoo import models, fields, api, _, SUPERUSER_ID
+from odoo.exceptions import UserError
 
 
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
+
+    lead_planning_url = fields.Char(
+        string='Lead planning url',
+        compute='_compute_lead_planning_url',
+    )
+
+    @api.model
+    def _compute_lead_planning_url(self):
+        try:
+            url = self.env['ir.config_parameter'].get_param(
+                'lead_planning_url'
+            )
+            for lead in self:
+                if url and lead.id:
+                    lead.lead_planning_url = url % lead.id
+        except Exception:
+            raise UserError(
+                _('Error on configuration of lead planning url')
+            )
 
     opening_date = fields.Date(
         string='Opening date',
@@ -44,6 +64,33 @@ class CrmLead(models.Model):
         string='Already owning a franchise',
         help='Has candidate ever been responsible of a franchise?',
     )
+
+    phototherapist_id = fields.Many2one(
+        comodel_name='res.company.phototherapist',
+        ondelete='restrict',
+        string='Phototherapist',
+    )
+
+    can_edit_user = fields.Boolean(
+        compute='_compute_can_edit_user',
+        default=lambda self: self.can_edit_user_value(),
+    )
+
+    @api.model
+    def can_edit_user_value(self):
+        return self.env.user.id == SUPERUSER_ID or (
+            not self.env.user.has_group(
+                'specific_security.grp_centers'
+            ) and not self.env.user.has_group(
+                'specific_security.grp_center_managers'
+            )
+        )
+
+    @api.depends()
+    def _compute_can_edit_user(self):
+        can_edit_user = self.can_edit_user_value()
+        for line in self:
+            line.can_edit_user = can_edit_user
 
 
 class CrmLeadTag(models.Model):

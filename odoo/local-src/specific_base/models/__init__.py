@@ -13,3 +13,4 @@ from . import crm_lead
 from . import utm
 from . import res_country
 from . import account_payment
+from . import sale_config

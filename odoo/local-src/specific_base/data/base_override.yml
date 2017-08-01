@@ -7,10 +7,6 @@
       domain_force = "['|', ('pricelist_id.allowed_company_ids','=',False), ('pricelist_id.allowed_company_ids','in',[user.company_id.id])]"
       self.domain_force = domain_force
 -
-  !python {model: ir.rule, id: base.res_partner_rule} : |
-      domain_force = "['|',('company_id','child_of',[user.company_id.id]),('company_id','=',False)]"
-      self.domain_force = domain_force
--
   !python {model: ir.rule, id: account.tax_comp_rule} : |
       self.domain_force = "['|',('company_id','=',False),('company_id','=', user.company_id.id)]"
 -

@@ -22,6 +22,11 @@ class SaleOrder(models.Model):
     payment_term_id = fields.Many2one('account.payment.term')
     # default=get_default_payment_term_id)
 
+    partner_company_type = fields.Selection(
+        related='partner_id.company_type',
+        readonly=True,
+    )
+
     @api.model
     def create(self, values):
         if not values.get('validity_date', False):

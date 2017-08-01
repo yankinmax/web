@@ -24,11 +24,27 @@
                             <field name="date_opening"/>
                         </group>
                         <group>
-                            <field name="company_name"/>
                             <field name="company_type"/>
                             <field name="form"/>
                             <field name="capital_stock"/>
                         </group>
+                    </group>
+                    <group name="center_informations" string="Center Informations">
+                        <group>
+                            <field name="company_name"/>
+                            <label for="center_street" string="Address"/>
+                            <div class="o_address_format">
+                                <field name="center_street" placeholder="Street..." class="o_address_street"/>
+                                <field name="center_street2" placeholder="Street 2..." class="o_address_street"/>
+                                <field name="center_city" placeholder="City" class="o_address_city"/>
+                                <field name="center_state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'/>
+                                <field name="center_zip" placeholder="ZIP" class="o_address_zip"/>
+                                <field name="center_country_id" placeholder="Country" class="o_address_country" options='{"no_open": True}'/>
+                            </div>
+                            <field name="center_phone" />
+                            <field name="center_email" />
+                        </group>
+                        <group />
                     </group>
                     <group name="franchised">
                         <group name="info_franchised" string="Franchised Infos">

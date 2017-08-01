@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-  <template name="report_invoice_document" inherit_id="account.report_invoice_document">
+  <template id="report_invoice_document_inherit_b2b" inherit_id="account.report_invoice_document">
 
     <xpath expr="//span[@t-field='o.amount_untaxed']/ancestor::table" postion="after">
       <t t-if="o.has_early_payment_discount">

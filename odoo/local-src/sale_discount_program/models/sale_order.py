@@ -80,6 +80,9 @@ class SaleOrder(models.Model):
     supporting_document = fields.Binary(
         attachment=True
     )
+    supporting_document_filename = fields.Char(
+        string='Supporting document',
+    )
 
     @api.depends('program_code_ids')
     def _compute_supporting_document_required(self):

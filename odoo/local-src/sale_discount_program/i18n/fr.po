@@ -379,7 +379,7 @@ msgstr "La quantité est le nombre distinct de produits correspondants"
 #. module: sale_discount_program
 #: selection:sale.discount.program.condition,product_qty_type:0
 msgid "Quantity is the sum of matching products quantities"
-msgstr "La quantité est la somme est quantités des produits correspondants"
+msgstr "La quantité est la somme des quantités des produits correspondants"
 
 #. module: sale_discount_program
 #: model:ir.ui.view,arch_db:sale_discount_program.sale_discount_program_code_form

@@ -8,6 +8,8 @@
       <xpath expr="//field[@name='phone']/.." position="after">
         <group>
           <field name="early_payment_discount"/>
+          <field name="early_payment_discount_apply_on_company_id"
+                 attrs="{'invisible': [('early_payment_discount', '=', False)], 'required': [('early_payment_discount', '!=', False)]}"/>
         </group>
       </xpath>
     </field>

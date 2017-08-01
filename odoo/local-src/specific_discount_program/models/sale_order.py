@@ -117,7 +117,11 @@ class SaleOrder(models.Model):
         super(SaleOrder, self).action_confirm()
 
         for sale in self:
-            if not sale.gift_quotation:
+            condition = (
+                not sale.gift_quotation and
+                sale.partner_company_type == 'agency_customer'
+            )
+            if condition:
                 # Bon d'achat si la commande a utilisé le programme de
                 # parainnage et si le parrain est toujours valide
                 if sale.is_sponsored:

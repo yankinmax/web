@@ -71,6 +71,7 @@ class TestProgram(TransactionCase):
         self.partner1 = self.partner_model.create({
             'name': 'Sponsor partner',
             'city': 'Test city',
+            'company_type': 'agency_customer',
         })
 
         self.assertEqual(0, self.sponsor_model.search_count([]))
@@ -82,7 +83,18 @@ class TestProgram(TransactionCase):
                 'product_id': self.p1.id, 'product_uom_qty': 1
             })]
         })
-        self.sale_sponsor.action_confirm()
+        self.sale_sponsor.with_context(
+            no_check_payment_rules=True
+            # This context used by specific_payment_mode module
+            # to ignore check on payment calculator.
+            #
+            # Normally, we don't need to give this context here,
+            # because this module don't depend of specific_payment_mode module.
+            #
+            # But when travis build all units tests,
+            # specific_payment_mode module is installed and
+            # the check on payment calculator induce a failed test here.
+        ).action_confirm()
         created_voucher = self.program_model.search([
             ('partner_id', '=', self.partner1.id)
         ])
@@ -108,6 +120,7 @@ class TestProgram(TransactionCase):
         partner2 = self.partner_model.create({
             'name': 'Other partner',
             'sponsor_id': sponsor.id,
+            'company_type': 'agency_customer',
         })
 
         # Simulate sponsor program by setting pricelist_id to sponsor pricelist
@@ -119,7 +132,18 @@ class TestProgram(TransactionCase):
                 'product_id': self.p1.id, 'product_uom_qty': 1,
             })]
         })
-        sale.action_confirm()
+        sale.with_context(
+            no_check_payment_rules=True
+            # This context used by specific_payment_mode module
+            # to ignore check on payment calculator.
+            #
+            # Normally, we don't need to give this context here,
+            # because this module don't depend of specific_payment_mode module.
+            #
+            # But when travis build all units tests,
+            # specific_payment_mode module is installed and
+            # the check on payment calculator induce a failed test here.
+        ).action_confirm()
 
         self.assertEqual(2, self.program_model.search_count([
             ('voucher_code', '!=', False)
@@ -165,7 +189,18 @@ class TestProgram(TransactionCase):
                 'product_id': self.p1.id, 'product_uom_qty': 1,
             })]
         })
-        sale.action_confirm()
+        sale.with_context(
+            no_check_payment_rules=True
+            # This context used by specific_payment_mode module
+            # to ignore check on payment calculator.
+            #
+            # Normally, we don't need to give this context here,
+            # because this module don't depend of specific_payment_mode module.
+            #
+            # But when travis build all units tests,
+            # specific_payment_mode module is installed and
+            # the check on payment calculator induce a failed test here.
+        ).action_confirm()
 
         self.assertEqual(2, self.program_model.search_count([
             ('voucher_code', '!=', False)
@@ -186,6 +221,7 @@ class TestProgram(TransactionCase):
         partner2 = self.partner_model.create({
             'name': 'Other partner',
             'sponsor_id': sponsor.id,
+            'company_type': 'agency_customer',
         })
 
         sale = self.sale_model.create({
@@ -196,7 +232,18 @@ class TestProgram(TransactionCase):
                 'product_id': self.p1.id, 'product_uom_qty': 1,
             })]
         })
-        sale.action_confirm()
+        sale.with_context(
+            no_check_payment_rules=True
+            # This context used by specific_payment_mode module
+            # to ignore check on payment calculator.
+            #
+            # Normally, we don't need to give this context here,
+            # because this module don't depend of specific_payment_mode module.
+            #
+            # But when travis build all units tests,
+            # specific_payment_mode module is installed and
+            # the check on payment calculator induce a failed test here.
+        ).action_confirm()
 
         self.assertEqual(2, self.program_model.search_count([
             ('voucher_code', '!=', False)
@@ -229,6 +276,7 @@ class TestProgram(TransactionCase):
         partner2 = self.partner_model.create({
             'name': 'Other partner',
             'sponsor_id': sponsor.id,
+            'company_type': 'agency_customer',
         })
 
         # Simulate sponsor program by setting pricelist_id to sponsor pricelist
@@ -245,7 +293,18 @@ class TestProgram(TransactionCase):
         # anymore
         self.sale_sponsor.action_cancel()
 
-        sale.action_confirm()
+        sale.with_context(
+            no_check_payment_rules=True
+            # This context used by specific_payment_mode module
+            # to ignore check on payment calculator.
+            #
+            # Normally, we don't need to give this context here,
+            # because this module don't depend of specific_payment_mode module.
+            #
+            # But when travis build all units tests,
+            # specific_payment_mode module is installed and
+            # the check on payment calculator induce a failed test here.
+        ).action_confirm()
 
         # Voucher for client
         self.assertEqual(1, self.program_model.search_count([
@@ -614,24 +673,38 @@ class TestProgram(TransactionCase):
             'phototherapist_id': self.phototherapist.id,
         })
 
-        gift_order_context = {"active_model": 'sale.order',
-                              "active_ids": [gift_order.id],
-                              "active_id": gift_order.id}
-
         # Confirm gift quotation
-        gift_order.with_context(gift_order_context).action_confirm()
+        gift_order.with_context(
+            active_model='sale.order',
+            active_ids=[gift_order.id],
+            active_id=gift_order,
+            no_check_payment_rules=True
+            # This context used by specific_payment_mode module
+            # to ignore check on payment calculator.
+            #
+            # Normally, we don't need to give this context here,
+            # because this module don't depend of specific_payment_mode module.
+            #
+            # But when travis build all units tests,
+            # specific_payment_mode module is installed and
+            # the check on payment calculator induce a failed test here.
+        ).action_confirm()
 
         self.assertFalse(gift_order.generated_voucher_ids)
 
         # Create invoice
+        gift_invoice_context = {"active_model": 'sale.order',
+                                "active_ids": [gift_order.id],
+                                "active_id": gift_order.id}
+
         payment_wiz = self.env['sale.advance.payment.inv'].create({
             'advance_payment_method': 'all',
         })
-        payment_wiz.with_context(gift_order_context).create_invoices()
+        payment_wiz.with_context(gift_invoice_context).create_invoices()
         gift_invoice = gift_order.invoice_ids[0]
 
         # Validate invoice
-        gift_invoice.with_context(gift_order_context).invoice_validate()
+        gift_invoice.with_context(gift_invoice_context).invoice_validate()
 
         self.assertEqual(len(gift_invoice.generated_voucher_ids), 1)
         gift_voucher = gift_invoice.generated_voucher_ids[0]
@@ -660,12 +733,22 @@ class TestProgram(TransactionCase):
         reduced_order.apply_discount_programs()
         self.assertEqual(len(reduced_order.order_line), 2)
 
-        reduced_order_context = {"active_model": 'sale.order',
-                                 "active_ids": [reduced_order.id],
-                                 "active_id": reduced_order.id}
-
         # Confirm sale.order
-        reduced_order.with_context(reduced_order_context).action_confirm()
+        reduced_order.with_context(
+            active_model='sale.order',
+            active_ids=[reduced_order.id],
+            active_id=reduced_order.id,
+            no_check_payment_rules=True
+            # This context used by specific_payment_mode module
+            # to ignore check on payment calculator.
+            #
+            # Normally, we don't need to give this context here,
+            # because this module don't depend of specific_payment_mode module.
+            #
+            # But when travis build all units tests,
+            # specific_payment_mode module is installed and
+            # the check on payment calculator induce a failed test here.
+        ).action_confirm()
 
         # TODO : TO BE CHANGED ! THE VOUCHER PRODUCTS MUST BE HAVE TAX INCLUDED
         # Remove automatic taxes
@@ -703,6 +786,7 @@ class TestProgram(TransactionCase):
         # Create partner
         partner = self.partner_model.create({
             'name': 'UNITTEST partner',
+            'company_type': 'agency_customer',
         })
 
         # Create first sale order validated
@@ -718,7 +802,18 @@ class TestProgram(TransactionCase):
         sale_validated_1.order_line.write({
             'tax_id': [(5, False, False)]
         })
-        sale_validated_1.action_confirm()
+        sale_validated_1.with_context(
+            no_check_payment_rules=True
+            # This context used by specific_payment_mode module
+            # to ignore check on payment calculator.
+            #
+            # Normally, we don't need to give this context here,
+            # because this module don't depend of specific_payment_mode module.
+            #
+            # But when travis build all units tests,
+            # specific_payment_mode module is installed and
+            # the check on payment calculator induce a failed test here.
+        ).action_confirm()
 
         # Create second sale order validated
         sale_validated_2 = self.sale_model.create({
@@ -733,7 +828,18 @@ class TestProgram(TransactionCase):
         sale_validated_2.order_line.write({
             'tax_id': [(5, False, False)]
         })
-        sale_validated_2.action_confirm()
+        sale_validated_2.with_context(
+            no_check_payment_rules=True
+            # This context used by specific_payment_mode module
+            # to ignore check on payment calculator.
+            #
+            # Normally, we don't need to give this context here,
+            # because this module don't depend of specific_payment_mode module.
+            #
+            # But when travis build all units tests,
+            # specific_payment_mode module is installed and
+            # the check on payment calculator induce a failed test here.
+        ).action_confirm()
 
         # Create first sale order for test
         sale_for_test_1 = self.sale_model.create({
@@ -912,7 +1018,18 @@ class TestProgram(TransactionCase):
 
         # Re-confirm first validated order and
         # ==> Program is not used (because the confirmation date is now)
-        sale_validated_1.action_confirm()
+        sale_validated_1.with_context(
+            no_check_payment_rules=True
+            # This context used by specific_payment_mode module
+            # to ignore check on payment calculator.
+            #
+            # Normally, we don't need to give this context here,
+            # because this module don't depend of specific_payment_mode module.
+            #
+            # But when travis build all units tests,
+            # specific_payment_mode module is installed and
+            # the check on payment calculator induce a failed test here.
+        ).action_confirm()
 
         sale_for_test_1.apply_discount_programs()
         sale_for_test_2.apply_discount_programs()
