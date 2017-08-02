@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* Fix unit test on discount_program_report never launched
+
 **Build**
 
 **Documentation**
