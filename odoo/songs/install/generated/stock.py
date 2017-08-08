@@ -12,6 +12,70 @@ from ...common import (
 
 
 @anthem.log
+def stock_config_settings(ctx):
+    """ Setup stock.config.settings """
+    model = ctx.env['stock.config.settings']
+    model.create({
+        # Landed Costs: No landed costs  # noqa
+        'module_stock_landed_costs': False,
+        # Inventory Valuation: Periodic inventory valuation (recommended)  # noqa
+        'group_stock_inventory_valuation': False,
+        # Minimum Stock Rules: Set lead times in calendar days (easy)  # noqa
+        'module_stock_calendar': False,
+        # Barcode scanner support  # noqa
+        'module_stock_barcode': False,
+        # Picking Waves: Manage pickings one at a time  # noqa
+        'module_stock_picking_wave': False,
+        # Company  # noqa
+        'company_id': ctx.env.ref('base.main_company').id,
+        # Packages: Do not manage packaging  # noqa
+        'group_stock_tracking_lot': False,
+        # Product Variants: No variants on products  # noqa
+        'group_product_variant': False,
+        # Warning: All the partners can be used in pickings  # noqa
+        'group_warning_stock': False,
+        # Temando integration  # noqa
+        'module_delivery_temando': False,
+        # Lots and Serial Numbers: Do not track individual product items  # noqa
+        'group_stock_production_lot': False,
+        # Manage several warehouses  # noqa
+        'group_stock_multi_warehouses': False,
+        # Product Owners: All products in your warehouse belong to your company  # noqa
+        'group_stock_tracking_owner': False,
+        # Minimum days to trigger a propagation of date change in pushed/pull flows.  # noqa
+        'propagation_minimum_delta': 0,
+        # USPS integration  # noqa
+        'module_delivery_usps': False,
+        # Dropshipping: Suppliers always deliver to your warehouse(s)  # noqa
+        'module_stock_dropshipping': False,
+        # Quality  # noqa
+        'module_quality': False,
+        # Procurements: Reserve products immediately after the sale order confirmation  # noqa
+        'module_procurement_jit': 1,
+        # Packaging Methods: Do not manage packaging  # noqa
+        'group_stock_packaging': False,
+        # Fedex integration  # noqa
+        'module_delivery_fedex': False,
+        # Decimal precision on weight  # noqa
+        'decimal_precision': 0,
+        # Units of Measure: Products have only one unit of measure (easier)  # noqa
+        'group_uom': False,
+        # Warehouses and Locations usage level: Manage only 1 Warehouse, composed by several stock locations  # noqa
+        'warehouse_and_location_usage_level': 1,
+        # UPS integration  # noqa
+        'module_delivery_ups': False,
+        # Expiration Dates: Do not use Expiration Date on serial numbers  # noqa
+        'module_product_expiry': False,
+        # Manage several stock locations  # noqa
+        'group_stock_multi_locations': True,
+        # Routes: Advanced routing of products using rules  # noqa
+        'group_stock_adv_location': 1,
+        # DHL integration  # noqa
+        'module_delivery_dhl': False,
+    }).execute()
+
+
+@anthem.log
 def add_xmlid_to_existing_sequences(ctx):
     # this works if `base_dj` is installed
     model = ctx.env['ir.sequence'].with_context(
@@ -77,6 +141,7 @@ def load_procurement_rule(ctx):
 
 @anthem.log
 def main(ctx):
+    stock_config_settings(ctx)
     add_xmlid_to_existing_sequences(ctx)
     load_stock_location(ctx)
     load_stock_picking_type(ctx)
