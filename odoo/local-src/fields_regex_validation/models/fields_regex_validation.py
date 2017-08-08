@@ -36,7 +36,14 @@ class FieldsRegexValidation(models.Model):
             query = "select * from fields_regex_validation where active;"
             cr.execute(query)
             for res in cr.dictfetchall():
-                pool._sql_error[res['constraint_name']] = res["error_msg"]
+                self._update_sql_error_dict(res['constraint_name'],
+                                            res["error_msg"], pool=pool)
+
+    def _update_sql_error_dict(self, constraint_name, error_msg, pool=None):
+        if not pool:
+            pool = self.pool
+        pool._sql_error.update({constraint_name.encode('utf-8'):
+                                error_msg.encode('utf-8')})
 
     @api.onchange('model_id')
     def onchange_model_id(self):
@@ -103,7 +110,7 @@ Detailled error: %r"""
         # signal changes to registry to the others (eventual) workers
         # be aware of this new constraint
         if not odoo.multi_process:
-            self.pool._sql_error.update({constraint_name: values['error_msg']})
+            self._update_sql_error_dict(constraint_name, values['error_msg'])
         else:
             RegistryManager.signal_registry_change(self.env.cr.dbname)
 
@@ -137,12 +144,10 @@ Detailled error: %r"""
         # be aware of this new constraint
         if not odoo.multi_process:
             for rec in self:
-                self.pool._sql_error.update(
-                    {rec.constraint_name: rec.error_msg})
+                self._update_sql_error_dict(rec.constraint_name, rec.error_msg)
         else:
             RegistryManager.signal_registry_change(self.env.cr.dbname)
 
-        # RegistryManager.signal_registry_change(self.env.cr.dbname)
         return True
 
     @api.multi
@@ -160,5 +165,4 @@ Detailled error: %r"""
                 del self.pool._sql_error[rec.constraint_name]
         else:
             RegistryManager.signal_registry_change(self.env.cr.dbname)
-        # RegistryManager.signal_registry_change(self.env.cr.dbname)
         return True
