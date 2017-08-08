@@ -39,11 +39,16 @@ class FieldsRegexValidation(models.Model):
                 self._update_sql_error_dict(res['constraint_name'],
                                             res["error_msg"], pool=pool)
 
+    def _ensure_utf8_string(self, string):
+        if isinstance(string, unicode):
+            string = string.encode('utf-8')
+        return string
+
     def _update_sql_error_dict(self, constraint_name, error_msg, pool=None):
         if not pool:
             pool = self.pool
-        pool._sql_error.update({constraint_name.encode('utf-8'):
-                                error_msg.encode('utf-8')})
+        pool._sql_error.update({self._ensure_utf8_string(constraint_name):
+                                self._ensure_utf8_string(error_msg)})
 
     @api.onchange('model_id')
     def onchange_model_id(self):
