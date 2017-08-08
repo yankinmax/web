@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* Remove export permission on every groups other than Export
+
 **Build**
 
 **Documentation**
