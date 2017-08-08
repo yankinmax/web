@@ -121,3 +121,7 @@ migration:
           - specific_base
           - specific_discount_program
           - specific_payment_mode
+    - version: 10.1.2
+      operations:
+        post:
+          - anthem songs.install.rights::setup_export_rights
