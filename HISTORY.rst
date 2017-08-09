@@ -16,6 +16,21 @@
 Release History
 ---------------
 
+latest (unreleased)
++++++++++++++++++++
+
+**Features and Improvements**
+
+**Bugfixes**
+
+* Update base_dj to latest version
+* Missing stock settings setup
+
+**Build**
+
+**Documentation**
+
+
 10.0.5 (2017-07-31)
 +++++++++++++++++++
 
