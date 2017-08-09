@@ -23,6 +23,18 @@ latest (unreleased)
 
 **Bugfixes**
 
+**Build**
+
+**Documentation**
+
+
+10.0.6 (2017-08-09)
++++++++++++++++++++
+
+**Features and Improvements**
+
+**Bugfixes**
+
 * Update base_dj to latest version
 * Missing stock settings setup
 
