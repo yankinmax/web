@@ -11,6 +11,8 @@ Unreleased
 **Bugfixes**
 
 * Remove export permission on every groups other than Export
+* Encode constraint name and message in fields_regex_expression to avoid
+  UnicodeDecodeError and display real errors
 
 **Build**
 
