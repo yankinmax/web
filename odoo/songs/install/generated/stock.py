@@ -4,8 +4,9 @@
 # -- This file has been generated --
 
 import anthem
+from ...common import load_csv
+
 from ...common import (
-    load_csv,
     deferred_import,
     deferred_compute_parents
 )
@@ -14,7 +15,8 @@ from ...common import (
 @anthem.log
 def stock_config_settings(ctx):
     """ Setup stock.config.settings """
-    model = ctx.env['stock.config.settings']
+    model = ctx.env['stock.config.settings'].with_context(
+        {'tracking_disable': 1})
     model.create({
         # Landed Costs: No landed costs  # noqa
         'module_stock_landed_costs': False,
@@ -72,28 +74,16 @@ def stock_config_settings(ctx):
         'group_stock_adv_location': 1,
         # DHL integration  # noqa
         'module_delivery_dhl': False,
+
     }).execute()
 
 
 @anthem.log
-def add_xmlid_to_existing_sequences(ctx):
-    # this works if `base_dj` is installed
-    model = ctx.env['ir.sequence'].with_context(
-        dj_export=1,
-        dj_xmlid_fields_map={'ir.sequence': ['prefix', ]},
-        dj_multicompany=True
-    )
-    for item in model.search([]):
-        item._dj_export_xmlid()
-
-
-@anthem.log
-def add_xmlid_to_existing_locations(ctx):
+def add_xmlid_to_existing_stock_location(ctx):
     # this works if `base_dj` is installed
     model = ctx.env['stock.location'].with_context(
-        dj_export=1,
-        dj_xmlid_fields_map={'stock.location': ['name', ]},
-        dj_multicompany=True
+        dj_xmlid_fields_map={'stock.location': []},
+        dj_multicompany=True,
     )
     for item in model.search([]):
         item._dj_export_xmlid()
@@ -101,24 +91,29 @@ def add_xmlid_to_existing_locations(ctx):
 
 @anthem.log
 def load_stock_location(ctx):
-    add_xmlid_to_existing_locations(ctx)
-    deferred_import(
-        ctx,
-        'stock.location',
-        'data/install/generated/stock.location.csv',
-        defer_parent_computation=True)
+    """ Import stock.location from csv """
+    model = ctx.env['stock.location'].with_context({'tracking_disable':1})  # noqa
+    header_exclude = ['location_id/id', 'child_ids/id']
+    load_csv(ctx, 'data/install/generated/stock.location.csv', model, header_exclude=header_exclude)  # noqa
+    if header_exclude:
+        load_csv(ctx, 'data/install/generated/stock.location.csv', model, header=['id', ] + header_exclude)  # noqa
 
 
 @anthem.log
-def location_compute_parents(ctx):
-    """Compute parent_left, parent_right"""
-    deferred_compute_parents(ctx, 'stock.location')
+def add_xmlid_to_existing_ir_sequence(ctx):
+    # this works if `base_dj` is installed
+    model = ctx.env['ir.sequence'].with_context(
+        dj_xmlid_fields_map={'ir.sequence': []},
+        dj_multicompany=True,
+    )
+    for item in model.search([]):
+        item._dj_export_xmlid()
 
 
 @anthem.log
 def load_stock_picking_type(ctx):
     """ Import stock.picking.type from csv """
-    model = ctx.env['stock.picking.type'].with_context({'tracking_disable':1})  # noqa
+    model = ctx.env['stock.picking.type'].with_context({'tracking_disable': 1})  # noqa
     header_exclude = ['return_picking_type_id/id']
     load_csv(ctx, 'data/install/generated/stock.picking.type.csv', model, header_exclude=header_exclude)  # noqa
     if header_exclude:
@@ -128,22 +123,23 @@ def load_stock_picking_type(ctx):
 @anthem.log
 def load_stock_location_route(ctx):
     """ Import stock.location.route from csv """
-    model = ctx.env['stock.location.route'].with_context({'tracking_disable':1})  # noqa
+    model = ctx.env['stock.location.route'].with_context({'tracking_disable': 1})  # noqa
     load_csv(ctx, 'data/install/generated/stock.location.route.csv', model)
 
 
 @anthem.log
 def load_procurement_rule(ctx):
     """ Import procurement.rule from csv """
-    model = ctx.env['procurement.rule'].with_context({'tracking_disable':1})  # noqa
+    model = ctx.env['procurement.rule'].with_context({'tracking_disable': 1})  # noqa
     load_csv(ctx, 'data/install/generated/procurement.rule.csv', model)
 
 
 @anthem.log
 def main(ctx):
     stock_config_settings(ctx)
-    add_xmlid_to_existing_sequences(ctx)
+    add_xmlid_to_existing_stock_location(ctx)
     load_stock_location(ctx)
+    add_xmlid_to_existing_ir_sequence(ctx)
     load_stock_picking_type(ctx)
     load_stock_location_route(ctx)
     load_procurement_rule(ctx)
