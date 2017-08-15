@@ -117,3 +117,6 @@ migration:
           - base_dj
           - web_environment_ribbon
           - server_environment_ir_config_parameter
+      operations:
+        post:
+          - anthem songs.install.generated.stock::main
