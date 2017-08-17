@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Add ribbon, clean pending-merges & project.sync
+
 **Bugfixes**
 
 **Build**
