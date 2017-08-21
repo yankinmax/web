@@ -111,8 +111,12 @@ migration:
       addons:
         upgrade:
           - base_dj
-    - version: 10.0.6
+    - version: 10.0.7
       addons:
         upgrade:
-        - web_environment_ribbon
-        - server_environment_ir_config_parameter
+          - base_dj
+          - web_environment_ribbon
+          - server_environment_ir_config_parameter
+      operations:
+        post:
+          - anthem songs.install.generated.stock::main
