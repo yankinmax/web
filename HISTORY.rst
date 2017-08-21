@@ -21,13 +21,26 @@ latest (unreleased)
 
 **Features and Improvements**
 
-* Add ribbon, clean pending-merges & project.sync
-
 **Bugfixes**
 
 **Build**
 
 **Documentation**
+
+
+10.0.7 (2017-08-21)
++++++++++++++++++++
+
+**Bugfixes**
+
+* Update stock songs given dj_file BSMTS-136
+
+
+**Build**
+
+* Add ribbon, clean pending-merges & project.sync
+* Latest version of `base_dj`, missing stock settings setup
+* Update project from odoo-template
 
 
 10.0.6 (2017-08-09)
