@@ -37,6 +37,7 @@ latest (unreleased)
 **Build**
 
 * Upgrade odoo source
+* Upgrade server-tools (for `web_environment_ribbon`)
 
 
 **Documentation**
