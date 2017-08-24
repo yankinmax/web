@@ -14,11 +14,13 @@
         <field name="name">Credit Card</field>
         <field name="code">CB</field>
         <field name="payment_type">inbound</field>
+        <field name="depiltech_payment_mode" ref="other"/>
     </record>
     <record model="account.payment.method" id="cheque_method">
         <field name="name">Cheque</field>
         <field name="code">CHQ</field>
         <field name="payment_type">inbound</field>
+        <field name="depiltech_payment_mode" ref="other"/>
     </record>
     <record model="account.payment.method" id="cash_method">
         <field name="name">Cash</field>
@@ -30,10 +32,29 @@
         <field name="code">KADEO</field>
         <field name="payment_type">inbound</field>
     </record>
-    <record model="account.payment.method" id="pnf_method">
-        <field name="name">PNF</field>
-        <field name="code">PNF</field>
+    <record model="account.payment.method" id="pnf3_method">
+        <field name="name">PNF3</field>
+        <field name="code">PNF3</field>
         <field name="payment_type">inbound</field>
+        <field name="depiltech_payment_mode" ref="pnf3"/>
+    </record>
+    <record model="account.payment.method" id="pnf4_method">
+        <field name="name">PNF4</field>
+        <field name="code">PNF4</field>
+        <field name="payment_type">inbound</field>
+        <field name="depiltech_payment_mode" ref="pnf4"/>
+    </record>
+    <record model="account.payment.method" id="pnf5_method">
+        <field name="name">PNF5</field>
+        <field name="code">PNF5</field>
+        <field name="payment_type">inbound</field>
+        <field name="depiltech_payment_mode" ref="pnf5"/>
+    </record>
+    <record model="account.payment.method" id="pnf10_method">
+        <field name="name">PNF10</field>
+        <field name="code">PNF10</field>
+        <field name="payment_type">inbound</field>
+        <field name="depiltech_payment_mode" ref="pnf10"/>
     </record>
     <record model="account.payment.method" id="sepa_method">
         <field name="name">SEPA Direct Debit</field>

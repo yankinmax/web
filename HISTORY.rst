@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* DT-71: Simplify usage of depiltech payment mode
+
 **Bugfixes**
 
 * Remove export permission on every groups other than Export

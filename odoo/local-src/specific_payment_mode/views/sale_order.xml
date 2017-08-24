@@ -21,7 +21,7 @@
                                    nolabel="1"/>
                         </group>
                         <group colspan="3" attrs="{'invisible': [('partner_company_type', '!=', 'agency_customer')]}">
-                            <field name="depiltech_payment_mode" widget="selection"/>
+                            <field name="depiltech_payment_mode" widget="selection" groups="specific_security.group_can_see_depiltech_payment_mode"/>
                             <field name="compute_calculator" invisible="True"/>
                             <field name="calculator_link" widget="url" attrs="{'invisible': [('calculator_link', '=', False)]}"/>
                             <field name="provision"/>

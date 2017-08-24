@@ -14,17 +14,13 @@ from odoo import models, fields, api, _
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    def _get_default_depiltech_payment_mode(self):
-        return self.env['depiltech.payment.mode'].search(
-            [('use_as_default', '=', True)],
-            limit=1
-        )
+    payment_mode_id = fields.Many2one(
+        required=True,
+    )
 
     depiltech_payment_mode = fields.Many2one(
         comodel_name='depiltech.payment.mode',
-        string='Payment mode',
-        default=_get_default_depiltech_payment_mode,
-        required=True,
+        string='Depiltech payment mode',
         readonly=True,
         states={
             'draft': [('readonly', False)],
@@ -149,6 +145,11 @@ class SaleOrder(models.Model):
                 raise ValidationError(_(
                     'Depiltech payment mode invalid to confirm sale order'
                 ))
+            if not self.depiltech_payment_mode:
+                raise ValidationError(_(
+                    'Payment mode configuration in error '
+                    '(no validated depiltech payment mode defined)'
+                ))
 
     @api.one
     @api.constrains('provision', 'amount_total', 'partner_company_type')
@@ -241,6 +242,17 @@ class SaleOrder(models.Model):
 
     def _compute_monthly_payment(self):
         return (self.amount_total - self.provision) / self.month_number
+
+    @api.onchange('payment_mode_id')
+    def _onchange_payment_mode_id(self):
+        self.depiltech_payment_mode = (
+            self.payment_mode_id.payment_method_id.depiltech_payment_mode
+            if self.payment_mode_id
+            else self.env['depiltech.payment.mode'].search(
+                [('use_as_default', '=', True)],
+                limit=1
+            )
+        )
 
     @api.onchange('provision')
     def _onchange_provision(self):
