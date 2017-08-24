@@ -13,6 +13,7 @@ Unreleased
 * Remove export permission on every groups other than Export
 * Encode constraint name and message in fields_regex_expression to avoid
   UnicodeDecodeError and display real errors
+* Fix unit test on discount_program_report never launched
 
 **Build**
 
