@@ -12,6 +12,10 @@
                 <attribute name="attrs">{'readonly': [('partner_company_type', '=', 'agency_customer')]}</attribute>
             </field>
 
+            <field name="payment_mode_id" position="attributes">
+                <attribute name="required">True</attribute>
+            </field>
+
             <group name="sale_total" position="replace">
                 <div>
                     <group col="9">

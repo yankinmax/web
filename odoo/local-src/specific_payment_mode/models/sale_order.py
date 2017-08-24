@@ -14,10 +14,6 @@ from odoo import models, fields, api, _
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    payment_mode_id = fields.Many2one(
-        required=True,
-    )
-
     depiltech_payment_mode = fields.Many2one(
         comodel_name='depiltech.payment.mode',
         string='Depiltech payment mode',
@@ -166,10 +162,11 @@ class SaleOrder(models.Model):
                 ) == 1
             )
             if provision_ok:
-                raise ValidationError(_(
-                    'Provision must be a float '
-                    'between 0 and %.2f' % self.amount_total
-                ))
+                raise ValidationError(
+                    _(
+                        'Provision must be a float between 0 and %.2f'
+                    ) % self.amount_total
+                )
 
     @api.one
     @api.constrains('month_number', 'partner_company_type')
@@ -180,10 +177,11 @@ class SaleOrder(models.Model):
             icp = self.env['ir.config_parameter']
             max_month_number = int(icp.get_param('max_month_number', '0'))
             if self.month_number < 0 or self.month_number > max_month_number:
-                raise ValidationError(_(
-                    'Month number must be an integer between 0 and %d' %
-                    max_month_number
-                ))
+                raise ValidationError(
+                    _(
+                        'Month number must be an integer between 0 and %d'
+                    ) % max_month_number
+                )
 
     @api.one
     @api.constrains(
@@ -200,10 +198,12 @@ class SaleOrder(models.Model):
                 ) == 1
             )
             if is_not_ok:
-                raise ValidationError(_(
-                    'First monthly payment must be a float '
-                    'between 0 and %.2f' % self.amount_total
-                ))
+                raise ValidationError(
+                    _(
+                        'First monthly payment must be a float '
+                        'between 0 and %.2f'
+                    ) % self.amount_total
+                )
 
     @api.one
     @api.constrains('monthly_payment', 'amount_total', 'partner_company_type')
@@ -218,10 +218,11 @@ class SaleOrder(models.Model):
                 ) == 1
             )
             if is_not_ok:
-                raise ValidationError(_(
-                    'Next monthly payment must be a float '
-                    'between 0 and %.2f' % self.amount_total
-                ))
+                raise ValidationError(
+                    _(
+                        'Monthly payment must be a float between 0 and %.2f'
+                    ) % self.amount_total
+                )
 
     @api.one
     @api.constrains('day_of_payment', 'partner_company_type')

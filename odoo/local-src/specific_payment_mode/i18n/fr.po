@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-23 12:58+0000\n"
-"PO-Revision-Date: 2017-08-23 12:58+0000\n"
+"POT-Creation-Date: 2017-08-24 11:54+0000\n"
+"PO-Revision-Date: 2017-08-24 11:54+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -110,7 +110,7 @@ msgid "Day of payment"
 msgstr "Jour de prélévement"
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:231
+#: code:addons/specific_payment_mode/models/sale_order.py:232
 #, python-format
 msgid "Day of payment must be an integer between 1 and 31"
 msgstr "Le jour de prélévement doit être un entier entre 1 et 31"
@@ -132,7 +132,7 @@ msgid "Depiltech payment mode"
 msgstr "Mode de paiement Depiltech"
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:145
+#: code:addons/specific_payment_mode/models/sale_order.py:141
 #, python-format
 msgid "Depiltech payment mode invalid to confirm sale order"
 msgstr "Le mode de paiement depiltech est invalide pour confirmer une commande"
@@ -168,7 +168,7 @@ msgid "First monthly payment"
 msgstr "Première mensualité"
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:203
+#: code:addons/specific_payment_mode/models/sale_order.py:202
 #, python-format
 msgid "First monthly payment must be a float between 0 and %.2f"
 msgstr "La première mensualité doit être un décimal entre 0 et %.2f"
@@ -192,7 +192,7 @@ msgid "ID"
 msgstr "Identifiant"
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:488
+#: code:addons/specific_payment_mode/models/sale_order.py:489
 #, python-format
 msgid "Invalid data for the calculator."
 msgstr "Données invalides pour la calculatrice."
@@ -232,7 +232,7 @@ msgid "Month number"
 msgstr "Nombre de mois"
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:183
+#: code:addons/specific_payment_mode/models/sale_order.py:181
 #, python-format
 msgid "Month number must be an integer between 0 and %d"
 msgstr "Le nombre de mois doit être un entier entre 0 et %d"
@@ -244,15 +244,15 @@ msgid "Monthly payment"
 msgstr "Mensualité"
 
 #. module: specific_payment_mode
+#: code:addons/specific_payment_mode/models/sale_order.py:222
+#, python-format
+msgid "Monthly payment must be a float between 0 and %.2f"
+msgstr "Les mensualités doivent être un décimal entre 0 et %.2f"
+
+#. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_name
 msgid "Name"
 msgstr "Nom"
-
-#. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:221
-#, python-format
-msgid "Next monthly payment must be a float between 0 and %.2f"
-msgstr "Les mensualités suivantes doivent être un décimal entre 0 et %.2f"
 
 #. module: specific_payment_mode
 #: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:119
@@ -328,7 +328,7 @@ msgid "Payment mode %s from company %s is used on sales order which are not tota
 msgstr "Le mode de paiement %s de la société %s est utilisé sur une vente qui n'est pas totalement facturée ou annulée."
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:149
+#: code:addons/specific_payment_mode/models/sale_order.py:145
 #, python-format
 msgid "Payment mode configuration in error (no validated depiltech payment mode defined)"
 msgstr "La configuration du mode de paiement est incorrect (Mode de paiement depiltech défini invalide)"
@@ -358,10 +358,10 @@ msgid "Provision"
 msgstr "Apport"
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:169
+#: code:addons/specific_payment_mode/models/sale_order.py:166
 #, python-format
 msgid "Provision must be a float between 0 and %.2f"
-msgstr "L'apport doit être un entier entre 0 et %.2f"
+msgstr "L'apport doit être un décimal entre 0 et %.2f"
 
 #. module: specific_payment_mode
 #: model:account.payment.method,name:specific_payment_mode.sepa_method
