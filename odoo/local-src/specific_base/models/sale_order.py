@@ -27,6 +27,21 @@ class SaleOrder(models.Model):
         readonly=True,
     )
 
+    can_edit_marketing_values = fields.Boolean(
+        compute='_compute_can_edit_marketing_values',
+        default=lambda self: (
+            self.env['crm.lead'].can_edit_marketing_values_value()
+        ),
+    )
+
+    @api.depends()
+    def _compute_can_edit_marketing_values(self):
+        can_edit_marketing_values = (
+            self.env['crm.lead'].can_edit_marketing_values_value()
+        )
+        for order in self:
+            order.can_edit_marketing_values = can_edit_marketing_values
+
     @api.model
     def create(self, values):
         if not values.get('validity_date', False):

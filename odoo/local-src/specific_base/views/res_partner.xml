@@ -135,6 +135,14 @@
                 <attributes name="groups">base.group_multi_company</attributes>
             </field>
 
+            <xpath expr="//page[@name='sales_purchases']" position="inside">
+                <group string="Marketing">
+                    <field name="can_edit_marketing_values" invisible="True"/>
+                    <field name="campaign_id" attrs="{'readonly': [('can_edit_marketing_values', '=', False)]}"/>
+                    <field name="medium_id" attrs="{'readonly': [('can_edit_marketing_values', '=', False)]}"/>
+                    <field name="source_id" attrs="{'readonly': [('can_edit_marketing_values', '=', False)]}"/>
+                </group>
+            </xpath>
 
             <!-- Hide the contacts addresses tab -->
             <xpath expr="//page[//field[@name='child_ids']]" position="attributes">

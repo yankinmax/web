@@ -21,6 +21,15 @@ def clean_groups(ctx):
 
 
 @anthem.log
+def update_crm_satge_values(ctx):
+    """ Define 'Used when convert to customer' value on crm stage """
+    won_stage = ctx.env.ref('crm.stage_lead4')
+    if won_stage:
+        won_stage.used_when_convert_to_customer = True
+
+
+@anthem.log
 def main(ctx):
     """ Main: update 10.1.2 """
     clean_groups(ctx)
+    update_crm_satge_values(ctx)

@@ -30,16 +30,29 @@
             <xpath expr="//field[@name='user_id']" position="attributes">
                 <attribute name="options">{'no_create': True}</attribute>
             </xpath>
+
+            <group name="technical" position="attributes">
+                <attribute name="groups"/>
+            </group>
+            <xpath expr="//field[@name='campaign_id']" position="before">
+                <field name="can_edit_marketing_values" invisible="True"/>
+            </xpath>
             <xpath expr="//field[@name='campaign_id']" position="attributes">
                 <attribute name="options">{'no_create': True}</attribute>
+                <attribute name="attrs">{'readonly': [('can_edit_marketing_values', '=', False)]}</attribute>
+                <attribute name="groups"/>
             </xpath>
 
             <xpath expr="//field[@name='medium_id']" position="attributes">
                 <attribute name="options">{'no_create': True}</attribute>
+                <attribute name="attrs">{'readonly': [('can_edit_marketing_values', '=', False)]}</attribute>
+                <attribute name="groups"/>
             </xpath>
 
             <xpath expr="//field[@name='source_id']" position="attributes">
                 <attribute name="options">{'no_create': True}</attribute>
+                <attribute name="attrs">{'readonly': [('can_edit_marketing_values', '=', False)]}</attribute>
+                <attribute name="groups"/>
             </xpath>
 
             <xpath expr="//field[@name='opportunity_id']" position="attributes">

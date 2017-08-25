@@ -19,6 +19,13 @@
                 <field name="partner_company_type" invisible="1"/>
             </field>
 
+            <xpath expr="//page[@name='other_info']//field[@name='origin']" position="after">
+                <field name="can_edit_marketing_values" invisible="True"/>
+                <field name="campaign_id" attrs="{'readonly': [('can_edit_marketing_values', '=', False)]}"/>
+                <field name="medium_id" attrs="{'readonly': [('can_edit_marketing_values', '=', False)]}"/>
+                <field name="source_id" attrs="{'readonly': [('can_edit_marketing_values', '=', False)]}"/>
+            </xpath>
+
         </field>
     </record>
 

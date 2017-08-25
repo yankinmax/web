@@ -10,6 +10,7 @@ from . import pricelist
 from . import account_invoice
 from . import res_users
 from . import crm_lead
+from . import crm_stage
 from . import utm
 from . import res_country
 from . import account_payment
