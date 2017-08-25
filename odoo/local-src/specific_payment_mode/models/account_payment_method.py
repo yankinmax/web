@@ -12,3 +12,9 @@ class AccountPaymentMethod(models.Model):
     company_ids = fields.Many2many('res.company',
                                    'account_payment_method_res_company_rel',
                                    string='Allowed companies')
+
+    depiltech_payment_mode = fields.Many2one(
+        comodel_name='depiltech.payment.mode',
+        string='Depiltech payment mode',
+        domain=[('deny_to_confirm_order', '=', False)]
+    )

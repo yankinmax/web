@@ -14,17 +14,9 @@ from odoo import models, fields, api, _
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    def _get_default_depiltech_payment_mode(self):
-        return self.env['depiltech.payment.mode'].search(
-            [('use_as_default', '=', True)],
-            limit=1
-        )
-
     depiltech_payment_mode = fields.Many2one(
         comodel_name='depiltech.payment.mode',
-        string='Payment mode',
-        default=_get_default_depiltech_payment_mode,
-        required=True,
+        string='Depiltech payment mode',
         readonly=True,
         states={
             'draft': [('readonly', False)],
@@ -149,6 +141,11 @@ class SaleOrder(models.Model):
                 raise ValidationError(_(
                     'Depiltech payment mode invalid to confirm sale order'
                 ))
+            if not self.depiltech_payment_mode:
+                raise ValidationError(_(
+                    'Payment mode configuration in error '
+                    '(no validated depiltech payment mode defined)'
+                ))
 
     @api.one
     @api.constrains('provision', 'amount_total', 'partner_company_type')
@@ -165,10 +162,11 @@ class SaleOrder(models.Model):
                 ) == 1
             )
             if provision_ok:
-                raise ValidationError(_(
-                    'Provision must be a float '
-                    'between 0 and %.2f' % self.amount_total
-                ))
+                raise ValidationError(
+                    _(
+                        'Provision must be a float between 0 and %.2f'
+                    ) % self.amount_total
+                )
 
     @api.one
     @api.constrains('month_number', 'partner_company_type')
@@ -179,10 +177,11 @@ class SaleOrder(models.Model):
             icp = self.env['ir.config_parameter']
             max_month_number = int(icp.get_param('max_month_number', '0'))
             if self.month_number < 0 or self.month_number > max_month_number:
-                raise ValidationError(_(
-                    'Month number must be an integer between 0 and %d' %
-                    max_month_number
-                ))
+                raise ValidationError(
+                    _(
+                        'Month number must be an integer between 0 and %d'
+                    ) % max_month_number
+                )
 
     @api.one
     @api.constrains(
@@ -199,10 +198,12 @@ class SaleOrder(models.Model):
                 ) == 1
             )
             if is_not_ok:
-                raise ValidationError(_(
-                    'First monthly payment must be a float '
-                    'between 0 and %.2f' % self.amount_total
-                ))
+                raise ValidationError(
+                    _(
+                        'First monthly payment must be a float '
+                        'between 0 and %.2f'
+                    ) % self.amount_total
+                )
 
     @api.one
     @api.constrains('monthly_payment', 'amount_total', 'partner_company_type')
@@ -217,10 +218,11 @@ class SaleOrder(models.Model):
                 ) == 1
             )
             if is_not_ok:
-                raise ValidationError(_(
-                    'Next monthly payment must be a float '
-                    'between 0 and %.2f' % self.amount_total
-                ))
+                raise ValidationError(
+                    _(
+                        'Monthly payment must be a float between 0 and %.2f'
+                    ) % self.amount_total
+                )
 
     @api.one
     @api.constrains('day_of_payment', 'partner_company_type')
@@ -241,6 +243,17 @@ class SaleOrder(models.Model):
 
     def _compute_monthly_payment(self):
         return (self.amount_total - self.provision) / self.month_number
+
+    @api.onchange('payment_mode_id')
+    def _onchange_payment_mode_id(self):
+        self.depiltech_payment_mode = (
+            self.payment_mode_id.payment_method_id.depiltech_payment_mode
+            if self.payment_mode_id
+            else self.env['depiltech.payment.mode'].search(
+                [('use_as_default', '=', True)],
+                limit=1
+            )
+        )
 
     @api.onchange('provision')
     def _onchange_provision(self):
