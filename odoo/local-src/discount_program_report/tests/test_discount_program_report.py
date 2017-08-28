@@ -25,7 +25,8 @@ class TestDiscountProgramReport(TransactionCase):
             'partner_id': self.customer.id,
             'voucher_amount': 100.0,
             'voucher_code': 'ABCDEFGHIJK',
-            'note_message_for_action': 'Blablabla'
+            'note_message_for_action': 'Blablabla',
+            'type': 'sponsorship_voucher'
         })
 
     def test_cron_send_email(self):

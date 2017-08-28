@@ -101,7 +101,7 @@
         <field name="res_model">sale.discount.program</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('automatic', '=', True)]</field>
+        <field name="domain">[('type', '=', 'discount_program')]</field>
     </record>
 
     <record id="action_promo_codes_list" model="ir.actions.act_window">
@@ -109,7 +109,7 @@
         <field name="res_model">sale.discount.program</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('promo_code', '!=', False)]</field>
+        <field name="domain">[('type', '=', 'promo_code')]</field>
         <field name="view_ids" eval="[(5, 0, 0),
             (0, 0, {'view_mode': 'tree', 'view_id': ref('sale_discount_program_code_tree')}),
             (0, 0, {'view_mode': 'form', 'view_id': ref('sale_discount_program_code_form')})]"/>
@@ -120,12 +120,11 @@
         <field name="res_model">sale.discount.program</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('voucher_code', '!=', False)]</field>
+        <field name="domain">[('type', 'in', ('voucher', 'sponsorship_voucher', 'gift_voucher'))]</field>
         <field name="context">{'program_voucher': True}</field>
         <field name="view_ids" eval="[(5, 0, 0),
             (0, 0, {'view_mode': 'tree', 'view_id': ref('sale_discount_program_code_tree')}),
             (0, 0, {'view_mode': 'form', 'view_id': ref('sale_discount_program_code_form')})]"/>
-
     </record>
 
     <menuitem id="menu_discount_program" action="action_discount_program_list" parent="sales_team.menu_sales" sequence="100"/>

@@ -37,7 +37,7 @@ class AccountInvoice(models.Model):
         self.with_context(program_voucher=True).sudo().write({
             'generated_voucher_ids': [(0, False, {
                 'combinable': True,
-                'gift_voucher': True,
+                'type': 'gift_voucher',
                 'voucher_amount': (self.invoice_line_ids[0].quantity *
                                    self.invoice_line_ids[0].price_unit),
                 'max_use': 1,

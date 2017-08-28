@@ -9,6 +9,13 @@ from odoo.exceptions import UserError
 class Program(models.Model):
     _inherit = 'sale.discount.program'
 
+    def _get_program_type(self):
+        return [('gift_voucher', 'Gift voucher'),
+                ('sponsorship_voucher', 'Sponsorship voucher'),
+                ('voucher', 'Voucher'),
+                ('discount_program', 'Discount program'),
+                ('promo_code', 'Promo code')]
+
     allowed_company_ids = fields.Many2many(
         comodel_name='res.company',
         string='Allowed company',
@@ -25,7 +32,8 @@ class Program(models.Model):
     # For vouchers created by account.invoice
     source_invoice_id = fields.Many2one(comodel_name='account.invoice')
 
-    gift_voucher = fields.Boolean('Gift voucher', readonly=True)
+    type = fields.Selection(_get_program_type, string='Program type',
+                            readonly=True)
 
     customer_required = fields.Boolean('Requires customer',
                                        compute='_compute_cust_req')
@@ -45,11 +53,11 @@ class Program(models.Model):
 
     @api.depends(
         'program_name', 'voucher_code', 'promo_code', 'voucher_amount',
-        'partner_id'
+        'partner_id', 'type'
     )
     def _compute_name(self):
         for program in self:
-            if program.gift_voucher:
+            if program.type == 'gift_voucher':
                 program.name = _("Gift: %s (%s)") % (
                     program.voucher_code,
                     program.voucher_amount

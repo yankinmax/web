@@ -20,11 +20,11 @@ class Program(models.Model):
     sent_to_customer = fields.Boolean('Sent to customer', default=False,
                                       track_visibility='onchange')
 
-    @api.depends('gift_voucher', 'voucher_code', 'partner_id')
+    @api.depends('type', 'voucher_code', 'partner_id')
     def _get_is_printable(self):
         for program in self:
             program.is_printable = (
-                not program.gift_voucher
+                program.type in ('sponsorship_voucher', 'voucher')
                 and program.voucher_code
                 and program.partner_id
             )
@@ -34,14 +34,15 @@ class Program(models.Model):
         for program in self:
             if program.is_printable:
                 company_lang = program.partner_id.company_id.partner_id.lang
+                type_domain = ('type', '=', program.type)
                 if company_lang:
                     report_config = self.env[
                         'sale.discount.program.report.config'].search(
-                        [('lang_id.code', '=', company_lang)])
+                        [('lang_id.code', '=', company_lang), type_domain])
                 else:
                     report_config = self.env[
                         'sale.discount.program.report.config'].search(
-                        [('lang_id.code', '=', 'fr_FR')])
+                        [('lang_id.code', '=', 'fr_FR'), type_domain])
                 if report_config:
                     program.report_config_id = report_config.id
                 else:

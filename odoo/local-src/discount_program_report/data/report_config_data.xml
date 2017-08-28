@@ -3,6 +3,7 @@
     <record id="config_template_fr" model="sale.discount.program.report.config">
         <field name="name">Modèle Bon d'achat</field>
         <field name="lang_id" ref="base.lang_fr" />
+        <field name="type">voucher</field>
         <field name="active" eval="True" />
         <field name="amount_zone_height">80</field>
         <field name="amount_zone_width">273</field>
