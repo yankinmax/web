@@ -253,7 +253,7 @@ class SaleOrderLine(models.Model):
     @api.model
     def is_siege(self):
         return self.env.user.id == SUPERUSER_ID or self.env.user.has_group(
-            'specific_base.group_siege_depiltech'
+            'specific_security.group_siege_depiltech'
         )
 
     @api.depends()

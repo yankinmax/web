@@ -138,11 +138,10 @@
 
             <!-- Hide the contacts addresses tab -->
             <xpath expr="//page[//field[@name='child_ids']]" position="attributes">
-                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
+                <attribute name="groups">specific_security.group_can_see_more_pages_on_partner</attribute>
             </xpath>
             <xpath expr="//page[@name='sales_purchases']" position="attributes">
-                <attribute name="groups">base.group_multi_company</attribute>
-                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
+                <attribute name="groups">specific_security.group_can_see_more_pages_on_partner</attribute>
             </xpath>
             <xpath expr="//notebook/page[@name='internal_notes']" position="before">
                 <page name="more_infos" string="Extra Infos" attrs="{'invisible': [('company_type', '!=', 'agency_customer')]}">
@@ -210,8 +209,7 @@
         <field name="arch" type="xml">
 
             <xpath expr="//page[@name='accounting']" position="attributes">
-                <attribute name="groups">base.group_multi_company</attribute>
-                <attribute name="attrs">{'invisible': [('company_type', '=', 'agency_customer')]}</attribute>
+                <attribute name="groups">specific_security.group_can_see_more_pages_on_partner</attribute>
             </xpath>
 
         </field>
