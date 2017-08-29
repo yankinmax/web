@@ -46,7 +46,8 @@ def update_vouchers(ctx):
 @anthem.log
 def update_promo_codes(ctx):
 
-    promo_codes = ctx.env['sale.discount.program'].search([('promo_code', '!=', False)])
+    promo_codes = ctx.env['sale.discount.program'].search([
+        ('promo_code', '!=', False)])
     promo_codes.write({
         'type': 'promo_code'
     })

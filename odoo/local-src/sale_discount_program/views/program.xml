@@ -40,6 +40,7 @@
                 </group>
 
                 <group>
+                    <field name="type" />
                     <field name="combinable"/>
                     <field name="expiration_date"/>
                     <field name="nb_use" invisible="context.get('program_voucher')"/>
@@ -102,6 +103,7 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[('type', '=', 'discount_program')]</field>
+        <field name="context">{'default_type': 'discount_program'}</field>
     </record>
 
     <record id="action_promo_codes_list" model="ir.actions.act_window">
@@ -110,6 +112,7 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[('type', '=', 'promo_code')]</field>
+        <field name="context">{'default_type': 'promo_code'}</field>
         <field name="view_ids" eval="[(5, 0, 0),
             (0, 0, {'view_mode': 'tree', 'view_id': ref('sale_discount_program_code_tree')}),
             (0, 0, {'view_mode': 'form', 'view_id': ref('sale_discount_program_code_form')})]"/>
@@ -121,7 +124,7 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[('type', 'in', ('voucher', 'sponsorship_voucher', 'gift_voucher'))]</field>
-        <field name="context">{'program_voucher': True}</field>
+        <field name="context">{'program_voucher': True, 'default_type': 'voucher'}</field>
         <field name="view_ids" eval="[(5, 0, 0),
             (0, 0, {'view_mode': 'tree', 'view_id': ref('sale_discount_program_code_tree')}),
             (0, 0, {'view_mode': 'form', 'view_id': ref('sale_discount_program_code_form')})]"/>

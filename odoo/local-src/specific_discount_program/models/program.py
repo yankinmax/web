@@ -9,13 +9,6 @@ from odoo.exceptions import UserError
 class Program(models.Model):
     _inherit = 'sale.discount.program'
 
-    def _get_program_type(self):
-        return [('gift_voucher', _('Gift voucher')),
-                ('sponsorship_voucher', _('Sponsorship voucher')),
-                ('voucher', _('Voucher')),
-                ('discount_program', _('Discount program')),
-                ('promo_code', _('Promo code'))]
-
     allowed_company_ids = fields.Many2many(
         comodel_name='res.company',
         string='Allowed company',
@@ -31,9 +24,6 @@ class Program(models.Model):
     source_sale_id = fields.Many2one(comodel_name='sale.order')
     # For vouchers created by account.invoice
     source_invoice_id = fields.Many2one(comodel_name='account.invoice')
-
-    type = fields.Selection(_get_program_type, string='Program type',
-                            readonly=True)
 
     customer_required = fields.Boolean('Requires customer',
                                        compute='_compute_cust_req')

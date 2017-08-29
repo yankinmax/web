@@ -30,7 +30,6 @@
                 </group>
             </xpath>
             <field name="partner_id" position="after">
-                <field name="type" />
                 <field name="customer_required" invisible="1" />
             </field>
             <field name="partner_id" position="attributes">

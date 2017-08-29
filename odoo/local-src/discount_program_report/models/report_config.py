@@ -68,11 +68,12 @@ class SaleDiscountProgramReportConfig(models.Model):
     @api.constrains('lang_id', 'active', 'type')
     def _check_unique_active_lang(self):
         if (
-                    self.active and
-                    self.search([
-                        ('lang_id', '=', self.lang_id.id),
-                        ('type', '=', self.type),
-                        ('id', '!=', self.id)])):
+            self.active and
+            self.search([
+                ('lang_id', '=', self.lang_id.id),
+                ('type', '=', self.type),
+                ('id', '!=', self.id)])
+        ):
             raise models.ValidationError(_(
                 'You cannot have two active models for the same language and '
                 'the same program type'))
