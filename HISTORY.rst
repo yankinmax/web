@@ -9,6 +9,7 @@ Unreleased
 **Features and Improvements**
 
 * DT-71: Simplify usage of depiltech payment mode
+* DT-75: Custom displaying of pages on partner form view
 
 **Bugfixes**
 

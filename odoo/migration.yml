@@ -127,6 +127,7 @@ migration:
           - psql -f /opt/odoo/songs/updates/update_10_1_2/clean_translation.sql
         post:
           - anthem songs.install.rights::setup_export_rights
+          - anthem songs.updates.update_10_1_2.update::main
       addons:
         upgrade:
           #### local-src
