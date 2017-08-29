@@ -128,9 +128,15 @@ migration:
         post:
           - anthem songs.install.rights::setup_export_rights
           - anthem songs.updates.update_10_1_2.update::main
+          # Update sale_discount_program after anthem script to set
+          # sale.discount.program field type as required
+          - odoo -u sale_discount_program --stop-after-init --workers=0
       addons:
         upgrade:
           #### local-src
           - specific_base
           - specific_payment_mode
           - specific_security
+          - sale_discount_program
+          - specific_discount_program
+          - discount_program_report
