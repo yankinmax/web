@@ -10,11 +10,11 @@ class Program(models.Model):
     _inherit = 'sale.discount.program'
 
     def _get_program_type(self):
-        return [('gift_voucher', 'Gift voucher'),
-                ('sponsorship_voucher', 'Sponsorship voucher'),
-                ('voucher', 'Voucher'),
-                ('discount_program', 'Discount program'),
-                ('promo_code', 'Promo code')]
+        return [('gift_voucher', _('Gift voucher')),
+                ('sponsorship_voucher', _('Sponsorship voucher')),
+                ('voucher', _('Voucher')),
+                ('discount_program', _('Discount program')),
+                ('promo_code', _('Promo code'))]
 
     allowed_company_ids = fields.Many2many(
         comodel_name='res.company',

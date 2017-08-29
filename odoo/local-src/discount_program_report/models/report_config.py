@@ -10,8 +10,8 @@ class SaleDiscountProgramReportConfig(models.Model):
     _name = 'sale.discount.program.report.config'
 
     def _get_program_type(self):
-        return [('sponsorship_voucher', 'Sponsorship voucher'),
-                ('voucher', 'Voucher')]
+        return [('sponsorship_voucher', _('Sponsorship voucher')),
+                ('voucher', _('Voucher'))]
 
     name = fields.Char('Name')
     lang_id = fields.Many2one('res.lang', 'Language', required=True)

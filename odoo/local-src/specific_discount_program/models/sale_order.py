@@ -78,7 +78,7 @@ class SaleOrder(models.Model):
                 'max_use': 1,
                 'expiration_date': expiration_date,
                 'note_message_for_action':
-                    "You received a voucher.",
+                    _("You received a voucher."),
                 'type': type
             })]
         })
@@ -173,9 +173,9 @@ class SaleOrder(models.Model):
                 self.order_line[0].product_id == self.env.ref(
                                 'specific_discount_program.gift_card')
             ):
-                raise exceptions.ValidationError(
+                raise exceptions.ValidationError(_(
                     'Only 1 (one) Gift card product is allowed to create '
-                    'a gift quotation !')
+                    'a gift quotation !'))
 
     @api.onchange('gift_quotation')
     def _onchange_gift_quotation(self):
