@@ -173,10 +173,8 @@ class CrmOpportunityToCustomer(models.TransientModel):
 
         return result
 
-    @api.multi
-    def convert(self):
-        self.ensure_one()
-        customer = self.env['res.partner'].create({
+    def get_values_to_create_customer(self):
+        return {
             'company_type': 'agency_customer',
 
             'lastname': self.lastname,
@@ -205,7 +203,14 @@ class CrmOpportunityToCustomer(models.TransientModel):
             'campaign_id': self.campaign_id.id,
             'medium_id': self.medium_id.id,
             'source_id': self.source_id.id,
-        })
+        }
+
+    @api.multi
+    def convert(self):
+        self.ensure_one()
+        customer = self.env['res.partner'].create(
+            self.get_values_to_create_customer()
+        )
         self.lead_id.write({
             'partner_id': customer.id,
             'stage_id': self.get_new_stage().id,
