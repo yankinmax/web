@@ -51,7 +51,7 @@
     </record>
 
     <record model="res.groups" id="group_can_edit_marketing_values">
-        <field name="name">Can edit marketing values (campaing, medium, source)</field>
+        <field name="name">Can edit marketing values (campaign, medium, source)</field>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
     </record>
 
