@@ -60,6 +60,24 @@
                 </page>
             </notebook>
 
+            <xpath expr="//field[@name='campaign_id']" position="before">
+                <field name="can_edit_marketing_values" invisible="True"/>
+            </xpath>
+            <xpath expr="//field[@name='campaign_id']" position="attributes">
+                <attribute name="options">{'no_create': True}</attribute>
+                <attribute name="attrs">{'readonly': [('can_edit_marketing_values', '=', False)]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='medium_id']" position="attributes">
+                <attribute name="options">{'no_create': True}</attribute>
+                <attribute name="attrs">{'readonly': [('can_edit_marketing_values', '=', False)]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='source_id']" position="attributes">
+                <attribute name="options">{'no_create': True}</attribute>
+                <attribute name="attrs">{'readonly': [('can_edit_marketing_values', '=', False)]}</attribute>
+            </xpath>
+
             <!-- All customer fields are readonly when customer is linked/created -->
             <field name="contact_name" position="attributes">
                 <attribute name="attrs">{'readonly':[('partner_id','!=',False)]}</attribute>
@@ -126,7 +144,8 @@
 
             <button name="%(crm.action_crm_lead2opportunity_partner)d" position="after">
                 <button name="convert_to_opportunity" string="Convert to Opportunity" type="object"
-                        help="Convert to Opportunity" class="oe_highlight"/>
+                        help="Convert to Opportunity" class="oe_highlight"
+                        attrs="{'invisible': [('type','!=','lead'), ('type','!=',False)]}"/>
             </button>
 
             <div class="oe_title" position="after">
@@ -176,6 +195,24 @@
             <field name="company_id" position="attributes">
                 <attribute name="required">True</attribute>
             </field>
+
+            <xpath expr="//field[@name='campaign_id']" position="before">
+                <field name="can_edit_marketing_values" invisible="True"/>
+            </xpath>
+            <xpath expr="//field[@name='campaign_id']" position="attributes">
+                <attribute name="options">{'no_create': True}</attribute>
+                <attribute name="attrs">{'readonly': [('can_edit_marketing_values', '=', False)]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='medium_id']" position="attributes">
+                <attribute name="options">{'no_create': True}</attribute>
+                <attribute name="attrs">{'readonly': [('can_edit_marketing_values', '=', False)]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='source_id']" position="attributes">
+                <attribute name="options">{'no_create': True}</attribute>
+                <attribute name="attrs">{'readonly': [('can_edit_marketing_values', '=', False)]}</attribute>
+            </xpath>
 
             <!-- All customer fields are readonly when customer is linked/created -->
             <field name="contact_name" position="attributes">
@@ -255,15 +292,6 @@
             <field name="company_id" position="attributes">
                 <attribute name="readonly">1</attribute>
             </field>
-            <field name="campaign_id" position="attributes">
-                <attribute name="readonly">1</attribute>
-            </field>
-            <field name="medium_id" position="attributes">
-                <attribute name="readonly">1</attribute>
-            </field>
-            <field name="source_id" position="attributes">
-                <attribute name="readonly">1</attribute>
-            </field>
             <field name="referred" position="attributes">
                 <attribute name="readonly">1</attribute>
             </field>
@@ -281,15 +309,6 @@
                        groups="base.group_multi_company"
                        options="{'no_create': True}"
                        readonly="True"/>
-            </field>
-            <field name="campaign_id" position="attributes">
-                <attribute name="readonly">1</attribute>
-            </field>
-            <field name="medium_id" position="attributes">
-                <attribute name="readonly">1</attribute>
-            </field>
-            <field name="source_id" position="attributes">
-                <attribute name="readonly">1</attribute>
             </field>
             <field name="referred" position="attributes">
                 <attribute name="readonly">1</attribute>

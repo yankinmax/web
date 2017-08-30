@@ -215,7 +215,11 @@ class CrmOpportunityToCustomer(models.TransientModel):
             'partner_id': customer.id,
             'stage_id': self.get_new_stage().id,
         })
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'reload',
+        action = {
+            'name': 'Partner',
+            'type': 'ir.actions.act_window',
+            'res_model': 'res.partner',
+            'view_mode': 'form',
+            'res_id': customer.id,
         }
+        return action

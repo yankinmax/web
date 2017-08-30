@@ -50,9 +50,20 @@ class SaleOrder(models.Model):
 
         return super(SaleOrder, self).create(values)
 
+    @api.onchange('partner_id')
+    def onchange_partner_for_marketing_values(self):
+        self.update({
+            'campaign_id': self.partner_id.campaign_id.id,
+            'medium_id': self.partner_id.medium_id.id,
+            'source_id': self.partner_id.source_id.id,
+        })
+
     @api.multi
     def _prepare_invoice(self):
         self.ensure_one()
         res = super(SaleOrder, self)._prepare_invoice()
         res['phototherapist_id'] = self.phototherapist_id.id
+        res['campaign_id'] = self.campaign_id.id
+        res['medium_id'] = self.medium_id.id
+        res['source_id'] = self.source_id.id
         return res
