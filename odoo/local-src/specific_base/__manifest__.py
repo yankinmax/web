@@ -29,6 +29,8 @@
  'data': [
      # Security
      'security/ir.model.access.csv',
+     # Wizard
+     'wizard/crm_opportunity_to_customer.xml',  # Need to load before views
      # Views
      'views/actions.xml',
      'views/menus.xml',
@@ -42,6 +44,7 @@
      'views/pricelist.xml',
      'views/res_users.xml',
      'views/crm_lead.xml',
+     'views/crm_stage.xml',
      'views/utm.xml',
      'views/res_country.xml',
      'views/account_payment.xml',
@@ -55,8 +58,6 @@
      'data/ir_config_parameter.xml',
      # Report
      'report/sale_order.xml',
-     # Wizard
-     'wizard/crm_lead_to_opportunity.xml',
  ],
  'installable': True,
  }

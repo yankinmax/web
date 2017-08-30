@@ -22,7 +22,8 @@ class ResPartnerTitle(models.Model):
 
 
 class ResPartner(models.Model):
-    _inherit = 'res.partner'
+    _name = 'res.partner'
+    _inherit = ['res.partner', 'utm.mixin']
 
     property_product_pricelist = fields.Many2one(
         compute='_compute_product_pricelist'
@@ -287,6 +288,21 @@ class ResPartner(models.Model):
         string='Delivery date of the box',
         help='Delivery date of the gift box to the customer',
     )
+
+    can_edit_marketing_values = fields.Boolean(
+        compute='_compute_can_edit_marketing_values',
+        default=lambda self: (
+            self.env['crm.lead'].can_edit_marketing_values_value()
+        ),
+    )
+
+    @api.depends()
+    def _compute_can_edit_marketing_values(self):
+        can_edit_marketing_values = (
+            self.env['crm.lead'].can_edit_marketing_values_value()
+        )
+        for partner in self:
+            partner.can_edit_marketing_values = can_edit_marketing_values
 
     partner_planning_url = fields.Char(
         string='Partner planning url',

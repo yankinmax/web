@@ -10,6 +10,7 @@ Unreleased
 
 * DT-71: Simplify usage of depiltech payment mode
 * DT-75: Custom displaying of pages on partner form view
+* DT-73 / DT-77: Custom lead workflow than lead -> opportunity -> customer
 
 **Bugfixes**
 

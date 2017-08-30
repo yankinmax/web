@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_crm_stage_specific_form">
+        <field name="name">crm.stage.specific.form</field>
+        <field name="model">crm.stage</field>
+        <field name="inherit_id" ref="crm.crm_stage_form"/>
+        <field name="arch" type="xml">
+
+            <field name="fold" position="after">
+                <field name="used_when_convert_to_customer"/>
+            </field>
+
+        </field>
+    </record>
+
+</odoo>

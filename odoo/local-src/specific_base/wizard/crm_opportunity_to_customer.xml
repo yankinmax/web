@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="crm_opportunity_to_customer_view_form" model="ir.ui.view">
+        <field name="name">crm.opportunity.to.customer.form</field>
+        <field name="model">crm.opportunity.to.customer</field>
+        <field name="arch" type="xml">
+
+            <form string="Convert to Customer">
+
+                <group string="Assign this customer to">
+                    <field name="can_edit_user" invisible="True"/>
+                    <field name="user_id" domain="[('share', '=', False)]" attrs="{'readonly':[('can_edit_user', '=', False)]}"/>
+                    <field name="team_id" widget="selection"/>
+                </group>
+
+                <group string="Customer informations">
+                    <group>
+                        <field name="phototherapist_id"/>
+                        <field name="title_id"/>
+                        <field name="lastname"/>
+                        <field name="firstname"/>
+                        <field name="birthday"/>
+                    </group>
+                    <group>
+                        <label for="street" string="Address"/>
+                        <div class="o_address_format">
+                            <field name="street" placeholder="Street..." class="o_address_street"
+                            />
+
+                            <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+
+                            <field name="city" placeholder="City" class="o_address_city"
+                            />
+
+                            <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'/>
+
+                            <field name="zip" placeholder="ZIP" class="o_address_zip"
+                            />
+
+                            <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True}'/>
+                        </div>
+                        <field name="function"/>
+                        <field name="phone"/>
+                        <field name="mobile"/>
+                        <field name="email"/>
+                    </group>
+                </group>
+
+                <group string="Marketing">
+                    <field name="can_edit_marketing_values" invisible="True"/>
+                    <field name="campaign_id" attrs="{'readonly': [('can_edit_marketing_values', '=', False)]}"/>
+                    <field name="medium_id" attrs="{'readonly': [('can_edit_marketing_values', '=', False)]}"/>
+                    <field name="source_id" attrs="{'readonly': [('can_edit_marketing_values', '=', False)]}"/>
+                </group>
+
+                <footer>
+                    <button name="convert" string="Convert"
+                            type="object" class="btn btn-sm btn-primary" />
+                    <button string="Cancel" class="btn btn-sm btn-default" special="cancel"/>
+                </footer>
+
+            </form>
+
+        </field>
+    </record>
+
+    <record id="action_crm_opportunity_to_customer" model="ir.actions.act_window">
+        <field name="name">Convert to Customer</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">crm.opportunity.to.customer</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="crm_opportunity_to_customer_view_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

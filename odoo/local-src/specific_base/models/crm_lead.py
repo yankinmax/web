@@ -3,7 +3,7 @@
 # Copyright 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api, _, SUPERUSER_ID
+from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
@@ -78,12 +78,8 @@ class CrmLead(models.Model):
 
     @api.model
     def can_edit_user_value(self):
-        return self.env.user.id == SUPERUSER_ID or (
-            not self.env.user.has_group(
-                'specific_security.grp_centers'
-            ) and not self.env.user.has_group(
-                'specific_security.grp_center_managers'
-            )
+        return self.env.user.has_group(
+            'specific_security.group_can_edit_lead_vendor'
         )
 
     @api.depends()
@@ -91,6 +87,35 @@ class CrmLead(models.Model):
         can_edit_user = self.can_edit_user_value()
         for line in self:
             line.can_edit_user = can_edit_user
+
+    can_edit_marketing_values = fields.Boolean(
+        compute='_compute_can_edit_marketing_values',
+        default=lambda self: self.can_edit_marketing_values_value(),
+    )
+
+    @api.model
+    def can_edit_marketing_values_value(self):
+        return self.env.user.has_group(
+            'specific_security.group_can_edit_marketing_values'
+        )
+
+    @api.depends()
+    def _compute_can_edit_marketing_values(self):
+        can_edit_marketing_values = self.can_edit_marketing_values_value()
+        for line in self:
+            line.can_edit_marketing_values = can_edit_marketing_values
+
+    @api.multi
+    def convert_to_opportunity(self):
+        self.ensure_one()
+        wizard = self.env['crm.lead2opportunity.partner'].with_context(
+            active_id=self.id,
+            active_ids=self.ids,
+        ).create({
+            'name': 'convert',
+            'action': 'nothing',
+        })
+        return wizard.action_apply()
 
 
 class CrmLeadTag(models.Model):
