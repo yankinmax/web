@@ -490,7 +490,7 @@ class TestProgram(TransactionCase):
                     'note_message': 'Unittest message',
                 })
             ],
-            'type': 'voucher'
+            'type': 'discount_program'
         })
 
         # Create sale order

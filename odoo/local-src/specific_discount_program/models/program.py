@@ -41,6 +41,12 @@ class Program(models.Model):
          _('source_invoice_id can be filled only for voucher'))
     ]
 
+    def _get_program_type(self):
+        vals = super(Program, self)._get_program_type()
+        vals.append([('gift_voucher', _('Gift voucher')),
+                     ('sponsorship_voucher', _('Sponsorship voucher'))])
+        return vals
+
     @api.depends(
         'program_name', 'voucher_code', 'promo_code', 'voucher_amount',
         'partner_id', 'type'

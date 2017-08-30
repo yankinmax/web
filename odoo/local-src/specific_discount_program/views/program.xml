@@ -38,6 +38,10 @@
         </field>
     </record>
 
+    <record id="sale_discount_program.action_voucher_codes_list" model="ir.actions.act_window">
+        <field name="domain">[('type', 'in', ('voucher', 'sponsorship_voucher', 'gift_voucher')))]</field>
+    </record>
+
     <!-- Displays Program menus only for depiltech admin -->
     <record id="sale_discount_program.menu_discount_program" model="ir.ui.menu">
         <field name="groups_id" eval="[(4, ref('specific_security.group_admin_depiltech'))]"/>
