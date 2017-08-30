@@ -12,13 +12,6 @@ class Program(models.Model):
     _name = 'sale.discount.program'
     _inherit = 'mail.thread'
 
-    def _get_program_type(self):
-        return [('gift_voucher', _('Gift voucher')),
-                ('sponsorship_voucher', _('Sponsorship voucher')),
-                ('voucher', _('Voucher')),
-                ('discount_program', _('Discount program')),
-                ('promo_code', _('Promo code'))]
-
     name = fields.Char('Name', compute='_compute_name', store=True)
 
     program_name = fields.Char()
@@ -29,8 +22,10 @@ class Program(models.Model):
         default=True,
     )
 
-    type = fields.Selection(_get_program_type, string='Program type',
-                            required=True)
+    type = fields.Selection([('voucher', 'Voucher'),
+                             ('discount_program', 'Discount program'),
+                             ('promo_code', 'Promo code')],
+                            string='Program type', required=True)
 
     combinable = fields.Boolean(default=True)
 

@@ -24,3 +24,13 @@ msgstr "Parrainage"
 #: selection:sale.discount.program.condition,type_condition:0
 msgid "Another order validated"
 msgstr "Autre bon de commande validé"
+
+#. module: specific_discount_program
+#: selection:sale.discount.program,type:0
+msgid "Gift voucher"
+msgstr "Bon cadeau"
+
+#. module: specific_discount_program
+#: selection:sale.discount.program,type:0
+msgid "Sponsorship voucher"
+msgstr "Bon de parrainage"

@@ -28,6 +28,10 @@ class Program(models.Model):
     customer_required = fields.Boolean('Requires customer',
                                        compute='_compute_cust_req')
 
+    type = fields.Selection(selection_add=[
+        ('gift_voucher', 'Gift voucher'),
+        ('sponsorship_voucher', 'Sponsorship voucher')])
+
     note_message_for_action = fields.Char(
         string='Voucher description',
     )
@@ -40,12 +44,6 @@ class Program(models.Model):
          'check(source_invoice_id is null or voucher_code is not null)',
          _('source_invoice_id can be filled only for voucher'))
     ]
-
-    def _get_program_type(self):
-        vals = super(Program, self)._get_program_type()
-        vals.append([('gift_voucher', _('Gift voucher')),
-                     ('sponsorship_voucher', _('Sponsorship voucher'))])
-        return vals
 
     @api.depends(
         'program_name', 'voucher_code', 'promo_code', 'voucher_amount',

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<odoo noupdate="1">
     <record id="voucher_config_template_fr" model="sale.discount.program.report.config">
         <field name="name">Modèle Bon d'achat</field>
         <field name="lang_id" ref="base.lang_fr" />

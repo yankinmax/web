@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-29 10:52+0000\n"
-"PO-Revision-Date: 2017-08-29 12:55+0200\n"
+"POT-Creation-Date: 2017-08-29 10:33+0000\n"
+"PO-Revision-Date: 2017-08-29 14:04+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr "Actif"
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_allowed_company_ids
 msgid "Allowed company"
-msgstr "Société autorisées"
+msgstr "Société autorisée"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_res_partner_already_bought
@@ -154,7 +154,7 @@ msgstr "Cadeau: %s (%s)"
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_id
 msgid "ID"
-msgstr "Identifiant"
+msgstr "ID"
 
 #. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_account_invoice
@@ -230,12 +230,6 @@ msgid "Number of vouchers is limited to %s"
 msgstr "Le nombre de bon d'achat est limité à %s"
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/sale_order.py:176
-#, python-format
-msgid "Only 1 (one) Gift card product is allowed to create a gift quotation !"
-msgstr "Seul 1 (un) produit Carte cadeau est autorisé pour créer un devis de cadeau."
-
-#. module: specific_discount_program
 #: model:product.pricelist,name:specific_discount_program.pricelist_sponsorship
 msgid "Parrainage"
 msgstr "Parrainage"
@@ -284,7 +278,7 @@ msgstr "Code promo"
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_customer_required
 msgid "Requires customer"
-msgstr "Requires customer"
+msgstr "Nécessite client"
 
 #. module: specific_discount_program
 #: model:ir.ui.view,arch_db:specific_discount_program.sale_discount_program_view_order_form
@@ -324,7 +318,7 @@ msgstr "Ligne de bons de commande"
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_source_invoice_id
 msgid "Source invoice id"
-msgstr "Source invoice id"
+msgstr "Facture d'origine"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_source_sale_id
@@ -376,12 +370,6 @@ msgid "You received a gift voucher !"
 msgstr "Vous avez bénéficié d'un bon cadeau !"
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/sale_order.py:81
-#, python-format
-msgid "You received a voucher."
-msgstr "Vous avez bénéficié d'un bon d'achat !"
-
-#. module: specific_discount_program
 #: model:ir.model,name:specific_discount_program.model_partner_sponsor
 msgid "partner.sponsor"
 msgstr "partner.sponsor"
@@ -411,11 +399,11 @@ msgstr "sale.discount.program.condition"
 #: sql_constraint:sale.discount.program:0
 #, python-format
 msgid "source_invoice_id can be filled only for voucher"
-msgstr "source_invoice_id can be filled only for voucher"
+msgstr "La facture d'origine ne peut être renseignée que pour un bon d'achat."
 
 #. module: specific_discount_program
 #: code:addons/specific_discount_program/models/program.py:48
 #: sql_constraint:sale.discount.program:0
 #, python-format
 msgid "source_sale_id can be filled only for voucher"
-msgstr "source_sale_id can be filled only for voucher"
+msgstr "La commande d'origine ne peut être renseignée que pour un bon d'achat."
