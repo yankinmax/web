@@ -283,6 +283,7 @@ class TestProgram(TransactionCase):
             'voucher_amount': 100,
             'partner_id': self.partner1.id,
             'note_message_for_action': 'Unittest message',
+            'type': 'voucher'
         })
 
         v2 = self.program_model.create({
@@ -290,6 +291,7 @@ class TestProgram(TransactionCase):
             'voucher_amount': 100,
             'partner_id': self.partner1.id,
             'note_message_for_action': 'Unittest message',
+            'type': 'voucher'
         })
 
         v3 = self.program_model.create({
@@ -297,6 +299,7 @@ class TestProgram(TransactionCase):
             'voucher_amount': 100,
             'partner_id': self.partner1.id,
             'note_message_for_action': 'Unittest message',
+            'type': 'voucher'
         })
 
         sale = self.sale_model.create({
@@ -324,12 +327,14 @@ class TestProgram(TransactionCase):
             'promo_code': 'UNITTEST_V1',
             'partner_id': self.partner1.id,
             'note_message_for_action': 'Unittest message',
+            'type': 'promo_code'
         })
 
         v2 = self.program_model.create({
             'promo_code': 'UNITTEST_V2',
             'partner_id': self.partner1.id,
             'note_message_for_action': 'Unittest message',
+            'type': 'promo_code'
         })
 
         sale = self.sale_model.create({
@@ -362,6 +367,7 @@ class TestProgram(TransactionCase):
             'promo_code': 'UNITTEST_V1',
             'partner_id': self.partner1.id,
             'note_message_for_action': 'Unittest message',
+            'type': 'promo_code'
         })
 
         v2 = self.program_model.create({
@@ -369,6 +375,7 @@ class TestProgram(TransactionCase):
             'voucher_amount': 100,
             'partner_id': self.partner1.id,
             'note_message_for_action': 'Unittest message',
+            'type': 'voucher'
         })
 
         sale = self.sale_model.create({
@@ -430,7 +437,8 @@ class TestProgram(TransactionCase):
                     'product_add_id': product_to_add.id,
                     'note_message': 'Unittest message',
                 })
-            ]
+            ],
+            'type': 'discount_program'
         })
 
         # Create sale order
@@ -481,7 +489,8 @@ class TestProgram(TransactionCase):
                     'discount_percent': 20,
                     'note_message': 'Unittest message',
                 })
-            ]
+            ],
+            'type': 'discount_program'
         })
 
         # Create sale order
@@ -531,7 +540,8 @@ class TestProgram(TransactionCase):
                     'pricelist_id': self.promo_pricelist.id,
                     'note_message': 'Unittest message',
                 })
-            ]
+            ],
+            'type': 'discount_program'
         })
 
         # Create sale order
@@ -583,7 +593,8 @@ class TestProgram(TransactionCase):
                     'pricelist_id': self.promo_pricelist_without_discount.id,
                     'note_message': 'Unittest message',
                 })
-            ]
+            ],
+            'type': 'discount_program'
         })
 
         # Create sale order
@@ -716,7 +727,8 @@ class TestProgram(TransactionCase):
                     'discount_percent': 10,
                     'note_message': 'Unittest another_order_validated message',
                 })
-            ]
+            ],
+            'type': 'discount_program'
         })
 
         # Create partner

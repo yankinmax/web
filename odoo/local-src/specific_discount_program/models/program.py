@@ -25,10 +25,12 @@ class Program(models.Model):
     # For vouchers created by account.invoice
     source_invoice_id = fields.Many2one(comodel_name='account.invoice')
 
-    gift_voucher = fields.Boolean('Gift voucher', readonly=True)
-
     customer_required = fields.Boolean('Requires customer',
                                        compute='_compute_cust_req')
+
+    type = fields.Selection(selection_add=[
+        ('gift_voucher', 'Gift voucher'),
+        ('sponsorship_voucher', 'Sponsorship voucher')])
 
     note_message_for_action = fields.Char(
         string='Voucher description',
@@ -45,11 +47,11 @@ class Program(models.Model):
 
     @api.depends(
         'program_name', 'voucher_code', 'promo_code', 'voucher_amount',
-        'partner_id'
+        'partner_id', 'type'
     )
     def _compute_name(self):
         for program in self:
-            if program.gift_voucher:
+            if program.type == 'gift_voucher':
                 program.name = _("Gift: %s (%s)") % (
                     program.voucher_code,
                     program.voucher_amount

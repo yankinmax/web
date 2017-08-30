@@ -30,13 +30,16 @@
                 </group>
             </xpath>
             <field name="partner_id" position="after">
-                <field name="gift_voucher" />
                 <field name="customer_required" invisible="1" />
             </field>
             <field name="partner_id" position="attributes">
-                <attribute name="attrs">{'required': [('customer_required', '=', True), ('gift_voucher', '=', False)]}</attribute>
+                <attribute name="attrs">{'required': [('customer_required', '=', True), ('type', '!=', 'gift_voucher')]}</attribute>
             </field>
         </field>
+    </record>
+
+    <record id="sale_discount_program.action_voucher_codes_list" model="ir.actions.act_window">
+        <field name="domain">[('type', 'in', ('voucher', 'sponsorship_voucher', 'gift_voucher'))]</field>
     </record>
 
     <!-- Displays Program menus only for depiltech admin -->

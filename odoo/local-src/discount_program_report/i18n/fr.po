@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-27 15:34+0000\n"
-"PO-Revision-Date: 2017-06-29 16:15+0200\n"
+"POT-Creation-Date: 2017-08-29 10:55+0000\n"
+"PO-Revision-Date: 2017-08-29 14:00+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: en\n"
+"Language: fr\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
 #. module: discount_program_report
@@ -137,7 +137,7 @@ msgid "General terms and conditions title"
 msgstr "Titre des Conditions générales"
 
 #. module: discount_program_report
-#: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_id_7855
+#: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_id_8373
 msgid "ID"
 msgstr "ID"
 
@@ -149,7 +149,7 @@ msgstr "Langue"
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config___last_update
 msgid "Last Modified on"
-msgstr "Dernière Modification le"
+msgstr "Dernière modification le"
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_write_uid
@@ -177,6 +177,16 @@ msgid "Printable"
 msgstr "Imprimable"
 
 #. module: discount_program_report
+#: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_type
+msgid "Program type"
+msgstr "Type de programme"
+
+#. module: discount_program_report
+#: model:ir.model,name:discount_program_report.model_report
+msgid "Report"
+msgstr "Rapport"
+
+#. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_id
 msgid "Report config"
 msgstr "Configuration du rapport"
@@ -185,6 +195,11 @@ msgstr "Configuration du rapport"
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_ribbon_text
 msgid "Ribbon text"
 msgstr "Texte ruban"
+
+#. module: discount_program_report
+#: model:ir.actions.report.xml,name:discount_program_report.report_sale_order_voucher
+msgid "Sale Order with Voucher"
+msgstr "Bon de commande avec bon d'achat"
 
 #. module: discount_program_report
 #: model:ir.ui.view,arch_db:discount_program_report.sale_discount_program_code_form
@@ -197,7 +212,13 @@ msgid "Sent to customer"
 msgstr "Envoyé au client"
 
 #. module: discount_program_report
-#: code:addons/discount_program_report/models/program.py:43
+#: code:addons/discount_program_report/models/report_config.py:13
+#, python-format
+msgid "Sponsorship voucher"
+msgstr "Bon de parrainage"
+
+#. module: discount_program_report
+#: code:addons/discount_program_report/models/program.py:49
 #, python-format
 msgid "There is no active report.config matching this program language."
 msgstr "Il n'y a pas de configuration de Reporting qui soit active pour cette langue."
@@ -243,15 +264,21 @@ msgid "Valid until:"
 msgstr "Valable jusqu'au"
 
 #. module: discount_program_report
-#: model:ir.actions.report.xml,name:discount_program_report.report_discount_program
-msgid "Voucher discount program"
-msgstr "Voucher discount program"
+#: code:addons/discount_program_report/models/report_config.py:14
+#, python-format
+msgid "Voucher"
+msgstr "Bon d'achat"
 
 #. module: discount_program_report
-#: code:addons/discount_program_report/models/report_config.py:66
+#: model:ir.actions.report.xml,name:discount_program_report.report_discount_program
+msgid "Voucher discount program"
+msgstr "Programme de promotions et bons d'achat"
+
+#. module: discount_program_report
+#: code:addons/discount_program_report/models/report_config.py:76
 #, python-format
-msgid "You cannot have two active models for the same language"
-msgstr "Vous ne pouvez pas avec deux modèles actifs pour la même langue."
+msgid "You cannot have two active models for the same language and the same program type"
+msgstr "Vous ne pouvez pas définir deux modèles actifs pour la même langue et le même type de programme."
 
 #. module: discount_program_report
 #: model:ir.model,name:discount_program_report.model_sale_discount_program

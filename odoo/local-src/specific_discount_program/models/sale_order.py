@@ -58,7 +58,7 @@ class SaleOrder(models.Model):
                     and sale.pricelist_id == sponsor_pricelist
 
     @api.multi
-    def create_partner_voucher(self, partner_id):
+    def create_partner_voucher(self, partner_id, type):
         self.ensure_one()
         months_validity = int(self.env['ir.config_parameter'].get_param(
             'voucher_default_validity', '0'
@@ -78,7 +78,8 @@ class SaleOrder(models.Model):
                 'max_use': 1,
                 'expiration_date': expiration_date,
                 'note_message_for_action':
-                    "Vous avez bénéficié d'un bon d'achat"
+                    _("You received a voucher."),
+                'type': type
             })]
         })
 
@@ -122,15 +123,16 @@ class SaleOrder(models.Model):
                 sale.partner_company_type == 'agency_customer'
             )
             if condition:
-                # Bon d'achat si la commande a utilisé le programme de
+                # Bon de parrainage si la commande a utilisé le programme de
                 # parainnage et si le parrain est toujours valide
                 if sale.is_sponsored:
                     sale.create_partner_voucher(
-                        sale.partner_id.sponsor_id.partner_id.id
+                        sale.partner_id.sponsor_id.partner_id.id,
+                        'sponsorship_voucher'
                     )
 
                 # Bon d'achat pour chaque commande
-                sale.create_partner_voucher(sale.partner_id.id)
+                sale.create_partner_voucher(sale.partner_id.id, 'voucher')
 
     @api.multi
     def action_cancel(self):
@@ -171,9 +173,9 @@ class SaleOrder(models.Model):
                 self.order_line[0].product_id == self.env.ref(
                                 'specific_discount_program.gift_card')
             ):
-                raise exceptions.ValidationError(
+                raise exceptions.ValidationError(_(
                     'Only 1 (one) Gift card product is allowed to create '
-                    'a gift quotation !')
+                    'a gift quotation !'))
 
     @api.onchange('gift_quotation')
     def _onchange_gift_quotation(self):

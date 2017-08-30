@@ -20,7 +20,7 @@ class Report(models.Model):
             sale_order = self.env['sale.order'].browse(docids)
             voucher_pdfs = []
             for voucher in sale_order.generated_voucher_ids:
-                if voucher.is_printable:
+                if voucher.is_printable and voucher.type == 'voucher':
                     voucher_pdf = super(Report, self).get_pdf(
                         [voucher.id],
                         'discount_program_report.report_discountprogram',

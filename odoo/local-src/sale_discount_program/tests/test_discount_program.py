@@ -97,7 +97,8 @@ class TestDiscountProgram(TransactionCase):
                     'product_add_id': product_to_add.id,
                     'note_message': 'Unittest message',
                 })
-            ]
+            ],
+            'type': 'discount_program'
         })
         self.assertEqual(
             'Product: Unittest P1',
@@ -178,6 +179,7 @@ class TestDiscountProgram(TransactionCase):
                     'product_category_id': self.product_category.id,
                 })
             ],
+            'type': 'discount_program'
         })
 
         sale = self.sale_model.create({
@@ -212,6 +214,7 @@ class TestDiscountProgram(TransactionCase):
                     'product_min_qty': 2,
                 })
             ],
+            'type': 'discount_program'
         })
 
         sale = self.sale_model.create({
@@ -266,7 +269,8 @@ class TestDiscountProgram(TransactionCase):
                     'discount_percent': 20,
                     'note_message': 'Unittest message',
                 })
-            ]
+            ],
+            'type': 'discount_program'
         })
 
         self.assertEqual(
@@ -361,6 +365,7 @@ class TestDiscountProgram(TransactionCase):
             'voucher_amount': 150,
             'note_message_for_action': 'Unittest message',
             'max_use_by_month': 1000,
+            'type': 'voucher'
         })
 
         self.assertEqual(False, program.automatic)
@@ -432,6 +437,7 @@ class TestDiscountProgram(TransactionCase):
             'partner_id': self.client.id,
             'voucher_amount': 150,
             'note_message_for_action': 'Unittest message',
+            'type': 'voucher'
         })
 
         sale = self.sale_model.create({
@@ -469,7 +475,8 @@ class TestDiscountProgram(TransactionCase):
                 'type_action': 'change_pricelist',
                 'pricelist_id': self.promo_pricelist.id,
                 'note_message': 'Unittest message',
-            })]
+            })],
+            'type': 'promo_code'
         })
         code.combinable = True
 
@@ -506,7 +513,8 @@ class TestDiscountProgram(TransactionCase):
                 'product_discount_selection': 'most_expensive_no_discount',
                 'discount_percent': 20,
                 'note_message': 'Unittest message',
-            })]
+            })],
+            'type': 'discount_program',
         })
 
         sale.apply_discount_programs()
@@ -525,7 +533,8 @@ class TestDiscountProgram(TransactionCase):
                 'type_action': 'change_pricelist',
                 'pricelist_id': self.promo_pricelist.id,
                 'note_message': 'Unittest message',
-            })]
+            })],
+            'type': 'discount_program',
         })
 
         sale.apply_discount_programs()
@@ -558,7 +567,8 @@ class TestDiscountProgram(TransactionCase):
                     'pricelist_id': self.promo_pricelist.id,
                     'note_message': 'Unittest message',
                 })
-            ]
+            ],
+            'type': 'discount_program'
         })
 
         self.p1.write({
@@ -610,6 +620,7 @@ class TestDiscountProgram(TransactionCase):
                     'product_id': self.p2.id,
                 })
             ],
+            'type': 'discount_program'
         })
 
         sale = self.sale_model.create({
@@ -666,6 +677,7 @@ class TestDiscountProgram(TransactionCase):
                     'note_message': 'Unittest message',
                 }),
             ],
+            'type': 'discount_program'
         })
 
         self.assertEqual(
@@ -714,6 +726,7 @@ class TestDiscountProgram(TransactionCase):
             'note_message_for_action': 'Unittest message',
             'max_use': 1000,
             'max_use_by_month': 2,
+            'type': 'voucher'
         })
 
         self.assertEqual(False, program.automatic)
@@ -808,6 +821,7 @@ class TestDiscountProgram(TransactionCase):
             'note_message_for_action': 'Unittest message',
             'max_use': 1000,
             'max_use_by_month': 1,
+            'type': 'voucher'
         })
 
         sale = self.sale_model.create({

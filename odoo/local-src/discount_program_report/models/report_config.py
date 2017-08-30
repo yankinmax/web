@@ -9,8 +9,14 @@ class SaleDiscountProgramReportConfig(models.Model):
 
     _name = 'sale.discount.program.report.config'
 
+    def _get_program_type(self):
+        return [('sponsorship_voucher', _('Sponsorship voucher')),
+                ('voucher', _('Voucher'))]
+
     name = fields.Char('Name')
     lang_id = fields.Many2one('res.lang', 'Language', required=True)
+    type = fields.Selection(_get_program_type, string='Program type',
+                            required=True, default='voucher')
 
     active = fields.Boolean('Active')
 
@@ -59,12 +65,18 @@ class SaleDiscountProgramReportConfig(models.Model):
         return [(record.id, "%s (%s)" % (record.name, record.lang_id.name))
                 for record in self]
 
-    @api.constrains('lang_id', 'active')
+    @api.constrains('lang_id', 'active', 'type')
     def _check_unique_active_lang(self):
-        if self.active and self.search([('lang_id', '=', self.lang_id.id),
-                                        ('id', '!=', self.id)]):
+        if (
+            self.active and
+            self.search([
+                ('lang_id', '=', self.lang_id.id),
+                ('type', '=', self.type),
+                ('id', '!=', self.id)])
+        ):
             raise models.ValidationError(_(
-                'You cannot have two active models for the same language'))
+                'You cannot have two active models for the same language and '
+                'the same program type'))
 
     @api.multi
     def copy(self, default=None):

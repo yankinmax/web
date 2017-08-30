@@ -22,6 +22,11 @@ class Program(models.Model):
         default=True,
     )
 
+    type = fields.Selection([('voucher', 'Voucher'),
+                             ('discount_program', 'Discount program'),
+                             ('promo_code', 'Promo code')],
+                            string='Program type', required=True)
+
     combinable = fields.Boolean(default=True)
 
     promo_code = fields.Char('Promo code')
