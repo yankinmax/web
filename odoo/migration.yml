@@ -81,8 +81,8 @@ migration:
       operations:
         pre:
           - anthem songs.updates.update_10_1_0.update::main
-          - odoo -i account_payment_term_extension,specific_security --stop-after-init --workers=0
-          # These 2 scripts must be executed after install of specific_security module
+          - odoo -i account_payment_term_extension,specific_base,specific_security --stop-after-init --workers=0
+          # These 2 scripts must be executed after install of previous module
           - anthem songs.install.rights::setup_export_rights
           - anthem songs.updates.update_10_1_0.update::unlink_depiltech_payment_modes
         post:
