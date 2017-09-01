@@ -632,7 +632,7 @@ class TestProgram(TransactionCase):
             'partner_id': ordering_partner.id,
             'order_line': [(0, 0, {
                 'product_id': self.env.ref(
-                    'specific_discount_program.gift_card').id,
+                    'specific_discount_program.gift_card_to_create').id,
                 'quantity': 1,
                 'price_unit': 50,
             })],

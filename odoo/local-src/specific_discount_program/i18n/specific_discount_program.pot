@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-07 12:15+0000\n"
-"PO-Revision-Date: 2017-07-07 12:15+0000\n"
+"POT-Creation-Date: 2017-09-01 10:18+0000\n"
+"PO-Revision-Date: 2017-09-01 10:18+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -111,9 +111,12 @@ msgid "Generated voucher ids"
 msgstr ""
 
 #. module: specific_discount_program
-#: model:product.product,name:specific_discount_program.gift_card
-#: model:product.template,name:specific_discount_program.gift_card_product_template
-#: model:product.template,name:specific_discount_program.gift_card_template
+#: model:product.product,name:specific_discount_program.gift_card_to_create
+#: model:product.product,name:specific_discount_program.gift_card_to_use
+#: model:product.template,name:specific_discount_program.gift_card_to_create_product_template
+#: model:product.template,name:specific_discount_program.gift_card_to_create_template
+#: model:product.template,name:specific_discount_program.gift_card_to_use_product_template
+#: model:product.template,name:specific_discount_program.gift_card_to_use_template
 msgid "Gift card"
 msgstr ""
 
@@ -123,12 +126,7 @@ msgid "Gift cards"
 msgstr ""
 
 #. module: specific_discount_program
-#: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_gift_voucher
-msgid "Gift voucher"
-msgstr ""
-
-#. module: specific_discount_program
-#: code:addons/specific_discount_program/models/program.py:53
+#: code:addons/specific_discount_program/models/program.py:55
 #, python-format
 msgid "Gift: %s (%s)"
 msgstr ""
@@ -174,7 +172,7 @@ msgid "Manually Discount (%)"
 msgstr ""
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/sale_order.py:176
+#: code:addons/specific_discount_program/models/sale_order.py:196
 #, python-format
 msgid "Max manually discount allowed is %s %% for a sale order."
 msgstr ""
@@ -206,9 +204,15 @@ msgid "Number of vouchers allowed by sale order"
 msgstr ""
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/program.py:95
+#: code:addons/specific_discount_program/models/program.py:97
 #, python-format
 msgid "Number of vouchers is limited to %s"
+msgstr ""
+
+#. module: specific_discount_program
+#: code:addons/specific_discount_program/models/sale_order.py:176
+#, python-format
+msgid "Only 1 (one) Gift card product is allowed to create a gift quotation !"
 msgstr ""
 
 #. module: specific_discount_program
@@ -302,6 +306,11 @@ msgid "Sponsor"
 msgstr ""
 
 #. module: specific_discount_program
+#: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_line_tax_id_readonly
+msgid "Taxes"
+msgstr ""
+
+#. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_account_invoice_gift_quotation
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_gift_quotation
 msgid "This quotation is a gift"
@@ -321,6 +330,12 @@ msgstr ""
 #: code:addons/specific_discount_program/models/account_invoice.py:46
 #, python-format
 msgid "You received a gift voucher !"
+msgstr ""
+
+#. module: specific_discount_program
+#: code:addons/specific_discount_program/models/sale_order.py:81
+#, python-format
+msgid "You received a voucher."
 msgstr ""
 
 #. module: specific_discount_program
@@ -349,14 +364,14 @@ msgid "sale.discount.program.condition"
 msgstr ""
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/program.py:43
+#: code:addons/specific_discount_program/models/program.py:45
 #: sql_constraint:sale.discount.program:0
 #, python-format
 msgid "source_invoice_id can be filled only for voucher"
 msgstr ""
 
 #. module: specific_discount_program
-#: code:addons/specific_discount_program/models/program.py:40
+#: code:addons/specific_discount_program/models/program.py:42
 #: sql_constraint:sale.discount.program:0
 #, python-format
 msgid "source_sale_id can be filled only for voucher"

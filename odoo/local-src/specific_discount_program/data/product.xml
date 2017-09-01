@@ -1,21 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
-        <record id="gift_card_category" model="product.category">
-            <field name="name">Gift cards</field>
-        </record>
-        <record id="gift_card_template" model="product.template"
-                context="{'create_product_product': False}">
-            <field name="name">Gift card</field>
-            <field name="sale_ok" eval="True" />
-            <field name="purchase_ok" eval="False" />
-            <field name="list_price">50</field>
-            <field name="categ_id" ref="gift_card_category"/>
-        </record>
-        <record id="gift_card" model="product.product">
-            <field name="name">Gift card</field>
-            <field name="lst_price">50</field>
-            <field name="product_tmpl_id" ref="gift_card_template" />
-        </record>
-    </data>
+<odoo noupdate="1">
+
+    <record id="gift_card_category" model="product.category">
+        <field name="name">Gift cards</field>
+    </record>
+
+    <!--
+    Product used to sell a gift card to a customer
+    ==> To create a gift card
+    -->
+    <record id="gift_card_to_create_template" model="product.template"
+            context="{'create_product_product': False}">
+        <field name="name">Gift card</field>
+        <field name="sale_ok" eval="True" />
+        <field name="purchase_ok" eval="False" />
+        <field name="list_price">50</field>
+        <field name="categ_id" ref="gift_card_category"/>
+    </record>
+    <record id="gift_card_to_create" model="product.product">
+        <field name="name">Gift card</field>
+        <field name="lst_price">50</field>
+        <field name="product_tmpl_id" ref="gift_card_to_create_template" />
+    </record>
+
+    <!--
+    Product used when the gift card is applied to reduce the sale price
+    ==> To use a gift card
+    -->
+    <record id="gift_card_to_use_template" model="product.template"
+            context="{'create_product_product': False}">
+        <field name="name">Gift card</field>
+        <field name="sale_ok" eval="False" />
+        <field name="purchase_ok" eval="False" />
+        <field name="type">service</field>
+        <field name="list_price">0</field>
+        <field name="taxes_id"/>
+        <field name="supplier_taxes_id"/>
+    </record>
+    <record id="gift_card_to_use" model="product.product">
+        <field name="name">Gift card</field>
+        <field name="lst_price">0</field>
+        <field name="product_tmpl_id" ref="gift_card_to_use_template" />
+        <field name="taxes_id"/>
+        <field name="supplier_taxes_id"/>
+    </record>
+
 </odoo>

@@ -13,6 +13,7 @@ Unreleased
 * DT-75: Custom displaying of pages on partner form view
 * DT-73 / DT-77: Custom lead workflow than lead -> opportunity -> customer
 * DT-74: Add program_type for each variants of discount program
+* DT-79: Fix translations when apply a gift card product in sale order
 
 **Bugfixes**
 
@@ -22,6 +23,8 @@ Unreleased
 * Fix unit test on discount_program_report never launched
 
 **Build**
+
+* Drop vouchers created on B2B customers
 
 **Documentation**
 

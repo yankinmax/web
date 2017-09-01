@@ -129,6 +129,10 @@ class Program(models.Model):
         values = super(Program, self)._get_action_values_for_voucher_amount(
             product_add_price
         )
+        if self.type == 'gift_voucher':
+            values['product_add_id'] = self.env.ref(
+                'specific_discount_program.gift_card_to_use'
+            ).id
         if self.note_message_for_action:
             values['note_message'] = self.note_message_for_action
         return values
