@@ -9,7 +9,7 @@
     Product used to sell a gift card to a customer
     ==> To create a gift card
     -->
-    <record id="gift_card_template" model="product.template"
+    <record id="gift_card_to_create_template" model="product.template"
             context="{'create_product_product': False}">
         <field name="name">Gift card</field>
         <field name="sale_ok" eval="True" />
@@ -17,17 +17,17 @@
         <field name="list_price">50</field>
         <field name="categ_id" ref="gift_card_category"/>
     </record>
-    <record id="gift_card" model="product.product">
+    <record id="gift_card_to_create" model="product.product">
         <field name="name">Gift card</field>
         <field name="lst_price">50</field>
-        <field name="product_tmpl_id" ref="gift_card_template" />
+        <field name="product_tmpl_id" ref="gift_card_to_create_template" />
     </record>
 
     <!--
     Product used when the gift card is applied to reduce the sale price
     ==> To use a gift card
     -->
-    <record id="product_gift_card_template" model="product.template"
+    <record id="gift_card_to_use_template" model="product.template"
             context="{'create_product_product': False}">
         <field name="name">Gift card</field>
         <field name="sale_ok" eval="False" />
@@ -37,10 +37,10 @@
         <field name="taxes_id"/>
         <field name="supplier_taxes_id"/>
     </record>
-    <record id="product_gift_card" model="product.product">
+    <record id="gift_card_to_use" model="product.product">
         <field name="name">Gift card</field>
         <field name="lst_price">0</field>
-        <field name="product_tmpl_id" ref="product_gift_card_template" />
+        <field name="product_tmpl_id" ref="gift_card_to_use_template" />
         <field name="taxes_id"/>
         <field name="supplier_taxes_id"/>
     </record>

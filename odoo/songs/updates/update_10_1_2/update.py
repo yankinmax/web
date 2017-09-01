@@ -71,7 +71,7 @@ def fix_gift_voucher_product(ctx):
     ])
     gift_vouchers.mapped('action_ids').write({
         'product_add_id': ctx.env.ref(
-            'specific_discount_program.product_gift_card'
+            'specific_discount_program.gift_card_to_use'
         ).id
     })
 

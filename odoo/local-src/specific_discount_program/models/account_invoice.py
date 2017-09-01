@@ -53,7 +53,8 @@ class AccountInvoice(models.Model):
             if not (
                 len(self.invoice_line_ids) == 1 and
                 self.invoice_line_ids[0].product_id == self.env.ref(
-                                'specific_discount_program.gift_card')
+                    'specific_discount_program.gift_card_to_create'
+                )
             ):
                 raise UserWarning(
                     "Only 1 (one) Gift card product "

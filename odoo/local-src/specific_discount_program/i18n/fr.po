@@ -118,12 +118,12 @@ msgid "Generated voucher ids"
 msgstr "Bons d'achat générés"
 
 #. module: specific_discount_program
-#: model:product.product,name:specific_discount_program.gift_card
-#: model:product.product,name:specific_discount_program.product_gift_card
-#: model:product.template,name:specific_discount_program.gift_card_product_template
-#: model:product.template,name:specific_discount_program.gift_card_template
-#: model:product.template,name:specific_discount_program.product_gift_card_product_template
-#: model:product.template,name:specific_discount_program.product_gift_card_template
+#: model:product.product,name:specific_discount_program.gift_card_to_create
+#: model:product.product,name:specific_discount_program.gift_card_to_use
+#: model:product.template,name:specific_discount_program.gift_card_to_create_product_template
+#: model:product.template,name:specific_discount_program.gift_card_to_create_template
+#: model:product.template,name:specific_discount_program.gift_card_to_use_product_template
+#: model:product.template,name:specific_discount_program.gift_card_to_use_template
 msgid "Gift card"
 msgstr "Carte cadeau"
 
