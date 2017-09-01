@@ -38,6 +38,27 @@
                 <field name="city"/>
                 <field name="company_id"/>
             </field>
+
+            <!--
+            The active field will be added on an inherited view only for the group "specific_security.group_client_archive".
+            The goal is to don't display "Archive" and "Dearchive" actions if we don't have the indicated group.
+            -->
+            <field name="active" position="replace"/>
+        </field>
+    </record>
+
+    <record id="view_partner_center_tree_for_group_client_archive" model="ir.ui.view">
+        <field name="name">res.partner.center.tree.for.group_client_archive</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="view_partner_center_tree"/>
+        <field name="groups_id" eval="[(4, ref('specific_security.group_client_archive'))]"/>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+
+            <field name="parent_id" position="after">
+                    <field name="active" invisible="1"/>
+            </field>
+
         </field>
     </record>
 

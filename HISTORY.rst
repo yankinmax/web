@@ -9,6 +9,7 @@ Unreleased
 **Features and Improvements**
 
 * DT-71: Simplify usage of depiltech payment mode
+* DT-72: Fix archive restriction on res partner tree view
 * DT-75: Custom displaying of pages on partner form view
 * DT-73 / DT-77: Custom lead workflow than lead -> opportunity -> customer
 * DT-74: Add program_type for each variants of discount program
