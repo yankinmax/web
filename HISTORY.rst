@@ -8,6 +8,18 @@ Unreleased
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.1.2 (2017-09-01)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * DT-71: Simplify usage of depiltech payment mode
 * DT-72: Fix archive restriction on res partner tree view
 * DT-75: Custom displaying of pages on partner form view
@@ -25,8 +37,6 @@ Unreleased
 **Build**
 
 * Drop vouchers created on B2B customers
-
-**Documentation**
 
 
 10.1.1 (2017-08-01)
