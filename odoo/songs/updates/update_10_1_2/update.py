@@ -64,6 +64,28 @@ def update_discount_programs(ctx):
 
 
 @anthem.log
+def fix_gift_voucher_product(ctx):
+    """ Fix gift voucher product """
+    gift_vouchers = ctx.env['sale.discount.program'].search([
+        ('type', '=', 'gift_voucher')
+    ])
+    gift_vouchers.mapped('action_ids').write({
+        'product_add_id': ctx.env.ref(
+            'specific_discount_program.product_gift_card'
+        ).id
+    })
+
+
+@anthem.log
+def clean_voucher_on_b2b_customer(ctx):
+    """ Clean voucher on b2b customers """
+    vouchers = ctx.env['sale.discount.program'].search([
+        ('partner_id.company_type', '!=', 'agency_customer')
+    ])
+    vouchers.unlink()
+
+
+@anthem.log
 def main(ctx):
     """ Main: update 10.1.2 """
     clean_groups(ctx)
@@ -71,3 +93,5 @@ def main(ctx):
     update_discount_programs(ctx)
     update_promo_codes(ctx)
     update_vouchers(ctx)
+    fix_gift_voucher_product(ctx)
+    clean_voucher_on_b2b_customer(ctx)
