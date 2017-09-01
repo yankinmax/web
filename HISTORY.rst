@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Install l10n_ch_payment_slip BSMTS-139
+
 **Bugfixes**
 
 **Build**
