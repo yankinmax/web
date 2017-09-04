@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0e\n"
+"Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-08 13:57+0000\n"
-"PO-Revision-Date: 2016-06-08 13:57+0000\n"
+"POT-Creation-Date: 2017-09-04 07:17+0000\n"
+"PO-Revision-Date: 2017-09-04 07:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Constraint name"
 #. module: fields_regex_validation
 #: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Creado por :"
 
 #. module: fields_regex_validation
 #: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_create_date
@@ -38,7 +38,7 @@ msgstr "Creado en"
 #. module: fields_regex_validation
 #: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Nombre a Mostrar"
 
 #. module: fields_regex_validation
 #: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_error_msg
@@ -70,17 +70,17 @@ msgstr "ID"
 #. module: fields_regex_validation
 #: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation___last_update
 msgid "Last Modified on"
-msgstr "Última Modifiación en"
+msgstr "Fecha de Modificación"
 
 #. module: fields_regex_validation
 #: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización de"
+msgstr "Última Actualización por:"
 
 #. module: fields_regex_validation
 #: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Última Actualización:"
 
 #. module: fields_regex_validation
 #: model:ir.model.fields,field_description:fields_regex_validation.field_fields_regex_validation_model_name

@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* DT-78: Update all translations for specific modules
+
 **Bugfixes**
 
 **Build**

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
     <record id="product_voucher" model="product.product">
-        <field name="name">Bon d'achat</field>
+        <field name="name">Voucher</field>
         <field name="sale_ok" eval="False"/>
         <field name="purchase_ok" eval="False"/>
         <field name="type">service</field>

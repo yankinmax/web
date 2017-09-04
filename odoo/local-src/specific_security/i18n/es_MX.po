@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-04 12:20+0000\n"
-"PO-Revision-Date: 2017-09-04 12:20+0000\n"
+"POT-Creation-Date: 2017-09-04 12:21+0000\n"
+"PO-Revision-Date: 2017-09-04 12:21+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,22 +23,22 @@ msgstr "Admin DT"
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_can_edit_marketing_values
 msgid "Can edit marketing values (campaign, medium, source)"
-msgstr "Peut éditer les valeurs marketing (campagne, moyenne, source)"
+msgstr "Can edit marketing values (campaign, medium, source)"
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_can_edit_lead_vendor
 msgid "Can edit the vendor on leads/opportunities"
-msgstr "Peut éditer le vendeur sur les pistes/opportunités"
+msgstr "Can edit the vendor on leads/opportunities"
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_can_see_depiltech_payment_mode
 msgid "Can see depiltech payment mode on sale"
-msgstr "Peut voir les mode de paiement depiltech sur les ventes"
+msgstr "Can see depiltech payment mode on sale"
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_can_see_more_pages_on_partner
 msgid "Can see more pages on partner"
-msgstr "Peut voir plus de pages sur le partenaire"
+msgstr "Can see more pages on partner"
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_client_archive
@@ -48,7 +48,7 @@ msgstr "Client archivage"
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_company_creation
 msgid "Company creation allowed"
-msgstr "Création de société autorisée"
+msgstr "Company creation allowed"
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.grp_dt_compta
@@ -98,20 +98,20 @@ msgstr "Headquarters DT"
 #. module: specific_security
 #: model:ir.model,name:specific_security.model_account_invoice
 msgid "Invoice"
-msgstr "Facture"
+msgstr "Factura"
 
 #. module: specific_security
 #: model:ir.model,name:specific_security.model_account_invoice_refund
 msgid "Invoice Refund"
-msgstr "Avoir"
+msgstr "Nota de Credito"
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_invoice_creation
 msgid "Invoice creation allowed"
-msgstr "Création de facture autorisée"
+msgstr "Invoice creation allowed"
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_reset_alert_program
 msgid "Reset program alert on sale order allowed"
-msgstr "Réintialisation de l'alerte de programme sur les bons de commande autorisée"
+msgstr "Reset program alert on sale order allowed"
 
