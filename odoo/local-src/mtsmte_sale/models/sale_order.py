@@ -52,16 +52,16 @@ class SaleOrder(models.Model):
                     'results': line.product_id.results,
                 }
 
-                product_method_ids = line.product_id.product_method_id.ids
-                equipment_ids = line.product_id.equipment_id.ids
-                extraction_ids = line.product_id.product_extraction_type_id.ids
+                product_method_id = line.product_id.product_method_id.id
+                equipment_id = line.product_id.equipment_id.id
+                extraction_id = line.product_id.product_extraction_type_id.id
 
-                if product_method_ids:
-                    vals['product_method_id'] = [(6, 0, product_method_ids)]
-                if equipment_ids:
-                    vals['equipment_id'] = [(6, 0, equipment_ids)]
-                if extraction_ids:
-                    extr = [(6, 0, extraction_ids)]
-                    vals['product_extraction_type_id'] = extr
+                if product_method_id:
+                    vals['product_method_id'] = product_method_id
+                if equipment_id:
+                    vals['equipment_id'] = equipment_id
+                if extraction_id:
+                    vals['product_extraction_type_id'] = extraction_id
                 task.write(vals)
+
         return True
