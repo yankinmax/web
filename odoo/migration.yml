@@ -140,3 +140,21 @@ migration:
           - sale_discount_program
           - specific_discount_program
           - discount_program_report
+    - version: 10.1.3
+      operations:
+        pre:
+          - psql -f /opt/odoo/songs/updates/update_10_1_3/update.sql
+      addons:
+        upgrade:
+          #### local-src
+          - discount_program_report
+          - fields_regex_validation
+          - report_invoice
+          - report_page_endnote
+          - sale_discount_program
+          - specific_base
+          - specific_discount_program
+          - specific_export_manager
+          - specific_payment_mode
+          - specific_sale_order
+          - specific_security

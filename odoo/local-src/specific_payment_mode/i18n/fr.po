@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-24 11:54+0000\n"
-"PO-Revision-Date: 2017-08-24 11:54+0000\n"
+"POT-Creation-Date: 2017-09-04 12:19+0000\n"
+"PO-Revision-Date: 2017-09-04 12:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -270,11 +270,6 @@ msgstr "Pas de vérification des règles de paiement"
 #: model:depiltech.payment.mode,name:specific_payment_mode.other
 msgid "Other payment modes"
 msgstr "Autres modes de paiements"
-
-#. module: specific_payment_mode
-#: model:account.payment.method,name:specific_payment_mode.pnf_method
-msgid "PNF"
-msgstr "PNF"
 
 #. module: specific_payment_mode
 #: model:account.payment.method,name:specific_payment_mode.pnf10_method

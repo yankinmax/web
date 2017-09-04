@@ -13,7 +13,8 @@ class DiscountProgramCondition(models.Model):
     _order = 'program_id, sequence, id'
 
     program_id = fields.Many2one(
-        'sale.discount.program', required=True, ondelete='cascade'
+        'sale.discount.program', required=True, ondelete='cascade',
+        string='Program'
     )
 
     name = fields.Char(compute='_compute_name')

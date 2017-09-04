@@ -18,11 +18,13 @@ class ReportPageEndNote(models.Model):
     active = fields.Boolean(default=True)
     country_id = fields.Many2one(comodel_name='res.country',
                                  default=_get_default_country,
-                                 required=True)
+                                 required=True,
+                                 string='Country')
     content = fields.Html(required=True, translate=True)
     report_ids = fields.Many2many(
         comodel_name='ir.actions.report.xml',
-        domain=[('report_type', 'in', ('qweb-pdf', 'qweb-html'))]
+        domain=[('report_type', 'in', ('qweb-pdf', 'qweb-html'))],
+        string='Reports',
     )
 
     @api.multi

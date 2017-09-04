@@ -13,7 +13,8 @@ class DiscountProgramAction(models.Model):
     _order = 'program_id, sequence, id'
 
     program_id = fields.Many2one(
-        'sale.discount.program', required=True, ondelete='cascade'
+        'sale.discount.program', required=True, ondelete='cascade',
+        string='Program'
     )
 
     name = fields.Char(compute='_compute_name')
@@ -27,7 +28,7 @@ class DiscountProgramAction(models.Model):
 
     sequence = fields.Integer(string='Sequence', default=10)
 
-    product_add_id = fields.Many2one('product.product')
+    product_add_id = fields.Many2one('product.product', string='Product add')
     product_add_force_price = fields.Boolean('Specify product price')
     product_add_price = fields.Float(
         string='Product Price',
@@ -40,7 +41,8 @@ class DiscountProgramAction(models.Model):
         ('fixed_product', 'On a specified product'),
     ])
 
-    discount_product_id = fields.Many2one('product.product')
+    discount_product_id = fields.Many2one('product.product',
+                                          string='Discount product')
 
     discount_percent = fields.Float(
         'Discount',

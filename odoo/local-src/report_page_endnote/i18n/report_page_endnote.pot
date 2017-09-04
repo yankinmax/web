@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* report_page_endnote
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-04 08:43+0000\n"
+"PO-Revision-Date: 2017-09-04 08:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote_active
+msgid "Active"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote_content
+msgid "Content"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote_country_id
+msgid "Country"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote_id
+msgid "ID"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model,name:report_page_endnote.model_report_page_endnote
+msgid "Manage global page endnotes"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote_name
+msgid "Name"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.actions.act_window,name:report_page_endnote.report_page_endnote_action_tree
+#: model:ir.ui.menu,name:report_page_endnote.menu_action_report_page_endnote_form
+#: model:ir.ui.view,arch_db:report_page_endnote.view_report_page_endnote_form
+#: model:ir.ui.view,arch_db:report_page_endnote.view_report_page_endnote_tree
+msgid "Report Page EndNote"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.model.fields,field_description:report_page_endnote.field_report_page_endnote_report_ids
+msgid "Reports"
+msgstr ""
+
+#. module: report_page_endnote
+#: model:ir.ui.view,arch_db:report_page_endnote.view_report_page_endnote_form
+msgid "Show created inherited views"
+msgstr ""
+

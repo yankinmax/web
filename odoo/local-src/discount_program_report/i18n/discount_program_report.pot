@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-04 06:39+0000\n"
-"PO-Revision-Date: 2017-09-04 06:39+0000\n"
+"POT-Creation-Date: 2017-09-04 06:38+0000\n"
+"PO-Revision-Date: 2017-09-04 06:38+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -25,79 +25,72 @@ msgid "\n"
 "            <p>Depil Tech</p>\n"
 "            \n"
 "        "
-msgstr "\n"
-"            <p>Bonjour ${object.source_invoice_id.partner_id.name},</p>\n"
-"            <p>Veuillez trouver en pièce jointe votre <strong>${object.name}</strong></p>\n"
-"            <p>----------------------------------------</p>\n"
-"            <p>Cordialement,</p>\n"
-"            <p>Depil Tech</p>\n"
-"            \n"
-"        "
+msgstr ""
 
 #. module: discount_program_report
 #: model:mail.template,report_name:discount_program_report.email_template_discount_program
 msgid "${(object.name or '').replace('/','_')}"
-msgstr "${(object.name or '').replace('/','_')}"
+msgstr ""
 
 #. module: discount_program_report
 #: model:mail.template,subject:discount_program_report.email_template_discount_program
 msgid "${object.note_message_for_action or object.name }"
-msgstr "${object.note_message_for_action or object.name }"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_active
 msgid "Active"
-msgstr "Actif"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_amount_container_style
 msgid "Amount container style"
-msgstr "Style du container du montant"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_amount_zone_height
 msgid "Amount zone height (in px)"
-msgstr "Hauteur de la zone du montant (en pixels)"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_amount_position_left
 msgid "Amount zone position left (in px)"
-msgstr "Position de la zone du montant depuis la gauche (en pixels)"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_amount_position_top
 msgid "Amount zone position top (in px)"
-msgstr "Position de la zone du montant depuis le sommet (en pixels)"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_amount_zone_width
 msgid "Amount zone width (in px)"
-msgstr "Largeur de la zone du montant (en pixels)"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.ui.view,arch_db:discount_program_report.report_discount_program_document
 msgid "Code:"
-msgstr "Code :"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_create_uid
 msgid "Created by"
-msgstr "Créé par"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_create_date
 msgid "Created on"
-msgstr "Créé le"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.ui.view,arch_db:discount_program_report.report_discount_program_document
 msgid "DEPIL TECH"
-msgstr "DEPIL TECH"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_date_format
 msgid "Date format"
-msgstr "Format de date"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.actions.act_window,name:discount_program_report.action_report_config_list
@@ -105,184 +98,184 @@ msgstr "Format de date"
 #: model:ir.ui.view,arch_db:discount_program_report.report_config_form
 #: model:ir.ui.view,arch_db:discount_program_report.report_config_tree
 msgid "Discount Program Report Configuration"
-msgstr "Configuration des rapports de Bon d'achat"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_display_name
 msgid "Display Name"
-msgstr "Afficher le nom"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model,name:discount_program_report.model_mail_compose_message
 msgid "Email composition wizard"
-msgstr "Assistant de composition de courriel"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_general_terms_conditions_left
 msgid "General terms and conditions left column"
-msgstr "Colonne de gauche des Conditions générales"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_general_terms_conditions_right
 msgid "General terms and conditions right column"
-msgstr "Colonne de droite des Conditions générales"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_general_terms_conditions_title
 msgid "General terms and conditions title"
-msgstr "Titre des Conditions générales"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_id_8343
 msgid "ID"
-msgstr "Identifiant"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_lang_id
 msgid "Language"
-msgstr "Langue"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config___last_update
 msgid "Last Modified on"
-msgstr "Dernière modification le"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_write_uid
 msgid "Last Updated by"
-msgstr "Dernière mise à jour par"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_write_date
 msgid "Last Updated on"
-msgstr "Dernière mise à jour le"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_name
 msgid "Name"
-msgstr "Nom"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.ui.view,arch_db:discount_program_report.report_discount_program_document
 msgid "Phone:"
-msgstr "Téléphone :"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_is_printable
 msgid "Printable"
-msgstr "Imprimable"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_type
 msgid "Program type"
-msgstr "Type de programme"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model,name:discount_program_report.model_report
 msgid "Report"
-msgstr "Rapport"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_id
 msgid "Report config"
-msgstr "Configuration du rapport"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_ribbon_text
 msgid "Ribbon text"
-msgstr "Texte ruban"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.actions.report.xml,name:discount_program_report.report_sale_order_voucher
 msgid "Sale Order with Voucher"
-msgstr "Bon de commande avec bon d'achat"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.ui.view,arch_db:discount_program_report.sale_discount_program_code_form
 msgid "Send by Email"
-msgstr "Envoyer par email"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_sent_to_customer
 msgid "Sent to customer"
-msgstr "Envoyé au client"
+msgstr ""
 
 #. module: discount_program_report
 #: code:addons/discount_program_report/models/report_config.py:13
 #, python-format
 msgid "Sponsorship voucher"
-msgstr "Bon de parrainage"
+msgstr ""
 
 #. module: discount_program_report
 #: code:addons/discount_program_report/models/program.py:49
 #, python-format
 msgid "There is no active report.config matching this program language."
-msgstr "Il n'y a pas de configuration de Reporting qui soit active pour cette langue."
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,help:discount_program_report.field_sale_discount_program_report_config_top_image
 msgid "This image will be displayed with a width of 1083px at the top of the report"
-msgstr "Cette image sera affichée avec une largeur de 1083 pixels sur le rapport"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,help:discount_program_report.field_sale_discount_program_report_config_amount_zone_height
 msgid "This is the height of the amount zone in the top picture.Be aware that a 20px padding isapplied both on top and bottom."
-msgstr "Ceci est la hauteur en pixels de la zone du montant dans l'image supérieure. Soyez conscient qu'un 'padding' de 20 pixels est appliqué en haut et en bas."
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,help:discount_program_report.field_sale_discount_program_report_config_amount_position_left
 msgid "This is the position in pixels from the left of the image where the amount zone is displayed."
-msgstr "Ceci est la position de la zone du montant, en pixels, depuis le bord gauche de l'image."
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,help:discount_program_report.field_sale_discount_program_report_config_amount_position_top
 msgid "This is the position in pixels from the top of the image where the amount zone is displayed."
-msgstr "Ceci est la position de la zone du montant, en pixels, depuis le sommet de l'image."
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,help:discount_program_report.field_sale_discount_program_report_config_amount_zone_width
 msgid "This is the width of the amount zone in the top picture "
-msgstr "Ceci est la largeur en pixels de la zone du montant dans l'image supérieure."
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,field_description:discount_program_report.field_sale_discount_program_report_config_top_image
 msgid "Top image"
-msgstr "Image supérieure"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model.fields,help:discount_program_report.field_sale_discount_program_report_config_date_format
 msgid "Uses Unicode LDML (Locale Data Markup Language) Date Format"
-msgstr "Utilise le formattage de date Unicode LDML (Locale Data Markup Language)."
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.ui.view,arch_db:discount_program_report.report_discount_program_document
 msgid "Valid until:"
-msgstr "Valable jusqu'au :"
+msgstr ""
 
 #. module: discount_program_report
 #: code:addons/discount_program_report/models/report_config.py:14
 #, python-format
 msgid "Voucher"
-msgstr "Bon d'achat"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.actions.report.xml,name:discount_program_report.report_discount_program
 msgid "Voucher discount program"
-msgstr "Programme de promotions et bons d'achat"
+msgstr ""
 
 #. module: discount_program_report
 #: code:addons/discount_program_report/models/report_config.py:77
 #, python-format
 msgid "You cannot have two active models for the same language and the same program type"
-msgstr "Vous ne pouvez pas définir deux modèles actifs pour la même langue et le même type de programme."
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model,name:discount_program_report.model_sale_discount_program
 msgid "sale.discount.program"
-msgstr "sale.discount.program"
+msgstr ""
 
 #. module: discount_program_report
 #: model:ir.model,name:discount_program_report.model_sale_discount_program_report_config
 msgid "sale.discount.program.report.config"
-msgstr "sale.discount.program.report.config"
+msgstr ""
 

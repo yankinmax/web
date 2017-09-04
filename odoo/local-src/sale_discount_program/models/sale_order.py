@@ -11,7 +11,8 @@ class SaleOrder(models.Model):
 
     applied_program_ids = fields.Many2many(
         comodel_name='sale.discount.program',
-        relation='sale_order_applied_program'
+        relation='sale_order_applied_program',
+        string='Applied programs'
     )
 
     program_to_add = fields.Char(
@@ -177,16 +178,19 @@ class SaleOrderLine(models.Model):
     # Which program create this line
     source_program_id = fields.Many2one(
         comodel_name='sale.discount.program',
+        string='Source program'
     )
 
     # For which order line this program is
     source_order_line_id = fields.Many2one(
-        comodel_name='sale.order.line'
+        comodel_name='sale.order.line',
+        string='Source order line'
     )
 
     discount_order_line_ids = fields.One2many(
         comodel_name='sale.order.line',
-        inverse_name='source_order_line_id'
+        inverse_name='source_order_line_id',
+        string='Discount order lines'
     )
 
     # True if price_unit field was changed by a sale.discount.program
