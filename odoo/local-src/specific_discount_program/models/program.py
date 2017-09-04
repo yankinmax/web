@@ -21,9 +21,11 @@ class Program(models.Model):
     )
 
     # For vouchers created by sale.order
-    source_sale_id = fields.Many2one(comodel_name='sale.order')
+    source_sale_id = fields.Many2one(comodel_name='sale.order',
+                                     string='Source sale')
     # For vouchers created by account.invoice
-    source_invoice_id = fields.Many2one(comodel_name='account.invoice')
+    source_invoice_id = fields.Many2one(comodel_name='account.invoice',
+                                        string='Source invoice')
 
     customer_required = fields.Boolean('Requires customer',
                                        compute='_compute_cust_req')

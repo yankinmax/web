@@ -11,7 +11,8 @@ class ResCompanySchedule(models.Model):
     _desc = "Manage open hours for a company"
     _rec_name = 'company_id'
 
-    company_id = fields.Many2one(comodel_name='res.company')
+    company_id = fields.Many2one(comodel_name='res.company',
+                                 string='Company')
     active = fields.Boolean(default=True)
     # monday
     is_open_am_0 = fields.Boolean(string='Is open AM ?', default=True)

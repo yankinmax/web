@@ -90,7 +90,7 @@ msgstr "Esthéticiens et autres professions de la beauté"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_product_pricelist_allowed_company_ids
-msgid "Allowed company ids"
+msgid "Allowed companies"
 msgstr "Sociétés autorisées"
 
 #. module: specific_base
@@ -303,7 +303,7 @@ msgstr "Type de société"
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_company_id
 #: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_company_id
-msgid "Company id"
+msgid "Company"
 msgstr "Société"
 
 #. module: specific_base
@@ -797,7 +797,7 @@ msgstr "Latitude"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_crm_opportunity_to_customer_lead_id
-msgid "Lead id"
+msgid "Lead"
 msgstr "Piste"
 
 #. module: specific_base

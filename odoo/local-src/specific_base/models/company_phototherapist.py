@@ -10,7 +10,8 @@ class ResCompanyPhototherapist(models.Model):
     _name = 'res.company.phototherapist'
     _desc = "Manage phototherapist of a company"
 
-    company_id = fields.Many2one(comodel_name='res.company', required=True)
+    company_id = fields.Many2one(comodel_name='res.company', required=True,
+                                 string='Company')
     active = fields.Boolean(default=True)
     name = fields.Char(required=True)
     date_deleted = fields.Date()

@@ -107,7 +107,7 @@ msgstr ""
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_account_invoice_generated_voucher_ids
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_generated_voucher_ids
-msgid "Generated voucher ids"
+msgid "Generated vouchers"
 msgstr ""
 
 #. module: specific_discount_program
@@ -227,7 +227,7 @@ msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_partner_id
-msgid "Partner id"
+msgid "Partner"
 msgstr ""
 
 #. module: specific_discount_program
@@ -292,12 +292,12 @@ msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_source_invoice_id
-msgid "Source invoice id"
+msgid "Source invoice"
 msgstr ""
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_source_sale_id
-msgid "Source sale id"
+msgid "Source sale"
 msgstr ""
 
 #. module: specific_discount_program

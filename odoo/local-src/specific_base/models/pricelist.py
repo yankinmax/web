@@ -9,4 +9,5 @@ from odoo import models, fields
 class ProductPricelist(models.Model):
     _inherit = 'product.pricelist'
 
-    allowed_company_ids = fields.Many2many(comodel_name='res.company')
+    allowed_company_ids = fields.Many2many(comodel_name='res.company',
+                                           string='Allowed companies')

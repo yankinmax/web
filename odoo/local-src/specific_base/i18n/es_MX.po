@@ -90,8 +90,8 @@ msgstr "Aestheticians and other beauty professionals"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_product_pricelist_allowed_company_ids
-msgid "Allowed company ids"
-msgstr "Allowed company ids"
+msgid "Allowed companies"
+msgstr "Allowed companies"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_crm_lead_has_franchisee
@@ -303,7 +303,7 @@ msgstr "Tipo de Compañía"
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_company_id
 #: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_company_id
-msgid "Company id"
+msgid "Company"
 msgstr "Compañía"
 
 #. module: specific_base
@@ -797,8 +797,8 @@ msgstr "Latitude"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_crm_opportunity_to_customer_lead_id
-msgid "Lead id"
-msgstr "Id Iniciativa"
+msgid "Lead"
+msgstr "Iniciativa"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_crm_lead_lead_planning_url
