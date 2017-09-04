@@ -365,7 +365,7 @@ msgstr ""
 
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_term_sale_order_id
-msgid "Sale order id"
+msgid "Sale order"
 msgstr ""
 
 #. module: specific_payment_mode

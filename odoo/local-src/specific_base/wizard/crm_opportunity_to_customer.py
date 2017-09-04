@@ -12,6 +12,7 @@ class CrmOpportunityToCustomer(models.TransientModel):
     lead_id = fields.Many2one(
         comodel_name='crm.lead',
         readonly=True,
+        string='Lead'
     )
 
     phototherapist_id = fields.Many2one(

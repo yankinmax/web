@@ -90,7 +90,7 @@ msgstr ""
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_product_pricelist_allowed_company_ids
-msgid "Allowed company ids"
+msgid "Allowed companies"
 msgstr ""
 
 #. module: specific_base
@@ -303,7 +303,7 @@ msgstr ""
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_company_id
 #: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_company_id
-msgid "Company id"
+msgid "Company"
 msgstr ""
 
 #. module: specific_base
@@ -797,7 +797,7 @@ msgstr ""
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_crm_opportunity_to_customer_lead_id
-msgid "Lead id"
+msgid "Lead"
 msgstr ""
 
 #. module: specific_base

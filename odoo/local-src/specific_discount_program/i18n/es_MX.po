@@ -114,8 +114,8 @@ msgstr "Nombre a Mostrar"
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_account_invoice_generated_voucher_ids
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_generated_voucher_ids
-msgid "Generated voucher ids"
-msgstr "Generated voucher ids"
+msgid "Generated vouchers"
+msgstr "Generated vouchers"
 
 #. module: specific_discount_program
 #: model:product.product,name:specific_discount_program.gift_card_to_create
@@ -234,7 +234,7 @@ msgstr "Compañero"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_partner_id
-msgid "Partner id"
+msgid "Partner"
 msgstr "Empresa"
 
 #. module: specific_discount_program
@@ -299,13 +299,13 @@ msgstr "Línea pedido de venta"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_source_invoice_id
-msgid "Source invoice id"
-msgstr "Source invoice id"
+msgid "Source invoice"
+msgstr "Source invoice"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_source_sale_id
-msgid "Source sale id"
-msgstr "Source sale id"
+msgid "Source sale"
+msgstr "Source sale"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_res_partner_sponsor_id

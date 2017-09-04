@@ -15,7 +15,8 @@ class AccountInvoice(models.Model):
 
     generated_voucher_ids = fields.One2many(
         comodel_name='sale.discount.program',
-        inverse_name='source_invoice_id'
+        inverse_name='source_invoice_id',
+        string='Generated vouchers'
     )
 
     @api.multi

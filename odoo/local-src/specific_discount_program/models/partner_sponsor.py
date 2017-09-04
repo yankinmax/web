@@ -10,7 +10,8 @@ class PartnerSponsor(models.Model):
 
     partner_id = fields.Many2one(
         'res.partner',
-        required=True, ondelete='cascade'
+        required=True, ondelete='cascade',
+        string='Partner'
     )
 
     name = fields.Char(compute='_compute_name', store=True)

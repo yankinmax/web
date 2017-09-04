@@ -12,4 +12,5 @@ class AccountPaymentTerm(models.Model):
         comodel_name='sale.order',
         readonly=True,
         ondelete='cascade',
+        string='Sale order'
     )

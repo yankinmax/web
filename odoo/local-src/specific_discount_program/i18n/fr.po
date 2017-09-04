@@ -114,7 +114,7 @@ msgstr "Afficher le nom"
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_account_invoice_generated_voucher_ids
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_order_generated_voucher_ids
-msgid "Generated voucher ids"
+msgid "Generated vouchers"
 msgstr "Bons d'achat générés"
 
 #. module: specific_discount_program
@@ -234,8 +234,8 @@ msgstr "Partenaire"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_partner_sponsor_partner_id
-msgid "Partner id"
-msgstr "Partner id"
+msgid "Partner"
+msgstr "Partenaire"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_config_settings_voucher_percent
@@ -299,12 +299,12 @@ msgstr "Ligne de bons de commande"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_source_invoice_id
-msgid "Source invoice id"
+msgid "Source invoice"
 msgstr "Facture d'origine"
 
 #. module: specific_discount_program
 #: model:ir.model.fields,field_description:specific_discount_program.field_sale_discount_program_source_sale_id
-msgid "Source sale id"
+msgid "Source sale"
 msgstr "Commande d'origine"
 
 #. module: specific_discount_program
