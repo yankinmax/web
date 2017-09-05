@@ -25,6 +25,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* SO action_confirm BSMTS-141
+
 **Build**
 
 **Documentation**
