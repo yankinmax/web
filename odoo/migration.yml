@@ -124,3 +124,4 @@ migration:
       addons:
         upgrade:
           - l10n_ch_payment_slip
+          - mtsmte_sale

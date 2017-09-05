@@ -26,6 +26,12 @@ latest (unreleased)
 **Bugfixes**
 
 * SO action_confirm BSMTS-141
+* SO line preserve substances on write BSMTS-140
+* SO line view: remove `product_substance_ids.comments` BSMTS-140
+  
+  When you have comments the whole popup is bloated 
+  and the UI gets really ugly. Remove the field does the trick.
+
 
 **Build**
 
