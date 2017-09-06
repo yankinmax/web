@@ -18,6 +18,33 @@ class SaleOrder(models.Model):
     )
 
     @api.multi
+    def write(self, vals):
+        """Fix for `product_substance_ids` m2m BSMTS-140.
+
+        We set the field value w/ an onchange in SO line.
+        When you create a new line you save the order
+        the value is converted to something like:
+
+        u'product_substance_ids': [
+            #  _, SUB ID, _
+            [1, 1, {u'product_uom_id': 20}],
+            [1, 4, {u'product_uom_id': 20}],
+            [1, 7, {u'product_uom_id': 20}],
+        ]
+
+        so, here we fix this to proper m2m write values.
+
+        See https://github.com/odoo/odoo/issues/19239
+        """
+        for so_line in vals.get('order_line', []):
+            if so_line[0] == 0 and so_line[-1].get('product_substance_ids'):
+                so_line[-1]['product_substance_ids'] = [
+                    (6, 0, [x[1]
+                            for x in so_line[-1]['product_substance_ids']])
+                ]
+        return super(SaleOrder, self).write(vals)
+
+    @api.multi
     def action_confirm(self):
         super(SaleOrder, self).action_confirm()
         for order in self:
