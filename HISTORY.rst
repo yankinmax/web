@@ -38,6 +38,9 @@ latest (unreleased)
 
 * Upgrade odoo source
 * Upgrade server-tools (for `web_environment_ribbon`)
+* Remove pending merge for `purchase_discount`
+  
+  https://github.com/OCA/purchase-workflow/pull/316
 
 
 **Documentation**
