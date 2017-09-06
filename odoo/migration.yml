@@ -125,4 +125,5 @@ migration:
         upgrade:
           - base
           - l10n_ch_payment_slip
+          - web_environment_ribbon
           - mtsmte_sale
