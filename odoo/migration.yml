@@ -121,9 +121,15 @@ migration:
         post:
           - anthem songs.install.generated.stock::main
     - version: 10.0.8
+      operations:
+        pre:
+          - anthem songs.update.update_10_0_8::pre
+        post:
+          - anthem songs.install.generated.accounting::main
       addons:
         upgrade:
           - base
           - l10n_ch_payment_slip
           - web_environment_ribbon
           - mtsmte_sale
+          - mtsmte_accounting

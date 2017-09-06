@@ -1,0 +1,59 @@
+"id","delay","description","followup_id/id","manual_action","manual_action_note","manual_action_responsible_id/id","name","send_email","send_letter","sequence"
+"account_reports_followup.demo_followup_line1","15","Dear %(partner_name)s,
+
+Exception made if there was a mistake of ours, it seems that the following amount stays unpaid. Please, take appropriate measures in order to carry out this payment in the next 8 days.
+
+Would your payment have been carried out before this mail was sent, please ignore this message. Do not hesitate to contact our accounting department.
+
+Best Regards,","account_reports_followup.demo_followup1","False","","","First reminder email","True","True","0"
+"__setup__.account_followup_followup_line_first_reminder_email","15","
+ Dear %(partner_name)s,
+
+Exception made if there was a mistake of ours, it seems that the following amount stays unpaid. Please, take appropriate measures in order to carry out this payment in the next 8 days.
+
+Would your payment have been carried out before this mail was sent, please ignore this message. Do not hesitate to contact our accounting department.
+
+Best Regards,","__setup__.mt_account_followup_followup_metallo_tests_s_a","False","","","First reminder email","True","True","0"
+"account_reports_followup.demo_followup_line2","30","
+Dear %(partner_name)s,
+
+We are disappointed to see that despite sending a reminder, that your account is now seriously overdue.
+
+We are looking forward to receiving your payment in the next 5 days. Otherwise we will have to consider placing a stop on your account which means that your current orders might have a longer delivery time.
+
+If there is a problem with paying invoice that we are not aware of, do not hesitate to contact our accounting department, so that we can resolve the matter quickly.
+
+Details of due payments is printed below.
+
+Best Regards,","account_reports_followup.demo_followup1","False","","","Second reminder letter and email","True","True","1"
+"__setup__.account_followup_followup_line_second_reminder_letter_and_email","30","
+Dear %(partner_name)s,
+
+We are disappointed to see that despite sending a reminder, that your account is now seriously overdue.
+
+We are looking forward to receiving your payment in the next 5 days. Otherwise we will have to consider placing a stop on your account which means that your current orders might have a longer delivery time.
+
+If there is a problem with paying invoice that we are not aware of, do not hesitate to contact our accounting department, so that we can resolve the matter quickly.
+
+Details of due payments is printed below.
+
+Best Regards,","__setup__.mt_account_followup_followup_metallo_tests_s_a","False","","","Second reminder letter and email","True","True","0"
+"__setup__.account_followup_followup_line_third_reminder_phone_the_customer","40","
+Dear %(partner_name)s,
+
+Despite several reminders, your account is still not settled.
+
+Unless full payment is made in next 5 days, then legal action for the recovery of the debt will be taken without further notice.
+
+I trust that this action will prove unnecessary and details of due payments is printed below. In case of any queries concerning this matter, do not hesitate to contact our accounting department.
+
+Best Regards,","__setup__.mt_account_followup_followup_metallo_tests_s_a","True","Call the customer on the phone! ","","Third reminder: phone the customer","False","True","0"
+"account_reports_followup.demo_followup_line3","40","Dear %(partner_name)s,
+
+Despite several reminders, your account is still not settled.
+
+Unless full payment is made in next 5 days, then legal action for the recovery of the debt will be taken without further notice.
+
+I trust that this action will prove unnecessary and details of due payments is printed below. In case of any queries concerning this matter, do not hesitate to contact our accounting department.
+
+Best Regards,","account_reports_followup.demo_followup1","True","Call the customer on the phone! ","","Third reminder: phone the customer","False","True","3"
