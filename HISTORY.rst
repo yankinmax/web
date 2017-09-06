@@ -23,6 +23,7 @@ latest (unreleased)
 
 * Install l10n_ch_payment_slip BSMTS-139
 
+
 **Bugfixes**
 
 * SO action_confirm BSMTS-141
@@ -34,6 +35,9 @@ latest (unreleased)
 
 
 **Build**
+
+* Upgrade odoo source
+
 
 **Documentation**
 

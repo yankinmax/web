@@ -123,5 +123,6 @@ migration:
     - version: 10.0.8
       addons:
         upgrade:
+          - base
           - l10n_ch_payment_slip
           - mtsmte_sale
