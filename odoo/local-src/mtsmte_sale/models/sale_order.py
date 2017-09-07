@@ -17,8 +17,7 @@ class SaleOrder(models.Model):
         readonly=True,
     )
 
-    @api.multi
-    def write(self, vals):
+    def _fix_order_line_values(self, vals):
         """Fix for `product_substance_ids` m2m BSMTS-140.
 
         We set the field value w/ an onchange in SO line.
@@ -38,10 +37,30 @@ class SaleOrder(models.Model):
         """
         for so_line in vals.get('order_line', []):
             if so_line[0] == 0 and so_line[-1].get('product_substance_ids'):
-                so_line[-1]['product_substance_ids'] = [
-                    (6, 0, [x[1]
-                            for x in so_line[-1]['product_substance_ids']])
-                ]
+                sub_ids = so_line[-1]['product_substance_ids']
+                # if you add value manually instead of onchange
+                # you get the correct form: [6, False, [9, 1, 4, 7]]
+                fixed = []
+                all_ids = []
+                for x in sub_ids:
+                    if x[0] == 6:
+                        all_ids.extend(x[-1])
+                        fixed.append(x)
+                    elif x[0] != 6 and not x[1] in all_ids:
+                        # include missing ones w/ bad form
+                        fixed.append(x[1])
+                        all_ids.append(x[1])
+                if fixed:
+                    so_line[-1]['product_substance_ids'] = fixed
+
+    @api.model
+    def create(self, vals):
+        self._fix_order_line_values(vals)
+        return super(SaleOrder, self).create(vals)
+
+    @api.multi
+    def write(self, vals):
+        self._fix_order_line_values(vals)
         return super(SaleOrder, self).write(vals)
 
     @api.multi
