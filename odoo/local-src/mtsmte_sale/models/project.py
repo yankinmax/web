@@ -6,6 +6,7 @@ from odoo import models, fields
 
 
 class ProjectProject(models.Model):
+    # TODO: shall we move this to mtsmte_project (at least part of it)?
     _inherit = 'project.project'
 
     client_order_ref = fields.Char(string='Customer Reference', copy=False)
@@ -24,8 +25,7 @@ class ProjectProject(models.Model):
     send_sample_back = fields.Boolean(
         string='Send Samples back',
     )
-    conclusion = fields.Html(
-    )
+    conclusion = fields.Html()
 
     def write(self, vals):
         for proj in self:
