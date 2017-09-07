@@ -21,7 +21,21 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.0.8 (2017-09-07)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Install l10n_ch_payment_slip BSMTS-139
+* Install German lang BSMTS-137
+* Add followup and translations (`mtsmte_accounting`) BSMTS-138
 
 
 **Bugfixes**
@@ -42,8 +56,6 @@ latest (unreleased)
   
   https://github.com/OCA/purchase-workflow/pull/316
 
-
-**Documentation**
 
 
 10.0.7 (2017-08-21)

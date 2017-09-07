@@ -133,3 +133,4 @@ migration:
           - web_environment_ribbon
           - mtsmte_sale
           - mtsmte_accounting
+          - mtsmte_reports
