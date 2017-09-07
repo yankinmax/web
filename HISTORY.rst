@@ -28,6 +28,16 @@ latest (unreleased)
 **Documentation**
 
 
+10.0.9 (2017-09-07)
++++++++++++++++++++
+
+**Bugfixes**
+
+* SO line preserve substances on create BSMTS-140
+  
+  and handle the case where user can add new substances manually.
+
+
 10.0.8 (2017-09-07)
 +++++++++++++++++++
 

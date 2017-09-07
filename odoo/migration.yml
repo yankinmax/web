@@ -134,3 +134,4 @@ migration:
           - mtsmte_sale
           - mtsmte_accounting
           - mtsmte_reports
+    - version: 10.0.9
