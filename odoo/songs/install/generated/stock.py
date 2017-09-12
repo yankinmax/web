@@ -94,8 +94,8 @@ def add_xmlid_to_existing_stock_location(ctx):
 @anthem.log
 def load_stock_location(ctx):
     """ Import stock.location from csv """
-    model = ctx.env['stock.location'].with_context({'tracking_disable':1})  # noqa
-    header_exclude = ['location_id/id', 'child_ids/id']
+    model = ctx.env['stock.location'].with_context({'tracking_disable': 1})  # noqa
+    header_exclude = ['location_id/id', ]
     load_csv(ctx, 'data/install/generated/stock.location.csv', model, header_exclude=header_exclude)  # noqa
     if header_exclude:
         load_csv(ctx, 'data/install/generated/stock.location.csv', model, header=['id', ] + header_exclude)  # noqa
@@ -116,7 +116,7 @@ def add_xmlid_to_existing_ir_sequence(ctx):
 def load_stock_picking_type(ctx):
     """ Import stock.picking.type from csv """
     model = ctx.env['stock.picking.type'].with_context({'tracking_disable': 1})  # noqa
-    header_exclude = ['return_picking_type_id/id']
+    header_exclude = ['return_picking_type_id/id', ]
     load_csv(ctx, 'data/install/generated/stock.picking.type.csv', model, header_exclude=header_exclude)  # noqa
     if header_exclude:
         load_csv(ctx, 'data/install/generated/stock.picking.type.csv', model, header=['id', ] + header_exclude)  # noqa
@@ -133,9 +133,7 @@ def load_stock_location_route(ctx):
 def load_res_partner(ctx):
     """ Import res.partner from csv """
     model = ctx.env['res.partner'].with_context({'tracking_disable': 1})  # noqa
-    header_exclude = ['parent_id/id', 'child_ids/id',
-                      'commercial_partner_id/id', 'message_partner_ids/id',
-                      'self/id']
+    header_exclude = ['parent_id/id']
     load_csv(ctx, 'data/install/generated/res.partner.csv', model, header_exclude=header_exclude)  # noqa
     if header_exclude:
         load_csv(ctx, 'data/install/generated/res.partner.csv', model, header=['id', ] + header_exclude)  # noqa
