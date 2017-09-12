@@ -34,8 +34,9 @@ latest (unreleased)
 **Bugfixes**
 
 * SO line preserve substances on create BSMTS-140
-  
+
   and handle the case where user can add new substances manually.
+* Update Routes and procurement rules BSMTS-150
 
 
 10.0.8 (2017-09-07)
@@ -53,8 +54,8 @@ latest (unreleased)
 * SO action_confirm BSMTS-141
 * SO line preserve substances on write BSMTS-140
 * SO line view: remove `product_substance_ids.comments` BSMTS-140
-  
-  When you have comments the whole popup is bloated 
+
+  When you have comments the whole popup is bloated
   and the UI gets really ugly. Remove the field does the trick.
 
 
@@ -63,7 +64,7 @@ latest (unreleased)
 * Upgrade odoo source
 * Upgrade server-tools (for `web_environment_ribbon`)
 * Remove pending merge for `purchase_discount`
-  
+
   https://github.com/OCA/purchase-workflow/pull/316
 
 

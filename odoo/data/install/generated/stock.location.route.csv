@@ -1,12 +1,6 @@
-id,active,categ_ids,company_id/id,name,product_categ_selectable,product_selectable,push_ids/id,sale_selectable,sequence,supplied_wh_id/id,supplier_wh_id/id,warehouse_ids,warehouse_selectable
-__setup__.mts_stock_location_route_mto_dur_pol,True,,base.main_company,MTO: Dur. + Pol.,False,True,,False,0,,,,False
-__setup__.mts_stock_location_route_mto_rhabillage_dlc_pol,True,,base.main_company,MTO: Rhabillage DLC + Pol.,False,False,,True,0,,,,False
-__setup__.mts_stock_location_route_mto_dur,True,,base.main_company,MTO: Dur.,False,True,,False,0,,,,False
-__setup__.mts_stock_location_route_mto_dur_pol_dlc,True,,base.main_company,MTO: Dur. + Pol. + DLC,False,True,,False,0,,,,False
-purchase.route_warehouse0_buy,True,,base.main_company,Buy,False,True,,False,5,,,,False
-mrp.route_warehouse0_manufacture,True,,base.main_company,Manufacture,False,True,,False,5,,,,False
-__setup__.mt_stock_location_route_metallo_tests_s_a_receipt_in_1_step,True,,__setup__.company_mte,Métallo-Tests S.A.: Receipt in 1 step,True,False,,False,10,,,Métallo-Tests S.A.,False
-__setup__.mts_stock_location_route_mts_materiaux_technologies_surfaces_sa_receipt_in_1_step,True,,base.main_company,MTS Matériaux Technologies Surfaces SA: Receipt in 1 step,True,False,,False,10,,,MTS Matériaux Technologies Surfaces SA,False
-__setup__.mts_stock_location_route_mts_materiaux_technologies_surfaces_sa_ship_only,True,,base.main_company,MTS Matériaux Technologies Surfaces SA: Ship Only,True,False,,False,10,,,MTS Matériaux Technologies Surfaces SA,False
-stock.route_warehouse0_mto,True,,base.main_company,Make To Order,False,True,,False,10,,,,False
-__setup__.mt_stock_location_route_metallo_tests_s_a_ship_only,True,,__setup__.company_mte,Métallo-Tests S.A.: Ship Only,True,False,,False,10,,,Métallo-Tests S.A.,False
+"id","active","categ_ids/id","company_id/id","name","product_categ_selectable","product_selectable","push_ids/id","sale_selectable","sequence","supplied_wh_id/id","supplier_wh_id/id","warehouse_ids/id","warehouse_selectable"
+"__setup__.mts_stock_location_route_mto_rhabillage_sav_dlc_pol","True","","base.main_company","MTO: Rhabillage SAV DLC + Pol.","False","False","","True","0","","","","False"
+"__setup__.mts_stock_location_route_mto_dur","True","","base.main_company","MTO: Dur.","False","True","","False","0","","","","False"
+"__setup__.mts_stock_location_route_mto_dur_pol","True","","base.main_company","MTO: Dur. + Pol.","False","True","","False","0","","","","False"
+"__setup__.mts_stock_location_route_mto_dur_pol_dlc","True","","base.main_company","MTO: Dur. + Pol. + DLC","False","True","","False","0","","","","False"
+"__setup__.mts_stock_location_route_mto_rhabillage_dlc_pol","True","","base.main_company","MTO: Rhabillage DLC + Pol.","False","False","","True","0","","","","False"
