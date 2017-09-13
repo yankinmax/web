@@ -8,6 +8,13 @@ from ...common import load_csv
 
 
 @anthem.log
+def load_ir_sequence(ctx):
+    """ Import ir.sequence from csv """
+    model = ctx.env['ir.sequence'].with_context({'tracking_disable': 1})  # noqa
+    load_csv(ctx, 'data/install/generated/ir.sequence.csv', model)
+
+
+@anthem.log
 def stock_config_settings(ctx):
     """ Setup stock.config.settings """
     model = ctx.env['stock.config.settings'].with_context(
@@ -88,7 +95,7 @@ def add_xmlid_to_existing_stock_location(ctx):
 def load_stock_location(ctx):
     """ Import stock.location from csv """
     model = ctx.env['stock.location'].with_context({'tracking_disable': 1})  # noqa
-    header_exclude = ['location_id/id']
+    header_exclude = ['location_id/id', ]
     load_csv(ctx, 'data/install/generated/stock.location.csv', model, header_exclude=header_exclude)  # noqa
     if header_exclude:
         load_csv(ctx, 'data/install/generated/stock.location.csv', model, header=['id', ] + header_exclude)  # noqa
@@ -97,7 +104,6 @@ def load_stock_location(ctx):
 @anthem.log
 def add_xmlid_to_existing_ir_sequence(ctx):
     # this works if `base_dj` is installed
-
     model = ctx.env['ir.sequence'].with_context(
         dj_xmlid_fields_map={'ir.sequence': []},
         dj_multicompany=True,
@@ -110,7 +116,7 @@ def add_xmlid_to_existing_ir_sequence(ctx):
 def load_stock_picking_type(ctx):
     """ Import stock.picking.type from csv """
     model = ctx.env['stock.picking.type'].with_context({'tracking_disable': 1})  # noqa
-    header_exclude = ['return_picking_type_id/id']
+    header_exclude = ['return_picking_type_id/id', ]
     load_csv(ctx, 'data/install/generated/stock.picking.type.csv', model, header_exclude=header_exclude)  # noqa
     if header_exclude:
         load_csv(ctx, 'data/install/generated/stock.picking.type.csv', model, header=['id', ] + header_exclude)  # noqa
@@ -124,20 +130,30 @@ def load_stock_location_route(ctx):
 
 
 @anthem.log
+def load_res_partner(ctx):
+    """ Import res.partner from csv """
+    model = ctx.env['res.partner'].with_context({'tracking_disable': 1})  # noqa
+    header_exclude = ['parent_id/id']
+    load_csv(ctx, 'data/install/generated/res.partner.csv', model, header_exclude=header_exclude)  # noqa
+    if header_exclude:
+        load_csv(ctx, 'data/install/generated/res.partner.csv', model, header=['id', ] + header_exclude)  # noqa
+
+
+@anthem.log
 def load_procurement_rule(ctx):
     """ Import procurement.rule from csv """
-    model = ctx.env['procurement.rule'].with_context({'tracking_disable': 1})  # noqa
-    header_exclude = ['partner_address_id/id']
-    load_csv(ctx, 'data/install/generated/procurement.rule.csv', model,
-             header_exclude=header_exclude)
+    model = ctx.env['procurement.rule'].with_context({'tracking_disable':1})  # noqa
+    load_csv(ctx, 'data/install/generated/procurement.rule.csv', model)
 
 
 @anthem.log
 def main(ctx):
+    load_ir_sequence(ctx)
     stock_config_settings(ctx)
     add_xmlid_to_existing_stock_location(ctx)
     load_stock_location(ctx)
     add_xmlid_to_existing_ir_sequence(ctx)
     load_stock_picking_type(ctx)
     load_stock_location_route(ctx)
+    load_res_partner(ctx)
     load_procurement_rule(ctx)
