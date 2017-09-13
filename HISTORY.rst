@@ -28,6 +28,20 @@ latest (unreleased)
 **Documentation**
 
 
+10.0.10 (2017-09-13)
+++++++++++++++++++++
+
+**Features and Improvements**
+
+* Update Routes and procurement rules BSMTS-150
+
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
 10.0.9 (2017-09-07)
 +++++++++++++++++++
 
@@ -36,8 +50,7 @@ latest (unreleased)
 * SO line preserve substances on create BSMTS-140
 
   and handle the case where user can add new substances manually.
-* Update Routes and procurement rules BSMTS-150
-
+* [imp] better html formatting for project report BSMTS-103
 
 10.0.8 (2017-09-07)
 +++++++++++++++++++
