@@ -63,3 +63,7 @@
 	path = odoo/external-src/bank-statement-reconcile
 	url = https://github.com/OCA/bank-statement-reconcile.git
 	branch = 10.0
+[submodule "odoo/external-src/sale-workflow"]
+	path = odoo/external-src/sale-workflow
+	url = git@github.com:camptocamp/sale-workflow.git
+	branch = merge-branch-1995-master
