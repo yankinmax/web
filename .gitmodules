@@ -65,5 +65,5 @@
 	branch = 10.0
 [submodule "odoo/external-src/sale-workflow"]
 	path = odoo/external-src/sale-workflow
-	url = git@github.com:OCA/sale-workflow.git
-	branch = 10.0
+	url = git@github.com:camptocamp/sale-workflow.git
+	branch = merge-branch-1995-master
