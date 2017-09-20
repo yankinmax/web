@@ -21,10 +21,14 @@ class ProductSubstanceMesure(models.Model):
         required=True,
     )
     measure = fields.Float(
-        'Measure',
+        string='Measure',
+        help='The value 0 is considered as NULL',
     )
-    conformity = fields.Boolean(
+    conformity = fields.Selection(
         string='Conformity',
+        selection=[('conform', 'Conform'),
+                   ('warning', 'Warning'),
+                   ('not_conform', 'Not conform')],
         compute='_compute_conformity',
         readonly=True,
     )
@@ -75,17 +79,56 @@ class ProductSubstanceMesure(models.Model):
         related='product_substance_id.comments',
         readonly=True,
     )
+    bdl = fields.Boolean(
+        string='DBL',
+        related='task_id.bdl',
+        readonly=True
+    )
 
-    @api.depends('legal_limit_min', 'legal_limit_max', 'measure')
+    @staticmethod
+    def less(value1, value2):
+        return float_compare(value1, value2, precision_digits=2) < 0
+
+    def measure_in_limits(self):
+        self.ensure_one()
+        return all((self.less(self.legal_limit_min, self.measure),
+                    self.less(self.measure, self.legal_limit_max)))
+
+    def has_limits(self, kind):
+        self.ensure_one()
+        if kind == 'all':
+            return all((self.has_limit_min, self.has_limit_max))
+        elif kind == 'any':
+            return any((self.has_limit_min, self.has_limit_max))
+        else:
+            raise TypeError("Wrong kind for a limits check")
+
+    def _compute_conformity_conform(self):
+        return (self.bdl
+                or (not self.has_limits('all')
+                    and self.measure_in_limits())
+                or (self.has_limits('any')
+                    and self.measure_in_limits()))
+
+    def _compute_conformity_warning(self):
+        return (not self.has_limits('any')
+                and not self.measure_in_limits())
+
+    def _compute_conformity_not_conform(self):
+        return (self.has_limits('any')
+                and not self.measure_in_limits())
+
+    @api.depends('legal_limit_min',
+                 'has_limit_min',
+                 'legal_limit_max',
+                 'has_limit_max',
+                 'measure',
+                 'bdl')
     def _compute_conformity(self):
         for record in self:
-            conformity = True
-            if (record.has_limit_max and
-                    (float_compare(record.measure, record.legal_limit_max,
-                                   precision_digits=2)) > 0):
-                conformity = False
-            if (record.has_limit_min and
-                    (float_compare(record.legal_limit_min, record.measure,
-                                   precision_digits=2)) > 0):
-                conformity = False
-            record.conformity = conformity
+            if record._compute_conformity_conform():
+                record.conformity = 'conform'
+            elif record._compute_conformity_warning():
+                record.conformity = 'warning'
+            elif record._compute_conformity_not_conform():
+                record.conformity = 'not_conform'

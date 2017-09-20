@@ -44,3 +44,7 @@ class ProjectTask(models.Model):
         'product.extraction.type',
         string='Extraction Type',
     )
+    bdl = fields.Boolean(
+        string='BDL',
+        help='When selected, all measures are considered Conform'
+    )

@@ -146,3 +146,5 @@ migration:
           - hr_expense
           #### OCA/sale-workflow
           - sale_project_fixed_price_task_completed_invoicing
+          #### Specific
+          - mtsmte_sale
