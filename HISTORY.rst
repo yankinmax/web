@@ -31,6 +31,7 @@ latest (unreleased)
   and change product.substance.measure
 * Added help pop ups to fields in product.substance.measure
   and product.substance according to BSMTS-143
+* Made purchase.order origin field(Source document) always visible BSMTS-147
 
 **Bugfixes**
 
