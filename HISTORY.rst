@@ -32,6 +32,8 @@ latest (unreleased)
 * Added help pop ups to fields in product.substance.measure
   and product.substance according to BSMTS-143
 * Made purchase.order origin field(Source document) always visible BSMTS-147
+* Fields were hidden from project.task and product.template BSMTS-148
+* Security rights updated for product.substance.measure BSMTS-151
 
 **Bugfixes**
 
