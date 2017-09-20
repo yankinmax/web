@@ -17,3 +17,13 @@
     # adds sale_project_fixed_price_task_completed_invoicing module
     - oca refs/pull/485/head
   target: *default_target
+# adding sale-workflow to the project
+./external-src/sale-workflow:
+  remotes:
+    oca: git@github.com:OCA/sale-workflow.git
+    camptocamp: git@github.com:camptocamp/sale-workflow.git
+  merges:
+    - oca 10.0
+    # adds sale_project_fixed_price_task_completed_invoicing module
+    - oca refs/pull/485/head
+  target: *default_target

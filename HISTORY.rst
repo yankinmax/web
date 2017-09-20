@@ -21,6 +21,10 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Install hr_expense BSMTS-153
+* Install sale_project_fixed_price_task_completed_invoicing
+  through pending-merges BSMTS-153
+
 **Bugfixes**
 
 **Build**
