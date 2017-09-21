@@ -24,6 +24,13 @@ latest (unreleased)
 * Install hr_expense BSMTS-153
 * Install sale_project_fixed_price_task_completed_invoicing
   through pending-merges BSMTS-153
+* Renamed fields in product.substance according to BSMTS-143
+* Added field BDL to project_task according to BSMTS-143
+* Reformed conformity calculation according to BSMTS-143
+* Changed project.task view in order to be able to add
+  and change product.substance.measure
+* Added help pop ups to fields in product.substance.measure
+  and product.substance according to BSMTS-143
 
 **Bugfixes**
 

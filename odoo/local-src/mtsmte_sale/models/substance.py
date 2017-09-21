@@ -16,19 +16,21 @@ class ProductSubstance(models.Model):
         translate=True,
     )
     legal_limit_min = fields.Float(
-        string='Legal limit min value',
+        string='Limit min value',
+        help='The value 0 is considered as NULL',
     )
     legal_limit_max = fields.Float(
-        string='Legal limit max value',
+        string='Limit max value',
+        help='The value 0 is considered as NULL',
     )
     comments = fields.Char(
         string='Comments',
     )
     has_limit_min = fields.Boolean(
-        string='Has limit min',
+        string='Has legal limit min',
     )
     has_limit_max = fields.Boolean(
-        string='Has limit max',
+        string='Has legal limit max',
     )
     product_uom_id = fields.Many2one(
         'product.uom',
