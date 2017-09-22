@@ -1,5 +1,5 @@
 id,name,user_id/id,member_ids/id,use_invoices,use_quotations,company_id/id
-__setup__.crm_team_cara,Analyse caractérisations,__setup__.res_users_pgirardin,,TRUE,TRUE,__setup__.company_mte
-__setup__.crm_team_chimie,Analyses chimiques,__setup__.res_users_pgirardin,"__setup__.res_users_pgirardin,__setup__.res_users_chimistes",TRUE,TRUE,__setup__.company_mte
-__setup__.crm_team_envi,Tests environnement,__setup__.res_users_pgirardin,__setup__.res_users_pgirardin,TRUE,TRUE,__setup__.company_mte
-__setup__.crm_team_meca,Tests mécaniques,__setup__.res_users_pgirardin,,TRUE,TRUE,__setup__.company_mte
+__setup__.crm_team_cara,Analyse caractérisations,__setup__.mt_res_users_philippe_girardin,,TRUE,TRUE,__setup__.company_mte
+__setup__.crm_team_chimie,Analyses chimiques,__setup__.mt_res_users_philippe_girardin,"__setup__.mt_res_users_philippe_girardin,__setup__.mt_res_users_chimistes",TRUE,TRUE,__setup__.company_mte
+__setup__.crm_team_envi,Tests environnement,__setup__.mt_res_users_philippe_girardin,__setup__.mt_res_users_philippe_girardin,TRUE,TRUE,__setup__.company_mte
+__setup__.crm_team_meca,Tests mécaniques,__setup__.mt_res_users_philippe_girardin,,TRUE,TRUE,__setup__.company_mte

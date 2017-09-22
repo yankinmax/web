@@ -34,6 +34,8 @@ latest (unreleased)
 * Made purchase.order origin field(Source document) always visible BSMTS-147
 * Fields were hidden from project.task and product.template BSMTS-148
 * Security rights updated for product.substance.measure BSMTS-151
+* Sale order sequences updated according to generated data BSMTS-145
+* Users and access data updated according to generated data BSMTS-146
 
 **Bugfixes**
 
