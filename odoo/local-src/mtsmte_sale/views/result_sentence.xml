@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="task_results_sentences_form">
+        <field name="name">task.results.sentences.form</field>
+        <field name="model">task.results.sentences</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="Main">
+                        <field name="sentence"/>
+                        <field name="sentence_type"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="task_results_sentences_tree">
+        <field name="name">task.results.sentences.tree</field>
+        <field name="model">task.results.sentences</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sentence"/>
+                <field name="sentence_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window"
+            id="task_results_sentences_act_window">
+        <field name="name">Results sentences</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">task.results.sentences</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+    </record>
+
+</odoo>

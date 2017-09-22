@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-31 07:58+0000\n"
-"PO-Revision-Date: 2017-05-31 07:58+0000\n"
+"POT-Creation-Date: 2017-09-27 08:19+0000\n"
+"PO-Revision-Date: 2017-09-27 08:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,13 +16,52 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: mtsmte_sale
-#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_is_chemistry
-msgid "Chemical analysis"
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_applied_dose
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_applied_dose
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_applied_dose
+msgid "Applied Dose"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_bdl
+msgid "BDL"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_sub_cas_number
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_sub_cas_number
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_sub_cas_number
+msgid "CAS Number"
+msgstr ""
+
+#. module: mtsmte_sale
+#: selection:product.template,chemistry:0
+msgid "Chemical Analysis"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_chemistry
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_chemistry
+#: model:ir.model.fields,field_description:mtsmte_sale.field_sale_order_line_chemistry
+msgid "Chemistry"
 msgstr ""
 
 #. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_comments
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_comments
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_comments
 msgid "Comments"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_sale_order_commercial_partner_id
+msgid "Commercial Entity"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_category_company_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_company_id
+msgid "Company"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -36,20 +75,39 @@ msgid "Conclusions"
 msgstr ""
 
 #. module: mtsmte_sale
+#: selection:product.substance.measure,conformity:0
+msgid "Conform"
+msgstr ""
+
+#. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_conformity
 msgid "Conformity"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_create_uid
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_create_uid
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_create_uid
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_create_uid
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_create_uid
+#: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_create_date
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_create_date
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_create_date
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_create_date
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_create_date
+#: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_create_date
 msgid "Created on"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_customer_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_customer_id
+msgid "Customer"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -58,54 +116,200 @@ msgid "Customer Reference"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_bdl
+msgid "DBL"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_search_form_specific
+msgid "Deadline"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_detection_limit
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_detection_limit
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_detection_limit
+msgid "Detection Limit"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_display_name
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_display_name
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_display_name
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_display_name
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_display_name
+#: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: mtsmte_sale
-#: model:ir.model.fields,field_description:mtsmte_sale.field_sale_order_line_is_chemistry
-msgid "Field Label"
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_duration
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_duration
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_duration
+msgid "Duration"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_maintenance_equipment
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_equipment_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_equipment_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_equipment_id
+msgid "Equipment"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_product_extraction_type_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_product_extraction_type_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_product_extraction_type_id
+#: model:ir.ui.menu,name:mtsmte_sale.settings_product_extraction_type_menu
+msgid "Extraction Type"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.actions.act_window,name:mtsmte_sale.product_extraction_type_action_tree
+msgid "Extraction Types"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_has_limit_max
+msgid "Has legal limit max"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_has_limit_min
+msgid "Has legal limit min"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_has_limit_max
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_has_limit_max
+msgid "Has limit max"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_has_limit_min
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_has_limit_min
+msgid "Has limit min"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_id
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_id
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_id
 msgid "ID"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type___last_update
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_method___last_update
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance___last_update
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line___last_update
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure___last_update
+#: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences___last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_write_uid
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_write_uid
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_write_uid
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_write_uid
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_write_uid
+#: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_write_date
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_write_date
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_write_date
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_write_date
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_write_date
+#: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: mtsmte_sale
-#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_legal_limit
-#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_legal_limit
-msgid "Legal limit"
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_legal_limit_max
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_legal_limit_max
+msgid "Legal limit max value"
+msgstr ""
+
+#. module: mtsmte_sale
+#: code:addons/mtsmte_sale/models/substance.py:75
+#: code:addons/odoo/local-src/mtsmte_sale/models/substance.py:75
+#, python-format
+msgid "Legal limit min should be smaller than Legal limit max"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_legal_limit_min
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_legal_limit_min
+msgid "Legal limit min value"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_legal_limit_max
+msgid "Limit max value"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_legal_limit_min
+msgid "Limit min value"
 msgstr ""
 
 #. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_measure
+#: model:ir.ui.view,arch_db:mtsmte_sale.product_substance_measure_view_form
+#: model:ir.ui.view,arch_db:mtsmte_sale.product_substance_measure_view_tree
 msgid "Measure"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_product_method_id
+msgid "Method"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_product_method_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_product_method_id
+#: model:ir.ui.menu,name:mtsmte_sale.settings_product_method_menu
+msgid "Methods"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_name
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_name
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_name
 msgid "Name"
+msgstr ""
+
+#. module: mtsmte_sale
+#: selection:product.substance.measure,conformity:0
+msgid "Not conform"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_nb_shocks
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_nb_shocks
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_nb_shocks
+msgid "Number of Shocks"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_maintenance_equipment_product_ids
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_product_ids
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_product_ids
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_product_id
+msgid "Product"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_product_category
+msgid "Product Category"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -114,7 +318,6 @@ msgid "Product Template"
 msgstr ""
 
 #. module: mtsmte_sale
-#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_product_ids
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_sale_order_line_ids
 msgid "Products"
 msgstr ""
@@ -130,6 +333,13 @@ msgid "Project task ids"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_quantification_limit
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_quantification_limit
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_quantification_limit
+msgid "Quantification Limit"
+msgstr ""
+
+#. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_reception_date
 msgid "Reception Date"
 msgstr ""
@@ -142,6 +352,29 @@ msgstr ""
 #. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_resp_two_id
 msgid "Responsible 2"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_results
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_results
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_results
+msgid "Results"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.ui.view,arch_db:mtsmte_sale.product_template_form_view_specific
+#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_form2_specific
+msgid "Results & Observations"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.ui.menu,name:mtsmte_sale.settings_product_result_sentence_menu
+msgid "Results Sentences"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.actions.act_window,name:mtsmte_sale.task_results_sentences_act_window
+msgid "Results sentences"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -171,11 +404,23 @@ msgid "Send Samples back"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_sentence_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_sentence
+msgid "Sentence"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_sentence_type
+msgid "Sentence type"
+msgstr ""
+
+#. module: mtsmte_sale
 #: model:ir.ui.view,arch_db:mtsmte_sale.sale_view_inherit_specific
 msgid "Setup default terms and conditions in your company settings."
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_product_substance_id
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_product_substance_id
 #: model:ir.ui.view,arch_db:mtsmte_sale.product_substance_view_form
 #: model:ir.ui.view,arch_db:mtsmte_sale.product_substance_view_tree
@@ -188,14 +433,23 @@ msgid "Substance Measure"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_product_uom_id
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_product_uom_id
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_product_uom_id
 msgid "Substance UOM"
 msgstr ""
 
 #. module: mtsmte_sale
-#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_product_substance_ids
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_product_substance_line_ids
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_product_substance_line_ids
+msgid "Substance lines"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.actions.act_window,name:mtsmte_sale.product_method_action_tree
+#: model:ir.actions.act_window,name:mtsmte_sale.product_substance_action_tree
 #: model:ir.model.fields,field_description:mtsmte_sale.field_sale_order_line_product_substance_ids
+#: model:ir.ui.menu,name:mtsmte_sale.settings_substance_menu
 msgid "Substances"
 msgstr ""
 
@@ -207,8 +461,97 @@ msgstr ""
 
 #. module: mtsmte_sale
 #: model:ir.model,name:mtsmte_sale.model_project_task
+#: model:ir.model.fields,field_description:mtsmte_sale.field_maintenance_equipment_task_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_task_ids
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_task_id
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_task_id
 msgid "Task"
+msgstr ""
+
+#. module: mtsmte_sale
+#: selection:product.template,chemistry:0
+msgid "Test Environment"
+msgstr ""
+
+#. module: mtsmte_sale
+#: selection:product.template,chemistry:0
+msgid "Test Mécanique"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_test_parameters
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_test_parameters
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_test_parameters
+#: model:ir.ui.view,arch_db:mtsmte_sale.product_template_form_view_specific
+#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_form2_specific
+msgid "Test Parameters"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_tested_sample
+#: model:ir.model.fields,field_description:mtsmte_sale.field_sale_order_line_tested_sample
+msgid "Tested Samples"
+msgstr ""
+
+#. module: mtsmte_sale
+#: code:addons/mtsmte_sale/models/maintenance_equipment.py:25
+#: code:addons/mtsmte_sale/models/product_extraction_type.py:25
+#: code:addons/mtsmte_sale/models/product_method.py:25
+#: code:addons/odoo/local-src/mtsmte_sale/models/maintenance_equipment.py:25
+#: code:addons/odoo/local-src/mtsmte_sale/models/product_extraction_type.py:25
+#: code:addons/odoo/local-src/mtsmte_sale/models/product_method.py:25
+#: sql_constraint:maintenance.equipment:0
+#: sql_constraint:product.extraction.type:0
+#: sql_constraint:product.method:0
+#, python-format
+msgid "The name must be unique"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_legal_limit_max
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_legal_limit_min
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_line_legal_limit_max
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_line_legal_limit_min
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_measure_legal_limit_max
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_measure_legal_limit_min
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_measure_measure
+msgid "The value 0 is considered as NULL"
+msgstr ""
+
+#. module: mtsmte_sale
+#: selection:product.substance.measure,conformity:0
+msgid "Warning"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_measure_bdl
+#: model:ir.model.fields,help:mtsmte_sale.field_project_task_bdl
+msgid "When selected, all measures are considered Conform"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,help:mtsmte_sale.field_project_task_sentence_id
+msgid "Will fill the results field with predefined sentence"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_account_config_settings
+msgid "account.config.settings"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_product_extraction_type
+msgid "product.extraction.type"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_product_method
+msgid "product.method"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_product_results_sentences
+msgid "product.results.sentences"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -217,7 +560,17 @@ msgid "product.substance"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_product_substance_line
+msgid "product.substance.line"
+msgstr ""
+
+#. module: mtsmte_sale
 #: model:ir.model,name:mtsmte_sale.model_product_substance_measure
 msgid "product.substance.measure"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_task_results_sentences
+msgid "task.results.sentences"
 msgstr ""
 
