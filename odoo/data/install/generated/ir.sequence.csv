@@ -1,5 +1,3 @@
 "id","active","code","company_id/id","date_range_ids/id","implementation","name","number_increment","number_next","padding","prefix","suffix","use_date_range"
-"__setup__.mts_ir_sequence_mts_in_mts_materiaux_technologies_surfaces_sasequence_in","True","","base.main_company","","standard","MTS Matériaux Technologies Surfaces SASequence in","1","1","5","MTS/IN/","","False"
-"__setup__.mts_ir_sequence_mts_int_mts_materiaux_technologies_surfaces_sasequence_internal","True","","base.main_company","","standard","MTS Matériaux Technologies Surfaces SASequence internal","1","1","5","MTS/INT/","","False"
-"__setup__.mts_ir_sequence_mts_out_mts_materiaux_technologies_surfaces_sasequence_out","True","","base.main_company","","standard","MTS Matériaux Technologies Surfaces SASequence out","1","1","5","MTS/OUT/","","False"
-"mrp.sequence_mrp_prod","True","mrp.production","base.main_company","","standard","Production order","1","1","5","MO/","","False"
+"sale.seq_sale_order","True","sale.order",__setup__.company_mte,"","standard","Sales Order","1","1","4","MT-%(y)s-","","False"
+"__setup__.mts_ir_sequence_mts_y_s_sales_order","True","sale.order","base.main_company","","standard","Sales Order","1","1","4","MTS-%(y)s-","","False"
