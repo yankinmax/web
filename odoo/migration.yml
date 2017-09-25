@@ -140,6 +140,12 @@ migration:
         post:
           - anthem songs.install.generated.stock::main
     - version: 10.0.11
+      operations:
+        post:
+          - anthem songs.update.update_10_0_11::main
+          - anthem songs.install.users::main
+          - anthem songs.install.mts.crm::main
+          - anthem songs.install.mte.crm::main
       addons:
         upgrade:
           #### base
@@ -148,3 +154,4 @@ migration:
           - sale_project_fixed_price_task_completed_invoicing
           #### Specific
           - mtsmte_sale
+          - mtsmte_purchase

@@ -24,7 +24,9 @@ class TestStockPicking(common.TransactionCase):
         self.partner = self.env.ref('base.res_partner_2')
         self.product1 = self.env.ref('product.product_product_16')
         self.product2 = self.env.ref('product.product_product_17')
-        packaging_tpl = self.env['product.template'].create({'name': 'Pallet'})
+        packaging_tpl = self.env.ref(
+            'product.product_product_4_product_template'
+        )
         self.packaging = self.env['product.packaging'].create({
             'name': 'Pallet',
             'product_tmpl_id': packaging_tpl.id,

@@ -1,6 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_product_substance_employee,product.substance,mtsmte_sale.model_product_substance,sales_team.group_sale_salesman,1,1,1,1
 access_product_substance_measure_employee,product.substance.measure,mtsmte_sale.model_product_substance_measure,sales_team.group_sale_salesman,1,1,0,0
+access_product_substance_measure_salesman_all_leads,product.substance.measure,mtsmte_sale.model_product_substance_measure,sales_team.group_sale_salesman_all_leads,1,1,1,0
+access_product_substance_measure_project_manager,product.substance.measure,mtsmte_sale.model_product_substance_measure,project.group_project_manager,1,1,1,0
 access_product_substance_measure_project_user,product.substance.measure,mtsmte_sale.model_product_substance_measure,project.group_project_user,1,1,0,0
 access_product_substance_line_employee,product.substance.line,mtsmte_sale.model_product_substance_line,sales_team.group_sale_salesman,1,1,1,1
 access_product_method_employee,product.method,mtsmte_sale.model_product_method,sales_team.group_sale_salesman,1,1,1,1

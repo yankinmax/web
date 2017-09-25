@@ -38,9 +38,6 @@
         <page string="Test Parameters">
           <group>
               <field name="test_parameters"/>
-              <field name="applied_dose"/>
-              <field name="duration"/>
-              <field name="nb_shocks"/>
           </group>
         </page>
         <page string="Results &amp; Observations">
