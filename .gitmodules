@@ -1,7 +1,7 @@
 [submodule "odoo/external-src/server-tools"]
 	path = odoo/external-src/server-tools
-	url = git@github.com:OCA/server-tools.git
-	branch = 10.0
+	url = git@github.com:camptocamp/server-tools.git
+	branch = merge-branch-1995-master
 [submodule "odoo/src"]
 	path = odoo/src
 	url = git@github.com:OCA/OCB.git
@@ -31,8 +31,8 @@
 	branch = 10.0
 [submodule "odoo/external-src/reporting-engine"]
 	path = odoo/external-src/reporting-engine
-	url = git@github.com:OCA/reporting-engine.git
-	branch = 10.0
+	url = git@github.com:camptocamp/reporting-engine.git
+	branch = merge-branch-1995-master
 [submodule "odoo/external-src/partner-contact"]
 	path = odoo/external-src/partner-contact
 	url = git@github.com:OCA/partner-contact.git
@@ -67,3 +67,7 @@
 	path = odoo/external-src/sale-workflow
 	url = git@github.com:camptocamp/sale-workflow.git
 	branch = merge-branch-1995-master
+[submodule "odoo/external-src/account-payment"]
+	path = odoo/external-src/account-payment
+	url = git@github.com:OCA/account-payment
+	branch = 10.0
