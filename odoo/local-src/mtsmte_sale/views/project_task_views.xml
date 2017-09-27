@@ -41,7 +41,10 @@
           </group>
         </page>
         <page string="Results &amp; Observations">
-          <group>
+          <group name="sentence">
+              <field name="sentence_id"/>
+          </group>
+          <group name="results">
               <field name="results" nolabel="1"/>
           </group>
         </page>

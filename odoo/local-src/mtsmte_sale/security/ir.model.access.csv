@@ -7,3 +7,5 @@ access_product_substance_measure_project_user,product.substance.measure,mtsmte_s
 access_product_substance_line_employee,product.substance.line,mtsmte_sale.model_product_substance_line,sales_team.group_sale_salesman,1,1,1,1
 access_product_method_employee,product.method,mtsmte_sale.model_product_method,sales_team.group_sale_salesman,1,1,1,1
 access_product_extraction_type_employee,product.extraction.type,mtsmte_sale.model_product_extraction_type,sales_team.group_sale_salesman,1,1,1,1
+access_task_results_sentences_sale_manager,task.results.sentences,mtsmte_sale.model_task_results_sentences,sales_team.group_sale_manager,1,1,1,1
+access_task_results_sentences_project_user,task.results.sentences,mtsmte_sale.model_task_results_sentences,project.group_project_user,1,0,0,0

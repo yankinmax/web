@@ -26,6 +26,7 @@
         'views/product_method.xml',
         'views/product_extraction_type.xml',
         'views/substance_measure.xml',
+        'views/result_sentence.xml',
         'views/menu_items.xml',
         'security/ir.model.access.csv',
     ],

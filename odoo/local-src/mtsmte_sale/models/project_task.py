@@ -2,7 +2,7 @@
 # Copyright 2017 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class ProjectTask(models.Model):
@@ -48,3 +48,19 @@ class ProjectTask(models.Model):
         string='BDL',
         help='When selected, all measures are considered Conform'
     )
+    sentence_id = fields.Many2one(
+        'task.results.sentences',
+        string="Sentence",
+        help="Will fill the results field with "
+             "predefined sentence"
+    )
+
+    @api.onchange("sentence_id")
+    def _onchange_sentence_id(self):
+        # There is a bug with Html fields. If you delete its content
+        # via ctrl+a backspace or selecting all the data and backspace
+        # it won't actually trigger html field onchange and will return
+        # its old value. Doesn't happen when you delete content symbol-
+        # by-symbol via backspacing. So beware not to explode on that
+        for record in self:
+            record.results = record.sentence_id.sentence

@@ -36,6 +36,7 @@ latest (unreleased)
 * Security rights updated for product.substance.measure BSMTS-151
 * Sale order sequences updated according to generated data BSMTS-145
 * Users and access data updated according to generated data BSMTS-146
+* Add task.results.sentences model and field in project.task BSMTS-149
 
 **Bugfixes**
 
