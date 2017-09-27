@@ -152,6 +152,11 @@ migration:
           - hr_expense
           #### OCA/sale-workflow
           - sale_project_fixed_price_task_completed_invoicing
+          #### OCA/account-payment
+          - account_due_list
+          #### OCA/reporting-engine
+          - bi_sql_editor
           #### Specific
           - mtsmte_sale
           - mtsmte_purchase
+          - mtsmte_accounting

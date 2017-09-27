@@ -37,6 +37,9 @@ latest (unreleased)
 * Sale order sequences updated according to generated data BSMTS-145
 * Users and access data updated according to generated data BSMTS-146
 * Add task.results.sentences model and field in project.task BSMTS-149
+* Add account_due_list module BSMTS-152
+* Add bi_sql_editor and its dependancy module BSMTS-152
+* Add Management dashboard in dashboards BSMTS-152
 
 **Bugfixes**
 

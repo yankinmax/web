@@ -17,3 +17,23 @@
     # adds sale_project_fixed_price_task_completed_invoicing module
     - oca refs/pull/485/head
   target: *default_target
+# adding reporting-engine PR to the project
+./external-src/reporting-engine:
+  remotes:
+    oca: git@github.com:OCA/reporting-engine.git
+    camptocamp: git@github.com:camptocamp/reporting-engine.git
+  merges:
+    - oca 10.0
+    # adds sale_project_fixed_price_task_completed_invoicing module
+    - oca refs/pull/162/head
+  target: *default_target
+# adding server-tools PR to the project
+./external-src/server-tools:
+  remotes:
+    oca: git@github.com:OCA/server-tools.git
+    camptocamp: git@github.com:camptocamp/server-tools.git
+  merges:
+    - oca 10.0
+    # adds [MIG] sql_request_abstract v10 module
+    - oca refs/pull/961/head
+  target: *default_target
