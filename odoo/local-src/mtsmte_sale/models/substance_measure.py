@@ -80,9 +80,8 @@ class ProductSubstanceMesure(models.Model):
         readonly=True,
     )
     bdl = fields.Boolean(
-        string='DBL',
-        related='task_id.bdl',
-        readonly=True
+        string='BDL',
+        help='When selected, measure is considered Conform'
     )
 
     @staticmethod

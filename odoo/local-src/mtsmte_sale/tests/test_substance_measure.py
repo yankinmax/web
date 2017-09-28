@@ -31,8 +31,10 @@ class TestProductSubstanceMeasure(TransactionCase):
             'legal_limit_min': legal_limit_min,
             'legal_limit_max': legal_limit_max,
         })
-        self.task.bdl = bdl
-        self.measure.measure = measure
+        self.measure.write({
+            'measure': measure,
+            'bdl': bdl
+        })
         self.measure._compute_conformity()
         return self.measure.conformity
 
