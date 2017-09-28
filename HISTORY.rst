@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.0.11 (2017-09-28)
+++++++++++++++++++++
+
+**Features and Improvements**
+
 * Install hr_expense BSMTS-153
 * Install sale_project_fixed_price_task_completed_invoicing
   through pending-merges BSMTS-153
