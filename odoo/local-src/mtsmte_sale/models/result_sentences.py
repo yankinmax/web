@@ -9,7 +9,7 @@ class ResultsSentences(models.Model):
     _name = "task.results.sentences"
     _rec_name = "sentence"
 
-    sentence = fields.Char(
+    sentence = fields.Html(
         string="Sentence"
     )
     sentence_type = fields.Char(
