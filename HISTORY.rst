@@ -23,6 +23,8 @@ latest (unreleased)
 
 * Changed task.results.sentences list, tree views
   and _rec_name BSMTS-166
+* Add generated songs for sale configuration BSMTS-162
+* Update OCA/bank-payment BSMTS-165
 
 **Bugfixes**
 
