@@ -7,7 +7,7 @@ from odoo import models, fields
 
 class ResultsSentences(models.Model):
     _name = "task.results.sentences"
-    _rec_name = "sentence"
+    _rec_name = "sentence_type"
 
     sentence = fields.Html(
         string="Sentence"

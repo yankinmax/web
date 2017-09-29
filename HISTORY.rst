@@ -21,6 +21,9 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Changed task.results.sentences list, tree views
+  and _rec_name BSMTS-166
+
 **Bugfixes**
 
 **Build**

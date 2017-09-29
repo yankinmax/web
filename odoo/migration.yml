@@ -160,3 +160,8 @@ migration:
           - mtsmte_sale
           - mtsmte_purchase
           - mtsmte_accounting
+    - version: 10.0.12
+      addons:
+        upgrade:
+          #### Specific
+          - mtsmte_sale
