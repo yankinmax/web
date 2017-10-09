@@ -160,3 +160,11 @@ migration:
           - mtsmte_sale
           - mtsmte_purchase
           - mtsmte_accounting
+    - version: 10.0.12
+      operations:
+        pre:
+          - anthem songs.install.generated.sales::main
+      addons:
+        upgrade:
+          #### Specific
+          - mtsmte_sale

@@ -8,8 +8,8 @@
             <form>
                 <sheet>
                     <group name="Main">
-                        <field name="sentence"/>
                         <field name="sentence_type"/>
+                        <field name="sentence"/>
                     </group>
                 </sheet>
             </form>
@@ -21,8 +21,8 @@
         <field name="model">task.results.sentences</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="sentence"/>
                 <field name="sentence_type"/>
+                <field name="sentence"/>
             </tree>
         </field>
     </record>
