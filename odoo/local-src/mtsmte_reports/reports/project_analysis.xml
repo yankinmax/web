@@ -17,15 +17,13 @@
                 <span t-field="product.description_sale" />
               </div>
             </div>
-            <div class="section test_samples">
+            <div t-if="task.tested_sample" class="section test_samples">
               <h2 class="heading">Tested samples</h2>
-              <span t-raw="forced_lang"/>
-              <span t-raw="doc.partner_id.lang"/>
               <div class="content">
                 <t t-raw="task.tested_sample" />
               </div>
             </div>
-            <div class="section test_params">
+            <div t-if="task._test_parameters_check()" class="section test_params">
               <h2 class="heading">Test / Parameters</h2>
               <div class="content">
                 <t t-raw="task.test_parameters" />
@@ -39,6 +37,20 @@
             </t>
           </div>
         </t>
+        <!--Legal reference block-->
+        <div class="legal_reference">
+          <h1>Legal References</h1>
+          <t t-foreach="tasks" t-as="task">
+            <div t-attf-class="task_wrapper_legal">
+              <div class="section task_header">
+                <h2 t-field="task.name" />
+              </div>
+              <div class="content">
+                <span t-field="task.legal_reference" />
+              </div>
+            </div>
+          </t>
+        </div>
       </div>
     </t>
   </template>
@@ -68,15 +80,15 @@
       <div class="content">
         <div class="row result-state">
           <div class="col-xs-6">
-            <span>Task name</span>
             <p>
               <span t-field="task.name"/><br/>
-              <em>&#91;<span t-field="task.product_extraction_type_id"/>&#93;</em>
+              <em t-if="task.product_method_id">&#91;<span t-field="task.product_method_id"/>&#93; </em>
+              <em t-if="task.equipment_id">&#91;<span t-field="task.equipment_id"/>&#93;</em>
             </p>
           </div>
           <div class="col-xs-6">
-            <span>Task state</span>
-            <p t-field="task.date_deadline"></p>
+            <span>Status: <t t-if="task.stage_id.final_stage">Definitive</t><t t-else="">Provisory</t></span><br/>
+            <span class="pull-right">Analysis date: <span t-field="task.date_deadline"/></span>
           </div>
         </div>
       </div>
@@ -85,7 +97,7 @@
         <table class="substances">
           <thead>
             <tr>
-              <th class="substance">Substance Measure</th>
+              <th class="substance">Analyzed substance</th>
               <th class="legal_limit">Legal limit</th>
               <th class="detect_limit">Detection limit</th>
               <th class="quantif_limit">Quantification limit</th>
@@ -127,6 +139,7 @@
             </t>
           </tbody>
         </table>
+        <br/>
       </div>
       <div class="content">
         <t t-raw="task.results" />

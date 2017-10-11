@@ -16,13 +16,14 @@
 // }
 @grey: #ccc;
 @red: #800000;
+@lighter_grey: #D3D0CF;
 
 // analysis reports
 @logo-w: 50px;
 @logo-h: 150px;
 @font-face {
   font-family: 'frutiger';
-  src: url('/mtsmte_reports/static/src/fonts/frutiger-lt-std-45-light.otf');
+  src: url('/mtsmte_reports/static/src/fonts/Frutiger_45_Light.ttf');
 }
 
 .header.analysis_header{
@@ -47,6 +48,8 @@
   .disclaimer{
     color: #aaa;
     font-size: 95%;
+    position: absolute;
+    bottom: 10%;
   }
   .report-number{
     position: absolute;
@@ -76,6 +79,9 @@ h2 {
     .content{
       // margin-top: 16px;
       // margin-bottom: 16px;
+      ul,ol{
+        margin-left: 5%;
+      }
     }
     .task_wrapper{
         margin-bottom: 1em;
@@ -92,14 +98,39 @@ h2 {
             }
         }
     }
+
+    .global_heading {
+        padding-left: 40px;
+        background-image: url('/mtsmte_reports/static/src/img/analysis_heading.gif');
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: 25px;
+    }
+
+    .legal_reference{
+        page-break-before: always;
+        h1{
+              text-transform: uppercase;
+              font-weight: bold;
+              .global_heading
+          }
+    }
+
+    .task_wrapper_legal{
+        margin-bottom: 1em;
+        font-family: frutiger;
+        font-size: 80%;
+        .task_header{
+            font-weight: bold;
+            border-bottom: 1px solid @grey;
+        }
+    }
+
     .heading{
         text-transform: uppercase;
+        font-weight: bold;
         &:not(h1){
-            padding-left: 40px;
-            background-image: url('/mtsmte_reports/static/src/img/analysis_heading.gif');
-            background-position: center left;
-            background-repeat: no-repeat;
-            background-size: 25px;
+            .global_heading
         }
     }
     .substances{
@@ -110,15 +141,24 @@ h2 {
       thead{
         border-bottom: 1px solid @grey;
       }
+      tr:nth-child(even){
+        background-color: #F1EEEC;
+      }
+      .conformity, .result{
+        font-weight: bold;
+      }
     }
     .test_results {
       .result-state{
-        margin-bottom: 15px;
+        margin: 0 0 15px;
         div:first-of-type {
-          background-color: #cccccc;
+          background-color: @lighter_grey;
         }
-
+        border-bottom: 1px solid @lighter_grey;
       }
     }
+  .test_params {
+    border-bottom: 1px solid @grey;
+  }
 }
 

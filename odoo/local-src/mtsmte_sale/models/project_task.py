@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
+from html2text import html2text
 
 
 class ProjectTask(models.Model):
@@ -51,6 +52,12 @@ class ProjectTask(models.Model):
              "predefined sentence"
     )
 
+    legal_reference = fields.Html(
+        string="Legal reference",
+        related="sale_line_id.product_tmpl_id.legal_reference",
+        readonly=True,
+    )
+
     @api.onchange("sentence_id")
     def _onchange_sentence_id(self):
         # There is a bug with Html fields. If you delete its content
@@ -60,3 +67,7 @@ class ProjectTask(models.Model):
         # by-symbol via backspacing. So beware not to explode on that
         for record in self:
             record.results = record.sentence_id.sentence
+
+    def _test_parameters_check(self):
+        return all((self.test_parameters,
+                    html2text(self.test_parameters).strip()))

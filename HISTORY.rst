@@ -25,6 +25,9 @@ latest (unreleased)
   and _rec_name BSMTS-166
 * Add generated songs for sale configuration BSMTS-162
 * Update OCA/bank-payment BSMTS-165
+* Update project analysis QWeb report BSMTS-157
+* Task stages now have "final_stage" boolean identification
+  was used in the report BSMTS-157
 
 **Bugfixes**
 

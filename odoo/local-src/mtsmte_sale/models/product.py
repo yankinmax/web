@@ -45,3 +45,8 @@ class ProductTemplate(models.Model):
         'product.extraction.type',
         string='Extraction Type',
     )
+
+    legal_reference = fields.Html(
+        string="Legal reference",
+        translate=True,
+    )
