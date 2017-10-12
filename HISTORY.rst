@@ -12,6 +12,8 @@ Unreleased
 
 **Bugfixes**
 
+* Add support for SNI to requests to avoid SSL
+
 **Build**
 
 **Documentation**
