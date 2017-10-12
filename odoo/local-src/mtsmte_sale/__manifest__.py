@@ -6,6 +6,7 @@
     "version": "10.0.1.0.0",
     "depends": [
         'sale',
+        'sale_stock',
         'project',
         'sale_timesheet',
         'account',
@@ -27,6 +28,7 @@
         'views/product_extraction_type.xml',
         'views/substance_measure.xml',
         'views/result_sentence.xml',
+        'views/task_stage.xml',
         'views/menu_items.xml',
         'security/ir.model.access.csv',
     ],

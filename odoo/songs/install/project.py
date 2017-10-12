@@ -16,6 +16,14 @@ def update_project_task_type(ctx):
 
 
 @anthem.log
+def update_task_stage(ctx):
+    stage = ctx.env.ref("mtsmte_project.project_stage_done",
+                        raise_if_not_found=False)
+    if stage:
+        stage.final_stage = True
+
+
+@anthem.log
 def main(ctx):
     """ Configuring Project """
     update_project_task_type(ctx)
