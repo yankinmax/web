@@ -6,12 +6,14 @@ from odoo.addons.report_py3o.models.py3o_report import py3o_report_extender
 from genshi.core import Markup
 from lxml import html
 
+from datetime import datetime
+
 LINE_BREAK_TAGS = (
     'p', 'div',
 )
 
 
-def format_py3o_val(value):
+def format_py3o_html(value):
     """Format html value to keep minimal formatting as line breaks."""
     placeholder = '##LINE-BREAK##'
     for tag in LINE_BREAK_TAGS:
@@ -27,6 +29,20 @@ def format_py3o_val(value):
     return Markup(odt_value.replace(placeholder, '\n<text:line-break />'))
 
 
+def format_py3o_date(value):
+    """format the date to have the DD.MM.YYYY format"""
+    return datetime.strptime(value, "%Y-%m-%d").strftime("%d.%m.%Y")
+
+
+def format_py3o_datetime(value):
+    """format the date to have the DD.MM.YYYY H:M:S format"""
+    return datetime.strptime(value, "%Y-%m-%d %H:%M:%S").strftime(
+        "%d.%m.%Y %H:%M:%S"
+    )
+
+
 @py3o_report_extender()
 def add_formatters(report_xml, localcontext):
-    localcontext['format_py3o_val'] = format_py3o_val
+    localcontext['format_py3o_html'] = format_py3o_html
+    localcontext['format_py3o_date'] = format_py3o_date
+    localcontext['format_py3o_datetime'] = format_py3o_datetime

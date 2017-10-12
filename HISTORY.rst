@@ -28,6 +28,8 @@ latest (unreleased)
 * Update project analysis QWeb report BSMTS-157
 * Task stages now have "final_stage" boolean identification
   was used in the report BSMTS-157
+* Updated project py3o report BSMTS-156
+* Add conformity field to task and project BSMTS-156
 
 **Bugfixes**
 

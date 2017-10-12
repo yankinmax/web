@@ -8,14 +8,14 @@
       <field name="filetype">odt</field>
       <field name="py3o_template_data"
         type="base64"
-        file="mtsmte_reports/reports/project_fr.odt"></field>
+        file="mtsmte_reports/reports/project_py3o_FR_V3.odt"></field>
     </record>
     <record id="py3o_template_project_en" model="py3o.template">
       <field name="name">Project English</field>
       <field name="filetype">odt</field>
       <field name="py3o_template_data"
         type="base64"
-        file="mtsmte_reports/reports/project_en.odt"></field>
+        file="mtsmte_reports/reports/project_py3o_EN_V3.odt"></field>
     </record>
   </data>
 

@@ -58,6 +58,18 @@ class ProjectTask(models.Model):
         readonly=True,
     )
 
+    conformity = fields.Selection(
+        string="Task conformity",
+        selection=[
+            ("conform", "Conform"),
+            ("not_conform", "Not conform"),
+            ("warning", "Warning"),
+        ],
+        compute="_compute_conformity",
+        readonly=False,
+        store=True,
+    )
+
     @api.onchange("sentence_id")
     def _onchange_sentence_id(self):
         # There is a bug with Html fields. If you delete its content
@@ -74,3 +86,16 @@ class ProjectTask(models.Model):
 
     def _get_task_description(self):
         return html2text(self.description)
+
+    @api.depends("product_substance_measure_ids.conformity")
+    def _compute_conformity(self):
+        for record in self:
+            conformities = record.mapped(
+                "product_substance_measure_ids.conformity"
+            )
+            if "not_conform" in conformities:
+                record.conformity = "not_conform"
+            elif "warning" in conformities:
+                record.conformity = "warning"
+            else:
+                record.conformity = "conform"
