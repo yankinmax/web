@@ -56,6 +56,7 @@
      'data/ir_actions_server.xml',
      'data/base_action_rule.xml',
      'data/ir_config_parameter.xml',
+     'data/decimal_precision.xml',
      # Report
      'report/sale_order.xml',
  ],
