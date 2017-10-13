@@ -10,6 +10,7 @@ class ProductExtractionType(models.Model):
 
     name = fields.Char(
         required=True,
+        translate=True,
     )
     product_ids = fields.One2many(
         'product.template',
