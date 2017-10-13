@@ -9,6 +9,7 @@ Unreleased
 **Features and Improvements**
 
 * DT-78: Update all translations for specific modules
+* DT-86 : Change precision of latitude and longitude fields on Company
 
 **Bugfixes**
 

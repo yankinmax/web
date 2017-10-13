@@ -6,6 +6,7 @@
 import pytz
 
 from odoo import models, fields, api, _
+from odoo.addons import decimal_precision as dp
 
 
 class ResCompany(models.Model):
@@ -54,8 +55,8 @@ class ResCompany(models.Model):
     form = fields.Char(string="Legal form", help="Juridical form")
     franchised_mobile = fields.Char()
     franchised_email = fields.Char()
-    longitude = fields.Float()
-    latitude = fields.Float()
+    longitude = fields.Float(digits=dp.get_precision('Geographic coordinates'))
+    latitude = fields.Float(digits=dp.get_precision('Geographic coordinates'))
     description = fields.Text()
     description_active = fields.Boolean(default=False)
     come_by_transport = fields.Text(string='How to come by transport')
