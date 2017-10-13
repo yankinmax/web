@@ -71,3 +71,6 @@ class ProjectTask(models.Model):
     def _test_parameters_check(self):
         return all((self.test_parameters,
                     html2text(self.test_parameters).strip()))
+
+    def _get_task_description(self):
+        return html2text(self.description)

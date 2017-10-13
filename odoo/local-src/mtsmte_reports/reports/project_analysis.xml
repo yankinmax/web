@@ -81,14 +81,14 @@
         <div class="row result-state">
           <div class="col-xs-6">
             <p>
-              <span t-field="task.name"/><br/>
+              <strong t-esc="task._get_task_description()"/><br/>
               <em t-if="task.product_method_id">&#91;<span t-field="task.product_method_id"/>&#93; </em>
               <em t-if="task.equipment_id">&#91;<span t-field="task.equipment_id"/>&#93;</em>
             </p>
           </div>
           <div class="col-xs-6">
             <span>Status: <t t-if="task.stage_id.final_stage">Definitive</t><t t-else="">Provisory</t></span><br/>
-            <span class="pull-right">Analysis date: <span t-field="task.date_deadline"/></span>
+            <span>Analysis date: <span t-field="task.date_deadline"/></span>
           </div>
         </div>
       </div>
@@ -113,14 +113,16 @@
                   &#91;<span t-field="meas.product_substance_id.sub_cas_number"/>&#93;
                 </td>
                 <td class="legal_limit">
-                  <t t-if="meas.legal_limit_min">
-                    <span class="limit_min" t-field="meas.legal_limit_min" />
-                    <span class="limit_min_sep sep">&lt;</span>
-                  </t>
-                  <span class="limit_uom" t-field="meas.product_uom_id" />
                   <t t-if="meas.legal_limit_max">
-                    <span class="limit_max_sep sep">&lt;</span>
                     <span class="limit_max" t-field="meas.legal_limit_max" />
+                    <span t-if="meas.legal_limit_min" class="limit_max_sep sep">&#62;</span>
+                    <span class="limit_uom" t-field="meas.product_uom_id" />
+                    <span t-if="not meas.legal_limit_min" class="limit_max_sep sep">&#62;</span>
+                  </t>
+                  <t t-if="meas.legal_limit_min">
+                    <span class="limit_min_sep sep">&#62;</span>
+                    <span class="limit_min" t-field="meas.legal_limit_min" />
+                    <span t-if="not meas.legal_limit_max" class="limit_uom" t-field="meas.product_uom_id" />
                   </t>
                 </td>
                 <td class="detect_limit">

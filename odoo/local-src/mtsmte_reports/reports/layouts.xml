@@ -80,7 +80,7 @@
         Les résultats contenus ne concernent que les échantillons soumis à l’examen.
         Une reproduction partielle de ce rapport ne pourra être exécutée sans notre accord.
       </p>
-      <div class="report-number">Report No <span t-field="doc.name"></span></div>
+      <div class="report-number">Report No<br/><span t-field="doc.name"></span></div>
     </div>
   </template>
 
