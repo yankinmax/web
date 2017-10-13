@@ -20,6 +20,7 @@ class ProductTemplate(models.Model):
     )
     test_parameters = fields.Html(
         string='Test Parameters',
+        translate=True,
     )
     applied_dose = fields.Html(
         string='Applied Dose',
@@ -32,6 +33,7 @@ class ProductTemplate(models.Model):
     )
     results = fields.Html(
         string='Results',
+        translate=True,
     )
     product_method_id = fields.Many2one(
         'product.method',

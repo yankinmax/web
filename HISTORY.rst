@@ -30,6 +30,7 @@ latest (unreleased)
   was used in the report BSMTS-157
 * Updated project py3o report BSMTS-156
 * Add conformity field to task and project BSMTS-156
+* Made several fields translatable BSMTS-168
 
 **Bugfixes**
 
