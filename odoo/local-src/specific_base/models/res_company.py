@@ -83,7 +83,7 @@ class ResCompany(models.Model):
     display_teleop = fields.Boolean(default=True)
     center_manager_name = fields.Char()
     franchised_name = fields.Char()
-    capital_stock = fields.Integer()
+    capital_stock = fields.Float()
     coach_id = fields.Many2one(string='Coach', comodel_name='res.partner')
     url_customer_reviews = fields.Char()
     # rcs, siret(siren+nic) --> install l10n_fr_siret modules

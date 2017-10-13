@@ -10,6 +10,8 @@ Unreleased
 
 * DT-78: Update all translations for specific modules
 * DT-86 : Change precision of latitude and longitude fields on Company
+* DT-86 : Change type of capital stock field from Integer to Float on Company
+
 
 **Bugfixes**
 
