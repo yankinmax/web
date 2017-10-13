@@ -36,6 +36,8 @@ latest (unreleased)
 
 **Build**
 
+* Update Docker image 10.0-2.3.0 -> 10.0-2.4.0
+
 **Documentation**
 
 
