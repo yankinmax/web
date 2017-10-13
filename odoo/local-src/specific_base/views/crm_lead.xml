@@ -355,4 +355,12 @@
         </field>
     </record>
 
+    <record id="crm.crm_lead_opportunities_tree_view" model="ir.actions.act_window">
+        <field name="context">{'default_type': 'opportunity', 'default_user_id': uid}</field>
+    </record>
+
+    <record id="crm.crm_lead_action_activities" model="ir.actions.act_window">
+        <field name="context">{'default_type': 'opportunity', 'default_user_id': uid}</field>
+    </record>
+
 </odoo>
