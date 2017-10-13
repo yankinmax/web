@@ -171,3 +171,6 @@ migration:
           #### Specific
           - mtsmte_sale
           - mtsmte_reports
+          - base_dj
+          - dj_compilation_stock
+          - web_readonly_bypass
