@@ -13,6 +13,7 @@ Unreleased
 **Bugfixes**
 
 * Add support for SNI to requests to avoid SSL
+* DT-84: Define payment modes on journal in generate payment mode wizard
 
 **Build**
 

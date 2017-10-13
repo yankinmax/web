@@ -6,15 +6,16 @@
         <field name="arch" type="xml">
             <form string="Generate payment modes">
                 <group>
-                    <field name="account_payment_method_id" readonly="1" />
+                    <field name="account_payment_method_id"/>
+                    <field name="journal_type"/>
                 </group>
                 <notebook>
                     <page string="Errors">
-                        <field name="errors" readonly="1" nolabel="1"/>
+                        <field name="errors" nolabel="1"/>
                     </page>
                     <page string="Payment modes to create">
                         <group>
-                            <field name="company_modes_to_create_ids" readonly="1">
+                            <field name="company_modes_to_create_ids" nolabel="1">
                                 <tree>
                                     <field name="name" />
                                 </tree>
@@ -23,7 +24,7 @@
                     </page>
                     <page string="Payment modes to activate">
                         <group>
-                            <field name="to_activate_payment_mode_ids" context="{'active_test': False}" readonly="1">
+                            <field name="to_activate_payment_mode_ids" context="{'active_test': False}" nolabel="1">
                                 <tree>
                                     <field name="name" />
                                     <field name="company_id" />
@@ -34,11 +35,31 @@
                     </page>
                     <page string="Payment modes to deactivate">
                         <group>
-                            <field name="to_deactivate_payment_mode_ids" readonly="1">
+                            <field name="to_deactivate_payment_mode_ids" nolabel="1">
                                 <tree>
                                     <field name="name" />
                                     <field name="company_id" />
                                     <field name="active" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page string="Journals on which payment method must be added">
+                        <group>
+                            <field name="journal_to_update_add_ids" nolabel="1">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="company_id"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page string="Journals on which payment method must be deleted">
+                        <group>
+                            <field name="journal_to_update_delete_ids" nolabel="1">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="company_id"/>
                                 </tree>
                             </field>
                         </group>
