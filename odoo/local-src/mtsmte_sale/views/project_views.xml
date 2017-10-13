@@ -10,6 +10,9 @@
         <field name="resp_two_id"/>
         <field name="client_order_ref"/>
       </field>
+      <xpath expr="//field[@name='partner_id']" position="after">
+        <field name="conformity"/>
+      </xpath>
       <group name="misc" position="before">
         <group name="samples" string="Samples">
           <field name="analyze_sample"/>
