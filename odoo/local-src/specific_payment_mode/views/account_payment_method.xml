@@ -8,11 +8,12 @@
         <field name="arch" type="xml">
             <xpath expr="//group" position="before">
                 <header class="oe_read_only">
-                    <button name="%(account_payment_mode_generator_action)d" type="action" context="{'default_account_payment_method_id': active_id}" string="Generate payment modes" />
+                    <button name="generate_payment_modes" type="object" string="Generate payment modes" />
                 </header>
             </xpath>
             <field name="active" position="after">
                 <field name="depiltech_payment_mode"/>
+                <field name="journal_type"/>
                 <field name="company_ids" widget="many2many_tags"/>
             </field>
         </field>

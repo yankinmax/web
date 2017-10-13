@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-04 12:19+0000\n"
-"PO-Revision-Date: 2017-09-04 12:19+0000\n"
+"POT-Creation-Date: 2017-10-13 09:42+0000\n"
+"PO-Revision-Date: 2017-10-13 09:42+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,6 +31,7 @@ msgid "Allowed companies"
 msgstr "Sociétés autorisées"
 
 #. module: specific_payment_mode
+#: selection:account.payment.method,journal_type:0
 #: model:account.payment.method,name:specific_payment_mode.bank_method
 msgid "Bank"
 msgstr "Banque"
@@ -62,6 +63,7 @@ msgid "Carrefour Card"
 msgstr "Carte Carrefour"
 
 #. module: specific_payment_mode
+#: selection:account.payment.method,journal_type:0
 #: model:account.payment.method,name:specific_payment_mode.cash_method
 msgid "Cash"
 msgstr "Espèces"
@@ -198,6 +200,24 @@ msgid "Invalid data for the calculator."
 msgstr "Données invalides pour la calculatrice."
 
 #. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_method_journal_type
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_journal_type
+msgid "Journal type"
+msgstr "Type de journal"
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_journal_to_update_add_ids
+#: model:ir.ui.view,arch_db:specific_payment_mode.account_payment_mode_generator_view_form
+msgid "Journals on which payment method must be added"
+msgstr "Journaux sur lesquels la méthode de paiement doit être ajoutée"
+
+#. module: specific_payment_mode
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_journal_to_update_delete_ids
+#: model:ir.ui.view,arch_db:specific_payment_mode.account_payment_mode_generator_view_form
+msgid "Journals on which payment method must be deleted"
+msgstr "Journaux sur lesquels la méthode de paiement doit être supprimée"
+
+#. module: specific_payment_mode
 #: model:account.payment.method,name:specific_payment_mode.kadeo_method
 msgid "Kadéo Card"
 msgstr "Carte Kadéo"
@@ -255,11 +275,11 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:119
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:146
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:186
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:216
 #, python-format
-msgid "No bank journal found for company %s "
-msgstr "Il n'y a pas de journal de banque pour la société %s"
+msgid "No %s journal found for company %s "
+msgstr "Il n'y a pas de journal %s pour la société %s"
 
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_no_check_payment_rules
@@ -311,13 +331,13 @@ msgid "Payment method"
 msgstr "Méthode de paiement"
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:92
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:151
 #, python-format
 msgid "Payment mode %s from company %s is used on an open invoice."
 msgstr "Le mode de paiement %s de la société %s est utilisée sur une facture ouverte."
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:104
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:163
 #, python-format
 msgid "Payment mode %s from company %s is used on sales order which are not totally invoiced or cancelled."
 msgstr "Le mode de paiement %s de la société %s est utilisé sur une vente qui n'est pas totalement facturée ou annulée."
@@ -379,7 +399,7 @@ msgid "Setup default terms and conditions in your company settings."
 msgstr "Définir les termes et conditions par défaut dans vos réglages d'entreprise "
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:76
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:102
 #, python-format
 msgid "There is nothing to do."
 msgstr "Il n'y a rien à faire."
