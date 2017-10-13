@@ -22,6 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * changed SO QWeb report BSMTS-171
+* Updated PO qweb report BSMTS-170
 
 **Bugfixes**
 
