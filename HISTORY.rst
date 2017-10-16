@@ -20,6 +20,8 @@ Unreleased
 
 **Build**
 
+* Update project from odoo-template
+
 **Documentation**
 
 
