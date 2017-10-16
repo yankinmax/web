@@ -37,3 +37,13 @@
     # adds [MIG] sql_request_abstract v10 module
     - oca refs/pull/961/head
   target: *default_target
+# adding web PR to the project
+./external-src/web:
+  remotes:
+    oca: git@github.com:OCA/web.git
+    camptocamp: git@github.com:camptocamp/web.git
+  merges:
+    - oca 10.0
+    # adds [MIG][10.0] web_readonly_bypass
+    - oca refs/pull/743/head
+  target: *default_target
