@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.0.12 (2017-10-16)
+++++++++++++++++++++
+
+**Features and Improvements**
+
 * Changed task.results.sentences list, tree views
   and _rec_name BSMTS-166
 * Add generated songs for sale configuration BSMTS-162
