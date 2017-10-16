@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_crm_activity_log_specific_form">
+        <field name="name">crm.activity.log.specific.form</field>
+        <field name="model">crm.activity.log</field>
+        <field name="inherit_id" ref="crm.crm_activity_log_view_form_schedule"/>
+        <field name="arch" type="xml">
+
+            <field name="date_action" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+
+            <field name="date_action" position="after">
+                <field name="datetime_action"/>
+            </field>
+
+        </field>
+    </record>
+
+</odoo>

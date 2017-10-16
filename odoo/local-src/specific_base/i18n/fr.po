@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-04 11:57+0000\n"
-"PO-Revision-Date: 2017-09-04 11:57+0000\n"
+"POT-Creation-Date: 2017-10-16 13:07+0000\n"
+"PO-Revision-Date: 2017-10-16 13:07+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,19 +21,19 @@ msgid "# Children"
 msgstr "# Children"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_company.py:24
+#: code:addons/specific_base/models/res_company.py:25
 #, python-format
 msgid "1 month"
 msgstr "1 mois"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_company.py:25
+#: code:addons/specific_base/models/res_company.py:26
 #, python-format
 msgid "2 months"
 msgstr "2 mois"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_company.py:26
+#: code:addons/specific_base/models/res_company.py:27
 #, python-format
 msgid "3 months"
 msgstr "3 mois"
@@ -52,6 +52,11 @@ msgstr "<span><strong>Initiales</strong></span>"
 #: model:ir.ui.view,arch_db:specific_base.report_saleorder_specific
 msgid "<span><strong>Signature preceded by the words \"Read and approved\"</strong></span>"
 msgstr "<span><strong>Signature précédée de la mention \"Lu et approuvé\"</strong></span>"
+
+#. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_activity_action_hour
+msgid "Action hour"
+msgstr "Heure de l'action"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_country_is_active_b2b
@@ -147,10 +152,15 @@ msgid "Birthday"
 msgstr "Date de naissance"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_company.py:17
+#: code:addons/specific_base/models/res_company.py:18
 #, python-format
 msgid "Branch"
 msgstr "Branch"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_crm_activity
+msgid "CRM Activity"
+msgstr "Activité de \"Gestion de la relation client\""
 
 #. module: specific_base
 #: model:ir.model,name:specific_base.model_utm_campaign
@@ -221,7 +231,7 @@ msgid "Channels"
 msgstr "Canaux"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_company.py:43
+#: code:addons/specific_base/models/res_company.py:44
 #, python-format
 msgid "Check"
 msgstr "Check"
@@ -230,6 +240,12 @@ msgstr "Check"
 #: model:ir.model.fields,field_description:specific_base.field_res_company_children_company_ids
 msgid "Children companies"
 msgstr "Sociétés enfants"
+
+#. module: specific_base
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead_specific_form
+#: model:ir.ui.view,arch_db:specific_base.view_crm_lead_specific_tree
+msgid "Choose a date..."
+msgstr "Choisir une date..."
 
 #. module: specific_base
 #: code:addons/specific_base/models/res_partner.py:80
@@ -253,7 +269,7 @@ msgid "Clergy, other religious professions"
 msgstr "Clergé, Autres professions religieuses"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_company.py:19
+#: code:addons/specific_base/models/res_company.py:20
 #, python-format
 msgid "Closed"
 msgstr "Fermé"
@@ -287,6 +303,12 @@ msgid "Companies"
 msgstr "Sociétés"
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_company_id
+#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: specific_base
 #: model:ir.actions.act_window,name:specific_base.company_schedule_action_tree
 #: model:ir.ui.menu,name:specific_base.menu_action_company_schedule
 #: model:ir.ui.view,arch_db:specific_base.view_company_schedule_form
@@ -301,19 +323,13 @@ msgid "Company Type"
 msgstr "Type de société"
 
 #. module: specific_base
-#: model:ir.model.fields,field_description:specific_base.field_res_company_phototherapist_company_id
-#: model:ir.model.fields,field_description:specific_base.field_res_company_schedule_company_id
-msgid "Company"
-msgstr "Société"
-
-#. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_partner_company_type_visible
 #: model:ir.model.fields,field_description:specific_base.field_res_users_company_type_visible
 msgid "Company type visible"
 msgstr "Type de société visible"
 
 #. module: specific_base
-#: code:addons/specific_base/wizard/crm_opportunity_to_customer.py:119
+#: code:addons/specific_base/wizard/crm_opportunity_to_customer.py:120
 #, python-format
 msgid "Configuration error on lead stages (not stage defined to convert lead to customer)."
 msgstr "Erreur de configuration sur les étapes des pistes (Aucune étape définie pour convertir une piste en client)."
@@ -497,7 +513,7 @@ msgid "Employees of private enterprise"
 msgstr "Employés d’entreprise privée"
 
 #. module: specific_base
-#: code:addons/specific_base/models/crm_lead.py:29
+#: code:addons/specific_base/models/crm_lead.py:33
 #, python-format
 msgid "Error on configuration of lead planning url"
 msgstr "Erreur sur la configuration de l'url du planning des pistes"
@@ -595,7 +611,7 @@ msgid "Foremen, supervisors"
 msgstr "Contremaîtres, agents de maîtrise"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_company.py:18
+#: code:addons/specific_base/models/res_company.py:19
 #, python-format
 msgid "Franchised"
 msgstr "Franchisé"
@@ -822,7 +838,7 @@ msgid "Legal form"
 msgstr "Legal form"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_company.py:44
+#: code:addons/specific_base/models/res_company.py:45
 #, python-format
 msgid "Levy"
 msgstr "Levy"
@@ -832,6 +848,11 @@ msgstr "Levy"
 #, python-format
 msgid "Liberal professions"
 msgstr "Professions libérales"
+
+#. module: specific_base
+#: model:ir.model,name:specific_base.model_crm_activity_log
+msgid "Log an Activity"
+msgstr "Enregistrer une activité"
 
 #. module: specific_base
 #: model:ir.model.fields,field_description:specific_base.field_res_company_longitude
@@ -913,6 +934,12 @@ msgid "Newspapers (post or advertisement"
 msgstr "Presse écrite (publicité ou article)"
 
 #. module: specific_base
+#: model:ir.model.fields,field_description:specific_base.field_crm_activity_log_datetime_action
+#: model:ir.model.fields,field_description:specific_base.field_crm_lead_datetime_action
+msgid "Next Activity Date"
+msgstr "Date de la prochaine action"
+
+#. module: specific_base
 #: selection:res.partner,beauty_institute_attented:0
 #: selection:res.partner,flash_done:0
 msgid "No"
@@ -925,13 +952,13 @@ msgid "No budget"
 msgstr "Pas de budget"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_company.py:35
+#: code:addons/specific_base/models/res_company.py:36
 #, python-format
 msgid "None"
 msgstr "None"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_company.py:16
+#: code:addons/specific_base/models/res_company.py:17
 #, python-format
 msgid "Not real"
 msgstr "Not real"
@@ -1279,7 +1306,7 @@ msgid "Slug"
 msgstr "Slug"
 
 #. module: specific_base
-#: code:addons/specific_base/models/crm_lead.py:127
+#: code:addons/specific_base/models/crm_lead.py:173
 #: code:addons/specific_base/models/utm.py:15
 #: code:addons/specific_base/models/utm.py:31
 #: code:addons/specific_base/models/utm.py:51
@@ -1451,7 +1478,7 @@ msgid "Training and diplomas"
 msgstr "Formations et diplômes"
 
 #. module: specific_base
-#: code:addons/specific_base/models/res_company.py:45
+#: code:addons/specific_base/models/res_company.py:46
 #, python-format
 msgid "Transfer"
 msgstr "Transfer"

@@ -144,6 +144,8 @@ migration:
       operations:
         pre:
           - psql -f /opt/odoo/songs/updates/update_10_2_0/update.sql
+        post:
+          - anthem songs.updates.update_10_2_0.update::main
       addons:
         upgrade:
           #### local-src

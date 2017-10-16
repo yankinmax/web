@@ -47,6 +47,14 @@
                        options="{'no_create': True}"/>
             </field>
 
+            <field name="date_action" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+
+            <field name="date_action" position="after">
+                <field name="datetime_action" attrs="{'invisible': [('next_activity_id', '=', False)]}" placeholder="Choose a date..."/>
+            </field>
+
             <notebook position="inside">
                 <page string="B2B">
                     <group>
@@ -313,6 +321,23 @@
             <field name="referred" position="attributes">
                 <attribute name="readonly">1</attribute>
             </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_crm_lead_specific_tree">
+        <field name="name">crm.lead.specific.tree</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+
+            <field name="date_action" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+
+            <field name="date_action" position="after">
+                <field name="datetime_action"/>
+            </field>
+
         </field>
     </record>
 

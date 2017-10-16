@@ -3,12 +3,16 @@
 # Copyright 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+import pytz
+from datetime import timedelta
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
+    _order = "priority desc,datetime_action,id desc"
 
     lead_planning_url = fields.Char(
         string='Lead planning url',
@@ -104,6 +108,48 @@ class CrmLead(models.Model):
         can_edit_marketing_values = self.can_edit_marketing_values_value()
         for line in self:
             line.can_edit_marketing_values = can_edit_marketing_values
+
+    datetime_action = fields.Datetime(
+        string='Next Activity Date',
+        index=True,
+    )
+
+    @api.onchange('datetime_action')
+    def onchange_datetime_action(self):
+        self.date_action = self.datetime_action
+
+    @api.onchange('next_activity_id')
+    def _onchange_next_activity_id(self):
+        result = super(CrmLead, self)._onchange_next_activity_id()
+
+        if self.next_activity_id.action_hour:
+            tz_name = self.env.context.get('tz') or self.env.user.tz
+            context_tz = pytz.timezone(tz_name)
+
+            timestamp = (
+                fields.Datetime.from_string(self.date_action) +
+                timedelta(hours=self.next_activity_id.action_hour)
+            )
+            tz_timestamp = context_tz.localize(timestamp)
+            utc_timestamp = tz_timestamp.astimezone(pytz.utc)
+
+            self.datetime_action = fields.Datetime.to_string(utc_timestamp)
+        else:
+            self.datetime_action = self.date_action
+
+        return result
+
+    @api.model
+    def create(self, values):
+        if values.get('datetime_action'):
+            values['date_action'] = values['datetime_action']
+        return super(CrmLead, self).create(values)
+
+    @api.multi
+    def write(self, values):
+        if values.get('datetime_action'):
+            values['date_action'] = values['datetime_action']
+        return super(CrmLead, self).write(values)
 
     @api.multi
     def convert_to_opportunity(self):
