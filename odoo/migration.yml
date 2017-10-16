@@ -3,7 +3,7 @@ migration:
     install_command: odoo
     install_args: --load=web,web_kanban,attachment_s3,session_redis,logging_json
   versions:
-    - version: 10.0.5
+    - version: 10.0.11
       operations:
         pre:
           - anthem songs.install.pre::main
@@ -17,6 +17,7 @@ migration:
           - anthem songs.install.mts.accounting::main
           - anthem songs.install.mte.accounting::main
           - anthem songs.install.accounting::main
+          - anthem songs.install.generated.accounting::main
           - anthem songs.install.hr::main
           - anthem songs.install.project::main
           - anthem songs.install.mts.stock::main
@@ -46,6 +47,7 @@ migration:
           - account_cancel
           - analytic
           - board
+          - hr_expense
           - hr_holidays
           - hr_timesheet
           - maintenance
@@ -73,6 +75,7 @@ migration:
           - date_range
           - mail_environment
           - server_environment
+          - server_environment_ir_config_parameter
           #### camptocamp/cloud-platform
           - cloud_platform
           #### camptocamp/odoo-prototype
@@ -82,10 +85,13 @@ migration:
           #### OCA/account-financial-tools
           - account_fiscal_year
           - account_reports_followup
+          #### OCA/account-payment
+          - account_due_list
           #### OCA/project
           - project_task_default_stage
           #### OCA/reporting-engine
           - report_py3o
+          - bi_sql_editor
           #### OCA/bank-payment
           - account_banking_sepa_credit_transfer
           #### OCA/bank-statement-import
@@ -94,72 +100,22 @@ migration:
           - account_invoice_rounding
           #### OCA/purchase-workflow
           - purchase_discount
+          #### OCA/sale-workflow
+          - sale_project_fixed_price_task_completed_invoicing
           #### OCA/web
           - web_sheet_full_width
+          - web_environment_ribbon
+          #### camptocamp/odoo-prototype
+          - base_dj
           #### Specific
           - mtsmte_project
           - mtsmte_sale
           - mtsmte_reports
           - mtsmte_stock
-          - mtsmte_sale
           - mail_company_domain
           - server_environment_files
-    - version: 10.0.6
-      operations:
-        post:
-          - anthem songs.install.generated.stock::stock_config_settings
-      addons:
-        upgrade:
-          - base_dj
-    - version: 10.0.7
-      addons:
-        upgrade:
-          - base_dj
-          - web_environment_ribbon
-          - server_environment_ir_config_parameter
-      operations:
-        post:
-          - anthem songs.install.generated.stock::main
-    - version: 10.0.8
-      operations:
-        pre:
-          - anthem songs.update.update_10_0_8::pre
-        post:
-          - anthem songs.install.generated.accounting::main
-      addons:
-        upgrade:
-          - base
-          - l10n_ch_payment_slip
-          - web_environment_ribbon
-          - mtsmte_sale
           - mtsmte_accounting
-          - mtsmte_reports
-    - version: 10.0.9
-    - version: 10.0.10
-      operations:
-        post:
-          - anthem songs.install.generated.stock::main
-    - version: 10.0.11
-      operations:
-        post:
-          - anthem songs.update.update_10_0_11::main
-          - anthem songs.install.users::main
-          - anthem songs.install.mts.crm::main
-          - anthem songs.install.mte.crm::main
-      addons:
-        upgrade:
-          #### base
-          - hr_expense
-          #### OCA/sale-workflow
-          - sale_project_fixed_price_task_completed_invoicing
-          #### OCA/account-payment
-          - account_due_list
-          #### OCA/reporting-engine
-          - bi_sql_editor
-          #### Specific
-          - mtsmte_sale
           - mtsmte_purchase
-          - mtsmte_accounting
     - version: 10.0.12
       operations:
         pre:
