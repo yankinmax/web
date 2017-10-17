@@ -13,6 +13,7 @@
         'report_py3o',
         'project',
         'sale',
+        'sale_order_dates',
     ],
     'website': 'https://www.camptocamp.com',
     'data': [
