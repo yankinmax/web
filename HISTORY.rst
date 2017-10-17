@@ -22,8 +22,11 @@ latest (unreleased)
 **Features and Improvements**
 
 * changed SO QWeb report BSMTS-171
+* Updated PO qweb report BSMTS-170
 
 **Bugfixes**
+
+* Adding upgrade to an account_payment_mode module as mentioned in BSMTS-174
 
 **Build**
 

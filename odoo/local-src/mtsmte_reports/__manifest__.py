@@ -14,6 +14,7 @@
         'project',
         'sale',
         'sale_order_dates',
+        'purchase',
     ],
     'website': 'https://www.camptocamp.com',
     'data': [
@@ -24,6 +25,7 @@
         'reports/reports.xml',
         'reports/reports_py3o.xml',
         'reports/project_analysis.xml',
+        'reports/purchase_order.xml',
         'reports/sale.xml',
         'reports/sale.xml',
         'wizards/project_analysis_wiz.xml',
