@@ -26,6 +26,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* Adding upgrade to an account_payment_mode module as mentioned in BSMTS-174
+
 **Build**
 
 **Documentation**
