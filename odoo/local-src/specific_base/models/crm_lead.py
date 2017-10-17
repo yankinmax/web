@@ -118,24 +118,32 @@ class CrmLead(models.Model):
     def onchange_datetime_action(self):
         self.date_action = self.datetime_action
 
-    @api.onchange('next_activity_id')
-    def _onchange_next_activity_id(self):
-        result = super(CrmLead, self)._onchange_next_activity_id()
-
-        if self.next_activity_id.action_hour:
+    @api.model
+    def get_datetime_action_in_timestamp(self, date_action, action_hour):
+        if action_hour:
             tz_name = self.env.context.get('tz') or self.env.user.tz
             context_tz = pytz.timezone(tz_name)
 
             timestamp = (
-                fields.Datetime.from_string(self.date_action) +
-                timedelta(hours=self.next_activity_id.action_hour)
+                fields.Datetime.from_string(date_action) +
+                timedelta(hours=action_hour)
             )
             tz_timestamp = context_tz.localize(timestamp)
             utc_timestamp = tz_timestamp.astimezone(pytz.utc)
 
-            self.datetime_action = fields.Datetime.to_string(utc_timestamp)
+            datetime_action = fields.Datetime.to_string(utc_timestamp)
         else:
-            self.datetime_action = self.date_action
+            datetime_action = date_action
+        return datetime_action
+
+    @api.onchange('next_activity_id')
+    def _onchange_next_activity_id(self):
+        result = super(CrmLead, self)._onchange_next_activity_id()
+
+        self.datetime_action = self.get_datetime_action_in_timestamp(
+            self.date_action,
+            self.next_activity_id.action_hour
+        )
 
         return result
 

@@ -2,10 +2,6 @@
 # Copyright 2017 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import pytz
-
-from datetime import timedelta
-
 from odoo import models, fields, api
 
 
@@ -24,20 +20,11 @@ class CrmActivityLog(models.TransientModel):
     def onchange_next_activity_id(self):
         super(CrmActivityLog, self).onchange_next_activity_id()
 
-        if self.next_activity_id.action_hour:
-            tz_name = self.env.context.get('tz') or self.env.user.tz
-            context_tz = pytz.timezone(tz_name)
-
-            timestamp = (
-                fields.Datetime.from_string(self.date_action) +
-                timedelta(hours=self.next_activity_id.action_hour)
-            )
-            tz_timestamp = context_tz.localize(timestamp)
-            utc_timestamp = tz_timestamp.astimezone(pytz.utc)
-
-            self.datetime_action = fields.Datetime.to_string(utc_timestamp)
-        else:
-            self.datetime_action = self.date_action
+        lead_model = self.env['crm.lead']
+        self.datetime_action = lead_model.get_datetime_action_in_timestamp(
+            self.date_action,
+            self.next_activity_id.action_hour
+        )
 
     @api.multi
     def action_log(self):
