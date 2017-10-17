@@ -1,10 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<template id="report_saleorder_document_specific"
-          inherit_id="sale.report_saleorder_document">
-  <xpath expr="//p[@t-field='doc.note']" position="replace">
-    <p style="page-break-before:always;"> </p>
-    <p><span t-raw="doc.note"/></p>
-  </xpath>
-</template>
+
+  <template id="report_saleorder_document_specific"
+            inherit_id="sale.report_saleorder_document">
+
+    <xpath expr="//p[@t-field='doc.note']" position="replace">
+      <p style="page-break-before:always;"> </p>
+      <p><span t-raw="doc.note"/></p>
+    </xpath>
+
+    <!--Replacing original addresses block-->
+    <xpath expr="//div[@class='page']/div[@class='row'][1]" position="replace">
+      <!--Adding top and bot margins-->
+      <div class="row mt96 mb96">
+        <div class="col-xs-6">
+          <strong t-if="doc.partner_shipping_id == doc.partner_invoice_id">Invoicing and shipping address:</strong>
+          <strong t-else="doc.partner_shipping_id != doc.partner_invoice_id">Invoicing address:</strong>
+          <!--Removed phone and fax fields-->
+          <div t-field="doc.partner_invoice_id"
+               t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+          <p t-if="doc.partner_id.vat">VAT: <span t-field="doc.partner_id.vat"/></p>
+          <div t-if="doc.partner_shipping_id != doc.partner_invoice_id" class="mt8">
+            <strong>Shipping address:</strong>
+            <!--Removed phone and fax fields-->
+            <div t-field="doc.partner_shipping_id"
+                 t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+            <p t-if="doc.partner_id.vat">VAT: <span t-field="doc.partner_id.vat"/></p>
+          </div>
+        </div>
+        <!--Adding top margins to make blocks even-->
+        <div class="col-xs-5 col-xs-offset-1 mt16">
+          <div t-field="doc.partner_id"
+               t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+        </div>
+      </div>
+    </xpath>
+
+    <xpath expr="//div[@name='payment_term']" t-if="doc.commitment_date" position="before">
+      <div name="commitment_date" class="col-xs-3">
+        <strong>Commitment date:</strong>
+        <p t-field="doc.commitment_date"/>
+      </div>
+    </xpath>
+
+  </template>
 </odoo>

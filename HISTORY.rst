@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* changed SO QWeb report BSMTS-171
+
 **Bugfixes**
 
 **Build**

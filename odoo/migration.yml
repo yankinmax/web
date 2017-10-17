@@ -174,3 +174,8 @@ migration:
           - base_dj
           - dj_compilation_stock
           - web_readonly_bypass
+    - version: 10.0.13
+      addons:
+        upgrade:
+          #### Specific
+          - mtsmte_reports
