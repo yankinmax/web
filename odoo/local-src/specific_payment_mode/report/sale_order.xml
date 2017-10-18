@@ -57,6 +57,14 @@
                 </div>
             </div>
         </xpath>
+        <xpath expr="//div[@name='total']/div/table" position="inside">
+            <tr>
+                <td />
+                <td class="text-right">
+                    <span>Potential PNF fees excl.</span>
+                </td>
+            </tr>
+        </xpath>
     </template>
 
 </odoo>
