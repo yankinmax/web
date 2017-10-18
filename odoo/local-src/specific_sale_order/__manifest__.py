@@ -15,7 +15,6 @@
     'data': [
         'report/sale_order_template.xml',
         'security/groups.xml',
-        'views/res_config.xml',
         'views/sale_order.xml',
     ],
     'installable': True,
