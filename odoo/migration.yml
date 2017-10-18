@@ -158,3 +158,12 @@ migration:
           - specific_payment_mode
           - specific_sale_order
           - specific_security
+    - version: 10.2.1
+      addons:
+          ## server-tools (updated whole repo)
+          - base_export_manager
+          - base_report_auto_create_qweb
+          - base_technical_features
+          - date_range
+          - mail_environment
+          - server_environment
