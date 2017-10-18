@@ -21,6 +21,11 @@ msgid "Admin DT"
 msgstr ""
 
 #. module: specific_security
+#: model:res.groups,name:specific_security.group_can_create_leads
+msgid "Can create leads"
+msgstr ""
+
+#. module: specific_security
 #: model:res.groups,name:specific_security.group_can_create_quotation_from_opportunity
 msgid "Can create quotation from opportunity"
 msgstr ""

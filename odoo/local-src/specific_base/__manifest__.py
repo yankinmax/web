@@ -27,8 +27,6 @@
              ],
  'website': 'http://www.camptocamp.com',
  'data': [
-     # Security
-     'security/ir.model.access.csv',
      # Wizard
      'wizard/crm_activity_log.xml',
      'wizard/crm_opportunity_to_customer.xml',  # Need to load before views
@@ -54,13 +52,15 @@
      # Data
      'data/ir_rule.xml',
      'data/ir_property.xml',
-     'data/base_override.yml',
+     'data/base_override.yml',  # Need to load this file before ir.model.access
      'data/ir_actions_server.xml',
      'data/base_action_rule.xml',
      'data/ir_config_parameter.xml',
      'data/decimal_precision.xml',
      # Report
      'report/sale_order.xml',
+     # Security
+     'security/ir.model.access.csv',
  ],
  'installable': True,
  }

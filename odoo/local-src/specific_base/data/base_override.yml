@@ -29,6 +29,13 @@
           'active': True,
       })
 -
+  !python {model: ir.model.access, id: False} : |
+      rule_obj = self.env['ir.model.access']
+      rules = rule_obj.search([('model_id.model', '=', 'crm.lead')])
+      rules.write({
+          'perm_create': False,
+      })
+-
   !python {model: res.partner.title, id: base.res_partner_title_doctor} : |
       self.active = False
 -
