@@ -14,6 +14,7 @@ Unreleased
 * DT-87: Display action date in crm lead like a datetime
 * DT-90: Add a group to allow to create sale order from lead
 * DT-91: On views 'My Pipeline' and 'Next Activities', remove default filter
+* DT-88: Add mention 'Potential PNF fees excl.' on sale orders
 
 **Bugfixes**
 

@@ -14,8 +14,15 @@
             <xpath expr="//button[@name='action_draft']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <xpath expr="//notebook/page//tree/field[@name='price_subtotal']" position="attributes" >
+                <attribute name="groups" />
+            </xpath>
+            <xpath expr="//notebook/page//tree/field[@name='price_total']" position="attributes">
+                <attribute name="groups" />
+            </xpath>
         </field>
     </record>
+
     <record id="view_order_form_back_to_quot" model="ir.ui.view">
         <field name="name">sale.order.form.inherit</field>
         <field name="model">sale.order</field>

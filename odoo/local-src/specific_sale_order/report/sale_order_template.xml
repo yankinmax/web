@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//t/table/thead/tr/th[@groups='sale.group_show_price_subtotal']" position="replace">
+            <t t-if="doc.partner_company_type != 'agency_customer'">
+                <th class="text-right">Price</th>
+            </t>
+        </xpath>
+        <xpath expr="//t/table/thead/tr/th[@groups='sale.group_show_price_total']" position="replace">
+            <t t-if="doc.partner_company_type == 'agency_customer'">
+                <th class="text-right price_tax_included" >Total Price</th>
+            </t>
+        </xpath>
+        <xpath expr="//t/table/tbody/t/t/tr/td[@groups='sale.group_show_price_subtotal']" position="replace">
+            <t t-if="doc.partner_company_type != 'agency_customer'">
+                <td class="text-right">
+                    <span t-field="l.price_subtotal"
+                        t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+                </td>
+            </t>
+        </xpath>
+        <xpath expr="//t/table/tbody/t/t/tr/td[@groups='sale.group_show_price_total']" position="replace">
+            <t t-if="doc.partner_company_type == 'agency_customer'">
+                <td class="text-right">
+                    <span t-field="l.price_total"
+                        t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+                </td>
+            </t>
+        </xpath>
+    </template>
+</odoo>

@@ -4,4 +4,13 @@
         <field name="name">SO back to quotation allowed</field>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
     </record>
+    <record model="res.groups" id="base.group_portal">
+        <field name="implied_ids" eval="[(4, ref('sale.group_show_price_total')), (4, ref('sale.group_show_price_subtotal'))]"/>
+    </record>
+    <record model="res.groups" id="base.group_public">
+        <field name="implied_ids" eval="[(4, ref('sale.group_show_price_total')), (4, ref('sale.group_show_price_subtotal'))]"/>
+    </record>
+    <record model="res.groups" id="base.group_user">
+        <field name="implied_ids" eval="[(4, ref('sale.group_show_price_total')), (4, ref('sale.group_show_price_subtotal'))]"/>
+    </record>
 </odoo>
