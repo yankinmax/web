@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_crm_activity_specific_form">
+        <field name="name">crm.activity.specific.form</field>
+        <field name="model">crm.activity</field>
+        <field name="inherit_id" ref="crm.crm_activity_view_form"/>
+        <field name="arch" type="xml">
+
+            <field name="days" position="after">
+                <field name="action_hour" widget="float_time"/>
+            </field>
+
+        </field>
+    </record>
+
+</odoo>

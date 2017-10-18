@@ -30,6 +30,7 @@
      # Security
      'security/ir.model.access.csv',
      # Wizard
+     'wizard/crm_activity_log.xml',
      'wizard/crm_opportunity_to_customer.xml',  # Need to load before views
      # Views
      'views/actions.xml',
@@ -43,6 +44,7 @@
      'views/account_invoice.xml',
      'views/pricelist.xml',
      'views/res_users.xml',
+     'views/crm_activity.xml',
      'views/crm_lead.xml',
      'views/crm_stage.xml',
      'views/utm.xml',
