@@ -7,6 +7,10 @@
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
         <field name="arch" type="xml">
 
+            <button name="%(sale_crm.sale_action_quotations_new)d" position="attributes">
+                <attribute name="groups">specific_security.group_can_create_quotation_from_opportunity</attribute>
+            </button>
+
             <button name="action_set_won" position="after">
                 <button name="%(action_crm_opportunity_to_customer)d" string="Convert to Customer" type="action"
                         help="Convert to Customer" class="oe_highlight"
