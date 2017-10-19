@@ -9,6 +9,28 @@ from odoo.exceptions import UserError
 class Program(models.Model):
     _inherit = 'sale.discount.program'
 
+    # This is a dummy field to add a search functionality
+    # based on access rights. See search method.
+    can_view_program = fields.Boolean(
+        store=False,
+        readonly=True,
+        search='_search_can_view_program',
+    )
+
+    def _search_can_view_program(self, operator, value):
+        # Use only in act_window of voucher
+        domain = []
+        can_see_all_group = 'specific_security.group_can_see_all_vouchers'
+        if not self.env.user.has_group(can_see_all_group):
+            domain.append(
+                (
+                    'partner_id.company_id',
+                    'child_of',
+                    self.env.user.company_id.ids
+                )
+            )
+        return domain
+
     allowed_company_ids = fields.Many2many(
         comodel_name='res.company',
         string='Allowed company',
