@@ -26,7 +26,7 @@ class Program(models.Model):
                 (
                     'partner_id.company_id',
                     'child_of',
-                    self.env.user.company_id.ids
+                    self.env.user.company_id.id
                 )
             )
         return domain
