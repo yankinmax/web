@@ -167,6 +167,7 @@ migration:
           - date_range
           - mail_environment
           - server_environment
+          - auth_oauth_multi_token
           ## odoo-prototype
           - base_dj
     - version: 10.2.1
