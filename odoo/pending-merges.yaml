@@ -40,12 +40,6 @@
     camptocamp: git@github.com:camptocamp/server-tools.git
   merges:
     - oca 10.0
-    # [MIG] database_cleanup: Migration to version 10.0
-    - oca refs/pull/607/head
-    # [10.0][MIG] base_report_auto_create_qweb
-    - oca refs/pull/808/head
-    # [10.0][MIG][base_export_manager] Full migration to version 10
-    - oca refs/pull/870/head
   target: *default_target
 ./external-src/web:
   remotes:

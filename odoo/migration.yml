@@ -160,3 +160,12 @@ migration:
           - specific_payment_mode
           - specific_sale_order
           - specific_security
+          ## server-tools (updated whole repo)
+          - base_export_manager
+          - base_report_auto_create_qweb
+          - base_technical_features
+          - date_range
+          - mail_environment
+          - server_environment
+          ## odoo-prototype
+          - base_dj

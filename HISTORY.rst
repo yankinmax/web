@@ -23,6 +23,11 @@ Unreleased
 **Build**
 
 * Update project from odoo-template
+* Update OCA/server-tools
+* Update OCA/web
+* Add DJ tool
+* Clean up pending merges
+
 
 **Documentation**
 

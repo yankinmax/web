@@ -46,3 +46,6 @@
 [submodule "odoo/external-src/account-invoicing"]
 	path = odoo/external-src/account-invoicing
 	url = git@github.com:OCA/account-invoicing.git
+[submodule "odoo/external-src/odoo-prototype"]
+	path = odoo/external-src/odoo-prototype
+	url = git@github.com:camptocamp/odoo-prototype.git
