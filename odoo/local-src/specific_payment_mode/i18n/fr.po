@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-10-18 12:59+0000\n"
-"PO-Revision-Date: 2017-10-18 14:59+0200\n"
+"PO-Revision-Date: 2017-10-19 09:32+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -158,7 +158,7 @@ msgstr "Modes de paiement Depiltech"
 #: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_display_name
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_display_name
 msgid "Display Name"
-msgstr "Nom affiché"
+msgstr "Afficher le nom"
 
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_errors
@@ -199,7 +199,7 @@ msgstr "Générer les modes de paiement"
 #: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_id
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_id
 msgid "ID"
-msgstr "ID"
+msgstr "Identifiant"
 
 #. module: specific_payment_mode
 #: code:addons/specific_payment_mode/models/sale_order.py:489
@@ -234,7 +234,7 @@ msgstr "Carte Kadéo"
 #: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator___last_update
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode___last_update
 msgid "Last Modified on"
-msgstr "Dernière Modification le"
+msgstr "Dernière modification le"
 
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_write_uid
@@ -404,7 +404,7 @@ msgstr "Bon de commande"
 #. module: specific_payment_mode
 #: model:ir.ui.view,arch_db:specific_payment_mode.view_order_specific_form
 msgid "Setup default terms and conditions in your company settings."
-msgstr "Définissez les conditions générales par défaut dans les paramètres de votre société"
+msgstr "Définir les termes et conditions par défaut dans vos réglages d'entreprise"
 
 #. module: specific_payment_mode
 #: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:103
