@@ -39,7 +39,7 @@
     </record>
 
     <record id="sale_discount_program.action_voucher_codes_list" model="ir.actions.act_window">
-        <field name="domain">[('type', 'in', ('voucher', 'sponsorship_voucher', 'gift_voucher'))]</field>
+        <field name="domain">[('type', 'in', ('voucher', 'sponsorship_voucher', 'gift_voucher')), ('can_view_program', '=', True)]</field>
     </record>
 
     <!-- Displays Program menus only for depiltech admin -->

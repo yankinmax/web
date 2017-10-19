@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-18 09:52+0000\n"
-"PO-Revision-Date: 2017-10-18 09:52+0000\n"
+"POT-Creation-Date: 2017-10-18 14:05+0000\n"
+"PO-Revision-Date: 2017-10-18 14:05+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -34,6 +34,11 @@ msgstr "Peut éditer les valeurs marketing (campagne, moyenne, source)"
 #: model:res.groups,name:specific_security.group_can_edit_lead_vendor
 msgid "Can edit the vendor on leads/opportunities"
 msgstr "Peut éditer le vendeur sur les pistes/opportunités"
+
+#. module: specific_security
+#: model:res.groups,name:specific_security.group_can_see_all_vouchers
+msgid "Can see all vouchers"
+msgstr "Peut voir tous les bons d'achat"
 
 #. module: specific_security
 #: model:res.groups,name:specific_security.group_can_see_depiltech_payment_mode
