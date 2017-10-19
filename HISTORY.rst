@@ -12,6 +12,8 @@ Unreleased
 * DT-86: Change precision of latitude and longitude fields on Company
 * DT-86: Change type of capital stock field from Integer to Float on Company
 * DT-87: Display action date in crm lead like a datetime
+* DT-88: Add mention 'Potential PNF fees excl.' on sale orders
+* DT-88: Display Subtotal or Total Price on sale order line according to partner company type
 * DT-90: Add a group to allow to create sale order from lead
 * DT-91: On views 'My Pipeline' and 'Next Activities', remove default filter
 

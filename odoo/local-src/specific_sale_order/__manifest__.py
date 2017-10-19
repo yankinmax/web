@@ -9,11 +9,13 @@
     'category': 'Others',
     'depends': [
         'sale',
+        'specific_base',
     ],
     'website': 'http://www.camptocamp.com',
     'data': [
+        'report/sale_order_template.xml',
         'security/groups.xml',
-        'views/sale_order.xml'
+        'views/sale_order.xml',
     ],
     'installable': True,
 }

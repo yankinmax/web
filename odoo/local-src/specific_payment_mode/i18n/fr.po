@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-13 09:42+0000\n"
-"PO-Revision-Date: 2017-10-13 09:42+0000\n"
+"POT-Creation-Date: 2017-10-19 09:49+0000\n"
+"PO-Revision-Date: 2017-10-19 09:49+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,12 @@ msgstr ""
 #: model:ir.ui.view,arch_db:specific_payment_mode.view_order_specific_form
 msgid "(update)"
 msgstr "(mise à jour)"
+
+#. module: specific_payment_mode
+#: model:ir.ui.view,arch_db:specific_payment_mode.report_saleorder_specific
+#: model:ir.ui.view,arch_db:specific_payment_mode.view_order_specific_form
+msgid "<span>Potential PNF fees excl.</span>"
+msgstr "<span>Hors frais éventuel de PNF</span>"
 
 #. module: specific_payment_mode
 #: model:ir.ui.view,arch_db:specific_payment_mode.report_saleorder_specific
@@ -275,8 +281,8 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:186
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:216
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:192
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:222
 #, python-format
 msgid "No %s journal found for company %s "
 msgstr "Il n'y a pas de journal %s pour la société %s"
@@ -331,13 +337,13 @@ msgid "Payment method"
 msgstr "Méthode de paiement"
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:151
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:157
 #, python-format
 msgid "Payment mode %s from company %s is used on an open invoice."
 msgstr "Le mode de paiement %s de la société %s est utilisée sur une facture ouverte."
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:163
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:169
 #, python-format
 msgid "Payment mode %s from company %s is used on sales order which are not totally invoiced or cancelled."
 msgstr "Le mode de paiement %s de la société %s est utilisé sur une vente qui n'est pas totalement facturée ou annulée."
@@ -399,7 +405,7 @@ msgid "Setup default terms and conditions in your company settings."
 msgstr "Définir les termes et conditions par défaut dans vos réglages d'entreprise "
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:102
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:103
 #, python-format
 msgid "There is nothing to do."
 msgstr "Il n'y a rien à faire."
