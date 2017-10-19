@@ -9,6 +9,8 @@ from odoo.exceptions import UserError
 class Program(models.Model):
     _inherit = 'sale.discount.program'
 
+    # This is a dummy field to add a search functionality
+    # based on access rights. See search method.
     can_view_program = fields.Boolean(
         store=False,
         readonly=True,
