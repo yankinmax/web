@@ -8,6 +8,18 @@ Unreleased
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.2.0 (2017-10-20)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * DT-78: Update all translations for specific modules
 * DT-85: Filter promo code/vouchers that user can see
 * DT-86: Change precision of latitude and longitude fields on Company
@@ -31,9 +43,6 @@ Unreleased
 * Update OCA/web
 * Add DJ tool
 * Clean up pending merges
-
-
-**Documentation**
 
 
 10.1.2 (2017-09-01)
