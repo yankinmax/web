@@ -24,7 +24,11 @@ class AccountPaymentModeGenerator(models.TransientModel):
         readonly=1)
 
     company_modes_to_create_ids = fields.Many2many(
-        'res.company', string='Payment modes to create', readonly=1)
+        comodel_name='res.company',
+        relation='account_payment_mode_generator_company_mode_to_add_rel',
+        string='Payment modes to create',
+        readonly=True,
+    )
 
     account_payment_method_id = fields.Many2one('account.payment.method',
                                                 string='Payment method',
@@ -52,7 +56,11 @@ class AccountPaymentModeGenerator(models.TransientModel):
     errors = fields.Text('Errors', readonly=1)
 
     company_on_errors_ids = fields.Many2many(
-        'res.company', string='Companies on error', readonly=1)
+        comodel_name='res.company',
+        relation='account_payment_mode_generator_company_mode_error_rel',
+        string='Payment modes to create',
+        readonly=True,
+    )
 
     @api.model
     def get_default_values(self, payment_method):
@@ -60,7 +68,7 @@ class AccountPaymentModeGenerator(models.TransientModel):
 
         allowed_companies = payment_method.company_ids.mapped(
             'children_company_ids')
-        payment_modes = payment_method.sudo().with_context(
+        payment_modes = payment_method.with_context(
             active_test=False).payment_mode_ids
         modes_to_activate = payment_modes.filtered(
             lambda m: not m.active and m.company_id in allowed_companies)
@@ -173,9 +181,7 @@ class AccountPaymentModeGenerator(models.TransientModel):
 
     def _get_variable_journal(self, company, journal_type):
         aj_obj = self.env['account.journal']
-        # We must be a sudo here, because except admin user,
-        # journals are readable only for the connected company
-        return aj_obj.sudo().search([
+        return aj_obj.search([
             ('type', '=', journal_type),
             ('company_id', '=', company.id),
         ])
@@ -239,7 +245,7 @@ class AccountPaymentModeGenerator(models.TransientModel):
             vals.append(values)
 
         for v in vals:
-            self.env['account.payment.mode'].sudo().create(v)
+            self.env['account.payment.mode'].create(v)
 
     def _activate_payment_modes(self, modes):
         modes.write({'active': True})

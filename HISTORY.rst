@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* DT-84: Fix generate payment mode wizard
+
 **Build**
 
 **Documentation**
