@@ -169,3 +169,8 @@ migration:
           - server_environment
           ## odoo-prototype
           - base_dj
+    - version: 10.2.1
+      addons:
+        upgrade:
+          #### local-src
+          - specific_payment_mode
