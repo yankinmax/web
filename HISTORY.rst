@@ -10,11 +10,17 @@ Unreleased
 
 **Bugfixes**
 
-* DT-84: Fix generate payment mode wizard
-
 **Build**
 
 **Documentation**
+
+
+10.2.1 (2017-10-23)
++++++++++++++++++++
+
+**Bugfixes**
+
+* DT-84: Fix generate payment mode wizard
 
 
 10.2.0 (2017-10-20)
