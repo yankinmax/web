@@ -193,12 +193,12 @@ class ResPartner(models.Model):
 
     @api.model
     def _get_maximum_budget_selection(self):
-        l = [(x, x) for x in range(50, 550, 50)]
-        l.extend([(x, x) for x in range(600, 1600, 100)])
-        l.extend([
+        selection = [(x, x) for x in range(50, 550, 50)]
+        selection.extend([(x, x) for x in range(600, 1600, 100)])
+        selection.extend([
             ('more_1500', _('More than 1500')),
         ])
-        return l
+        return selection
 
     @api.model
     def create(self, values):
