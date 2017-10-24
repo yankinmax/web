@@ -49,7 +49,7 @@ class ReportPageEndNote(models.Model):
                 return view_action
             else:
                 return False
-        except:
+        except Exception:
             return False
 
     @api.model

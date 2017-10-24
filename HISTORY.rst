@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* Fix new flake8 errors
+
 **Build**
 
 **Documentation**
