@@ -137,3 +137,4 @@ migration:
           - mtsmte_reports
           #### OCA/bank-payment
           - account_payment_mode
+          - account_invoice_rounding
