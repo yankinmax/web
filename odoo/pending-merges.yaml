@@ -40,6 +40,8 @@
     camptocamp: git@github.com:camptocamp/server-tools.git
   merges:
     - oca 10.0
+    #  [add] auth_oauth_multi_token #1032
+    - oca refs/pull/1032/head
   target: *default_target
 ./external-src/web:
   remotes:

@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* DT-92: Add `auth_oauth_multi_token`
+
 **Bugfixes**
 
 * Fix new flake8 errors

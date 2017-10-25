@@ -174,3 +174,9 @@ migration:
         upgrade:
           #### local-src
           - specific_payment_mode
+    - version: 10.3.0
+      addons:
+        upgrade:
+          ## server-tools (updated whole repo)
+          - auth_oauth_multi_token
+          - base_report_auto_create_qweb
