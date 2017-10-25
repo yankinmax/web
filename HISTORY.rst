@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* DT-92: Add `auth_oauth_multi_token`
+
 **Bugfixes**
 
 * Fix new flake8 errors
@@ -40,14 +42,11 @@ Unreleased
 * DT-89: Add a group to allow to create lead/opportunity
 * DT-90: Add a group to allow to create sale order from lead
 * DT-91: On views 'My Pipeline' and 'Next Activities', remove default filter
-* DT-92: Add `auth_oauth_multi_token`
-
 
 **Bugfixes**
 
 * Add support for SNI to requests to avoid SSL
 * DT-84: Define payment modes on journal in generate payment mode wizard
-
 
 **Build**
 

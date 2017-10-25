@@ -167,7 +167,6 @@ migration:
           - date_range
           - mail_environment
           - server_environment
-          - auth_oauth_multi_token
           ## odoo-prototype
           - base_dj
     - version: 10.2.1
@@ -175,3 +174,9 @@ migration:
         upgrade:
           #### local-src
           - specific_payment_mode
+    - version: 10.3.0
+      addons:
+        upgrade:
+          ## server-tools (updated whole repo)
+          - auth_oauth_multi_token
+          - base_report_auto_create_qweb
