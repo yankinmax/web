@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.0.13 (2017-10-26)
+++++++++++++++++++++
+
+**Features and Improvements**
+
 * changed SO QWeb report BSMTS-171
 * Updated PO qweb report BSMTS-170
 * Update generated songs & xmlid in pre-songs BSMTS-185
