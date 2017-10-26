@@ -8,15 +8,23 @@ Unreleased
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.3.0 (2017-10-26)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * DT-92: Add `auth_oauth_multi_token`
 
 **Bugfixes**
 
 * Fix new flake8 errors
-
-**Build**
-
-**Documentation**
 
 
 10.2.1 (2017-10-23)
