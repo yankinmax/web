@@ -138,3 +138,7 @@ migration:
           #### OCA/bank-payment
           - account_payment_mode
           - account_invoice_rounding
+      operations:
+        post:
+          - anthem songs.install.generated.sales::main
+          - anthem songs.install.generated.stock::main
