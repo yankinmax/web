@@ -29,6 +29,8 @@ def setup_company(ctx):
     # we'll be able to use it in other parts of the setup
     add_xmlid(ctx, ctx.env.ref('__setup__.company_mte').partner_id,
               '__setup__.partner_mte')
+    add_xmlid(ctx, ctx.env.ref('__setup__.company_mte'),
+              '__setup__.res_company_metallo_tests_sa')
 
 
 @anthem.log

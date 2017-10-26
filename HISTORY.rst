@@ -23,6 +23,7 @@ latest (unreleased)
 
 * changed SO QWeb report BSMTS-171
 * Updated PO qweb report BSMTS-170
+* Update generated songs & xmlid in pre-songs BSMTS-185
 
 **Bugfixes**
 

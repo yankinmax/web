@@ -86,6 +86,8 @@ def rip(ctx, location, login='admin', password='admin',
     # Unzip file and push files at the right path
     readme_path = None
     for path in zf.namelist():
+        if path.endswith('.zip'):
+            continue
         if 'DEV_README.rst' in path:
             readme_path = path
         else:
