@@ -15,6 +15,8 @@ LINE_BREAK_TAGS = (
 
 def format_py3o_html(value):
     """Format html value to keep minimal formatting as line breaks."""
+    if not value:
+        return
     placeholder = '##LINE-BREAK##'
     for tag in LINE_BREAK_TAGS:
         open_tag = '<%s>' % tag
@@ -31,14 +33,16 @@ def format_py3o_html(value):
 
 def format_py3o_date(value):
     """format the date to have the DD.MM.YYYY format"""
-    return datetime.strptime(value, "%Y-%m-%d").strftime("%d.%m.%Y")
+    if value:
+        return datetime.strptime(value, "%Y-%m-%d").strftime("%d.%m.%Y")
 
 
 def format_py3o_datetime(value):
     """format the date to have the DD.MM.YYYY H:M:S format"""
-    return datetime.strptime(value, "%Y-%m-%d %H:%M:%S").strftime(
-        "%d.%m.%Y %H:%M:%S"
-    )
+    if value:
+        return datetime.strptime(value, "%Y-%m-%d %H:%M:%S").strftime(
+            "%d.%m.%Y %H:%M:%S"
+        )
 
 
 @py3o_report_extender()

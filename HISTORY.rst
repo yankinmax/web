@@ -23,6 +23,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* Py3o now works correctly with empty datefield in project BSMTS-172
+
 **Build**
 
 **Documentation**

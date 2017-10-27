@@ -142,3 +142,8 @@ migration:
         post:
           - anthem songs.install.generated.sales::main
           - anthem songs.install.generated.stock::main
+    - version: 10.0.14
+      addons:
+        upgrade:
+         #### Specific
+          - mtsmte_reports
