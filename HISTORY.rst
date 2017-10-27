@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* DT-90: Fix add a group to allow to create sale order from lead
+
 **Build**
 
 **Documentation**
