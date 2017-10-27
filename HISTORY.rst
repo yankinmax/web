@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Added web_translate_dialog module to the migration BSMTS-175
+
 **Bugfixes**
 
 * Py3o now works correctly with empty datefield in project BSMTS-172

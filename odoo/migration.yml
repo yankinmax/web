@@ -147,3 +147,4 @@ migration:
         upgrade:
          #### Specific
           - mtsmte_reports
+          - web_translate_dialog
