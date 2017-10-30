@@ -26,9 +26,9 @@ class ProductSubstanceMesure(models.Model):
     )
     conformity = fields.Selection(
         string='Conformity',
-        selection=[('conform', 'Conform'),
+        selection=[('conform', 'Compliant'),
                    ('warning', 'Warning'),
-                   ('not_conform', 'Not conform')],
+                   ('not_conform', 'Not compliant')],
         compute='_compute_conformity',
         readonly=True,
     )

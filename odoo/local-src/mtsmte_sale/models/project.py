@@ -30,8 +30,8 @@ class ProjectProject(models.Model):
     conformity = fields.Selection(
         string="Project conformity",
         selection=[
-            ("conform", "Conform"),
-            ("not_conform", "Not conform"),
+            ("conform", "Compliant"),
+            ("not_conform", "Not compliant"),
             ("warning", "Warning"),
         ],
         compute="_compute_conformity",
