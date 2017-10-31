@@ -61,8 +61,8 @@ class ProjectTask(models.Model):
     conformity = fields.Selection(
         string="Task conformity",
         selection=[
-            ("conform", "Conform"),
-            ("not_conform", "Not conform"),
+            ("conform", "Compliant"),
+            ("not_conform", "Not compliant"),
             ("warning", "Warning"),
         ],
         compute="_compute_conformity",
@@ -81,11 +81,13 @@ class ProjectTask(models.Model):
             record.results = record.sentence_id.sentence
 
     def _test_parameters_check(self):
-        return all((self.test_parameters,
-                    html2text(self.test_parameters).strip()))
+        if self.test_parameters:
+            return all((self.test_parameters,
+                        html2text(self.test_parameters).strip()))
 
     def _get_task_description(self):
-        return html2text(self.description)
+        if self.description:
+            return html2text(self.description)
 
     @api.depends("product_substance_measure_ids.conformity")
     def _compute_conformity(self):

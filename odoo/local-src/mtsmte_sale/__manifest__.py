@@ -31,6 +31,7 @@
         'views/task_stage.xml',
         'views/menu_items.xml',
         'security/ir.model.access.csv',
+        'security/ir_rules.xml',
     ],
     'installable': True,
 }

@@ -21,7 +21,13 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Added web_translate_dialog module to the migration BSMTS-175
+* Product categories are now filtered by company_id via ir.rule BSMTS-178
+* "Conform/Not conform" changed to "Compliant/Not compliant" BSMTS-183
+
 **Bugfixes**
+
+* Py3o now works correctly with empty datefield in project BSMTS-172
 
 **Build**
 
