@@ -71,9 +71,23 @@
     <field name="model">project.task</field>
     <field name="inherit_id" ref="project.view_task_search_form"/>
     <field name="arch" type="xml">
+      <field name="name" position="after">
+        <field name="equipment_id" />
+      </field>
       <xpath expr="//search/group" position="inside">
         <filter string="Deadline" name="group_by_date_deadline"
                 context="{'group_by':'date_deadline'}"/>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="view_task_calendar_specific" model="ir.ui.view">
+    <field name="name">project task calendar specific</field>
+    <field name="model">project.task</field>
+    <field name="inherit_id" ref="project.view_task_calendar"/>
+    <field name="arch" type="xml">
+      <xpath expr="//calendar" position="attributes">
+        <attribute name="color">equipment_id</attribute>
       </xpath>
     </field>
   </record>
