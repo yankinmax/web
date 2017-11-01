@@ -25,6 +25,7 @@ latest (unreleased)
 * Product categories are now filtered by company_id via ir.rule BSMTS-178
 * "Conform/Not conform" changed to "Compliant/Not compliant" BSMTS-183
 * Removed fax number in mts / mte header BSMTS-179
+* Project task form changes BSMTS-184
 
 **Bugfixes**
 
