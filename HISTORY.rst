@@ -26,6 +26,8 @@ latest (unreleased)
 * "Conform/Not conform" changed to "Compliant/Not compliant" BSMTS-183
 * Removed fax number in mts / mte header BSMTS-179
 * Project task form changes BSMTS-184
+* In quotation report requested_date field is shown when possible
+  instead of commitment_date BSMTS-190
 
 **Bugfixes**
 
