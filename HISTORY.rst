@@ -28,6 +28,7 @@ latest (unreleased)
 * Project task form changes BSMTS-184
 * In quotation report requested_date field is shown when possible
   instead of commitment_date BSMTS-190
+* Add sale.order now searchable by customer reference BSMTS-191
 
 **Bugfixes**
 
