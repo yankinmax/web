@@ -98,7 +98,7 @@
           <thead>
             <tr>
               <th class="substance">Analyzed substance</th>
-              <th class="legal_limit">Legal limit</th>
+              <th class="legal_limit">Legal limit <t t-raw="'['"/><t t-esc="task.product_substance_measure_ids[0].product_uom_id.name"/>&#93;</th>
               <th class="detect_limit">Detection limit</th>
               <th class="quantif_limit">Quantification limit</th>
               <th class="result">Result</th>
@@ -116,13 +116,11 @@
                   <t t-if="meas.legal_limit_max">
                     <span class="limit_max" t-field="meas.legal_limit_max" />
                     <span t-if="meas.legal_limit_min" class="limit_max_sep sep">&#62;</span>
-                    <span class="limit_uom" t-field="meas.product_uom_id" />
                     <span t-if="not meas.legal_limit_min" class="limit_max_sep sep">&#62;</span>
                   </t>
                   <t t-if="meas.legal_limit_min">
                     <span class="limit_min_sep sep">&#62;</span>
                     <span class="limit_min" t-field="meas.legal_limit_min" />
-                    <span t-if="not meas.legal_limit_max" class="limit_uom" t-field="meas.product_uom_id" />
                   </t>
                 </td>
                 <td class="detect_limit">
