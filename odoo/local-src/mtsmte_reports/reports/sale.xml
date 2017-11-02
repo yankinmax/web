@@ -39,7 +39,8 @@
     <xpath expr="//div[@name='payment_term']" t-if="doc.commitment_date" position="before">
       <div name="commitment_date" class="col-xs-3">
         <strong>Commitment date:</strong>
-        <p t-field="doc.commitment_date"/>
+        <p t-if="doc.requested_date" t-field="doc.requested_date"/>
+        <p t-else="" t-field="doc.commitment_date"/>
       </div>
     </xpath>
 

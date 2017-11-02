@@ -24,6 +24,11 @@ latest (unreleased)
 * Added web_translate_dialog module to the migration BSMTS-175
 * Product categories are now filtered by company_id via ir.rule BSMTS-178
 * "Conform/Not conform" changed to "Compliant/Not compliant" BSMTS-183
+* Removed fax number in mts / mte header BSMTS-179
+* Project task form changes BSMTS-184
+* In quotation report requested_date field is shown when possible
+  instead of commitment_date BSMTS-190
+* Add sale.order now searchable by customer reference BSMTS-191
 
 **Bugfixes**
 

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-30 11:42+0000\n"
-"PO-Revision-Date: 2017-10-30 11:42+0000\n"
+"POT-Creation-Date: 2017-11-01 11:09+0000\n"
+"PO-Revision-Date: 2017-11-01 11:09+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -316,6 +316,11 @@ msgid "Number of Shocks"
 msgstr "Nombre de chocs"
 
 #. module: mtsmte_sale
+#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_form2_specific
+msgid "Observations & comments"
+msgstr "Observations et commentaires"
+
+#. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_maintenance_equipment_product_ids
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_product_ids
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_product_ids
@@ -379,12 +384,12 @@ msgstr "Responsable 2"
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_results
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_results
 #: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_results
+#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_form2_specific
 msgid "Results"
 msgstr "Résultats"
 
 #. module: mtsmte_sale
 #: model:ir.ui.view,arch_db:mtsmte_sale.product_template_form_view_specific
-#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_form2_specific
 msgid "Results & Observations"
 msgstr "Résultats & observations"
 
@@ -476,7 +481,6 @@ msgstr "Substances"
 
 #. module: mtsmte_sale
 #: model:ir.ui.view,arch_db:mtsmte_sale.product_template_form_view_specific
-#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_form2_specific
 msgid "Substances to analyze"
 msgstr "Substances à analyser"
 

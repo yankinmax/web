@@ -42,7 +42,6 @@
               <ul t-if="not company.custom_footer" class="list-unstyled">
                 <t t-set="company" t-value="company.sudo()"/>
                 <li t-if="company.phone"><span t-field="company.phone"/></li>
-                <li t-if="company.fax"><span t-field="company.fax"/></li>
                 <li t-if="company.email"><span t-field="company.email"/></li>
                 <li t-if="company.street"><span t-field="company.street"/></li>
                 <li><t t-if="company.zip"><span t-field="company.zip"/> </t>
