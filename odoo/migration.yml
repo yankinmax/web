@@ -145,6 +145,8 @@ migration:
     - version: 10.0.14
       addons:
         upgrade:
+         #### core
+          - hr_attendance
          #### Specific
           - mtsmte_reports
           - mtsmte_sale
