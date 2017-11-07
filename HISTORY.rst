@@ -32,6 +32,7 @@ latest (unreleased)
 * Tasks are now searchable by equipment_id BSMTS-63
 * Color in project task calendar is not equipment_d BSMTS-63
 * Add hr_attendance
+* Changes to project analysis report BSMTS-196
 
 **Bugfixes**
 
