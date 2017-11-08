@@ -21,6 +21,9 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Add BQL field to substance_measure and changes to
+  project analysis report BSMTS-186
+
 **Bugfixes**
 
 **Build**
