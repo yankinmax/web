@@ -63,7 +63,7 @@ class SaleOrderLine(models.Model):
             for x in sub_ids:
                 if x[0] == 6:
                     all_ids.extend(x[-1])
-                elif x[0] != 6 and not x[1] in all_ids:
+                elif x[0] != 6 and len(x) > 1 and not x[1] in all_ids:
                     # include missing ones w/ bad form
                     all_ids.append(x[1])
             fixed = [(6, 0, all_ids)]
