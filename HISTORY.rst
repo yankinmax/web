@@ -21,6 +21,20 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.0.14 (2017-11-08)
+++++++++++++++++++++
+
+
+
+**Features and Improvements**
+
 * Added web_translate_dialog module to the migration BSMTS-175
 * Product categories are now filtered by company_id via ir.rule BSMTS-178
 * "Conform/Not conform" changed to "Compliant/Not compliant" BSMTS-183
@@ -37,10 +51,7 @@ latest (unreleased)
 **Bugfixes**
 
 * Py3o now works correctly with empty datefield in project BSMTS-172
-
-**Build**
-
-**Documentation**
+* Fix SO line patch: address corner case BSMTS-189
 
 
 10.0.13 (2017-10-26)
