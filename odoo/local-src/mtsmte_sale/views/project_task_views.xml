@@ -31,6 +31,7 @@
               <field name="detection_limit"/>
               <field name="quantification_limit"/>
               <field name="bdl"/>
+              <field name="bql"/>
               <field name="measure"/>
               <field name="conformity"/>
             </tree>

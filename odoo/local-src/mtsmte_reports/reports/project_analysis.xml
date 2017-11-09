@@ -130,7 +130,9 @@
                   <span t-field="meas.quantification_limit" />
                 </td>
                 <td class="result">
-                  <span t-field="meas.measure" />
+                  <t t-if="meas.bdl">B.D.L</t>
+                  <t t-elif="meas.bql">B.Q.L</t>
+                  <span t-else="" t-field="meas.measure" />
                 </td>
                 <td class="conformity">
                   <span t-field="meas.conformity" />

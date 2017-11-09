@@ -81,7 +81,13 @@ class ProductSubstanceMesure(models.Model):
     )
     bdl = fields.Boolean(
         string='BDL',
-        help='When selected, measure is considered Conform'
+        help='Below Detection Limit.'
+             'When selected, measure is considered Conform'
+    )
+    bql = fields.Boolean(
+        string='BQL',
+        help='Below Quantification Limit.'
+             'When selected, measure is considered Conform'
     )
 
     @staticmethod
@@ -104,6 +110,7 @@ class ProductSubstanceMesure(models.Model):
 
     def _compute_conformity_conform(self):
         return (self.bdl
+                or self.bql
                 or (not self.has_limits('all')
                     and self.measure_in_limits())
                 or (self.has_limits('any')
@@ -122,7 +129,8 @@ class ProductSubstanceMesure(models.Model):
                  'legal_limit_max',
                  'has_limit_max',
                  'measure',
-                 'bdl')
+                 'bdl',
+                 'bql')
     def _compute_conformity(self):
         for record in self:
             if record._compute_conformity_conform():
