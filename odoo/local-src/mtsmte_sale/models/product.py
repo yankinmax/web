@@ -52,3 +52,30 @@ class ProductTemplate(models.Model):
         string="Legal reference",
         translate=True,
     )
+
+    def _get_default_category_id(self):
+        """Make sure that user don't get categories he has no rights on.
+
+        The original implementation took the product.category by ref
+        "product.product_category_all" as a default value for the field
+        The problem was, that it is MTS category. So when
+        MTE user tries to create a product this produces an error,
+        as MTE user has no permissions for MTS category
+        The change was to check users company first, and only then place
+        an appropriate default value
+        """
+        if self.env.context.get('categ_id') or self.env.context.get(
+                'default_categ_id'
+        ):
+            return self.env.context.get('categ_id') or self.env.context.get(
+                'default_categ_id'
+            )
+        category = self.env["product.category"].search([
+            ("parent_id", "=", False),
+            ("company_id", "=", self.env.user.company_id.id)
+        ], limit=1)
+        return category and category.type == 'normal' and category.id or False
+
+    categ_id = fields.Many2one(
+        default=lambda self: self._get_default_category_id()
+    )
