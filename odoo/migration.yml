@@ -153,8 +153,11 @@ migration:
          #### OCA/web
           - web_translate_dialog
     - version: 10.0.15
+      operations:
+        pre:
+          - anthem songs.update.update_10_0_15::main
       addons:
         upgrade:
          #### Specific
-          - mtsmte_reports
           - mtsmte_sale
+          - mtsmte_reports

@@ -26,6 +26,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* Fixed a bug with with creation of product when MTE user BSMTS-206
+
 **Build**
 
 **Documentation**
