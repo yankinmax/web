@@ -6,6 +6,9 @@
     "version": "10.0.1.0.0",
     "depends": [
         'stock',
+        'sale',
+        'sale_stock',
+        'mtsmte_sale',
     ],
     "author": "Camptocamp",
     "website": "http://www.camptocamp.com",

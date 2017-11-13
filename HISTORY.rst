@@ -47,6 +47,8 @@ latest (unreleased)
 * There is no longer default value for comment in 
   invoice BSMTS-216
 * Add 'tax display' field in sale settings is now B2C BSMTS-217
+* Scraping in stock.picking now refreshes the status and
+  units BSMTS-197
 
 **Bugfixes**
 
