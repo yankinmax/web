@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="invoice_supplier_form" model="ir.ui.view">
+    <field name="name">account.invoice.supplier.form</field>
+    <field name="model">account.invoice</field>
+    <field name="inherit_id" ref="account.invoice_supplier_form"/>
+    <field name="arch" type="xml">
+      <field name="name" position="replace"/>
+      <xpath  expr="//field[@name='reference']" position="after">
+        <field name="name" groups="account.group_account_manager,account.group_account_user"/>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>

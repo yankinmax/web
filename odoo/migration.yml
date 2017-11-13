@@ -161,5 +161,6 @@ migration:
          #### Specific
           - mtsmte_sale
           - mtsmte_reports
+          - mtsmte_purchase
          #### OCA/bank-statement-import
           - account_bank_statement_import_camt

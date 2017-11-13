@@ -27,6 +27,7 @@ latest (unreleased)
 * Remove doc.payment_term_id.note from saleorder report BSMTS-203
 * Replaces account_bank_statement_import_camt from Odoo S.A.
   with OCA BSMTS-200
+* Add field for vendor bill number BSMTS-201
 
 **Bugfixes**
 

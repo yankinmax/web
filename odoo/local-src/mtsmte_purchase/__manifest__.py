@@ -6,6 +6,7 @@
     "version": "10.0.1.0.0",
     "depends": [
         'purchase',
+        'account',
     ],
     "author": "Camptocamp,Odoo Community Association (OCA)",
     "website": "http://www.camptocamp.com",
@@ -13,6 +14,7 @@
     "category": "Purchase",
     "data": [
         'views/purchase_views.xml',
+        'views/account_invoice.xml',
     ],
     'installable': True,
 }
