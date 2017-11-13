@@ -19,7 +19,8 @@ RUN cd /opt/odoo && find . -maxdepth 1 -name "*requirements.txt" ! -name "base_r
 
 COPY ./importer.sh /opt/odoo/bin/
 
-ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
+ENV ADDONS_PATH="/opt/odoo/external-src/bank-statement-import, \
+  /opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/server-tools, \
   /opt/odoo/external-src/account-financial-tools, \
   /opt/odoo/external-src/reporting-engine, \
@@ -29,7 +30,6 @@ ENV ADDONS_PATH="/opt/odoo/external-src/enterprise, \
   /opt/odoo/external-src/l10n-switzerland, \
   /opt/odoo/external-src/project, \
   /opt/odoo/external-src/account-invoicing, \
-  /opt/odoo/external-src/bank-statement-import, \
   /opt/odoo/external-src/purchase-workflow, \
   /opt/odoo/external-src/web, \
   /opt/odoo/external-src/odoo-cloud-platform, \

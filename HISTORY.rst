@@ -25,12 +25,16 @@ latest (unreleased)
   project analysis report BSMTS-186
 * Update chemical_review report BSMTS-207
 * Remove doc.payment_term_id.note from saleorder report BSMTS-203
+* Replaces account_bank_statement_import_camt from Odoo S.A.
+  with OCA BSMTS-200
 
 **Bugfixes**
 
 * Fixed a bug with with creation of product when MTE user BSMTS-206
 
 **Build**
+
+* Placed bank-statement-import above odoo-enterprise BSMTS-200
 
 **Documentation**
 
