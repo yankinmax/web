@@ -44,5 +44,8 @@
       </div>
     </xpath>
 
+    <!-- bsmts-203 -->
+    <xpath expr="//p[@t-if='doc.payment_term_id.note']" position="replace"/>
+
   </template>
 </odoo>
