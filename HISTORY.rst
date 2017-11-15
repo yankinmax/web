@@ -23,6 +23,7 @@ latest (unreleased)
 
 * Add BQL field to substance_measure and changes to
   project analysis report BSMTS-186
+* Update chemical_review report BSMTS-207
 
 **Bugfixes**
 
