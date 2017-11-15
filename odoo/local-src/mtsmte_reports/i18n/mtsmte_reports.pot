@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-20 12:42+0000\n"
-"PO-Revision-Date: 2017-06-20 12:42+0000\n"
+"POT-Creation-Date: 2017-11-15 15:15+0000\n"
+"PO-Revision-Date: 2017-11-15 15:15+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,45 @@ msgid "&amp;nbsp;"
 msgstr ""
 
 #. module: mtsmte_reports
-#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
-msgid "<span>Task name</span>"
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
+msgid "<strong>Commitment date:</strong>"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_purchasequotation_document_specific
+msgid "<strong>Origin: </strong>"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_purchaseorder_document_specific
+msgid "<strong>Origin:</strong>"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_purchaseorder_document_specific
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_purchasequotation_document_specific
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
+msgid "<strong>Shipping address:</strong>"
 msgstr ""
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
-msgid "<span>Task state</span>"
+msgid "Analysis date:"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "Analyzed substance"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "B.D.L"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "B.Q.L"
 msgstr ""
 
 #. module: mtsmte_reports
@@ -61,6 +93,11 @@ msgid "Created on"
 msgstr ""
 
 #. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "Definitive"
+msgstr ""
+
+#. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_task_description_text
 msgid "Description as text"
 msgstr ""
@@ -88,6 +125,16 @@ msgid "Image to be used only in reports."
 msgstr ""
 
 #. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
+msgid "Invoicing address:"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
+msgid "Invoicing and shipping address:"
+msgstr ""
+
+#. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_lang_id
 msgid "Language"
 msgstr ""
@@ -106,6 +153,11 @@ msgstr ""
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_write_date
 msgid "Last Updated on"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_analysis_doc
+msgid "Legal References"
 msgstr ""
 
 #. module: mtsmte_reports
@@ -132,14 +184,28 @@ msgid "Print analysis"
 msgstr ""
 
 #. module: mtsmte_reports
-#: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_project
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_project_id
 msgid "Project"
 msgstr ""
 
 #. module: mtsmte_reports
+#: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_project_en
+msgid "Project English"
+msgstr ""
+
+#. module: mtsmte_reports
 #: model:ir.actions.report.xml,name:mtsmte_reports.action_report_analysis
 msgid "Project analysis"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_project
+msgid "Projet Français"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
+msgid "Provisory"
 msgstr ""
 
 #. module: mtsmte_reports
@@ -154,7 +220,7 @@ msgstr ""
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
-msgid "Report No"
+msgid "Report No<br/>"
 msgstr ""
 
 #. module: mtsmte_reports
@@ -185,7 +251,7 @@ msgstr ""
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
-msgid "Substance Measure"
+msgid "Status:"
 msgstr ""
 
 #. module: mtsmte_reports
@@ -206,6 +272,18 @@ msgstr ""
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_analysis_doc
 msgid "Tested samples"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_purchaseorder_document_specific
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_purchasequotation_document_specific
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
+msgid "VAT:"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_forced_lang
+msgid "forced lang"
 msgstr ""
 
 #. module: mtsmte_reports

@@ -28,6 +28,7 @@ latest (unreleased)
 * Replaces account_bank_statement_import_camt from Odoo S.A.
   with OCA BSMTS-200
 * Add field for vendor bill number BSMTS-201
+* Update report quotation request BSMTS-204
 
 **Bugfixes**
 

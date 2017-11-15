@@ -4,6 +4,7 @@
 
 {
     'name': 'MTS MTE Reports',
+    'description': 'Specific reports customization',
     'version': '10.0.1.0.0',
     'author': 'Camptocamp,Odoo Community Association (OCA)',
     'license': 'AGPL-3',
@@ -26,6 +27,7 @@
         'reports/reports_py3o.xml',
         'reports/project_analysis.xml',
         'reports/purchase_order.xml',
+        'reports/purchase_quotation.xml',
         'reports/sale.xml',
         'reports/sale.xml',
         'wizards/project_analysis_wiz.xml',
