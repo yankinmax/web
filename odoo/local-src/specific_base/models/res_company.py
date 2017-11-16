@@ -29,7 +29,7 @@ class ResCompany(models.Model):
 
     @api.model
     def _get_sms_abo_selection(self):
-        return [(str(i), str(i))for i in range(100, 1600, 100)]
+        return [(str(i), str(i))for i in range(100, 1600, 50)]
 
     @api.model
     def _get_royalties_pub_selection(self):
