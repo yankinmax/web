@@ -180,3 +180,8 @@ migration:
           ## server-tools (updated whole repo)
           - auth_oauth_multi_token
           - base_report_auto_create_qweb
+    - version: 10.3.1
+      addons:
+        upgrade:
+          #### local-src
+          - specific_base
