@@ -29,6 +29,8 @@ latest (unreleased)
   with OCA BSMTS-200
 * Add field for vendor bill number BSMTS-201
 * Update report quotation request BSMTS-204
+* In the invoice report, comment is now displayed as html
+  and won't be displayed if empty BSMTS-215
 
 **Bugfixes**
 

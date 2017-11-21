@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="report_invoice_document_specific" inherit_id="account.report_invoice_document">
+    <xpath expr="//p[@t-if='o.comment']" position="attributes">
+      <attribute name="t-if">o.comment_text</attribute>
+    </xpath>
+    <xpath expr="//span[@t-field='o.comment']" position="attributes">
+      <attribute name="t-options">{"widget": "html"}</attribute>
+    </xpath>
+  </template>
+
+</odoo>

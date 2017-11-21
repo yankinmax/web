@@ -29,7 +29,7 @@
         'reports/purchase_order.xml',
         'reports/purchase_quotation.xml',
         'reports/sale.xml',
-        'reports/sale.xml',
+        'reports/invoice_report.xml',
         'wizards/project_analysis_wiz.xml',
         'views/company.xml',
         'views/project.xml',
