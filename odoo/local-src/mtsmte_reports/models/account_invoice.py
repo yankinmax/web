@@ -21,6 +21,7 @@ class ProjectTask(models.Model):
     comment_text = fields.Text(
         string='Description as text',
         compute='_compute_comment_text',
+        readonly=True,
     )
 
     @api.depends('comment')
@@ -28,7 +29,6 @@ class ProjectTask(models.Model):
         if html2text is None:
             return
         for invoice in self:
-            converter = html2text.HTML2Text()
-            invoice.comment_text = converter.handle(
+            invoice.comment_text = html2text.HTML2Text(
                 invoice.comment or ''
             ).strip()
