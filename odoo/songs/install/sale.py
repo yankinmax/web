@@ -18,6 +18,7 @@ def configure_sale_app(ctx):
         'group_mrp_properties': 1,
         'sale_pricelist_setting': 'formula',
         'module_website_quote': 1,
+        'sale_show_tax': 'total',
     }
     acs = sale_settings.create(vals)
     acs.execute()

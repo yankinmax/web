@@ -60,6 +60,7 @@ latest (unreleased)
 * Color in project task calendar is not equipment_d BSMTS-63
 * Add hr_attendance
 * Changes to project analysis report BSMTS-196
+* 'Tax Display' in sales settings are now B2C BSMTS-217
 
 **Bugfixes**
 
