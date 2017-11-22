@@ -31,6 +31,7 @@ latest (unreleased)
 * Update report quotation request BSMTS-204
 * In the invoice report, comment is now displayed as html
   and won't be displayed if empty BSMTS-215
+* Changed report logo for the mte company BSMTS-213
 
 **Bugfixes**
 
