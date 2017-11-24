@@ -22,7 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Stock picking scrap: update next picking qty BSMTS-197
-
+* Add chatter to project.project BSMTS-219
 
 **Bugfixes**
 

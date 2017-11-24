@@ -167,3 +167,5 @@ migration:
       addons:
         upgrade:
           - base_dj
+         #### Specific
+          - mtsmte_project

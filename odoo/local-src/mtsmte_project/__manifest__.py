@@ -13,8 +13,8 @@
     "license": "AGPL-3",
     "category": "Project",
     "data": [
-        # data
         'data/project_task.xml',
+        'views/project_project.xml',
     ],
     'installable': True,
 }
