@@ -20,7 +20,6 @@
     'website': 'https://www.camptocamp.com',
     'data': [
         'data/py3o_server.xml',
-        'data/report_paperformat.xml',
         'reports/assets.xml',
         'reports/layouts.xml',
         'reports/reports.xml',

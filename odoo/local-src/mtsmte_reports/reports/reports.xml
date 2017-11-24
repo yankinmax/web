@@ -7,11 +7,6 @@
     model="project.project"
     report_type="qweb-pdf"
     name="mtsmte_reports.report_project_analysis"
-    file="mtsmte_reports.report_project_analysis"
-    />
-
-  <record id="action_report_analysis" model="ir.actions.report.xml">
-    <field name="paperformat_id" ref="paperformat_euro_a4_analysis_report"/>
-  </record>
+    file="mtsmte_reports.report_project_analysis"/>
 
 </odoo>
