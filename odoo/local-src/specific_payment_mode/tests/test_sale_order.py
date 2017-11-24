@@ -357,6 +357,7 @@ class TestSaleOrder(TransactionCase):
             'provision': 500,
             'month_number': 10,
             'monthly_payment': 200.,
+            'first_monthly_payment': 200.,
         })
 
         # Check generated payment terms

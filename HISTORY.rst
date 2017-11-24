@@ -12,6 +12,7 @@ Unreleased
 
 * DT-90: Fix add a group to allow to create sale order from lead
 * DT-95: On company object, fix sms_abo field selection values
+* DT-96: Add a new state on sale order: Waiting calculator
 
 **Build**
 
