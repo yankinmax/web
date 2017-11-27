@@ -1,68 +1,74 @@
 <?xml version="1.0"?>
 <odoo>
-    <data noupdate="1">
+  <!--Management Dashboard-->
+  <record model="ir.ui.view" id="board_management_dash_view">
+    <field name="name">Management Dashboard</field>
+    <field name="model">board.board</field>
+    <field name="groups_id"
+           eval="[(6, 0, [ref('account.group_account_manager')])]"/>
+    <field name="arch" type="xml">
+      <form string="Management Dashboard">
+        <board style="2-1">
+          <column>
+            <action context="{u'lang': 'fr_FR', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'journal_type': u'general', u'group_by': [u'account_id']}"
+                    domain="[[u'user_type_id', u'=', u'Bank and Cash'], [u'user_type_id', u'=', u'Bank and Cash']]"
+                    name="%(account.action_account_moves_all_a)d"
+                    string="Banques et Cash"
+                    view_mode="list"/>
+            <action context="{u'lang': 'fr_FR', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'group_by': [u'date_maturity']}"
+                    name="%(account_due_list.action_invoice_payments)d"
+                    domain="[[u'account_id.internal_type', u'in', [u'receivable', u'payable']], [u'stored_invoice_id', u'!=', False], [u'stored_invoice_id', u'!=', False]]"
+                    string="Cash Flow"
+                    view_mode="list"/>
+            <action context="{u'lang': u'fr_FR', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'journal_type': u'general', u'group_by': [u'date', u'account_id']}"
+                    domain="[[u'user_type_id', u'=', u'Revenus'], [u'user_type_id', u'=', u'Revenus']]"
+                    name="%(account_due_list.action_invoice_payments)d"
+                    string="Chiffre d'affaire"
+                    view_mode="list" />
+            <action context="{u'lang': u'fr_FR', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'journal_type': u'general', u'group_by': [u'date', u'account_id']}"
+                    domain="[[u'user_type_id', u'=', u'Charges'], [u'account_id', u'not ilike', u'4%'], [u'user_type_id', u'=', u'Charges'], [u'account_id', u'not ilike', u'4%']]"
+                    name="%(account_due_list.action_invoice_payments)d"
+                    string="Charges fixes"
+                    view_mode="list" />
+            <action context="{u'lang': u'fr_FR', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'journal_type': u'general', u'group_by': [u'date', u'account_id']}"
+                    domain="[[u'account_id', u'ilike', u'TVA'], [u'account_id', u'ilike', u'TVA']]"
+                    name="%(account_due_list.action_invoice_payments)d"
+                    string="TVA à encaisser et due"
+                    view_mode="list" />
+          </column>
+          <column>
+            <action context="{u'lang': 'fr_FR', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'group_by': []}"
+                    domain="[[u'belongs_to_company', u'=', True], [u'show_on_dashboard', u'=', True], [u'show_on_dashboard', u'=', True]]"
+                    name="%(account.open_account_journal_dashboard_kanban)d"
+                    string="Dashboard Comptabilité"
+                    view_mode="kanban"/>
+          </column>
+        </board>
+      </form>
+    </field>
+  </record>
 
-        <!--Management Dashboard-->
-        <record model="ir.ui.view" id="board_management_dash_view">
-            <field name="name">Management Dashboard</field>
-            <field name="model">board.board</field>
-            <field name="groups_id"
-                   eval="[(6,0,[ref('account.group_account_manager')])]"/>
-            <field name="arch" type="xml">
-                <form string="Management Dashboard">
-                    <board style="2-1">
-                        <column>
-                            <action context="{u'lang': u'en_US', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'journal_type': u'general', u'group_by': [u'account_id']}"
-                                    domain="[[u'user_type_id', u'=', u'Bank and Cash'], [u'user_type_id', u'=', u'Bank and Cash']]"
-                                    name="%(account.action_account_moves_all_a)d"
-                                    string="Banques et Cash"
-                                    view_mode="list"/>
-                            <action context="{u'lang': u'en_US', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'group_by': [u'date_maturity']}"
-                                    name="%(account_due_list.action_invoice_payments)d"
-                                    domain="[[u'account_id.internal_type', u'in', [u'receivable', u'payable']], [u'stored_invoice_id', u'!=', False], [u'stored_invoice_id', u'!=', False]]"
-                                    string="Cash Flow"
-                                    view_mode="list"/>
-                            <action context="{u'lang': u'en_US', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'group_by': []}"
-                                    domain=""
-                                    name="%(project.open_view_project_all)d"
-                                    string="Projects"
-                                    view_mode="kanban"/>
-                        </column>
-                        <column>
-                            <action context="{u'lang': u'en_US', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'group_by': []}"
-                                    domain="[[u'belongs_to_company', u'=', True], [u'show_on_dashboard', u'=', True], [u'show_on_dashboard', u'=', True]]"
-                                    name="%(account.open_account_journal_dashboard_kanban)d"
-                                    string="Dashboard Comptabilité"
-                                    view_mode="kanban"/>
-                        </column>
-                    </board>
-                </form>
-            </field>
-        </record>
-
-        <!--My Dashboard Action-->
-        <record model="ir.actions.act_window"
-                id="open_board_management_dash_action">
-            <field name="name">Management Dashboard</field>
-            <field name="res_model">board.board</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">form</field>
-            <field name="usage">menu</field>
-            <field name="view_id" ref="board_management_dash_view"/>
-        </record>
-
-        <!--My Dashboard Menu-->
-        <menuitem
-                id="menu_board_comp_dash"
-                name="Company Dashboards"
-                parent="base.menu_board_root"
-                groups="account.group_account_manager"
-                sequence="7"/>
-        <menuitem
-                id="menu_board_management_dash"
-                parent="menu_board_comp_dash"
-                action="open_board_management_dash_action"
-                sequence="5"/>
-
-    </data>
+  <!--My Dashboard Action-->
+  <record model="ir.actions.act_window"
+          id="open_board_management_dash_action">
+    <field name="name">Management Dashboard</field>
+    <field name="res_model">board.board</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="usage">menu</field>
+    <field name="view_id" ref="board_management_dash_view"/>
+  </record>
+  
+  <!--My Dashboard Menu-->
+  <menuitem
+      id="menu_board_comp_dash"
+      name="Company Dashboards"
+      parent="base.menu_board_root"
+      groups="account.group_account_manager"
+      sequence="7"/>
+  <menuitem
+      id="menu_board_management_dash"
+      parent="menu_board_comp_dash"
+      action="open_board_management_dash_action"
+      sequence="5"/>
 </odoo>

@@ -171,3 +171,4 @@ migration:
           - mtsmte_project
           - mtsmte_reports
           - mtsmte_sale
+          - mtsmte_accounting

@@ -27,6 +27,7 @@ latest (unreleased)
 * Add project analysis wqeb report changes BSMTS-214
 * Add language support to the chemical analysis BSMTS-221
 * Renamed conformity field to compliance in product.substance.measure BSMTS-220
+* Add changes to management dashboard BSMTS-222
 
 **Bugfixes**
 
