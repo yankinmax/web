@@ -5,3 +5,7 @@ statsd==3.2.1
 unidecode==0.04.20
 py3o.template==0.9.11
 py3o.formats==0.3
+
+# dj tool
+autopep8
+pylint

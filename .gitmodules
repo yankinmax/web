@@ -56,9 +56,6 @@
 	path = odoo/external-src/web
 	url = git@github.com:OCA/web.git
 	branch = 10.0
-[submodule "odoo/external-src/odoo-prototype"]
-	path = odoo/external-src/odoo-prototype
-	url = git@github.com:camptocamp/odoo-prototype.git
 [submodule "odoo/external-src/bank-statement-reconcile"]
 	path = odoo/external-src/bank-statement-reconcile
 	url = https://github.com/OCA/bank-statement-reconcile.git
@@ -71,3 +68,6 @@
 	path = odoo/external-src/account-payment
 	url = git@github.com:OCA/account-payment
 	branch = 10.0
+[submodule "odoo/external-src/odoo-dj"]
+	path = odoo/external-src/odoo-dj
+	url = git@github.com:camptocamp/odoo-dj.git
