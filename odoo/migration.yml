@@ -150,8 +150,6 @@ migration:
          #### Specific
           - mtsmte_reports
           - mtsmte_sale
-         #### OCA/web
-          - web_translate_dialog
     - version: 10.0.15
       operations:
         pre:
