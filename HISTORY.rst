@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.0.15 (2017-11-27)
+++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add BQL field to substance_measure and changes to
   project analysis report BSMTS-186
 * Update chemical_review report BSMTS-207
@@ -34,6 +46,7 @@ latest (unreleased)
 * Changed report logo for the mte company BSMTS-213
 * There is no longer default value for comment in 
   invoice BSMTS-216
+* Add 'tax display' field in sale settings is now B2C BSMTS-217
 
 **Bugfixes**
 
@@ -41,9 +54,8 @@ latest (unreleased)
 
 **Build**
 
-* Placed bank-statement-import above odoo-enterprise BSMTS-200
-
-**Documentation**
+* Replace `account_bank_statement_import_camt` w/ OCA version BSMTS-200
+* Remove `web_translate_dialog`
 
 
 10.0.14 (2017-11-08)
