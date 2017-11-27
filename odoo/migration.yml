@@ -170,3 +170,4 @@ migration:
          #### Specific
           - mtsmte_project
           - mtsmte_reports
+          - mtsmte_sale

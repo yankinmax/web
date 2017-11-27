@@ -25,7 +25,7 @@ class ProductSubstanceMesure(models.Model):
         help='The value 0 is considered as NULL',
     )
     conformity = fields.Selection(
-        string='Conformity',
+        string='Compliance',
         selection=[('conform', 'Compliant'),
                    ('warning', 'Warning'),
                    ('not_conform', 'Not compliant')],
