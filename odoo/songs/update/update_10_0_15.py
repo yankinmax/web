@@ -10,7 +10,7 @@ from ..install.post import setup_mte_reports_info
 @anthem.log
 def create_product_categories(ctx):
     """create MTE categories from CSV"""
-    path = 'data/install/mte/product_category_MTE.csv'
+    path = 'data/install/mte/product_category_MT.csv'
     load_csv(ctx, path, 'product.category')
 
 
