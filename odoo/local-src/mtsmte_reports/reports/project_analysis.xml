@@ -3,14 +3,12 @@
 
   <template id="report_analysis_doc" name="MT analysis report content">
     <t t-call="report.external_layout">
-      <t t-set="doc" t-value="doc.with_context({'lang': lang_id or doc.partner_id.lang})" />
-      <t t-set="tasks" t-value="tasks or doc.task_ids" />
+      <t t-set="tasks" t-value="tasks or doc.task_ids"/>
       <div class="page analysis">
         <t t-foreach="tasks" t-as="task">
           <t t-set="product" t-value="task.sale_line_id.product_id" />
           <t t-set="atype" t-value="report.get_analysis_type(product)" />
           <div t-attf-class="task_wrapper type_#{atype}">
-          <t t-debug="pdb"/>
             <div class="section task_header">
               <h1 class="heading task_title" t-field="task.name" />
               <div class="content">
@@ -80,7 +78,6 @@
   <template id="chemical_results">
     <div class="section test_results">
       <h2 class="heading">Results &amp;amp; Observations</h2>
-
       <div class="content">
         <div class="row result-state">
           <div class="col-xs-6">
@@ -145,7 +142,7 @@
                   <span t-field="meas.measure" />
                 </td>
                 <td class="conformity">
-                  <span t-field="meas.conformity" />
+                  <span t-esc="conformity_options[meas.conformity]"/>
                 </td>
               </tr>
             </t>

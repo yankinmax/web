@@ -25,6 +25,7 @@ latest (unreleased)
 * Add chatter to project.project BSMTS-219
 * Add changes to py3o reports BSMTS-223
 * Add project analysis wqeb report changes BSMTS-214
+* Add language support to the chemical analysis BSMTS-221
 
 **Bugfixes**
 
