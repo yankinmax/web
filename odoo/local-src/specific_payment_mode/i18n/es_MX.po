@@ -413,17 +413,17 @@ msgstr "Establezca los términos y condiciones por defecto en los ajustes de su 
 #. module: specific_payment_mode
 #: code:addons/specific_payment_mode/models/sale_order.py:185
 #, python-format
-msgid "The calculator total amount (%.2f) and the sale order total amount (%.2f) must be equal.\n"
+msgid "The calculator total amount (%.2f) has to be equal to the sale order total amount (%.2f).\n"
 "Check calculator amounts."
-msgstr "The calculator total amount (%.2f) and the sale order total amount (%.2f) must be equal.\n"
+msgstr "The calculator total amount (%.2f) has to be equal to the sale order total amount (%.2f).\n"
 "Check calculator amounts."
 
 #. module: specific_payment_mode
 #: code:addons/specific_payment_mode/models/sale_order.py:172
 #, python-format
-msgid "The calculator total amount (%.2f) is greater than the sale order total amount (%.2f).\n"
+msgid "The calculator total amount (%.2f) is less than the sale order total amount (%.2f).\n"
 "Check calculator amounts."
-msgstr "The calculator total amount (%.2f) is greater than the sale order total amount (%.2f).\n"
+msgstr "The calculator total amount (%.2f) is less than the sale order total amount (%.2f).\n"
 "Check calculator amounts."
 
 #. module: specific_payment_mode

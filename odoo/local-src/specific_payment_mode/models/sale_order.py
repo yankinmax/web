@@ -21,6 +21,11 @@ class SaleOrder(models.Model):
     depiltech_payment_mode = fields.Many2one(
         comodel_name='depiltech.payment.mode',
         string='Depiltech payment mode',
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+            'waiting_calculator': [('readonly', False)],
+        },
     )
 
     compute_calculator = fields.Boolean(
@@ -157,20 +162,18 @@ class SaleOrder(models.Model):
             # Check the sale order total amount with calculator total amount
             calculator_total_amount = (
                 self.provision +
-                self.first_monthly_payment + (
-                    (
-                        (self.month_number - 1) * self.monthly_payment
-                    )
-                    if self.month_number > 1
-                    else 0
-                )
+                self.first_monthly_payment
             )
+            if self.month_number > 1:
+                calculator_total_amount += (
+                    (self.month_number - 1) * self.monthly_payment
+                )
 
             # PNF payment case
             if not self.compute_calculator:
                 if calculator_total_amount < self.amount_total:
                     raise ValidationError(_(
-                        'The calculator total amount (%.2f) is smaller than '
+                        'The calculator total amount (%.2f) is less than '
                         'the sale order total amount (%.2f).\n'
                         'Check calculator amounts.'
                     ) % (calculator_total_amount, self.amount_total))
@@ -183,8 +186,8 @@ class SaleOrder(models.Model):
                 )
                 if compare != 0:
                     raise ValidationError(_(
-                        'The calculator total amount (%.2f) and '
-                        'the sale order total amount (%.2f) must be equal.\n'
+                        'The calculator total amount (%.2f) has to be equal '
+                        'to the sale order total amount (%.2f).\n'
                         'Check calculator amounts.'
                     ) % (calculator_total_amount, self.amount_total))
 

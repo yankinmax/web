@@ -10,6 +10,10 @@ class MailComposeMessage(models.TransientModel):
 
     @api.multi
     def send_mail(self, auto_commit=False):
+        # We just override the super function
+        # to update the sale order state
+        # in case we have a agency customer and a 'waiting_calculator' state.
+        # In other case, we let the super function work normally.
         condition = (
             self._context.get('default_model') == 'sale.order' and
             self._context.get('default_res_id') and

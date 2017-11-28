@@ -97,7 +97,7 @@
                 <attribute name="readonly">1</attribute>
             </xpath>
             <field name="payment_term_id" position="after">
-                <field name="phototherapist_id" options="{'no_create': True}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="phototherapist_id" options="{'no_create': True}"/>
                 <field name="partner_company_type" invisible="True"/>
             </field>
         </field>
