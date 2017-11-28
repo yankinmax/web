@@ -23,6 +23,7 @@ latest (unreleased)
 
 * Stock picking scrap: update next picking qty BSMTS-197
 * Add chatter to project.project BSMTS-219
+* Add changes to py3o reports BSMTS-223
 
 **Bugfixes**
 

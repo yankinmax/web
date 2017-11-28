@@ -8,14 +8,28 @@
       <field name="filetype">odt</field>
       <field name="py3o_template_data"
         type="base64"
-        file="mtsmte_reports/reports/project_py3o_FR_V3.odt"></field>
+        file="mtsmte_reports/reports/report_py3o_FR_V5.odt"></field>
     </record>
     <record id="py3o_template_project_en" model="py3o.template">
       <field name="name">Project English</field>
       <field name="filetype">odt</field>
       <field name="py3o_template_data"
         type="base64"
-        file="mtsmte_reports/reports/project_py3o_EN_V3.odt"></field>
+        file="mtsmte_reports/reports/report_py3o_EN_V5.odt"></field>
+    </record>
+    <record id="py3o_template_nickel_en" model="py3o.template">
+      <field name="name">Report nickel English</field>
+      <field name="filetype">odt</field>
+      <field name="py3o_template_data"
+        type="base64"
+        file="mtsmte_reports/reports/report_nickel_py3o_EN_V2.odt"></field>
+    </record>
+    <record id="py3o_template_nickel_fr" model="py3o.template">
+      <field name="name">Report nickel French</field>
+      <field name="filetype">odt</field>
+      <field name="py3o_template_data"
+        type="base64"
+        file="mtsmte_reports/reports/report_nickel_py3o_FR_V2.odt"></field>
     </record>
   </data>
 
@@ -39,6 +53,22 @@
     name="mtsmte_reports.py3o_project_en"
     file="mtsmte_reports.py3o_project_en"
     />
+  <report
+    id="report_py3o_nickel_en"
+    string="Nickel report English"
+    model="project.project"
+    report_type="qweb-pdf"
+    name="mtsmte_reports.py3o_nickel_en"
+    file="mtsmte_reports.py3o_nickel_en"
+    />
+  <report
+    id="report_py3o_nickel_fr"
+    string="Nickel report French"
+    model="project.project"
+    report_type="qweb-pdf"
+    name="mtsmte_reports.py3o_nickel_fr"
+    file="mtsmte_reports.py3o_nickel_fr"
+    />
 
   <record id="report_py3o_project" model="ir.actions.report.xml">
     <field name="report_type">py3o</field>
@@ -54,6 +84,22 @@
     <field name="py3o_is_local_fusion" eval="True"/>
     <field name="py3o_server_id" ref="py3o_server_main"/>
     <field name="py3o_template_id" ref="py3o_template_project_en"/>
+    <field name="module">mtsmte_reports</field>
+  </record>
+  <record id="report_py3o_nickel_en" model="ir.actions.report.xml">
+    <field name="report_type">py3o</field>
+    <field name="py3o_filetype">odt</field>
+    <field name="py3o_is_local_fusion" eval="True"/>
+    <field name="py3o_server_id" ref="py3o_server_main"/>
+    <field name="py3o_template_id" ref="py3o_template_nickel_en"/>
+    <field name="module">mtsmte_reports</field>
+  </record>
+  <record id="report_py3o_nickel_fr" model="ir.actions.report.xml">
+    <field name="report_type">py3o</field>
+    <field name="py3o_filetype">odt</field>
+    <field name="py3o_is_local_fusion" eval="True"/>
+    <field name="py3o_server_id" ref="py3o_server_main"/>
+    <field name="py3o_template_id" ref="py3o_template_nickel_fr"/>
     <field name="module">mtsmte_reports</field>
   </record>
 </odoo>

@@ -169,3 +169,4 @@ migration:
           - base_dj
          #### Specific
           - mtsmte_project
+          - mtsmte_reports
