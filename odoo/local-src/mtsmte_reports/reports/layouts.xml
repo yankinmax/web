@@ -80,7 +80,7 @@
         Une reproduction partielle de ce rapport ne pourra être exécutée sans notre accord.
       </p>
       <div class="report-number">Report <span t-field="doc.name"/><span> Page: <span class="page"/>/<span class="topage"/></span></div>
-      <img src="'/mtsmte_reports/static/src/img/MT_labels.jpg'" alt="certification" class="img img-responsive cert_img"/>
+      <img src="/mtsmte_reports/static/src/img/MT_labels.jpg" alt="certification" class="img img-responsive cert_img"/>
     </div>
   </template>
 
