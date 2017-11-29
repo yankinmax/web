@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-19 09:49+0000\n"
-"PO-Revision-Date: 2017-10-19 09:49+0000\n"
+"POT-Creation-Date: 2017-11-28 12:27+0000\n"
+"PO-Revision-Date: 2017-11-28 12:27+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -80,14 +80,14 @@ msgid "Cheque"
 msgstr ""
 
 #. module: specific_payment_mode
-#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_company_on_errors_ids
-msgid "Companies on error"
-msgstr ""
-
-#. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_compute_calculator
 #: model:ir.model.fields,field_description:specific_payment_mode.field_sale_order_compute_calculator
 msgid "Compute calculator"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.ui.view,arch_db:specific_payment_mode.view_order_specific_form
+msgid "Compute monthly payments"
 msgstr ""
 
 #. module: specific_payment_mode
@@ -118,7 +118,7 @@ msgid "Day of payment"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:232
+#: code:addons/specific_payment_mode/models/sale_order.py:273
 #, python-format
 msgid "Day of payment must be an integer between 1 and 31"
 msgstr ""
@@ -140,7 +140,7 @@ msgid "Depiltech payment mode"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:141
+#: code:addons/specific_payment_mode/models/sale_order.py:135
 #, python-format
 msgid "Depiltech payment mode invalid to confirm sale order"
 msgstr ""
@@ -156,6 +156,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_display_name
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: specific_payment_mode
+#: model:ir.model,name:specific_payment_mode.model_mail_compose_message
+msgid "Email composition wizard"
 msgstr ""
 
 #. module: specific_payment_mode
@@ -176,7 +181,7 @@ msgid "First monthly payment"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:202
+#: code:addons/specific_payment_mode/models/sale_order.py:243
 #, python-format
 msgid "First monthly payment must be a float between 0 and %.2f"
 msgstr ""
@@ -200,7 +205,7 @@ msgid "ID"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:489
+#: code:addons/specific_payment_mode/models/sale_order.py:556
 #, python-format
 msgid "Invalid data for the calculator."
 msgstr ""
@@ -258,7 +263,7 @@ msgid "Month number"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:181
+#: code:addons/specific_payment_mode/models/sale_order.py:222
 #, python-format
 msgid "Month number must be an integer between 0 and %d"
 msgstr ""
@@ -270,7 +275,7 @@ msgid "Monthly payment"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:222
+#: code:addons/specific_payment_mode/models/sale_order.py:263
 #, python-format
 msgid "Monthly payment must be a float between 0 and %.2f"
 msgstr ""
@@ -281,8 +286,8 @@ msgid "Name"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:192
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:222
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:198
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:228
 #, python-format
 msgid "No %s journal found for company %s "
 msgstr ""
@@ -337,19 +342,19 @@ msgid "Payment method"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:157
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:165
 #, python-format
 msgid "Payment mode %s from company %s is used on an open invoice."
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:169
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:177
 #, python-format
 msgid "Payment mode %s from company %s is used on sales order which are not totally invoiced or cancelled."
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:145
+#: code:addons/specific_payment_mode/models/sale_order.py:139
 #, python-format
 msgid "Payment mode configuration in error (no validated depiltech payment mode defined)"
 msgstr ""
@@ -362,6 +367,7 @@ msgstr ""
 
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_company_modes_to_create_ids
+#: model:ir.model.fields,field_description:specific_payment_mode.field_account_payment_mode_generator_company_on_errors_ids
 #: model:ir.ui.view,arch_db:specific_payment_mode.account_payment_mode_generator_view_form
 msgid "Payment modes to create"
 msgstr ""
@@ -379,7 +385,7 @@ msgid "Provision"
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/models/sale_order.py:166
+#: code:addons/specific_payment_mode/models/sale_order.py:207
 #, python-format
 msgid "Provision must be a float between 0 and %.2f"
 msgstr ""
@@ -405,7 +411,21 @@ msgid "Setup default terms and conditions in your company settings."
 msgstr ""
 
 #. module: specific_payment_mode
-#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:103
+#: code:addons/specific_payment_mode/models/sale_order.py:185
+#, python-format
+msgid "The calculator total amount (%.2f) has to be equal to the sale order total amount (%.2f).\n"
+"Check calculator amounts."
+msgstr ""
+
+#. module: specific_payment_mode
+#: code:addons/specific_payment_mode/models/sale_order.py:172
+#, python-format
+msgid "The calculator total amount (%.2f) is less than the sale order total amount (%.2f).\n"
+"Check calculator amounts."
+msgstr ""
+
+#. module: specific_payment_mode
+#: code:addons/specific_payment_mode/wizard/account_payment_mode_generator.py:111
 #, python-format
 msgid "There is nothing to do."
 msgstr ""
@@ -418,6 +438,12 @@ msgstr ""
 #. module: specific_payment_mode
 #: model:ir.model.fields,field_description:specific_payment_mode.field_depiltech_payment_mode_use_as_default
 msgid "Use as default"
+msgstr ""
+
+#. module: specific_payment_mode
+#: code:addons/specific_payment_mode/models/account_payment_method.py:40
+#, python-format
+msgid "You must be connected on \"Depil Tech Holding\" company to generate payment modes."
 msgstr ""
 
 #. module: specific_payment_mode

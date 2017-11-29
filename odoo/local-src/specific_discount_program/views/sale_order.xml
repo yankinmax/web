@@ -86,7 +86,7 @@
 
             <field name="program_code_ids" position="after">
                 <field name="discount_manually_percent"/>
-                <field name="gift_quotation" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="gift_quotation"/>
                 <field name="sale_order_used_by_program_ids" widget="many2many_tags" readonly="True" groups="specific_security.group_reset_alert_program"/>
                 <field name="program_alert" readonly="True" groups="specific_security.group_reset_alert_program"/>
             </field>

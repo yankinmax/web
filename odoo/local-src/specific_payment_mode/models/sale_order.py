@@ -14,13 +14,17 @@ from odoo import models, fields, api, _
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
+    state = fields.Selection(
+        selection_add=[('waiting_calculator', 'Waiting calculator')],
+    )
+
     depiltech_payment_mode = fields.Many2one(
         comodel_name='depiltech.payment.mode',
         string='Depiltech payment mode',
         readonly=True,
         states={
             'draft': [('readonly', False)],
-            'sent': [('readonly', False)]
+            'waiting_calculator': [('readonly', False)],
         },
     )
 
@@ -42,8 +46,7 @@ class SaleOrder(models.Model):
         default=0.0,
         readonly=True,
         states={
-            'draft': [('readonly', False)],
-            'sent': [('readonly', False)]
+            'waiting_calculator': [('readonly', False)],
         },
     )
     month_number = fields.Integer(
@@ -51,8 +54,7 @@ class SaleOrder(models.Model):
         default=0,
         readonly=True,
         states={
-            'draft': [('readonly', False)],
-            'sent': [('readonly', False)]
+            'waiting_calculator': [('readonly', False)],
         },
     )
     first_monthly_payment = fields.Float(
@@ -61,8 +63,7 @@ class SaleOrder(models.Model):
         default=0.0,
         readonly=True,
         states={
-            'draft': [('readonly', False)],
-            'sent': [('readonly', False)]
+            'waiting_calculator': [('readonly', False)],
         },
     )
     first_monthly_payment_readonly = fields.Float(
@@ -75,8 +76,7 @@ class SaleOrder(models.Model):
         default=0.0,
         readonly=True,
         states={
-            'draft': [('readonly', False)],
-            'sent': [('readonly', False)]
+            'waiting_calculator': [('readonly', False)],
         },
     )
     date_of_first_monthly_payment = fields.Date(
@@ -84,8 +84,7 @@ class SaleOrder(models.Model):
         default=lambda s: fields.Date.today(),
         readonly=True,
         states={
-            'draft': [('readonly', False)],
-            'sent': [('readonly', False)]
+            'waiting_calculator': [('readonly', False)],
         },
     )
     day_of_payment = fields.Integer(
@@ -146,6 +145,51 @@ class SaleOrder(models.Model):
                     'Payment mode configuration in error '
                     '(no validated depiltech payment mode defined)'
                 ))
+
+    @api.one
+    @api.constrains(
+        'state',
+        'partner_company_type',
+        'provision',
+        'first_monthly_payment',
+        'month_number',
+        'monthly_payment'
+    )
+    def _check_state_from_waiting_calculator(self):
+        # If partner company type is a agency customer,
+        # check state
+        if self.get_to_be_check() and self.state in ['sent', 'sale']:
+            # Check the sale order total amount with calculator total amount
+            calculator_total_amount = (
+                self.provision +
+                self.first_monthly_payment
+            )
+            if self.month_number > 1:
+                calculator_total_amount += (
+                    (self.month_number - 1) * self.monthly_payment
+                )
+
+            # PNF payment case
+            if not self.compute_calculator:
+                if calculator_total_amount < self.amount_total:
+                    raise ValidationError(_(
+                        'The calculator total amount (%.2f) is less than '
+                        'the sale order total amount (%.2f).\n'
+                        'Check calculator amounts.'
+                    ) % (calculator_total_amount, self.amount_total))
+            # Other payment case
+            else:
+                compare = float_compare(
+                    calculator_total_amount,
+                    self.amount_total,
+                    precision_digits=2
+                )
+                if compare != 0:
+                    raise ValidationError(_(
+                        'The calculator total amount (%.2f) has to be equal '
+                        'to the sale order total amount (%.2f).\n'
+                        'Check calculator amounts.'
+                    ) % (calculator_total_amount, self.amount_total))
 
     @api.one
     @api.constrains('provision', 'amount_total', 'partner_company_type')
@@ -364,6 +408,32 @@ class SaleOrder(models.Model):
         if self.partner_company_type == 'agency_customer':
             self.payment_term_id.sudo().unlink()
         return super(SaleOrder, self).action_cancel()
+
+    @api.multi
+    def force_apply(self):
+        # Override the original function in sale_discount_program
+        # to change filtered state
+        if self.env['ir.config_parameter'].get_param('force_discount_apply'):
+            for sale in self.filtered(
+                    lambda s: s.state in ('draft')
+            ):
+                sale.apply_discount_programs()
+
+    @api.multi
+    def action_compute_monthly_payment(self):
+        self.ensure_one()
+        self.force_apply()
+        self.state = 'waiting_calculator'
+
+    @api.multi
+    def print_quotation(self):
+        self.filtered(
+            lambda s: s.state == 'waiting_calculator' and
+            s.partner_company_type == 'agency_customer'
+        ).write({
+            'state': 'sent'
+        })
+        return super(SaleOrder, self).print_quotation()
 
     @api.multi
     def action_confirm(self):

@@ -4,16 +4,77 @@
         <field name="name">sale.order.specific.form</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="specific_discount_program.view_order_form"/>
+        <field name="priority" eval="100"/>
         <field name="arch" type="xml">
+
+            <!-- ADD STATE "Waiting calculator" -->
+
+            <button name="action_quotation_send" position="before">
+                <button name="action_compute_monthly_payment" string="Compute monthly payments" type="object" class="btn-primary"
+                        attrs="{'invisible': ['|', ('partner_company_type', '!=', 'agency_customer'), ('state', '!=', 'draft')]}"/>
+            </button>
+
+            <button name="action_quotation_send" position="attributes">
+                <attribute name="states"/>
+                <attribute name="attrs">{'invisible': [
+                    '|',
+                    '&amp;', ('partner_company_type', '=', 'agency_customer'), ('state', '!=', 'waiting_calculator'),
+                    '&amp;', ('partner_company_type', '!=', 'agency_customer'), ('state', '!=', 'draft')
+                    ]}
+                </attribute>
+            </button>
+
+            <button name="print_quotation" position="attributes">
+                <attribute name="states"/>
+                <attribute name="attrs">{'invisible': [
+                    '|',
+                    '&amp;', ('partner_company_type', '=', 'agency_customer'), ('state', '!=', 'waiting_calculator'),
+                    '&amp;', ('partner_company_type', '!=', 'agency_customer'), ('state', '!=', 'draft')
+                    ]}
+                </attribute>
+            </button>
+
+            <button class="o_sale_confirm" position="attributes">
+                <attribute name="states"/>
+                <attribute name="attrs">{'invisible': [
+                    '|',
+                    '&amp;', ('partner_company_type', '=', 'agency_customer'), ('state', '!=', 'waiting_calculator'),
+                    '&amp;', ('partner_company_type', '!=', 'agency_customer'), ('state', '!=', 'draft')
+                    ]}
+                </attribute>
+            </button>
+
+            <button name="apply_discount_programs" position="attributes">
+                <attribute name="states">draft</attribute>
+            </button>
+
+            <button name="action_cancel" position="attributes">
+                <attribute name="states">draft,waiting_calculator,sent,sale</attribute>
+            </button>
+
+            <field name="partner_id" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+            </field>
+
+            <field name="date_order" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+            </field>
+
+            <field name="order_line" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+            </field>
+
+            <!-- END ADD STATE "Waiting calculator" -->
 
             <field name="note" position="replace"/>
 
             <field name="payment_term_id" position="attributes">
-                <attribute name="attrs">{'readonly': [('partner_company_type', '=', 'agency_customer')]}</attribute>
+                <attribute name="attrs">{'readonly': ['|', ('partner_company_type', '=', 'agency_customer'), ('state', '!=', 'draft')]}</attribute>
             </field>
 
             <field name="payment_mode_id" position="attributes">
                 <attribute name="required">True</attribute>
+                <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
             </field>
 
             <group name="sale_total" position="replace">
@@ -25,7 +86,9 @@
                                    nolabel="1"/>
                         </group>
                         <group colspan="3" attrs="{'invisible': [('partner_company_type', '!=', 'agency_customer')]}">
-                            <field name="depiltech_payment_mode" widget="selection" groups="specific_security.group_can_see_depiltech_payment_mode"/>
+                            <field name="depiltech_payment_mode"
+                                   widget="selection"
+                                   groups="specific_security.group_can_see_depiltech_payment_mode"/>
                             <field name="compute_calculator" invisible="True"/>
                             <field name="calculator_link" widget="url" attrs="{'invisible': [('calculator_link', '=', False)]}"/>
                             <field name="provision"/>

@@ -16,7 +16,11 @@ class SaleOrder(models.Model):
     )
 
     program_to_add = fields.Char(
-        store=False
+        store=False,
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+        },
     )
 
     def search_program_to_add(self, program_to_add):
@@ -79,7 +83,11 @@ class SaleOrder(models.Model):
         compute='_compute_supporting_document_required',
     )
     supporting_document = fields.Binary(
-        attachment=True
+        attachment=True,
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+        },
     )
     supporting_document_filename = fields.Char(
         string='Supporting document',

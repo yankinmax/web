@@ -27,10 +27,20 @@ class SaleOrder(models.Model):
     discount_manually_percent = fields.Float(
         string='Manually Discount (%)',
         digits=dp.get_precision('Discount'),
-        default=0.0
+        default=0.0,
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+        },
     )
 
-    gift_quotation = fields.Boolean('This quotation is a gift')
+    gift_quotation = fields.Boolean(
+        string='This quotation is a gift',
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+        },
+    )
 
     sale_order_which_use_me_in_program_id = fields.Many2one(
         comodel_name='sale.order',

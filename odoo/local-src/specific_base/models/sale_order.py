@@ -18,6 +18,10 @@ class SaleOrder(models.Model):
         comodel_name='res.company.phototherapist',
         required=True,
         ondelete='restrict',
+        readonly=True,
+        states={
+            'draft': [('readonly', False)],
+        },
         string='Phototherapist')
     payment_term_id = fields.Many2one('account.payment.term')
     # default=get_default_payment_term_id)
