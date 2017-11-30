@@ -11,6 +11,7 @@
         'sale_timesheet',
         'account',
         'maintenance',
+        'sale_project_fixed_price_task_completed_invoicing',
     ],
     "author": "Camptocamp,Odoo Community Association (OCA)",
     "website": "http://www.camptocamp.com",
