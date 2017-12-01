@@ -177,3 +177,4 @@ migration:
         upgrade:
          #### Specific
           - mtsmte_sale
+          - mtsmte_reports

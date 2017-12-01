@@ -23,6 +23,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* Fix for language support of BSMTS-221,  BSMTS-228
+
 **Build**
 
 **Documentation**

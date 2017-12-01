@@ -116,6 +116,7 @@
           </thead>
           <tbody>
             <t t-foreach="task.product_substance_measure_ids" t-as="meas">
+              <t t-set="meas" t-value="meas.with_context({'lang': forced_lang or doc.partner_id.lang})"/>
               <tr>
                 <td class="substance">
                   <span t-field="meas.product_substance_id" /><br/>
