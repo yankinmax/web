@@ -20,8 +20,12 @@
 #
 ############################################################################*/
 
-openerp.web_ckeditor4 = function(instance)
-{
+odoo.define('web_ckeditor4', function(require){
+    "use strict";
+    var core = require('web.core');
+    var session = require('web.session');
+    var formats = require('web.formats');
+
     var ckeditor_addFunction_org = CKEDITOR.tools.addFunction;
     //this is a quite complicated way to kind of monkey patch the private
     //method onDomReady of ckeditor's plugin wysiwigarea, which causes problems
@@ -33,17 +37,17 @@ openerp.web_ckeditor4 = function(instance)
         {
             var scope_reference = scope;
             return ckeditor_addFunction_org(function()
-                    {
-                        var self = this,
-                            self_arguments=arguments;
-                        setTimeout(function()
+                {
+                    var self = this,
+                        self_arguments=arguments;
+                    setTimeout(function()
                         {
                             if(self.editor)
                             {
                                 fn.apply(self, self_arguments);
                             }
                         }, 0);
-                    }, scope);
+                }, scope);
         }
         return ckeditor_addFunction_org(fn, scope);
     };
@@ -51,51 +55,41 @@ openerp.web_ckeditor4 = function(instance)
     CKEDITOR.on('dialogDefinition', function(e)
         {
             _.each(e.data.definition.contents, function(element)
-            {
-                if(!element || element.filebrowser!='uploadButton')
                 {
-                    return
-                }
-                _.each(element.elements, function(element)
-                {
-                    if(!element.onClick || element.type!='fileButton')
+                    if(!element || element.filebrowser!='uploadButton')
                     {
                         return
                     }
-                    var onClick_org = element.onClick;
-                    element.onClick = function(e1)
-                    {
-                        onClick_org.apply(this, arguments);
-                        _.each(jQuery('#'+this.domId).closest('table')
-                            .find('iframe').contents().find(':file')
-                            .get(0).files,
-                            function(file)
+                    _.each(element.elements, function(element)
+                        {
+                            if(!element.onClick || element.type!='fileButton')
                             {
-                                var reader = new FileReader();
-                                reader.onload = function(load_event)
-                                {
-                                    CKEDITOR.tools.callFunction(
-                                        e.editor._.filebrowserFn,
-                                        load_event.target.result,
-                                        '');
-                                }
-                                reader.readAsDataURL(file);
-                            });
-                        return false;
-                    }
+                                return
+                            }
+                            var onClick_org = element.onClick;
+                            element.onClick = function(e1)
+                            {
+                                onClick_org.apply(this, arguments);
+                                _.each(jQuery('#'+this.domId).closest('table')
+                                    .find('iframe').contents().find(':file')
+                                    .get(0).files,
+                                    function(file)
+                                    {
+                                        var reader = new FileReader();
+                                        reader.onload = function(load_event)
+                                        {
+                                            CKEDITOR.tools.callFunction(
+                                                e.editor._.filebrowserFn,
+                                                load_event.target.result,
+                                                '');
+                                        }
+                                        reader.readAsDataURL(file);
+                                    });
+                                return false;
+                            }
+                        });
                 });
-            });
         });
-
-    instance.web.form.widgets.add('text_ckeditor4',
-            'instance.web_ckeditor4.FieldCKEditor4');
-    instance.web.form.widgets.add('text_ckeditor4_raw',
-            'instance.web_ckeditor4.FieldCKEditor4Raw');
-    instance.web.form.widgets.add('text_html',
-            'instance.web_ckeditor4.FieldCKEditor4');
-    instance.web.form.widgets.add('html',
-            'instance.web_ckeditor4.FieldCKEditor4');
-
     function filter_html(value, ckeditor_filter, ckeditor_writer)
     {
         var fragment = CKEDITOR.htmlParser.fragment.fromHtml(value);
@@ -105,19 +99,18 @@ openerp.web_ckeditor4 = function(instance)
         return ckeditor_writer.getHtml();
     };
 
-    default_ckeditor_filter = new CKEDITOR.filter(
+    var default_ckeditor_filter = new CKEDITOR.filter(
+        {
+            '*':
             {
-                '*':
-                {
-                    attributes: 'href,src,style,alt,width,height,dir',
-                    styles: '*',
-                    classes: '*',
-                },
-                'html head title meta style body p div span a h1 h2 h3 h4 h5 img br hr table tr th td ul ol li dd dt strong pre b i': true,
-            });
-    default_ckeditor_writer = new CKEDITOR.htmlParser.basicWriter();
-
-    instance.web_ckeditor4.FieldCKEditor4 = instance.web.form.FieldText.extend({
+                attributes: 'href,src,style,alt,width,height,dir',
+                styles: '*',
+                classes: '*',
+            },
+            'html head title meta style body p div span a h1 h2 h3 h4 h5 img br hr table tr th td ul ol li dd dt strong pre b i': true,
+        });
+    var default_ckeditor_writer = new CKEDITOR.htmlParser.basicWriter();
+    var FieldCKEditor4 = core.form_widget_registry.get('text').extend({
         ckeditor_config: {
             removePlugins: 'iframe,flash,forms,smiley,pagebreak,stylescombo',
             filebrowserImageUploadUrl: 'dummy',
@@ -130,21 +123,20 @@ openerp.web_ckeditor4 = function(instance)
         start: function()
         {
             this._super.apply(this, arguments);
-    
-            CKEDITOR.lang.load(instance.session.user_context.lang.split('_')[0], 'en', function() {});
+            CKEDITOR.lang.load(session.user_context.lang.split('_')[0], 'en', function() {});
         },
         initialize_content: function()
         {
             var self = this;
             this._super.apply(this, arguments);
-            if(!this.$textarea)
+            if(!this.$el)
             {
                 return;
             }
-            this.editor = CKEDITOR.replace(this.$textarea.get(0),
+            this.editor = CKEDITOR.replace(this.$el.get(0),
                 _.extend(
                     {
-                        language: instance.session.user_context.lang.split('_')[0],
+                        language: session.user_context.lang.split('_')[0],
                         on:
                         {
                             'change': function()
@@ -157,7 +149,7 @@ openerp.web_ckeditor4 = function(instance)
         },
         store_dom_value: function()
         {
-            this.internal_set_value(this.editor ? this.editor.getData() : instance.web.parse_value(this.get('value'), this));
+            this.internal_set_value(this.editor ? this.editor.getData() : formats.parse_value(this.get('value'), this));
         },
         filter_html: function(value)
         {
@@ -214,11 +206,14 @@ openerp.web_ckeditor4 = function(instance)
             this._cleanup_editor();
         }
     });
-    instance.web_ckeditor4.FieldCKEditor4Raw = instance.web_ckeditor4.FieldCKEditor4.extend({
+    var FieldCKEditor4Raw = FieldCKEditor4.extend({
         filter_html: function(value)
         {
             return value;
         }
     });
-}
-
+    core.form_widget_registry.add('text_ckeditor4', FieldCKEditor4)
+    core.form_widget_registry.add('text_ckeditor4_raw', FieldCKEditor4Raw)
+    core.form_widget_registry.add('text_html', FieldCKEditor4)
+    core.form_widget_registry.add('html', FieldCKEditor4)
+});
