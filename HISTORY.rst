@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.1.0 (2017-11-30)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Stock picking scrap: update next picking qty BSMTS-197
 * Add chatter to project.project BSMTS-219
 * Add changes to py3o reports BSMTS-223
@@ -29,14 +41,19 @@ latest (unreleased)
 * Renamed conformity field to compliance in product.substance.measure BSMTS-220
 * Add changes to management dashboard BSMTS-222
 
+
 **Bugfixes**
+
+* Fix product.category data for MT
+
 
 **Build**
 
 * Remove dummy package
-
-
-**Documentation**
+* Replace odoo-prototype w/ odoo-dj latest
+* Remove dummy package
+* Go for 10.1.0 instead of 10.0.16
+* Minion: increase memory limits
 
 
 10.0.15 (2017-11-27)
