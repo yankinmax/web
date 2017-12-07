@@ -40,6 +40,7 @@ latest (unreleased)
 * Add language support to the chemical analysis BSMTS-221
 * Renamed conformity field to compliance in product.substance.measure BSMTS-220
 * Add changes to management dashboard BSMTS-222
+* Add groups to button Invoiceable in project task form BSMTS-225
 
 
 **Bugfixes**
