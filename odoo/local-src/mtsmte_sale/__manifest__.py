@@ -7,6 +7,7 @@
     "depends": [
         'sale',
         'sale_stock',
+        'sale_order_dates',
         'project',
         'sale_timesheet',
         'account',

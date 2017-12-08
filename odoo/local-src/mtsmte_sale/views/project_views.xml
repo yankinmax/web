@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
   <record id="project_edit_project_specific" model="ir.ui.view">
     <field name="name">project.project.form.specific</field>
     <field name="model">project.project</field>
@@ -18,6 +19,9 @@
           <field name="analyze_sample"/>
           <field name="send_sample_back"/>
           <field name="reception_date"/>
+          <field name="sale_order_ids" invisible="1"/>
+          <field name="expiration_date"/>
+          <field name="expiration_respected"/>
         </group>
       </group>
       <xpath expr="//notebook" position="inside">
@@ -26,6 +30,67 @@
         </page>
       </xpath>
     </field>
+  </record>
+
+  <record id="view_project_project_filter_specific" model="ir.ui.view">
+    <field name="name">view project project filter specific</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.view_project_project_filter"/>
+    <field name="arch" type="xml">
+      <xpath expr="//filter[@name='my_projects']" position="after">
+        <separator/>
+        <filter string="Expiration Respected" name="expiration_respected" domain="[('expiration_respected', '=', True)]"/>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="view_project_project_tree_specific" model="ir.ui.view">
+    <field name="name">view project project tree specific</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.view_project"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='partner_id']" position="after">
+          <field name="sale_order_ids" invisible="1"/>
+          <field name="expiration_date" invisible="1"/>
+          <field name="expiration_respected" invisible="1"/>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="project_dashboard_tree" model="ir.ui.view">
+    <field name="name">project dashboard tree</field>
+    <field name="model">project.project</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="partner_id"/>
+        <field name="user_id"/>
+        <field name="resp_one_id"/>
+        <field name="resp_two_id"/>
+        <field name="expiration_date"/>
+        <field name="task_quant"/>
+        <field name="finished_task_quant"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="project.open_view_project_all" model="ir.actions.act_window">
+    <field name="view_mode">tree,kanban,form</field>
+    <field name="view_id" ref="project_dashboard_tree"/>
+  </record>
+
+  <record id="project.open_view_project_all_config" model="ir.actions.act_window">
+    <field name="view_id" ref="project.view_project"/>
+  </record>
+
+  <record id="project_favorite_filter" model="ir.filters">
+    <field name="name">Projects ready to print</field>
+    <field name="model_id">project.project</field>
+    <field name="domain">[('ready_to_print', '=', True)]</field>
+    <field name="sort">[]</field>
+    <field name="context">{}</field>
+    <field name="active">1</field>
+    <field name="user_id"></field>
   </record>
 
 </odoo>

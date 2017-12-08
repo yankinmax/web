@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-01 11:09+0000\n"
-"PO-Revision-Date: 2017-11-01 11:09+0000\n"
+"POT-Creation-Date: 2017-11-30 15:18+0000\n"
+"PO-Revision-Date: 2017-11-30 15:18+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,21 @@ msgstr "Dose appliquée"
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_bdl
 msgid "BDL"
 msgstr "BDL"
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_bql
+msgid "BQL"
+msgstr "BQL"
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_measure_bdl
+msgid "Below Detection Limit.When selected, measure is considered Conform"
+msgstr "Below Detection Limit.When selected, measure is considered Conform"
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_measure_bql
+msgid "Below Quantification Limit.When selected, measure is considered Conform"
+msgstr "Below Quantification Limit.When selected, measure is considered Conform"
 
 #. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_sub_cas_number
@@ -65,6 +80,16 @@ msgid "Company"
 msgstr "Société"
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_finished_task_quant
+msgid "Completed Tasks"
+msgstr "Completed Tasks"
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_conformity
+msgid "Compliance"
+msgstr "Compliance"
+
+#. module: mtsmte_sale
 #: selection:product.substance.measure,conformity:0
 #: selection:project.project,conformity:0
 #: selection:project.task,conformity:0
@@ -80,11 +105,6 @@ msgstr "Conclusion"
 #: model:ir.ui.view,arch_db:mtsmte_sale.project_edit_project_specific
 msgid "Conclusions"
 msgstr "Conclusions"
-
-#. module: mtsmte_sale
-#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_conformity
-msgid "Conformity"
-msgstr "Conformité"
 
 #. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_create_uid
@@ -158,6 +178,21 @@ msgstr "Durée"
 #: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_equipment_id
 msgid "Equipment"
 msgstr "Équipement"
+
+#. module: mtsmte_sale
+#: model:ir.ui.view,arch_db:mtsmte_sale.view_project_project_filter_specific
+msgid "Expiration Respected"
+msgstr "Expiration Respected"
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_expiration_date
+msgid "Expiration date"
+msgstr "Expiration date"
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_expiration_respected
+msgid "Expiration respected"
+msgstr "Expiration respected"
 
 #. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_product_extraction_type_id
@@ -354,9 +389,19 @@ msgid "Project conformity"
 msgstr "Project conformity"
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_ready_to_print
+msgid "Project ready to print"
+msgstr "Projets prêts à imprimer"
+
+#. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_project_task_ids
 msgid "Project task ids"
 msgstr "Ids de tâches de projet"
+
+#. module: mtsmte_sale
+#: model:ir.filters,name:mtsmte_sale.project_favorite_filter
+msgid "Projects ready to print"
+msgstr "Projets prêts à imprimer"
 
 #. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_quantification_limit
@@ -402,6 +447,11 @@ msgstr "Modèles de résultats"
 #: model:ir.actions.act_window,name:mtsmte_sale.task_results_sentences_act_window
 msgid "Results sentences"
 msgstr "Modèles de résultats"
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_sale_order_ids
+msgid "Sale order ids"
+msgstr "Sale order ids"
 
 #. module: mtsmte_sale
 #: model:ir.model,name:mtsmte_sale.model_sale_order
@@ -504,6 +554,11 @@ msgid "Task conformity"
 msgstr "Task conformity"
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_task_quant
+msgid "Tasks"
+msgstr "Tâches"
+
+#. module: mtsmte_sale
 #: selection:product.template,chemistry:0
 msgid "Test Environment"
 msgstr "Test Environment"
@@ -559,11 +614,6 @@ msgstr "The value 0 is considered as NULL"
 #: selection:project.task,conformity:0
 msgid "Warning"
 msgstr "Warning"
-
-#. module: mtsmte_sale
-#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_measure_bdl
-msgid "When selected, measure is considered Conform"
-msgstr "When selected, measure is considered Conform"
 
 #. module: mtsmte_sale
 #: model:ir.model.fields,help:mtsmte_sale.field_project_task_sentence_id

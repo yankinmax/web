@@ -21,6 +21,10 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Add expiration_date, expiration_respected fields+ filter BSMTS-211
+* Add new default tree view for project, tasks and completed tasks fields
+  filter on tasks == completed tasks BSMTS-212
+
 **Bugfixes**
 
 * Fix for language support of BSMTS-221,  BSMTS-228
