@@ -29,6 +29,6 @@ class ProjectTask(models.Model):
         if html2text is None:
             return
         for invoice in self:
-            invoice.comment_text = html2text.HTML2Text(
+            invoice.comment_text = html2text.HTML2Text().handle(
                 invoice.comment or ''
             ).strip()

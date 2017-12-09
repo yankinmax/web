@@ -29,6 +29,7 @@ latest (unreleased)
 
 * Fix for language support of BSMTS-221,  BSMTS-228
 * Fix for project analysis report and BDL, BQL field BSMTS-230
+* Fix for customer invoice report BSMTS-226
 
 **Build**
 
