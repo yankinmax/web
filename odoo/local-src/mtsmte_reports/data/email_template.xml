@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="email_template_edi_sale_specific" model="mail.template">
+            <field name="name">MTSMTE Sales Order - Send by Email</field>
+            <field name="email_from">${(object.user_id.email and '%s &lt;%s&gt;' % (object.user_id.name, object.user_id.email) or '')|safe}</field>
+            <field name="subject">${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="report_template" ref="sale.report_sale_order"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>
+            <field name="lang">${object.partner_id.lang}</field>
+    <field name="body_html"><![CDATA[
+<p>Madam, Dear Sir,</p>
+<p>Thank you so much for your interest to our society.
+With reference to your order Nr.<span style="color:#ff0000">${object.name}</span>, please find attached our Order confirmation Nr. <span style="color:#ff0000">${object.name}</span>.
+Please do not hesitate to contact us for further information.
+Best regards,</p>
+
+
+% if user.signature
+<p>${user.signature | safe}</p>
+% endif
+]]></field>
+  </record>
+  
+  <record id="quotation_confirmation_mail_specific" model="mail.template">
+    <field name="name"> MTSMTE Online Quote: confirmation e-mail</field>
+    <field name="email_from">${(object.user_id.email or object.company_id.email or 'noreply@localhost')|safe}</field>
+    <field name="subject">Your order ${object.name} is confirmed</field>
+    <field name="email_to">${ctx.get('email_to') or object.partner_id.email}</field>
+    <field name="model_id" ref="sale.model_sale_order"/>
+    <field name="body_html"><![CDATA[
+<p>Madam, Dear Sir,</p>
+
+<p>Thank you so much for your interest to our society.
+As per your request dated <span style="color:#ff0000">${object.date_order}</span>, please find attached our Quote Nr. <span style="color:#ff0000">${object.name}</span>.
+Please do not hesitate to contact us for further information.
+We keep waiting for your feedback.
+Best regards</p>
+
+% if user.signature
+<p>${user.signature | safe}</p>
+% endif
+]]></field>
+  </record>
+
+  <record id="email_template_project_project" model="mail.template">
+            <field name="name">MTSMTE Project - Send by Email</field>
+            <field name="email_from">${(object.user_id.email and '%s &lt;%s&gt;' % (object.user_id.name, object.user_id.email) or '')|safe}</field>
+            <field name="subject">${object.company_id.name} Project ${object.name or 'n/a' }</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="model_id" ref="project.model_project_project"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="report_template" ref="mtsmte_reports.action_report_analysis"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}</field>
+            <field name="lang">${object.partner_id.lang}</field>
+    <field name="body_html"><![CDATA[
+<p>Madam, Dear Sir,</p>
+<p>With reference to your order Nr. <span style="color:#ff0000">${object.name}</span>, please find attached our Report Nr. <span style="color:#ff0000">${object.name}</span>.
+Do not hesitate to contact us for further information.
+Best regards</p>
+
+
+% if user.signature
+<p>${user.signature | safe}</p>
+% endif
+]]></field>
+  </record>
+
+  <record id="email_template_edi_invoice_specific" model="mail.template">
+    <field name="name">MTSMTE Invoice - Send by Email</field>
+    <field name="email_from">${(object.user_id.email and '%s &lt;%s&gt;' % (object.user_id.name, object.user_id.email) or '')|safe}</field>
+    <field name="subject">${object.company_id.name} Invoice (Ref ${object.number or 'n/a'})</field>
+    <field name="partner_to">${object.partner_id.id}</field>
+    <field name="model_id" ref="account.model_account_invoice"/>
+    <field name="auto_delete" eval="True"/>
+    <field name="report_template" ref="account.account_invoices"/>
+    <field name="report_name">Invoice_${(object.number or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}</field>
+    <field name="lang">${object.partner_id.lang}</field>
+    <field name="body_html"><![CDATA[
+<p>Madam, Dear Sir,</p>
+<p>Please find attached our Invoice Nr. <span style="color:#ff0000">${object.number}</span> on <span style="color:#ff0000">${object.date_invoice}</span>.
+We thank you in advance for your next payment.
+Do not hesitate to contact us for further information.
+Best regards</p>
+
+
+% if user.signature
+<p>${user.signature | safe}</p>
+% endif
+]]></field>
+  </record>
+</odoo>
