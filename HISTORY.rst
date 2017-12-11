@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.1.1 (2017-12-11)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add expiration_date, expiration_respected fields+ filter BSMTS-211
 * Add new default tree view for project, tasks and completed tasks fields
   filter on tasks == completed tasks BSMTS-212
@@ -30,10 +42,6 @@ latest (unreleased)
 * Fix for language support of BSMTS-221,  BSMTS-228
 * Fix for project analysis report and BDL, BQL field BSMTS-230
 * Fix for customer invoice report BSMTS-226
-
-**Build**
-
-**Documentation**
 
 
 10.1.0 (2017-11-30)
