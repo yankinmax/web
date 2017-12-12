@@ -178,3 +178,8 @@ migration:
          #### Specific
           - mtsmte_sale
           - mtsmte_reports
+    - version: 10.1.2
+      addons:
+        upgrade:
+         #### Specific
+          - mtsmte_reports
