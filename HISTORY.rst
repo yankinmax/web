@@ -23,8 +23,12 @@ latest (unreleased)
 
 * Modify analysis report, adding unit on header column on new line
 * Add propagation of substances to the sale order from the template BSMTS-224
+* IMP analyze_sample in project and sale order is now html BSMTS-233
+* ADD analyze_sample from sale order is now propagated to sale.order.line BSMTS-232
 
 **Bugfixes**
+
+* FIX for a recursion bug from BSMTS-211,212
 
 **Build**
 

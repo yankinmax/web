@@ -19,7 +19,7 @@ class SaleOrderLine(models.Model):
     tested_sample = fields.Text(
         string='Tested Samples',
     )
-
+    
     @api.onchange('product_id')
     def onchange_product_id(self):
         for line in self.product_id.product_substance_line_ids:

@@ -3,12 +3,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
+import html2text
 
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    analyze_sample = fields.Text(
+    analyze_sample = fields.Html(
         string='Samples To Analyze',
     )
     commercial_partner_id = fields.Many2one(
@@ -83,3 +84,19 @@ class SaleOrder(models.Model):
                 substances = line.product_id.product_substance_line_ids.mapped(
                     'product_substance_id')
                 line.product_substance_ids = [(6, 0, substances.ids)]
+
+    def _clean_html(self):
+        clean_text = html2text.HTML2Text().handle(
+            self.analyze_sample or ''
+        ).strip()
+        return clean_text
+
+    @api.multi
+    def write(self, vals):
+        res = super(SaleOrder, self).write(vals)
+        for order in self:
+            clean_text = order._clean_html()
+            for line in order.order_line:
+                if not line.tested_sample:
+                    line.tested_sample = clean_text
+        return res
