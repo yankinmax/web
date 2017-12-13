@@ -57,6 +57,14 @@ class Helpers(models.AbstractModel):
     def get_analysis_type(self, product):
         return 'chemical' if product.chemistry == 'chem' else 'mech_env'
 
+    def display_legal_reference(self, tasks):
+        """Is it needed to display a legal reference section"""
+        for task in tasks:
+            product = task.sale_line_id.product_id
+            if self.get_analysis_type(product) != 'mech_env':
+                return True
+        return False
+
     def task_field_info(self, fname):
         return self.env['project.task'].fields_get(
             allfields=[fname, ])[fname]
