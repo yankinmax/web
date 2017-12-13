@@ -26,6 +26,7 @@ latest (unreleased)
 * IMP analyze_sample in project and sale order is now html BSMTS-233
 * ADD analyze_sample from sale order is now propagated to sale.order.line BSMTS-232
 * IMP py3o reports now show only date for write_date field BSMTS-237
+* Remove Title legal reference when we are on mech_env test BSMTS-238
 
 **Bugfixes**
 
