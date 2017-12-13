@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.1.2 (2017-12-13)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Modify analysis report, adding unit on header column on new line
 * Add propagation of substances to the sale order from the template BSMTS-224
 * IMP analyze_sample in project and sale order is now html BSMTS-233
