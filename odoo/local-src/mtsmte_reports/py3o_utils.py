@@ -45,8 +45,19 @@ def format_py3o_datetime(value):
         )
 
 
+def format_py3o_datetime_to_date(value):
+    """format the datetime value to keep only the date"""
+    if value:
+        return datetime.strptime(value, "%Y-%m-%d %H:%M:%S").strftime(
+            "%d.%m.%Y"
+        )
+
+
 @py3o_report_extender()
 def add_formatters(report_xml, localcontext):
     localcontext['format_py3o_html'] = format_py3o_html
     localcontext['format_py3o_date'] = format_py3o_date
     localcontext['format_py3o_datetime'] = format_py3o_datetime
+    localcontext[
+        'format_py3o_datetime_to_date'
+    ] = format_py3o_datetime_to_date

@@ -11,7 +11,7 @@ class ProjectProject(models.Model):
 
     client_order_ref = fields.Char(string='Customer Reference', copy=False)
     reception_date = fields.Date(string='Reception Date')
-    analyze_sample = fields.Text(
+    analyze_sample = fields.Html(
         string='Samples To Analyze',
     )
     resp_one_id = fields.Many2one(
@@ -103,7 +103,7 @@ class ProjectProject(models.Model):
                     commitment_date
                 ).date()
                 deadlines = record.task_ids.mapped("date_deadline")
-                record.write({
+                record.update({
                     'expiration_date': commitment_date,
                     'expiration_respected': all(
                         [fields.Date.from_string(x) < val for x in deadlines
