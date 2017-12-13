@@ -15,7 +15,7 @@ except ImportError:
     html2text = None
 
 
-class ProjectTask(models.Model):
+class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
     comment_text = fields.Text(
@@ -32,3 +32,14 @@ class ProjectTask(models.Model):
             invoice.comment_text = html2text.HTML2Text().handle(
                 invoice.comment or ''
             ).strip()
+
+    @api.multi
+    def action_invoice_sent(self):
+        template = self.env.ref(
+                'mtsmte_reports.email_template_edi_invoice_specific'
+            )
+        res = super(AccountInvoice, self).action_invoice_sent()
+        ctx = res.get('context', {})
+        ctx['default_template_id'] = template.id
+        res['context'] = ctx
+        return res

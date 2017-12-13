@@ -24,6 +24,7 @@
         'reports/layouts.xml',
         'reports/reports.xml',
         'reports/reports_py3o.xml',
+        'data/email_template.xml',
         'reports/project_analysis.xml',
         'reports/purchase_order.xml',
         'reports/purchase_quotation.xml',

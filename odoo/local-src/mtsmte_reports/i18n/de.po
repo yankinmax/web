@@ -131,17 +131,17 @@ msgstr "${(object.name or '').replace('/','_')}"
 #. module: mtsmte_reports
 #: model:mail.template,report_name:mtsmte_reports.email_template_edi_sale_specific
 msgid "${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}"
-msgstr "${(object.name or '').replace('/','_')}${object.state == 'draft' and '_brouillon' or ''}"
+msgstr "${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}"
 
 #. module: mtsmte_reports
 #: model:mail.template,subject:mtsmte_reports.email_template_edi_sale_specific
 msgid "${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })"
-msgstr "${object.company_id.name} ${object.state in ('draft', 'sent') and 'Devis' or 'Commande'} (Réf ${object.name or 'n/a' })"
+msgstr "${object.company_id.name} ${object.state in ('draft', 'sent') and 'Angebot' or 'Auftrag'} (Betreff ${object.name or 'k.A.' })"
 
 #. module: mtsmte_reports
 #: model:mail.template,subject:mtsmte_reports.email_template_edi_invoice_specific
 msgid "${object.company_id.name} Invoice (Ref ${object.number or 'n/a'})"
-msgstr "${object.company_id.name} Facture (Ref ${object.number or 'n/a'})"
+msgstr "${object.company_id.name} Rechnung (Ref ${object.number or 'n/a'})"
 
 #. module: mtsmte_reports
 #: model:mail.template,subject:mtsmte_reports.email_template_project_project
@@ -166,29 +166,29 @@ msgstr "<strong>Commitment date:</strong>"
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchasequotation_document_specific
 msgid "<strong>Origin: </strong>"
-msgstr "<strong>Origine:</strong>"
+msgstr "<strong>Origin: </strong>"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchaseorder_document_specific
 msgid "<strong>Origin:</strong>"
-msgstr "<strong>Origine:</strong>"
+msgstr "<strong>Origin:</strong>"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchaseorder_document_specific
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchasequotation_document_specific
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
 msgid "<strong>Shipping address:</strong>"
-msgstr "<strong>Adresse de livraison:</strong>"
+msgstr "<strong>Lieferanschrift:</strong>"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Analysis date:"
-msgstr "Date de l'analyse:"
+msgstr "Analysis date:"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Analyzed substance"
-msgstr "Substance analysée"
+msgstr "Analyzed substance"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
@@ -203,32 +203,32 @@ msgstr "B.Q.L"
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.project_analysis_wiz_form
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Abbrechen"
 
 #. module: mtsmte_reports
 #: model:ir.model,name:mtsmte_reports.model_res_company
 msgid "Companies"
-msgstr "Sociétés"
+msgstr "Unternehmen"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.external_layout_header
 msgid "Company Logo"
-msgstr "Logo de la companie"
+msgstr "Unternehmens Logo"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Conformity"
-msgstr "Conformité"
+msgstr "Conformity"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_create_uid
 msgid "Created by"
-msgstr "Créé par"
+msgstr "Erstellt von"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_create_date
 msgid "Created on"
-msgstr "Créé le"
+msgstr "Angelegt am"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
@@ -239,18 +239,18 @@ msgstr "Definitive"
 #: model:ir.model.fields,field_description:mtsmte_reports.field_account_invoice_comment_text
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_task_description_text
 msgid "Description as text"
-msgstr "Description comme texte"
+msgstr "Description as text"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Detection limit"
-msgstr "Limit détection"
+msgstr "Detection limit"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_display_name
 #: model:ir.model.fields,field_description:mtsmte_reports.field_report_mtsmte_reports_report_project_analysis_display_name
 msgid "Display Name"
-msgstr "Nom affiché"
+msgstr "Anzeigename"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_id
@@ -261,12 +261,12 @@ msgstr "ID"
 #. module: mtsmte_reports
 #: model:ir.model.fields,help:mtsmte_reports.field_res_company_report_logo
 msgid "Image to be used only in reports."
-msgstr "Image utilisée seulement pour les rapports"
+msgstr "Image to be used only in reports."
 
 #. module: mtsmte_reports
 #: model:ir.model,name:mtsmte_reports.model_account_invoice
 msgid "Invoice"
-msgstr "Facture"
+msgstr "Rechnung"
 
 #. module: mtsmte_reports
 #: model:mail.template,report_name:mtsmte_reports.email_template_edi_invoice_specific
@@ -276,43 +276,43 @@ msgstr "Invoice_${(object.number or '').replace('/','_')}_${object.state == 'dra
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
 msgid "Invoicing address:"
-msgstr "Adresse de facturation :"
+msgstr "Rechnungsadresse:"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
 msgid "Invoicing and shipping address:"
-msgstr "Adresse de facturation et de livraison :"
+msgstr "Rechnungs- und Lieferadresse:"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_lang_id
 msgid "Language"
-msgstr "Langue"
+msgstr "Sprache"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz___last_update
 #: model:ir.model.fields,field_description:mtsmte_reports.field_report_mtsmte_reports_report_project_analysis___last_update
 msgid "Last Modified on"
-msgstr "Dernière Modification le"
+msgstr "Zuletzt geändert am"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_write_uid
 msgid "Last Updated by"
-msgstr "Dernière mise à jour par"
+msgstr "Zuletzt aktualisiert durch"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_write_date
 msgid "Last Updated on"
-msgstr "Dernière mise à jour le"
+msgstr "Zuletzt aktualisiert am"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_analysis_doc
 msgid "Legal References"
-msgstr "Référence légale"
+msgstr "Legal References"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Legal limit"
-msgstr "Limite légale"
+msgstr "Legal limit"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
@@ -334,122 +334,122 @@ msgstr "Nickel report French"
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.project_analysis_wiz_form
 msgid "Print"
-msgstr "Imprimer"
+msgstr "Druck"
 
 #. module: mtsmte_reports
 #: model:ir.actions.act_window,name:mtsmte_reports.act_project_analysis_wiz_form
 #: model:ir.ui.view,arch_db:mtsmte_reports.project_analysis_wiz_form
 #: model:ir.ui.view,arch_db:mtsmte_reports.project_print_view
 msgid "Print analysis"
-msgstr "Impression de l'analyse"
+msgstr "Print analysis"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_project_id
 msgid "Project"
-msgstr "Projet"
+msgstr "Projekt"
 
 #. module: mtsmte_reports
 #: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_project_en
 msgid "Project English"
-msgstr "Projet anglais"
+msgstr "Project English"
 
 #. module: mtsmte_reports
 #: model:ir.actions.report.xml,name:mtsmte_reports.action_report_analysis
 msgid "Project analysis"
-msgstr "Project d'analyse"
+msgstr "Project analysis"
 
 #. module: mtsmte_reports
 #: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_project
 msgid "Projet Français"
-msgstr "Project français"
+msgstr "Projet Français"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Provisory"
-msgstr "Provisoire"
+msgstr "Provisory"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Quantification limit"
-msgstr "Limite quantification"
+msgstr "Quantification limit"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
 msgid "Report"
-msgstr "Rapport"
+msgstr "Bericht"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.company_form_view
 msgid "Report Data"
-msgstr "Données du rapport"
+msgstr "Report Data"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_res_company_report_logo
 msgid "Report logo"
-msgstr "Logo du rapport"
+msgstr "Report logo"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_res_company_report_show_address_header
 msgid "Report show address in header"
-msgstr "Le rapport affiche l'adresse dans l'entête"
+msgstr "Report show address in header"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Result"
-msgstr "Résultat"
+msgstr "Result"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 #: model:ir.ui.view,arch_db:mtsmte_reports.mech_env_results
 msgid "Results &amp;amp; Observations"
-msgstr "Résultats &amp;amp; Observations"
+msgstr "Results &amp;amp; Observations"
 
 #. module: mtsmte_reports
 #: model:ir.model,name:mtsmte_reports.model_sale_order
 msgid "Sales Order"
-msgstr "Bon de commande"
+msgstr "Verkaufsauftrag"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.project_analysis_wiz_form
 msgid "Select tasks"
-msgstr "Sélectionnez des tâches"
+msgstr "Select tasks"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Status:"
-msgstr "Statut:"
+msgstr "Status:"
 
 #. module: mtsmte_reports
 #: model:ir.model,name:mtsmte_reports.model_project_task
 msgid "Task"
-msgstr "Tâche"
+msgstr "Aufgabe"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_task_ids
 msgid "Tasks"
-msgstr "Tâches"
+msgstr "Aufgaben"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_analysis_doc
 msgid "Test / Parameters"
-msgstr "Test / Paramètres"
+msgstr "Test / Parameters"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_analysis_doc
 msgid "Tested samples"
-msgstr "Pièces Testées"
+msgstr "Tested samples"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchaseorder_document_specific
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchasequotation_document_specific
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
 msgid "VAT:"
-msgstr "TVA :"
+msgstr "USt."
 
 #. module: mtsmte_reports
 #: model:mail.template,subject:mtsmte_reports.quotation_confirmation_mail_specific
 msgid "Your order ${object.name} is confirmed"
-msgstr "Votre commande ${object.name} est confirmée"
+msgstr "Your order ${object.name} is confirmed"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
