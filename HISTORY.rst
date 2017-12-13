@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Modify analysis report, adding unit on header column on new line
+
 **Bugfixes**
 
 **Build**

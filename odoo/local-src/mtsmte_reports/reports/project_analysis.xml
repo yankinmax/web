@@ -108,8 +108,16 @@
                     <t t-raw="'['"/><t t-esc="task.product_substance_measure_ids[0].product_uom_id.name"/>&#93;
                 </em>
               </th>
-              <th class="detect_limit">Detection limit</th>
-              <th class="quantif_limit">Quantification limit</th>
+              <th class="detect_limit">Detection limit
+                <em t-if="task.product_substance_measure_ids">
+                    <t t-raw="'['"/><t t-esc="task.product_substance_measure_ids[0].product_uom_id.name"/>&#93;
+                </em>
+              </th>
+              <th class="quantif_limit">Quantification limit
+                <em t-if="task.product_substance_measure_ids">
+                    <t t-raw="'['"/><t t-esc="task.product_substance_measure_ids[0].product_uom_id.name"/>&#93;
+                </em>
+              </th>
               <th class="result">Result</th>
               <th class="conformity">Conformity</th>
             </tr>
