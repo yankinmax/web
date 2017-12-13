@@ -22,6 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Modify analysis report, adding unit on header column on new line
+* Add propagation of substances to the sale order from the template BSMTS-224
 
 **Bugfixes**
 

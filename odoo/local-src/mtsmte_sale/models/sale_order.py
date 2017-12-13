@@ -65,3 +65,21 @@ class SaleOrder(models.Model):
                 task.write(vals)
 
         return True
+
+    @api.multi
+    @api.onchange('template_id')
+    def onchange_template_id(self):
+        """Quotation template changed
+
+        When the quotation template is changed the sale order lines are
+        updated accordingly but the substances linked to the product are not.
+
+        So we need to link each line of the sale order to the corresponding
+        substances of its product
+        """
+        super(SaleOrder, self).onchange_template_id()
+        for record in self:
+            for line in record.order_line:
+                substances = line.product_id.product_substance_line_ids.mapped(
+                    'product_substance_id')
+                line.product_substance_ids = [(6, 0, substances.ids)]
