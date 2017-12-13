@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Imp substance table is now breakable between pages BSMTS-239
+
 **Bugfixes**
 
 **Build**
