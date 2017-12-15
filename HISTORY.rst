@@ -27,6 +27,9 @@ latest (unreleased)
 
 **Build**
 
+* Raise soft mem limit to 600MB for minion
+
+
 **Documentation**
 
 
