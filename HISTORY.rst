@@ -31,6 +31,12 @@ latest (unreleased)
 
 * Fixed translations for bsmts-234 BSMTS-241
 
+**Bugfixes**
+
+* Fix Sale order: tasks and substances are properly propagated when 
+  confirmed order updates BSMTS-158
+* Fix updated l10n_switzerland to fix a bug BSMTS-242
+
 **Build**
 
 * Raise soft mem limit to 600MB for minion

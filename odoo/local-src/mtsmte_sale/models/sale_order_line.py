@@ -78,7 +78,9 @@ class SaleOrderLine(models.Model):
     @api.multi
     def write(self, vals):
         self._fix_substances_values(vals)
-        return super(SaleOrderLine, self).write(vals)
+        res = super(SaleOrderLine, self).write(vals)
+        self.set_measures()
+        return res
 
     @api.multi
     def set_measures(self):
@@ -86,6 +88,8 @@ class SaleOrderLine(models.Model):
             task = self.env['project.task'].search(
                 [('sale_line_id', '=', line.id)]
             )
+            if not task:
+                return
             # Adding measures todo in tasks
             product_substance_measure = []
             for substance in line.product_substance_ids:
@@ -116,4 +120,3 @@ class SaleOrderLine(models.Model):
             if extraction_id:
                 vals['product_extraction_type_id'] = extraction_id
             task.write(vals)
-

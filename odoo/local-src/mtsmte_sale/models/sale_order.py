@@ -62,8 +62,6 @@ class SaleOrder(models.Model):
     def write(self, vals):
         res = super(SaleOrder, self).write(vals)
         for order in self:
-            if 'order_line' in vals:
-                order.order_line.set_measures()
             clean_text = order._clean_html()
             for line in order.order_line:
                 if not line.tested_sample:
