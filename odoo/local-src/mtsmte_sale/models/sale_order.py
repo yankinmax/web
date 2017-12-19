@@ -31,40 +31,7 @@ class SaleOrder(models.Model):
                 'client_order_ref': order.client_order_ref,
             }
             prj.write(vals)
-            for line in order.order_line:
-                task = self.env['project.task'].search(
-                    [('sale_line_id', '=', line.id)])
-                # Adding measures todo in tasks
-                product_substance_measure = []
-                for substance in line.product_substance_ids:
-                    vals_measure = {
-                        'task_id': task.id,
-                        'product_substance_id': substance.id,
-                    }
-                    product_substance_measure += [(0, 0, vals_measure)]
-
-                vals = {
-                    'product_substance_measure_ids': product_substance_measure,
-                    'tested_sample': line.tested_sample,
-                    'test_parameters': line.product_id.test_parameters,
-                    'applied_dose': line.product_id.applied_dose,
-                    'duration': line.product_id.duration,
-                    'nb_shocks': line.product_id.nb_shocks,
-                    'results': line.product_id.results,
-                }
-
-                product_method_id = line.product_id.product_method_id.id
-                equipment_id = line.product_id.equipment_id.id
-                extraction_id = line.product_id.product_extraction_type_id.id
-
-                if product_method_id:
-                    vals['product_method_id'] = product_method_id
-                if equipment_id:
-                    vals['equipment_id'] = equipment_id
-                if extraction_id:
-                    vals['product_extraction_type_id'] = extraction_id
-                task.write(vals)
-
+            order.order_line.set_measures()
         return True
 
     @api.multi
@@ -95,6 +62,8 @@ class SaleOrder(models.Model):
     def write(self, vals):
         res = super(SaleOrder, self).write(vals)
         for order in self:
+            if 'order_line' in vals:
+                order.order_line.set_measures()
             clean_text = order._clean_html()
             for line in order.order_line:
                 if not line.tested_sample:

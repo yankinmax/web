@@ -193,6 +193,7 @@ migration:
           - mtsmte_reports
           - crm
           - mail_environment
+          - mtsmte_sale
       operations:
         post:
           - anthem songs.update.update_10_1_3::main
