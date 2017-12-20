@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.1.3 (2017-12-20)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Imp substance table is now breakable between pages BSMTS-239
 * Update sales conditions with translations for MTE and MTS BSMTS-236
 * Add prod mail servers BSMTS-208
@@ -40,9 +52,6 @@ latest (unreleased)
 **Build**
 
 * Raise soft mem limit to 600MB for minion
-
-
-**Documentation**
 
 
 10.1.2 (2017-12-13)
