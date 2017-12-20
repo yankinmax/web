@@ -171,3 +171,18 @@ def deferred_compute_parents(ctx, model):
 
     """
     ctx.env[model]._parent_store_compute()
+
+
+def set_sale_conditions(ctx, company, conditions):
+    """ Set sale conditions for a given company.
+
+    :param conditions: mapping of lang and filepath, like:
+        [
+            # lang, filepath
+            ('fr_FR', 'data/install/foo/baz.html'),
+            ('en_US', 'data/install/bar/baz.html'),
+        ]
+    """
+    for lang, filepath in conditions:
+        note = load_file_content(filepath)
+        company.with_context(lang=lang).sale_note = note.read()

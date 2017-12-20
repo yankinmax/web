@@ -22,6 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Imp substance table is now breakable between pages BSMTS-239
+* Update sales conditions with translations for MTE and MTS BSMTS-236
 
 **Bugfixes**
 

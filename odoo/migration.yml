@@ -189,3 +189,6 @@ migration:
         upgrade:
          #### Specific
           - mtsmte_reports
+      operations:
+        post:
+          - anthem songs.update.update_10_1_3::main
