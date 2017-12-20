@@ -26,6 +26,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* Fixed translations for bsmts-234 BSMTS-241
+
 **Build**
 
 * Raise soft mem limit to 600MB for minion
