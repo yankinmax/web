@@ -26,6 +26,7 @@ migration:
           - anthem songs.install.sale::main
           - anthem songs.install.mts.sales::main
           - anthem songs.install.mte.sales::main
+          - anthem songs.install.fetchmail::main
       modes:
         full:
           operations:
@@ -60,6 +61,7 @@ migration:
           - sale_stock
           - stock
           - stock_account
+          - crm
           # l10n-switzerland
           - l10n_ch
           - l10n_ch_bank
@@ -189,6 +191,8 @@ migration:
         upgrade:
          #### Specific
           - mtsmte_reports
+          - crm
+          - mail_environment
       operations:
         post:
           - anthem songs.update.update_10_1_3::main
