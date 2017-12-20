@@ -53,6 +53,8 @@ latest (unreleased)
 
 **Build**
 
+* Upgrade docker-compose to 1.17.1
+
 **Documentation**
 
 
