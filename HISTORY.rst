@@ -23,6 +23,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* Fix terms propagation from sale order BSMTS-244
+
 **Build**
 
 **Documentation**
