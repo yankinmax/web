@@ -24,10 +24,18 @@ latest (unreleased)
 * Imp substance table is now breakable between pages BSMTS-239
 * Update sales conditions with translations for MTE and MTS BSMTS-236
 * Add prod mail servers BSMTS-208
+* Imp Sale order: tasks and substances are properly propagated when 
+  confirmed order updates BSMTS-158
 
 **Bugfixes**
 
 * Fixed translations for bsmts-234 BSMTS-241
+
+**Bugfixes**
+
+* Fix Sale order: tasks and substances are properly propagated when 
+  confirmed order updates BSMTS-158
+* Fix updated l10n_switzerland to fix a bug BSMTS-242
 
 **Build**
 
