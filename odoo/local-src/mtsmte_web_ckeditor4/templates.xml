@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="assets_backend" name="MTSMTE web_ckeditor4 assets"
+            inherit_id="web.assets_backend">
+      <xpath expr="." position="inside">
+          <script type="text/javascript"
+                  src="/mtsmte_web_ckeditor4/static/src/js/web_ckeditor4.js"></script>
+      </xpath>
+  </template>
+</odoo>

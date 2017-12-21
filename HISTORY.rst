@@ -21,6 +21,9 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Add `web_ckeditor4` (from pending PR + improvements) 
+* Add `mtsmte_web_ckeditor4` for customizations
+
 **Bugfixes**
 
 * Fix terms propagation from sale order BSMTS-244

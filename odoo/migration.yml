@@ -207,3 +207,9 @@ migration:
       operations:
         post:
           - anthem songs.update.update_10_1_3::main
+    - version: 10.1.4
+      addons:
+        upgrade:
+         #### Specific
+          - web_ckeditor4
+          - mtsmte_web_ckeditor4
