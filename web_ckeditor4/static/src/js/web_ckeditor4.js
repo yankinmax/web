@@ -194,6 +194,7 @@ odoo.define('web_ckeditor4', function(require){
                 this.editor.removeAllListeners();
                 this.editor.destroy();
                 this.editor = null;
+                $('#cke_results').remove()
             }
         },
         destroy: function()
