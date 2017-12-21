@@ -27,6 +27,8 @@ latest (unreleased)
 **Bugfixes**
 
 * Fix terms propagation from sale order BSMTS-244
+* Fix for email template translations.
+  Forcing the update via song, lang field filled  BSMTS-246
 
 **Build**
 
@@ -41,7 +43,7 @@ latest (unreleased)
 * Imp substance table is now breakable between pages BSMTS-239
 * Update sales conditions with translations for MTE and MTS BSMTS-236
 * Add prod mail servers BSMTS-208
-* Imp Sale order: tasks and substances are properly propagated when 
+* Imp Sale order: tasks and substances are properly propagated when
   confirmed order updates BSMTS-158
 
 **Bugfixes**
@@ -50,7 +52,7 @@ latest (unreleased)
 
 **Bugfixes**
 
-* Fix Sale order: tasks and substances are properly propagated when 
+* Fix Sale order: tasks and substances are properly propagated when
   confirmed order updates BSMTS-158
 * Fix updated l10n_switzerland to fix a bug BSMTS-242
 
@@ -144,7 +146,7 @@ latest (unreleased)
 * In the invoice report, comment is now displayed as html
   and won't be displayed if empty BSMTS-215
 * Changed report logo for the mte company BSMTS-213
-* There is no longer default value for comment in 
+* There is no longer default value for comment in
   invoice BSMTS-216
 * Add 'tax display' field in sale settings is now B2C BSMTS-217
 
