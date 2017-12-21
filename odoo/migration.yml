@@ -212,6 +212,8 @@ migration:
         upgrade:
          #### Specific
           - mtsmte_reports
+          - mtsmte_web_ckeditor4
+          - web_ckeditor4
       operations:
         post:
           - anthem songs.update.update_10_1_4::main

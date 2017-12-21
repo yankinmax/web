@@ -65,7 +65,7 @@
         <page string="Results &amp; Observations"
               attrs="{'invisible': [('chemistry', 'not in', ('chem','test_env','test_mec'))]}">
           <group>
-              <field name="results" nolabel="1"/>
+              <field name="results" nolabel="1" widget="text_html"/>
           </group>
         </page>
       </notebook>

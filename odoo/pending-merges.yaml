@@ -27,3 +27,13 @@
     # adds sale_project_fixed_price_task_completed_invoicing module
     - oca refs/pull/162/head
   target: *default_target
+./external-src/web:
+  remotes:
+    oca: git@github.com:OCA/web.git
+    camptocamp: git@github.com:camptocamp/web.git
+    smk: git@github.com:simahawk/web.git
+  merges:
+    - oca 10.0
+    # web_ckeditor4 mig + improvements
+    - smk ckeditor4-PR-820
+  target: *default_target
