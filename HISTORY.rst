@@ -28,6 +28,15 @@ latest (unreleased)
 **Documentation**
 
 
+10.1.5 (2017-12-21)
++++++++++++++++++++
+
+**Bugfixes**
+
+* Fix mail config password for prod by escaping %
+
+
+
 10.1.4 (2017-12-21)
 +++++++++++++++++++
 
