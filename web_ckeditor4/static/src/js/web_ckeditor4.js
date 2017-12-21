@@ -226,8 +226,12 @@ odoo.define('web_ckeditor4', function(require){
             return value;
         }
     });
-    core.form_widget_registry.add('text_ckeditor4', FieldCKEditor4)
-    core.form_widget_registry.add('text_ckeditor4_raw', FieldCKEditor4Raw)
-    core.form_widget_registry.add('text_html', FieldCKEditor4)
-    core.form_widget_registry.add('html', FieldCKEditor4)
+    core.form_widget_registry.add('text_ckeditor4', FieldCKEditor4);
+    core.form_widget_registry.add('text_ckeditor4_raw', FieldCKEditor4Raw);
+    core.form_widget_registry.add('text_html', FieldCKEditor4);
+    core.form_widget_registry.add('html', FieldCKEditor4);
+    return {
+        'FieldCKEditor4': FieldCKEditor4,
+        'FieldCKEditor4Raw': FieldCKEditor4Raw
+    }
 });
