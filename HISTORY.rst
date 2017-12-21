@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.1.4 (2017-12-21)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add `web_ckeditor4` (from pending PR + improvements) 
 * Add `mtsmte_web_ckeditor4` for customizations
 
@@ -29,10 +41,6 @@ latest (unreleased)
 * Fix terms propagation from sale order BSMTS-244
 * Fix for email template translations.
   Forcing the update via song, lang field filled  BSMTS-246
-
-**Build**
-
-**Documentation**
 
 
 10.1.3 (2017-12-20)
