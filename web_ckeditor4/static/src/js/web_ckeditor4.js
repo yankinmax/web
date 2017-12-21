@@ -111,15 +111,24 @@ odoo.define('web_ckeditor4', function(require){
         });
     var default_ckeditor_writer = new CKEDITOR.htmlParser.basicWriter();
     var FieldCKEditor4 = core.form_widget_registry.get('text').extend({
-        ckeditor_config: {
-            removePlugins: 'iframe,flash,forms,smiley,pagebreak,stylescombo',
-            filebrowserImageUploadUrl: 'dummy',
-            extraPlugins: 'filebrowser',
-            // this is '#39' per default which screws up single quoted text in ${}
-            entities_additional: '',
+        ckeditor_config: function () {
+          return {
+              removePlugins: this._getRemovePlugins(),
+              removeButtons: this._getRemoveButtons(),
+              filebrowserImageUploadUrl: 'dummy',
+              extraPlugins: 'filebrowser',
+              // this is '#39' per default which screws up single quoted text in ${}
+              entities_additional: ''
+          };
         },
         ckeditor_filter: default_ckeditor_filter,
         ckeditor_writer: default_ckeditor_writer,
+        _getRemovePlugins: function () {
+            return 'iframe,flash,forms,smiley,pagebreak,stylescombo';
+        },
+        _getRemoveButtons: function () {
+            return '';
+        },
         start: function()
         {
             this._super.apply(this, arguments);
@@ -132,20 +141,24 @@ odoo.define('web_ckeditor4', function(require){
             if(!this.$el)
             {
                 return;
-            }
-            this.editor = CKEDITOR.replace(this.$el.get(0),
-                _.extend(
-                    {
-                        language: session.user_context.lang.split('_')[0],
-                        on:
+            } else if (!this.get('effective_readonly')) {
+
+                this.editor = CKEDITOR.replace(this.$el.get(0),
+                    _.extend(
                         {
-                            'change': function()
+                            language: session.user_context.lang.split('_')[0],
+                            on:
                             {
-                                self.store_dom_value();
+                                'change': function()
+                                {
+                                    self.store_dom_value();
+                                },
                             },
                         },
-                    }, 
-                    this.ckeditor_config));
+                        self.ckeditor_config()
+                    )
+                );
+            }
         },
         store_dom_value: function()
         {
