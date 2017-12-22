@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.1.6 (2017-12-22)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add ckeditor to project, task and product fields
 
 
