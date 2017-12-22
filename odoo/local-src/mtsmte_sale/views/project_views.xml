@@ -26,7 +26,7 @@
       </group>
       <xpath expr="//notebook" position="inside">
         <page string="Conclusions">
-          <field name="conclusion"/>
+          <field name="conclusion" widget="text_html"/>
         </page>
       </xpath>
     </field>

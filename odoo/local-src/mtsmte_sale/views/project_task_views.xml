@@ -43,7 +43,7 @@
         </page>
         <page string="Test Parameters">
           <group>
-              <field name="test_parameters"/>
+              <field name="test_parameters" widget="text_html"/>
           </group>
         </page>
         <page string="Observations &amp; comments">
@@ -51,7 +51,7 @@
               <field name="sentence_id"/>
           </group>
           <group name="results">
-              <field name="results" nolabel="1"/>
+              <field name="results" nolabel="1" widget="text_html"/>
           </group>
         </page>
       </notebook>

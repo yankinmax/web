@@ -218,3 +218,8 @@ migration:
         post:
           - anthem songs.update.update_10_1_4::main
     - version: 10.1.5
+    - version: 10.1.6
+      addons:
+        upgrade:
+         #### Specific
+          - mtsmte_sale

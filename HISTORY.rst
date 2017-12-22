@@ -21,11 +21,12 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Add ckeditor to project, task and product fields
+
+
 **Bugfixes**
 
-**Build**
-
-**Documentation**
+* Fix prod mail conf
 
 
 10.1.5 (2017-12-21)
