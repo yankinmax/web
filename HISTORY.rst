@@ -9,6 +9,7 @@ Unreleased
 **Features and Improvements**
 
 * BIZ-661: SMS API. Add sms_frame module
+* BIZ-674: Modèle partner.sponsor
 
 **Bugfixes**
 
