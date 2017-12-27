@@ -18,6 +18,7 @@ Unreleased
    l10n_fr_certification
    l10n_fr_sale_closing
 * BIZ-1223: Update SMTP password
+* BIZ-1044: Obj Company, champ royalties_pub, mod valeur
 
 **Bugfixes**
 

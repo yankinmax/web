@@ -36,7 +36,8 @@ class ResCompany(models.Model):
         return [('none', _('None')),
                 ('100', '100'),
                 ('200', '200'),
-                ('300', '300'),
+                # ('300', '300'),  # <- remove this line if needed
+                ('350', '350'),
                 ]
 
     @api.model
