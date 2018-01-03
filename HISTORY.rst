@@ -22,6 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Add ckeditor widget to the test_parameters field in product_template BSMTS-255
+* Add updated py3o reports with the new templates BSMTS-256
 
 **Bugfixes**
 
