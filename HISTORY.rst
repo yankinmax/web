@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Add ckeditor widget to the test_parameters field in product_template BSMTS-255
+
 **Bugfixes**
 
 **Build**
@@ -63,7 +65,7 @@ latest (unreleased)
 
 **Features and Improvements**
 
-* Add `web_ckeditor4` (from pending PR + improvements) 
+* Add `web_ckeditor4` (from pending PR + improvements)
 * Add `mtsmte_web_ckeditor4` for customizations
 
 **Bugfixes**
