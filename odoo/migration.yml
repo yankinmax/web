@@ -188,3 +188,5 @@ migration:
           - specific_base
           - specific_discount_program
           - specific_payment_mode
+          #### SythilTech Odoo
+          - sms_frame

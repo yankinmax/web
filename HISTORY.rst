@@ -8,6 +8,8 @@ Unreleased
 
 **Features and Improvements**
 
+* BIZ-661: SMS API. Add sms_frame module
+
 **Bugfixes**
 
 * DT-90: Fix add a group to allow to create sale order from lead
@@ -17,6 +19,7 @@ Unreleased
 **Build**
 
 * Upgrade Dockerimage to 10.0-2.4.1
+* Add sythiltech-odoo submodule
 
 **Documentation**
 
