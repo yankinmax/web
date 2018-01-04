@@ -17,6 +17,11 @@ class SaleOrder(models.Model):
         related='partner_id.commercial_partner_id',
         readonly=True,
     )
+    # couldn't find a better way to fix this the error BSMTS-254
+    # tests are fine
+    project_project_id = fields.Many2one(
+        store=True,
+    )
 
     @api.multi
     def action_confirm(self):

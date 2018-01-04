@@ -297,6 +297,16 @@ latest (unreleased)
 
 **Bugfixes**
 
+* Fixed several warnings in the build BSMTS-254
+  1. OCA/project pr to fix uninstallable module
+  2. mtsmte_project description added
+  3. mtsmte_purchase description added
+  4. add 'website_quote' to the mtsmte_sale as it's field was used in onchange
+  5. delete empty dummy_test folder
+  6. mtsmte_stock description added
+  7. deleted useless line from mtsmte_sale test_substance_measure test
+  8. made field project_project_id stored
+
 **Build**
 
 **Documentation**

@@ -4,6 +4,11 @@
 {
     "name": "MTSMTE Specific Purchase Module",
     "version": "10.0.1.0.0",
+    "description": """Specific module for MTSMTE.
+
+    if invoice name is empty -> copy reference.
+    in purchase order origin is invisible.
+    """,
     "depends": [
         'purchase',
         'account',
