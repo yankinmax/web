@@ -28,6 +28,14 @@ latest (unreleased)
 **Documentation**
 
 
+10.1.7 (2018-01-09)
++++++++++++++++++++
+
+**Bugfixes**
+
+* Change mail server configuration on production
+
+
 10.1.6 (2017-12-22)
 +++++++++++++++++++
 
