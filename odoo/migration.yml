@@ -224,3 +224,8 @@ migration:
          #### Specific
           - mtsmte_sale
     - version: 10.1.7
+      addons:
+        upgrade:
+         #### Specific
+          - mtsmte_sale
+          - mtsmte_reports

@@ -59,7 +59,7 @@
         </page>
         <page string="Test Parameters" attrs="{'invisible': [('chemistry', 'not in', ('test_env','test_mec'))]}">
           <group>
-              <field name="test_parameters"/>
+              <field name="test_parameters" widget="text_ckeditor4"/>
           </group>
         </page>
         <page string="Results &amp; Observations"
