@@ -1,4 +1,4 @@
-migration:
+7migration:
   options:
     install_command: odoo
   versions:
@@ -190,3 +190,6 @@ migration:
           - specific_payment_mode
           #### SythilTech Odoo
           - sms_frame
+      operations:
+        pre:
+          - anthem songs.updates.update_10_3_1.update::main

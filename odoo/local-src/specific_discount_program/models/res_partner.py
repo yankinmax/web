@@ -18,9 +18,16 @@ class ResPartner(models.Model):
     @api.model
     def create(self, vals):
         partner = super(ResPartner, self).create(vals)
-        self.env['partner.sponsor'].create({'partner_id': partner.id})
+        if partner.company_type == 'agency_customer':
+            self.env['partner.sponsor'].create({'partner_id': partner.id})
 
         return partner
+
+    @api.multi
+    def unlink(self):
+        self.env['partner.sponsor'].with_context(active_test=False).search(
+            [('partner_id', 'in', self.ids)]).unlink()
+        super(ResPartner, self).unlink()
 
     @api.depends('sale_order_ids', 'sale_order_ids.state')
     def _compute_already_bought(self):

@@ -33,5 +33,4 @@ class PartnerSponsor(models.Model):
     @api.depends('partner_id.active', 'partner_id.already_bought')
     def _compute_active(self):
         for sponsor in self:
-            sponsor.active = sponsor.partner_id.active \
-                and sponsor.partner_id.already_bought
+            sponsor.active = sponsor.partner_id.already_bought

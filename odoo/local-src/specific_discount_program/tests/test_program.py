@@ -2,16 +2,20 @@
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from collections import Counter
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
 from odoo import fields
 
 from odoo.exceptions import UserError, ValidationError
-from odoo.tests.common import TransactionCase, post_install, at_install
+from odoo.tests.common import TransactionCase
 
 
 class TestProgram(TransactionCase):
+
+    post_install = True
+    at_install = False
 
     def setUp(self):
         super(TestProgram, self).setUp()
@@ -108,8 +112,6 @@ class TestProgram(TransactionCase):
             'company_id': self.env.user.company_id.id
         })
 
-    @post_install(True)
-    @at_install(False)
     def test_vouchers(self):
         sponsor = self.sponsor_model.search([])
         self.assertEqual(1, len(sponsor))
@@ -192,8 +194,6 @@ class TestProgram(TransactionCase):
             ('partner_id', '=', self.partner1.id)
         ]))
 
-    @post_install(True)
-    @at_install(False)
     def test_voucher_cancel_both(self):
         sponsor = self.sponsor_model.search([])
         partner2 = self.partner_model.create({
@@ -234,8 +234,6 @@ class TestProgram(TransactionCase):
             ('voucher_code', '!=', False)
         ]))
 
-    @post_install(True)
-    @at_install(False)
     def test_sponsor_became_invalid(self):
         sponsor = self.sponsor_model.search([])
         self.assertEqual(1, len(sponsor))
@@ -272,8 +270,6 @@ class TestProgram(TransactionCase):
             ('partner_id', '=', self.partner1.id)
         ]))
 
-    @post_install(True)
-    @at_install(False)
     def test_voucher_limit(self):
         icp = self.env['ir.config_parameter']
         icp.set_param('voucher_max_count', 2)
@@ -320,8 +316,6 @@ class TestProgram(TransactionCase):
 
         self.assertEqual(3, len(sale.applied_program_ids))
 
-    @post_install(True)
-    @at_install(False)
     def test_promo_limit(self):
         v1 = self.program_model.create({
             'promo_code': 'UNITTEST_V1',
@@ -357,8 +351,6 @@ class TestProgram(TransactionCase):
 
         self.assertEqual(1, len(sale.applied_program_ids))
 
-    @post_install(True)
-    @at_install(False)
     def test_voucher_and_promo_limit(self):
         icp = self.env['ir.config_parameter']
         icp.set_param('voucher_max_count', 10)
@@ -391,8 +383,6 @@ class TestProgram(TransactionCase):
         with self.assertRaises(UserError):
             sale.apply_discount_programs()
 
-    @post_install(True)
-    @at_install(False)
     def test_discount_manually_percent_max(self):
         sale = self.sale_model.create({
             'phototherapist_id': self.phototherapist.id,
@@ -414,8 +404,6 @@ class TestProgram(TransactionCase):
             # Default discount manually percent maximum is now 15.23
             sale.discount_manually_percent = 20.
 
-    @post_install(True)
-    @at_install(False)
     def test_discount_manually_percent(self):
         # Create a program with gift product
         product_to_add = self.product_model.create({
@@ -470,8 +458,6 @@ class TestProgram(TransactionCase):
         # With manually discount, discount for "program" lines is 0.0
         self.assertEqual(sale.order_line[1].discount, 0.)
 
-    @post_install(True)
-    @at_install(False)
     def test_discount_manually_percent_with_another_discount(self):
         # Create a program with discount on product
         self.program_model.create({
@@ -516,8 +502,6 @@ class TestProgram(TransactionCase):
         self.assertEqual(sale.order_line[0].price_unit, 500)
         self.assertEqual(sale.order_line[0].price_subtotal, 350)
 
-    @post_install(True)
-    @at_install(False)
     def test_discount_manually_percent_with_pricelist_discount(self):
         # Create product with list_price (used on pricelist)
         p1 = self.product_model.create({
@@ -569,8 +553,6 @@ class TestProgram(TransactionCase):
         self.assertEqual(sale.order_line[0].price_unit, 450)
         self.assertEqual(sale.order_line[0].price_subtotal, 427.5)
 
-    @post_install(True)
-    @at_install(False)
     def test_discount_manually_percent_with_pricelist_discount_2(self):
         # Create product with list_price (used on pricelist)
         p1 = self.product_model.create({
@@ -620,8 +602,6 @@ class TestProgram(TransactionCase):
         self.assertEqual(sale.order_line[0].price_unit, 500)
         self.assertEqual(sale.order_line[0].price_subtotal, 425)
 
-    @post_install(True)
-    @at_install(False)
     def test_gift_voucher(self):
         # Set two partner
         ordering_partner = self.env.ref('base.partner_demo')
@@ -706,8 +686,6 @@ class TestProgram(TransactionCase):
         self.assertEqual(reduced_order.state, 'sale')
         self.assertEqual(reduced_order.amount_total, 50.0)
 
-    @post_install(True)
-    @at_install(False)
     def test_program_from_sale_order_validated(self):
         # Create program based on
         # another order validated between 10 and 19 days
@@ -980,3 +958,117 @@ class TestProgram(TransactionCase):
                       sale_for_test_2.sale_order_used_by_program_ids)
         self.assertFalse(sale_for_test_2.program_alert)
         self.assertEqual(sale_for_test_2.amount_total, 270.0)
+
+    def test_create_sponsor(self):
+        self.sponsor_model.with_context(
+            active_test=False).search([]).unlink()
+        sponsor_all = self.sponsor_model.with_context(
+            active_test=False).search_count([])
+        self.assertEqual(sponsor_all, 0)
+
+        self.partner_model.create({
+            'name': 'Partner person',
+            'company_type': 'person',
+        })
+
+        sponsor_all = self.sponsor_model.with_context(
+            active_test=False).search_count([])
+        self.assertEqual(sponsor_all, 0)
+
+        self.partner_model.create({
+            'name': 'Partner company',
+            'company_type': 'company',
+        })
+
+        sponsor_all = self.sponsor_model.with_context(
+            active_test=False).search_count([])
+        self.assertEqual(sponsor_all, 0)
+
+        self.partner_model.create({
+            'name': 'Partner Agency_customer',
+            'company_type': 'agency_customer',
+        })
+
+        sponsor_all = self.sponsor_model.with_context(
+            active_test=False).search_count([])
+        self.assertEqual(sponsor_all, 1)
+
+    def test_delete_partner(self):
+        sponsor = self.sponsor_model.search([])
+        self.assertEqual(1, len(sponsor))
+        self.assertEqual(
+            'Sponsor partner - Test city', sponsor[0].name
+        )
+
+        partner2 = self.partner_model.create({
+            'name': 'Other partner',
+            'sponsor_id': sponsor.id,
+            'company_type': 'agency_customer',
+        })
+
+        sponsor_all = self.sponsor_model.with_context(
+            active_test=False).search_count([])
+        self.assertEqual(sponsor_all, 2)
+
+        sponsor_count = self.sponsor_model.with_context(
+            active_test=False).search_count([('partner_id', '=', partner2.id)])
+        self.assertEqual(sponsor_count, 1)
+
+        partner2.unlink()
+
+        sponsor_count_new = self.sponsor_model.with_context(
+            active_test=False).search_count([('partner_id', '=', partner2.id)])
+        self.assertEqual(0, sponsor_count_new)
+
+        sponsor_all = self.sponsor_model.with_context(
+            active_test=False).search_count([])
+        self.assertEqual(sponsor_all, 1)
+
+    def test_deactivate_partner(self):
+        sponsor = self.sponsor_model.search([])
+        self.assertEqual(1, len(sponsor))
+        self.assertEqual(
+            'Sponsor partner - Test city', sponsor[0].name
+        )
+
+        partner2 = self.partner_model.create({
+            'name': 'Other partner',
+            'sponsor_id': sponsor.id,
+            'company_type': 'agency_customer',
+        })
+
+        sponsor_all = Counter(self.sponsor_model.with_context(
+            active_test=False).search([]).mapped('active'))
+        self.assertEqual(sponsor_all[True], 1)
+        self.assertEqual(sponsor_all[False], 1)
+
+        partner2.active = False
+
+        sponsor_all = Counter(self.sponsor_model.with_context(
+            active_test=False).search([]).mapped('active'))
+        self.assertEqual(sponsor_all[True], 1)
+        self.assertEqual(sponsor_all[False], 1)
+
+        partner2.active = True
+
+        sale = self.sale_model.create({
+            'phototherapist_id': self.phototherapist.id,
+            'partner_id': partner2.id,
+            'pricelist_id': self.sponsor_pricelist.id,
+            'order_line': [(0, 0, {
+                'product_id': self.p1.id, 'product_uom_qty': 1,
+            })]
+        })
+        sale.action_confirm()
+
+        sponsor_all = Counter(self.sponsor_model.with_context(
+            active_test=False).search([]).mapped('active'))
+        self.assertEqual(sponsor_all[True], 2)
+        self.assertEqual(sponsor_all[False], 0)
+
+        partner2.active = False
+
+        sponsor_all = Counter(self.sponsor_model.with_context(
+            active_test=False).search([]).mapped('active'))
+        self.assertEqual(sponsor_all[True], 2)
+        self.assertEqual(sponsor_all[False], 0)
