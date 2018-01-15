@@ -229,3 +229,4 @@ migration:
          #### Specific
           - mtsmte_sale
           - mtsmte_reports
+          - mtsmte_purchase

@@ -30,6 +30,7 @@
         'reports/purchase_quotation.xml',
         'reports/sale.xml',
         'reports/invoice_report.xml',
+        'reports/delivery_slip.xml',
         'wizards/project_analysis_wiz.xml',
         'views/company.xml',
         'views/project.xml',
