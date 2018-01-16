@@ -230,3 +230,10 @@ migration:
           - mtsmte_sale
           - mtsmte_reports
           - mtsmte_purchase
+    - version: 10.1.8
+      addons:
+        upgrade:
+         #### Specific
+          - mtsmte_sale
+          - mtsmte_reports
+          - mtsmte_purchase

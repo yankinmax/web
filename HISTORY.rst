@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.1.8 (2018-01-16)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add ckeditor widget to the test_parameters field in product_template BSMTS-255
 * Add updated py3o reports with the new templates BSMTS-256
 * Add some space before customer reference in delivery slip report BSMTS-261
@@ -30,10 +42,6 @@ latest (unreleased)
 **Bugfixes**
 
 * Fix groups and missing name on supplier_invoice BSMTS-260
-
-**Build**
-
-**Documentation**
 
 
 10.1.7 (2018-01-09)
