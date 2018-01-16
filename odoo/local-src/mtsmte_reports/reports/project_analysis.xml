@@ -39,17 +39,14 @@
         <t t-if="report.display_legal_reference(tasks)">
           <div class="legal_reference">
             <h1>Legal References</h1>
-            <t t-foreach="tasks" t-as="task">
-              <t t-set="product" t-value="task.sale_line_id.product_id" />
-              <t t-set="atype" t-value="report.get_analysis_type(product)" />
-              <div t-if="atype != 'mech_env'">
-                <div class="task_wrapper_legal">
-                  <div class="section task_header">
-                    <h2 t-field="task.name" />
-                  </div>
-                  <div class="content">
-                    <span t-field="task.legal_reference" />
-                  </div>
+            <t t-set="products" t-value="doc._get_distinct_products()"/>
+            <t t-foreach="products" t-as="product">
+              <div class="task_wrapper_legal">
+                <div class="section task_header">
+                  <h2 t-field="product.name"/>
+                </div>
+                <div class="content">
+                  <span t-field="product.legal_reference" />
                 </div>
               </div>
             </t>

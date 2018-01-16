@@ -129,3 +129,14 @@ class ProjectProject(models.Model):
                 record.conformity = "warning"
             else:
                 record.conformity = "conform"
+
+    def _get_distinct_products(self):
+        """Used in project analysis report to get distinct legal references."""
+        self.ensure_one()
+        # `task_ids` is a non-stored o2m (not searchable by default).
+        # We don't expect hundreds of records here tho: `filtered` is fine.
+        tasks = self.task_ids.filtered(
+            lambda task: task.sale_line_id.product_tmpl_id.chemistry == 'chem'
+        )
+        product_ids = tasks.mapped("sale_line_id.product_tmpl_id")
+        return product_ids

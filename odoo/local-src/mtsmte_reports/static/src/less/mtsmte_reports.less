@@ -91,6 +91,7 @@ h2 {
     }
     .task_wrapper{
         margin-bottom: 1em;
+        page-break-inside: avoid;
         &.type_mech_env{
             // page break on each task for mech/env analysis
             page-break-after: always;
@@ -133,10 +134,12 @@ h2 {
     }
 
     .heading{
-        text-transform: uppercase;
         font-weight: bold;
         &:not(h1){
             .global_heading
+        }
+        &:not(.task_title){
+            text-transform: uppercase;
         }
     }
     .substances{

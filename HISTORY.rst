@@ -24,6 +24,8 @@ latest (unreleased)
 * Add ckeditor widget to the test_parameters field in product_template BSMTS-255
 * Add updated py3o reports with the new templates BSMTS-256
 * Add some space before customer reference in delivery slip report BSMTS-261
+* Add project_analysis report: no breaks inside task, task names no longer
+  uppercase, only unique legal references BSMTS-252
 
 **Bugfixes**
 
