@@ -22,7 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 **Bugfixes**
-
+* Add InstrId element for BCN restriction in SEPA payment
 **Build**
 
 **Documentation**
