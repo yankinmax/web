@@ -67,7 +67,7 @@ migration:
           - web_duplicate_visibility
           #### camptocamp/cloud-platform
           - attachment_s3
-          - cloud_platform
+          - cloud_platform_exoscale
           #### local-src
           - fields_regex_validation
           - report_page_endnote
