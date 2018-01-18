@@ -22,10 +22,18 @@ latest (unreleased)
 **Features and Improvements**
 
 **Bugfixes**
-* Add InstrId element for BCN restriction in SEPA payment BIZ-1173
+
 **Build**
 
 **Documentation**
+
+
+10.1.9 (2018-01-18)
++++++++++++++++++++
+
+**Bugfixes**
+
+* Add InstrId element for BCN restriction in SEPA payment BIZ-1173
 
 
 10.1.8 (2018-01-16)
