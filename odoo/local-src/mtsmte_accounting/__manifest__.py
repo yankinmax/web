@@ -7,7 +7,9 @@
     "depends": [
         'account_reports_followup',
         'board',
-        'account_due_list'
+        'account_due_list',
+        'l10n_ch_pain_credit_transfer',
+        'account_payment_order'
     ],
     "author": "Camptocamp,Odoo Community Association (OCA)",
     "website": "http://www.camptocamp.com",

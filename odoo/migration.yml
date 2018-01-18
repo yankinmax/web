@@ -237,3 +237,8 @@ migration:
           - mtsmte_sale
           - mtsmte_reports
           - mtsmte_purchase
+    - version: 10.1.9
+      addons:
+        upgrade:
+         #### Specific
+          - mtsmte_accounting
