@@ -79,7 +79,7 @@ migration:
           - server_environment
           - server_environment_ir_config_parameter
           #### camptocamp/cloud-platform
-          - cloud_platform
+          - cloud_platform_exoscale
           #### camptocamp/odoo-prototype
           - dj_compilation_stock
           #### OCA/account-financial-reporting
