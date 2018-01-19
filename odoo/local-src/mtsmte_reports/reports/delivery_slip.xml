@@ -8,6 +8,9 @@
       <attribute name="name">customer_reference</attribute>
       <attribute name="class" add="mt32" separator=" "/>
     </xpath>
+    <xpath expr="//div[@t-if='o.sale_id.client_order_ref']/div" position="attributes">
+        <attribute name="class">col-xs-12 pull-left</attribute>
+    </xpath>
   </template>
 
 </odoo>

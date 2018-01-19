@@ -21,6 +21,9 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Add delivery_slip report: customer reference pulled left and takes
+  all page width BSMTS-268
+
 **Bugfixes**
 
 **Build**
