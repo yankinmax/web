@@ -10,4 +10,9 @@
     </xpath>
   </template>
 
+  <template id="report_invoice_document_specific" inherit_id="sale.report_invoice_document_inherit_sale">
+      <xpath expr="//div[@t-if='o.partner_shipping_id != o.partner_id']" position="attributes">
+          <attribute name="class">mt48</attribute>
+      </xpath>
+  </template>
 </odoo>
