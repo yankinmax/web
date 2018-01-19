@@ -243,6 +243,9 @@ migration:
          #### Specific
           - mtsmte_accounting
     - version: 10.1.10
+      operations:
+        post:
+          - anthem songs.update.update_10_1_10::main
       addons:
         upgrade:
          #### Specific

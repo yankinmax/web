@@ -24,6 +24,7 @@ latest (unreleased)
 * Add delivery_slip report: customer reference pulled left and takes
   all page width BSMTS-268
 * Add space between addresses in report_invoice BSMTS-270
+* Add dots as decimal delimiters for active langs BSMTS-263
 
 **Bugfixes**
 
