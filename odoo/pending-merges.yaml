@@ -37,3 +37,13 @@
     # web_ckeditor4 mig + improvements
     - smk ckeditor4-PR-820
   target: *default_target
+# adding project PR to the project
+./external-src/project:
+  remotes:
+    oca: git@github.com:OCA/project.git
+    camptocamp: git@github.com:camptocamp/project.git
+  merges:
+    - oca 10.0
+    # adds fix for the warning in odoo build
+    - oca refs/pull/354/head
+  target: *default_target

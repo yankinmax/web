@@ -13,7 +13,6 @@ class TestProductSubstanceMeasure(TransactionCase):
         self.product = self.env.ref('product.service_delivery')
         self.substance = self.env['product.substance'].create({
             'name': 'substance',
-            'product_ids': self.product,
             'product_uom_id': self.product.uom_id.id,
         })
         self.task = self.env.ref('project.project_task_data_0')

@@ -4,6 +4,9 @@
 {
     "name": "MTS-MTE Specific Stock module",
     "version": "10.0.1.0.0",
+    "description": """Specific stock module
+
+    fixes scraping of the products in a stock picking""",
     "depends": [
         'stock',
         'sale',
