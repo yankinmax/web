@@ -58,6 +58,7 @@ latest (unreleased)
 **Bugfixes**
 
 * Fix groups and missing name on supplier_invoice BSMTS-260
+* Remove original `name` field on `account.invoice` form BSMTS-267
 
 
 10.1.7 (2018-01-09)

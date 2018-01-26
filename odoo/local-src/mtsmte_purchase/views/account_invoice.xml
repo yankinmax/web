@@ -6,6 +6,7 @@
     <field name="model">account.invoice</field>
     <field name="inherit_id" ref="account.invoice_supplier_form"/>
     <field name="arch" type="xml">
+      <xpath expr="//notebook//group/field[@name='name']" position="replace"/>
       <xpath  expr="//field[@name='reference']" position="after">
         <field name="name"/>
       </xpath>

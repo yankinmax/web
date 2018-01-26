@@ -249,4 +249,5 @@ migration:
       addons:
         upgrade:
          #### Specific
+          - mtsmte_purchase
           - mtsmte_reports
