@@ -10,6 +10,13 @@ Unreleased
 
 * BIZ-661: SMS API. Add sms_frame module
 * BIZ-674: Modèle partner.sponsor
+* BIZ-1228_Installation_modules_accounting_certification
+  update:
+   external-src/enterprise
+   odoo/src
+  add:
+   l10n_fr_certification
+   l10n_fr_sale_closing
 
 **Bugfixes**
 
