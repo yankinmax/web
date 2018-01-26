@@ -22,6 +22,7 @@ Unreleased
 * Upgrade Dockerimage to 10.0-2.4.1
 * Add sythiltech-odoo submodule
 * Update odoo-cloud-platform (BIZ-1093)
+* Update project from odoo-template
 
 **Documentation**
 
@@ -482,4 +483,3 @@ Unreleased
 * warehouses creation for base companies (16)
 * 1 ``admin`` user and 1 ``normal`` user per company/center
 * customer diagnostic survey
-
