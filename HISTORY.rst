@@ -28,6 +28,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* Fix CKEditor: Remove it after editing is done. BSMTS-265
+
 **Build**
 
 * Update odoo-cloud-platform (BIZ-1093)
