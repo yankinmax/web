@@ -17,6 +17,7 @@ Unreleased
   add:
    l10n_fr_certification
    l10n_fr_sale_closing
+* BIZ-1223: Update SMTP password
 
 **Bugfixes**
 
