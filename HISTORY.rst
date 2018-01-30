@@ -31,6 +31,7 @@ latest (unreleased)
 **Build**
 
 * Update odoo-cloud-platform (BIZ-1093)
+* Update Project template.
 
 **Documentation**
 
