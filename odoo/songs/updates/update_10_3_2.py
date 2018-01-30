@@ -24,7 +24,16 @@ def recompute_active_for_partner_sponsor(ctx):
 
 
 @anthem.log
+def update_res_company_royalties_pub(ctx):
+    """ update res.company royalties_pub to 350 """
+    ctx.env['res.company'].with_context(active_test=False).search([
+        ('royalties_pub', '=', '300'),
+    ]).write({'royalties_pub': '350'})
+
+
+@anthem.log
 def main(ctx):
-    """ Main: update 10.3.1 """
+    """ Main: update 10.3.2 """
     remove_partner_sponsor(ctx)
     recompute_active_for_partner_sponsor(ctx)
+    update_res_company_royalties_pub(ctx)  # <- comment this if needed
