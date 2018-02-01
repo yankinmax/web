@@ -31,11 +31,10 @@
   remotes:
     oca: git@github.com:OCA/web.git
     camptocamp: git@github.com:camptocamp/web.git
-    smk: git@github.com:simahawk/web.git
   merges:
     - oca 10.0
     # web_ckeditor4 mig + improvements
-    - smk ckeditor4-PR-820
+    - oca refs/pull/820/head
   target: *default_target
 # adding project PR to the project
 ./external-src/project:
