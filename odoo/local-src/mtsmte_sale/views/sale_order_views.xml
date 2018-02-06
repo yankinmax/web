@@ -35,6 +35,13 @@
         </field>
       </xpath>
 
+      <xpath expr="//field[@name='order_line']" position="after">
+        <button name="action_sync_tasks"
+                states="sale"
+                string="Force lines sync with tasks"
+                type="object" />
+      </xpath>
+
       <!-- Better view for sales conditions -->
       <xpath expr="//field[@name='note']" position="replace">
         <div class="oe_clear"/>

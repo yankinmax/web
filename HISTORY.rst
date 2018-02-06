@@ -32,12 +32,17 @@ latest (unreleased)
 * Fix CKEditor: Remove it after editing is done. BSMTS-265
 * Fix substance propagation from SO line to tasks BSMTS-275
 
-  * refactor SO line measure propagation
+  * refactor SO line measure propagation (moved to task)
   * make sure propagation happens only for confirmed SO
   * update substances only if they have no substance measures
   * add tests for the whole SO -> project sync machinery
 
-* SO: update anaylize sample on lines only when needed
+  Propagation now happens:
+
+  * automatically ONLY on task create
+  * manually ONLY via dedicated wizard on the SO
+
+* SO: update analyze sample on lines only when needed
 
 
 **Build**

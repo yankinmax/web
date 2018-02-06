@@ -101,3 +101,98 @@ class ProjectTask(models.Model):
                 record.conformity = "warning"
             else:
                 record.conformity = "conform"
+
+    @api.model
+    def create(self, vals):
+        rec = super(ProjectTask, self).create(vals)
+        # sync w/ SO line
+        rec.sync_with_so_line()
+        return rec
+
+    _so_line_prod_fields_to_sync = [
+        'product_method_id',
+        'equipment_id',
+        'product_extraction_type_id',
+        'test_parameters',
+        'duration',
+        'nb_shocks',
+        'results',
+    ]
+
+    @api.multi
+    def _get_values_from_so_line(self):
+        """Retrieve task's value from `line` and `line.product_id`."""
+        self.ensure_one()
+        if not self.sale_line_id:
+            return {}
+        line = self.sale_line_id
+        vals = {
+            'tested_sample': line.tested_sample,
+        }
+        _values = line.product_id.read(
+            self._so_line_prod_fields_to_sync, load='_classic_write')[0]
+        del _values['id']
+        for fname, val in _values.items():
+            if val:
+                vals[fname] = val
+        return vals
+
+    @api.multi
+    def _get_task_measures_from_so_line(self):
+        """Collect line's substance measures for given `task`."""
+        self.ensure_one()
+        if (not self.sale_line_id or
+                not self.sale_line_id.product_substance_ids):
+            return []
+        task_measures = []
+        for substance in self.sale_line_id.product_substance_ids:
+            vals_measure = {
+                'task_id': self.id,
+                'product_substance_id': substance.id,
+            }
+            task_measures += [(0, 0, vals_measure)]
+        return task_measures
+
+    def _is_task_to_sync(self):
+        """Check if we must sync task w/ SO line."""
+        if self.env.context.get('so_sync_wizard'):
+            # at this stage we have already everything in place
+            # and we are forcing update via wizard.
+            return True
+        if not self.sale_line_id or self.product_substance_measure_ids:
+            # no SO line or we already have substances...
+            return False
+        return (self.sale_line_id.state == 'sale' and
+                self.sale_line_id._is_service_task())
+
+    @api.multi
+    def sync_with_so_line(self):
+        """Sync values from SO line related to current tasks.
+
+        The following conditions have to be satisfied for the sync:
+
+        1. SO must be confirmed
+        2. SO line must be tied to service products (`_is_procurement_task`)
+        3. task already exists
+        4. task has no substances yet (`task.product_substance_measure_ids`)
+
+        What we sync:
+
+        1. some values from the line itself (see `_get_values_from_so_line`)
+        2. measures values attached to `line.product_substance_ids`
+           (see `_get_task_measures_from_so_line`).
+
+        You can skip this automatic update
+        by setting `skip_task_sync` in the context.
+        """
+        if self.env.context.get('skip_task_sync'):
+            return
+
+        tasks = self.filtered(lambda x: x._is_task_to_sync())
+        for task in tasks:
+            task_values = task._get_values_from_so_line()
+            if not task.product_substance_measure_ids:
+                # No measure on task? Add them
+                task_values['product_substance_measure_ids'] =  \
+                    task._get_task_measures_from_so_line()
+            task.with_context(skip_task_sync=True).write(task_values)

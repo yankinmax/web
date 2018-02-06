@@ -21,6 +21,9 @@
     "license": "AGPL-3",
     "category": "Sale",
     "data": [
+        'security/ir.model.access.csv',
+        'security/ir_rules.xml',
+        'wizards/so_sync_task.xml',
         'views/sale_order_views.xml',
         'views/project_views.xml',
         'views/product_views.xml',
@@ -34,8 +37,6 @@
         'views/result_sentence.xml',
         'views/task_stage.xml',
         'views/menu_items.xml',
-        'security/ir.model.access.csv',
-        'security/ir_rules.xml',
     ],
     'installable': True,
 }

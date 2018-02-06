@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <record id="wiz_so_sync_task_form" model="ir.ui.view">
+    <field name="name">wiz.so.sync.task form</field>
+    <field name="model">wiz.so.sync.task</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <separator string="Sync selected lines with their tasks" />
+          <field name="so_line_ids" nolabel="1">
+            <tree create="false">
+              <field name="name" />
+              <field name="product_id" />
+            </tree>
+          </field>
+          <div class="alert alert-warning">
+            NOTE: line values and substance values will be overridden on related tasks.
+          </div>
+          <footer>
+            <button name="action_sync" type="object" string="Force task update" class="btn-primary" />
+            <button string="Cancel" class="btn-default" special="cancel" />
+          </footer>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="wiz_so_sync_task_action" model="ir.actions.act_window">
+      <field name="name">Sync order lines with tasks</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">wiz.so.sync.task</field>
+      <field name="target">new</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('mtsmte_sale.wiz_so_sync_task_form')})]"/>
+  </record>
+
+</odoo>
