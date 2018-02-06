@@ -42,7 +42,6 @@ class SaleOrder(models.Model):
                 'client_order_ref': order.client_order_ref,
             }
             prj.write(vals)
-            order.order_line.set_measures()
         return True
 
     @api.multi
