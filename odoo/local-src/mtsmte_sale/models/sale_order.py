@@ -3,7 +3,12 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
-import html2text
+try:
+    from html2text import html2text
+except ImportError:
+    import logging
+    _logger = logging.getLogger(__name__)
+    _logger.warning('could not import html2text')
 
 
 class SaleOrder(models.Model):
@@ -25,6 +30,7 @@ class SaleOrder(models.Model):
 
     @api.multi
     def action_confirm(self):
+        """Sync values on project."""
         super(SaleOrder, self).action_confirm()
         for order in self:
             if not order.project_id:
@@ -36,7 +42,6 @@ class SaleOrder(models.Model):
                 'client_order_ref': order.client_order_ref,
             }
             prj.write(vals)
-            order.order_line.set_measures()
         return True
 
     @api.multi
@@ -57,18 +62,17 @@ class SaleOrder(models.Model):
                     'product_substance_id')
                 line.product_substance_ids = [(6, 0, substances.ids)]
 
-    def _clean_html(self):
-        clean_text = html2text.HTML2Text().handle(
-            self.analyze_sample or ''
-        ).strip()
-        return clean_text
+    def clean_analyze_sample(self):
+        return html2text(self.analyze_sample or '')
 
     @api.multi
     def write(self, vals):
         res = super(SaleOrder, self).write(vals)
-        for order in self:
-            clean_text = order._clean_html()
-            for line in order.order_line:
-                if not line.tested_sample:
-                    line.tested_sample = clean_text
+        if vals.get('analyze_sample'):
+            no_sample_lines = self.env['sale.order.line'].search(
+                [('order_id', 'in', self.ids), ('tested_sample', '=', False)]
+            )
+            no_sample_lines.with_context(forced_write_from_order=True).write({
+                'tested_sample': self._clean_html(vals['analyze_sample']),
+            })
         return res

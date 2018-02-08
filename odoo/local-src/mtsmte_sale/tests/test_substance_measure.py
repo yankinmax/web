@@ -37,7 +37,7 @@ class TestProductSubstanceMeasure(TransactionCase):
         self.measure._compute_conformity()
         return self.measure.conformity
 
-    def test__compute_conformity(self):
+    def test_compute_conformity(self):
         self.assertEqual(
             self._test_case_measure(True, True, 1, 10, False, 5),
             "conform"
