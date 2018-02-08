@@ -4,6 +4,7 @@
   <record id="invoice_supplier_tree" model="ir.ui.view">
     <field name="name">account.invoice.supplier.tree</field>
     <field name="model">account.invoice</field>
+    <field name="priority">1001</field>
     <field name="inherit_id" ref="account.invoice_supplier_tree"/>
     <field name="arch" type="xml">
       <field name="name" position="replace"/>
@@ -16,6 +17,7 @@
   <record id="invoice_supplier_form" model="ir.ui.view">
     <field name="name">account.invoice.supplier.form</field>
     <field name="model">account.invoice</field>
+    <field name="priority">1001</field>
     <field name="inherit_id" ref="account.invoice_supplier_form"/>
     <field name="arch" type="xml">
       <xpath expr="//notebook//group/field[@name='name']" position="replace"/>
