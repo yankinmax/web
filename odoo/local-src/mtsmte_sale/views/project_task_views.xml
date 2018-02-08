@@ -7,7 +7,7 @@
     <field name="inherit_id" ref="project.view_task_form2"/>
     <field name="arch" type="xml">
       <xpath expr="//field[@name='planned_hours']" position="after">
-          <field name="tested_sample"/>
+          <field name="tested_sample" widget="html"/>
       </xpath>
       <xpath expr="//button[@name='toggle_invoiceable']" position="attributes">
         <attribute name="groups">project.group_project_manager</attribute>

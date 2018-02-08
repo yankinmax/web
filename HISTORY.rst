@@ -25,6 +25,7 @@ latest (unreleased)
   all page width BSMTS-268
 * Add space between addresses in report_invoice BSMTS-270
 * Add dots as decimal delimiters for active langs BSMTS-263
+* Render tested samples on `project.task` form w/ HTML BSMTS-273
 
 **Bugfixes**
 
