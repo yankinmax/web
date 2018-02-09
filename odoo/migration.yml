@@ -242,10 +242,10 @@ migration:
         upgrade:
          #### Specific
           - mtsmte_accounting
-    - version: 10.1.10
+    - version: 10.2.0
       operations:
         post:
-          - anthem songs.update.update_10_1_10::main
+          - anthem songs.update.update_10_2_0::main
       addons:
         upgrade:
          #### Specific

@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.2.0 (2018-02-09)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Add delivery_slip report: customer reference pulled left and takes
   all page width BSMTS-268
 * Add space between addresses in report_invoice BSMTS-270
@@ -49,8 +61,6 @@ latest (unreleased)
 
 * Update odoo-cloud-platform (BIZ-1093)
 * Update Project template.
-
-**Documentation**
 
 
 10.1.9 (2018-01-18)
