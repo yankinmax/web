@@ -73,6 +73,14 @@ class SaleOrder(models.Model):
                 [('order_id', 'in', self.ids), ('tested_sample', '=', False)]
             )
             no_sample_lines.with_context(forced_write_from_order=True).write({
-                'tested_sample': self._clean_html(vals['analyze_sample']),
+                'tested_sample': html2text(vals['analyze_sample']),
             })
         return res
+
+    @api.multi
+    def action_sync_tasks(self):
+        """Sync SO lines to tasks."""
+        self.ensure_one()
+        action = self.env.ref('mtsmte_sale.wiz_so_sync_task_action').read()[0]
+        action['context'] = self.env.context.copy()
+        return action
