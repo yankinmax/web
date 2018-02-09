@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* Tweak a deliery slip report BSMTS-274
+
 **Bugfixes**
 
 **Build**

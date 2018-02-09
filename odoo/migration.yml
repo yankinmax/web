@@ -271,3 +271,7 @@ migration:
           operations:
             pre:
               - psql -f /opt/odoo/songs/update/update_10_3_1.sql
+      addons:
+        upgrade:
+          #### Specific
+          - mtsmte_reports
