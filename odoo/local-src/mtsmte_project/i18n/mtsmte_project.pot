@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-04 12:15+0000\n"
-"PO-Revision-Date: 2017-04-04 12:15+0000\n"
+"POT-Creation-Date: 2018-02-13 15:29+0000\n"
+"PO-Revision-Date: 2018-02-13 15:29+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,8 +26,58 @@ msgid "In Progress"
 msgstr ""
 
 #. module: mtsmte_project
+#: model:ir.model.fields,field_description:mtsmte_project.field_project_project_invoice_sent
+msgid "Invoice sent"
+msgstr ""
+
+#. module: mtsmte_project
+#: model:ir.model.fields,field_description:mtsmte_project.field_project_project_date_send_pdf
+msgid "PDF report send date"
+msgstr ""
+
+#. module: mtsmte_project
 #: model:project.task.type,name:mtsmte_project.project_stage_planned
 msgid "Planned"
+msgstr ""
+
+#. module: mtsmte_project
+#: model:ir.model.fields,field_description:mtsmte_project.field_project_project_precious_substance
+msgid "Precious substance"
+msgstr ""
+
+#. module: mtsmte_project
+#: model:ir.model,name:mtsmte_project.model_project_project
+msgid "Project"
+msgstr ""
+
+#. module: mtsmte_project
+#: model:ir.ui.view,arch_db:mtsmte_project.project_project_specific
+msgid "Project closure"
+msgstr ""
+
+#. module: mtsmte_project
+#: model:ir.model.fields,field_description:mtsmte_project.field_project_project_remark
+msgid "Remarks"
+msgstr ""
+
+#. module: mtsmte_project
+#: model:ir.model.fields,field_description:mtsmte_project.field_project_project_report_number
+msgid "Report number"
+msgstr ""
+
+#. module: mtsmte_project
+#: model:ir.model.fields,field_description:mtsmte_project.field_project_project_samples_joined
+msgid "Samples joined to Shipping"
+msgstr ""
+
+#. module: mtsmte_project
+#: model:ir.model.fields,field_description:mtsmte_project.field_project_project_date_shipping
+msgid "Shipping date"
+msgstr ""
+
+#. module: mtsmte_project
+#: model:ir.model.fields,field_description:mtsmte_project.field_project_project_shipping_mode
+msgid "Shipping mode"
 msgstr ""
 
 #. module: mtsmte_project

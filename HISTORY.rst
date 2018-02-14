@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* BSMTS-282: Add fields on project project
+
 **Bugfixes**
 
 **Build**

@@ -6,12 +6,35 @@
     <field name="model">project.project</field>
     <field name="inherit_id" ref="project.edit_project"/>
     <field name="arch" type="xml">
+
       <xpath expr="//sheet" position="after">
         <div class="oe_chatter">
           <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
           <field name="message_ids" widget="mail_thread"/>
         </div>
       </xpath>
+
+      <notebook position="inside">
+        <page string="Project closure">
+          <group>
+            <group>
+              <field name="report_number"/>
+              <field name="samples_joined"/>
+              <field name="shipping_mode"/>
+              <field name="precious_substance"/>
+              <field name="invoice_sent"/>
+            </group>
+            <group>
+              <field name="date_send_pdf"/>
+              <field name="date_shipping"/>
+            </group>
+          </group>
+          <group>
+            <field name="remark"/>
+          </group>
+        </page>
+      </notebook>
+
     </field>
   </record>
 

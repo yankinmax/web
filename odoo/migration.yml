@@ -252,3 +252,8 @@ migration:
           - mtsmte_purchase
           - mtsmte_reports
           - mtsmte_sale
+    - version: 10.3.0
+      addons:
+        upgrade:
+         #### Specific
+          - mtsmte_project
