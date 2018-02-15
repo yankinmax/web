@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.3.0 (2018-02-15)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * BSMTS-282: Add fields on project project
 
 **Bugfixes**
