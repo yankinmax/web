@@ -255,5 +255,7 @@ migration:
     - version: 10.3.0
       addons:
         upgrade:
+         # fix home menu issue
+          - base
          #### Specific
           - mtsmte_project

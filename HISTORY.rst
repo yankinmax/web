@@ -25,6 +25,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* Update `base` to fix home menu issue
+
 **Build**
 
 **Documentation**
