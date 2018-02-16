@@ -23,6 +23,10 @@ latest (unreleased)
 
 **Bugfixes**
 
+* BSMTS-279 : Uninstall DJ modules
+* BSMTS-279 : Update XMLIDs of CSV imported taxes with wrong module name
+* BSMTS-279 : Recreate BI View Engagements
+
 **Build**
 
 **Documentation**

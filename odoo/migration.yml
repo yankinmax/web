@@ -253,9 +253,21 @@ migration:
           - mtsmte_reports
           - mtsmte_sale
     - version: 10.3.0
+      modes:
+        full:
+          operations:
+            pre:
+              - psql -f /opt/odoo/songs/update/update_10_3_0.sql
+              - anthem songs.update.update_10_3_0::main
       addons:
         upgrade:
          # fix home menu issue
           - base
          #### Specific
           - mtsmte_project
+    - version: 10.3.1
+      modes:
+        full:
+          operations:
+            pre:
+              - psql -f /opt/odoo/songs/update/update_10_3_1.sql
