@@ -25,6 +25,9 @@ latest (unreleased)
 
 **Build**
 
+* Update Dockerimage to 10.0-2.4.1
+* Update with latest from odoo-template
+
 **Documentation**
 
 
