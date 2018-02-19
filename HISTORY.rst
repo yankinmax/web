@@ -23,6 +23,16 @@ latest (unreleased)
 
 **Bugfixes**
 
+**Build**
+
+**Documentation**
+
+
+10.3.1 (2018-02-19)
++++++++++++++++++++
+
+**Bugfixes**
+
 * BSMTS-279 : Uninstall DJ modules
 * BSMTS-279 : Update XMLIDs of CSV imported taxes, tags, and report lines with wrong module name
 * BSMTS-279 : Recreate BI View Engagements
@@ -31,8 +41,6 @@ latest (unreleased)
 
 * Update Dockerimage to 10.0-2.4.1
 * Update with latest from odoo-template
-
-**Documentation**
 
 
 10.3.0 (2018-02-15)
