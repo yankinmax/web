@@ -84,6 +84,7 @@ latest (unreleased)
 
 * Update Dockerimage to 10.0-2.4.1
 * Update with latest from odoo-template
+* Update odoo-nginx to X-1.2.1
 
 
 10.3.0 (2018-02-15)
