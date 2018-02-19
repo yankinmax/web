@@ -2,16 +2,14 @@
 DROP VIEW x_bi_sql_view_engagements;
 
 -- Update XMLIDs of CSV imported taxes, tags and report lines with wrong
--- module name and nopupdate flag
+-- noupdate flag
 UPDATE ir_model_data
-SET module = '__setup__'
-, noupdate = true
+SET noupdate = true
 WHERE module = 'l10n_ch'
 AND model = 'account.tax';
 
 UPDATE ir_model_data
-SET module = '__setup__'
-, noupdate = true
+SET noupdate = true
 WHERE module = 'l10n_ch'
 AND name IN ('vat_tag_302'
 ,'vat_tag_302b'
@@ -19,8 +17,7 @@ AND name IN ('vat_tag_302'
 ,'vat_tag_342b');
 
 UPDATE ir_model_data
-SET module = '__setup__'
-, noupdate = true
+SET noupdate = true
 WHERE module = 'l10n_ch_reports'
 AND name IN (
 'financial_report_line_chtax_302a'
