@@ -71,3 +71,7 @@
 [submodule "odoo/external-src/odoo-sale-addons"]
 	path = odoo/external-src/odoo-sale-addons
 	url = git@github.com:camptocamp/odoo-sale-addons.git
+[submodule "odoo/external-src/sale-workflow"]
+	path = odoo/external-src/sale-workflow
+	url = git@github.com:OCA/sale-workflow.git
+	branch = 10.0

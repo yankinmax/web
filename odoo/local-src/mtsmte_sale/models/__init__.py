@@ -16,3 +16,5 @@ from . import accounting
 from . import substance_line
 from . import result_sentences
 from . import task_stage
+from . import stock_production_lot
+from . import stock_pack_operation

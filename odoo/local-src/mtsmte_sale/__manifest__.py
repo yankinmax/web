@@ -12,9 +12,11 @@
         'sale_timesheet',
         'account',
         'maintenance',
+        'sale_order_lot_generator',
         'sale_project_fixed_price_task_completed_invoicing',
         # fix for warning in onchange BSMTS-254
         'website_quote',
+        'stock',
     ],
     "author": "Camptocamp,Odoo Community Association (OCA)",
     "website": "http://www.camptocamp.com",
@@ -37,6 +39,8 @@
         'views/result_sentence.xml',
         'views/task_stage.xml',
         'views/menu_items.xml',
+        'views/stock_prod_lot.xml',
+        'views/stock_pack_operation_views.xml',
     ],
     'installable': True,
 }

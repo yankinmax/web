@@ -17,5 +17,8 @@
     "website": "http://www.camptocamp.com",
     "license": "AGPL-3",
     "category": "Warehouse",
+    "data": [
+        'views/stock_scrap_views.xml'
+    ],
     'installable': True,
 }

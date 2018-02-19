@@ -2,11 +2,17 @@
 # Copyright 2018 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, api, exceptions, _
+from odoo import models, api, exceptions, _, fields
 
 
 class StockScrap(models.Model):
     _inherit = "stock.scrap"
+
+    procurement_group_id = fields.Many2one(
+        'procurement.group',
+        readonly=True,
+        related='picking_id.group_id'
+    )
 
     @api.multi
     def do_scrap(self):

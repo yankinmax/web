@@ -21,12 +21,16 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* BSMTS-277: Activate lots and generate a lot per sale order and filter lots
+  wizards by procurement id
+
 **Bugfixes**
 
 **Build**
 
 * BS-207: Use module sale_project_fixed_price_task_completed_invoicing from odoo-sale-addons
 * BS-207: Remove submodule sale-workflow
+* Update odoo-nginx to X-1.2.1
 
 **Documentation**
 
@@ -84,7 +88,6 @@ latest (unreleased)
 
 * Update Dockerimage to 10.0-2.4.1
 * Update with latest from odoo-template
-* Update odoo-nginx to X-1.2.1
 
 
 10.3.0 (2018-02-15)
