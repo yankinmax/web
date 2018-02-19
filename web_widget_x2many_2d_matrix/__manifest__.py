@@ -6,6 +6,7 @@
     "version": "11.0.1.0.0",
     "author": "Therp BV, "
               "Tecnativa, "
+              "Camptocamp, "
               "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/web",
     "license": "AGPL-3",

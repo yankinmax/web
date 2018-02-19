@@ -92,7 +92,7 @@ data model and point to it from our wizard. The crucial part is that we fill
 the field in the default function::
 
  from odoo import fields, models
- 
+
  class MyWizard(models.TransientModel):
     _name = 'my.wizard'
 
@@ -105,8 +105,8 @@ the field in the default function::
         return [
             (0, 0, {
                 'name': 'Sample task name',
-                'project_id': p.id, 
-                'user_id': u.id, 
+                'project_id': p.id,
+                'user_id': u.id,
                 'planned_hours': 0,
                 'message_needaction': False,
                 'date_deadline': fields.Date.today(),
@@ -170,6 +170,8 @@ Contributors
 * Holger Brunn <hbrunn@therp.nl>
 * Pedro M. Baeza <pedro.baeza@tecnativa.com>
 * Artem Kostyuk <a.kostyuk@mobilunity.com>
+* Simone Orsi <simone.orsi@camptocamp.com>
+
 
 Maintainer
 ----------
