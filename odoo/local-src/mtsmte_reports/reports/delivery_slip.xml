@@ -4,12 +4,38 @@
   <!-- adding top margin to create some space before address -->
   <!-- also add name to ease further overriding -->
   <template id="report_delivery_document_inherit_mtsmte" inherit_id="sale_stock.report_delivery_document_inherit_sale_stock">
+    <!-- initialize helper object asap -->
+    <xpath expr="//div[hasclass('page')]" position="before">
+      <t t-set="helper" t-value="request.env['stock.picking.report_deliveryslip_helper']"/>
+    </xpath>
+
     <xpath expr="//div[@t-if='o.sale_id.client_order_ref']" position="attributes">
       <attribute name="name">customer_reference</attribute>
       <attribute name="class" add="mt32" separator=" "/>
     </xpath>
     <xpath expr="//div[@t-if='o.sale_id.client_order_ref']/div" position="attributes">
         <attribute name="class">col-xs-12 pull-left</attribute>
+    </xpath>
+    <xpath expr="//table[@t-if='o.pack_operation_ids']/thead//th[last()]" position="after">
+      <th class="text-right">Balance to deliver</th>
+    </xpath>
+    <xpath expr="//span[@t-field='pack_operation.ordered_qty']" position="replace">
+      <span>
+        <t t-esc="helper._get_ordered_qty(pack_operation)"/>
+      </span>
+    </xpath>
+    <xpath expr="//table[@t-if='o.pack_operation_ids']/tbody//td[@t-if=&quot;pack_operation.state == 'done'&quot;]" position="after">
+      <td class="text-right">
+        <span>
+          <t t-esc="helper._get_balance_to_deliver(pack_operation)"/>
+        </span>
+        <t t-if="pack_operation.linked_move_operation_ids">
+          <span t-field="pack_operation.linked_move_operation_ids[0].move_id.product_uom"/>
+        </t>
+        <t t-else="">
+          <span t-field="pack_operation.product_uom_id"/>
+        </t>
+      </td>
     </xpath>
   </template>
 
