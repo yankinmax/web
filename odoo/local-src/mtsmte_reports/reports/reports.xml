@@ -9,4 +9,13 @@
     name="mtsmte_reports.report_project_analysis"
     file="mtsmte_reports.report_project_analysis"/>
 
+  <report
+    id="report_account_invoice_payment_slip"
+    string="Invoice with payment slip"
+    model="account.invoice"
+    report_type="qweb-pdf"
+    menu="True"
+    name="mtsmte_reports.report_invoice_with_payment_slip"
+  />
+
 </odoo>

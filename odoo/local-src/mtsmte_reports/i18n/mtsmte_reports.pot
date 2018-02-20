@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-15 15:15+0000\n"
-"PO-Revision-Date: 2017-11-15 15:15+0000\n"
+"POT-Creation-Date: 2018-02-16 15:38+0000\n"
+"PO-Revision-Date: 2018-02-16 15:38+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,102 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: mtsmte_reports
+#: model:mail.template,body_html:mtsmte_reports.quotation_confirmation_mail_specific
+msgid "\n"
+"<p>Madam, Dear Sir,</p>\n"
+"\n"
+"<p>Thank you so much for your interest to our society.\n"
+"As per your request dated <span style=\"color:#ff0000\">${object.date_order}</span>, please find attached our Quote Nr. <span style=\"color:#ff0000\">${object.name}</span>.\n"
+"Please do not hesitate to contact us for further information.\n"
+"We keep waiting for your feedback.\n"
+"Best regards</p>\n"
+"\n"
+"% if user.signature\n"
+"<p>${user.signature | safe}</p>\n"
+"% endif\n"
+""
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:mail.template,body_html:mtsmte_reports.email_template_edi_invoice_specific
+msgid "\n"
+"<p>Madam, Dear Sir,</p>\n"
+"<p>Please find attached our Invoice Nr. <span style=\"color:#ff0000\">${object.number}</span> on <span style=\"color:#ff0000\">${object.date_invoice}</span>.\n"
+"We thank you in advance for your next payment.\n"
+"Do not hesitate to contact us for further information.\n"
+"Best regards</p>\n"
+"\n"
+"\n"
+"% if user.signature\n"
+"<p>${user.signature | safe}</p>\n"
+"% endif\n"
+""
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:mail.template,body_html:mtsmte_reports.email_template_edi_sale_specific
+msgid "\n"
+"<p>Madam, Dear Sir,</p>\n"
+"<p>Thank you so much for your interest to our society.\n"
+"With reference to your order Nr.<span style=\"color:#ff0000\">${object.name}</span>, please find attached our Order confirmation Nr. <span style=\"color:#ff0000\">${object.name}</span>.\n"
+"Please do not hesitate to contact us for further information.\n"
+"Best regards,</p>\n"
+"\n"
+"\n"
+"% if user.signature\n"
+"<p>${user.signature | safe}</p>\n"
+"% endif\n"
+""
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:mail.template,body_html:mtsmte_reports.email_template_project_project
+msgid "\n"
+"<p>Madam, Dear Sir,</p>\n"
+"<p>With reference to your order Nr. <span style=\"color:#ff0000\">${object.name}</span>, please find attached our Report Nr. <span style=\"color:#ff0000\">${object.name}</span>.\n"
+"Do not hesitate to contact us for further information.\n"
+"Best regards</p>\n"
+"\n"
+"\n"
+"% if user.signature\n"
+"<p>${user.signature | safe}</p>\n"
+"% endif\n"
+""
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:mail.template,report_name:mtsmte_reports.email_template_project_project
+msgid "${(object.name or '').replace('/','_')}"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:mail.template,report_name:mtsmte_reports.email_template_edi_sale_specific
+msgid "${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:mail.template,subject:mtsmte_reports.email_template_edi_sale_specific
+msgid "${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:mail.template,subject:mtsmte_reports.email_template_edi_invoice_specific
+msgid "${object.company_id.name} Invoice (Ref ${object.number or 'n/a'})"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:mail.template,subject:mtsmte_reports.email_template_project_project
+msgid "${object.company_id.name} Project ${object.name or 'n/a' }"
+msgstr ""
+
+#. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_header
 msgid "&amp;nbsp;"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
+msgid "<span> Page: <span class=\"page\"/>/<span class=\"topage\"/></span>"
 msgstr ""
 
 #. module: mtsmte_reports
@@ -98,6 +192,7 @@ msgid "Definitive"
 msgstr ""
 
 #. module: mtsmte_reports
+#: model:ir.model.fields,field_description:mtsmte_reports.field_account_invoice_comment_text
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_task_description_text
 msgid "Description as text"
 msgstr ""
@@ -122,6 +217,21 @@ msgstr ""
 #. module: mtsmte_reports
 #: model:ir.model.fields,help:mtsmte_reports.field_res_company_report_logo
 msgid "Image to be used only in reports."
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.model,name:mtsmte_reports.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.actions.report.xml,name:mtsmte_reports.report_account_invoice_payment_slip
+msgid "Invoice with payment slip"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:mail.template,report_name:mtsmte_reports.email_template_edi_invoice_specific
+msgid "Invoice_${(object.number or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}"
 msgstr ""
 
 #. module: mtsmte_reports
@@ -172,6 +282,16 @@ msgid "Les résultats contenus ne concernent que les échantillons soumis à l�
 msgstr ""
 
 #. module: mtsmte_reports
+#: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_nickel_en
+msgid "Nickel report English"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_nickel_fr
+msgid "Nickel report French"
+msgstr ""
+
+#. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.project_analysis_wiz_form
 msgid "Print"
 msgstr ""
@@ -214,13 +334,14 @@ msgid "Quantification limit"
 msgstr ""
 
 #. module: mtsmte_reports
-#: model:ir.ui.view,arch_db:mtsmte_reports.company_form_view
-msgid "Report Data"
+#: model:ir.model,name:mtsmte_reports.model_report
+#: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
+msgid "Report"
 msgstr ""
 
 #. module: mtsmte_reports
-#: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
-msgid "Report No<br/>"
+#: model:ir.ui.view,arch_db:mtsmte_reports.company_form_view
+msgid "Report Data"
 msgstr ""
 
 #. module: mtsmte_reports
@@ -242,6 +363,11 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 #: model:ir.ui.view,arch_db:mtsmte_reports.mech_env_results
 msgid "Results &amp;amp; Observations"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.model,name:mtsmte_reports.model_sale_order
+msgid "Sales Order"
 msgstr ""
 
 #. module: mtsmte_reports
@@ -279,6 +405,16 @@ msgstr ""
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchasequotation_document_specific
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
 msgid "VAT:"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:mail.template,subject:mtsmte_reports.quotation_confirmation_mail_specific
+msgid "Your order ${object.name} is confirmed"
+msgstr ""
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
+msgid "certification"
 msgstr ""
 
 #. module: mtsmte_reports
