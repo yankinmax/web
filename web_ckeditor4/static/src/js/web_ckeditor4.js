@@ -208,13 +208,13 @@ odoo.define('web_ckeditor4', function(require){
                 this.editor.removeAllListeners();
                 this.editor.destroy();
                 this.editor = null;
-                $('.' + id).remove()
+                $('.' + id).remove();
             }
         },
         destroy: function()
         {
-            this.destroy_content();
-            this._super();
+          this._cleanup_editor();
+          this._super();
         },
         destroy_content: function()
         {
