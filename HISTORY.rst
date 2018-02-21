@@ -29,6 +29,10 @@ latest (unreleased)
 **Bugfixes**
 
 * BSMTS-259: Fix CKEditor behaviour when leaving a form.
+* Fix stock picking types routing
+* BSMTS-278: Fix stock.move.action_assign w/ scrap after back order
+  https://github.com/camptocamp/odoo/tree/10-fix-stock-move-scrap
+
 
 **Build**
 
