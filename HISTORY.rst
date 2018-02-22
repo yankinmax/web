@@ -23,6 +23,7 @@ latest (unreleased)
 
 * Tweak a deliery slip report BSMTS-274
 * BSMTS-276: Print invoice and slip in one document
+* BSMTS-286: Remove BVR/ESR unique constraint
 
 **Bugfixes**
 
