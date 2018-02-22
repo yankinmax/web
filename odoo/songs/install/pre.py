@@ -41,6 +41,7 @@ def setup_language(ctx):
     ctx.env['res.lang'].search([]).write({
         'grouping': [3, 0],
         'date_format': '%d/%m/%Y',
+        "decimal_point": ".",
     })
 
 
