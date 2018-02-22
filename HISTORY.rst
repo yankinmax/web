@@ -26,6 +26,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* BSMTS-259: Fix CKEditor behaviour when leaving a form.
+
 **Build**
 
 **Documentation**
