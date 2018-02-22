@@ -25,4 +25,37 @@
     <field name="name">Done</field>
     <field name="case_default" eval="True"/>
   </record>
+
+  <!--
+  Make default tasks types not `case_default`.
+  NOTE: there's a song `update_project_task_type` in project setup
+  BUT if we update `base` and we forget to run that song
+  we are going to get all default tasks types set again by default.
+  Here we make sure that updating `mtsmte_project` will fix this anyway.
+  -->
+  <record id="project_task_default_stage.project_tt_analysis" model="project.task.type">
+    <field name="case_default" eval="False"/>
+  </record>
+  <record id="project_task_default_stage.project_tt_specification" model="project.task.type">
+    <field name="case_default" eval="False"/>
+  </record>
+  <record id="project_task_default_stage.project_tt_design" model="project.task.type">
+    <field name="case_default" eval="False"/>
+  </record>
+  <record id="project_task_default_stage.project_tt_development" model="project.task.type">
+    <field name="case_default" eval="False"/>
+  </record>
+  <record id="project_task_default_stage.project_tt_testing" model="project.task.type">
+    <field name="case_default" eval="False"/>
+  </record>
+  <record id="project_task_default_stage.project_tt_merge" model="project.task.type">
+    <field name="case_default" eval="False"/>
+  </record>
+  <record id="project_task_default_stage.project_tt_deployment" model="project.task.type">
+    <field name="case_default" eval="False"/>
+  </record>
+  <record id="project_task_default_stage.project_tt_cancel" model="project.task.type">
+    <field name="case_default" eval="False"/>
+  </record>
+
 </odoo>
