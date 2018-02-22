@@ -25,6 +25,8 @@ latest (unreleased)
 * BSMTS-276: Print invoice and slip in one document
 * BSMTS-284: Upgrade account_bank_statement_import_camt to latest commit
 * BSMTS-286: Remove BVR/ESR unique constraint
+* BSMTS-278: improve scrap handling in move chain
+
 
 **Bugfixes**
 
