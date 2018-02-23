@@ -101,6 +101,9 @@ latest (unreleased)
 
 * BSMTS-288: Propagate report_number field from project to SO and invoice
   add it to form, search and invoice report
+* BSMTS-285: Add BI SQL View Engagement in setup
+
+**Documentation**
 
 **Bugfixes**
 

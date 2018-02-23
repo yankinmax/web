@@ -27,6 +27,7 @@ migration:
           - anthem songs.install.mts.sales::main
           - anthem songs.install.mte.sales::main
           - anthem songs.install.fetchmail::main
+          - anthem songs.install.data_all::main
       modes:
         full:
           operations:
@@ -272,6 +273,11 @@ migration:
             pre:
               - psql -f /opt/odoo/songs/update/update_10_3_1.sql
     - version: 10.4.0
+      modes:
+        full:
+          operations:
+            pre:
+              - anthem songs.update.update_10_4_0::main
       addons:
         upgrade:
           #### Specific
