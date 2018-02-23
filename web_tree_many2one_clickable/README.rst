@@ -1,4 +1,4 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
@@ -10,16 +10,10 @@ This addon forces Odoo to use many2one widget on a many2one fields in
 tree views. This allows users to open linked resources from trees directly,
 without accessing the form.
 
-Installation
-============
-
-Install it the regular way.
-
 Configuration
 =============
 
-After installation, all many2one and reference fields will be clickable
-by default.
+After installation, all many2one and reference fields will be clickable by default.
 
 Usage
 =====
