@@ -278,3 +278,5 @@ migration:
           - mtsmte_reports
           # Web
           - web_ckeditor4
+          #### OCA/bank-statement-import
+          - account_bank_statement_import_camt

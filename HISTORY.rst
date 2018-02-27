@@ -23,6 +23,7 @@ latest (unreleased)
 
 * Tweak a deliery slip report BSMTS-274
 * BSMTS-276: Print invoice and slip in one document
+* BSMTS-284: Upgrade account_bank_statement_import_camt to latest commit
 
 **Bugfixes**
 
