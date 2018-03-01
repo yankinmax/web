@@ -197,6 +197,9 @@ migration:
           #### src/addons
           - l10n_fr_certification
           - l10n_fr_sale_closing
+          ### cloud platform
+          - cloud_platform_exoscale
+          - base_attachment_object_storage
       operations:
         pre:
           - anthem songs.updates.update_10_3_2::main
