@@ -46,3 +46,12 @@
     # adds fix for the warning in odoo build
     - oca refs/pull/354/head
   target: *default_target
+./src:
+  remotes:
+    oca: git@github.com:OCA/OCB.git
+    camptocamp: git@github.com:camptocamp/odoo.git
+  merges:
+    - oca 10.0
+    # fix for stock scrap BSMTS-278
+    - camptocamp 10-fix-stock-move-scrap 
+  target: *default_target
