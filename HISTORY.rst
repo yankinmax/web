@@ -25,10 +25,16 @@ latest (unreleased)
 * BSMTS-276: Print invoice and slip in one document
 * BSMTS-284: Upgrade account_bank_statement_import_camt to latest commit
 * BSMTS-286: Remove BVR/ESR unique constraint
+* BSMTS-278: improve scrap handling in move chain
+
 
 **Bugfixes**
 
 * BSMTS-259: Fix CKEditor behaviour when leaving a form.
+* Fix stock picking types routing
+* BSMTS-278: Fix stock.move.action_assign w/ scrap after back order
+  https://github.com/camptocamp/odoo/tree/10-fix-stock-move-scrap
+
 
 **Build**
 
