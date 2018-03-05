@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.4.0 (2018-03-05)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * Tweak a deliery slip report BSMTS-274
 * BSMTS-276: Print invoice and slip in one document
 * BSMTS-284: Upgrade account_bank_statement_import_camt to latest commit
@@ -34,12 +46,6 @@ latest (unreleased)
 * Fix stock picking types routing
 * BSMTS-278: Fix stock.move.action_assign w/ scrap after back order
   https://github.com/camptocamp/odoo/tree/10-fix-stock-move-scrap
-
-
-**Build**
-
-**Documentation**
-
 
 10.3.1 (2018-02-19)
 +++++++++++++++++++
