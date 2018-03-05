@@ -202,7 +202,7 @@ odoo.define('web_ckeditor4', function(require){
         },
         _cleanup_editor: function()
         {
-            if(this.editor)
+            if(this.editor && this.editor.status != 'unloaded')
             {
                 var id = this.editor.id
                 this.editor.removeAllListeners();
