@@ -16,6 +16,7 @@
         'sale',
         'sale_order_dates',
         'purchase',
+        'mtsmte_project',
     ],
     'website': 'https://www.camptocamp.com',
     'data': [

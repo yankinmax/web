@@ -21,6 +21,9 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* BSMTS-288: Propagate report_number field from project to SO and invoice
+  add it to form, search and invoice report
+
 **Bugfixes**
 
 * BSMTS-290: Fix CKEditor behaviour on creation form.

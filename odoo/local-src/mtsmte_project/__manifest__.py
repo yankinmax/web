@@ -13,6 +13,8 @@
     "depends": [
         'project',
         'project_task_default_stage',
+        'mtsmte_sale',
+        'account',
     ],
     "author": 'Camptocamp,Odoo Community Association (OCA)',
     "website": 'http://www.camptocamp.com',
@@ -21,6 +23,8 @@
     "data": [
         'data/project_task.xml',
         'views/project_project.xml',
+        'views/sale_order.xml',
+        'views/account_invoice.xml',
     ],
     'installable': True,
 }

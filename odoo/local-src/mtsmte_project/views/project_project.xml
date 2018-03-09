@@ -38,4 +38,15 @@
     </field>
   </record>
 
+  <record id="view_project_project_search" model="ir.ui.view">
+      <field name="name">project.project.search</field>
+      <field name="model">project.project</field>
+      <field name="inherit_id" ref="project.view_project_project_filter"/>
+      <field name="arch" type="xml">
+          <xpath expr="//field[@name='name']" position="after">
+              <field name="report_number"/>
+          </xpath>
+      </field>
+  </record>
+
 </odoo>

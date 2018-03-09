@@ -283,3 +283,6 @@ migration:
         upgrade:
           #### OCA/web
           - web_ckeditor4
+         #### Specific
+          - mtsmte_reports
+          - mtsmte_project

@@ -14,5 +14,11 @@
       <xpath expr="//div[@t-if='o.partner_shipping_id != o.partner_id']" position="attributes">
           <attribute name="class">mt48</attribute>
       </xpath>
+      <xpath expr="//div[@name='reference']" position="after">
+          <div name="report_number" class="col-xs-2" t-if="o.report_numbers">
+              <strong>Report Number</strong>
+              <p t-field="o.report_numbers"/>
+          </div>
+      </xpath>
   </template>
 </odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_account_invoice_form" model="ir.ui.view">
+        <field name="name">account.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="report_numbers"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_analytic_id']" position="after">
+                <field name="project_id" invisible="1" />
+                <field name="report_number" invisible="1" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_search" model="ir.ui.view">
+        <field name="name">account.invoice.search</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='number']" position="after">
+                <field name="report_numbers"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
