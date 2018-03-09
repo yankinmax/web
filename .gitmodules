@@ -69,3 +69,6 @@
 [submodule "odoo/external-src/odoo-dj"]
 	path = odoo/external-src/odoo-dj
 	url = git@github.com:camptocamp/odoo-dj.git
+[submodule "odoo/external-src/odoo-sale-addons"]
+	path = odoo/external-src/odoo-sale-addons
+	url = git@github.com:camptocamp/odoo-sale-addons.git
