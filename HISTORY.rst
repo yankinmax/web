@@ -23,6 +23,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* BSMTS-290: Fix CKEditor behaviour on creation form.
+
 **Build**
 
 **Documentation**
