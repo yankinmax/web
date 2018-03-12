@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2017 Camptocamp SA
+# Copyright 2017-2018 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import anthem
@@ -33,7 +33,7 @@ def update_res_company_royalties_pub(ctx):
 
 @anthem.log
 def main(ctx):
-    """ Main: update 10.3.2 """
+    """ Main: update 10.4.0 """
     remove_partner_sponsor(ctx)
     recompute_active_for_partner_sponsor(ctx)
     update_res_company_royalties_pub(ctx)  # <- comment this if needed
