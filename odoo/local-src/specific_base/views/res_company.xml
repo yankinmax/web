@@ -103,4 +103,19 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="view_res_company_specific_form_change_partner">
+        <field name="name">res.company.specific.form.change.partner</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="groups_id" eval="[(4, ref('specific_security.group_can_change_partner_on_company'))]"/>
+        <field name="arch" type="xml">
+
+            <field name="partner_id" position="attributes">
+                <attribute name="readonly">False</attribute>
+                <attribute name="groups">specific_security.group_can_change_partner_on_company</attribute>
+            </field>
+
+        </field>
+    </record>
+
 </odoo>

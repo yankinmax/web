@@ -190,6 +190,7 @@ migration:
           - specific_base
           - specific_discount_program
           - specific_payment_mode
+          - specific_security
           #### SythilTech Odoo
           - sms_frame
           #### core

@@ -10,6 +10,7 @@ Unreleased
 
 * BIZ-661: SMS API. Add sms_frame module
 * BIZ-674: Modèle partner.sponsor
+* BIZ-867: Allow to change partner on company for given group
 * BIZ-1228_Installation_modules_accounting_certification
   update:
    external-src/enterprise
