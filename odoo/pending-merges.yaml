@@ -1,39 +1,12 @@
 # file used with gitaggregate: https://github.com/acsone/git-aggregator
 # please see docs in docs/how-to-integrate-pull-request.md
-./external-src/account-financial-tools:
-  remotes:
-    oca: git@github.com:OCA/account-financial-tools.git
-    camptocamp: git@github.com:camptocamp/account-financial-tools.git
-  merges:
-    - oca 10.0
-    # [10.0][MIG] account_move_locking
-    - oca refs/pull/474/head
-  target: &default_target camptocamp merge-branch-1836-master
 ./external-src/enterprise:
   remotes:
     odoo: git@github.com:odoo/enterprise.git
     camptocamp: git@github.com:camptocamp/enterprise.git
   merges:
     - odoo 10.0
-  target: *default_target
-./external-src/partner-contact:
-  remotes:
-    oca: git@github.com:OCA/partner-contact.git
-    camptocamp: git@github.com:camptocamp/partner-contact.git
-  merges:
-    - oca 10.0
-    # [MIG] partner_changeset: Migrated to 10.0
-    - oca refs/pull/380/head
-  target: *default_target
-./external-src/sale-workflow:
-  remotes:
-    oca: git@github.com:OCA/sale-workflow.git
-    camptocamp: git@github.com:camptocamp/sale-workflow.git
-  merges:
-    - oca 10.0
-    # [10.0][IMP] sale_automatic_workflow support multicompany
-    - oca refs/pull/493/head
-  target: *default_target
+  target: &default_target camptocamp merge-branch-1836-master
 ./external-src/server-tools:
   remotes:
     oca: git@github.com:OCA/server-tools.git
@@ -51,15 +24,4 @@
     - oca 10.0
     # [10.0] [MIG] web_duplicate_visibility
     - oca refs/pull/557/head
-  target: *default_target
-./external-src/bank-payment:
-  remotes:
-    oca: git@github.com:OCA/bank-payment.git
-    camptocamp: git@github.com:camptocamp/bank-payment.git
-  merges:
-    - oca 10.0
-    # [10.0]Fix payment method onchange with multicompany
-    - oca refs/pull/374/head
-    # [10.0][ADD] relational inverse field for payment.mode on payment.method
-    - oca refs/pull/375/head
   target: *default_target

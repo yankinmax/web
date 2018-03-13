@@ -32,6 +32,7 @@ Unreleased
 * Add sythiltech-odoo submodule
 * Update odoo-cloud-platform (BIZ-1093)
 * Update project from odoo-template
+* Update all submodules
 
 **Documentation**
 
