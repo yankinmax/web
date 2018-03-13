@@ -12,7 +12,9 @@ odoo.define('web_ckeditor4.FormView', function(require) {
         // if form can be discarded
         // we want to destroy all ck4 editor instances
         for(name in CKEDITOR.instances){
-          self.fields[name].destroy_content();
+          if (self.fields.hasOwnProperty(name)){
+            self.fields[name].destroy_content();
+          }
         }
       });
       return res;
