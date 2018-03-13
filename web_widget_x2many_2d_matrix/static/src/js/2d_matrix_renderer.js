@@ -139,8 +139,13 @@ odoo.define('web_widget_x2many_2d_matrix.X2Many2dMatrixRenderer', function (requ
         'data-id': record.data.id,
       });
       if (colIndex == 0) {
+        var value = record.data[this.matrix_data.field_y_axis];
+        if (value.type == 'record') {
+          // we have a related record
+          value = value.data.display_name;
+        }
         // get 1st column filled w/ Y label
-        $td.text(record.data[this.matrix_data.field_y_axis]);
+        $td.text(value);
         return $td;
       }
 

@@ -52,6 +52,14 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
       _.each(records, function(record) {
         var x = record.data[self.field_x_axis],
             y = record.data[self.field_y_axis];
+        if (x.type == 'record') {
+          // we have a related record
+          x = x.data.display_name;
+        }
+        if (y.type == 'record') {
+          // we have a related record
+          y = y.data.display_name;
+        }
         self.by_x_axis[x] = self.by_x_axis[x] || {};
         self.by_y_axis[y] = self.by_y_axis[y] || {};
         self.by_x_axis[x][y] = record;
