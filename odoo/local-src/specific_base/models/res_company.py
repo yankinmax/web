@@ -79,6 +79,9 @@ class ResCompany(models.Model):
     url_virtual_visit = fields.Char()
     nb_desk = fields.Integer(help="Desks number")
     nb_room = fields.Integer(help="Rooms number")
+    obsver520 = fields.Boolean(
+        string='Observ 520',
+    )
     tz = fields.Selection(related="partner_id.tz")
     date_opening = fields.Date()
     display_teleop = fields.Boolean(default=True)
