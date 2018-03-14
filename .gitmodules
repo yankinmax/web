@@ -49,7 +49,7 @@
 [submodule "odoo/external-src/odoo-prototype"]
 	path = odoo/external-src/odoo-prototype
 	url = git@github.com:camptocamp/odoo-prototype.git
-[submodule "odoo/external-src/sythiltech-odoo"]
-	path = odoo/external-src/sythiltech-odoo
-	url = git@github.com:SythilTech/Odoo.git
-	branch = 10.0
+[submodule "odoo/external-src/SythilTech-Odoo"]
+	path = odoo/external-src/SythilTech-Odoo
+	url = git@github.com:camptocamp/SythilTech-Odoo.git
+	branch = 10.0_only_sms_frame
