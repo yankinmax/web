@@ -1,4 +1,4 @@
-FROM camptocamp/odoo-project:10.0-2.4.1
+FROM camptocamp/odoo-project:10.0-2.5.1
 MAINTAINER Camptocamp
 
 # Install additional debian packages if needed
@@ -35,7 +35,7 @@ ENV ADDONS_PATH="/opt/odoo/local-src, \
   /opt/odoo/external-src/connector-telephony, \
   /opt/odoo/external-src/partner-contact, \
   /opt/odoo/external-src/odoo-prototype, \
-  /opt/odoo/external-src/sythiltech-odoo, \
+  /opt/odoo/external-src/SythilTech-Odoo, \
   /opt/odoo/external-src/odoo-cloud-platform" \
   LIMIT_TIME_CPU=86400 \
   LIMIT_TIME_REAL=86400 \

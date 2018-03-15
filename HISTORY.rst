@@ -28,10 +28,11 @@ Unreleased
 
 **Build**
 
-* Upgrade Dockerimage to 10.0-2.4.1
+* Upgrade Dockerimage to 10.0-2.5.1
 * Add sythiltech-odoo submodule
 * Update odoo-cloud-platform (BIZ-1093)
 * Update project from odoo-template
+* Update all submodules
 
 **Documentation**
 

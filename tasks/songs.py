@@ -83,7 +83,7 @@ def rip(ctx, location, login='admin', password='admin',
         zipdata = io.BytesIO()
         zipdata.write(resp.content)
     else:
-        zipdata = open(location)
+        zipdata = location
     handle_zip_data(zipdata, dryrun=dryrun)
 
 
@@ -109,4 +109,6 @@ def handle_zip_data(zipdata, dryrun=False):
 
     print('-' * 79)
     # Print README file
-    print(zf.open(readme_path).read())
+    readme_content = zf.open(readme_path).read()
+    readme_content = readme_content.decode('utf-8')
+    print(readme_content)

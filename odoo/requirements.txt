@@ -10,3 +10,11 @@ redis==2.10.5
 python-json-logger==0.1.5
 statsd==3.2.1
 shortuuid==0.5.0
+
+Jinja2
+autopep8
+pylint
+unicodecsv
+# Improve mimetype guessing.
+# Requires `libmagic1` to be installed sys-wide
+python-magic
