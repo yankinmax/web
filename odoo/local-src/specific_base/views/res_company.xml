@@ -72,6 +72,7 @@
                             <field name="qualitelis_center_id"/>
                             <field name="nb_desk"/>
                             <field name="nb_room"/>
+                            <field name="obsver520"/>
                             <field name="description_active"/>
                             <field name="info_phoning"/>
                         </group>
