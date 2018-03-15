@@ -70,4 +70,9 @@
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
     </record>
 
+    <record model="res.groups" id="group_can_change_partner_on_company">
+        <field name="name">Can change partner on company</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
 </odoo>
