@@ -23,6 +23,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* BIZ-1523: Fix invoice report with BVR (in case of BVR is unavailable)
+
 **Build**
 
 **Documentation**
