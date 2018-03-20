@@ -3,8 +3,14 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import models, api
+from odoo.exceptions import UserError
+
+import logging
 import StringIO
 import pyPdf
+
+
+_logger = logging.getLogger(__name__)
 
 
 class Report(models.Model):
@@ -15,13 +21,29 @@ class Report(models.Model):
 
         if report_name == 'mtsmte_reports.report_invoice_with_payment_slip':
             invoice = self.env['account.invoice'].browse(docids)
-            invoice._check_bvr_generatable()
+            pdf_to_print = []
             invoice_pdf = super(Report, self).get_pdf(
                 docids, 'account.report_invoice', html, data)
-            payment_slip_pdf = super(Report, self).get_pdf(
-                docids, 'l10n_ch_payment_slip.one_slip_per_page_from_invoice',
-                html, data)
-            return self.merge_pdf_in_memory([invoice_pdf, payment_slip_pdf])
+            pdf_to_print.append(invoice_pdf)
+            # Check with the bvr report is generatable.
+            # If yes, add the report to the list of reports to print
+            try:
+                invoice._check_bvr_generatable()
+                payment_slip_pdf = super(Report, self).get_pdf(
+                    docids,
+                    'l10n_ch_payment_slip.one_slip_per_page_from_invoice',
+                    html,
+                    data
+                )
+                pdf_to_print.append(payment_slip_pdf)
+            except UserError, e:
+                # Do nothing, because in this case,
+                # we just display the classic invoice report
+                _logger.info(
+                    'Impossible to generate BVR report: %s',
+                    e.name
+                )
+            return self.merge_pdf_in_memory(pdf_to_print)
         else:
             return super(Report, self).get_pdf(docids, report_name, html, data)
 
