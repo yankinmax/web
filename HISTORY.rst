@@ -23,11 +23,17 @@ latest (unreleased)
 
 **Bugfixes**
 
-* BIZ-1523: Fix invoice report with BVR (in case of BVR is unavailable)
-
 **Build**
 
 **Documentation**
+
+
+10.5.1 (2018-03-20)
++++++++++++++++++++
+
+**Bugfixes**
+
+* BIZ-1523: Fix invoice report with BVR (in case of BVR is unavailable)
 
 
 10.5.0 (2018-03-09)
