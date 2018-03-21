@@ -37,6 +37,7 @@ ENV ADDONS_PATH="/opt/odoo/external-src/bank-statement-import, \
   /opt/odoo/external-src/bank-statement-reconcile, \
   /opt/odoo/external-src/odoo-sale-addons, \
   /opt/odoo/external-src/account-payment, \
+  /opt/odoo/external-src/sale-workflow, \
   /opt/odoo/src/addons, \
   /opt/odoo/local-src," \
   LIMIT_TIME_CPU=86400 \

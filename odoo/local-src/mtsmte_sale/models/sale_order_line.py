@@ -84,3 +84,13 @@ class SaleOrderLine(models.Model):
     def _is_service_task(self):
         return (self.product_id.type == 'service' and
                 self.product_id.track_service in ('task', 'completed_task'))
+
+    @api.multi
+    def _action_procurement_create(self):
+        new_procs = super(SaleOrderLine, self)._action_procurement_create()
+        for line in self:
+            if not line.lot_id:
+                continue
+            proc_group = line.order_id.procurement_group_id
+            line.lot_id.write({'procurement_group_id': proc_group.id})
+        return new_procs

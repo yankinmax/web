@@ -108,7 +108,7 @@ def stock_config_settings_MTS(ctx):
         # Temando integration  # noqa
         'module_delivery_temando': False,
         # Lots and Serial Numbers: Do not track individual product items  # noqa
-        'group_stock_production_lot': False,
+        'group_stock_production_lot': 1,
         # Manage several warehouses  # noqa
         'group_stock_multi_warehouses': False,
         # Product Owners: All products in your warehouse belong to your company  # noqa

@@ -17,3 +17,10 @@ class StockPicking(models.Model):
                   "(%s)") % (', '.join(waiting.mapped('name')),)
             )
         return super(StockPicking, self).action_cancel()
+
+    @api.multi
+    def button_scrap(self):
+        self.ensure_one()
+        res = super(StockPicking, self).button_scrap()
+        res['context']['default_procurement_group_id'] = self.group_id.id
+        return res
