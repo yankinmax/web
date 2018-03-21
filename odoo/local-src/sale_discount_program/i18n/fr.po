@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-04 08:56+0000\n"
-"PO-Revision-Date: 2017-09-04 08:56+0000\n"
+"POT-Creation-Date: 2018-03-21 08:27+0000\n"
+"PO-Revision-Date: 2018-03-21 08:27+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgid "Add Product"
 msgstr "Ajout d'un article"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program_action.py:111
+#: code:addons/sale_discount_program/models/program_action.py:112
 #, python-format
 msgid "Add product: %s"
 msgstr "Ajout d'un article : %s"
@@ -91,7 +91,7 @@ msgid "Voucher"
 msgstr "Bon d'achat"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program_action.py:182
+#: code:addons/sale_discount_program/models/program_action.py:183
 #, python-format
 msgid "Change pricelist to %s"
 msgstr "Changement de liste de prix pour %s"
@@ -185,7 +185,7 @@ msgid "Discount program"
 msgstr "Programme de promotion"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program_action.py:163
+#: code:addons/sale_discount_program/models/program_action.py:164
 #, python-format
 msgid "Discount: %s%% on %s"
 msgstr "Remise: %s%% sur %s"
@@ -305,7 +305,7 @@ msgid "Product Category"
 msgstr "Catégorie d'articles"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program_condition.py:94
+#: code:addons/sale_discount_program/models/program_condition.py:95
 #, python-format
 msgid "Product Category: %s"
 msgstr "Catégorie d'article: %s"
@@ -341,7 +341,7 @@ msgid "Product qty type"
 msgstr "Calcul de la quantité"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/program_condition.py:108
+#: code:addons/sale_discount_program/models/program_condition.py:109
 #, python-format
 msgid "Product: %s"
 msgstr "Article : %s"
@@ -504,7 +504,6 @@ msgstr "Utilisé"
 #. module: sale_discount_program
 #: code:addons/sale_discount_program/models/program.py:109
 #: selection:sale.discount.program,type:0
-#: selection:sale.discount.program.action,type_action:0
 #, python-format
 msgid "Voucher"
 msgstr "Bon d'achat"
@@ -533,7 +532,7 @@ msgid "Vouchers"
 msgstr "Bons d'achat"
 
 #. module: sale_discount_program
-#: code:addons/sale_discount_program/models/sale_order.py:119
+#: code:addons/sale_discount_program/models/sale_order.py:128
 #, python-format
 msgid "You need to add order lines before apply discount"
 msgstr "Vous devez ajouter des lignes de commandes avant d'appliquer les promotions"
