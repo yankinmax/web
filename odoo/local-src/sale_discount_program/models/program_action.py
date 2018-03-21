@@ -20,7 +20,6 @@ class DiscountProgramAction(models.Model):
     name = fields.Char(compute='_compute_name')
 
     type_action = fields.Selection([
-        ('voucher', 'Voucher'),
         ('product_add', 'Add Product'),
         ('product_discount', 'Discount on product'),
         ('change_pricelist', 'Change sale order pricelist'),
