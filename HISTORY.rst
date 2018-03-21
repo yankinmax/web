@@ -8,6 +8,18 @@ Unreleased
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.4.0 (2018-03-21)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * BIZ-661: SMS API. Add sms_frame module
 * BIZ-674: Modèle partner.sponsor
 * BIZ-867: Allow to change partner on company for given group
@@ -37,8 +49,6 @@ Unreleased
 * Update odoo-cloud-platform (BIZ-1093)
 * Update project from odoo-template
 * Update all submodules
-
-**Documentation**
 
 
 10.3.0 (2017-10-26)
