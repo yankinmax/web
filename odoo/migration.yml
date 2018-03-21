@@ -286,3 +286,4 @@ migration:
          #### Specific
           - mtsmte_reports
           - mtsmte_project
+    - version: 10.5.1
