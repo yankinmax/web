@@ -17,14 +17,25 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
 
   var WidgetX2Many2dMatrix = relational_fields.FieldOne2Many.extend({
     widget_class: 'o_form_field_x2many_2d_matrix',
-
+    /**
+     * Initialize the widget & parameters.
+     *
+     * @param {Object} parent: contains the form view.
+     * @param {String} name: the name of the field.
+     * @param {Object} record: Contains the information about the database records.
+     * @param {Object} options: Contains the view options.
+     */
     init: function (parent, name, record, options) {
-        var res = this._super(parent, name, record, options);
+        this._super(parent, name, record, options);
         this.init_params();
-        return res;
     },
+
+    /**
+     * Initialize the widget specific parameters.
+     * Sets the axis and the values.
+     */
     init_params: function () {
-        var node = this.attrs
+        var node = this.attrs;
         this.by_x_axis = {};
         this.by_y_axis = {};
         this.field_x_axis = node.field_x_axis || this.field_x_axis;
@@ -46,6 +57,10 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
         this.show_column_totals = this.parse_boolean(node.show_column_totals || '1');
         this.init_matrix();
     },
+    /**
+     * Initializes the Value matrix.
+     * Puts the values in the grid. If we have related items we use the display name.
+     */
     init_matrix: function(){
       var self = this,
           records = self.recordData[this.name].data;
@@ -68,11 +83,11 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
       // init columns
       self.columns = [];
       $.each(self.by_x_axis, function(x){
-        self.columns.push(self._make_column(x))
+        self.columns.push(self._make_column(x));
       });
       self.rows = [];
       $.each(self.by_y_axis, function(y){
-        self.rows.push(self._make_row(y))
+        self.rows.push(self._make_row(y));
       });
       self.matrix_data = {
         'field_value': self.field_value,
@@ -85,6 +100,11 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
       };
 
     },
+    /**
+     * Create scaffold for a column.
+     *
+     * @params {String} x: The string used as a column title
+     */
     _make_column: function(x){
       return {
         // simulate node parsed on xml arch
@@ -93,8 +113,13 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
           'name': this.field_x_axis,
           'string': x
         }
-      }
+      };
     },
+    /**
+     * Create scaffold for a row.
+     *
+     * @params {String} x: The string used as a row title
+     */
     _make_row: function(y){
       var self = this;
       // use object so that we can attach more data if needed
@@ -102,14 +127,25 @@ odoo.define('web_widget_x2many_2d_matrix.widget', function (require) {
       $.each(self.by_x_axis, function(x) {
         row.data.push(self.by_y_axis[y][x]);
       });
-      return row
+      return row;
     },
+    /**
+     *Parse a String containing a Python bool or 1 and convert it to a proper bool.
+     *
+     * @params {String} val: the string to be parsed.
+     * @returns {Boolean} The parsed boolean.
+     */
     parse_boolean: function(val) {
         if (val.toLowerCase() === 'true' || val === '1') {
             return true;
         }
         return false;
     },
+    /**
+     *Create the matrix renderer and add its output to our element
+     *
+     * @returns {Deferred} A defered object to be completed when it finished rendering.
+     */
     _render: function () {
       if (!this.view) {
         return this._super();
