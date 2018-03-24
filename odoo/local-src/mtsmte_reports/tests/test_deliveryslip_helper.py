@@ -182,15 +182,21 @@ class TestDeliveryslipHelper(SavepointCase):
         # also affects another picking, tied to the same SO as well,
         # (the latter shouldn't affect balance to deliver value)
         for picking in pickings:
-            picking.pack_operation_product_ids.write({'qty_done': 2})
+            for operation_product in picking.pack_operation_product_ids:
+                if operation_product == self.pack_out_1:
+                    operation_product.write({'qty_done': 2})
+                if operation_product == self.pack_out_2:
+                    operation_product.write({'qty_done': 4})
+                if operation_product == self.pack_out_3:
+                    operation_product.write({'qty_done': 6})
         wiz_act = pickings.do_new_transfer()
         wiz = self.env[wiz_act['res_model']].browse(wiz_act['res_id'])
         wiz.process()
 
-        # Triple the `qty_done` for each product => 3 * 2 = 6
+        # If `qty_done` set to 2 we expect to receive 2 for each product
         self.assertEqual(
-            self.helper._get_balance_to_deliver(self.pack_out_1), '6.000')
+            self.helper._get_balance_to_deliver(self.pack_out_1), '2.000')
         self.assertEqual(
-            self.helper._get_balance_to_deliver(self.pack_out_2), '6.000')
+            self.helper._get_balance_to_deliver(self.pack_out_2), '4.000')
         self.assertEqual(
             self.helper._get_balance_to_deliver(self.pack_out_3), '6.000')

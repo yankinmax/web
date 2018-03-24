@@ -53,15 +53,16 @@ class StockPickingReportDeliveryslipHelper(models.AbstractModel):
                     FROM stock_picking AS sp
                     INNER JOIN stock_pack_operation AS spo
                     ON sp.id = spo.picking_id
-                    WHERE spo.id IN (%s)))
+                    WHERE spo.id IN %s))
             AND sp.location_dest_id = (
                 SELECT DISTINCT res_id FROM ir_model_data
                 WHERE module = 'stock'
                 AND model = 'stock.location'
                 AND name = 'stock_location_customers'
             )
+            AND spo.product_id = %s
 
             GROUP BY sp.group_id
-            """, pack_op.ids)
+            """, (tuple(pack_op.ids), pack_op.product_id.id))
         balance_to_deliver = self.env.cr.fetchone()[0]
         return self._prettify_value(balance_to_deliver)

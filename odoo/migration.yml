@@ -147,9 +147,9 @@ migration:
     - version: 10.0.14
       addons:
         upgrade:
-         #### core
+          #### core
           - hr_attendance
-         #### Specific
+          #### Specific
           - mtsmte_reports
           - mtsmte_sale
     - version: 10.0.15
@@ -158,18 +158,18 @@ migration:
           - anthem songs.update.update_10_0_15::main
       addons:
         upgrade:
-         #### Specific
+          #### Specific
           - mtsmte_sale
           - mtsmte_reports
           - mtsmte_purchase
           - mtsmte_accounting
-         #### OCA/bank-statement-import
+          #### OCA/bank-statement-import
           - account_bank_statement_import_camt
     - version: 10.1.0
       addons:
         upgrade:
           - base_dj
-         #### Specific
+          #### Specific
           - mtsmte_project
           - mtsmte_reports
           - mtsmte_sale
@@ -177,19 +177,19 @@ migration:
     - version: 10.1.1
       addons:
         upgrade:
-         #### Specific
+          #### Specific
           - mtsmte_sale
           - mtsmte_reports
     - version: 10.1.2
       addons:
         upgrade:
-         #### Specific
+          #### Specific
           - mtsmte_sale
           - mtsmte_reports
     - version: 10.1.3
       addons:
         upgrade:
-         #### Specific
+          #### Specific
           - mtsmte_reports
           - crm
           - mail_environment
@@ -210,7 +210,7 @@ migration:
     - version: 10.1.4
       addons:
         upgrade:
-         #### Specific
+          #### Specific
           - mtsmte_reports
           - mtsmte_web_ckeditor4
           - web_ckeditor4
@@ -221,26 +221,26 @@ migration:
     - version: 10.1.6
       addons:
         upgrade:
-         #### Specific
+          #### Specific
           - mtsmte_sale
     - version: 10.1.7
       addons:
         upgrade:
-         #### Specific
+          #### Specific
           - mtsmte_sale
           - mtsmte_reports
           - mtsmte_purchase
     - version: 10.1.8
       addons:
         upgrade:
-         #### Specific
+          #### Specific
           - mtsmte_sale
           - mtsmte_reports
           - mtsmte_purchase
     - version: 10.1.9
       addons:
         upgrade:
-         #### Specific
+          #### Specific
           - mtsmte_accounting
     - version: 10.2.0
       operations:
@@ -248,7 +248,7 @@ migration:
           - anthem songs.update.update_10_2_0::main
       addons:
         upgrade:
-         #### Specific
+          #### Specific
           - mtsmte_purchase
           - mtsmte_reports
           - mtsmte_sale
@@ -261,9 +261,9 @@ migration:
               - anthem songs.update.update_10_3_0::main
       addons:
         upgrade:
-         # fix home menu issue
+          # fix home menu issue
           - base
-         #### Specific
+          #### Specific
           - mtsmte_project
     - version: 10.3.1
       modes:
@@ -274,7 +274,7 @@ migration:
     - version: 10.4.0
       addons:
         upgrade:
-         #### Specific
+          #### Specific
           - mtsmte_reports
           #### OCA/bank-statement-import
           - account_bank_statement_import_camt
@@ -283,7 +283,7 @@ migration:
         upgrade:
           #### OCA/web
           - web_ckeditor4
-         #### Specific
+          #### Specific
           - mtsmte_reports
           - mtsmte_project
     - version: 10.5.1
@@ -295,6 +295,7 @@ migration:
           #### Specific
           - mtsmte_sale
           - mtsmte_stock
+          - mtsmte_reports
       operations:
         pre:
           - anthem songs.update.update_10_6_0::pre

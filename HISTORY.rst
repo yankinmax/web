@@ -26,6 +26,9 @@ latest (unreleased)
 
 **Bugfixes**
 
+* BSMTS-291: Fix `stock.report_deliveryslip` report `_get_balance_to_deliver`
+  method by adding relation to product_id
+
 **Build**
 
 * BS-207: Use module sale_project_fixed_price_task_completed_invoicing from odoo-sale-addons
