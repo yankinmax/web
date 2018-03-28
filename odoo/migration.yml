@@ -296,6 +296,7 @@ migration:
           - mtsmte_sale
           - mtsmte_stock
           - mtsmte_reports
+          - l10n_ch_payment_slip
       operations:
         pre:
           - anthem songs.update.update_10_6_0::pre
