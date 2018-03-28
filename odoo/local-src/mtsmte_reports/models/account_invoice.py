@@ -36,8 +36,8 @@ class AccountInvoice(models.Model):
     @api.multi
     def action_invoice_sent(self):
         template = self.env.ref(
-                'mtsmte_reports.email_template_edi_invoice_specific'
-            )
+            'mtsmte_reports.email_template_edi_invoice_specific'
+        )
         res = super(AccountInvoice, self).action_invoice_sent()
         ctx = res.get('context', {})
         ctx['default_template_id'] = template.id

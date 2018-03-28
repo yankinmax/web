@@ -17,6 +17,7 @@
         'sale_order_dates',
         'purchase',
         'mtsmte_project',
+        'l10n_ch_payment_slip',
     ],
     'website': 'https://www.camptocamp.com',
     'data': [
