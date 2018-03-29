@@ -14,7 +14,7 @@ RUN chmod +x odoo/before-migrate-entrypoint.d/* \
     && chmod +x odoo/start-entrypoint.d/*
 
 # Install additional python packages if needed
-COPY ./requirements.txt /opt/odoo
+COPY ./*requirements.txt /opt/odoo/
 RUN cd /opt/odoo && find . -maxdepth 1 -name "*requirements.txt" ! -name "base_requirements.txt" ! -name "src_requirements.txt" -exec pip install -r {} \;
 
 COPY ./importer.sh /opt/odoo/bin/

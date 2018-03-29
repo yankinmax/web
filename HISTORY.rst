@@ -29,11 +29,18 @@ latest (unreleased)
 * BSMTS-291: Fix `stock.report_deliveryslip` report `_get_balance_to_deliver`
   method by adding relation to product_id
 
+* BSMTS-298: `l10n_ch_payment_slip` fix onchange on partner
+* mtsmte_reports: add missing dep on `l10n_ch_payment_slip`
+
+
 **Build**
 
 * BS-207: Use module sale_project_fixed_price_task_completed_invoicing from odoo-sale-addons
 * BS-207: Remove submodule sale-workflow
+* Dockerfile: include custom requirements.txt
+* Drop pending merge for `account_invoice_rounding`
 * Update odoo-nginx to X-1.2.1
+
 
 **Documentation**
 
