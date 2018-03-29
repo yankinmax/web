@@ -300,3 +300,8 @@ migration:
       operations:
         pre:
           - anthem songs.update.update_10_6_0::pre
+    - version: 10.7.0
+      addons:
+        upgrade:
+          #### Specific
+          - mtsmte_reports
