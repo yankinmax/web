@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.6.0 (2018-03-29)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * BSMTS-277: Activate lots and generate a lot per sale order and filter lots
   wizards by procurement id
 
@@ -40,9 +52,6 @@ latest (unreleased)
 * Dockerfile: include custom requirements.txt
 * Drop pending merge for `account_invoice_rounding`
 * Update odoo-nginx to X-1.2.1
-
-
-**Documentation**
 
 
 10.5.1 (2018-03-20)
