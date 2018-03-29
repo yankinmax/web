@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-  <template id="report_invoice_document_specific" inherit_id="account.report_invoice_document">
+  <template id="report_invoice_document" inherit_id="account.report_invoice_document" name="MTS custom invoice">
     <xpath expr="//p[@t-if='o.comment']" position="attributes">
       <attribute name="t-if">o.comment_text</attribute>
     </xpath>
@@ -10,7 +10,7 @@
     </xpath>
   </template>
 
-  <template id="report_invoice_document_specific" inherit_id="sale.report_invoice_document_inherit_sale">
+  <template id="report_invoice_document_inherit_sale" inherit_id="sale.report_invoice_document_inherit_sale" name="MTS custom invoice 2">
       <xpath expr="//div[@t-if='o.partner_shipping_id != o.partner_id']" position="attributes">
           <attribute name="class">mt48</attribute>
       </xpath>
