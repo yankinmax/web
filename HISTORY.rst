@@ -21,7 +21,12 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* BIZ-1581: add the equivalent of 3 line breaks before the Shipping Address
+  on the invoice report
+
 **Bugfixes**
+
+* BIZ-1581: change the id name of a specific view so that it can be used
 
 **Build**
 
