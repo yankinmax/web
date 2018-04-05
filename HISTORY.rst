@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.7.0 (2018-04-05)
++++++++++++++++++++
+
+**Features and Improvements**
+
 * BIZ-1581: add the equivalent of 3 line breaks before the Shipping Address
   on the invoice report
 
@@ -28,10 +40,6 @@ latest (unreleased)
 
 * BIZ-1581: change the id name of a specific view so that it can be used
 * BSMTS-299: Update web submodule for ckeditor
-
-**Build**
-
-**Documentation**
 
 
 10.6.0 (2018-03-29)
