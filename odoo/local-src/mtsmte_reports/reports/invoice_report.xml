@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-  <template id="report_invoice_document_specific" inherit_id="account.report_invoice_document" name="MTS custom invoice">
+  <template id="report_invoice_document" inherit_id="account.report_invoice_document" name="MTS custom invoice">
     <xpath expr="//div[@class='row']" position="before">
         <br/><br/><br/>
     </xpath>
