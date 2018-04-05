@@ -27,6 +27,7 @@ latest (unreleased)
 **Bugfixes**
 
 * BIZ-1581: change the id name of a specific view so that it can be used
+* BSMTS-299: Update web submodule for ckeditor
 
 **Build**
 

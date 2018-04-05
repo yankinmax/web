@@ -305,3 +305,4 @@ migration:
         upgrade:
           #### Specific
           - mtsmte_reports
+          - web_ckeditor4
