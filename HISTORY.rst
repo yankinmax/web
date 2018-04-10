@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* BSMTS-300: Procurement group editable on Internal transfer
+
 **Bugfixes**
 
 **Build**

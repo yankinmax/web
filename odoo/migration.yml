@@ -306,3 +306,8 @@ migration:
           #### Specific
           - mtsmte_reports
           - web_ckeditor4
+    - version: 10.8.0
+      addons:
+        upgrade:
+          #### Specific
+          - mtsmte_stock
