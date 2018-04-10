@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-27 08:19+0000\n"
-"PO-Revision-Date: 2017-09-27 08:19+0000\n"
+"POT-Creation-Date: 2018-04-10 09:27+0000\n"
+"PO-Revision-Date: 2018-04-10 09:27+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,8 +23,23 @@ msgid "Applied Dose"
 msgstr ""
 
 #. module: mtsmte_sale
-#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_bdl
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_bdl
 msgid "BDL"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_bql
+msgid "BQL"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_measure_bdl
+msgid "Below Detection Limit.When selected, measure is considered Conform"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_measure_bql
+msgid "Below Quantification Limit.When selected, measure is considered Conform"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -32,6 +47,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_sub_cas_number
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_sub_cas_number
 msgid "CAS Number"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.ui.view,arch_db:mtsmte_sale.wiz_so_sync_task_form
+msgid "Cancel"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -65,6 +85,23 @@ msgid "Company"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_finished_task_quant
+msgid "Completed Tasks"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_conformity
+msgid "Compliance"
+msgstr ""
+
+#. module: mtsmte_sale
+#: selection:product.substance.measure,conformity:0
+#: selection:project.project,conformity:0
+#: selection:project.task,conformity:0
+msgid "Compliant"
+msgstr ""
+
+#. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_conclusion
 msgid "Conclusion"
 msgstr ""
@@ -75,22 +112,13 @@ msgid "Conclusions"
 msgstr ""
 
 #. module: mtsmte_sale
-#: selection:product.substance.measure,conformity:0
-msgid "Conform"
-msgstr ""
-
-#. module: mtsmte_sale
-#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_conformity
-msgid "Conformity"
-msgstr ""
-
-#. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_create_uid
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_create_uid
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_create_uid
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_create_uid
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_create_uid
 #: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_create_uid
+#: model:ir.model.fields,field_description:mtsmte_sale.field_wiz_so_sync_task_create_uid
 msgid "Created by"
 msgstr ""
 
@@ -101,6 +129,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_create_date
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_create_date
 #: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_create_date
+#: model:ir.model.fields,field_description:mtsmte_sale.field_wiz_so_sync_task_create_date
 msgid "Created on"
 msgstr ""
 
@@ -116,13 +145,13 @@ msgid "Customer Reference"
 msgstr ""
 
 #. module: mtsmte_sale
-#: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_bdl
-msgid "DBL"
+#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_search_form_specific
+msgid "Deadline"
 msgstr ""
 
 #. module: mtsmte_sale
-#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_search_form_specific
-msgid "Deadline"
+#: model:ir.model.fields,help:mtsmte_sale.field_project_task_type_final_stage
+msgid "Defines whether this stage is considered final in the workflow"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -139,6 +168,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_display_name
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_display_name
 #: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_display_name
+#: model:ir.model.fields,field_description:mtsmte_sale.field_wiz_so_sync_task_display_name
 msgid "Display Name"
 msgstr ""
 
@@ -158,6 +188,21 @@ msgid "Equipment"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.ui.view,arch_db:mtsmte_sale.view_project_project_filter_specific
+msgid "Expiration Respected"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_expiration_date
+msgid "Expiration date"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_expiration_respected
+msgid "Expiration respected"
+msgstr ""
+
+#. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_product_extraction_type_id
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_product_extraction_type_id
 #: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_product_extraction_type_id
@@ -168,6 +213,21 @@ msgstr ""
 #. module: mtsmte_sale
 #: model:ir.actions.act_window,name:mtsmte_sale.product_extraction_type_action_tree
 msgid "Extraction Types"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_type_final_stage
+msgid "Final stage"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.ui.view,arch_db:mtsmte_sale.sale_view_inherit_specific
+msgid "Force lines sync with tasks"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.ui.view,arch_db:mtsmte_sale.wiz_so_sync_task_form
+msgid "Force task update"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -199,6 +259,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line_id
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_id
 #: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_wiz_so_sync_task_id
 msgid "ID"
 msgstr ""
 
@@ -209,6 +270,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_line___last_update
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure___last_update
 #: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences___last_update
+#: model:ir.model.fields,field_description:mtsmte_sale.field_wiz_so_sync_task___last_update
 msgid "Last Modified on"
 msgstr ""
 
@@ -219,6 +281,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_write_uid
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_write_uid
 #: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_write_uid
+#: model:ir.model.fields,field_description:mtsmte_sale.field_wiz_so_sync_task_write_uid
 msgid "Last Updated by"
 msgstr ""
 
@@ -229,6 +292,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_write_date
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_write_date
 #: model:ir.model.fields,field_description:mtsmte_sale.field_task_results_sentences_write_date
+#: model:ir.model.fields,field_description:mtsmte_sale.field_wiz_so_sync_task_write_date
 msgid "Last Updated on"
 msgstr ""
 
@@ -240,7 +304,6 @@ msgstr ""
 
 #. module: mtsmte_sale
 #: code:addons/mtsmte_sale/models/substance.py:75
-#: code:addons/odoo/local-src/mtsmte_sale/models/substance.py:75
 #, python-format
 msgid "Legal limit min should be smaller than Legal limit max"
 msgstr ""
@@ -252,6 +315,13 @@ msgid "Legal limit min value"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_legal_reference
+#: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_legal_reference
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_legal_reference
+msgid "Legal reference"
+msgstr ""
+
+#. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_legal_limit_max
 msgid "Limit max value"
 msgstr ""
@@ -259,6 +329,16 @@ msgstr ""
 #. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_legal_limit_min
 msgid "Limit min value"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_wiz_so_sync_task_so_line_ids
+msgid "Lines to sync"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_stock_production_lot
+msgid "Lot/Serial"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -281,6 +361,11 @@ msgid "Methods"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.ui.view,arch_db:mtsmte_sale.wiz_so_sync_task_form
+msgid "NOTE: line values and substance values will be overridden on related tasks."
+msgstr ""
+
+#. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_extraction_type_name
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_name
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_name
@@ -288,8 +373,15 @@ msgid "Name"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_sale_order_new_expiry
+msgid "New Expiry"
+msgstr ""
+
+#. module: mtsmte_sale
 #: selection:product.substance.measure,conformity:0
-msgid "Not conform"
+#: selection:project.project,conformity:0
+#: selection:project.task,conformity:0
+msgid "Not compliant"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -297,6 +389,28 @@ msgstr ""
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_nb_shocks
 #: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_nb_shocks
 msgid "Number of Shocks"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_form2_specific
+msgid "Observations & comments"
+msgstr ""
+
+#. module: mtsmte_sale
+#: code:addons/mtsmte_sale/wizards/so_sync_task.py:31
+#, python-format
+msgid "Order must be confirmed!"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_stock_pack_operation
+msgid "Packing Operation"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_stock_pack_operation_group_id
+#: model:ir.model.fields,field_description:mtsmte_sale.field_stock_production_lot_procurement_group_id
+msgid "Procurement Group"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -328,8 +442,23 @@ msgid "Project"
 msgstr ""
 
 #. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_conformity
+msgid "Project conformity"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_ready_to_print
+msgid "Project ready to print"
+msgstr ""
+
+#. module: mtsmte_sale
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_project_task_ids
 msgid "Project task ids"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.filters,name:mtsmte_sale.project_favorite_filter
+msgid "Projects ready to print"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -358,12 +487,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_product_results
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_template_results
 #: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_results
+#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_form2_specific
 msgid "Results"
 msgstr ""
 
 #. module: mtsmte_sale
 #: model:ir.ui.view,arch_db:mtsmte_sale.product_template_form_view_specific
-#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_form2_specific
 msgid "Results & Observations"
 msgstr ""
 
@@ -375,6 +504,11 @@ msgstr ""
 #. module: mtsmte_sale
 #: model:ir.actions.act_window,name:mtsmte_sale.task_results_sentences_act_window
 msgid "Results sentences"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_sale_order_ids
+msgid "Sale order ids"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -455,8 +589,17 @@ msgstr ""
 
 #. module: mtsmte_sale
 #: model:ir.ui.view,arch_db:mtsmte_sale.product_template_form_view_specific
-#: model:ir.ui.view,arch_db:mtsmte_sale.view_task_form2_specific
 msgid "Substances to analyze"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.actions.act_window,name:mtsmte_sale.wiz_so_sync_task_action
+msgid "Sync order lines with tasks"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.ui.view,arch_db:mtsmte_sale.wiz_so_sync_task_form
+msgid "Sync selected lines with their tasks"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -466,6 +609,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_method_task_id
 #: model:ir.model.fields,field_description:mtsmte_sale.field_product_substance_measure_task_id
 msgid "Task"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_project_task_type
+msgid "Task Stage"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_task_conformity
+msgid "Task conformity"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model.fields,field_description:mtsmte_sale.field_project_project_task_quant
+msgid "Tasks"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -495,11 +653,8 @@ msgstr ""
 
 #. module: mtsmte_sale
 #: code:addons/mtsmte_sale/models/maintenance_equipment.py:25
-#: code:addons/mtsmte_sale/models/product_extraction_type.py:25
-#: code:addons/mtsmte_sale/models/product_method.py:25
-#: code:addons/odoo/local-src/mtsmte_sale/models/maintenance_equipment.py:25
-#: code:addons/odoo/local-src/mtsmte_sale/models/product_extraction_type.py:25
-#: code:addons/odoo/local-src/mtsmte_sale/models/product_method.py:25
+#: code:addons/mtsmte_sale/models/product_extraction_type.py:26
+#: code:addons/mtsmte_sale/models/product_method.py:26
 #: sql_constraint:maintenance.equipment:0
 #: sql_constraint:product.extraction.type:0
 #: sql_constraint:product.method:0
@@ -520,13 +675,9 @@ msgstr ""
 
 #. module: mtsmte_sale
 #: selection:product.substance.measure,conformity:0
+#: selection:project.project,conformity:0
+#: selection:project.task,conformity:0
 msgid "Warning"
-msgstr ""
-
-#. module: mtsmte_sale
-#: model:ir.model.fields,help:mtsmte_sale.field_product_substance_measure_bdl
-#: model:ir.model.fields,help:mtsmte_sale.field_project_task_bdl
-msgid "When selected, all measures are considered Conform"
 msgstr ""
 
 #. module: mtsmte_sale
@@ -550,11 +701,6 @@ msgid "product.method"
 msgstr ""
 
 #. module: mtsmte_sale
-#: model:ir.model,name:mtsmte_sale.model_product_results_sentences
-msgid "product.results.sentences"
-msgstr ""
-
-#. module: mtsmte_sale
 #: model:ir.model,name:mtsmte_sale.model_product_substance
 msgid "product.substance"
 msgstr ""
@@ -572,5 +718,10 @@ msgstr ""
 #. module: mtsmte_sale
 #: model:ir.model,name:mtsmte_sale.model_task_results_sentences
 msgid "task.results.sentences"
+msgstr ""
+
+#. module: mtsmte_sale
+#: model:ir.model,name:mtsmte_sale.model_wiz_so_sync_task
+msgid "wiz.so.sync.task"
 msgstr ""
 

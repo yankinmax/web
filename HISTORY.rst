@@ -22,6 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * BSMTS-300: Procurement group editable on Internal transfer
+* BIZ-1594: Date fields on sale orders
 
 **Bugfixes**
 

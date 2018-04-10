@@ -59,6 +59,10 @@
         <field name="tested_sample"/>
       </xpath>
 
+      <field name="commitment_date" position="after">
+        <field name="new_expiry" />
+      </field>
+
     </field>
   </record>
 
