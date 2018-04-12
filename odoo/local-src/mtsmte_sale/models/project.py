@@ -91,20 +91,21 @@ class ProjectProject(models.Model):
 
     @api.multi
     @api.depends('sale_order_ids.commitment_date',
+                 'sale_order_ids.requested_date',
                  'task_ids.date_deadline')
     def _compute_expiration(self):
         for record in self:
             if record.sale_order_ids:
-                commitment_date = record.sale_order_ids.sorted(
-                    key=lambda r: r.commitment_date,
-                    reverse=True,
-                )[0].commitment_date
+                expiration_date = max(
+                    max(so.commitment_date, so.requested_date)
+                    for so in record.sale_order_ids
+                )
                 val = fields.Datetime.from_string(
-                    commitment_date
+                    expiration_date
                 ).date()
                 deadlines = record.task_ids.mapped("date_deadline")
                 record.update({
-                    'expiration_date': commitment_date,
+                    'expiration_date': expiration_date,
                     'expiration_respected': all(
                         [fields.Date.from_string(x) < val for x in deadlines
                          if x]

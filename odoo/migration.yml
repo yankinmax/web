@@ -311,3 +311,4 @@ migration:
         upgrade:
           #### Specific
           - mtsmte_stock
+          - mtsmte_sale
