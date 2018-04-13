@@ -27,6 +27,8 @@ latest (unreleased)
 **Bugfixes**
 
 **Build**
+* Update Dockerfile to 2.5.1
+* Update from odoo-template
 
 **Documentation**
 
