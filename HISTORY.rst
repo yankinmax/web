@@ -26,6 +26,7 @@ latest (unreleased)
 * BIZ-1549: Update mtsmte_reports report templates
 * BSMTS-294: Set Print badge (hr_attendance.print_employee_badge) report type
   to PDF (qweb-pdf)
+* BIZ-1632: Fix Balance to deliver in Delivery slip report
 
 **Bugfixes**
 

@@ -172,6 +172,18 @@ class TestDeliveryslipHelper(SavepointCase):
         self.assertEqual(
             self.helper._get_ordered_qty(self.pack_in), '200.000')
 
+    def test_ordered_qty_prettify(self):
+        # prepare pack operation with 50 (10+40) ordered elements
+        self._prepare_pack_operation_ids(self.saleorder1)
+        # by default prettify=True so we expect receive string value
+        value = self.helper._get_ordered_qty(self.pack_out_1)
+        self.assertIsInstance(value, str)
+        self.assertEqual(value, '50.000')
+        # when prettify=False we expect receive float value
+        value = self.helper._get_ordered_qty(self.pack_out_1, prettify=False)
+        self.assertIsInstance(value, float)
+        self.assertEqual(value, 50.0)
+
     def test_balance_to_deliver_calc(self):
         self.saleorder1.action_confirm()
         pickings = self.saleorder1.picking_ids
@@ -193,10 +205,12 @@ class TestDeliveryslipHelper(SavepointCase):
         wiz = self.env[wiz_act['res_model']].browse(wiz_act['res_id'])
         wiz.process()
 
-        # If `qty_done` set to 2 we expect to receive 2 for each product
+        # for pack_out_1 ordered = 50 done = 2 expected 48 (50-2)
         self.assertEqual(
-            self.helper._get_balance_to_deliver(self.pack_out_1), '2.000')
+            self.helper._get_balance_to_deliver(self.pack_out_1), '48.000')
+        # for pack_out_2 ordered = 20 done = 4 expected 16 (20-4)
         self.assertEqual(
-            self.helper._get_balance_to_deliver(self.pack_out_2), '4.000')
+            self.helper._get_balance_to_deliver(self.pack_out_2), '16.000')
+        # for pack_out_3 ordered = 30 done = 6 expected 24 (30-6)
         self.assertEqual(
-            self.helper._get_balance_to_deliver(self.pack_out_3), '6.000')
+            self.helper._get_balance_to_deliver(self.pack_out_3), '24.000')
