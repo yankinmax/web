@@ -24,6 +24,8 @@ latest (unreleased)
 * BSMTS-300: Procurement group editable on Internal transfer
 * BIZ-1594: Date fields on sale orders
 * BIZ-1549: Update mtsmte_reports report templates
+* BSMTS-294: Set Print badge (hr_attendance.print_employee_badge) report type
+  to PDF (qweb-pdf)
 
 **Bugfixes**
 
