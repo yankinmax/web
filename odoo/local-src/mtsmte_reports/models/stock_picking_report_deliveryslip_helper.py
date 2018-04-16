@@ -69,4 +69,7 @@ class StockPickingReportDeliveryslipHelper(models.AbstractModel):
         balance = self.env.cr.fetchone()[0]
         ordered = self._get_ordered_qty(pack_op, prettify=False)
         balance_to_deliver = ordered - balance
+        # if balance_to_deliver is less 0 we consider it complete and return 0
+        if balance_to_deliver < 0:
+            balance_to_deliver = 0
         return self._prettify_value(balance_to_deliver)
