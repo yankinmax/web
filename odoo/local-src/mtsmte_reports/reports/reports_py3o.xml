@@ -8,28 +8,28 @@
       <field name="filetype">odt</field>
       <field name="py3o_template_data"
         type="base64"
-        file="mtsmte_reports/reports/report_py3o_FR_V5.odt"></field>
+        file="mtsmte_reports/reports/editable_report_py30_FR_V11.odt"></field>
     </record>
     <record id="py3o_template_project_en" model="py3o.template">
       <field name="name">Project English</field>
       <field name="filetype">odt</field>
       <field name="py3o_template_data"
         type="base64"
-        file="mtsmte_reports/reports/report_py3o_EN_V5.odt"></field>
+        file="mtsmte_reports/reports/editable_report_py30_EN_V11.odt"></field>
     </record>
     <record id="py3o_template_nickel_en" model="py3o.template">
       <field name="name">Report nickel English</field>
       <field name="filetype">odt</field>
       <field name="py3o_template_data"
         type="base64"
-        file="mtsmte_reports/reports/report_nickel_py3o_EN_V2.odt"></field>
+        file="mtsmte_reports/reports/editable_report_nickel_py3o_EN_V8.odt"></field>
     </record>
     <record id="py3o_template_nickel_fr" model="py3o.template">
       <field name="name">Report nickel French</field>
       <field name="filetype">odt</field>
       <field name="py3o_template_data"
         type="base64"
-        file="mtsmte_reports/reports/report_nickel_py3o_FR_V2.odt"></field>
+        file="mtsmte_reports/reports/editable_report_nickel_py3o_FR_V8.odt"></field>
     </record>
   </data>
 

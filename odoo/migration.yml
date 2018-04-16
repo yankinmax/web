@@ -312,3 +312,4 @@ migration:
           #### Specific
           - mtsmte_stock
           - mtsmte_sale
+          - mtsmte_reports
