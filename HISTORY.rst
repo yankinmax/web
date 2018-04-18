@@ -12,6 +12,8 @@ Unreleased
 
 **Build**
 
+* Upgarde ngnix image to 10.0-1.2.2
+
 **Documentation**
 
 
