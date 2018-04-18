@@ -41,6 +41,9 @@ latest (unreleased)
 * BSMTS-294: Set Print badge (hr_attendance.print_employee_badge) report type
   to PDF (qweb-pdf)
 * BIZ-1632: Fix Balance to deliver in Delivery slip report
+* BSMTS-285: Update bi_sql_editor module
+
+**Bugfixes**
 
 **Build**
 * Update Dockerfile to 2.5.1

@@ -4,9 +4,9 @@
     oca: git@github.com:OCA/reporting-engine.git
     camptocamp: git@github.com:camptocamp/reporting-engine.git
   merges:
-    - oca 10.0
-    # [MIG] bi_sql_editor v10 #162
-    - oca refs/pull/162/head
+    - oca f46994b1c8df8aa28b228955edded05ab9b6d123
+    # [MIG] bi_sql_editor v10 #206
+    - oca refs/pull/206/head
   target: &default_target camptocamp merge-branch-1995-master
 ./external-src/web:
   remotes:

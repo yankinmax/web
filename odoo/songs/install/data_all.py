@@ -15,7 +15,11 @@ The data loaded here will be loaded in the 'demo' and
 
 @anthem.log
 def create_engagements_bi_sql_view(ctx):
-    """ Create engagement BI SQL view"""
+    """ Create engagement BI SQL view:
+        * Load the view from SQL
+        * Validate the SQL view
+        * Call actions to create the ORM model, views, menu and actions
+          related to the SQL view """
     load_csv(ctx, 'data/install/bi.sql.view.csv', 'bi.sql.view')
     bi_view = ctx.env.ref('__setup__.bi_sql_view_engagements')
     bi_view.button_validate_sql_expression()
