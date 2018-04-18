@@ -18,6 +18,7 @@
         'purchase',
         'mtsmte_project',
         'l10n_ch_payment_slip',
+        'hr_attendance',
     ],
     'website': 'https://www.camptocamp.com',
     'data': [
