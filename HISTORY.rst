@@ -32,6 +32,7 @@ latest (unreleased)
 **Build**
 * Update Dockerfile to 2.5.1
 * Update from odoo-template
+* Upgrade nginx version to 10.0-1.2.2
 
 **Documentation**
 
