@@ -11,7 +11,7 @@ class StockPickingReportDeliveryslipHelper(models.AbstractModel):
     def _prettify_value(val):
         return '{:.3f}'.format(val)
 
-    def _get_ordered_qty(self, pack_op):
+    def _get_ordered_qty(self, pack_op, prettify=True):
         """Sum of `ordered_qty`-s on SOL-s of this `product_id` w/ no route."""
         # and having no `route_id`-s
         pack_op.ensure_one()
@@ -34,7 +34,9 @@ class StockPickingReportDeliveryslipHelper(models.AbstractModel):
             GROUP BY sp.group_id
             """, pack_op.ids)
         ordered_qty = self.env.cr.fetchone()[0]
-        return self._prettify_value(ordered_qty)
+        if prettify:
+            return self._prettify_value(ordered_qty)
+        return ordered_qty
 
     def _get_balance_to_deliver(self, pack_op):
         """Sum of `delivered_qty` on all pickings to Customer in current SO."""
@@ -64,5 +66,10 @@ class StockPickingReportDeliveryslipHelper(models.AbstractModel):
 
             GROUP BY sp.group_id
             """, (tuple(pack_op.ids), pack_op.product_id.id))
-        balance_to_deliver = self.env.cr.fetchone()[0]
+        balance = self.env.cr.fetchone()[0]
+        ordered = self._get_ordered_qty(pack_op, prettify=False)
+        balance_to_deliver = ordered - balance
+        # if balance_to_deliver is less 0 we consider it complete and return 0
+        if balance_to_deliver < 0:
+            balance_to_deliver = 0
         return self._prettify_value(balance_to_deliver)
