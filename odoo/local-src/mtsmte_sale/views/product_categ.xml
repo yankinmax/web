@@ -5,9 +5,16 @@
     <field name="model">product.category</field>
     <field name="inherit_id" ref="product.product_category_form_view"/>
     <field name="arch" type="xml">
-      <field name="parent_id" position="after">
+      <field name="type" position="after">
         <field name="company_id"/>
       </field>
+      <group name="first" position="after">
+        <group name="responsibles" string="Responsible users">
+          <field name="manager_id"/>
+          <field name="responsible_1_id"/>
+          <field name="responsible_2_id"/>
+        </group>
+      </group>
     </field>
   </record>
 

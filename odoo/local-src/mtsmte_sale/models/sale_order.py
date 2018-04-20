@@ -42,6 +42,21 @@ class SaleOrder(models.Model):
                 'analyze_sample': order.analyze_sample,
                 'client_order_ref': order.client_order_ref,
             }
+            # Propagate a manager to project
+            if order.order_line:
+                for sol in order.order_line:
+                    # pick the first order line w/ `responsible_user_id`
+                    # field set (if there are any) get the responsible for it's
+                    # product_id (use responsible of product_id.categ_id as a
+                    # fallback option), finally assign that guy to a project
+                    if not (sol.product_id.responsible_user_id
+                            or sol.product_id.categ_id.responsible_user_id):
+                        continue
+                    any_product = sol.product_id
+                    responsible_user = any_product.responsible_user_id \
+                        or any_product.categ_id.responsible_user_id
+                    vals['user_id'] = responsible_user.id
+                    break
             prj.write(vals)
         return True
 

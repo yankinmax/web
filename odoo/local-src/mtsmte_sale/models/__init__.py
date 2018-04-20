@@ -13,6 +13,7 @@ from . import sale_order_line
 from . import sale_quote_line
 from . import project_task
 from . import substance_measure
+from . import procurement_order
 from . import accounting
 from . import substance_line
 from . import result_sentences

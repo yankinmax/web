@@ -11,6 +11,13 @@
           <field name="chemistry"/>
         </div>
       </xpath>
+      <xpath expr="//notebook/page[@name='sales']//group[@name='sale']" position="inside">
+        <group name="responsibles" string="Responsible users">
+          <field name="manager_id"/>
+          <field name="responsible_1_id"/>
+          <field name="responsible_2_id"/>
+        </group>
+      </xpath>
       <notebook position="inside">
         <page string="Substances to analyze" attrs="{'invisible': [('chemistry', '!=', 'chem')]}">
           <group>
