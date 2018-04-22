@@ -50,6 +50,7 @@ latest (unreleased)
 
 * Extend quotation template w/ `tested_samples` field BSMTS-302
 * BIZ-1632: Fix Balance to deliver in Delivery slip report
+* Display `stock.picking` note on deliveryslip BSMTS-303
 
 **Bugfixes**
 
