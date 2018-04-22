@@ -15,6 +15,9 @@ class StockPickingReportDeliveryslipHelper(models.AbstractModel):
         """Sum of `ordered_qty`-s on SOL-s of this `product_id` w/ no route."""
         # and having no `route_id`-s
         pack_op.ensure_one()
+        if not pack_op.group_id:
+            # this line has nothing to do w/ sale/procurement orders
+            return self._prettify_value(0.)
         self.env.cr.execute(
             """
             SELECT SUM(sol.product_uom_qty)
@@ -41,6 +44,9 @@ class StockPickingReportDeliveryslipHelper(models.AbstractModel):
     def _get_balance_to_deliver(self, pack_op):
         """Sum of `delivered_qty` on all pickings to Customer in current SO."""
         pack_op.ensure_one()
+        if not pack_op.group_id:
+            # this line has nothing to do w/ sale/procurement orders
+            return self._prettify_value(0.)
         self.env.cr.execute(
             """
             SELECT SUM(spo.qty_done)

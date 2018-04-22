@@ -51,6 +51,9 @@ latest (unreleased)
 * Extend quotation template w/ `tested_samples` field BSMTS-302
 * BIZ-1632: Fix Balance to deliver in Delivery slip report
 
+**Bugfixes**
+
+* Fix deliveryslip rendering on pickings w/o procurement group BSMTS-274
 
 **Build**
 
