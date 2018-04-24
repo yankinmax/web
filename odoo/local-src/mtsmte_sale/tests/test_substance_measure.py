@@ -60,7 +60,7 @@ class TestProductSubstanceMeasure(TransactionCase):
         )
         self.assertEqual(
             self._test_case_measure(True, True, 1, 10, False, 0),
-            "not_conform"
+            "warning"
         )
         self.assertEqual(
             self._test_case_measure(True, True, 1, 10, False, 12),
@@ -68,7 +68,7 @@ class TestProductSubstanceMeasure(TransactionCase):
         )
         self.assertEqual(
             self._test_case_measure(True, False, 1, 10, False, 0),
-            "not_conform"
+            "warning"
         )
         self.assertEqual(
             self._test_case_measure(False, True, 1, 10, False, 12),

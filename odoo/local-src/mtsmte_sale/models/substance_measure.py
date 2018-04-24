@@ -118,7 +118,8 @@ class ProductSubstanceMesure(models.Model):
 
     def _compute_conformity_warning(self):
         return (not self.has_limits('any')
-                and not self.measure_in_limits())
+                and not self.measure_in_limits()
+                or self.measure == 0.)
 
     def _compute_conformity_not_conform(self):
         return (self.has_limits('any')

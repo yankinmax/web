@@ -42,13 +42,18 @@ latest (unreleased)
 * BIZ-1549: Update mtsmte_reports report templates
 * BSMTS-294: Set Print badge (hr_attendance.print_employee_badge) report type
   to PDF (qweb-pdf)
-* BIZ-1632: Fix Balance to deliver in Delivery slip report
+* Treat zero-equal measures as warnings on `product.substance.measure` compliance computation BSMTS-304
+* Update project analysis report layout BSMTS-304
 * BSMTS-285: Update bi_sql_editor module
 
 **Bugfixes**
+
 * Extend quotation template w/ `tested_samples` field BSMTS-302
+* BIZ-1632: Fix Balance to deliver in Delivery slip report
+
 
 **Build**
+
 * Update Dockerfile to 2.5.1
 * Update from odoo-template
 * Upgrade nginx version to 10.0-1.2.2

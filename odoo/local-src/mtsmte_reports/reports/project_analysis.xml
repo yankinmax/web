@@ -149,13 +149,20 @@
                 <td class="result">
                   <t t-if="meas.bdl">B.D.L</t>
                   <t t-elif="meas.bql">B.Q.L</t>
-                  <span t-else="" t-field="meas.measure" />
+                  <span t-else="" t-esc="meas.measure or '-'" />
                 </td>
                 <td class="conformity">
                   <span t-esc="conformity_options[meas.conformity]"/>
                 </td>
               </tr>
             </t>
+            <tfoot>
+              <td colspan="5"/>
+              <!-- tasks own conformity is displayed under the last column -->
+              <td>
+                <strong><span t-esc="conformity_options[doc.conformity]"/></strong>
+              </td>
+            </tfoot>
           </tbody>
         </table>
         <br/>
