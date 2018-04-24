@@ -12,7 +12,7 @@ Unreleased
 
 **Build**
 
-* Upgarde ngnix image to 10.0-1.2.2
+* Downgrade ngnix image to 10.0-1.1.0
 
 **Documentation**
 
