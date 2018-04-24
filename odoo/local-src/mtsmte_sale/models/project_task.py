@@ -196,3 +196,31 @@ class ProjectTask(models.Model):
                 task_values['product_substance_measure_ids'] =  \
                     task._get_task_measures_from_so_line()
             task.with_context(skip_task_sync=True).write(task_values)
+
+    @api.multi
+    def button_toggle_substances_bdl(self):
+        """Toggles the state of the whole BDL column.
+
+        If all of checkboxes are checked - check them out.
+        Otherwise - check them in.
+        """
+        self.ensure_one()
+        bdl_values = self.product_substance_measure_ids.mapped('bdl')
+        if all(bdl_values):
+            self.product_substance_measure_ids.update({'bdl': False})
+        else:
+            self.product_substance_measure_ids.update({'bdl': True})
+
+    @api.multi
+    def button_toggle_substances_bql(self):
+        """Toggles the state of the whole BQL column.
+
+        If all of checkboxes are checked - check them out.
+        Otherwise - check them in.
+        """
+        self.ensure_one()
+        bql_values = self.product_substance_measure_ids.mapped('bql')
+        if all(bql_values):
+            self.product_substance_measure_ids.update({'bql': False})
+        else:
+            self.product_substance_measure_ids.update({'bql': True})
