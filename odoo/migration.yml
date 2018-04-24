@@ -27,6 +27,7 @@ migration:
           - anthem songs.install.mts.sales::main
           - anthem songs.install.mte.sales::main
           - anthem songs.install.fetchmail::main
+          - anthem songs.install.data_all::main
       modes:
         full:
           operations:
@@ -253,12 +254,10 @@ migration:
           - mtsmte_reports
           - mtsmte_sale
     - version: 10.3.0
-      modes:
-        full:
-          operations:
-            pre:
-              - psql -f /opt/odoo/songs/update/update_10_3_0.sql
-              - anthem songs.update.update_10_3_0::main
+      operations:
+        pre:
+          - psql -f /opt/odoo/songs/update/update_10_3_0.sql
+          - anthem songs.update.update_10_3_0::main
       addons:
         upgrade:
           # fix home menu issue
@@ -313,3 +312,13 @@ migration:
           - mtsmte_stock
           - mtsmte_sale
           - mtsmte_reports
+    - version: 10.9.0
+      addons:
+        upgrade:
+          #### OCA reporting-engine
+          - bi_sql_editor
+      modes:
+        full:
+          operations:
+            pre:
+              - anthem songs.update.update_10_9_0::main
