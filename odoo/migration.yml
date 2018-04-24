@@ -317,6 +317,8 @@ migration:
         upgrade:
           #### OCA reporting-engine
           - bi_sql_editor
+          #### Specific
+          - mtsmte_sale
       modes:
         full:
           operations:

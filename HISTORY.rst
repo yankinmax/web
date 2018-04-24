@@ -44,6 +44,7 @@ latest (unreleased)
 * BSMTS-285: Update bi_sql_editor module
 
 **Bugfixes**
+* Extend quotation template w/ `tested_samples` field BSMTS-302
 
 **Build**
 * Update Dockerfile to 2.5.1

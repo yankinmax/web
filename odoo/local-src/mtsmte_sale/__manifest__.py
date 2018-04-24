@@ -27,6 +27,7 @@
         'security/ir_rules.xml',
         'wizards/so_sync_task.xml',
         'views/sale_order_views.xml',
+        'views/sale_quote_views.xml',
         'views/project_views.xml',
         'views/product_views.xml',
         'views/project_task_views.xml',

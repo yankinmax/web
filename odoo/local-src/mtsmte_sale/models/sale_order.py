@@ -55,13 +55,26 @@ class SaleOrder(models.Model):
 
         So we need to link each line of the sale order to the corresponding
         substances of its product
+
+        As well, this method propagates `tested_sample` field
+        from `sale.quote.line` to `sale.order.line`s.
         """
         super(SaleOrder, self).onchange_template_id()
+        # HACK: Here, we match freshly created `sale.order.line`s
+        # w/ `sale.quote.line`s coming from a `template_id`.
+        # NOTE: this approach is fine since the original method wipes out all
+        # of the order lines and then repopulates those with templated lines,
+        # so the order of those remains preserved.
+        # And, of course, there is no way to inject that value carefully,
+        # w/o using this kind of hacks or overriding the whole 64L method :)
+        # IMO, the former is better.
         for record in self:
-            for line in record.order_line:
+            for line, quote in zip(
+                    record.order_line, record.template_id.quote_line):
                 substances = line.product_id.product_substance_line_ids.mapped(
                     'product_substance_id')
                 line.product_substance_ids = [(6, 0, substances.ids)]
+                line.tested_sample = quote.tested_sample
 
     def clean_analyze_sample(self):
         return html2text(self.analyze_sample or '')

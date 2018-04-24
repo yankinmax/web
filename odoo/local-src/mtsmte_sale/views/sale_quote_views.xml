@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_sale_quote_template_form" model="ir.ui.view">
+    <field name="name">sale.quote.template.form</field>
+    <field name="model">sale.quote.template</field>
+    <field name="inherit_id" ref="website_quote.view_sale_quote_template_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='quote_line']/form/group/group" position="inside">
+        <field name="tested_sample"/>
+      </xpath>
+      <xpath expr="//field[@name='quote_line']/tree/field[@name='name']" position="after">
+        <field name="tested_sample"/>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>
