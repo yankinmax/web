@@ -47,6 +47,8 @@ latest (unreleased)
 * BSMTS-285: Update bi_sql_editor module
 
 **Bugfixes**
+* Assign responsibles to `project.project` and `project.task`-s created from saleorders
+  depending on products in their `sale.order.line`-s BSMTS-305
 
 * Extend quotation template w/ `tested_samples` field BSMTS-302
 * BIZ-1632: Fix Balance to deliver in Delivery slip report

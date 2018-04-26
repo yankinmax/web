@@ -2,7 +2,7 @@
 # Copyright 2017 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields
+from odoo import api, models, fields
 
 
 class ProductTemplate(models.Model):
@@ -52,6 +52,22 @@ class ProductTemplate(models.Model):
         string="Legal reference",
         translate=True,
     )
+    responsible_user_id = fields.Many2one(
+        comodel_name='res.users',
+        compute='_compute_responsible_user_id',
+    )
+    manager_id = fields.Many2one(
+        comodel_name='res.users',
+        string='Manager',
+    )
+    responsible_1_id = fields.Many2one(
+        comodel_name='res.users',
+        string='Responsible User 1',
+    )
+    responsible_2_id = fields.Many2one(
+        comodel_name='res.users',
+        string='Responsible User 2',
+    )
 
     def _get_default_category_id(self):
         """Make sure that user don't get categories he has no rights on.
@@ -79,3 +95,10 @@ class ProductTemplate(models.Model):
     categ_id = fields.Many2one(
         default=lambda self: self._get_default_category_id()
     )
+
+    @api.multi
+    def _compute_responsible_user_id(self):
+        for product in self:
+            product.responsible_user_id = product.manager_id \
+                or product.responsible_1_id \
+                or product.responsible_2_id
