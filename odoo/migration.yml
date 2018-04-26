@@ -318,6 +318,7 @@ migration:
           #### OCA reporting-engine
           - bi_sql_editor
           #### Specific
+          - mtsmte_reports
           - mtsmte_sale
       modes:
         full:
