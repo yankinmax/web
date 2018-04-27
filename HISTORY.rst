@@ -21,16 +21,23 @@ latest (unreleased)
 
 **Features and Improvements**
 
-* Add `Tick all BDL` & `Tick all BQL` buttons to the `project.task` form BSMTS-306
-* BSMTS-307: Sale Results sentences use ckeditor instead of the standard one
-
 **Bugfixes**
 
 **Build**
 
-* BSMTS-285: Add BI SQL View Engagement in setup
-
 **Documentation**
+
+
+10.9.0 (2018-04-27)
++++++++++++++++++++
+
+**Features and Improvements**
+
+* Add `Tick all BDL` & `Tick all BQL` buttons to the `project.task` form BSMTS-306
+* BSMTS-307: Sale Results sentences use ckeditor instead of the standard one
+
+**Build**
+* BSMTS-285: Add BI SQL View Engagement in setup
 
 
 10.8.0 (2018-04-19)
