@@ -22,6 +22,7 @@ latest (unreleased)
 **Features and Improvements**
 
 * Add `Tick all BDL` & `Tick all BQL` buttons to the `project.task` form BSMTS-306
+* BSMTS-307: Sale Results sentences use ckeditor instead of the standard one
 
 **Bugfixes**
 
