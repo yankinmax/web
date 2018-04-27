@@ -9,7 +9,7 @@
                 <sheet>
                     <group name="Main">
                         <field name="sentence_type"/>
-                        <field name="sentence"/>
+                        <field name="sentence" widget="text_ckeditor4"/>
                     </group>
                 </sheet>
             </form>
