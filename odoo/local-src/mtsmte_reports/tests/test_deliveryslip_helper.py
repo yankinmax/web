@@ -144,33 +144,33 @@ class TestDeliveryslipHelper(SavepointCase):
         # so we're expecting 10.0 + 40.0 = 50.0 unit(s).
         self._prepare_pack_operation_ids(self.saleorder1)
         self.assertEqual(
-            self.helper._get_ordered_qty(self.pack_out_1), '50.000')
+            self.helper._get_ordered_qty(self.pack_out_1), '50.0')
         # This product is holding a single SOL
         self.assertEqual(
-            self.helper._get_ordered_qty(self.pack_out_2), '20.000')
+            self.helper._get_ordered_qty(self.pack_out_2), '20.0')
         # This product has two SOL-s, but only one
         # of them should affect the result
         self.assertEqual(
-            self.helper._get_ordered_qty(self.pack_out_3), '30.000')
+            self.helper._get_ordered_qty(self.pack_out_3), '30.0')
         # Finally, this is a fake procurement's `stock.pack.operation`
         self.assertEqual(
-            self.helper._get_ordered_qty(self.pack_in), '20.000')
+            self.helper._get_ordered_qty(self.pack_in), '20.0')
 
     def test_ordered_qty_calc_so2(self):
         """Same as above, but w/ a different sales order."""
         self._prepare_pack_operation_ids(self.saleorder2)
         self.assertEqual(
-            self.helper._get_ordered_qty(self.pack_out_1), '500.000')
+            self.helper._get_ordered_qty(self.pack_out_1), '500.0')
         # This product is holding a single SOL
         self.assertEqual(
-            self.helper._get_ordered_qty(self.pack_out_2), '200.000')
+            self.helper._get_ordered_qty(self.pack_out_2), '200.0')
         # This product has two SOL-s, but only one
         # of them should affect the result
         self.assertEqual(
-            self.helper._get_ordered_qty(self.pack_out_3), '300.000')
+            self.helper._get_ordered_qty(self.pack_out_3), '300.0')
         # Finally, this is a fake procurement's `stock.pack.operation`
         self.assertEqual(
-            self.helper._get_ordered_qty(self.pack_in), '200.000')
+            self.helper._get_ordered_qty(self.pack_in), '200.0')
 
     def test_ordered_qty_prettify(self):
         # prepare pack operation with 50 (10+40) ordered elements
@@ -178,7 +178,7 @@ class TestDeliveryslipHelper(SavepointCase):
         # by default prettify=True so we expect receive string value
         value = self.helper._get_ordered_qty(self.pack_out_1)
         self.assertIsInstance(value, str)
-        self.assertEqual(value, '50.000')
+        self.assertEqual(value, '50.0')
         # when prettify=False we expect receive float value
         value = self.helper._get_ordered_qty(self.pack_out_1, prettify=False)
         self.assertIsInstance(value, float)
@@ -207,10 +207,10 @@ class TestDeliveryslipHelper(SavepointCase):
 
         # for pack_out_1 ordered = 50 done = 2 expected 48 (50-2)
         self.assertEqual(
-            self.helper._get_balance_to_deliver(self.pack_out_1), '48.000')
+            self.helper._get_balance_to_deliver(self.pack_out_1), '48.0')
         # for pack_out_2 ordered = 20 done = 4 expected 16 (20-4)
         self.assertEqual(
-            self.helper._get_balance_to_deliver(self.pack_out_2), '16.000')
+            self.helper._get_balance_to_deliver(self.pack_out_2), '16.0')
         # for pack_out_3 ordered = 30 done = 6 expected 24 (30-6)
         self.assertEqual(
-            self.helper._get_balance_to_deliver(self.pack_out_3), '24.000')
+            self.helper._get_balance_to_deliver(self.pack_out_3), '24.0')
