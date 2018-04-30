@@ -10,8 +10,8 @@
       <form string="Management Dashboard">
         <board style="2-1">
           <column>
-            <action context="{u'lang': 'fr_FR', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'journal_type': u'general', u'group_by': [u'account_id']}"
-                    domain="[[u'user_type_id', u'=', u'Bank and Cash'], [u'user_type_id', u'=', u'Bank and Cash']]"
+            <action context="{u'lang': u'fr_FR', u'tz': False, u'uid': 1, u'dashboard_merge_domains_contexts': False, u'journal_type': u'general', u'group_by': [u'account_id']}"
+                    domain="[[u'user_type_id.id', u'=', %(account.data_account_type_liquidity)d], [u'user_type_id.id', u'=', %(account.data_account_type_liquidity)d]]"
                     name="%(account.action_account_moves_all_a)d"
                     string="Banques et Cash"
                     view_mode="list"/>
@@ -58,7 +58,7 @@
     <field name="usage">menu</field>
     <field name="view_id" ref="board_management_dash_view"/>
   </record>
-  
+
   <!--My Dashboard Menu-->
   <menuitem
       id="menu_board_comp_dash"
