@@ -25,6 +25,8 @@ latest (unreleased)
 
 **Build**
 
+* Downgrade odoo-nginx to X-1.1.0
+
 **Documentation**
 
 
