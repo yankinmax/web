@@ -25,6 +25,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* BSMTS-308: Missing translation in analysis report footer + center text
+
 **Build**
 
 * Downgrade odoo-nginx to X-1.1.0

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-16 15:38+0000\n"
+"POT-Creation-Date: 2018-05-02 08:26+0000\n"
 "PO-Revision-Date: 2017-12-19 14:21+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
@@ -199,6 +199,11 @@ msgid "<strong>Origin:</strong>"
 msgstr "<strong>Origin:</strong>"
 
 #. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_invoice_document_inherit_sale
+msgid "<strong>Report Number</strong>"
+msgstr "<strong>Report Number</strong>"
+
+#. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchaseorder_document_specific
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchasequotation_document_specific
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
@@ -224,6 +229,11 @@ msgstr "B.D.L"
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "B.Q.L"
 msgstr "B.Q.L"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_delivery_document_inherit_mtsmte
+msgid "Balance to deliver"
+msgstr "Balance to deliver"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.project_analysis_wiz_form
@@ -274,12 +284,14 @@ msgstr "Detection limit"
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_display_name
 #: model:ir.model.fields,field_description:mtsmte_reports.field_report_mtsmte_reports_report_project_analysis_display_name
+#: model:ir.model.fields,field_description:mtsmte_reports.field_stock_picking_report_deliveryslip_helper_display_name
 msgid "Display Name"
 msgstr "Anzeigename"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_id
 #: model:ir.model.fields,field_description:mtsmte_reports.field_report_mtsmte_reports_report_project_analysis_id
+#: model:ir.model.fields,field_description:mtsmte_reports.field_stock_picking_report_deliveryslip_helper_id
 msgid "ID"
 msgstr "ID"
 
@@ -287,6 +299,11 @@ msgstr "ID"
 #: model:ir.model.fields,help:mtsmte_reports.field_res_company_report_logo
 msgid "Image to be used only in reports."
 msgstr "Image to be used only in reports."
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_delivery_document_inherit_mtsmte
+msgid "Internal note"
+msgstr "Internal note"
 
 #. module: mtsmte_reports
 #: model:ir.model,name:mtsmte_reports.model_account_invoice
@@ -325,6 +342,7 @@ msgstr "Sprache"
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz___last_update
 #: model:ir.model.fields,field_description:mtsmte_reports.field_report_mtsmte_reports_report_project_analysis___last_update
+#: model:ir.model.fields,field_description:mtsmte_reports.field_stock_picking_report_deliveryslip_helper___last_update
 msgid "Last Modified on"
 msgstr "Zuletzt geändert am"
 
@@ -347,19 +365,6 @@ msgstr "Legal References"
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Legal limit"
 msgstr "Legal limit"
-
-#. module: mtsmte_reports
-#: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
-msgid ""
-"Les résultats contenus ne concernent que les échantillons soumis à "
-"l’examen.\n"
-"        Une reproduction partielle de ce rapport ne pourra être exécutée "
-"sans notre accord."
-msgstr ""
-"Les résultats contenus ne concernent que les échantillons soumis à "
-"l’examen.\n"
-"        Une reproduction partielle de ce rapport ne pourra être exécutée "
-"sans notre accord."
 
 #. module: mtsmte_reports
 #: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_nickel_en
@@ -481,6 +486,17 @@ msgid "Tested samples"
 msgstr "Tested samples"
 
 #. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
+msgid ""
+"The results only concern the tested pieces.\n"
+"        A partial production of this report shall not be executed without "
+"our approval."
+msgstr ""
+"The results only concern the tested pieces.\n"
+"        A partial production of this report shall not be executed without "
+"our approval."
+
+#. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchaseorder_document_specific
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchasequotation_document_specific
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
@@ -511,3 +527,8 @@ msgstr "project.analysis.print.wiz"
 #: model:ir.model,name:mtsmte_reports.model_report_mtsmte_reports_report_project_analysis
 msgid "report.mtsmte_reports.report_project_analysis"
 msgstr "report.mtsmte_reports.report_project_analysis"
+
+#. module: mtsmte_reports
+#: model:ir.model,name:mtsmte_reports.model_stock_picking_report_deliveryslip_helper
+msgid "stock.picking.report_deliveryslip_helper"
+msgstr "stock.picking.report_deliveryslip_helper"

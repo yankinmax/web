@@ -76,8 +76,8 @@
   <template id="analysis_report_footer" name="MTS / MT analysis report footer">
     <div class="footer analysis_footer">
       <p class="disclaimer">
-        Les résultats contenus ne concernent que les échantillons soumis à l’examen.
-        Une reproduction partielle de ce rapport ne pourra être exécutée sans notre accord.
+        The results only concern the tested pieces.
+        A partial production of this report shall not be executed without our approval.
       </p>
       <div class="report-number">Report <span t-field="doc.name"/><span> Page: <span class="page"/>/<span class="topage"/></span></div>
       <img src="/mtsmte_reports/static/src/img/MT_labels.jpg" alt="certification" class="img img-responsive cert_img"/>
