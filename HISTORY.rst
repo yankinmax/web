@@ -21,6 +21,8 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* BSMTS-293 Update "Banques et Cash" line in Management Dashboard
+
 **Bugfixes**
 
 **Build**

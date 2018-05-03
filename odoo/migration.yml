@@ -325,3 +325,11 @@ migration:
           operations:
             pre:
               - anthem songs.update.update_10_9_0::main
+    - version: 10.10.0
+      operations:
+        pre:
+          - psql -f /opt/odoo/songs/update/update_10_10_0.sql
+      addons:
+        upgrade:
+          #### Specific
+          - mtsmte_accounting
