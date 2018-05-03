@@ -101,6 +101,7 @@ Unreleased
 * Update OCA/web
 * Add DJ tool
 * Clean up pending merges
+* Change mailtrap to smtp.mailtrap.io
 
 
 10.1.2 (2017-09-01)
