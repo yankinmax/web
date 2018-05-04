@@ -26,6 +26,7 @@ latest (unreleased)
 **Bugfixes**
 
 * BSMTS-308: Missing translation in analysis report footer + center text
+* BSMTS-310: Update src + fix Delivery Slip report
 
 **Build**
 

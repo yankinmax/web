@@ -9,7 +9,7 @@ class StockPickingReportDeliveryslipHelper(models.AbstractModel):
 
     @staticmethod
     def _prettify_value(val):
-        return '{:.3f}'.format(val)
+        return '{:.1f}'.format(val)
 
     def _get_ordered_qty(self, pack_op, prettify=True):
         """Sum of `ordered_qty`-s on SOL-s of this `product_id` w/ no route."""
