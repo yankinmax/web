@@ -329,7 +329,10 @@ migration:
       operations:
         pre:
           - psql -f /opt/odoo/songs/update/update_10_10_0.sql
+        post:
+          - anthem songs.update.update_10_10_0::main
       addons:
         upgrade:
           #### Specific
           - mtsmte_accounting
+          - mtsmte_reports
