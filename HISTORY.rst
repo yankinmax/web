@@ -27,6 +27,7 @@ latest (unreleased)
 
 * BSMTS-308: Missing translation in analysis report footer + center text
 * BSMTS-310: Update src + fix Delivery Slip report
+* Assign proper users from `sale.order` created tasks BSMTS-305
 
 **Build**
 
