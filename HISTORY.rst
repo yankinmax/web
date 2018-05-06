@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* waiting_calculator sale.orders are now added to automation filter DT-97
+
 **Build**
 
 * Downgrade ngnix image to 10.0-1.1.0
