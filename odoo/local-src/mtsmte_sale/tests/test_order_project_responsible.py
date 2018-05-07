@@ -34,17 +34,17 @@ class TestOrderProjectResponsible(common.SavepointCase):
         sample_product_service.track_service = 'task'
 
         cls.products = cls.env['product.product']
-        # This one has no manager, so the resulting responsible
+        # This one has it's `responsible_1_id` assigned directly, will use that
         cls.products |= sample_product_service.copy({
             'manager_id': False,
             'responsible_1_id': cls.product_responsibles[1].id,
             'responsible_2_id': cls.product_responsibles[2].id,
         })
-        # `responsible_2_id` isn't set, inherits from category
+        # `responsible_1_id` isn't set, inherits from category
         cls.products |= sample_product_service.copy({
             'manager_id': cls.product_responsibles[0].id,
-            'responsible_1_id': cls.product_responsibles[1].id,
-            'responsible_2_id': False,
+            'responsible_1_id': False,
+            'responsible_2_id': cls.product_responsibles[2].id,
         })
         # this one has no directly assigned responsibles -
         # will use those set on categories
@@ -99,6 +99,6 @@ class TestOrderProjectResponsible(common.SavepointCase):
             lambda t: t.sale_line_id.product_id == self.products[1])
         task_service_3 = project.task_ids.filtered(
             lambda t: t.sale_line_id.product_id == self.products[2])
-        self.assertEqual(task_service_1.user_id, self.product_responsibles[2])
-        self.assertEqual(task_service_2.user_id, self.category_responsibles[2])
-        self.assertEqual(task_service_3.user_id, self.category_responsibles[2])
+        self.assertEqual(task_service_1.user_id, self.product_responsibles[1])
+        self.assertEqual(task_service_2.user_id, self.category_responsibles[1])
+        self.assertEqual(task_service_3.user_id, self.category_responsibles[1])
