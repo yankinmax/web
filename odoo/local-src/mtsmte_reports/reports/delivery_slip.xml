@@ -53,22 +53,9 @@
     </xpath>
 
     <xpath expr="//p[@t-if='o.backorder_id']" position="before">
-      <table class="table table-condensed" t-if="o.note">
-        <thead>
-          <tr>
-            <th>Internal note</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <span>
-                <t t-esc="o.note"/>
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <t t-if="o.note">
+        <t t-esc="o.note"/>
+      </t>
     </xpath>
 
     <xpath expr="//div[@class='col-xs-4 pull-right']" position="replace">
