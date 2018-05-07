@@ -17,6 +17,7 @@
     "category": "Account",
     "data": [
         "views/management_dashboard.xml",
+        "views/account_invoice_views.xml",
     ],
     'installable': True,
 }

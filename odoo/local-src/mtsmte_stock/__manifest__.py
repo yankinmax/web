@@ -20,6 +20,7 @@
     "data": [
         'views/stock_scrap_views.xml',
         'views/stock_picking_views.xml',
+        'views/stock_history_views.xml',
     ],
     'installable': True,
 }

@@ -23,5 +23,7 @@
               <p t-field="o.report_numbers"/>
           </div>
       </xpath>
+      <xpath expr="//strong[@t-if='o.partner_shipping_id == o.partner_id']" position="replace"/>
+      <xpath expr="//strong[@t-if='o.partner_shipping_id != o.partner_id']" position="replace"/>
   </template>
 </odoo>

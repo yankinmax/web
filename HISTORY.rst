@@ -23,6 +23,7 @@ latest (unreleased)
 
 * BSMTS-293 Update "Banques et Cash" line in Management Dashboard
 * Remove `Internal note` title on deliveryslip report BSMTS-303
+* BSMTS-311: Move manually added views in project code + improvements
 
 **Bugfixes**
 

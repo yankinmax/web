@@ -14,8 +14,6 @@
       <!--Adding top and bot margins-->
       <div class="row mt96 mb96">
         <div class="col-xs-6">
-          <strong t-if="doc.partner_shipping_id == doc.partner_invoice_id">Invoicing and shipping address:</strong>
-          <strong t-else="doc.partner_shipping_id != doc.partner_invoice_id">Invoicing address:</strong>
           <!--Removed phone and fax fields-->
           <div t-field="doc.partner_invoice_id"
                t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
@@ -39,13 +37,26 @@
     <xpath expr="//div[@name='payment_term']" t-if="doc.commitment_date" position="before">
       <div name="commitment_date" class="col-xs-3">
         <strong>Commitment date:</strong>
-        <p t-if="doc.requested_date" t-field="doc.requested_date"/>
-        <p t-else="" t-field="doc.commitment_date"/>
+        <p t-if="doc.requested_date" t-field="doc.requested_date" t-options="{'widget': 'date'}" />
+        <p t-else="" t-field="doc.commitment_date" t-options="{'widget': 'date'}" />
       </div>
     </xpath>
 
     <!-- bsmts-203 -->
     <xpath expr="//p[@t-if='doc.payment_term_id.note']" position="replace"/>
+
+    <xpath expr="//div[@t-if='doc.user_id.name']" position="replace"/>
+    <xpath expr="//p[@t-field='doc.date_order']" position="attributes">
+      <attribute name="t-options">{"widget": "date"}</attribute>
+    </xpath>
+    <xpath expr="//div[@name='payment_term']" position="after">
+      <t t-if="len(doc.clean_analyze_sample())>12">
+        <div name="doc.analyze_sample" class="col-xs-12">
+          <strong>Analyzed samples:</strong>
+          <p t-field="doc.analyze_sample"/>
+        </div>
+      </t>
+    </xpath>
 
   </template>
 </odoo>

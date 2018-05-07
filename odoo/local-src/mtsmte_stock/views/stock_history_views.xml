@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_picking_history_search" model="ir.ui.view">
+        <field name="name">stock.picking.history.search</field>
+        <field name="model">stock.history</field>
+        <field name="inherit_id" ref="stock_account.view_stock_history_report_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="source"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
