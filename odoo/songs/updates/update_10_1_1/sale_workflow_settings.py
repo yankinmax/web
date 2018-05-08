@@ -7,6 +7,9 @@ import anthem
 
 @anthem.log
 def configuration(ctx):
+    # I don't think that such configuration should be in update
+    # It is definitely an install step, so I'll add it there.
+    # This will stay here just to not mess up history
     automatic_workflow = ctx.env.ref(
         'sale_automatic_workflow.automatic_validation')
     automatic_workflow.validate_order = False
