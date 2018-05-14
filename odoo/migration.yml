@@ -338,3 +338,4 @@ migration:
           #### Specific
           - mtsmte_accounting
           - mtsmte_reports
+          - mtsmte_sale
