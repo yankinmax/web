@@ -209,3 +209,7 @@ migration:
       operations:
         post:
           - anthem songs.updates.update_10_4_1::main
+    - version: 10.5.0
+      operations:
+        pre:
+          - anthem songs.updates.update_10_5_0::main
