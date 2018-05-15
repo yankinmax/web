@@ -11,7 +11,14 @@ def remove_manual_views(ctx):
     """ Remove manual views of delivery slip report"""
     view_names = [
         'report_delivery_document_specific_manually',
-        'report_delivery_document_inherit_sale_stock_manually'
+        'report_delivery_document_inherit_sale_stock_manually',
+        'report.invoice.inherit.sale.manually',
+        'report_purchaseorder_document_specific_manually',
+        'report_saleorder_document_specific_manually',
+        'report_sale_order_specific_specific_manually',
+        'stock.picking.internal.search.manually',
+        'stock.history.search.specific.manually',
+        'account.invoice.supplier.form.specific.manually',
     ]
     ctx.env['ir.ui.view'].with_context(active_test=False).search(
         [('name', 'in', view_names)]).unlink()

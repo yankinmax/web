@@ -38,5 +38,10 @@
             </div>
         </xpath>
 
+        <xpath expr="//p[@t-field='o.date_order']" position="attributes">
+            <attribute name="t-options">{"widget": "date"}</attribute>
+        </xpath>
+        <xpath expr="//h2" position="replace" />
+
     </template>
 </odoo>

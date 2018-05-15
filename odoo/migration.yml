@@ -339,3 +339,4 @@ migration:
           - mtsmte_accounting
           - mtsmte_reports
           - mtsmte_sale
+          - mtsmte_stock
