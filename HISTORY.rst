@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.10.0 (2018-05-17)
+++++++++++++++++++++
+
+**Features and Improvements**
+
 * BSMTS-293 Update "Banques et Cash" line in Management Dashboard
 * Remove `Internal note` title on deliveryslip report BSMTS-303
 * BSMTS-311: Move manually added views in project code + improvements
@@ -35,10 +47,7 @@ latest (unreleased)
 **Build**
 
 * BS-233: Uninstall module base_dj
-
 * Downgrade odoo-nginx to X-1.1.0
-
-**Documentation**
 
 
 10.9.0 (2018-04-27)
