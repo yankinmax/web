@@ -34,6 +34,8 @@ latest (unreleased)
 
 **Build**
 
+* BS-233: Uninstall module base_dj
+
 * Downgrade odoo-nginx to X-1.1.0
 
 **Documentation**

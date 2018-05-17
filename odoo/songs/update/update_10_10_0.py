@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import anthem
-from anthem.lyrics.modules import update_translations
+from anthem.lyrics.modules import update_translations, uninstall
 
 
 @anthem.log
@@ -25,9 +25,16 @@ def remove_manual_views(ctx):
 
 
 @anthem.log
+def uninstall_module(ctx):
+    """Uninstall module 'base_dj'"""
+    uninstall(ctx, ['base_dj'])
+
+
+@anthem.log
 def pre(ctx):
     """ Applying update 10.10.0 """
     remove_manual_views(ctx)
+    uninstall_module(ctx)
 
 
 @anthem.log
