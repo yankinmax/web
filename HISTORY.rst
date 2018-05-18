@@ -14,6 +14,7 @@ Unreleased
 
 **Build**
 
+* BS-233: Uninstall module base_dj
 * Downgrade ngnix image to 10.0-1.1.0
 
 **Documentation**
