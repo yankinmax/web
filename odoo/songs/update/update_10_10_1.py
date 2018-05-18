@@ -32,12 +32,12 @@ def uninstall_module(ctx):
 
 @anthem.log
 def pre(ctx):
-    """ Applying update 10.10.0 """
+    """ Applying update 10.10.1 """
     remove_manual_views(ctx)
     uninstall_module(ctx)
 
 
 @anthem.log
 def post(ctx):
-    """ Applying update 10.10.0 """
+    """ Applying update 10.10.1 """
     update_translations(ctx, ['mtsmte_reports'])

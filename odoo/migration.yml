@@ -325,16 +325,19 @@ migration:
           operations:
             pre:
               - anthem songs.update.update_10_9_0::main
-    - version: 10.10.0
+    # Broken version, do not deploy
+    # - version: 10.10.0
+    - version: 10.10.1
       operations:
         pre:
-          - psql -f /opt/odoo/songs/update/update_10_10_0.sql
-          - anthem songs.update.update_10_10_0::pre
+          - psql -f /opt/odoo/songs/update/update_10_10_1.sql
+          - anthem songs.update.update_10_10_1::pre
         post:
-          - anthem songs.update.update_10_10_0::post
+          - anthem songs.update.update_10_10_1::post
       addons:
         upgrade:
           - base
+          - session_redis
           #### Specific
           - mtsmte_accounting
           - mtsmte_reports
