@@ -28,7 +28,7 @@ latest (unreleased)
 **Documentation**
 
 
-10.10.0 (2018-05-17)
+10.10.1 (2018-05-18)
 ++++++++++++++++++++
 
 **Features and Improvements**
@@ -48,6 +48,13 @@ latest (unreleased)
 
 * BS-233: Uninstall module base_dj
 * Downgrade odoo-nginx to X-1.1.0
+* Update odoo-cloud-platform submodule to latest version
+
+
+10.10.0 (2018-05-17)
+++++++++++++++++++++
+
+Broken version, do not deploy
 
 
 10.9.0 (2018-04-27)
