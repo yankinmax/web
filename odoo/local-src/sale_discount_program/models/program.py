@@ -132,35 +132,37 @@ class Program(models.Model):
                 program.voucher_amount = False
 
     def _get_action_values_for_voucher_amount(self, product_add_price):
+        product_voucher = self.env.ref(
+            'sale_discount_program.product_voucher'
+        )
         return {
             'type_action': 'product_add',
-            'product_add_id': self.env.ref(
-                'sale_discount_program.product_voucher'
-            ).id,
+            'product_add_id': product_voucher.id,
             'product_add_force_price': True,
             'product_add_price': product_add_price,
             'allow_negative_total': False,
+            'note_message': product_voucher.name
         }
 
     def _inverse_voucher_amount(self):
         for program in self:
-            different_price = abs(program.action_ids[0].product_add_price) != \
-                abs(program.voucher_amount)
-            if program.voucher_amount and different_price:
+            if program.voucher_amount:
                 # Let the get product_add_price value here,
                 # because unlink will be drop it
                 product_add_price = -1 * program.voucher_amount
-                if program.action_ids:
-                    program.action_ids.unlink()
+                for action_id in program.action_ids:
+                    action_id.product_add_price = product_add_price
 
-                action_values = program._get_action_values_for_voucher_amount(
-                    product_add_price
-                )
-                program.write({
-                    "action_ids": [
-                        (0, False, action_values)
-                    ]
-                })
+                if not program.action_ids:
+                    action_values = \
+                        program._get_action_values_for_voucher_amount(
+                            product_add_price
+                        )
+                    program.write({
+                        "action_ids": [
+                            (0, False, action_values)
+                        ]
+                    })
 
     @api.depends('expiration_date', 'nb_use', 'max_use', 'max_use_by_month')
     def _compute_code_valid(self):
