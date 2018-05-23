@@ -144,7 +144,9 @@ class Program(models.Model):
 
     def _inverse_voucher_amount(self):
         for program in self:
-            if program.voucher_amount:
+            different_price = abs(program.action_ids[0].product_add_price) != \
+                abs(program.voucher_amount)
+            if program.voucher_amount and different_price:
                 # Let the get product_add_price value here,
                 # because unlink will be drop it
                 product_add_price = -1 * program.voucher_amount
