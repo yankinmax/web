@@ -21,6 +21,9 @@ latest (unreleased)
 
 **Features and Improvements**
 
+* BIZ-1845: Remove in report_analysis_doc
+  the footer to none editable MT chemical part
+
 **Bugfixes**
 
 **Build**

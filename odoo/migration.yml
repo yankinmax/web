@@ -343,3 +343,11 @@ migration:
           - mtsmte_reports
           - mtsmte_sale
           - mtsmte_stock
+    - version: 10.11.0
+      operations:
+        pre:
+          - psql -f /opt/odoo/songs/update/update_10_11_0.sql
+      addons:
+        upgrade:
+          #### Specific
+          - mtsmte_reports

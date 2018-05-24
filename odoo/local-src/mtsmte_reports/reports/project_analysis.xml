@@ -156,13 +156,6 @@
                 </td>
               </tr>
             </t>
-            <tfoot>
-              <td colspan="5"/>
-              <!-- tasks own conformity is displayed under the last column -->
-              <td>
-                <strong><span t-esc="conformity_options[doc.conformity]"/></strong>
-              </td>
-            </tfoot>
           </tbody>
         </table>
         <br/>
