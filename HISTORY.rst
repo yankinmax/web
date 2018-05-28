@@ -23,6 +23,7 @@ latest (unreleased)
 
 * BIZ-1845: Remove in report_analysis_doc
   the footer to none editable MT chemical part
+* BSMTS-313: Py3o template update
 
 **Bugfixes**
 
