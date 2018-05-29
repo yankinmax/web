@@ -121,10 +121,11 @@ class Program(models.Model):
                 program.promo_code or program.voucher_code
             )
 
-    @api.depends('action_ids', 'action_ids.product_add_price')
+    @api.depends('action_ids', 'action_ids.product_add_price', 'voucher_code')
     def _compute_voucher_amount(self):
         for program in self:
-            if program.action_ids and program.action_ids[0].product_add_price:
+            if program.voucher_code and program.action_ids and \
+                    program.action_ids[0].product_add_price:
                 program.voucher_amount = (
                     -1 * program.action_ids[0].product_add_price
                 )

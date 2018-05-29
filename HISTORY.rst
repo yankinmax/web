@@ -10,6 +10,8 @@ Unreleased
 
 **Bugfixes**
 
+* DT-99: Fix compute method in voucher_amount field to take in account
+  voucher_code field
 * waiting_calculator sale.orders are now added to automation filter DT-97
 
 **Build**
