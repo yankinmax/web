@@ -27,6 +27,8 @@ latest (unreleased)
 
 **Bugfixes**
 
+* BIZ-1856: Fix conformity value computation when using "Tick all BDL/BQL" buttons
+
 **Build**
 
 **Documentation**
