@@ -146,10 +146,10 @@
                 <td class="quantif_limit">
                   <span t-field="meas.quantification_limit" />
                 </td>
-                <td class="result">
+                <td class="result" style="text-align: center;">
                   <t t-if="meas.bdl">B.D.L</t>
                   <t t-elif="meas.bql">B.Q.L</t>
-                  <span t-else="" t-esc="meas.measure or '-'" />
+                  <span t-else="" t-esc="meas.measure or '–'" />
                 </td>
                 <td class="conformity">
                   <span t-esc="conformity_options[meas.conformity]"/>
