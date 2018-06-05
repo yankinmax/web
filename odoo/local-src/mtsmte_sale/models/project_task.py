@@ -89,7 +89,9 @@ class ProjectTask(models.Model):
         if self.description:
             return html2text(self.description)
 
-    @api.depends("product_substance_measure_ids.conformity")
+    @api.depends("product_substance_measure_ids.conformity",
+                 "product_substance_measure_ids.bdl",
+                 "product_substance_measure_ids.bql")
     def _compute_conformity(self):
         for record in self:
             conformities = record.mapped(
