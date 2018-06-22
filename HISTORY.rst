@@ -21,6 +21,18 @@ latest (unreleased)
 
 **Features and Improvements**
 
+**Bugfixes**
+
+**Build**
+
+**Documentation**
+
+
+10.10.2 (2018-06-22)
+++++++++++++++++++++
+
+**Features and Improvements**
+
 * BSMTS-293 Update "Banques et Cash" line in Management Dashboard
 * Remove `Internal note` title on deliveryslip report BSMTS-303
 * BSMTS-311: Move manually added views in project code + improvements
