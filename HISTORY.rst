@@ -35,7 +35,7 @@ latest (unreleased)
 **Documentation**
 
 
-10.10.1 (2018-05-18)
+10.10.2 (2018-06-22)
 ++++++++++++++++++++
 
 **Features and Improvements**
@@ -50,12 +50,19 @@ latest (unreleased)
 * BSMTS-310: Update src + fix Delivery Slip report
 * Assign proper users from `sale.order` created tasks BSMTS-305
 * BIZ-1825: Fix access rights for product.category
+* BSMTS-316: Fix delivery slip report translation
 
 **Build**
 
 * BS-233: Uninstall module base_dj
 * Downgrade odoo-nginx to X-1.1.0
 * Update odoo-cloud-platform submodule to latest version
+
+
+10.10.1 (2018-05-18)
+++++++++++++++++++++
+
+* Moved to 10.10.2
 
 
 10.10.0 (2018-05-17)

@@ -1,16 +1,15 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* mtsmte_reports
+#	* mtsmte_reports
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-02 08:26+0000\n"
-"PO-Revision-Date: 2017-12-19 14:20+0000\n"
+"POT-Creation-Date: 2018-06-21 14:04+0000\n"
+"PO-Revision-Date: 2018-06-21 14:04+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -18,14 +17,11 @@ msgstr ""
 
 #. module: mtsmte_reports
 #: model:mail.template,body_html:mtsmte_reports.quotation_confirmation_mail_specific
-msgid ""
-"\n"
+msgid "\n"
 "<p>Madam, Dear Sir,</p>\n"
 "\n"
 "<p>Thank you so much for your interest to our society.\n"
-"As per your request dated <span style=\"color:#ff0000\">${object.date_order}"
-"</span>, please find attached our Quote Nr. <span style=\"color:#ff0000\">"
-"${object.name}</span>.\n"
+"As per your request dated <span style=\"color:#ff0000\">${object.date_order}</span>, please find attached our Quote Nr. <span style=\"color:#ff0000\">${object.name}</span>.\n"
 "Please do not hesitate to contact us for further information.\n"
 "We keep waiting for your feedback.\n"
 "Best regards</p>\n"
@@ -33,31 +29,25 @@ msgid ""
 "% if user.signature\n"
 "<p>${user.signature | safe}</p>\n"
 "% endif\n"
-msgstr ""
-"\n"
+""
+msgstr "\n"
 "<p>Madame, Monsieur,</p>\n"
 "\n"
 "<p>Nous vous remercions pour l’intérêt porté envers notre société.\n"
-"Nous avons le plaisir de vous soumettre ci-joint notre devis N° <span style="
-"\"color:#ff0000\">${object.name}</span>, suite à votre demande du <span "
-"style=\"color:#ff0000\">${object.date_order}</span>.\n"
-"Nous restons à votre entière disposition pour tout renseignement "
-"complémentaire.\n"
-"Dans l’attente de vos nouvelles, nous vous prions d’agréer, Madame, "
-"Monsieur, nos salutations distinguées.</p>\n"
+"Nous avons le plaisir de vous soumettre ci-joint notre devis N° <span style=\"color:#ff0000\">${object.name}</span>, suite à votre demande du <span style=\"color:#ff0000\">${object.date_order}</span>.\n"
+"Nous restons à votre entière disposition pour tout renseignement complémentaire.\n"
+"Dans l’attente de vos nouvelles, nous vous prions d’agréer, Madame, Monsieur, nos salutations distinguées.</p>\n"
 "\n"
 "% if user.signature\n"
 "<p>${user.signature | safe}</p>\n"
 "% endif\n"
+""
 
 #. module: mtsmte_reports
 #: model:mail.template,body_html:mtsmte_reports.email_template_edi_invoice_specific
-msgid ""
-"\n"
+msgid "\n"
 "<p>Madam, Dear Sir,</p>\n"
-"<p>Please find attached our Invoice Nr. <span style=\"color:#ff0000\">"
-"${object.number}</span> on <span style=\"color:#ff0000\">${object."
-"date_invoice}</span>.\n"
+"<p>Please find attached our Invoice Nr. <span style=\"color:#ff0000\">${object.number}</span> on <span style=\"color:#ff0000\">${object.date_invoice}</span>.\n"
 "We thank you in advance for your next payment.\n"
 "Do not hesitate to contact us for further information.\n"
 "Best regards</p>\n"
@@ -66,31 +56,25 @@ msgid ""
 "% if user.signature\n"
 "<p>${user.signature | safe}</p>\n"
 "% endif\n"
-msgstr ""
-"\n"
+""
+msgstr "\n"
 "<p>Madame, Monsieur,</p>\n"
-"<p>Vous trouverez ci-joint notre facture N° <span style=\"color:#ff0000\">"
-"${object.number}</span> du <span style=\"color:#ff0000\">${object."
-"date_invoice}</span>\n"
+"<p>Vous trouverez ci-joint notre facture N° <span style=\"color:#ff0000\">${object.number}</span> du <span style=\"color:#ff0000\">${object.date_invoice}</span>\n"
 "En vous remerciant par avance de votre prochain paiement.\n"
-"Nous restons à votre entière disposition pour tout renseignement "
-"complémentaire et vous prions d’agréer, Madame, Monsieur, nos salutations "
-"distinguées.</p>\n"
+"Nous restons à votre entière disposition pour tout renseignement complémentaire et vous prions d’agréer, Madame, Monsieur, nos salutations distinguées.</p>\n"
 "\n"
 "\n"
 "% if user.signature\n"
 "<p>${user.signature | safe}</p>\n"
 "% endif\n"
+""
 
 #. module: mtsmte_reports
 #: model:mail.template,body_html:mtsmte_reports.email_template_edi_sale_specific
-msgid ""
-"\n"
+msgid "\n"
 "<p>Madam, Dear Sir,</p>\n"
 "<p>Thank you so much for your interest to our society.\n"
-"With reference to your order Nr.<span style=\"color:#ff0000\">${object.name}"
-"</span>, please find attached our Order confirmation Nr. <span style=\"color:"
-"#ff0000\">${object.name}</span>.\n"
+"With reference to your order Nr.<span style=\"color:#ff0000\">${object.name}</span>, please find attached our Order confirmation Nr. <span style=\"color:#ff0000\">${object.name}</span>.\n"
 "Please do not hesitate to contact us for further information.\n"
 "Best regards,</p>\n"
 "\n"
@@ -98,31 +82,25 @@ msgid ""
 "% if user.signature\n"
 "<p>${user.signature | safe}</p>\n"
 "% endif\n"
-msgstr ""
-"\n"
+""
+msgstr "\n"
 "<p>Madame, Monsieur,</p>\n"
 "<p>Nous vous remercions pour l’intérêt porté envers notre société.\n"
-"Suite à votre commande N° <span style=\"color:#ff0000\">${object.name}</"
-"span>, veuillez trouver ci-joint notre confirmation de commande N° <span "
-"style=\"color:#ff0000\">${object.name}</span>.\n"
-"Nous restons à votre entière disposition pour tout renseignement "
-"complémentaire.\n"
-"Nous vous prions d’agréer, Madame, Monsieur, nos salutations distinguées.</"
-"p>\n"
+"Suite à votre commande N° <span style=\"color:#ff0000\">${object.name}</span>, veuillez trouver ci-joint notre confirmation de commande N° <span style=\"color:#ff0000\">${object.name}</span>.\n"
+"Nous restons à votre entière disposition pour tout renseignement complémentaire.\n"
+"Nous vous prions d’agréer, Madame, Monsieur, nos salutations distinguées.</p>\n"
 "\n"
 "\n"
 "% if user.signature\n"
 "<p>${user.signature | safe}</p>\n"
 "% endif\n"
+""
 
 #. module: mtsmte_reports
 #: model:mail.template,body_html:mtsmte_reports.email_template_project_project
-msgid ""
-"\n"
+msgid "\n"
 "<p>Madam, Dear Sir,</p>\n"
-"<p>With reference to your order Nr. <span style=\"color:#ff0000\">${object."
-"name}</span>, please find attached our Report Nr. <span style=\"color:"
-"#ff0000\">${object.name}</span>.\n"
+"<p>With reference to your order Nr. <span style=\"color:#ff0000\">${object.name}</span>, please find attached our Report Nr. <span style=\"color:#ff0000\">${object.name}</span>.\n"
 "Do not hesitate to contact us for further information.\n"
 "Best regards</p>\n"
 "\n"
@@ -130,20 +108,18 @@ msgid ""
 "% if user.signature\n"
 "<p>${user.signature | safe}</p>\n"
 "% endif\n"
-msgstr ""
-"\n"
+""
+msgstr "\n"
 "<p>Madame, Monsieur,</p>\n"
-"<p>Vous trouverez ci-joint notre Rapport N° <span style=\"color:#ff0000\">"
-"${object.name}</span>, suite à votre commande N° <span style=\"color:"
-"#ff0000\">${object.name}</span>.\n"
-"Nous restons à votre entière disposition pour tout renseignement "
-"complémentaire et vous prions d’agréer, \n"
+"<p>Vous trouverez ci-joint notre Rapport N° <span style=\"color:#ff0000\">${object.name}</span>, suite à votre commande N° <span style=\"color:#ff0000\">${object.name}</span>.\n"
+"Nous restons à votre entière disposition pour tout renseignement complémentaire et vous prions d’agréer, \n"
 "Madame, Monsieur, nos salutations distinguées.</p>\n"
 "\n"
 "\n"
 "% if user.signature\n"
 "<p>${user.signature | safe}</p>\n"
 "% endif\n"
+""
 
 #. module: mtsmte_reports
 #: model:mail.template,report_name:mtsmte_reports.email_template_project_project
@@ -152,31 +128,28 @@ msgstr "${(object.name or '').replace('/','_')}"
 
 #. module: mtsmte_reports
 #: model:mail.template,report_name:mtsmte_reports.email_template_edi_sale_specific
-msgid ""
-"${(object.name or '').replace('/','_')}${object.state == 'draft' and "
-"'_draft' or ''}"
-msgstr ""
-"${(object.name or '').replace('/','_')}${object.state == 'draft' and "
-"'_brouillon' or ''}"
+msgid "${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}"
+msgstr "${(object.name or '').replace('/','_')}${object.state == 'draft' and '_brouillon' or ''}"
 
 #. module: mtsmte_reports
 #: model:mail.template,subject:mtsmte_reports.email_template_edi_sale_specific
-msgid ""
-"${object.company_id.name} ${object.state in ('draft', 'sent') and "
-"'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })"
-msgstr ""
-"${object.company_id.name} ${object.state in ('draft', 'sent') and 'Devis' or "
-"'Commande'} (Réf ${object.name or 'n/a' })"
+msgid "${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })"
+msgstr "${object.company_id.name} ${object.state in ('draft', 'sent') and 'Devis' or 'Commande'} (Réf ${object.name or 'n/a' })"
 
 #. module: mtsmte_reports
 #: model:mail.template,subject:mtsmte_reports.email_template_edi_invoice_specific
 msgid "${object.company_id.name} Invoice (Ref ${object.number or 'n/a'})"
-msgstr "${object.company_id.name} Facture (Ref ${object.number or 'n/a'})"
+msgstr "Rechnung ${object.number}"
 
 #. module: mtsmte_reports
 #: model:mail.template,subject:mtsmte_reports.email_template_project_project
 msgid "${object.company_id.name} Project ${object.name or 'n/a' }"
 msgstr "${object.company_id.name} Project ${object.name or 'n/a' }"
+
+#. module: mtsmte_reports
+#: model:mail.template,report_name:mtsmte_reports.quotation_confirmation_mail_specific
+msgid "${object.name}"
+msgstr "${object.name}"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_header
@@ -189,9 +162,29 @@ msgid "<span> Page: <span class=\"page\"/>/<span class=\"topage\"/></span>"
 msgstr "<span> Page: <span class=\"page\"/>/<span class=\"topage\"/></span>"
 
 #. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_delivery_document_inherit_mtsmte
+msgid "<span>Delivery Slip</span>"
+msgstr "<span>Bulletin de livraison</span>"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
+msgid "<strong>Analyzed samples:</strong>"
+msgstr "<strong>Echantillons analysés:</strong>"
+
+#. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
 msgid "<strong>Commitment date:</strong>"
-msgstr "<strong>Commitment date:</strong>"
+msgstr "<strong>Délai de réalisation :</strong>"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_delivery_document_inherit_mtsmte
+msgid "<strong>Delivered Quantity</strong>"
+msgstr "<strong>Quantité délivrée</strong>"
+
+#. module: mtsmte_reports
+#: model:ir.ui.view,arch_db:mtsmte_reports.report_delivery_document_inherit_mtsmte
+msgid "<strong>Ordered Quantity</strong>"
+msgstr "<strong>Quantité commandée</strong>"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchasequotation_document_specific
@@ -206,7 +199,7 @@ msgstr "<strong>Origine:</strong>"
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_invoice_document_inherit_sale
 msgid "<strong>Report Number</strong>"
-msgstr "<strong>No Rapport</strong>"
+msgstr "<strong>N° de rapport:</strong>"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchaseorder_document_specific
@@ -253,7 +246,7 @@ msgstr "Sociétés"
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.external_layout_header
 msgid "Company Logo"
-msgstr "Logo de la companie"
+msgstr "Logo de la société"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
@@ -273,7 +266,7 @@ msgstr "Créé le"
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Definitive"
-msgstr "Definitive"
+msgstr "Définitif"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_account_invoice_comment_text
@@ -284,7 +277,7 @@ msgstr "Description comme texte"
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Detection limit"
-msgstr "Limit détection"
+msgstr "Limite de détection"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_display_name
@@ -306,11 +299,6 @@ msgid "Image to be used only in reports."
 msgstr "Image utilisée seulement pour les rapports"
 
 #. module: mtsmte_reports
-#: model:ir.ui.view,arch_db:mtsmte_reports.report_delivery_document_inherit_mtsmte
-msgid "Internal note"
-msgstr "Note interne"
-
-#. module: mtsmte_reports
 #: model:ir.model,name:mtsmte_reports.model_account_invoice
 msgid "Invoice"
 msgstr "Facture"
@@ -322,22 +310,8 @@ msgstr "Facture avec BVR"
 
 #. module: mtsmte_reports
 #: model:mail.template,report_name:mtsmte_reports.email_template_edi_invoice_specific
-msgid ""
-"Invoice_${(object.number or '').replace('/','_')}_${object.state == 'draft' "
-"and 'draft' or ''}"
-msgstr ""
-"Invoice_${(object.number or '').replace('/','_')}_${object.state == 'draft' "
-"and 'draft' or ''}"
-
-#. module: mtsmte_reports
-#: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
-msgid "Invoicing address:"
-msgstr "Adresse de facturation :"
-
-#. module: mtsmte_reports
-#: model:ir.ui.view,arch_db:mtsmte_reports.report_saleorder_document_specific
-msgid "Invoicing and shipping address:"
-msgstr "Adresse de facturation et de livraison :"
+msgid "Invoice_${(object.number or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}"
+msgstr "Invoice_${(object.number or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}"
 
 #. module: mtsmte_reports
 #: model:ir.model.fields,field_description:mtsmte_reports.field_project_analysis_print_wiz_lang_id
@@ -421,7 +395,7 @@ msgstr "Provisoire"
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
 msgid "Quantification limit"
-msgstr "Limite quantification"
+msgstr "Limite de quantification"
 
 #. module: mtsmte_reports
 #: model:ir.model,name:mtsmte_reports.model_report
@@ -492,15 +466,10 @@ msgstr "Pièces Testées"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.analysis_report_footer
-msgid ""
-"The results only concern the tested pieces.\n"
-"        A partial production of this report shall not be executed without "
-"our approval."
-msgstr ""
-"Les résultats contenus ne concernent que les échantillons soumis à "
-"l’examen.\n"
-"        Une reproduction partielle de ce rapport ne pourra être exécutée "
-"sans notre accord."
+msgid "The results only concern the tested pieces.\n"
+"        A partial production of this report shall not be executed without our approval."
+msgstr "Les résultats contenus ne concernent que les échantillons soumis à l’examen.\n"
+"        Une reproduction partielle de ce rapport ne pourra être exécutée sans notre accord."
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.report_purchaseorder_document_specific
@@ -538,3 +507,4 @@ msgstr "report.mtsmte_reports.report_project_analysis"
 #: model:ir.model,name:mtsmte_reports.model_stock_picking_report_deliveryslip_helper
 msgid "stock.picking.report_deliveryslip_helper"
 msgstr "stock.picking.report_deliveryslip_helper"
+

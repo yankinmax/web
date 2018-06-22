@@ -327,13 +327,14 @@ migration:
               - anthem songs.update.update_10_9_0::main
     # Broken version, do not deploy
     # - version: 10.10.0
-    - version: 10.10.1
+    # - version: 10.10.1
+    - version: 10.10.2
       operations:
         pre:
-          - psql -f /opt/odoo/songs/update/update_10_10_1.sql
-          - anthem songs.update.update_10_10_1::pre
+          - psql -f /opt/odoo/songs/update/update_10_10_2.sql
+          - anthem songs.update.update_10_10_2::pre
         post:
-          - anthem songs.update.update_10_10_1::post
+          - anthem songs.update.update_10_10_2::post
       addons:
         upgrade:
           - base
