@@ -21,18 +21,6 @@ latest (unreleased)
 
 **Features and Improvements**
 
-**Bugfixes**
-
-**Build**
-
-**Documentation**
-
-
-10.10.1 (2018-05-18)
-++++++++++++++++++++
-
-**Features and Improvements**
-
 * BSMTS-293 Update "Banques et Cash" line in Management Dashboard
 * Remove `Internal note` title on deliveryslip report BSMTS-303
 * BSMTS-311: Move manually added views in project code + improvements
@@ -43,12 +31,19 @@ latest (unreleased)
 * BSMTS-310: Update src + fix Delivery Slip report
 * Assign proper users from `sale.order` created tasks BSMTS-305
 * BIZ-1825: Fix access rights for product.category
+* BSMTS-316: Fix delivery slip report translation
 
 **Build**
 
 * BS-233: Uninstall module base_dj
 * Downgrade odoo-nginx to X-1.1.0
 * Update odoo-cloud-platform submodule to latest version
+
+
+10.10.1 (2018-05-18)
+++++++++++++++++++++
+
+* Moved to 10.10.2
 
 
 10.10.0 (2018-05-17)
