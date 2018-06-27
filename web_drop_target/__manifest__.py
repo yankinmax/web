@@ -10,6 +10,7 @@
     "summary": "Allows to drag files into Odoo",
     "depends": [
         'web',
+        'document'
     ],
     "data": [
         'views/templates.xml',
