@@ -4,16 +4,16 @@
 
 odoo.define('web_drop_target', function(require) {
     var    FormController = require('web.FormController');
+           _t = require('web.core')._t;
 
     // this is the main contribution of this addon: A mixin you can use
     // to make some widget a drop target. Read on how to use this yourself
     var DropTargetMixin = {
         // add the mime types you want to support here, leave empty for
-        // all types. For more control, override _get_drop_item in your class
+        // all types. For more control, override _get_drop_items in your class
         _drop_allowed_types: [],
 
-        // a class being applied when the user drags something we can handle
-        _drag_over_class: 'o_drag_over',
+        _drop_overlay: null,
 
         start: function() {
             var result = this._super.apply(this, arguments);
@@ -25,44 +25,67 @@ odoo.define('web_drop_target', function(require) {
         },
 
         _on_drop: function(e) {
-            var drop_item = this._get_drop_item(e);
-            if(!drop_item) {
-                return;
-            }
-            jQuery(e.delegateTarget).removeClass(this._drag_over_class);
-            var reader = new FileReader();
-            reader.onloadend = this.proxy(
-                _.partial(this._handle_file_drop, drop_item.getAsFile())
-            );
-            reader.readAsArrayBuffer(drop_item.getAsFile());
+            var self = this;
+            var drop_items = this._get_drop_items(e);
+            _.each(drop_items, function(drop_item) {
+                var reader = new FileReader();
+                reader.onloadend = self.proxy(
+                    _.partial(self._handle_file_drop, drop_item.getAsFile())
+                );
+                reader.readAsArrayBuffer(drop_item.getAsFile());
+            });
+            this._drop_overlay.remove();
+            this._drop_overlay = null;
             e.preventDefault();
         },
 
         _on_dragenter: function(e) {
-            if(this._get_drop_item(e)) {
+            if(this._get_drop_items(e).length) {
                 e.preventDefault();
-                jQuery(e.delegateTarget).addClass(this._drag_over_class);
+                if(!this._drop_overlay){
+                    var drop_overlay_message = _t('Drop your files here');
+                    var o_content = self.$('.o_content');
+                    var view_manager = self.$('.o_view_manager_content');
+                    this._drop_overlay = self.$(
+                        `<div class="o_drag_over">
+                            <div class="o_drag_over_content">
+                                <div><i class="fa fa-file-o fa-5x" aria-hidden="true"></i></div>
+                                <div><h2>${drop_overlay_message}</h2></div>
+                            </div>
+                        </div>`
+                    );
+                    var o_content_position = o_content.position();
+                    this._drop_overlay.css({
+                        'top': o_content_position.top, 
+                        'left': o_content_position.left,
+                        'width': view_manager.width(),
+                        'height': view_manager.height()
+                    });
+                    o_content.append(this._drop_overlay);
+                }
                 return false;
             }
         },
 
         _on_dragleave: function(e) {
-            jQuery(e.delegateTarget).removeClass(this._drag_over_class);
+            this._drop_overlay.remove();
+            this._drop_overlay = null;
+            e.preventDefault();
         },
 
-        _get_drop_item: function(e) {
+        _get_drop_items: function(e) {
             var self = this,
                 dataTransfer = e.originalEvent.dataTransfer,
-                drop_item = null;
+                drop_items = [];
             _.each(dataTransfer.items, function(item) {
                 if(
                     _.contains(self._drop_allowed_types, item.type) ||
                     _.isEmpty(self._drop_allowed_types)
                 ) {
-                    drop_item = item;
+                    drop_items.push(item);
                 }
             });
-            return drop_item;
+            return drop_items;
         },
 
         // eslint-disable-next-line no-unused-vars
