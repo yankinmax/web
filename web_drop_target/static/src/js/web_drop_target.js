@@ -25,22 +25,17 @@ odoo.define('web_drop_target', function(require) {
         },
 
         _on_drop: function(e) {
-            var self = this;
             var drop_items = this._get_drop_items(e);
-            _.each(drop_items, function(drop_item) {
-                var reader = new FileReader();
-                reader.onloadend = self.proxy(
-                    _.partial(self._handle_file_drop, drop_item.getAsFile())
-                );
-                reader.readAsArrayBuffer(drop_item.getAsFile());
-            });
-            this._drop_overlay.remove();
-            this._drop_overlay = null;
+            if(!drop_items) {
+                return;
+            }
+            jQuery(e.delegateTarget).removeClass(this._drag_over_class);
             e.preventDefault();
+            this._handle_drop_items(drop_items, e)
         },
 
         _on_dragenter: function(e) {
-            if(this._get_drop_items(e).length) {
+            if(this._get_drop_items(e)) {
                 e.preventDefault();
                 if(!this._drop_overlay){
                     var drop_overlay_message = _t('Drop your files here');
@@ -89,26 +84,29 @@ odoo.define('web_drop_target', function(require) {
         },
 
         // eslint-disable-next-line no-unused-vars
-        _handle_file_drop: function(drop_file, e) {
+        _handle_drop_items: function(drop_items, e) {
             // do something here, for example call the helper function below
             // e is the on_load_end handler for the FileReader above,
             // so e.target.result contains an ArrayBuffer of the data
         },
 
         _handle_file_drop_attach: function(
-                drop_file, e, res_model, res_id, extra_data
+                item, e, res_model, res_id, extra_data
         ) {
             // helper to upload an attachment and update the sidebar
             var self = this;
+            var file = item.getAsFile();
+            var reader = new FileReader();
+            reader.readAsArrayBuffer(file);
             return this._rpc({
                 model: 'ir.attachment',
                 method: 'create',
                 args: [{
-                    'name': drop_file.name,
+                    'name': file.name,
                     'datas': base64js.fromByteArray(
-                            new Uint8Array(e.target.result)
+                            new Uint8Array(reader.result)
                         ),
-                    'datas_fname': drop_file.name,
+                    'datas_fname': file.name,
                     'res_model': res_model,
                     'res_id': res_id,
                 }],
@@ -139,10 +137,13 @@ odoo.define('web_drop_target', function(require) {
             }
             return this._super.apply(this, arguments);
         },
-        _handle_file_drop: function(drop_file, e) {
-            return this._handle_file_drop_attach(
-                drop_file, e, this.renderer.state.model, this.renderer.state.res_id
-            );
+        _handle_drop_items: function(drop_items, e) {
+            var self = this;
+            _.each(drop_items, function(item, e) {
+                return self._handle_file_drop_attach(
+                    item, e, self.renderer.state.model, self.renderer.state.res_id
+                );
+            });
         }
     }));
 
