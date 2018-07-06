@@ -69,15 +69,9 @@ odoo.define('web_drop_target', function(require) {
             // e is the on_load_end handler for the FileReader above,
             // so e.target.result contains an ArrayBuffer of the data
         },
-
-        _handle_file_drop_attach: function(
-                item, e, res_model, res_id, extra_data
-        ) {
+        _create_attachment: function(file, reader, e, res_model, res_id, extra_data) {
             // helper to upload an attachment and update the sidebar
             var self = this;
-            var file = item.getAsFile();
-            var reader = new FileReader();
-            reader.readAsArrayBuffer(file);
             return this._rpc({
                 model: 'ir.attachment',
                 method: 'create',
@@ -104,6 +98,17 @@ odoo.define('web_drop_target', function(require) {
                     }
                 }
             });
+        },
+        _handle_file_drop_attach: function(
+                item, e, res_model, res_id, extra_data
+        ) {
+            var self = this;
+            var file = item.getAsFile();
+            var reader = new FileReader();
+            reader.onloadend = self.proxy(
+                _.partial(self._create_attachment, file, reader, e, res_model, res_id, extra_data)
+            );
+            reader.readAsArrayBuffer(file);
         },
         _add_overlay() {
             if(!this._drop_overlay){
