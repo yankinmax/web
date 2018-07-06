@@ -4,7 +4,8 @@
 
 odoo.define('web_drop_target', function(require) {
     var    FormController = require('web.FormController');
-           _t = require('web.core')._t;
+           core = require('web.core'),
+           qweb = core.qweb;
 
     // this is the main contribution of this addon: A mixin you can use
     // to make some widget a drop target. Read on how to use this yourself
@@ -29,42 +30,21 @@ odoo.define('web_drop_target', function(require) {
             if(!drop_items) {
                 return;
             }
-            jQuery(e.delegateTarget).removeClass(this._drag_over_class);
+            this._remove_overlay();
             e.preventDefault();
             this._handle_drop_items(drop_items, e)
         },
 
         _on_dragenter: function(e) {
-            if(this._get_drop_items(e)) {
+            if(this._get_drop_items(e).length) {
                 e.preventDefault();
-                if(!this._drop_overlay){
-                    var drop_overlay_message = _t('Drop your files here');
-                    var o_content = self.$('.o_content');
-                    var view_manager = self.$('.o_view_manager_content');
-                    this._drop_overlay = self.$(
-                        `<div class="o_drag_over">
-                            <div class="o_drag_over_content">
-                                <div><i class="fa fa-file-o fa-5x" aria-hidden="true"></i></div>
-                                <div><h2>${drop_overlay_message}</h2></div>
-                            </div>
-                        </div>`
-                    );
-                    var o_content_position = o_content.position();
-                    this._drop_overlay.css({
-                        'top': o_content_position.top, 
-                        'left': o_content_position.left,
-                        'width': view_manager.width(),
-                        'height': view_manager.height()
-                    });
-                    o_content.append(this._drop_overlay);
-                }
+                this._add_overlay();
                 return false;
             }
         },
 
         _on_dragleave: function(e) {
-            this._drop_overlay.remove();
-            this._drop_overlay = null;
+            this._remove_overlay();
             e.preventDefault();
         },
 
@@ -124,6 +104,27 @@ odoo.define('web_drop_target', function(require) {
                     }
                 }
             });
+        },
+        _add_overlay() {
+            if(!this._drop_overlay){
+                var o_content = jQuery('.o_content'),
+                    view_manager = jQuery('.o_view_manager_content');
+                this._drop_overlay = jQuery(
+                    qweb.render('web_drop_target.drop_overlay')
+                );
+                var o_content_position = o_content.position();
+                this._drop_overlay.css({
+                    'top': o_content_position.top,
+                    'left': o_content_position.left,
+                    'width': view_manager.width(),
+                    'height': view_manager.height()
+                });
+                o_content.append(this._drop_overlay);
+            }
+        },
+        _remove_overlay() {
+            this._drop_overlay.remove();
+            this._drop_overlay = null;
         }
     };
 

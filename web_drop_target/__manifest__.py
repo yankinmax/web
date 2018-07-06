@@ -15,4 +15,7 @@
     "data": [
         'views/templates.xml',
     ],
+    "qweb": [
+        'static/src/xml/widgets.xml',
+    ]
 }
