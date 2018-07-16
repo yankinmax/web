@@ -25,7 +25,7 @@ latest (unreleased)
   the footer to none editable MT chemical part
 * BSMTS-313: Py3o template update
 * BSMTS-315: Improve project analysis report display of "No result"
-
+* BIZ-2009: Add translation for report name
 **Bugfixes**
 
 * BIZ-1856: Fix conformity value computation when using "Tick all BDL/BQL" buttons

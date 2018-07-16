@@ -348,12 +348,12 @@ msgstr "Limite légale"
 #. module: mtsmte_reports
 #: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_nickel_en
 msgid "Nickel report English"
-msgstr "Nickel report English"
+msgstr "Rapport éditable nickel Anglais"
 
 #. module: mtsmte_reports
 #: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_nickel_fr
 msgid "Nickel report French"
-msgstr "Nickel report French"
+msgstr "Rapport éditable nickel Français"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.project_analysis_wiz_form
@@ -375,7 +375,7 @@ msgstr "Projet"
 #. module: mtsmte_reports
 #: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_project_en
 msgid "Project English"
-msgstr "Projet anglais"
+msgstr "Rapport éditable Anglais"
 
 #. module: mtsmte_reports
 #: model:ir.actions.report.xml,name:mtsmte_reports.action_report_analysis
@@ -385,7 +385,7 @@ msgstr "Project d'analyse"
 #. module: mtsmte_reports
 #: model:ir.actions.report.xml,name:mtsmte_reports.report_py3o_project
 msgid "Projet Français"
-msgstr "Project français"
+msgstr "Rapport éditable Français"
 
 #. module: mtsmte_reports
 #: model:ir.ui.view,arch_db:mtsmte_reports.chemical_results
