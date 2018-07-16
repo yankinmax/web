@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+
+    <record id="base.lang_en" model="res.lang">
+        <field name="name">English</field>
+        <field name="code">en_US</field>
+        <field name="date_format">%m/%d/%y</field>
+        <field name="direction">ltr</field>
+        <field name="thousands_sep">&#39;</field>
+        <field name="translatable">t</field>
+        <field name="time_format">%H:%M:%S</field>
+        <field name="decimal_poing">.</field>
+        <field name="iso_code">en</field>
+        <field name="grouping">[3,0]</field>
+    </record>
+
+    <record id="base.lang_fr" model="res.lang">
+        <field name="name">French / Français</field>
+        <field name="code">fr_FR</field>
+        <field name="date_format">%d/%m/%Y</field>
+        <field name="direction">ltr</field>
+        <field name="thousands_sep">&#39;</field>
+        <field name="translatable">t</field>
+        <field name="time_format">%H:%M:%S</field>
+        <field name="decimal_poing">.</field>
+        <field name="iso_code">fr</field>
+        <field name="grouping">[3,0]</field>
+    </record>
+
+
+    <record id="base.lang_de" model="res.lang">
+        <field name="name">German / Deutsch</field>
+        <field name="code">de_DE</field>
+        <field name="date_format">%d.%m.%Y</field>
+        <field name="direction">ltr</field>
+        <field name="thousands_sep">&#39;</field>
+        <field name="translatable">t</field>
+        <field name="time_format">%H:%M:%S</field>
+        <field name="decimal_poing">.</field>
+        <field name="iso_code">en</field>
+        <field name="grouping">[3,0]</field>
+    </record>
+
+
+
+
+</odoo>
