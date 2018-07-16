@@ -25,6 +25,7 @@ latest (unreleased)
   the footer to none editable MT chemical part
 * BSMTS-313: Py3o template update
 * BSMTS-315: Improve project analysis report display of "No result"
+* BIZ-2011: Fix VAT report
 
 **Bugfixes**
 
