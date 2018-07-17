@@ -26,6 +26,8 @@ latest (unreleased)
 * BSMTS-313: Py3o template update
 * BSMTS-315: Improve project analysis report display of "No result"
 * BIZ-2009: Add translation for report name
+* BIZ-2011: Fix VAT report (Update enterprise branch, update base is required)
+
 **Bugfixes**
 
 * BIZ-1856: Fix conformity value computation when using "Tick all BDL/BQL" buttons
