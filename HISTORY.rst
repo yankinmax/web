@@ -29,6 +29,7 @@ latest (unreleased)
 **Bugfixes**
 
 * BIZ-1856: Fix conformity value computation when using "Tick all BDL/BQL" buttons
+* BIZ-2062: Removing phone and fax in address on Delivery order report
 
 **Build**
 
