@@ -32,6 +32,7 @@ latest (unreleased)
 
 * BIZ-1856: Fix conformity value computation when using "Tick all BDL/BQL" buttons
 * BIZ-2062: Removing phone and fax in address on Delivery order report
+* BSMTS-321: Add `ir.rule` to separate `purchase.report` by company
 
 **Build**
 
