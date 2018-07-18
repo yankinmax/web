@@ -22,6 +22,7 @@
     ],
     'website': 'https://www.camptocamp.com',
     'data': [
+        'security/report_security.xml',
         'data/py3o_server.xml',
         'reports/assets.xml',
         'reports/layouts.xml',
