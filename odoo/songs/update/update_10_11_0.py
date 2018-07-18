@@ -8,5 +8,5 @@ from anthem.lyrics.modules import update_translations
 
 @anthem.log
 def post(ctx):
-    """ Applying update 10.10.2 """
+    """ Applying 10.11.0, reapply mtsmte_reports module translations """
     update_translations(ctx, ['mtsmte_reports'])
