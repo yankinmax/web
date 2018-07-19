@@ -28,8 +28,8 @@ latest (unreleased)
 * BIZ-2009: Add translation for report name
 * BIZ-2011: Fix VAT report (Update enterprise branch, update base is required)
 * BSMTS-318: Py3o template update
+* BIZ-2033: Add strict configuration in customer settings for report
 
-* BIZ-2033: Add strict configuration in customer seetings for report
 **Bugfixes**
 
 * BIZ-1856: Fix conformity value computation when using "Tick all BDL/BQL" buttons
