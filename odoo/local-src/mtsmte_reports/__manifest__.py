@@ -14,6 +14,7 @@
         'report_py3o',
         'project',
         'sale',
+        'base',
         'sale_order_dates',
         'purchase',
         'mtsmte_project',
@@ -24,6 +25,7 @@
     'data': [
         'security/report_security.xml',
         'data/py3o_server.xml',
+        'data/res_lang.xml',
         'reports/assets.xml',
         'reports/layouts.xml',
         'reports/reports.xml',
