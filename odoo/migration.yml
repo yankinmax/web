@@ -348,6 +348,8 @@ migration:
       operations:
         pre:
           - psql -f /opt/odoo/songs/update/update_10_11_0.sql
+        post:
+          - anthem songs.update.update_10_11_0::post
       addons:
         upgrade:
           #### Specific
