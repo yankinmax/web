@@ -109,8 +109,10 @@ var translateDialog = Dialog.extend({
                     'data-value', values[f] || '');
         });
         var textarea = this.$el.find('textarea.oe_translation_field');
-        textarea.css({minHeight:'100px',});
-        dom.autoresize(textarea, {parent: this.$el});
+        if (textarea !== undefined && textarea[0] !== undefined) {
+            textarea.css({minHeight:'100px',});
+            dom.autoresize(textarea, {parent: this.$el});
+        }
         $(window).resize();
         this.initialize_html_fields(lang);
     },
@@ -170,7 +172,8 @@ var translateDialog = Dialog.extend({
                 });
                 if (code === self.view_language) {
                     _.each(text, function(value, key) {
-                        self.view.$el.find('input[name="'+ key + '"]').val(value);
+                        var view_elem = self.view.$el.find('input[name="'+ key + '"]');
+                        view_elem.val(value).trigger('change');
                     });
                 }
                 return done;
