@@ -118,7 +118,6 @@ var translateDialog = Dialog.extend({
 
         this.$el.find('.oe_translation_field').val('').removeClass('touched');
 
-        //var context = new Context(session.user_context, {lang: lg.code});
         var deff = $.Deferred();
         deferred.push(deff);
         rpc.query({
