@@ -25,10 +25,7 @@ var translateDialog = Dialog.extend({
     template: "TranslateDialog",
     init: function(parent, options) {
         this._super(parent,
-                    {title: _t("Translations"),
-                     width: '90%',
-                     height: '80%'}
-                    );
+                    {title: _t("Translations"), size: 'x-large'});
         this.view_language = session.user_context.lang;
         this.view = parent;
         this.view_type = parent.viewType || '';
@@ -41,6 +38,14 @@ var translateDialog = Dialog.extend({
         (new data.DataSetSearch(this, 'res.lang', parent.searchView.dataset.get_context(),
                                 [['translatable', '=', '1']])).read_slice(['code', 'name'],
                                 { sort: 'id' }).then(this.on_languages_loaded);
+    },
+    willStart: function () {
+        var self = this;
+        return this._super.apply(this, arguments).then(function () {
+            if (self.size == 'x-large') {
+                self.$modal.find('.modal-dialog').addClass('modal-xl');
+            }
+        });
     },
     on_languages_loaded: function(langs) {
         this.languages = langs;
@@ -100,11 +105,11 @@ var translateDialog = Dialog.extend({
 
     },
     set_fields_values: function(lang, tr_value) {
-        this.$el.find('.oe_translation_field[name="' + lang +
+        this.$('.oe_translation_field[name="' + lang +
                 '-' + this.translatable_field + '"]').val(tr_value || '').attr(
                 'data-value', tr_value || '');
 
-        var textarea = this.$el.find('textarea.oe_translation_field');
+        var textarea = this.$('textarea.oe_translation_field');
         if (textarea !== undefined && textarea[0] !== undefined) {
             textarea.css({minHeight:'100px',});
             dom.autoresize(textarea, {parent: this.$el});
@@ -116,7 +121,7 @@ var translateDialog = Dialog.extend({
         var self = this,
             deferred = [];
 
-        this.$el.find('.oe_translation_field').val('').removeClass('touched');
+        this.$('.oe_translation_field').val('').removeClass('touched');
 
         var deff = $.Deferred();
         deferred.push(deff);
@@ -145,7 +150,7 @@ var translateDialog = Dialog.extend({
         var translations = {},
             self = this,
             save_mutex = new Mutex();
-        this.$el.find('.oe_translation_field.touched').each(function() {
+        this.$('.oe_translation_field.touched').each(function() {
             var field = $(this).attr('name').split('-');
             if (!translations[field[0]]) {
                 translations[field[0]] = {};
