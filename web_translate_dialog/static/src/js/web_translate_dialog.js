@@ -57,7 +57,7 @@ var translateDialog = Dialog.extend({
     },
     start: function() {
         var self = this;
-        this.$el.find('.oe_translation_field').change(function() {
+        this.$('.oe_translation_field').change(function() {
             $(this).toggleClass('touched', $(this).val() !== $(this).attr('data-value'));
         });
         this.$footer.html(QWeb.render("TranslateDialog.buttons"));
@@ -73,7 +73,7 @@ var translateDialog = Dialog.extend({
     },
     initialize_html_fields: function(lang) {
         // Initialize summernote if HTML field
-        this.$el.find('.oe_form_field_html .oe_translation_field[name="' + lang + '-' + this.translatable_field + '"]').each(function() {
+        this.$('.oe_form_field_html .oe_translation_field[name="' + lang + '-' + this.translatable_field + '"]').each(function() {
             var $parent = $(this).summernote({
                 'focus': false,
                 'toolbar': [
@@ -172,7 +172,7 @@ var translateDialog = Dialog.extend({
                 });
                 if (code === self.view_language) {
                     _.each(text, function(value, key) {
-                        var view_elem = self.view.$el.find('input[name="'+ key + '"]');
+                        var view_elem = self.view.$('input[name="'+ key + '"]');
                         view_elem.val(value).trigger('change');
                     });
                 }
