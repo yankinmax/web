@@ -15,7 +15,6 @@ var FormView = require('web.FormView');
 var View = require('web.AbstractView');
 var session  = require('web.session');
 var rpc = require('web.rpc');
-var dom = require('web.dom');
 
 var _t = core._t;
 var QWeb = core.qweb;
