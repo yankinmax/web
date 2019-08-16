@@ -76,7 +76,7 @@ var translateDialog = Dialog.extend({
         var max_height = 100
         // Resize textarea either to the max height of its content if it stays
         // in the modal or to the max height available in the modal
-        if (textareas !== undefined && textareas[0] !== undefined) {
+        if (textareas.length) {
             _.each(textareas, function(textarea) {
                 if (textarea.scrollHeight > max_height) {
                     max_height = textarea.scrollHeight
