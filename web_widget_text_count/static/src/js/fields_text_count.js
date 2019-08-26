@@ -31,9 +31,14 @@ odoo.define('text_count', function(require) {
             var $textarea = this.$el,
                 maxlength = parseInt($textarea.attr('maxlength'), 10),
                 $counter = $textarea.siblings('.text-counter');
-            var left = maxlength - $textarea.val().length;
-            if (left < 0) {
-                left = 0;
+            if (maxlength){
+                var left = maxlength - $textarea.val().length;
+                if (left < 0) {
+                    left = 0;
+                }
+            }
+            else{
+                left = $textarea.val().length;
             }
             $counter.val(left);
         },
