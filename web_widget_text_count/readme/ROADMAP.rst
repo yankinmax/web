@@ -1,4 +1,3 @@
 Patch Text class on Python level to allow propagation of size same as in Char fields.
-After modify js to relies it on field attribute.
-
-Impossible to put counter field after Text field in one line in UI.
+At the moment the size attribute can be applied only as an attribute on the <field/> tag.
+Support inline position of the counter next to the textarea.

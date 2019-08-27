@@ -1,7 +1,6 @@
 odoo.define('text_count', function(require) {
     "use strict";
 
-    require('web.dom_ready');
     var registry = require('web.field_registry');
     var basicFields = require('web.basic_fields');
     var FieldText = basicFields.FieldText;
@@ -18,8 +17,6 @@ odoo.define('text_count', function(require) {
             return this._super().then(function(){
                 if (self.mode === 'edit') {
                     if (self.attrs.size) {
-                        // this place can be improved should relay on self.field.size
-                        // see ROADMAP
                         self.$el.attr('maxlength', parseInt(self.attrs.size));
                     }
                     self.$el = self.$el.add($('<input class="text-counter" readonly="readonly"/>'));
