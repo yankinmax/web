@@ -12,14 +12,18 @@ odoo.define('text_count', function(require) {
         supportedFieldTypes: ['text'],
 
         start: function () {
-            
             var self = this;
             return this._super().then(function(){
+                var size = 0
                 if (self.mode === 'edit') {
                     if (self.attrs.size) {
                         self.$el.attr('maxlength', parseInt(self.attrs.size));
+                        size = self.attrs.size - self.$el.val().length;
                     }
-                    self.$el = self.$el.add($('<input class="text-counter" readonly="readonly"/>'));
+                    else{
+                        size = self.$el.val().length;
+                    }
+                    self.$el = self.$el.add($('<input class="text-counter-widget" readonly="readonly" value="'+size+'"/>'));
                 }
             });
         },
@@ -27,7 +31,7 @@ odoo.define('text_count', function(require) {
         count_char: function (e) {
             var $textarea = this.$el,
                 maxlength = parseInt($textarea.attr('maxlength'), 10),
-                $counter = $textarea.siblings('.text-counter');
+                $counter = $textarea.siblings('.text-counter-widget');
             if (maxlength){
                 var left = maxlength - $textarea.val().length;
                 if (left < 0) {
