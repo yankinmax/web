@@ -9,7 +9,7 @@ odoo.define('web_ir_actions_act_view_reload.ir_actions_act_view_reload', functio
     ActionManager.include({
 
         /**
-         * Intersept action handling to detect extra action type
+         * Intercept action handling to detect extra action type
          * @override
          */
         _handleAction: function (action, options) {
