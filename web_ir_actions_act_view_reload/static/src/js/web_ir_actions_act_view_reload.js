@@ -22,7 +22,7 @@ odoo.define('web_ir_actions_act_view_reload.ir_actions_act_view_reload', functio
 
         /**
          * Handle 'ir.actions.act_view_reload' action
-         * @returns {$.Promise}
+         * @returns {Promise} Resolved promise
          */
         _executeReloadAction: function () {
             var controller = this.getCurrentController();
@@ -30,7 +30,7 @@ odoo.define('web_ir_actions_act_view_reload.ir_actions_act_view_reload', functio
                 controller.widget.reload();
             }
 
-            return $.when();
+            return Promise.resolve();
         },
 
     });
