@@ -111,6 +111,16 @@ odoo.define('web_m2x_options.web_m2x_options', function (require) {
             return false
         },
 
+        _bindAutoComplete: function () {
+            var self = this
+            this._super.apply(this, arguments);
+            this.get_options().done(function(){
+                if (!_.isUndefined(self.ir_options['web_m2x_options.m2o_search_delay'])) {
+                    self.$input.autocomplete("option", "delay",  parseInt(self.ir_options['web_m2x_options.m2o_search_delay']));
+                }
+            })
+        },
+
         _onInputFocusout: function () {
             var m2o_dialog_opt = this.is_option_set(this.nodeOptions.m2o_dialog) || _.isUndefined(this.nodeOptions.m2o_dialog) && this.is_option_set(this.ir_options['web_m2x_options.m2o_dialog']) || _.isUndefined(this.nodeOptions.m2o_dialog) && _.isUndefined(this.ir_options['web_m2x_options.m2o_dialog']);
             if (this.can_create && this.floating && m2o_dialog_opt) {
